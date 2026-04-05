@@ -1,7 +1,7 @@
 # Grounded Multimodal VQA for Network Control-Plane Incident Diagnosis over Dashboards, Topology Views, and Telemetry
 A dedicated repository documenting the development, research, and implementation of my Graduate Project in fulfillment of the Master of Science in Computer Science at Lakehead University.
 
-## Executive summary of the project 
+## Executive workflow summary 
 1. start from existing chart/dashboard VQA knowledge,
 2. adapt it to network visuals,
 3. add network telemetry, topologies and routing context,
