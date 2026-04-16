@@ -2,18 +2,36 @@
 A dedicated repository documenting the development, research, and implementation of my Graduate Project in fulfillment of the Master of Science in Computer Science at Lakehead University.
 
 ## Executive workflow summary 
-1. start from existing chart/dashboard VQA knowledge,
-2. adapt it to network visuals,
-3. add network telemetry, topologies and routing context,
-4. output diagnosis and recommended actions,
-5. validate actions before execution.
+
+An operator asks a natural-language question about a network incident, and the system retrieves and reasons over dashboards, logs, topology views, routing evidence, and telemetry to produce an evidence-grounded diagnosis and a safe remediation recommendation.
+
+The system will perform the following: 
+
+1. Understand the operator’s natural-language question
+2. Retrieve the relevant evidence \
+  2a. use existing chart/dashboard VQA capability \
+  2b. adapt it to network visuals 
+3. Fuse visual and structured evidence \
+  3a. dashboards, topology views, routing views \
+  3b. telemetry, logs, config/routing context
+4. Reason over the evidence
+5. Return a grounded answer with confidence and evidence
+6. Convert the answer into a diagnosis hypothesis
+7. Map the diagnosis to candidate remediation actions
+8. Apply safety checks before recommendation or execution \
+  8a. confidence threshold \
+  8b. policy/guardrails \
+  8c. approval if needed \
+  8d. post-change verification
+
 
 ## Problem statement
 Modern network control-plane incidents are difficult to diagnose because the evidence is spread across multiple sources and formats: dashboards, topology views, Grafana panels, logs, routing events, metrics, and configuration changes. When BGP, IGP, BFD, interface events, or routing-policy changes create instability, operators usually identify symptoms first, then manually correlate data across tools to understand the cause, scope, and safest response. This process is slow, cognitively demanding, and often dependent on individual operator experience. As a result, mean time to diagnosis remains high, remediation decisions may be inconsistent, and operational risk increases when actions are taken from incomplete or weakly correlated evidence.
 
 At the same time, existing question-answering systems and monitoring tools do not adequately support this workflow. Visual analytics platforms can display rich operational information, but they do not reason over it in a grounded way, and generic language models may summarize observations without enough operational context, evidence linkage, or action safety. Public benchmarks for chart and dashboard question answering show that multimodal reasoning over visual analytics is feasible, but network-specific question answering over control-plane evidence remains underdeveloped. In practice, network operators need a system that can answer natural-language questions such as: \
 <i>
-- What changed first? Which peer became unstable? 
+
+- What changed first? Which peer became unstable?
 - Did route churn begin before interface errors? 
 - What is the most likely cause? 
 - What is the safest first action?</i>
@@ -22,7 +40,8 @@ This project work addresses that gap by proposing a multimodal question-answerin
 
 ## Project workflow
 
-- Phase 0 — Lock the scope and incident taxonomy
+
+####  Phase 0 — Lock the scope and incident taxonomy
   
   Below is a list of network incidents that can be later narrowed down.
   
@@ -32,12 +51,36 @@ This project work addresses that gap by proposing a multimodal question-answerin
   - loss of alternate path / reduced path diversity
   - control-plane instability correlated with link or device events
  
-    [Cisco’s public telemetry](https://github.com/cisco-ie/telemetry) repository already includes anomaly cases such as BGP Clear, Port Flap, Port Admin Shut, and Port Transceiver Pull and Reinsert, plus case files and topology documents. Routing-anomaly literature also gives you event types like outages, route leaks, and anomalous path behavior.
+    [Cisco’s public telemetry](https://github.com/cisco-ie/telemetry) repository already includes anomaly cases such as BGP Clear, Port Flap, Port Admin Shut, and Port Transceiver Pull and Reinsert, plus case files and topology documents. Routing-anomaly literature also gives us event types like outages, route leaks, and anomalous path behavior. 
 
-- Phase 1 — Build the raw data lake
-- Phase 2 — Turn raw data into visuals
-- Phase 3 — Construct the network-VQA benchmark
-- Phase 4 — Build the model stack
-- Phase 5 — Add retrieval and multimodal grounding
-- Phase 6 — Diagnosis engine
-- Phase 7 — Guarded remediation recommendation
+
+
+####  Phase 1 — Establish the generic VQA baseline
+
+  I plan to use two datasets, DVQA for bar-chart reading and ChartQA next for visual + logical chart reasoning. DVQA is specifically for question answering over bar charts, and ChartQA is stronger for reasoning because it includes both human-written and generated questions and explicitly combines visual chart features with the chart’s underlying data table. Also DashboardQA for dashboard specific analysis.
+Models to run on these: Pix2Struct for screenshot-like visual language tasks, DePlot / MatCha / UniChart for chart-specific understanding and chart-to-table style reasoning and general multimodal baseline: Qwen2.5-VL, InternVL 2.5, LLaVA. 
+  
+#### Phase 2 — Build the raw network data lake
+
+  At this stage I need to collect Telemetry / anomaly / KPI data from Cisco telemetry repo, Microsoft Cloud Monitoring Dataset, Exathlon (for anormaly detection),IBM Cloud Console dataset and NAB. Also get graphs from Internet Topology Zoo, CAIDA ITDK / topology collections, RIPE RIS raw dataset, BGPStream, BGPlay / RIPEstat BGPlay API,  additional telemetry datasets and/or lab-collected streaming telemetry via gNMI/OpenConfig (need to assert the feasibility).
+
+
+#### Phase 3 — Turn raw data into visuals
+
+  In this step the plan is to convert the raw network data into:
+  
+  - Grafana dashboard screenshots or panel images
+  - Prometheus query graphs
+  - topology images
+  - routing-evolution views
+  - multi-panel incident dashboards combining metrics, state timelines, and alerts.
+
+  Phase 3 converts raw telemetry and routing data into reproducible visual analytics artifacts, including Grafana panels, Prometheus-derived metric graphs, topology views, and routing-evolution visualizations, which then serve as the visual input for the multimodal QA benchmark.
+
+    
+#### Phase 4 — Construct the network-QA benchmark
+
+#### Phase 5 — Build the model stack
+#### Phase 6 — Add retrieval and multimodal grounding
+#### Phase 7 — Diagnosis engine
+#### Phase 8 — Guarded remediation recommendation
