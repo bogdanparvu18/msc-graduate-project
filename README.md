@@ -1,5 +1,4 @@
 # Multimodal Question Answering over Network Visual Analytics with Safe Closed-Loop Remediation
-A dedicated repository documenting the development, research, and implementation of my Graduate Project in fulfillment of the Master of Science in Computer Science at Lakehead University.
 
 ## Executive workflow summary 
 
