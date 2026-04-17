@@ -90,8 +90,8 @@ Models to run on these: Pix2Struct for screenshot-like visual language tasks, De
     remediation label
     risk label
 
-  A JSON example is here. 
-  Note: The gold answers must come from the underlying incident data and labels, not from the LLM to avoid halucinacions.
+  A JSON example is [here](dataset_schema.json). The gold answers must come from the underlying incident data and labels, not from the LLM to avoid halucinacions. A gold answer will be grounded in incident truth data, supporting evidence references, a diagnosis label, and a remediation label. Natural-language QA are to be manually authored for a small subset of data, and LLM-assisted, but the source of truth will always come from the underlying incident data and annotations rather than from the LLM itself. \
+  The incident truth object will be constructed by combining existing public labels and event metadata with derived facts extracted from telemetry, routing, topology, and visualization artifacts; public datasets provide partial ground truth, while diagnosis, evidence alignment, and remediation labels will be added through rule-based extraction and targeted human annotation.
   
 #### Phase 5 — Build the model stack
 #### Phase 6 — Add retrieval and multimodal grounding
