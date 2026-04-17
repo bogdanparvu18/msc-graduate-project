@@ -80,6 +80,20 @@ Models to run on these: Pix2Struct for screenshot-like visual language tasks, De
     
 #### Phase 4 — Construct the network-QA benchmark
 
+  At this stage I build the dataset schema + annotation pipeline. For each incident sample, create:
+
+    visual inputs
+    optional structured inputs
+    question
+    gold answer
+    evidence
+    diagnosis label
+    remediation label
+    risk label
+
+  A JSON example is here. 
+  Note: The gold answers must come from the underlying incident data and labels, not from the LLM to avoid halucinacions.
+  
 #### Phase 5 — Build the model stack
 #### Phase 6 — Add retrieval and multimodal grounding
 #### Phase 7 — Diagnosis engine
