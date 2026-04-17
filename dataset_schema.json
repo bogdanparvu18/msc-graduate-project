@@ -1,0 +1,26 @@
+{
+  "sample_id": "inc_0001_q_03",
+  "incident_id": "inc_0001",
+  "question": "What most likely caused the instability after 14:02?",
+  "visual_inputs": [
+    "dashboard_bgp_updates.png",
+    "dashboard_interface_drops.png",
+    "topology_view.png",
+    "route_view.png"
+  ],
+  "structured_inputs": {
+    "telemetry_window": "telemetry_inc_0001.parquet",
+    "routing_events": "bgp_events_inc_0001.json",
+    "logs": "logs_inc_0001.json",
+    "config_diff": "config_diff_inc_0001.txt"
+  },
+  "gold_answer": "The instability most likely started after a route-policy change on edge-rtr-3, which caused a burst of BGP updates and loss of an alternate path.",
+  "evidence": [
+    "dashboard_bgp_updates:panel_2",
+    "route_view:path_loss",
+    "config_diff:route_map_change"
+  ],
+  "diagnosis_label": "route_policy_regression",
+  "remediation_label": "rollback_latest_route_map_change",
+  "risk_label": "medium"
+}
