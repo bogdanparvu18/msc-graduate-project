@@ -94,6 +94,42 @@ Models to run on these: Pix2Struct for screenshot-like visual language tasks, De
   The incident truth object will be constructed by combining existing public labels and event metadata with derived facts extracted from telemetry, routing, topology, and visualization artifacts; public datasets provide partial ground truth, while diagnosis, evidence alignment, and remediation labels will be added through rule-based extraction and targeted human annotation.
   
 #### Phase 5 — Build the model stack
+
+  This phase builds the model stack by adapting a chart-specialist model for network dashboard understanding and one or two general multimodal vision-language models for end-to-end question answering over dashboards, topology views, routing visuals, and structured operational context, with structured outputs for evidence, diagnosis, and remediation recommendation.
+
+   **Build the training dataset loaders** 
+  
+  This will read Phase 4 benchmark files and will create train/val/test loaders. I define few generic tasks:
+  
+   - open the sample JSON
+   - load the referenced images
+   - load structured text blocks
+   - format everything into one prompt
+   - return the gold JSON target
+
+  The training will be performed to return 4 types of output: Answer generation, Evidence prediction, Diagnosis prediction, Action recommandation.
+  
+  **Prompt formatter**
+
+  Each model family needs an exact prompt.
+
+  **Fine-tuning pipeline**
+
+  Models will be trained and adapted with the network benchmark information from the datasets. The base models still keep it generic pretraining knowledge and datasets teache it network vocabulary, incident patterns, output schema, and evidence habits. In this case fine-tuning data does not replace pretraining, it just aligns the model to networking domain in scope.
+
+  **Structured output parser**
+
+  A generated JSON needs to be validated.
+
+  **Evaluation harness**
+
+  A scoring system to be created: 
+
+  - answer correctness
+  - evidence correctness
+  - diagnosis accuracy
+  - action accuracy
+     
 #### Phase 6 — Add retrieval and multimodal grounding
 #### Phase 7 — Diagnosis engine
 #### Phase 8 — Guarded remediation recommendation
