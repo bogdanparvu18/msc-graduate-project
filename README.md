@@ -131,5 +131,10 @@ Models to run on these: Pix2Struct for screenshot-like visual language tasks, De
   - action accuracy
      
 #### Phase 6 — Add retrieval and multimodal grounding
+
+  In this section I implement a retrieval-and-grounding layer that maps operator questions to relevant multimodal evidence by combining metadata filtering and semantic retrieval over dashboard panels, topology views, routing artifacts, telemetry summaries, and logs. The selected evidence is then packaged into a constrained multimodal prompt so that the model produces answers, evidence references, and diagnosis candidates grounded only in retrieved incident artifacts.
+
+  Subworkflows: operator question → retrieve the relevant evidence → package only that evidence → run the multimodal model → return answer + evidence + confidence
+
 #### Phase 7 — Diagnosis engine
 #### Phase 8 — Guarded remediation recommendation
