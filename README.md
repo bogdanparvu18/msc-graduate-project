@@ -132,9 +132,20 @@ Models to run on these: Pix2Struct for screenshot-like visual language tasks, De
      
 #### Phase 6 — Add retrieval and multimodal grounding
 
-  In this section I implement a retrieval-and-grounding layer that maps operator questions to relevant multimodal evidence by combining metadata filtering and semantic retrieval over dashboard panels, topology views, routing artifacts, telemetry summaries, and logs. The selected evidence is then packaged into a constrained multimodal prompt so that the model produces answers, evidence references, and diagnosis candidates grounded only in retrieved incident artifacts.
+  The runtime intelligence layer where the model does not look at all dashboards, all logs, and all routing history at once. In this section I implement a retrieval-and-grounding layer that maps operator questions to relevant multimodal evidence by combining metadata filtering and semantic retrieval over dashboard panels, topology views, routing artifacts, telemetry summaries, and logs. The selected evidence is then packaged into a constrained multimodal prompt so that the model produces answers, evidence references, and diagnosis candidates grounded (that's based on the actual evidence) only in retrieved incident artifacts.
 
   Subworkflows: operator question → retrieve the relevant evidence → package only that evidence → run the multimodal model → return answer + evidence + confidence
+
+
+Unde phase 6 of the project the system should do five things:
+
+  - understand the natural-language question
+  - retrieve the right multimodal evidence
+  - format the evidence into a model-ready input pack
+  - make the model answer only from that evidence
+  - return structured evidence references with the answer
+
+An example of input pack at this layer is exemplified here. 
 
 #### Phase 7 — Diagnosis engine
 #### Phase 8 — Guarded remediation recommendation
