@@ -1,0 +1,10 @@
+{
+  "answer": "The instability most likely followed a route-policy change on edge-rtr-3.",
+  "evidence": [
+    "panel_bgp_updates_inc001",
+    "route_view_inc001",
+    "config_diff_inc001"
+  ],
+  "confidence": 0.84,
+  "diagnosis_candidate": "route_policy_regression"
+}
