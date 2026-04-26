@@ -145,7 +145,7 @@ Unde phase 6 of the project the system should do five things:
   - make the model answer only from that evidence
   - return structured evidence references with the answer
 
-An example of input pack at this layer is exemplified [here](input_pack_p6.json). 
+An example of input pack at this layer is exemplified [here](input_pack_p6.json). For the output of this phase the model should return a JSON like [this](output_p6.json).
 
 #### Phase 7 — Diagnosis engine
 #### Phase 8 — Guarded remediation recommendation
