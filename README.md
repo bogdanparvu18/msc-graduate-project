@@ -148,4 +148,8 @@ Unde phase 6 of the project the system should do five things:
 An example of input pack at this layer is exemplified [here](input_pack_p6.json). For the output of this phase the model should return a JSON like [this](output_p6.json).
 
 #### Phase 7 — Diagnosis engine
+
+  This is a typed inference layer that produces a diagnosis object which contains: diagnosis classes, extracted evidences, signal extraction, candidate diagnoses and scoring for it. I also add an uncertainty logic into the model to enhance the trust and safety and reduce the overconfidence. In this section the diagnosis engine that converts grounded multimodal evidence and question-answering outputs into structured incident diagnoses, confidence scores, affected scope, and candidate remediation paths using based on advanced reasoning.
+  At this time of the project I propose a JSON object simiar with this one as the output of the model.
+
 #### Phase 8 — Guarded remediation recommendation
