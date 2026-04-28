@@ -1,0 +1,23 @@
+{
+  "diagnosis_id": "diag_inc001",
+  "incident_family": "control_plane_instability",
+  "root_cause_type": "route_policy_regression",
+  "diagnosis_confidence": 0.79,
+  "affected_scope": {
+    "devices": ["edge-rtr-3"],
+    "peers": ["192.0.2.10"],
+    "prefixes": ["203.0.113.0/24"]
+  },
+  "trigger_time": "2026-03-14T14:02:00Z",
+  "supporting_evidence_ids": [
+    "panel_bgp_updates_inc001",
+    "route_view_inc001",
+    "config_diff_inc001"
+  ],
+  "contradicting_evidence_ids": [],
+  "uncertainty_flags": [],
+  "recommended_action_candidates": [
+    "rollback_latest_route_map_change",
+    "operator_review_only"
+  ]
+}
