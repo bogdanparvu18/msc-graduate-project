@@ -61,7 +61,7 @@ Models to run on these: Pix2Struct for screenshot-like visual language tasks, De
   
 #### Phase 2 — Build the raw network data lake
 
-  At this stage I need to collect Telemetry / anomaly / KPI data from Cisco telemetry repo, Microsoft Cloud Monitoring Dataset, Exathlon (for anormaly detection),IBM Cloud Console dataset and NAB. Also get graphs from Internet Topology Zoo, CAIDA ITDK / topology collections, RIPE RIS raw dataset, BGPStream, BGPlay / RIPEstat BGPlay API,  additional telemetry datasets and/or lab-collected streaming telemetry via gNMI/OpenConfig (need to assert the feasibility).
+  At this stage I need to collect Telemetry / anomaly / KPI data from Cisco telemetry repo, Microsoft Cloud Monitoring Dataset, Exathlon (for anomaly detection),IBM Cloud Console dataset and NAB. Also get graphs from Internet Topology Zoo, CAIDA ITDK / topology collections, RIPE RIS raw dataset, BGPStream, BGPlay / RIPEstat BGPlay API,  additional telemetry datasets and/or lab-collected streaming telemetry via gNMI/OpenConfig (need to assert the feasibility).
 
 
 #### Phase 3 — Turn raw data into visuals
@@ -90,7 +90,7 @@ Models to run on these: Pix2Struct for screenshot-like visual language tasks, De
     remediation label
     risk label
 
-  A JSON example is [here](dataset_schema.json). The gold answers must come from the underlying incident data and labels, not from the LLM to avoid halucinacions. A gold answer will be grounded in incident truth data, supporting evidence references, a diagnosis label, and a remediation label. Natural-language QA are to be manually authored for a small subset of data, and LLM-assisted, but the source of truth will always come from the underlying incident data and annotations rather than from the LLM itself. \
+  A JSON example is [here](dataset_schema.json). The gold answers must come from the underlying incident data and labels, not from the LLM to avoid hallucinacions. A gold answer will be grounded in incident truth data, supporting evidence references, a diagnosis label, and a remediation label. Natural-language QA are to be manually authored for a small subset of data, and LLM-assisted, but the source of truth will always come from the underlying incident data and annotations rather than from the LLM itself. \
   The incident truth object will be constructed by combining existing public labels and event metadata with derived facts extracted from telemetry, routing, topology, and visualization artifacts; public datasets provide partial ground truth, while diagnosis, evidence alignment, and remediation labels will be added through rule-based extraction and targeted human annotation.
   
 #### Phase 5 — Build the model stack
@@ -115,7 +115,7 @@ Models to run on these: Pix2Struct for screenshot-like visual language tasks, De
 
   **Fine-tuning pipeline**
 
-  Models will be trained and adapted with the network benchmark information from the datasets. The base models still keep it generic pretraining knowledge and datasets teache it network vocabulary, incident patterns, output schema, and evidence habits. In this case fine-tuning data does not replace pretraining, it just aligns the model to networking domain in scope.
+  Models will be trained and adapted with the network benchmark information from the datasets. The base models still keep it generic pretraining knowledge and datasets teach it network vocabulary, incident patterns, output schema, and evidence habits. In this case fine-tuning data does not replace pretraining, it just aligns the model to networking domain in scope.
 
   **Structured output parser**
 
@@ -137,7 +137,7 @@ Models to run on these: Pix2Struct for screenshot-like visual language tasks, De
   Subworkflows: operator question → retrieve the relevant evidence → package only that evidence → run the multimodal model → return answer + evidence + confidence
 
 
-Unde phase 6 of the project the system should do five things:
+Within phase 6 of the project the system should do five things:
 
   - understand the natural-language question
   - retrieve the right multimodal evidence
@@ -149,7 +149,26 @@ An example of input pack at this layer is exemplified [here](input_pack_p6.json)
 
 #### Phase 7 — Diagnosis engine
 
-  This is a typed inference layer that produces a diagnosis object which contains: diagnosis classes, extracted evidences, signal extraction, candidate diagnoses and scoring for it. I also add an uncertainty logic into the model to enhance the trust and safety and reduce the overconfidence. In this section the diagnosis engine that converts grounded multimodal evidence and question-answering outputs into structured incident diagnoses, confidence scores, affected scope, and candidate remediation paths using based on advanced reasoning.
-  At this time of the project I propose a JSON object simiar with this one as the output of the model.
+  This is a typed inference layer that produces a diagnosis object which contains: diagnosis classes, extracted evidences, signal extraction, candidate diagnoses and scoring for it. I also add an uncertainty logic into the model to enhance the trust and safety and reduce the overconfidence. In this section the diagnosis engine that converts grounded multimodal evidence and question-answering outputs into structured incident diagnoses, confidence scores, affected scope, and candidate remediation paths using advanced reasoning.
+  At this time of the project I propose a JSON object similar with [this one](output_p7.json) as the output of the model.
+  
 
 #### Phase 8 — Guarded remediation recommendation
+
+  Phase 8 responds to the operator question on "What's the next action after the issue has been detected" and implements a guarded remediation layer that maps structured diagnoses to approved runbooks such as action playbooks, ranks candidate remediation steps by confidence and risk, applies policy-based safety checks and approval rules, and outputs constrained, operator-ready recommendations with required preconditions, post-checks, and rollback guidance before any execution. Depending on the stage of the project at the time of the presentation, part of this section might remain for future research and implementation.
+  The plan is to have the input from Phase 7 and produce a confident output that contains proposed resolution actions that an operator should take to resolve the detected problem. In networking area, before recommending anything, an action should be tested whether it is even valid, what is the effective risk of implementing it and the blast radius (dimension of the potential impact). In real world applications, a policy risk/action table should result from this section after implementation:
+
+  - medium risk + production edge → human approval required
+  - high risk + low confidence → blocked
+  - multi-cause uncertain → operator review only
+  - very low risk evidence-collection action → can be auto-executed (later stage/other automation triggered)
+
+## Implementation
+
+The proposal is to implement this project in Python but using a very Clojure-like Declarative and Data Oriented styles which are both modern ways of managing the project. This effectively means that Python code will account the below rules:
+
+  - plain data objects for all pipeline state
+  - functions mostly pure that allows data transformations
+  - avoid deep OOP hierarchies
+  - represent diagnosis/action logic as data tables and transformations
+  - treat each phase as a data pipeline
