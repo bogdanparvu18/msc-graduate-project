@@ -58,6 +58,7 @@ This project work addresses that gap by proposing a multimodal question-answerin
 
   I plan to use two datasets, DVQA for bar-chart reading and ChartQA next for visual + logical chart reasoning. DVQA is specifically for question answering over bar charts, and ChartQA is stronger for reasoning because it includes both human-written and generated questions and explicitly combines visual chart features with the chart’s underlying data table. Also DashboardQA for dashboard specific analysis.
 Models to run on these: Pix2Struct for screenshot-like visual language tasks, DePlot / MatCha / UniChart for chart-specific understanding and chart-to-table style reasoning and general multimodal baseline: Qwen2.5-VL, InternVL 2.5, LLaVA. 
+  The transition from generic VQA to networking is achieved through staged domain adaptation: first, pretrained multimodal models are benchmarked and optionally adapted on generic chart and dashboard QA datasets to strengthen visual reasoning skills; then they are further fine-tuned on a custom network-specific benchmark containing dashboards, topology views, routing artifacts, telemetry summaries, and operator-style questions, so that generic chart understanding is transformed into network incident reasoning.
   
 #### Phase 2 — Build the raw network data lake
 
