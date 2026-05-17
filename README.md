@@ -125,9 +125,59 @@ Capsule endoscopy model construction differs from standard medical image classif
 
 By transforming raw data into well-defined medical visual artifacts, Phase 3 provides the bridge between raw dataset preparation and the actual construction of the MMVQA benchmark.
     
-#### Phase 4 — Construct the medical-QA benchmark
+### Phase 4 — Construct the medical-QA benchmark
 
+In this phase, the visual artifacts created in Phase 3 are transformed into a structured medical multimodal visual question-answering benchmark.
 
+The goal is to create a dataset where each sample contains:
+
+- a visual input, such as an image, crop, frame strip, video clip, or multi-panel artifact
+- a natural-language clinical-style question
+- a ground-truth answer
+- evidence grounding
+- task type
+- source label
+- normalized clinical category
+- bounding-box reference
+- temporal context
+- retrieved medical context
+
+This phase converts Kvasir-Capsule from a labelled medical visual dataset into a medical MMVQA benchmark.
+
+---
+Kvasir-Capsule provides the visual ground truth:
+
+   - source video
+   - target frame
+   - original label
+   - bounding box
+   - frame number
+   - labelled/unlabelled status
+   - anatomical or luminal finding class
+
+The LLM provides the language layer:
+
+- question wording
+- answer phrasing
+- explanation templates
+- evidence statements
+- uncertainty/abstention wording
+
+The KG/RAG system provides the clinical context layer:
+
+- terminology mapping
+- label definitions
+- relationships between findings and categories
+- clinical relevance of findings
+- guideline-style background where appropriate
+
+The benchmark will be constructed using an LLM-assisted QA generation pipeline. The LLM will generate clinical-style questions, answers, explanations, and uncertainty statements, but it will not create independent medical ground truth. All generated QA pairs will be grounded in Kvasir-Capsule annotations, including the original label, bounding box, source video, frame number, and normalized clinical category.
+
+A knowledge-grounding layer will also be introduced in this phase. Since Kvasir-Capsule does not provide real clinical notes, this layer will use external curated medical texts, terminology resources, dataset documentation, and guideline-style references rather than patient-specific notes. A medical knowledge graph will represent relationships between findings, anatomical landmarks, broad clinical categories, visual evidence types, quality limitations, and supported question types. A vector database will store semantic embeddings of relevant unstructured medical text snippets. Hybrid retrieval will combine semantic search from the vector database with graph traversal from the knowledge graph to provide controlled medical context to the LLM. The LLM will then generate evidence-grounded QA pairs using this retrieved context together with the dataset annotations.
+
+The benchmark will include several question categories: visual identification questions, evidence-grounding questions, temporal-context questions, localization questions, normal-versus-abnormal questions, uncertainty or abstention questions, and clinical review prioritization questions. These question types will allow the benchmark to evaluate not only whether a model can recognize a finding, but also whether it can localize evidence, use temporal context, distinguish normal from abnormal views, recognize poor image quality, and abstain when the visual evidence is insufficient.
+
+The output of Phase 4 will be a validated MMVQA benchmark split into training, validation, and test sets. The final dataset will include artifact paths, questions, answers, evidence fields, task labels, difficulty levels, KG concepts, retrieved context references, and validation status. This phase forms the bridge between medical visual artifact generation and the later model training and evaluation phases.
   
 #### Phase 5 — Build the model stack
 
