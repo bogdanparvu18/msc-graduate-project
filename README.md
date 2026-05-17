@@ -59,17 +59,17 @@ The model list should be divided into two categories.
 
 These models are useful for the generic baseline, but they are not medical models:
 
-<b>Pix2Struct</b> — useful for screenshot-like visual-language tasks and structured visual layouts. It makes sense for Phase 1 because it was designed for visually situated language and can be fine-tuned on tasks involving screenshots, diagrams, tables, and visual layouts.
+<b>Pix2Struct</b> — useful for screenshot-like visual-language tasks and structured visual layouts. It makes sense for Phase 1 because it was designed for visually situated language and can be fine-tuned on tasks involving screenshots, diagrams, tables, and visual layouts.<br>
 <b>DePlot / MatCha / UniChart</b> — useful for chart understanding and chart-to-table or chart-reasoning tasks. These models are relevant for DVQA and ChartQA, but they should not be treated as strong candidates for capsule-endoscopy image interpretation. Their role is to establish chart and visual-structure baselines, not to identify lesions.
 
 #### B. General multimodal models with possible medical transfer value
 
 These models make more sense as candidates for the later medical MMVQA system:
 
-<b>Qwen2.5-VL</b> — strong candidate because it supports image and video understanding, visual grounding, object localization, document/chart understanding, and long-video comprehension. These capabilities are relevant to capsule endoscopy because the final project needs frame-level reasoning, temporal context, lesion localization, and evidence grounding.
-<b>InternVL 2.5</b> — strong general multimodal baseline because it is an open multimodal large language model family designed for broad visual-language reasoning. It can be used as a competitive general VLM baseline before medical adaptation.
-<b>LLaVA / LLaVA-style models</b> — useful as open-source multimodal baselines because LLaVA connects a vision encoder with a language model and was designed for general-purpose visual instruction following.
-<b>LLaVA-Med</b> — should be added as a medical comparison model because it was specifically adapted for biomedical image conversation and medical VQA. It is more medically relevant than vanilla LLaVA and can help show whether a biomedical-adapted model performs better than a general VLM on medical visual questions.
+<b>Qwen2.5-VL</b> — strong candidate because it supports image and video understanding, visual grounding, object localization, document/chart understanding, and long-video comprehension. These capabilities are relevant to capsule endoscopy because the final project needs frame-level reasoning, temporal context, lesion localization, and evidence grounding.<br>
+<b>InternVL 2.5</b> — strong general multimodal baseline because it is an open multimodal large language model family designed for broad visual-language reasoning. It can be used as a competitive general VLM baseline before medical adaptation.<br>
+<b>LLaVA / LLaVA-style models</b> — useful as open-source multimodal baselines because LLaVA connects a vision encoder with a language model and was designed for general-purpose visual instruction following.<br>
+<b>LLaVA-Med</b> — should be added as a medical comparison model because it was specifically adapted for biomedical image conversation and medical VQA. It is more medically relevant than vanilla LLaVA and can help show whether a biomedical-adapted model performs better than a general VLM on medical visual questions.<br>
 <b>Med-Flamingo</b> was designed for few-shot medical visual question answering.
  
 #### Phase 2 — Build the raw medical data lake
