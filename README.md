@@ -52,7 +52,7 @@ The baseline will use three generic visual-question-answering datasets:
   This is used for stronger visual and logical reasoning over charts. It includes both human-written and generated questions and requires models to combine visual features with underlying chart information. This helps test whether the model can answer questions that require reasoning, not only visual recognition.
 
 ### Models to test 
------
+
 The model list should be divided into two categories.
 
 #### A. Generic visual-reasoning and chart-specialist models
@@ -72,7 +72,9 @@ These models make more sense as candidates for the later medical MMVQA system:
 - <b>LLaVA / LLaVA-style models</b> — useful as open-source multimodal baselines because LLaVA connects a vision encoder with a language model and was designed for general-purpose visual instruction following.<br>
 - <b>LLaVA-Med</b> — should be added as a medical comparison model because it was specifically adapted for biomedical image conversation and medical VQA. It is more medically relevant than vanilla LLaVA and can help show whether a biomedical-adapted model performs better than a general VLM on medical visual questions.<br>
 - <b>Med-Flamingo</b> was designed for few-shot medical visual question answering.
- 
+
+---
+
 ### Phase 2 — Build the raw medical data lake
 
    It's also called data-engineering and data-curation phase as we build a structured raw medical data lake from capsule-endoscopy data before creating visual artifacts or question-answer pairs. The primary dataset will be Kvasir-Capsule, which contains capsule-endoscopy videos, labelled images, medically verified finding classes, bounding-box annotations, video identifiers, and frame numbers. The purpose of this phase is to transform the original dataset files into a clean, searchable, and reproducible project data layer.
@@ -93,6 +95,8 @@ The work in this phase includes downloading and registering the dataset, parsing
 Since Kvasir-Capsule does not provide a complete good/bad image-quality label, the project will derive basic quality indicators such as reduced mucosal visibility, blur, brightness, contrast, and evidence sufficiency. If needed, an additional cleanliness or visibility dataset may be added later to strengthen this quality-control component.
 
 The output of this phase is a curated raw medical evidence layer containing capsule frames, temporal context, labels, bounding boxes, metadata, quality indicators, and reproducible splits. This structured data lake becomes the foundation for Phase 3, where raw capsule-endoscopy data will be transformed into medical visual artifacts such as target frames, adjacent-frame strips, lesion crops, bounding-box overlays, and multi-panel clinical evidence packs. Clinical notes are not available in Kvasir-Capsule being removed by the authors, so any textual clinical context must be later generated using a pre trained LLM.
+
+---
 
 ### Phase 3 — Turn raw data into visuals
 
@@ -124,7 +128,9 @@ Capsule endoscopy model construction differs from standard medical image classif
 - Metadata, labels, and visual annotations can be integrated with the image itself.
 
 By transforming raw data into well-defined medical visual artifacts, Phase 3 provides the bridge between raw dataset preparation and the actual construction of the MMVQA benchmark.
-    
+
+---
+
 ### Phase 4 — Construct the medical-QA benchmark
 
 In this phase, the visual artifacts created in Phase 3 are transformed into a structured medical multimodal visual question-answering benchmark.
@@ -144,7 +150,6 @@ The goal is to create a dataset where each sample contains:
 
 This phase converts Kvasir-Capsule from a labelled medical visual dataset into a medical MMVQA benchmark.
 
----
 Kvasir-Capsule provides the visual ground truth:
 
    - source video
@@ -178,57 +183,90 @@ A knowledge-grounding layer will also be introduced in this phase. Since Kvasir-
 The benchmark will include several question categories: visual identification questions, evidence-grounding questions, temporal-context questions, localization questions, normal-versus-abnormal questions, uncertainty or abstention questions, and clinical review prioritization questions. These question types will allow the benchmark to evaluate not only whether a model can recognize a finding, but also whether it can localize evidence, use temporal context, distinguish normal from abnormal views, recognize poor image quality, and abstain when the visual evidence is insufficient.
 
 The output of Phase 4 will be a validated MMVQA benchmark split into training, validation, and test sets. The final dataset will include artifact paths, questions, answers, evidence fields, task labels, difficulty levels, KG concepts, retrieved context references, and validation status. This phase forms the bridge between medical visual artifact generation and the later model training and evaluation phases.
-  
-### Phase 5 — Build the model stack
 
-In this phase, the project builds the model stack that will be trained, adapted, prompted, evaluated, and compared on the medical MMVQA benchmark created in Phase 4.
+---
 
-The model stack should not be a single model only. It should include:
+### Phase 5 — Build the medical model stack
 
-- general multimodal VLMs
-- medical-adapted VLMs
-- optional region-aware / grounding-aware VLMs
+In this phase, the project builds the medical multimodal model stack that will be trained, adapted, prompted, evaluated, and compared using the medical MMVQA benchmark created in Phase 4.
+
+The model stack should not be limited to a single model. It should include:
+
+- general multimodal vision-language models-
+- medical-adapted multimodal models
+- optional region-aware or grounding-aware model components
 - a structured output layer
 - a medical evidence-grounding evaluator
 - a safety and uncertainty layer
-- optional KG/RAG support from Phase 4
+- a RAG-ready input/output interface for later integration in Phase 6
 
-The goal is not to build a final clinical diagnosis system. The goal is to build a research-grade medical MMVQA system that can answer questions about capsule-endoscopy visual artifacts, cite visual evidence, classify findings, localize abnormalities, estimate uncertainty, and flag cases for clinician review.
+The goal is not to build a final clinical diagnosis system. The goal is to build a research-grade medical MMVQA system that can answer questions about capsule-endoscopy visual artifacts, cite available visual evidence, classify possible findings, localize abnormalities, estimate uncertainty, and flag cases for clinician review.
 
-The model we create is not trained to make final clinical decisions. It is trained to answer medical visual questions, ground its answers in evidence, identify possible findings, and support clinician review. The output of the MMVQA system will be formalized in a JSON-like format simiar with [this one](output_p5.json). 
+The model created in this phase is not trained to make final clinical decisions. It is trained to answer medical visual questions, ground its answers in the available benchmark evidence, identify possible findings, and support clinician review. The output of the MMVQA system will be formalized in a structured JSON-like format similar to [this example](output_p5.json).
 
----
-The model stack will include several components. First, general multimodal vision-language models such as Qwen2.5-VL, InternVL, and LLaVA-style models will be used as baseline systems for image-question answering, multi-image reasoning, and visual grounding. Second, medical-adapted multimodal models such as LLaVA-Med and Med-Flamingo will be used as medical comparison baselines. Third, chart/dashboard-specialist models from Phase 1, such as Pix2Struct, DePlot, MatCha, and UniChart, will remain baseline-support components only; they are useful for generic visual-structure reasoning but are not expected to perform strong capsule-endoscopy interpretation.
 
-The model stack will be trained and evaluated on multiple input types, including single frames, lesion crops, bounding-box overlays, frame-strip timelines, finding progression panels, quality-control panels, and multi-panel medical artifacts. Each model will receive a visual artifact and a natural-language question, with optional structured metadata or retrieved medical context from the KG/RAG layer developed in Phase 4.
+The model stack will include several components.
 
-The expected output will be structured JSON rather than free text. Each output should include the answer, clinical finding, broad clinical category, evidence references, localization information, confidence score, uncertainty reason, decision-support label, and safety flags. This structured format allows the system to be automatically validated and evaluated for answer correctness, evidence grounding, localization accuracy, uncertainty handling, and clinical safety.
+First, general multimodal vision-language models such as **Qwen2.5-VL, InternVL, and LLaVA-style models** will be used as baseline systems for image-question answering, multi-image reasoning, visual grounding, and structured answer generation.
 
-Training will proceed in stages. First, candidate models will be evaluated zero-shot on the Phase 4 benchmark. Second, prompt-engineered baselines will be tested to improve JSON compliance and reduce hallucination. Third, selected open models will be fine-tuned using LoRA or QLoRA on the benchmark training split. The fine-tuning objective will be multi-task: answer generation, evidence prediction, clinical finding classification, broad category classification, localization, uncertainty estimation, and decision-support label prediction. Finally, KG/RAG-augmented inference may be tested to determine whether retrieved clinical context improves answer consistency and evidence-grounded explanations.
+Second, medical-adapted multimodal models such as **LLaVA-Med and Med-Flamingo** will be used as medical comparison baselines. These models will help evaluate whether biomedical adaptation improves performance over general-purpose VLMs on capsule-endoscopy visual question answering.
 
-The evaluation harness will measure several dimensions: answer accuracy, fine-grained clinical label accuracy, broad category accuracy, evidence-reference correctness, localization accuracy, temporal reasoning accuracy, uncertainty and abstention accuracy, JSON validity, and clinical safety. The model will be penalized for unsupported medical claims, invented patient history, treatment recommendations, or final clinical decisions. The safest allowed decision-support output will be a label such as “flag_for_clinician_review,” not a diagnosis or treatment recommendation.
+Third, chart/dashboard-specialist models from Phase 1, such as **Pix2Struct, DePlot, MatCha, and UniChart**, will remain baseline-support components only. They are useful for generic visual-structure reasoning and for maintaining continuity with the original dashboard-based VQA plan, but they are not expected to perform strong capsule-endoscopy interpretation.
 
-The final output of Phase 5 will be a tested medical MMVQA model stack, including baseline comparisons, fine-tuned model variants, structured output validation, evidence-grounding evaluation, safety checks, and ablation studies comparing different artifact types and retrieval settings.
+The model stack will be trained and evaluated on multiple input types, including single frames, lesion crops, bounding-box overlays, frame-strip timelines, finding progression panels, quality-control panels, normal-vs-abnormal comparison panels, and multi-panel medical artifacts.
+
+Each model will receive a visual artifact and a natural-language question. In this phase, the model may also receive structured benchmark fields already attached to the sample, such as artifact type, available evidence references, bounding-box availability, temporal-context availability, quality tag, source label, or normalized clinical category.
+
+However, Phase 5 will not yet implement dynamic retrieval from a vector database, knowledge graph, or artifact index. Full retrieval, RAG, and multimodal grounding will be introduced in Phase 6.
+
+The expected output will be structured JSON rather than free text. Each output should include the answer, clinical finding, broad clinical category, evidence references, localization information, confidence score, uncertainty reason, decision-support label, and safety flags. This structured format allows the system to be automatically validated and evaluated for answer correctness, evidence grounding, localization accuracy, temporal reasoning, uncertainty handling, JSON validity, and clinical safety.
+
+Training will proceed in stages.
+
+At the first stage, candidate models will be evaluated zero-shot on the Phase 4 benchmark. This will establish baseline performance before adaptation.
+
+Second, prompt-engineered baselines will be tested to improve JSON compliance, reduce hallucination, and enforce safer medical-answering behavior.
+
+Third, selected open models will be fine-tuned using **LoRA** or **QLoRA** on the benchmark training split. The fine-tuning objective will be multi-task and will include answer generation, evidence prediction, clinical finding classification, broad category classification, localization, temporal-context reasoning, uncertainty estimation, and decision-support label prediction.
+
+The evaluation harness will measure several dimensions: answer accuracy, fine-grained clinical label accuracy, broad category accuracy, evidence-reference correctness, localization accuracy, temporal reasoning accuracy, uncertainty and abstention accuracy, JSON validity, schema compliance, and clinical safety.
+
+The model will be penalized for unsupported medical claims, invented patient history, invented symptoms, treatment recommendations, prognosis claims, or final clinical decisions. The safest allowed decision-support output will be a label such as **“flag_for_clinician_review”**, not a diagnosis or treatment recommendation.
+
+The final output of Phase 5 will be a tested medical MMVQA model stack, including baseline comparisons, medical model comparisons, prompt-engineered baselines, fine-tuned model variants, structured output validation, evidence-reference prediction, localization evaluation, uncertainty and abstention evaluation, clinical safety checks, and ablation studies comparing different visual artifact types.
+
+Phase 5 will produce a **RAG-ready medical MMVQA model**, but not the full retrieval-grounded system. The full retrieval and multimodal grounding layer will be added in Phase 6, where the trained model will be connected to visual artifact retrieval, metadata retrieval, temporal retrieval, vector database retrieval, medical knowledge graph retrieval, hybrid evidence packaging, and grounding validation.
 
 Below is a list of models, input type expected and the purpose of the experiment.
 
-| Experiment | Model                 | Input type                   | Fine-tuned? | KG/RAG? | Purpose                            |
-| ---------- | --------------------- | ---------------------------- | ----------- | ------- | ---------------------------------- |
-| E1         | LLaVA baseline        | single frame                 | no          | no      | general VLM baseline               |
-| E2         | Qwen2.5-VL            | single frame + crop          | no          | no      | strong general VLM baseline        |
-| E3         | InternVL              | multi-panel artifact         | no          | no      | general MLLM comparison            |
-| E4         | LLaVA-Med             | single frame                 | no          | no      | medical baseline                   |
-| E5         | Med-Flamingo          | few-shot examples            | no          | no      | few-shot medical VQA               |
-| E6         | Qwen2.5-VL / InternVL | Phase 4 benchmark            | yes         | no      | fine-tuned capsule model           |
-| E7         | Fine-tuned model      | artifact + retrieved context | yes         | yes     | KG/RAG-augmented inference         |
-| E8         | Fine-tuned model      | poor-quality panels          | yes         | yes/no  | uncertainty and abstention testing |
+| Experiment | Model               | Input                                       | Purpose                                   |
+| ---------- | ------------------- | ------------------------------------------- | ----------------------------------------- |
+| E1         | LLaVA / general VLM | single frame                                | basic VQA baseline                        |
+| E2         | Qwen2.5-VL          | frame + crop / overlay                      | strong general VLM baseline               |
+| E3         | InternVL            | multi-panel artifact                        | general multimodal comparison             |
+| E4         | LLaVA-Med           | single frame / crop                         | medical VLM baseline                      |
+| E5         | Med-Flamingo        | few-shot medical examples                   | medical few-shot baseline                 |
+| E6         | selected VLM        | Phase 4 QA benchmark                        | fine-tuned capsule-endoscopy model        |
+| E7         | fine-tuned model    | structured evidence fields already attached | tests JSON output and evidence prediction |
+| E8         | fine-tuned model    | poor-quality / uncertainty samples          | tests abstention and safety               |
 
+---
      
-#### Phase 6 — Add retrieval and multimodal grounding
+### Phase 6 — Add retrieval and multimodal grounding
 
+At this stage we add retrieval and grounding so the model can answer using the correct frame, crop, bounding box, temporal context, metadata, KG concepts, and retrieved clinical text — instead of producing unsupported free-text answers.
 
+In this phase, the medical MMVQA system is extended with retrieval and grounding mechanisms so that model answers are based on explicit evidence rather than unsupported free-text generation. The system will retrieve relevant visual artifacts, metadata, temporal context, medical knowledge graph relations, and clinical text snippets before generating an answer.
 
+The retrieval layer includes several components. A visual artifact index will store target frames, lesion crops, bounding-box overlays, frame-strip timelines, progression panels, quality-control panels, and multi-panel artifacts. A metadata retriever will provide exact information such as original label, normalized clinical category, bounding-box coordinates, source video, frame number, and artifact type. A temporal retriever will recover neighboring frames or short clips around a target frame. A **vector database**  stores embeddings of curated clinical text, dataset documentation, label definitions, and medical terminology. A **knowledge graph** will represent structured relationships between findings, broad categories, anatomical landmarks, artifact types, evidence types, question types, and safety rules.
 
+The system uses hybrid retrieval to combine these sources. For example, a localization question should retrieve the target frame, bounding-box overlay, lesion crop, and bounding-box metadata. A temporal question should retrieve the frame-strip timeline and adjacent frames. A clinical category question should retrieve the original label, normalized category, relevant KG relations, and medical terminology snippets. This evidence will be packaged and passed to the multimodal model together with the question.
+
+The model then [outputs structured JSON](ouput_p6.json) that includes the answer, clinical finding, broad category, evidence references, localization field, confidence, uncertainty reason, and decision-support label. A grounding validator will check whether the answer is supported by the retrieved evidence. It will verify that cited evidence exists, that the predicted finding matches the metadata label, that the broad category is consistent with the label map and KG, that localization agrees with the bounding box where applicable, and that the model does not invent unsupported patient history, treatment recommendations, or final clinical diagnoses.
+
+This phase will also evaluate retrieval performance and grounding quality. Retrieval will be measured using Recall@K, Precision@K, MRR, temporal recall, and evidence recall. Model grounding will be measured using answer accuracy, evidence F1, localization IoU, temporal grounding accuracy, abstention accuracy, hallucination rate, safety violations, and JSON validity. Ablation experiments will compare no retrieval, metadata-only retrieval, visual-only retrieval, text-only retrieval, KG-only retrieval, and full hybrid retrieval.
+
+The final output of Phase 6 will be a retrieval-grounded medical MMVQA pipeline that can answer capsule-endoscopy questions using explicit evidence from visual artifacts, metadata, temporal context, KG relations, and retrieved clinical text.
 
 #### Phase 7 — Diagnosis engine
 
