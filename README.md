@@ -272,7 +272,11 @@ The final output of Phase 6 is a retrieval-grounded medical MMVQA pipeline that 
 
 ### Phase 7 — Clinical finding interpretation engine
 
-The purpose of this phase is to build a post-model interpretation engine that receives the structured output from the medical MMVQA model and converts it into a safer, cleaner, finding-level interpretation. We don't train or fine tune the model again but at this stage it happens more reasoning, normalization, and interpretation layer after the model output. We produce a separated findin interpretation object of [this JSON format](output_p7.json).
+The purpose of this phase is to build a post-model interpretation engine that receives the structured output from the medical MMVQA model and converts it into a safer, cleaner, finding-level interpretation. We don't train or fine tune the model again but at this stage it happens more reasoning, normalization, and interpretation layer after the model output. We produce a separated findin interpretation object of [this JSON format](output_p7.json). This object will not make a final clinical decision. Instead, it will provide a verified, conservative, evidence-aware interpretation that Phase 8 can use to assign a guarded decision-support label such as routine review, flag for clinician review, abstain due to poor visibility, or insufficient evidence.
+
+The interpretation engine validates the structured model output and check that all required fields are present. It then normalizes the predicted finding to the allowed Kvasir-Capsule label set, validate the broad clinical category, verify evidence references, interpret localization, summarize temporal behavior, and assess uncertainty. It also detects contradictions, such as a finding-category mismatch, unsupported localization claim, or a confident answer despite poor image quality. The summary uses conservative language such as “model-supported visual finding” or “possible visual finding” and will explicitly avoid final diagnosis, treatment recommendation, prognosis, or patient-specific claims.
+
+For temporal capsule-endoscopy cases, the engine may also group repeated detections across adjacent frames into a finding episode. This allows the system to describe whether a finding appears only in the target frame, persists across neighboring frames, becomes clearer over time, or is uncertain due to motion or poor visibility.
   
 ---
 
