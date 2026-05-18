@@ -1,0 +1,28 @@
+{
+  "recommendation_id": "KC_REC_000123",
+  "source_interpretation_id": "KC_INT_000123",
+  "review_recommendation": "flag_for_clinician_review",
+  "urgency_level": "review_recommended",
+  "human_review_required": true,
+  "recommendation_reason": "The artifact contains a model-supported possible vascular lesion with sufficient localized visual evidence.",
+  "evidence_basis": [
+    "bbox_overlay",
+    "lesion_crop",
+    "target_frame"
+  ],
+  "safety_constraints": {
+    "final_diagnosis_allowed": false,
+    "treatment_recommendation_allowed": false,
+    "patient_specific_claims_allowed": false,
+    "clinician_review_required": true
+  },
+  "clinician_facing_summary": "The artifact contains a model-supported possible vascular finding localized to the highlighted region. Clinician review is recommended. This is not a final diagnosis.",
+  "guardrail_status": "passed",
+  "audit_trail": {
+    "finding_category_checked": true,
+    "confidence_threshold_checked": true,
+    "evidence_quality_checked": true,
+    "uncertainty_checked": true,
+    "unsafe_claims_blocked": true
+  }
+}
