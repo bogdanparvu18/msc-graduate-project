@@ -1,0 +1,13 @@
+{
+  "answer": "The frame sequence shows a localized abnormal red vascular area consistent with the annotated finding.",
+  "evidence_refs": [
+    "target_frame",
+    "bbox_overlay",
+    "lesion_crop"
+  ],
+  "clinical_finding": "angiectasia",
+  "broad_category": "vascular_lesion",
+  "confidence": 0.82,
+  "uncertainty_reason": null,
+  "decision_support": "flag_for_clinician_review"
+}
