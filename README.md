@@ -195,7 +195,7 @@ The model stack should not be a single model only. It should include:
 
 The goal is not to build a final clinical diagnosis system. The goal is to build a research-grade medical MMVQA system that can answer questions about capsule-endoscopy visual artifacts, cite visual evidence, classify findings, localize abnormalities, estimate uncertainty, and flag cases for clinician review.
 
-The output of the MMVQA system will be formalized in a JSON-like format simiar with [this one](output_p5.json). 
+The model we create is not trained to make final clinical decisions. It is trained to answer medical visual questions, ground its answers in evidence, identify possible findings, and support clinician review. The output of the MMVQA system will be formalized in a JSON-like format simiar with [this one](output_p5.json). 
      
 #### Phase 6 — Add retrieval and multimodal grounding
 
