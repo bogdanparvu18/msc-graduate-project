@@ -179,10 +179,23 @@ The benchmark will include several question categories: visual identification qu
 
 The output of Phase 4 will be a validated MMVQA benchmark split into training, validation, and test sets. The final dataset will include artifact paths, questions, answers, evidence fields, task labels, difficulty levels, KG concepts, retrieved context references, and validation status. This phase forms the bridge between medical visual artifact generation and the later model training and evaluation phases.
   
-#### Phase 5 — Build the model stack
+### Phase 5 — Build the model stack
 
+In this phase, the project builds the model stack that will be trained, adapted, prompted, evaluated, and compared on the medical MMVQA benchmark created in Phase 4.
 
-  
+The model stack should not be a single model only. It should include:
+
+- general multimodal VLMs
+- medical-adapted VLMs
+- optional region-aware / grounding-aware VLMs
+- a structured output layer
+- a medical evidence-grounding evaluator
+- a safety and uncertainty layer
+- optional KG/RAG support from Phase 4
+
+The goal is not to build a final clinical diagnosis system. The goal is to build a research-grade medical MMVQA system that can answer questions about capsule-endoscopy visual artifacts, cite visual evidence, classify findings, localize abnormalities, estimate uncertainty, and flag cases for clinician review.
+
+The output of the MMVQA system will be formalized in a JSON-like format simiar with [this one](output_p5.json). 
      
 #### Phase 6 — Add retrieval and multimodal grounding
 
