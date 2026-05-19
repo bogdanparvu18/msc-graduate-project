@@ -1,26 +1,73 @@
 {
-  "sample_id": "inc_0001_q_03",
-  "incident_id": "inc_0001",
-  "question": "What most likely caused the instability after 14:02?",
-  "visual_inputs": [
-    "dashboard_bgp_updates.png",
-    "dashboard_interface_drops.png",
-    "topology_view.png",
-    "route_view.png"
-  ],
-  "structured_inputs": {
-    "telemetry_window": "telemetry_inc_0001.parquet",
-    "routing_events": "bgp_events_inc_0001.json",
-    "logs": "logs_inc_0001.json",
-    "config_diff": "config_diff_inc_0001.txt"
+  "qa_id": "KC_QA_000001",
+  "split": "train",
+
+  "artifact": {
+    "artifact_id": "KC_ART_000123",
+    "artifact_type": "multi_panel_summary",
+    "visual_input_path": "artifacts/multi_panel/KC_ART_000123.png",
+    "input_modality": "image"
   },
-  "gold_answer": "The instability most likely started after a route-policy change on edge-rtr-3, which caused a burst of BGP updates and loss of an alternate path.",
-  "evidence": [
-    "dashboard_bgp_updates:panel_2",
-    "route_view:path_loss",
-    "config_diff:route_map_change"
-  ],
-  "diagnosis_label": "route_policy_regression",
-  "remediation_label": "rollback_latest_route_map_change",
-  "risk_label": "medium"
+
+  "source": {
+    "dataset": "Kvasir-Capsule",
+    "source_video_id": "video_07",
+    "target_frame_number": 12345,
+    "context_frame_numbers": [12343, 12344, 12345, 12346, 12347]
+  },
+
+  "annotation": {
+    "source_label": "angiectasia",
+    "broad_category": "vascular_lesion",
+    "normal_abnormal_status": "abnormal",
+    "bbox_available": true,
+    "bbox": [120, 80, 260, 210],
+    "quality_tag": "diagnostic"
+  },
+
+  "question": {
+    "question_id": "Q_000001",
+    "question_type": "visual_identification",
+    "difficulty": "level_1",
+    "text": "What abnormal finding is visible in this capsule-endoscopy artifact?"
+  },
+
+  "answer": {
+    "answer_type": "short_label",
+    "text": "The artifact shows angiectasia.",
+    "expected_label": "angiectasia",
+    "expected_broad_category": "vascular_lesion"
+  },
+
+  "evidence": {
+    "evidence_refs": [
+      "target_frame",
+      "bbox_overlay",
+      "lesion_crop"
+    ],
+    "requires_bbox": true,
+    "requires_temporal_context": false,
+    "requires_quality_assessment": false
+  },
+
+  "generation": {
+    "generated_by_llm": true,
+    "llm_role": "language_generation_only",
+    "ground_truth_source": "dataset_annotation",
+    "uses_rag": false
+  },
+
+  "validation": {
+    "validation_status": "validated",
+    "validation_checks": {
+      "label_match": true,
+      "category_match": true,
+      "question_type_allowed": true,
+      "bbox_requirement_satisfied": true,
+      "temporal_requirement_satisfied": true,
+      "no_patient_history_invented": true,
+      "no_treatment_recommendation": true,
+      "no_final_diagnosis": true
+    }
+  }
 }
