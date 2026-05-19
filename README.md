@@ -18,8 +18,7 @@ The system performs the following:
    - evidence sufficiency
    - clinical guardrails
    - human-clinician review
-No autonomous diagnosis or treatment decision
-
+9. The system does not make autonomous diagnoses or treatment decisions.
 
 ## Problem statement
 Capsule endoscopy produces large volumes of visual data that are difficult and time-consuming to review manually. A single examination may contain thousands of frames, while clinically important findings may appear only briefly, across a small number of frames, or in visually subtle forms. This creates a challenging workflow for clinicians, who must identify relevant frames, interpret possible abnormalities, compare findings across temporal context, and decide whether further review or action is needed.
@@ -37,6 +36,10 @@ This project addresses that gap by proposing a medical multimodal question-answe
  - Should this case be flagged for clinician review?
  - Is the evidence sufficient, or should the model abstain?
 
+## Main contribution
+
+This project contributes a capsule-endoscopy MMVQA pipeline that transforms Kvasir-Capsule from a labelled visual dataset into a structured medical visual-question-answering benchmark. The main contribution is not only model fine-tuning, but the full evidence-aware workflow: medical visual artifact generation, LLM-assisted QA construction, structured model outputs, retrieval-grounded evidence packaging, clinical finding interpretation, guarded review recommendation, and safety-focused evaluation.
+
 ## Project workflow
 
 ### Phase 1 — Establish the generic VQA baseline on DVQA & ChartQA 
@@ -44,7 +47,7 @@ This project addresses that gap by proposing a medical multimodal question-answe
 
   This phase establishes the project’s initial multimodal reasoning baseline before moving into capsule-endoscopy data. The objective is not yet medical diagnosis or clinical finding interpretation. Instead, the goal is to test whether the selected vision-language models can reliably understand visual structure, answer questions over visual evidence, follow structured prompts, and produce machine-readable outputs that can later be adapted to medical MMVQA.
  
-The baseline uses three generic visual-question-answering datasets:
+The baseline uses two generic visual-question-answering datasets:
 
 <b>a) DVQA</b>
   This model is used for low-level visual parsing and question answering over bar charts. It is useful for testing whether a model can read labels, compare values, and extract information from visual layouts. DVQA is not medical, but it is useful as an early test of visual-symbolic reasoning. <br>
@@ -94,7 +97,7 @@ The main objectives would be:
 The work in this phase includes downloading and registering the dataset, parsing the metadata file, linking each labelled image to its original video and frame number, extracting neighbouring frames around each labelled finding, normalizing medical labels into broader clinical categories, creating derived quality-control fields, and preparing video-level train, validation, and test splits. Data normalization step is required because medical datasets are often imbalanced. Some classes have many images, while rare findings have very few examples, the balance matter is also mentioned in the paper description of the dataset which creates a challenge for machine learning.
 Since Kvasir-Capsule does not provide a complete good/bad image-quality label, the project derives basic quality indicators such as reduced mucosal visibility, blur, brightness, contrast, and evidence sufficiency. If needed, an additional cleanliness or visibility dataset may be added later to strengthen this quality-control component.
 
-The output of this phase is a curated raw medical evidence layer containing capsule frames, temporal context, labels, bounding boxes, metadata, quality indicators, and reproducible splits. This structured data lake becomes the foundation for Phase 3, where raw capsule-endoscopy data is transformed into medical visual artifacts such as target frames, adjacent-frame strips, lesion crops, bounding-box overlays, and multi-panel clinical evidence packs. Clinical notes are not available in Kvasir-Capsule being removed by the authors, so any textual clinical context must be later generated using a pre trained LLM.
+The output of this phase is a curated raw medical evidence layer containing capsule frames, temporal context, labels, bounding boxes, metadata, quality indicators, and reproducible splits. This structured data lake becomes the foundation for Phase 3, where raw capsule-endoscopy data is transformed into medical visual artifacts such as target frames, adjacent-frame strips, lesion crops, bounding-box overlays, and multi-panel clinical evidence packs. Clinical notes are not available in Kvasir-Capsule. Therefore, the project does not claim to use real patient notes. Any textual layer used later consists of generated clinical-style QA prompts, label definitions, curated terminology, dataset documentation, and external medical reference snippets. These texts will support benchmark construction and grounding, but they do not represent patient-specific clinical notes.
 
 ---
 
@@ -131,58 +134,71 @@ By transforming raw data into well-defined medical visual artifacts, Phase 3 pro
 
 ---
 
-### Phase 4 — Construct the medical-QA benchmark
+### Phase 4 — Construct the Medical-QA Benchmark
 
-In this phase, the visual artifacts created in Phase 3 are transformed into a structured medical multimodal visual question-answering benchmark.
+In this phase, the medical visual artifacts created in Phase 3 are transformed into a structured medical multimodal visual question-answering benchmark. Phase 4 focuses only on building a controlled, reproducible QA benchmark using the available dataset annotations, visual artifacts, label maps, and LLM-assisted language generation.
 
-The goal is to create a dataset where each sample contains:
+The purpose of this phase is to convert Kvasir-Capsule from a labelled capsule-endoscopy dataset into a benchmark where each sample contains a visual artifact, a clinical-style question, a ground-truth answer, evidence references, task type, source label, normalized clinical category, and validation status.
 
-- a visual input, such as an image, crop, frame strip, video clip, or multi-panel artifact
+
+#### Benchmark sample structure
+
+- a visual input, such as a single image, crop, bounding-box overlay, frame strip, video clip, quality-control panel, or multi-panel artifact
 - a natural-language clinical-style question
 - a ground-truth answer
-- evidence grounding
-- task type
-- source label
-- normalized clinical category
-- bounding-box reference
-- temporal context
-- retrieved medical context
+- a question type
+- source label from Kvasir-Capsule
+- normalized broad clinical category
+- evidence references
+- bounding-box information, where available
+- temporal context, where available
+- quality-control tag, where available
+- validation status
 
-This phase converts Kvasir-Capsule from a labelled medical visual dataset into a medical MMVQA benchmark.
+Kvasir-Capsule dataset provides the visual and annotation-based ground truth.
 
-Kvasir-Capsule provides the visual ground truth:
+The benchmark should rely on:
 
-   - source video
-   - target frame
-   - original label
-   - bounding box
-   - frame number
-   - labelled/unlabelled status
-   - anatomical or luminal finding class
+- source video
+- target frame
+- original medical label
+- bounding-box annotation
+- frame number
+- labelled or unlabelled status
+- anatomical or luminal finding class
+- artifact type created in Phase 3
+- normalized clinical category created in Phase 2
 
-The LLM provides the language layer:
+The LLM does not create new medical truth. It only helps transform existing structured information into natural-language question-answer pairs.
 
-- question wording
-- answer phrasing
-- explanation templates
-- evidence statements
-- uncertainty/abstention wording
+The label map defines:
 
-The KG/RAG system provides the clinical context layer:
+- original Kvasir-Capsule label
+- normalized broad clinical category
+- normal / abnormal / anatomical / poor-visibility status
+- supported question types
+- safe answer templates
+- allowed evidence references
+- whether localization questions are allowed
+- whether temporal-context questions are allowed
+- whether abstention questions are appropriate
 
-- terminology mapping
-- label definitions
-- relationships between findings and categories
-- clinical relevance of findings
-- guideline-style background where appropriate
+The final dataset includes:
 
-The benchmark is constructed using an LLM-assisted QA generation pipeline. The LLM generates clinical-style questions, answers, explanations, and uncertainty statements, but it will not create independent medical ground truth. All generated QA pairs can be grounded in Kvasir-Capsule annotations, including the original label, bounding box, source video, frame number, and normalized clinical category.
-
-A knowledge-grounding layer also is introduced in this phase. Since Kvasir-Capsule does not provide real clinical notes, this layer uses external curated medical texts, terminology resources, dataset documentation, and guideline-style references rather than patient-specific notes. A medical knowledge graph represents relationships between findings, anatomical landmarks, broad clinical categories, visual evidence types, quality limitations, and supported question types. A vector database stores semantic embeddings of relevant unstructured medical text snippets. Hybrid retrieval combines semantic search from the vector database with graph traversal from the knowledge graph to provide controlled medical context to the LLM. The LLM then generates evidence-grounded QA pairs using this retrieved context together with the dataset annotations.
-
-The benchmark includes several question categories: visual identification questions, evidence-grounding questions, temporal-context questions, localization questions, normal-versus-abnormal questions, uncertainty or abstention questions, and clinical review prioritization questions. These question types allows the benchmark to evaluate not only whether a model can recognize a finding, but also whether it can localize evidence, use temporal context, distinguish normal from abnormal views, recognize poor image quality, and abstain when the visual evidence is insufficient.
-
-The output of Phase 4 is a validated MMVQA benchmark split into training, validation, and test sets. The final dataset includes artifact paths, questions, answers, evidence fields, task labels, difficulty levels, KG concepts, retrieved context references, and validation status. This phase forms the bridge between medical visual artifact generation and the later model training and evaluation phases.
+- artifact paths
+- visual input type
+- natural-language questions
+- ground-truth answers
+- source labels
+- normalized broad clinical categories
+- evidence references
+- bounding-box availability
+- temporal-context availability
+- quality tags
+- question types
+- difficulty levels
+- validation status
+- train / validation / test split assignment
 
 ---
 
@@ -297,6 +313,44 @@ A proposed output of this phase would be represented in [this JSON](output_p8.js
 
 The guarded recommendation layer uses predefined safety rules, confidence thresholds, evidence-quality checks, uncertainty handling, and human-in-the-loop constraints. It assigns review labels such as `no_review_needed`, `routine_review`, `flag_for_clinician_review`, `abstain_due_to_poor_visibility`, or `insufficient_evidence`. Abnormal findings such as bleeding-related findings, vascular lesions, protruding lesions, and inflammatory or mucosal injuries may be flagged for clinician review when evidence quality and confidence are sufficient. Poor-visibility or ambiguous cases should trigger abstention or insufficient-evidence labels rather than forced answers.
 
+---
+
+### Phase 9 Evaluation and Safety Validation
+
+In this phase we define what counts as a successful full-pipeline output. 
+
+1. the JSON is valid
+2. the answer is correct or clinically acceptable
+3. the predicted finding/category is consistent with ground truth
+4. the cited evidence is valid
+5. localization is correct when required
+6. temporal reasoning is correct when required
+7. uncertainty is handled correctly
+8. the review recommendation is safe
+9. no unsafe medical claims are generated
+
+The evaluation measures the system at multiple levels. At the model level, it will assess answer accuracy, fine-grained clinical label accuracy, broad category accuracy, temporal reasoning, uncertainty handling, and structured JSON validity. At the grounding level, it assesses whether the model cites the correct evidence, including target frames, lesion crops, bounding-box overlays, frame-strip timelines, retrieved metadata, and clinical context. At the retrieval level, it measures Recall@K, Precision@K, MRR, temporal recall, and evidence recall. At the safety level, it measures hallucination rate, unsupported clinical claims, treatment recommendation rate, diagnosis overreach, abstention correctness, and guardrail compliance.
+
+The final system is also evaluated as an end-to-end pipeline. A prediction will be considered successful only if it produces valid JSON, answers the question correctly, identifies the appropriate finding or broad category, cites valid evidence, localizes the finding when required, uses temporal context when required, handles uncertainty safely, assigns an appropriate guarded review recommendation, and avoids unsafe medical claims.
+
+Evaluation table:
+
+| Component          | Metric                  | Purpose                                |
+| ------------------ | ----------------------- | -------------------------------------- |
+| QA model           | Answer accuracy         | Measures VQA correctness               |
+| Clinical labels    | Macro F1                | Measures finding classification        |
+| Broad categories   | Category accuracy       | Measures clinical grouping             |
+| Evidence grounding | Evidence F1             | Measures correct evidence citation     |
+| Localization       | IoU / region accuracy   | Measures lesion localization           |
+| Temporal reasoning | Temporal accuracy       | Measures use of frame context          |
+| Retrieval          | Recall@K / MRR          | Measures evidence retrieval            |
+| Uncertainty        | Abstention accuracy     | Measures safe non-answering            |
+| Safety             | Unsafe claim rate       | Measures clinical safety               |
+| JSON output        | Schema compliance       | Measures machine-readability           |
+| Decision support   | Review-label F1         | Measures guarded review recommendation |
+| Full pipeline      | End-to-end success rate | Measures complete system reliability   |
+
+Phase 9 also includes failure-case analysis. Errors will be categorized into wrong finding prediction, broad-category confusion, incorrect evidence citation, localization failure, temporal reasoning failure, overconfidence on poor-quality images, hallucinated clinical context, unsafe wording, invalid JSON, retrieval failure, or incorrect review recommendation. This analysis will help identify limitations and guide future work.
 
 ## Implementation
 
@@ -307,3 +361,15 @@ The proposal is to implement this project in Python but using a very Clojure-lik
   - avoid deep OOP hierarchies
   - represent diagnosis/action logic as data tables and transformations
   - treat each phase as a data pipeline
+
+## References
+
+- [Kvasir-Capsule](https://www.nature.com/articles/s41597-021-00920-z)
+- [DVQA](https://arxiv.org/abs/1801.08163)
+- [ChartQA](https://arxiv.org/abs/2203.10244)
+- [Qwen2.5-VL](https://arxiv.org/abs/2502.13923)
+- [InternVL](https://arxiv.org/abs/2412.05271)
+- [LLaVA](https://arxiv.org/abs/2304.08485)
+- [LLaVA-Med](https://arxiv.org/abs/2306.00890)
+- [Med-Flamingo](https://arxiv.org/abs/2307.15189)
+- [Kvasir-VQA / Kvasir-VQA-x1](https://arxiv.org/abs/2409.01437) / [Kvasir-VQA-x1](https://arxiv.org/html/2506.09958v1)
