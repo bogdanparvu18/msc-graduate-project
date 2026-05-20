@@ -1,4 +1,4 @@
-# Multimodal Medical Question Answering over Capsule Endoscopy with Grounded Clinical Finding Interpretation and Guarded Decision Support
+# Capsule-Endoscopy MMVQA with Grounded Clinical Decision Support
 
 ## Executive workflow summary 
 
