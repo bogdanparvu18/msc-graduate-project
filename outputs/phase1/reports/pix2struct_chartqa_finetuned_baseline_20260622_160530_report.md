@@ -1,4 +1,4 @@
-# Phase 1 - Generic VQA Baseline
+# Phase 1 - Generic VQA Baseline - Pix2struct&ChartQA
 
 ## Experiment
 
