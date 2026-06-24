@@ -43,6 +43,10 @@ Two simple metrics were used:
 - Results CSV: `outputs/phase1/results/pix2struct_chartqa_finetuned_baseline_20260622_160530_results.csv`
 - Metrics JSON: `outputs/phase1/results/pix2struct_chartqa_finetuned_baseline_20260622_160530_metrics.json`
 
+## First run conclusion
+
+The initial Pix2Struct baseline on the ChartQA validation split with first 50 samples produced no runtime errors, which confirms that the inference pipeline executed successfully. However, the prediction quality was poor: exact-match accuracy was 0.14 and numeric-match accuracy was 0.08 on the first 50 validation examples. Manual inspection shows that many failures are not minor formatting or exact-match issues, but substantive prediction errors, including incorrect numerical values, unrelated dates, and semantically unrelated answers. This suggests that the main limitation is not code execution, but either weak model generalization on the selected validation examples or a possible Pix2Struct input/preprocessing mismatch. The result should therefore be treated as a weak initial baseline that requires verification through preprocessing checks, larger randomized evaluation, and comparison against stronger VLMs.
+
 ## Notes
 
 The model `google/pix2struct-chartqa-base` is already fine-tuned on ChartQA. Therefore, this experiment should be treated as a fine-tuned baseline rather than a strict zero-shot experiment.
