@@ -1,0 +1,20 @@
+{
+  "phase": "phase1",
+  "experiment_name": "phase1_deplot_chartqa_table_reasoning_baseline",
+  "notebook_name": "phase1_deplot_chartqa_table_reasoning_baseline.ipynb",
+  "dataset_name": "HuggingFaceM4/ChartQA",
+  "model_name": "google/deplot",
+  "reasoner_model_name": "google/flan-t5-base",
+  "split": "val",
+  "max_samples": 200,
+  "max_new_tokens": 64,
+  "deplot_prompt": "Generate underlying data table of the figure below:",
+  "deplot_max_new_tokens": 512,
+  "reasoner_max_input_tokens": 1024,
+  "num_beams": 4,
+  "output_dir": "outputs/phase1",
+  "seed": 42,
+  "device": "cuda",
+  "run_id": "20260717_074619",
+  "timezone": "America/Toronto"
+}
