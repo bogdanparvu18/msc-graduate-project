@@ -70,5 +70,5 @@ The model google/matcha-chartqa is a direct ChartQA answer-generation model base
 
 This experiment preserves the same dataset selection, evaluation functions, normalization rules, metrics, and reporting format used for the Pix2Struct and DePlot baselines. Only the model-loading and prediction components are adapted to MatCha's direct end-to-end inference approach.
 
-The results should be interpreted as a direct visual question answering baseline for structured chart reasoning rather than as a modular chart-to-table reasoning pipeline.
+MatCha achieved the strongest direct-model baseline evaluated so far, reaching 50.5% exact-match accuracy and 37.5% numeric-match accuracy on the reproducibly selected 200-example ChartQA validation subset. The results should be interpreted as a direct visual question answering baseline for structured chart reasoning rather than as a modular chart-to-table reasoning pipeline as Deplot. 
 
