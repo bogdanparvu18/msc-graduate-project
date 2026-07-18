@@ -27,7 +27,9 @@ The main outcomes of this Phase 1 experiment are:
 - validating the dataset, inference, evaluation, and reporting pipeline;
 - establishing reproducible generic VQA baselines;
 - comparing direct and modular reasoning approaches;
-- showing that model specialization must match the target image domain.
+- showing that model specialization must match the target image domain;
+- evaluate numerical and structured visual reasoning;
+- identify design principles that might later be reused in the medical system.
 
 ## Method
 
