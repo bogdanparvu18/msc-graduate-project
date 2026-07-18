@@ -4,7 +4,7 @@
 
 - Phase: `phase1`
 - Experiment name: `phase1_deplot_chartqa_table_reasoning_baseline`
-- Run ID: `20260717_074619`
+- Run ID: `20260704_080558` and `20260717_074619`
 - Dataset: `HuggingFaceM4/ChartQA`
 - Split: `val`
 - Model: `google/deplot`
@@ -16,11 +16,22 @@
 
 ## Objective
 
-This experiment establishes an initial generic visual question answering baseline using DePlot pre-trained model tested on a chart-based VQA dataset before moving to medical capsule endoscopy data.
+This experiment establishes an initial generic visual question answering baseline using DePlot pre-trained model tested on a chart-based VQA dataset before moving to medical capsule endoscopy data. Phase 1 is a technical baseline stage. Its purpose is to test whether the VQA pipeline works correctly on established non-medical datasets before moving to medical data. 
+
+## Scope
+
+This model is not expected to become a candidate to medical VQA models. Capsule-endoscopy images do not contain charts, tables, axes, or numerical structures. Therefore, strong chart performance would not prove medical suitability, and weak chart performance makes transfer even less promising.
+
+The main outcomes of this Phase 1 experiment are:
+
+- validating the dataset, inference, evaluation, and reporting pipeline;
+- establishing reproducible generic VQA baselines;
+- comparing direct and modular reasoning approaches;
+- showing that model specialization must match the target image domain.
 
 ## Method
 
-The experiment uses a declarative configuration object and modular functional-style helper functions. The configuration defines the dataset, model, split, generation parameters, random seed, device, and output paths. The pipeline functions handle data loading, sample selection, inference, answer normalization, metric computation, and output serialization.
+The experiment uses a declarative configuration object and modular functional-style helper functions. DePlot first converts a chart into a table, then uses a text model to answer the question. The configuration defines the dataset, model, split, generation parameters, random seed, device, and output paths. The pipeline functions handle data loading, sample selection, inference, answer normalization, metric computation, and output serialization.
 
 For this experiment, DePlot is used differently from a direct VQA model. DePlot first converts each chart image into a linearized table. A text-to-text reasoner then receives the extracted table and the original ChartQA question and generates the final answer.
 
