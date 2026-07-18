@@ -1,4 +1,4 @@
-# Phase 1 - DePlot on ChartQA - A Generic VQA Baseline
+# Phase 1 - MatCha on ChartQA - A Generic VQA Baseline
 
 ## Experiment
 
