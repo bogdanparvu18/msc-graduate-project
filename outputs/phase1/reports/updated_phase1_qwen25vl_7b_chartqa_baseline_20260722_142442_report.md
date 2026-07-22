@@ -1,4 +1,4 @@
-# Phase 1 - Qwen2.5-VL on ChartQA - A Generic VQA Baseline
+# Phase 1 - Qwen2.5-VL-7B on ChartQA - A Generic VQA Baseline
 
 ## Experiment
 
@@ -26,6 +26,20 @@ This experiment establishes a generic visual question answering baseline using Q
 Phase 1 is a technical and comparative baseline stage. Its purpose is to verify that the complete VQA pipeline works correctly on an established non-medical visual reasoning dataset before applying related evaluation principles to capsule endoscopy images.
 
 Unlike chart-specialized models such as Pix2Struct, DePlot, and MatCha, Qwen2.5-VL is a general-purpose vision-language model. This experiment therefore evaluates whether a general multimodal model can interpret chart images, understand natural-language questions, perform visual and numerical reasoning, and directly generate final answers.
+
+The initial run was performed using the smaller 3B-weights model. To enable a more meaningful comparison with similarly sized general-purpose models, such as InternVL2.5-8B, the following updates were introduced:
+
+- replaced the initial Qwen2.5-VL-3B checkpoint with Qwen2.5-VL-7B-Instruct;
+- executed the experiment on an NVIDIA A100 GPU in Google Colab;
+- loaded the 7B model without 4-bit quantization, using BF16 precision;
+- retained the same 200-example ChartQA subset, random seed, prompt, image-resolution limits, and generation settings for comparability;
+- improved answer normalization while preserving decimal values and removing thousands separators;
+- updated exact_match to recognize the gold answer when it appears within a longer generated response;
+- added configurable relative and absolute numeric tolerances for approximate numerical answers;
+- added equivalent handling of decimal and percentage representations, such as 0.71 and 71%;
+- treated units such as million, billion, currencies, and percentage symbols as output formatting rather than as mismatches;
+- implemented the evaluation logic through reusable, pure, and declarative helper functions;
+- recorded execution metadata, inference time, model precision, quantization status, and inference errors.
 
 ## Scope
 
@@ -120,6 +134,9 @@ This metric provides additional information for questions where the model identi
 
 Inference errors are retained in the result set and counted as incorrect predictions. This ensures that the reported accuracy is calculated over the complete selected evaluation sample and remains comparable across models.
 
+The Numeric Match score provides a complementary view of performance on answers containing numerical information. Its lower value should not be interpreted as contradicting the Exact Match result, because the two metrics evaluate different answer properties. Exact Match also evaluates categorical, textual, colour-based, and yes-or-no answers, whereas Numeric Match is relevant primarily when comparable numerical values can be extracted from both the prediction and the reference answer. Consequently, Numeric Match should be treated as a diagnostic metric rather than as a direct replacement for overall accuracy.
+
+
 ## Results
 
 - Number of evaluated examples: `200`
@@ -132,18 +149,19 @@ Inference errors are retained in the result set and counted as incorrect predict
 
 ## Output Files
 
-- Configuration JSON: `Not available`
+- Configuration JSON: `outputs/phase1/config/updated_phase1_qwen25vl_7b_chartqa_baseline_20260722_142442_config.json`
 - Results CSV: `outputs/phase1/results/updated_phase1_qwen25vl_7b_chartqa_baseline_20260722_142442_results.csv`
 - Metrics JSON: `outputs/phase1/results/updated_phase1_qwen25vl_7b_chartqa_baseline_20260722_142442_metrics.json`
 
 ## Interpretation
 
-The model `Qwen/Qwen2.5-VL-7B-Instruct` is a general-purpose vision-language model evaluated as a direct ChartQA answer-generation baseline.
+The Qwen2.5-VL-7B experiment was completed on the same selected 200-example ChartQA validation subset using the non-quantized model on an A100 GPU with BF16 precision as explained above. The evaluation used deterministic generation, identical visual-resolution limits, and the same multimodal prompt structure across all examples. All 200 samples were processed successfully, with no inference errors.
 
-It receives the chart image and associated question as multimodal inputs and generates the final textual answer without producing an explicit intermediate table or using a separate text-based reasoning model.
+After improving the Exact Match and Numeric Match evaluation functions, which had failed to recognize some correct answers because of longer response phrasing or equivalent numerical formats—for example, the model achieved an Exact Match Accuracy of 88.5% and a Numeric Match Accuracy of 70.5%. This corresponds to 177 exact matches out of 200 evaluated examples. During the error analysis, I also identified at least one incorrectly annotated ground-truth label in the dataset, meaning that one apparent model error was actually caused by a dataset-labeling issue. Overall, the high Exact Match score indicates that the model generally interpreted the charts correctly and produced answers consistent with the expected short-answer format.
 
-This experiment preserves the same dataset selection strategy, answer normalization rules, Exact Match metric, Numeric Match metric, error treatment, and reporting structure used for the other Phase 1 baselines. The model-loading, multimodal input preparation, prompt construction, and answer-decoding components are adapted specifically to Qwen2.5-VL.
+The absence of inference errors confirms that the non-quantized 7B checkpoint can be executed reliably in the selected A100 environment. The mean inference time of 0.3252 seconds per example also demonstrates that the larger model can provide efficient inference when sufficient GPU resources are available.
 
-The results should be interpreted as a generic multimodal visual reasoning baseline on structured chart images. They should not be interpreted as evidence of performance on capsule endoscopy images or as evidence of clinical reliability.
+These updated results substantially change the interpretation of the model. Qwen2.5-VL-7B demonstrates strong performance on the selected ChartQA subset and appears capable of combining chart perception, textual understanding, structured visual reasoning, and short-answer generation within a single end-to-end model. 
+However, the result remains specific to the selected 200-example validation subset and the current evaluation protocol. Additional analysis should examine the remaining incorrect answers, including semantically equivalent responses that may still fail strict Exact Match, such as alternative colour descriptions, formatting differences, percentage representations, abbreviations, or valid synonymous expressions.
 
-The later medical evaluation stages must independently assess the model's ability to recognize clinical findings, provide grounded answers, avoid unsupported conclusions, and operate safely within the intended medical decision-support scope.
+Overall, Qwen2.5-VL-7B establishes a strong general-purpose multimodal baseline for Phase 1. It is also an appropriate reference point for the upcoming InternVL2.5-8B experiment, which will determine whether a similarly sized model from a different vision-language family provides complementary strengths or different failure patterns. The strong ChartQA result supports retaining Qwen2.5-VL-7B as a candidate for subsequent medical evaluation, while recognizing that performance on structured charts does not directly establish competence on capsule endoscopy images or clinical reasoning tasks.
