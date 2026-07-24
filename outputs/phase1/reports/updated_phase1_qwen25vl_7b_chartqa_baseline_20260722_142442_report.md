@@ -1,13 +1,13 @@
-# Phase 1 - Qwen2.5-VL-7B on ChartQA - A Generic VQA Baseline
+# Phase 1 - Qwen2.5-VL on ChartQA - A Generic VQA Baseline
 
 ## Experiment
 
 - Phase: `phase1`
-- Experiment name: `updated_phase1_qwen25vl_7b_chartqa_baseline`
-- Run ID: `20260722_142442`
+- Experiment name: `updated_phase1_qwen25vl_chartqa_baseline`
+- Run ID: `20260718_224918` `20260722_142442` and `20260722_151850`
 - Dataset: `HuggingFaceM4/ChartQA`
 - Split: `val`
-- Model: `Qwen/Qwen2.5-VL-7B-Instruct`
+- Model: `Qwen/Qwen2.5-VL-3B-Instruct` and `Qwen/Qwen2.5-VL-7B-Instruct`
 - Maximum samples: `200`
 - Maximum new tokens: `64`
 - Sampling enabled: `False`
@@ -139,6 +139,31 @@ The Numeric Match score provides a complementary view of performance on answers 
 
 ## Results
 
+Qwen/Qwen2.5-VL-3B-Instruct #1:
+
+- Number of evaluated examples: `200`
+- Successful predictions: `200`
+- Errors during inference: `0`
+- Error rate: `0.0000`
+- Exact Match Accuracy: `0.71`
+- Numeric Match Accuracy: `0.545`
+- Mean inference time: `3.76 seconds`
+- Timestamp: 2026-07-18T22:45:21.227759-04:00
+
+Qwen/Qwen2.5-VL-3B-Instruct #2:
+
+- Number of evaluated examples: `200`
+- Successful predictions: `200`
+- Errors during inference: `0`
+- Error rate: `0.0000`
+- Exact Match Accuracy: `0.845`
+- Numeric Match Accuracy: `0.67`
+- Mean inference time: `4.18 seconds`
+- Timestamp: 2026-07-22T15:40:28.733309-04:00
+
+
+Qwen/Qwen2.5-VL-7B-Instruct:
+
 - Number of evaluated examples: `200`
 - Successful predictions: `200`
 - Errors during inference: `0`
@@ -146,8 +171,23 @@ The Numeric Match score provides a complementary view of performance on answers 
 - Exact Match Accuracy: `0.8850`
 - Numeric Match Accuracy: `0.7050`
 - Mean inference time: `0.3252 seconds`
+- Timestamp: 2026-07-22T14:27:26.520877-04:00
 
 ## Output Files
+
+Qwen/Qwen2.5-VL-3B-Instruct #1:
+
+- Configuration JSON: `outputs/phase1/config/phase1_qwen25vl_chartqa_baseline_20260718_224918_config.json`
+- Results CSV: `outputs/phase1/results/phase1_qwen25vl_chartqa_baseline_20260718_224918_results.csv`
+- Metrics JSON: `outputs/phase1/results/phase1_qwen25vl_chartqa_baseline_20260718_224918_metrics.json`
+
+Qwen/Qwen2.5-VL-3B-Instruct #2:
+
+- Configuration JSON: `outputs/phase1/config/phase1_qwen25vl_3b_chartqa_baseline_20260722_151850_config.json`
+- Results CSV: `outputs/phase1/results/phase1_qwen25vl_3b_chartqa_baseline_20260722_151850_results.csv`
+- Metrics JSON: `outputs/phase1/results/phase1_qwen25vl_3b_chartqa_baseline_20260722_151850_metrics.json`
+
+Qwen/Qwen2.5-VL-7B-Instruct:
 
 - Configuration JSON: `outputs/phase1/config/updated_phase1_qwen25vl_7b_chartqa_baseline_20260722_142442_config.json`
 - Results CSV: `outputs/phase1/results/updated_phase1_qwen25vl_7b_chartqa_baseline_20260722_142442_results.csv`
@@ -155,13 +195,27 @@ The Numeric Match score provides a complementary view of performance on answers 
 
 ## Interpretation
 
-The Qwen2.5-VL-7B experiment was completed on the same selected 200-example ChartQA validation subset using the non-quantized model on an A100 GPU with BF16 precision as explained above. The evaluation used deterministic generation, identical visual-resolution limits, and the same multimodal prompt structure across all examples. All 200 samples were processed successfully, with no inference errors.
+The Qwen2.5-VL-7B experiment was completed on the same selected 200-example ChartQA validation subset using the non-quantized checkpoint on an A100 GPU with BF16 precision. The experiment used deterministic generation, the same visual-resolution limits, and the same multimodal prompt structure across all examples. All 200 samples were processed successfully, with no inference errors.
+Following improvements to the Exact Match and Numeric Match functions, Qwen2.5-VL-7B achieved an __Exact Match Accuracy of 88.5%__ and a __Numeric Match Accuracy of 70.5%__. This corresponds to 177 exact matches out of 200 examples. During the qualitative error analysis, at least one incorrectly annotated ground-truth label was also identified. In that example, the apparent model error was caused by the dataset annotation rather than by the prediction. This means that the reported 88.5% score is slightly conservative; correcting one confirmed mislabeled example would raise the effective Exact Match result from 177/200 to 178/200, or 89.0%. Additional manual inspection may reveal other annotation issues or semantically valid predictions that remain difficult to capture through automatic matching. The revised evaluation logic better recognizes answers that are semantically or numerically correct but expressed in a different surface form, such as responses containing additional wording or equivalent representations such as 0.71 and 71%.
 
-After improving the Exact Match and Numeric Match evaluation functions, which had failed to recognize some correct answers because of longer response phrasing or equivalent numerical formats—for example, the model achieved an Exact Match Accuracy of 88.5% and a Numeric Match Accuracy of 70.5%. This corresponds to 177 exact matches out of 200 evaluated examples. During the error analysis, I also identified at least one incorrectly annotated ground-truth label in the dataset, meaning that one apparent model error was actually caused by a dataset-labeling issue. Overall, the high Exact Match score indicates that the model generally interpreted the charts correctly and produced answers consistent with the expected short-answer format.
+The importance of the evaluation changes is demonstrated by the two Qwen2.5-VL-3B runs. The first run, evaluated with the original metric functions, __obtained 71.0% Exact Match Accuracy__ and __54.5% Numeric Match Accuracy__. After the metric functions were updated, the second 3B run __obtained 84.5% Exact Match Accuracy__ and __67.0% Numeric Match Accuracy__ under the same general experimental configuration.
 
-The absence of inference errors confirms that the non-quantized 7B checkpoint can be executed reliably in the selected A100 environment. The mean inference time of 0.3252 seconds per example also demonstrates that the larger model can provide efficient inference when sufficient GPU resources are available.
+| Model and evaluation version     | Exact Match | Numeric Match | Exact matches |
+| -------------------------------- | ----------: | ------------: | ------------: |
+| Qwen2.5-VL-3B, original metrics  |       71.0% |         54.5% |       142/200 |
+| Qwen2.5-VL-3B, corrected metrics |       84.5% |         67.0% |       169/200 |
+| Qwen2.5-VL-7B, corrected metrics |       88.5% |         70.5% |       177/200 |
 
-These updated results substantially change the interpretation of the model. Qwen2.5-VL-7B demonstrates strong performance on the selected ChartQA subset and appears capable of combining chart perception, textual understanding, structured visual reasoning, and short-answer generation within a single end-to-end model. 
-However, the result remains specific to the selected 200-example validation subset and the current evaluation protocol. Additional analysis should examine the remaining incorrect answers, including semantically equivalent responses that may still fail strict Exact Match, such as alternative colour descriptions, formatting differences, percentage representations, abbreviations, or valid synonymous expressions.
+For the 3B model, the corrected evaluation increased Exact Match Accuracy by 13.5 percentage points, equivalent to 27 additional answers being recognized as correct. Numeric Match Accuracy increased by 12.5 percentage points, corresponding to 25 additional numeric matches. Since the model checkpoint, dataset subset, prompt structure, and deterministic generation settings remained unchanged, this improvement should be interpreted primarily as the removal of false negatives introduced by the earlier evaluation logic, rather than as an improvement in the model itself.
 
-Overall, Qwen2.5-VL-7B establishes a strong general-purpose multimodal baseline for Phase 1. It is also an appropriate reference point for the upcoming InternVL2.5-8B experiment, which will determine whether a similarly sized model from a different vision-language family provides complementary strengths or different failure patterns. The strong ChartQA result supports retaining Qwen2.5-VL-7B as a candidate for subsequent medical evaluation, while recognizing that performance on structured charts does not directly establish competence on capsule endoscopy images or clinical reasoning tasks.
+The original Exact Match function was overly sensitive to response formatting. A prediction could be conceptually correct but still be marked as incorrect when the model included short explanatory wording, used an alternative capitalization or formatting style, or returned the correct answer as part of a longer phrase. Similarly, the original numeric comparison did not consistently recognize equivalent representations, particularly percentages and decimal values. The corrected functions therefore provide a more faithful estimate of answer correctness while preserving a consistent automated evaluation process.
+
+Using the corrected metrics, the comparison between the two Qwen checkpoints becomes clearer. __Qwen2.5-VL-7B outperformed Qwen2.5-VL-3B by 4.0 percentage points in Exact Match Accuracy__ and 3.5 percentage points in Numeric Match Accuracy. The 7B model produced 177 exact matches, compared with 169 for the 3B model, resulting in eight additional correct answers and eight fewer Exact Match failures. It also produced seven additional numeric matches. These results indicate that increasing the model size from 3B to 7B provides a measurable, although moderate, improvement on the selected ChartQA subset.
+
+The 3B checkpoint nevertheless remains highly competitive. An Exact Match Accuracy of 84.5% shows that the smaller model already performs strongly on chart perception, question understanding, numerical reasoning, and concise answer generation. The 7B checkpoint provides the stronger overall result, while the 3B checkpoint may remain attractive when memory requirements, computational cost, or deployment constraints are important.
+
+The inference-time results should be interpreted separately from model accuracy. The two 3B runs recorded mean inference times of 3.76 seconds and 4.18 seconds per example. This difference is more likely to reflect normal runtime variability, GPU state, caching, warm-up effects, or surrounding Colab conditions than a consequence of the revised evaluation functions. The metric changes affect scoring after prediction and should not materially change the model’s actual generation speed. Similarly, the substantially lower mean inference time measured for the 7B run should not be treated as evidence that the larger model is inherently faster unless all models are benchmarked under a controlled and identical timing procedure.
+
+Overall, Qwen2.5-VL-7B establishes a strong general-purpose multimodal baseline for Phase 1. It demonstrates effective chart perception, textual comprehension, structured visual reasoning, and answer generation within a single end-to-end model. The corrected comparison also confirms that the 7B checkpoint performs better than the 3B checkpoint, but that the performance gain is moderate rather than proportional to the increase in model size.
+
+The 7B result provides an appropriate reference point for the upcoming InternVL2.5-8B experiment. Since InternVL has a broadly similar parameter scale but belongs to a different vision-language model family, the comparison can help determine whether differences arise from model size, architecture, visual encoding, multimodal training, or instruction-following behaviour. However, the strong ChartQA result should not be interpreted as direct evidence of competence on capsule endoscopy images or clinical reasoning tasks. Medical evaluation, grounding, calibration, and domain-specific adaptation must still be assessed independently.
