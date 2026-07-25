@@ -42,37 +42,87 @@ This project contributes a capsule-endoscopy MMVQA pipeline that transforms Kvas
 
 ## Project workflow
 
-### Phase 1 — Establish the generic VQA baseline on DVQA & ChartQA 
+### Phase 1 — Establish the Generic VQA Baseline on DVQA and ChartQA
+
+This phase establishes the project’s initial visual question-answering and multimodal reasoning baseline before moving to capsule-endoscopy data.
+
+The objective is not yet medical image interpretation or clinical finding identification. Instead, this phase evaluates whether the selected models can:
+
+* understand structured visual content;
+* extract information from charts and visual layouts;
+* answer questions requiring visual and numerical reasoning;
+* follow consistent prompting instructions;
+* produce short, machine-readable answers;
+* run reliably within the selected experimental environment.
+
+The results from this phase provide a reproducible non-medical baseline and help identify which general multimodal models are suitable for continued evaluation in the later medical MMVQA phases.
+
+The baseline uses two generic visual question-answering datasets:
+
+#### A. DVQA
+
+DVQA is used to evaluate low-level visual parsing and question answering over bar charts. It tests whether a model can recognize chart elements, read labels, compare values, count visual objects, and extract information from structured visual layouts.
+
+Although DVQA is not a medical dataset, it provides a useful early benchmark for visual-symbolic reasoning and structured answer generation.
+
+#### B. ChartQA
+
+ChartQA is used to evaluate stronger visual, numerical, and logical reasoning over charts. It contains both human-authored and automatically generated questions and requires models to combine visual information with relationships between chart values.
+
+This makes ChartQA useful for testing whether a model can perform reasoning over visual evidence rather than relying only on basic visual recognition.
+
+### Models Evaluated in Phase 1
+
+The Phase 1 model stack is divided into two groups.
+
+#### A. Chart-Specialist and Structured Visual-Reasoning Models
+
+These models are evaluated as specialized baselines for chart understanding and structured visual reasoning. They are not considered primary candidates for capsule-endoscopy interpretation.
+
+* **Pix2Struct** — evaluated as a baseline for visually situated language tasks and structured visual layouts. Its role is to test whether a specialized encoder-decoder model can answer questions over charts and other image-based structured content.
+
+* **DePlot** — evaluated as a chart-to-table and chart-understanding baseline. Its primary strength is transforming visual chart information into a structured textual representation that can support downstream question answering.
+
+* **MatCha** — evaluated as a chart reasoning baseline designed to combine visual chart understanding with mathematical and numerical reasoning.
+
+These models establish specialized chart-oriented baselines, but they are not expected to transfer effectively to lesion identification or capsule-endoscopy image interpretation.
+
+#### B. General Multimodal Vision-Language Models
+
+These models are evaluated as stronger general-purpose multimodal baselines and may be carried forward into the later medical phases.
+
+* **Qwen2.5-VL** — evaluated because of its capabilities in image and video understanding, visual grounding, object localization, chart interpretation, and structured visual reasoning. These capabilities may later support capsule-endoscopy tasks involving frame-level analysis, temporal context, localization, and evidence grounding.
+
+* **InternVL 2.5** — evaluated as a competitive open multimodal baseline for broad visual-language understanding and reasoning. Its performance is compared with Qwen2.5-VL to identify which general-purpose model provides the stronger foundation for later medical evaluation.
+
+### Scope of Phase 1
+
+Phase 1 is limited to the following models:
+
+* Pix2Struct
+* DePlot
+* MatCha
+* Qwen2.5-VL
+* InternVL 2.5
+
+Medical-specialized models are intentionally excluded from this phase because DVQA and ChartQA do not evaluate medical knowledge or clinical image interpretation. 
+More recent medical VLMs, including `MedGemma 1.5-4B`m `Lingshu-I-8B` and `Hulu-Med-7B`, will be evaluated in a later phase using the capsule-endoscopy MMVQA benchmark, where their medical visual reasoning, temporal understanding, evidence grounding, uncertainty handling, and structured output capabilities can be assessed appropriately. Experiments in Phase 1 are be executed in Google Colab using the free NVIDIA T4 environment for smaller or quantized baseline runs and an NVIDIA A100 through Colab Pro for larger, full-precision, or fine-tuning experiments.
 
 
-  This phase establishes the project’s initial multimodal reasoning baseline before moving into capsule-endoscopy data. The objective is not yet medical diagnosis or clinical finding interpretation. Instead, the goal is to test whether the selected vision-language models can reliably understand visual structure, answer questions over visual evidence, follow structured prompts, and produce machine-readable outputs that can later be adapted to medical MMVQA.
- 
-The baseline uses two generic visual-question-answering datasets:
+### Expected Output
 
-<b>a) DVQA</b>
-  This model is used for low-level visual parsing and question answering over bar charts. It is useful for testing whether a model can read labels, compare values, and extract information from visual layouts. DVQA is not medical, but it is useful as an early test of visual-symbolic reasoning. <br>
-<b>b) ChartQA</b>
-  This is used for stronger visual and logical reasoning over charts. It includes both human-written and generated questions and requires models to combine visual features with underlying chart information. This helps test whether the model can answer questions that require reasoning, not only visual recognition.
+The output of Phase 1 will include:
 
-### Models to test 
+* model predictions for the selected DVQA and ChartQA subsets;
+* exact-match and numerical-match evaluation results;
+* inference-time measurements;
+* model execution and hardware compatibility notes;
+* structured prediction files;
+* qualitative error analysis;
+* comparisons between chart-specialist and general multimodal models.
 
-The model list should be divided into two categories.
+The main purpose of this phase is to establish a controlled and reproducible generic VQA baseline before beginning the medical data-engineering, benchmark-construction, and model-adaptation stages.
 
-#### A. Generic visual-reasoning and chart-specialist models
-
-These models are useful for the generic baseline, but they are not medical models:
-
-
-- <b>Pix2Struct</b> — useful for screenshot-like visual-language tasks and structured visual layouts. It makes sense for Phase 1 because it was designed for visually situated language and can be fine-tuned on tasks involving screenshots, diagrams, tables, and visual layouts.<br>
-- <b>DePlot and MatCha </b> — useful for chart understanding and chart-to-table or chart-reasoning tasks. These models are relevant for DVQA and ChartQA, but they should not be treated as strong candidates for capsule-endoscopy image interpretation. Their role is to establish chart and visual-structure baselines, not to identify lesions.
-
-#### B. General multimodal models with possible medical transfer value
-
-These models make more sense as candidates for the later medical MMVQA system:
-
-- <b>Qwen2.5-VL</b> — strong candidate because it supports image and video understanding, visual grounding, object localization, document/chart understanding, and long-video comprehension. These capabilities are relevant to capsule endoscopy because the final project needs frame-level reasoning, temporal context, lesion localization, and evidence grounding.<br>
-- <b>InternVL 2.5</b> — strong general multimodal baseline because it is an open multimodal large language model family designed for broad visual-language reasoning. It can be used as a competitive general VLM baseline before medical adaptation.<br>
-- <b>MedGemma 1.5 (4B)</b> - a compact, multimodal medical model released by Google DeepMind (early 2026) designed to run within 8GB VRAM hardware. Unlike generalist models, it is built on the Gemma 3 architecture and uses a specialized SigLIP vision encoder pre-trained on massive biomedical datasets (radiology, pathology, dermatology).
 
 ---
 
@@ -221,17 +271,30 @@ The model created in this phase is not trained to make final clinical decisions.
 
 The model stack includes several components.
 
-First, general multimodal vision-language models such as **Qwen2.5-VL, InternVL, and LLaVA-style models**  are used as baseline systems for image-question answering, multi-image reasoning, visual grounding, and structured answer generation.
+First, the strongest general multimodal vision-language models carried forward from Phase 1, most likely `Qwen2.5-VL` and `InternVL 2.5`, will be used as general-purpose baselines for medical image-question answering, multi-image and temporal reasoning, visual grounding, localization, and structured answer generation.
 
-Second, medical-adapted multimodal models such as **LLaVA-Med and Med-Flamingo**  are used as medical comparison baselines. These models help evaluate whether biomedical adaptation improves performance over general-purpose VLMs on capsule-endoscopy visual question answering.
+Second, the medical-adapted multimodal models such as `MedGemma 1.5`, `Lingshu-I-8B` and `Hulu-Med-7B` will be evaluated as modern medical comparison baselines. These models will help determine whether medical-domain adaptation improves capsule-endoscopy finding identification, temporal interpretation, evidence grounding, uncertainty handling, and structured medical QA performance compared with strong general-purpose VLMs.
 
-Third, chart/dashboard-specialist models from Phase 1, such as **Pix2Struct, DePlot, MatCha, and UniChart**, remain baseline-support components only. They are useful for generic visual-structure reasoning and for maintaining continuity with the original dashboard-based VQA plan, but they are not expected to perform strong capsule-endoscopy interpretation.
+Third, the chart-specialist models evaluated in Phase 1— `Pix2Struct, DePlot, and MatCha` —will remain reference baselines only. They provide evidence about generic visual-structure and numerical-reasoning performance, but they will not be treated as primary candidates for capsule-endoscopy interpretation or medical model fine-tuning.
 
-The model stack is trained and evaluated on multiple input types, including single frames, lesion crops, bounding-box overlays, frame-strip timelines, finding progression panels, quality-control panels, normal-vs-abnormal comparison panels, and multi-panel medical artifacts.
+The Phase 5 model stack will focus on comparing:
 
-Each model receives a visual artifact and a natural-language question. In this phase, the model may also receive structured benchmark fields already attached to the sample, such as artifact type, available evidence references, bounding-box availability, temporal-context availability, quality tag, source label, or normalized clinical category.
+* `Qwen2.5-VL` as a strong general multimodal baseline;
+* `InternVL 2.5` as a competitive general multimodal baseline;
+* `MedGemma 1.5` as a compact medical-adapted multimodal baseline;
+* `Lingshu-I-8B` as a medical-adapted multimodal baseline for medical visual question answering and structured clinical reasoning;
+* `Hulu-Med-7B` as a medical multimodal baseline supporting image, multi-image, and temporal medical inputs.
 
-However, Phase 5 does not yet implement dynamic retrieval from a vector database, knowledge graph, or artifact index. Full retrieval, RAG, and multimodal grounding will be introduced in Phase 6.
+This comparison will evaluate whether medical-domain adaptation provides measurable improvements over strong general-purpose multimodal models on capsule-endoscopy question answering, finding identification, visual grounding, temporal reasoning, uncertainty handling, and structured output generation.
+
+
+The models will be trained and evaluated on multiple visual input formats, including single capsule-endoscopy frames, lesion crops, bounding-box overlays, frame-strip timelines, finding-progression panels, quality-control panels, normal-versus-abnormal comparison panels, and multi-panel medical artifacts.
+
+Each model will receive a visual artifact and a natural-language question. It may also receive structured benchmark fields already attached to the sample, such as the artifact type, available evidence references, bounding-box availability, temporal-context availability, quality tag, source label, or normalized clinical category.
+
+At this stage, these fields are supplied directly by the Phase 4 benchmark and are not retrieved dynamically. Phase 5 focuses on model comparison, prompting, fine-tuning, structured JSON generation, evidence-reference prediction, localization, temporal reasoning, uncertainty estimation, and safety-aware output.
+
+Dynamic retrieval from visual indexes, vector databases, medical knowledge graphs, metadata stores, or temporal artifact collections is intentionally excluded from Phase 5. Full retrieval-augmented generation, hybrid retrieval, and multimodal grounding will be introduced in Phase 6.
 
 The expected output is be structured JSON rather than free text. Each output should include the answer, clinical finding, broad clinical category, evidence references, localization information, confidence score, uncertainty reason, decision-support label, and safety flags. This structured format allows the system to be automatically validated and evaluated for answer correctness, evidence grounding, localization accuracy, temporal reasoning, uncertainty handling, JSON validity, and clinical safety.
 
@@ -239,7 +302,7 @@ Training proceeds in stages.
 
 - At the first stage, candidate models are evaluated zero-shot on the Phase 4 benchmark. This will establish baseline performance before adaptation.
 - Second, prompt-engineered baselines is tested to improve JSON compliance, reduce hallucination, and enforce safer medical-answering behavior.
-- Third, selected open models are fine-tuned using **LoRA** or **QLoRA** on the benchmark training split. The fine-tuning objective will be multi-task and will include answer generation, evidence prediction, clinical finding classification, broad category classification, localization, temporal-context reasoning, uncertainty estimation, and decision-support label prediction.
+- Third, selected open models are fine-tuned using `LoRA` or `QLoRA` on the benchmark training split. The fine-tuning objective will be multi-task and will include answer generation, evidence prediction, clinical finding classification, broad category classification, localization, temporal-context reasoning, uncertainty estimation, and decision-support label prediction.
 
 The evaluation harness measures several dimensions: answer accuracy, fine-grained clinical label accuracy, broad category accuracy, evidence-reference correctness, localization accuracy, temporal reasoning accuracy, uncertainty and abstention accuracy, JSON validity, schema compliance, and clinical safety.
 
@@ -251,16 +314,13 @@ Phase 5 produces a **RAG-ready medical MMVQA model**, but not the full retrieval
 
 Below is a list of models, input type expected and the purpose of the experiment.
 
-| Experiment | Model               | Input                                       | Purpose                                   |
-| ---------- | ------------------- | ------------------------------------------- | ----------------------------------------- |
-| E1         | LLaVA / general VLM | single frame                                | basic VQA baseline                        |
-| E2         | Qwen2.5-VL          | frame + crop / overlay                      | strong general VLM baseline               |
-| E3         | InternVL            | multi-panel artifact                        | general multimodal comparison             |
-| E4         | LLaVA-Med           | single frame / crop                         | medical VLM baseline                      |
-| E5         | Med-Flamingo        | few-shot medical examples                   | medical few-shot baseline                 |
-| E6         | selected VLM        | Phase 4 QA benchmark                        | fine-tuned capsule-endoscopy model        |
-| E7         | fine-tuned model    | structured evidence fields already attached | tests JSON output and evidence prediction |
-| E8         | fine-tuned model    | poor-quality / uncertainty samples          | tests abstention and safety               |
+| Experiment | Model | Input | Purpose |
+|---|---|---|---|
+| E1 | Qwen2.5-VL | single frame, crop, bounding-box overlay, or frame sequence | strong general multimodal baseline |
+| E2 | InternVL 2.5 | single frame, crop, overlay, or multi-panel artifact | competitive general multimodal baseline |
+| E3 | MedGemma 1.5 | single frame, lesion crop, overlay, or multi-panel artifact | compact medical-adapted multimodal baseline |
+| E4 | Lingshu-I-8B | single frame, crop, overlay, frame strip, or multi-panel artifact | medical visual question-answering and structured reasoning baseline |
+| E5 | Hulu-Med-7B | image, multi-image sequence, or video artifact | medical multimodal and temporal reasoning baseline |
 
 ---
      
