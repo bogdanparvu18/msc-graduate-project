@@ -1,0 +1,31 @@
+{
+  "phase": "phase1",
+  "experiment_name": "phase1_internvl25_8b_chartqa_baseline",
+  "notebook_name": "phase1_internvl25_8b_chartqa_baseline.ipynb",
+  "dataset_name": "HuggingFaceM4/ChartQA",
+  "split": "val",
+  "max_samples": 200,
+  "model_name": "OpenGVLab/InternVL2_5-8B",
+  "device": "cuda",
+  "dtype": "bfloat16",
+  "input_size": 448,
+  "max_num": 12,
+  "use_thumbnail": true,
+  "load_in_8bit": false,
+  "use_flash_attn": false,
+  "low_cpu_mem_usage": true,
+  "trust_remote_code": true,
+  "prompt_template": "<image>\nAnswer the question based only on the chart. Return only the final answer, without explanation.\n\nQuestion: {question}",
+  "numeric_match_policy": {
+    "relative_tolerance": 0.05,
+    "absolute_tolerance": 0.05
+  },
+  "max_new_tokens": 64,
+  "do_sample": false,
+  "num_beams": 1,
+  "batch_size": 1,
+  "output_dir": "outputs/phase1",
+  "seed": 42,
+  "run_id": "20260724_202448",
+  "timezone": "America/Toronto"
+}
