@@ -72,9 +72,7 @@ These models make more sense as candidates for the later medical MMVQA system:
 
 - <b>Qwen2.5-VL</b> — strong candidate because it supports image and video understanding, visual grounding, object localization, document/chart understanding, and long-video comprehension. These capabilities are relevant to capsule endoscopy because the final project needs frame-level reasoning, temporal context, lesion localization, and evidence grounding.<br>
 - <b>InternVL 2.5</b> — strong general multimodal baseline because it is an open multimodal large language model family designed for broad visual-language reasoning. It can be used as a competitive general VLM baseline before medical adaptation.<br>
-- <b>LLaVA / LLaVA-style models</b> — useful as open-source multimodal baselines because LLaVA connects a vision encoder with a language model and was designed for general-purpose visual instruction following.<br>
-- <b>LLaVA-Med</b> — should be added as a medical comparison model because it was specifically adapted for biomedical image conversation and medical VQA. It is more medically relevant than vanilla LLaVA and can help show whether a biomedical-adapted model performs better than a general VLM on medical visual questions.<br>
-- <b>Med-Flamingo</b> was designed for few-shot medical visual question answering.
+- <b>MedGemma 1.5 (4B)</b> - a compact, multimodal medical model released by Google DeepMind (early 2026) designed to run within 8GB VRAM hardware. Unlike generalist models, it is built on the Gemma 3 architecture and uses a specialized SigLIP vision encoder pre-trained on massive biomedical datasets (radiology, pathology, dermatology).
 
 ---
 
