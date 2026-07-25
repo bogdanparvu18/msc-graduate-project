@@ -178,7 +178,7 @@ The mean inference time was `0.5204 seconds` per example, producing an approxima
 
 ## Output Files
 
-- Configuration JSON: `Not available`
+- Configuration JSON: `outputs/phase1/configs/phase1_internvl25_8b_chartqa_baseline_20260724_202448_config.json`
 - Results CSV: `outputs/phase1/results/phase1_internvl25_8b_chartqa_baseline_20260724_202448_results.csv`
 - Metrics JSON: `outputs/phase1/results/phase1_internvl25_8b_chartqa_baseline_20260724_202448_metrics.json`
 
@@ -197,15 +197,5 @@ This experiment preserves the same ChartQA sample selection, answer-normalizatio
 The result provides evidence that InternVL2.5-8B is a strong general-purpose multimodal baseline for structured visual reasoning. However, this result should not be interpreted as evidence of performance on capsule endoscopy images or as evidence of clinical reliability.
 
 Later medical evaluation stages must independently assess the model's ability to recognize clinical findings, provide visually grounded answers, avoid unsupported conclusions, communicate uncertainty, and operate safely within the intended medical decision-support scope.
-
-## Conclusion
-
-The InternVL2.5-8B experiment was completed successfully on the selected `200`-example ChartQA validation subset using a non-quantized model and `bfloat16` precision.
-
-The model processed all examples without inference errors and achieved an Exact Match Accuracy of `89.5%` and a Numeric Match Accuracy of `70.5%`.
-
-This corresponds to `179` predictions satisfying the Exact Match policy and `21` predictions that did not satisfy it.
-
-The high Exact Match result demonstrates that InternVL2.5-8B can serve as a strong general-purpose vision-language baseline for chart interpretation and structured multimodal question answering. The remaining `21` cases should be reviewed manually to identify the dominant error categories and to verify whether every ground-truth annotation is correct.
 
 The experiment validates the complete InternVL inference and evaluation pipeline and provides a directly comparable result for the other generic and chart-specialized models evaluated during Phase 1.
