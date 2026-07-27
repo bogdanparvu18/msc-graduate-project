@@ -42,7 +42,7 @@ This project contributes a capsule-endoscopy MMVQA pipeline that transforms Kvas
 
 ## Project workflow
 
-### Phase 1 — Establish the Generic VQA Baseline on DVQA and ChartQA
+### Phase 1 — Establish the Generic VQA Baseline on ChartQA
 
 This phase establishes the project’s initial visual question-answering and multimodal reasoning baseline before moving to capsule-endoscopy data.
 
@@ -57,15 +57,9 @@ The objective is not yet medical image interpretation or clinical finding identi
 
 The results from this phase provide a reproducible non-medical baseline and help identify which general multimodal models are suitable for continued evaluation in the later medical MMVQA phases.
 
-The baseline uses two generic visual question-answering datasets:
+The baseline uses one generic visual question-answering dataset:
 
-#### A. DVQA
-
-DVQA is used to evaluate low-level visual parsing and question answering over bar charts. It tests whether a model can recognize chart elements, read labels, compare values, count visual objects, and extract information from structured visual layouts.
-
-Although DVQA is not a medical dataset, it provides a useful early benchmark for visual-symbolic reasoning and structured answer generation.
-
-#### B. ChartQA
+#### ChartQA
 
 ChartQA is used to evaluate stronger visual, numerical, and logical reasoning over charts. It contains both human-authored and automatically generated questions and requires models to combine visual information with relationships between chart values.
 
@@ -105,7 +99,7 @@ Phase 1 is limited to the following models:
 * Qwen2.5-VL
 * InternVL 2.5
 
-Medical-specialized models are intentionally excluded from this phase because DVQA and ChartQA do not evaluate medical knowledge or clinical image interpretation. 
+Medical-specialized models are intentionally excluded from this phase because ChartQA do not evaluate medical knowledge or clinical image interpretation. 
 More recent medical VLMs, including `MedGemma 1.5-4B`m `Lingshu-I-8B` and `Hulu-Med-7B`, will be evaluated in a later phase using the capsule-endoscopy MMVQA benchmark, where their medical visual reasoning, temporal understanding, evidence grounding, uncertainty handling, and structured output capabilities can be assessed appropriately. Experiments in Phase 1 are be executed in Google Colab using the free NVIDIA T4 environment for smaller or quantized baseline runs and an NVIDIA A100 through Colab Pro for larger, full-precision, or fine-tuning experiments.
 
 
@@ -113,7 +107,7 @@ More recent medical VLMs, including `MedGemma 1.5-4B`m `Lingshu-I-8B` and `Hulu-
 
 The output of Phase 1 will include:
 
-* model predictions for the selected DVQA and ChartQA subsets;
+* model predictions for the selected ChartQA subsets;
 * exact-match and numerical-match evaluation results;
 * inference-time measurements;
 * model execution and hardware compatibility notes;
@@ -423,7 +417,6 @@ The proposal is to implement this project in Python but using a very Clojure-lik
 ## References
 
 - [Kvasir-Capsule](https://www.nature.com/articles/s41597-021-00920-z)
-- [DVQA](https://arxiv.org/abs/1801.08163)
 - [ChartQA](https://arxiv.org/abs/2203.10244)
 - [Qwen2.5-VL](https://arxiv.org/abs/2502.13923)
 - [InternVL](https://arxiv.org/abs/2412.05271)
