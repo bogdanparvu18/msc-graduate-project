@@ -1,0 +1,12 @@
+validation_check,check_passed
+raw_data_dir_exists,True
+dataset_root_dir_exists,True
+labelled_images_dir_exists,True
+metadata_available,True
+minimum_video_count_met,True
+minimum_labelled_image_count_met,True
+expected_labelled_class_count_met,True
+expected_labelled_classes_present,True
+expected_class_image_counts_met,True
+expected_labelled_image_count_met,True
+archive_recovery_operations_succeeded,True

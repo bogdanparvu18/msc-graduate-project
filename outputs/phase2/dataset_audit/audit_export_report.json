@@ -1,0 +1,195 @@
+{
+  "format_version": 1,
+  "artifacts": [
+    {
+      "artifact": "metadata_clean",
+      "format": "parquet",
+      "filename": "metadata_clean.parquet",
+      "rows": 47239,
+      "columns": 29,
+      "dtypes": {
+        "filename": "object",
+        "video_id": "object",
+        "frame_number": "int64",
+        "finding_category": "object",
+        "finding_class": "object",
+        "x1": "float64",
+        "y1": "float64",
+        "x2": "float64",
+        "y2": "float64",
+        "x3": "float64",
+        "y3": "float64",
+        "x4": "float64",
+        "y4": "float64",
+        "finding_class_raw": "object",
+        "finding_class_normalized": "object",
+        "clinical_group": "object",
+        "image_key": "object",
+        "video_key": "object",
+        "bbox_annotation_present": "bool",
+        "bbox_complete": "bool",
+        "bbox_invalid": "bool",
+        "has_bbox": "bool",
+        "bbox_xmin": "float64",
+        "bbox_ymin": "float64",
+        "bbox_xmax": "float64",
+        "bbox_ymax": "float64",
+        "bbox_width": "float64",
+        "bbox_height": "float64",
+        "bbox_area": "float64"
+      },
+      "json_columns": [],
+      "file_size_bytes": 951007,
+      "file_sha256": "7b7f1425db160db74eb12a39191fa5cc33f8db869a85260b814b684e08eb27cc"
+    },
+    {
+      "artifact": "physical_image_inventory",
+      "format": "csv",
+      "filename": "physical_image_inventory.csv",
+      "rows": 47238,
+      "columns": 9,
+      "dtypes": {
+        "relative_path": "object",
+        "folder": "object",
+        "filename": "object",
+        "is_image": "bool",
+        "_audit_filename": "object",
+        "_audit_image": "string",
+        "_audit_class": "object",
+        "class_match_count": "int64",
+        "matching_classes": "object"
+      },
+      "json_columns": [
+        "matching_classes"
+      ],
+      "file_size_bytes": 11361104,
+      "file_sha256": "5244b460c4a1193abd6eac255973c07fab7df1f465eaff72f8e292275bb04894"
+    },
+    {
+      "artifact": "dataset_characteristics",
+      "format": "csv",
+      "filename": "dataset_characteristics.csv",
+      "rows": 20,
+      "columns": 2,
+      "dtypes": {
+        "characteristic": "object",
+        "actual_value": "int64"
+      },
+      "json_columns": [],
+      "file_size_bytes": 667,
+      "file_sha256": "005179aebe9db78cc283cd502edc2a5d07954346a812d59b1e14c5b4080a2455"
+    },
+    {
+      "artifact": "dataset_validation",
+      "format": "csv",
+      "filename": "dataset_validation.csv",
+      "rows": 21,
+      "columns": 4,
+      "dtypes": {
+        "characteristic": "object",
+        "actual_value": "int64",
+        "expected_value": "int64",
+        "validation_passed": "bool"
+      },
+      "json_columns": [],
+      "file_size_bytes": 1051,
+      "file_sha256": "efe24a2ee28ca46359ba09a2a47bc9acc952e8225605edf5f3b84fbda917641d"
+    },
+    {
+      "artifact": "duplicate_annotations",
+      "format": "json",
+      "filename": "duplicate_annotations.json",
+      "rows": 18,
+      "columns": 32,
+      "dtypes": {
+        "_audit_source_row": "int64",
+        "_audit_removed": "bool",
+        "_audit_duplicate_group": "int64",
+        "filename": "object",
+        "video_id": "object",
+        "frame_number": "int64",
+        "finding_category": "object",
+        "finding_class": "object",
+        "x1": "float64",
+        "y1": "float64",
+        "x2": "float64",
+        "y2": "float64",
+        "x3": "float64",
+        "y3": "float64",
+        "x4": "float64",
+        "y4": "float64",
+        "finding_class_raw": "object",
+        "finding_class_normalized": "object",
+        "clinical_group": "object",
+        "image_key": "object",
+        "video_key": "object",
+        "bbox_annotation_present": "bool",
+        "bbox_complete": "bool",
+        "bbox_invalid": "bool",
+        "has_bbox": "bool",
+        "bbox_xmin": "float64",
+        "bbox_ymin": "float64",
+        "bbox_xmax": "float64",
+        "bbox_ymax": "float64",
+        "bbox_width": "float64",
+        "bbox_height": "float64",
+        "bbox_area": "float64"
+      },
+      "json_columns": [],
+      "file_size_bytes": 19550,
+      "file_sha256": "06523f53004ce0054adf5942c579fb3358fd776b799aaa25798e4b0a8043aba7"
+    },
+    {
+      "artifact": "multi_class_frames",
+      "format": "csv",
+      "filename": "multi_class_frames.csv",
+      "rows": 9,
+      "columns": 6,
+      "dtypes": {
+        "video_key": "object",
+        "frame_number": "int64",
+        "image_key": "object",
+        "class_count": "int64",
+        "classes": "object",
+        "annotation_count": "int64"
+      },
+      "json_columns": [
+        "classes"
+      ],
+      "file_size_bytes": 763,
+      "file_sha256": "cedfede40ff32d8f7f2fb4e1b5f5ebb39566e9f847a3d197ab3339fb5a24e9b7"
+    },
+    {
+      "artifact": "multi_annotation_same_class_groups",
+      "format": "csv",
+      "filename": "multi_annotation_same_class_groups.csv",
+      "rows": 1,
+      "columns": 5,
+      "dtypes": {
+        "video_key": "object",
+        "frame_number": "int64",
+        "finding_class_normalized": "object",
+        "image_key": "object",
+        "annotation_count": "int64"
+      },
+      "json_columns": [],
+      "file_size_bytes": 128,
+      "file_sha256": "b19777c52cb77b86ddc747a78ec9d33e1201d3e7deb1da003e793fba2180869a"
+    },
+    {
+      "artifact": "image_key_definition",
+      "format": "json",
+      "filename": "image_key_definition.json",
+      "rows": 1,
+      "columns": 3,
+      "dtypes": {
+        "function": "object",
+        "source_column": "object",
+        "image_key_expression": "object"
+      },
+      "json_columns": [],
+      "file_size_bytes": 476,
+      "file_sha256": "8c44804ab67061b69385baea68c8e86f6986d92a9a3da94e7c314c9d86469b53"
+    }
+  ]
+}

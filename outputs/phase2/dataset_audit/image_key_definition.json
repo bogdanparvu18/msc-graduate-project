@@ -1,0 +1,26 @@
+{
+  "schema": {
+    "fields": [
+      {
+        "name": "function",
+        "type": "string"
+      },
+      {
+        "name": "source_column",
+        "type": "string"
+      },
+      {
+        "name": "image_key_expression",
+        "type": "string"
+      }
+    ],
+    "pandas_version": "1.4.0"
+  },
+  "data": [
+    {
+      "function": "add_matching_keys",
+      "source_column": "filename",
+      "image_key_expression": "dataframe['filename'].map(normalize_id)"
+    }
+  ]
+}

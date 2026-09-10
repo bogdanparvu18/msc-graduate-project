@@ -1,0 +1,10 @@
+video_key,frame_number,image_key,class_count,classes,annotation_count
+eb0203196e284797,1125,eb0203196e2847971125,2,"[""erosion"", ""pylorus""]",2
+eb0203196e284797,1126,eb0203196e2847971126,2,"[""erosion"", ""pylorus""]",2
+eb0203196e284797,1130,eb0203196e2847971130,2,"[""erosion"", ""pylorus""]",2
+eb0203196e284797,1131,eb0203196e2847971131,2,"[""erosion"", ""pylorus""]",2
+eb0203196e284797,1135,eb0203196e2847971135,2,"[""erosion"", ""pylorus""]",2
+eb0203196e284797,1136,eb0203196e2847971136,2,"[""erosion"", ""pylorus""]",2
+eb0203196e284797,1137,eb0203196e2847971137,2,"[""erosion"", ""pylorus""]",2
+eb0203196e284797,1157,eb0203196e2847971157,2,"[""ampulla of vater"", ""pylorus""]",2
+fb86bc87d3874cd7,3660,fb86bc87d3874cd73660,2,"[""erosion"", ""pylorus""]",2

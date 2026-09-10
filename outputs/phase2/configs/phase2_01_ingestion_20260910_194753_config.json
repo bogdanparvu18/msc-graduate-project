@@ -1,0 +1,32 @@
+{
+  "curated_data_dir": "data/curated/phase2",
+  "dataset_archive_repair_enabled": true,
+  "dataset_download_enabled": true,
+  "dataset_google_drive_folder_url": "https://drive.google.com/drive/folders/18vEHN1CG7oNFKdT2NmhtJjrFhb3tLG1Z",
+  "dataset_validation": {
+    "image_extensions": [
+      ".png",
+      ".jpg",
+      ".jpeg"
+    ],
+    "labelled_images_subdir": "labelled_images",
+    "minimum_labelled_images": 47238,
+    "minimum_video_files": 117,
+    "osf_storage_subdir": "osfstorage",
+    "required_metadata_file": "metadata.csv",
+    "video_extensions": [
+      ".avi",
+      ".mp4",
+      ".mkv"
+    ]
+  },
+  "interim_data_dir": "data/interim/phase2",
+  "output_dir": "outputs/phase2",
+  "raw_data_dir": "data/raw/kvasir_capsule",
+  "run_id": "20260910_194753",
+  "run_id_format": "%Y%m%d_%H%M%S",
+  "seed": 42,
+  "storage_backend": "google_drive",
+  "storage_root": "/content/drive/MyDrive/MMVQA_Clinical",
+  "timezone": "America/Toronto"
+}
