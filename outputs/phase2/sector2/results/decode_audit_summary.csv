@@ -1,0 +1,4 @@
+video_annotation_type,video_count,frames_read_before_stop,fully_processed_videos,videos_needing_review,published_reference_frames,read_minus_reference,all_videos_processed
+fully_unlabelled,74,2785829,74,0,2785829,0,True
+partially_labelled,43,1979285,43,0,1955675,23610,True
+all_videos,117,4765114,117,0,4741504,23610,True

@@ -1,0 +1,27 @@
+{
+  "complete": true,
+  "started_utc": "2026-09-26T01:13:08.978951+00:00",
+  "input_fingerprint": "71c40620653ad663cb215a8ec25b554f7fed3fdd9cdb26cb01c9fe3d5c3d410a",
+  "settings": {
+    "requested_backend": "nvdec",
+    "gpu_id": 0,
+    "allow_cpu_fallback": true,
+    "cpu_threads": 2,
+    "stage_video_locally": true,
+    "local_work_dir": "/content/video_decode_audit_work",
+    "force_redecode": false,
+    "retry_failed": false,
+    "retry_video_keys": [],
+    "published_reference_frames": {
+      "partially_labelled": 1955675,
+      "fully_unlabelled": 2785829,
+      "all_videos": 4741504
+    },
+    "show_progress": true
+  },
+  "videos_total": 117,
+  "videos_completed": 117,
+  "videos_reused": 117,
+  "videos_decoded": 0,
+  "finished_utc": "2026-09-26T01:13:59.395205+00:00"
+}

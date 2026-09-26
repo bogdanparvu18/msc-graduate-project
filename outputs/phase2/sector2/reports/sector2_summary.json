@@ -1,0 +1,100 @@
+{
+  "alignment_created_utc": "2026-09-26T01:49:36.339228+00:00",
+  "alignment_engine": {
+    "backend_id": "torchcodec_cuda_exact_parallel_ssim_uniform7_v3",
+    "cpu_fallback_allowed": false,
+    "cuda_backend": "beta",
+    "decoded_color": "RGB",
+    "decoder": "torchcodec",
+    "decoder_device": "cuda:0",
+    "gpu_capability": [
+      12,
+      0
+    ],
+    "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "nvidia_driver": "580.82.07",
+    "opencv": "5.0.0",
+    "opencv_build_sha256": "0ef08003c31127b3b5d34410ab13483c511e73b99e278b1a8abd6ddcb265699a",
+    "scoring_version": 3,
+    "seek_mode": "exact",
+    "skimage": "0.25.2",
+    "ssim_method": "uniform7_sample_covariance_valid_color_uint8",
+    "ssim_precision": "float32_window_sums_float64_metric",
+    "stream_strategy": "worker_local_torch_cuda_streams",
+    "torch": "2.11.0+cu128",
+    "torch_cuda": "12.8",
+    "torchcodec": "0.11.1+cu128",
+    "torchcodec_native_sha256": {
+      "libtorchcodec_core4.so": "31390d7843446b8359bdee5e5c8326327ed9da34a6694b5ddfead0c49ab66939",
+      "libtorchcodec_core5.so": "8606ec9ea3f53742513b883e98d72c6488fd5ca0bce4e82d74cca566246a23dd",
+      "libtorchcodec_core6.so": "0a04b166e36c28a6ddd1c8e8a8055552789e6d3414d324cb921bb1eccb8b35bb",
+      "libtorchcodec_core7.so": "930cc1a774a249f0a8fcc8523d3d3bc901f491b71517b467df0e7326dd31ae2d",
+      "libtorchcodec_core8.so": "ae47a8ddcea49221bc1513063ccf292f17d7d677ffef97d1f91d3a4e6512d7aa",
+      "libtorchcodec_custom_ops4.so": "d7ef4ca43d3df59b25b63285e5f47df1fa9d7a0b61d3e8d26eb7d1280c8e2100",
+      "libtorchcodec_custom_ops5.so": "a5c2329e70eb38c5c06fce6705b85115ebd02027092341003aeeeb7d83c8adf6",
+      "libtorchcodec_custom_ops6.so": "e26cd162bc2b3a9e12254a6a22f2027758117545ee9930f0adac88bcf31594d6",
+      "libtorchcodec_custom_ops7.so": "33c70be07a588388d545e6ef1d7619e5097459dc063bd4f9aa4ad1dd71e830b0",
+      "libtorchcodec_custom_ops8.so": "8f19ecffc10b9cfbb7305142ea0048b3a236ca2651a9590f50457a2e2b51f0b2",
+      "libtorchcodec_pybind_ops4.so": "cf4314412b8cd176169b83c3506418e767ece52d0e38e3a21e267e880d6d1d8a",
+      "libtorchcodec_pybind_ops5.so": "ca0f37eb56d633c4155f170a1ea770d23473a92c6333ad49bf93dd5cead7876c",
+      "libtorchcodec_pybind_ops6.so": "884ba7f848db07e6425c0c9ef50d6555383e94824d741e5b31800d07bb33a750",
+      "libtorchcodec_pybind_ops7.so": "8f38f53d084c141359308720477b89f44df28a8a43c5782e78e67a1a970a6f98",
+      "libtorchcodec_pybind_ops8.so": "5a3cec1f8e0c73243e933fc60b6b8ebe29e0bff0f600c0deb139c93446467d4a"
+    }
+  },
+  "alignment_status_counts": {
+    "incomplete_candidate_scores": 24,
+    "low_ssim": 47214
+  },
+  "all_videos_decoded": true,
+  "confirmed_annotation_rows": 0,
+  "decode_summary": [
+    {
+      "all_videos_processed": true,
+      "frames_read_before_stop": 2785829,
+      "fully_processed_videos": 74,
+      "published_reference_frames": 2785829,
+      "read_minus_reference": 0,
+      "video_annotation_type": "fully_unlabelled",
+      "video_count": 74,
+      "videos_needing_review": 0
+    },
+    {
+      "all_videos_processed": true,
+      "frames_read_before_stop": 1979285,
+      "fully_processed_videos": 43,
+      "published_reference_frames": 1955675,
+      "read_minus_reference": 23610,
+      "video_annotation_type": "partially_labelled",
+      "video_count": 43,
+      "videos_needing_review": 0
+    },
+    {
+      "all_videos_processed": true,
+      "frames_read_before_stop": 4765114,
+      "fully_processed_videos": 117,
+      "published_reference_frames": 4741504,
+      "read_minus_reference": 23610,
+      "video_annotation_type": "all_videos",
+      "video_count": 117,
+      "videos_needing_review": 0
+    }
+  ],
+  "empty_confirmed_subset": true,
+  "evaluated_offsets": [
+    -2,
+    -1,
+    0,
+    1,
+    2
+  ],
+  "excluded_annotation_rows": 47239,
+  "interpretation": "Completed technical audit, not a medical validation. Published-reference discrepancies and exclusions are retained. Source videos/images and decoder caches are not included.",
+  "original_annotation_rows": 47239,
+  "run_id": "20260925_211052",
+  "schema": "mmvqa-sector2-export-v1",
+  "total_container_reported_frames": 4765114,
+  "unique_alignment_mappings": 47238,
+  "video_count": 117,
+  "videos_needing_review": 0
+}

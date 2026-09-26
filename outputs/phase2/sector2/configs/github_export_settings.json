@@ -1,0 +1,21 @@
+{
+  "always_gzip_csv": [
+    "frame_alignment_candidates.csv"
+  ],
+  "author_email": "bparvu@lakeheadu.ca",
+  "author_name": "Bogdan Parvu",
+  "branch": "main",
+  "commit_message": "Phase 2 Sector 2: publish metadata and completed video/frame audits",
+  "confirm_push": true,
+  "github_username": "bogdanparvu18",
+  "gzip_csv_threshold_mib": 10,
+  "include_physical_image_inventory": true,
+  "local_repo_dir": "/content/msc-graduate-project",
+  "max_export_mib": 250,
+  "max_file_mib": 45,
+  "push": true,
+  "repo_output_dir": "outputs/phase2/sector2",
+  "repo_url": "https://github.com/bogdanparvu18/msc-graduate-project.git",
+  "require_current_alignment_run": true,
+  "token_secret_name": "GITHUB_TOKEN"
+}

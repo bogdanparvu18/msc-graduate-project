@@ -1,0 +1,25 @@
+{
+  "complete": true,
+  "audit_version": 2,
+  "created_utc": "2026-09-25T22:50:41.901573+00:00",
+  "input_fingerprint": "71c40620653ad663cb215a8ec25b554f7fed3fdd9cdb26cb01c9fe3d5c3d410a",
+  "report_fingerprint": "0d2691a75bb7c5b36dfeb1d222189c8721ab8cb95657b88bccd06b7ea6458162",
+  "video_count": 117,
+  "all_videos_decoded": true,
+  "videos_needing_review": 0,
+  "decoder_signature": {
+    "method": "demux_decode_eos_native_frames_v3",
+    "requested_backend": "nvdec",
+    "pyav_version": "18.1.0",
+    "allow_cpu_fallback": true,
+    "pynvvideocodec_version": "2.2.3",
+    "gpu_id": 0
+  },
+  "output_sha256": {
+    "decode_audit.csv": "e99ca10537849de7b11986dac56c91777268405733710e535bcd37cb69a33994",
+    "labelled_video_decode_audit.csv": "b35f5055847208e73b07f77c59fa9fa1e4d5d0492cb17221882aeac5909aaa64",
+    "unlabelled_video_decode_audit.csv": "ea5da594ef0a1e99c2ec66c74e01207ccd87c00ab89507b5818cca588eb0889b",
+    "decode_audit_summary.csv": "8d97fa93a3fbb74d8e0eba9a8f1d65de9879db35ea279e0e55c7f97609034cb3"
+  },
+  "source_fingerprint_method": "SHA-256 of paths, sizes, mtimes and decoder settings; not video bytes"
+}
