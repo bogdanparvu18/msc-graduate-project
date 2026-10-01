@@ -1,5 +1,5 @@
 {
-  "alignment_created_utc": "2026-10-01T20:32:41.164352+00:00",
+  "alignment_created_utc": "2026-10-01T22:18:45.856569+00:00",
   "alignment_engine": {
     "backend_id": "torchcodec_cuda_nvjpeg_hw_reference_ssim_uniform7_v4",
     "cpu_fallback_allowed": false,
@@ -90,11 +90,10 @@
     }
   },
   "alignment_status_counts": {
-    "accepted_ssim": 47214,
-    "incomplete_candidate_scores": 24
+    "accepted_ssim": 47238
   },
   "all_videos_decoded": true,
-  "confirmed_annotation_rows": 47215,
+  "confirmed_annotation_rows": 47239,
   "decode_summary": [
     {
       "all_videos_processed": true,
@@ -135,10 +134,10 @@
     1,
     2
   ],
-  "excluded_annotation_rows": 24,
+  "excluded_annotation_rows": 0,
   "interpretation": "Completed technical audit, not a medical validation. Published-reference discrepancies and exclusions are retained. Source videos/images and decoder caches are not included.",
   "original_annotation_rows": 47239,
-  "run_id": "20261001_160453",
+  "run_id": "20261001_181334",
   "schema": "mmvqa-sector2-export-v1",
   "total_container_reported_frames": 4765114,
   "unique_alignment_mappings": 47238,

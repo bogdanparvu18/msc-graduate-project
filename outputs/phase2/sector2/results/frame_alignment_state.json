@@ -1,7 +1,7 @@
 {
   "complete": true,
-  "created_utc": "2026-10-01T20:32:41.164352+00:00",
-  "run_id": "20261001_160453",
+  "created_utc": "2026-10-01T22:18:45.856569+00:00",
+  "run_id": "20261001_181334",
   "effective_settings": {
     "candidate_offsets": [
       -1,
@@ -128,11 +128,11 @@
   ],
   "original_annotation_rows": 47239,
   "unique_mappings": 47238,
-  "confirmed_mappings": 47214,
-  "confirmed_annotation_rows": 47215,
-  "excluded_annotation_rows": 24,
-  "videos_reused": 0,
-  "videos_rescored": 43,
+  "confirmed_mappings": 47238,
+  "confirmed_annotation_rows": 47239,
+  "excluded_annotation_rows": 0,
+  "videos_reused": 43,
+  "videos_rescored": 0,
   "ssim_numerical_self_check": {
     "ssim_implementation": "uniform_7x7_sample_covariance_valid_color_v1",
     "torch_version": "2.11.0+cu130",
@@ -145,13 +145,13 @@
   },
   "source_fingerprint_method": "SHA256 of mappings, engine, file paths/sizes/mtimes; not source bytes",
   "output_sha256": {
-    "frame_alignment_audit.csv": "21c9c8893c300d1b843b0bbf691fffce2104d307c6e795556f717a49a91f6fe2",
-    "frame_alignment_candidates.csv": "48675a7ac004ed19ff26473a1de9e9fce300f510f3a6e2fe8704b32f61325c91",
-    "frame_alignment_offset_summary.csv": "61ad6d0b44874337def3a6aa8a3b011237bb019c17395e60457c3b11f48d3f78",
-    "frame_alignment_confirmed.csv": "91dfe07f100d0c4366b0f4ab9f1a41742745e3a9881c003249caab1af6f44e87",
-    "frame_alignment_excluded.csv": "2e33f8ece010e3a7b7ca29cc13affb7e8316dce4795f42655b8b8a14d4d6b895",
-    "frame_alignment_confirmed.parquet": "32033a1d8a6db461eb38cea879773950dfb2a7cddd8b1512ac50bfdc18d22ca3",
-    "frame_alignment_performance.csv": "99dd18602f85458f97403d532fbab7bd25444a63c563019fbb5329c486752ac2"
+    "frame_alignment_audit.csv": "de76869f355536fac86034629f19abc301ab78b8ffa19c114a947b2737e4e125",
+    "frame_alignment_candidates.csv": "fda19f3a83c939b50e4e7625857212a12e023479232279b4ec0cac29f08e19a3",
+    "frame_alignment_offset_summary.csv": "62efeb7f13a124e6fc8c67e2b251a555065b25e996759d678366596d95b80d4f",
+    "frame_alignment_confirmed.csv": "5797b37afcbdcd2d66344b389efe8900989461ffe411a84db5f1840748900744",
+    "frame_alignment_excluded.csv": "4f97276bfca310d4a0052270b7be2b93e5c36b75317d7633cff486abfeede5e4",
+    "frame_alignment_confirmed.parquet": "512a752ea89bb09c5c84c7c24b02646367d901d38d91f9b37ec4a28039796004",
+    "frame_alignment_performance.csv": "72c93aec9b12b27287a4ed95d27aea853ecde2de42da0c6192f26ca7db8c2454"
   },
   "interpretation": "Technical acceptance under configured SSIM/ambiguity rules; not proof of clinical or historical frame identity."
 }
