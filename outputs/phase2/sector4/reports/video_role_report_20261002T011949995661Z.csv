@@ -1,0 +1,5 @@
+video_annotation_type,supervised_split,data_role,video_count
+fully_unlabelled,\N,domain_adaptation_only,74
+partially_labelled,test,supervised_test,8
+partially_labelled,train,supervised_train_plus_domain_adaptation,30
+partially_labelled,validation,supervised_validation,5

@@ -1,0 +1,41 @@
+{
+  "artifact": "results/video_split_manifest.csv",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "string",
+      "name": "video_key",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "video_relpath",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "frame_index_offset"
+    },
+    {
+      "dtype": "Int64",
+      "name": "retained_annotation_count"
+    },
+    {
+      "dtype": "Int64",
+      "name": "retained_unique_frame_count"
+    },
+    {
+      "dtype": "Int64",
+      "name": "retained_class_count"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "45f95f63810d3932e6472a87fb952067bf40b6f2dd0167aa19a408318dfd2bb9",
+  "rows": 43,
+  "schema_version": 1
+}

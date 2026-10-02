@@ -1,0 +1,115 @@
+config_key,sector3_value,sector4_value,resolution
+clinical_group_map.ampulla of vater,"""anatomical_landmark""","""anatomical_landmark""",inherited
+clinical_group_map.angiectasia,"""vascular_lesion""","""vascular_lesion""",inherited
+clinical_group_map.blood fresh,"""bleeding""","""bleeding""",inherited
+clinical_group_map.blood hematin,"""bleeding""","""bleeding""",inherited
+clinical_group_map.erosion,"""mucosal_lesion""","""mucosal_lesion""",inherited
+clinical_group_map.erythema,"""mucosal_lesion""","""mucosal_lesion""",inherited
+clinical_group_map.foreign body,"""foreign_body""","""foreign_body""",inherited
+clinical_group_map.ileocecal valve,"""anatomical_landmark""","""anatomical_landmark""",inherited
+clinical_group_map.lymphangiectasia,"""lymphatic_lesion""","""lymphatic_lesion""",inherited
+clinical_group_map.normal clean mucosa,"""normal_mucosa""","""normal_mucosa""",inherited
+clinical_group_map.polyp,"""protruding_lesion""","""protruding_lesion""",inherited
+clinical_group_map.pylorus,"""anatomical_landmark""","""anatomical_landmark""",inherited
+clinical_group_map.reduced mucosal view,"""visibility_limitation""","""visibility_limitation""",inherited
+clinical_group_map.ulcer,"""mucosal_lesion""","""mucosal_lesion""",inherited
+curated_data_dir,"""data/curated/phase2""","""data/curated/phase2""",inherited
+dataset_archive_repair_enabled,true,true,inherited
+dataset_download_enabled,true,true,inherited
+dataset_google_drive_folder_url,"""https://drive.google.com/drive/folders/18vEHN1CG7oNFKdT2NmhtJjrFhb3tLG1Z""","""https://drive.google.com/drive/folders/18vEHN1CG7oNFKdT2NmhtJjrFhb3tLG1Z""",inherited
+dataset_validation.image_extensions,"["".png"","".jpg"","".jpeg""]","["".png"","".jpg"","".jpeg""]",inherited
+dataset_validation.labelled_images_subdir,"""labelled_images""","""labelled_images""",inherited
+dataset_validation.minimum_labelled_images,47238,47238,inherited
+dataset_validation.minimum_video_files,117,117,inherited
+dataset_validation.osf_storage_subdir,"""osfstorage""","""osfstorage""",inherited
+dataset_validation.required_metadata_file,"""metadata.csv""","""metadata.csv""",inherited
+dataset_validation.video_extensions,"["".avi"","".mp4"","".mkv""]","["".avi"","".mp4"","".mkv""]",inherited
+decode_audit_allow_cpu_fallback,true,true,inherited
+decode_audit_backend,"""nvdec""","""nvdec""",inherited
+decode_audit_cpu_threads,2,2,inherited
+decode_audit_force_redecode,false,false,inherited
+decode_audit_gpu_id,0,0,inherited
+decode_audit_local_work_dir,"""/content/video_decode_audit_work""","""/content/video_decode_audit_work""",inherited
+decode_audit_published_reference_frames.all_videos,4741504,4741504,inherited
+decode_audit_published_reference_frames.fully_unlabelled,2785829,2785829,inherited
+decode_audit_published_reference_frames.partially_labelled,1955675,1955675,inherited
+decode_audit_retry_failed,false,false,inherited
+decode_audit_retry_video_keys,[],[],inherited
+decode_audit_stage_video_locally,true,true,inherited
+domain_adaptation_enabled,"""<not declared>""",true,sector4_override
+domain_adaptation_include_fully_unlabelled_videos,"""<not declared>""",true,sector4_override
+domain_adaptation_include_train_video_unlabelled_frames,"""<not declared>""",true,sector4_override
+domain_adaptation_sampling_seconds,"""<not declared>""",0.5,sector4_override
+expected_classes,14,14,inherited
+expected_export_container_fps,30.0,30.0,inherited
+expected_labelled_frames,47238,47238,inherited
+expected_labelled_videos,43,43,inherited
+expected_total_extractable_frames,4741504,4741504,inherited
+expected_total_videos,117,117,inherited
+expected_unlabelled_frames,4694266,4694266,inherited
+expected_unlabelled_videos,74,74,inherited
+frame_alignment_copy_workers,6,6,inherited
+frame_alignment_cuda_backend,"""auto""","""auto""",inherited
+frame_alignment_cuda_device,"""cuda:0""","""cuda:0""",inherited
+frame_alignment_define_only,false,false,inherited
+frame_alignment_force_rescore,false,false,inherited
+frame_alignment_hash_source_bytes,false,false,inherited
+frame_alignment_image_workers,16,16,inherited
+frame_alignment_local_disk_reserve_gib,2.0,2.0,inherited
+frame_alignment_local_work_dir,"""/content/frame_alignment_cuda_work""","""/content/frame_alignment_cuda_work""",inherited
+frame_alignment_mapping_batch_size,16,16,inherited
+frame_alignment_min_margin,0.005,0.005,inherited
+frame_alignment_min_ssim,0.92,0.92,inherited
+frame_alignment_reference_apply_exif_orientation,true,true,inherited
+frame_alignment_reference_decoder,"""nvjpeg_hw_only""","""nvjpeg_hw_only""",inherited
+frame_alignment_reference_fancy_upsampling,true,true,inherited
+frame_alignment_show_progress,true,true,inherited
+frame_alignment_ssim_batch_size,16,16,inherited
+frame_alignment_stage_video_locally,true,true,inherited
+frame_alignment_video_workers,"""all""","""all""",inherited
+frame_alignment_vram_budget_fraction,0.85,0.85,inherited
+frame_index_offset_candidates,"[-1,0,1]","[-1,0,1]",inherited
+github.allow_local_test_remote,false,false,inherited
+github.allowed_extensions,"["".json"","".csv"","".md"","".txt""]","["".json"","".csv"","".md"","".txt""]",inherited
+github.author_email,"""bparvu@lakeheadu.ca""","""bparvu@lakeheadu.ca""",inherited
+github.author_name,"""Bogdan Parvu""","""Bogdan Parvu""",inherited
+github.branch,"""main""","""main""",inherited
+github.commit_message,"""Phase 2 Sector 3: publish labelled-frame manifest and clinical audits""","""Phase 2 Sector 4: publish video splits and domain-adaptation manifests""",sector4_override
+github.config_notebook_name,"""phase2_01_ingestion.ipynb""","""phase2_01_ingestion.ipynb""",inherited
+github.config_output_filename,"""phase2_01_ingestion_{run_id}_config.json""","""phase2_01_ingestion_{run_id}_config.json""",inherited
+github.dataset_audit_excluded_artifacts,"[""physical_image_inventory"",""metadata_clean""]","[""physical_image_inventory"",""metadata_clean""]",inherited
+github.dataset_audit_subdir,"""dataset_audit""","""dataset_audit""",inherited
+github.dry_run,false,false,inherited
+github.github_username,"""bogdanparvu18""","""bogdanparvu18""",inherited
+github.local_repo_dir,"""/content/msc-graduate-project""","""/content/msc-graduate-project""",inherited
+github.max_file_size_mib,20,20,inherited
+github.output_groups,"[""configs"",""results"",""reports""]","[""configs"",""results"",""reports""]",inherited
+github.push,true,true,inherited
+github.repo_output_dir,"""outputs/phase3/sector3""","""outputs/phase2/sector4""",sector4_override
+github.repo_url,"""https://github.com/bogdanparvu18/msc-graduate-project.git""","""https://github.com/bogdanparvu18/msc-graduate-project.git""",inherited
+github.token_secret_name,"""GITHUB_TOKEN""","""GITHUB_TOKEN""",inherited
+interim_data_dir,"""data/interim/phase2""","""data/interim/phase2""",inherited
+output_dir,"""outputs/phase2""","""outputs/phase2""",inherited
+phase,2,2,inherited
+raw_data_dir,"""data/raw/kvasir_capsule""","""data/raw/kvasir_capsule""",inherited
+results_dir,"""outputs/phase2/results/""","""outputs/phase2/results/""",inherited
+run_id_format,"""%Y%m%d_%H%M%S""","""%Y%m%d_%H%M%S""",inherited
+sector,3,4,sector4_override
+sector3.dry_run,false,false,inherited
+sector3.export_dir,"""outputs/phase3/sector3""","""outputs/phase3/sector3""",inherited
+sector3.local_output_dir,"""outputs/phase2/sector3""","""outputs/phase2/sector3""",inherited
+sector3.push,true,true,inherited
+sector3.require_any_bbox,true,true,inherited
+sector3.require_valid_bbox,true,true,inherited
+sector4,"""<not declared>""","{""dry_run"":false,""export_dir"":""outputs/phase2/sector4"",""local_output_dir"":""outputs/phase2/sector4"",""push"":true}",sector4_override
+seed,42,42,inherited
+source_storage_root,"""/content/drive/MyDrive/MMVQA_Clinical""","""/content/drive/MyDrive/MMVQA_Clinical""",inherited
+source_storage_roots.sector1,"""/content/drive/MyDrive/MMVQA_Clinical""","""/content/drive/MyDrive/MMVQA_Clinical""",inherited
+source_storage_roots.sector2,"""/content/drive/MyDrive/MMVQA_Clinical""","""/content/drive/MyDrive/MMVQA_Clinical""",inherited
+split_strategy,"""<not declared>""","""video_level_multilabel_stratified""",sector4_override
+storage_backend,"""google_drive""","""google_drive""",inherited
+storage_root,"""/content/drive/MyDrive/MMVQA_Clinical""","""/content/drive/MyDrive/MMVQA_Clinical""",inherited
+test_fraction,"""<not declared>""",0.15,sector4_override
+timezone,"""America/Toronto""","""America/Toronto""",inherited
+train_fraction,"""<not declared>""",0.7,sector4_override
+validation_fraction,"""<not declared>""",0.15,sector4_override

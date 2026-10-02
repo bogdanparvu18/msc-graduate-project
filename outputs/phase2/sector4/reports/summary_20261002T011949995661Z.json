@@ -1,0 +1,454 @@
+{
+  "domain_adaptation_summary": [
+    {
+      "eligible_video_count": 74,
+      "frame_reference_count": 185755,
+      "sampled_video_count": 74,
+      "source_type": "fully_unlabelled_video",
+      "unlabelled_only_validation_passed": true
+    },
+    {
+      "eligible_video_count": 30,
+      "frame_reference_count": 91041,
+      "sampled_video_count": 30,
+      "source_type": "unlabelled_frame_from_train_video",
+      "unlabelled_only_validation_passed": true
+    }
+  ],
+  "phase": 2,
+  "policy": "Validation/test videos never contribute domain-adaptation frames. References do not imply clinical normality.",
+  "sector": 4,
+  "table_row_counts": {
+    "class_split_support_report": 42,
+    "config_inheritance_report": 114,
+    "domain_adaptation_manifest": 276796,
+    "domain_adaptation_summary": 2,
+    "domain_eligibility_report": 117,
+    "domain_source_videos": 104,
+    "labelled_frame_manifest_with_split": 47239,
+    "split_summary_report": 3,
+    "video_manifest_with_roles": 117,
+    "video_role_report": 4,
+    "video_split_manifest": 43
+  },
+  "units": {
+    "domain_adaptation_manifest": "unlabelled frame reference",
+    "labelled_frame_manifest_with_split": "accepted annotation",
+    "video_split_manifest": "video"
+  },
+  "video_role_report": [
+    {
+      "data_role": "domain_adaptation_only",
+      "supervised_split": null,
+      "video_annotation_type": "fully_unlabelled",
+      "video_count": 74
+    },
+    {
+      "data_role": "supervised_test",
+      "supervised_split": "test",
+      "video_annotation_type": "partially_labelled",
+      "video_count": 8
+    },
+    {
+      "data_role": "supervised_train_plus_domain_adaptation",
+      "supervised_split": "train",
+      "video_annotation_type": "partially_labelled",
+      "video_count": 30
+    },
+    {
+      "data_role": "supervised_validation",
+      "supervised_split": "validation",
+      "video_annotation_type": "partially_labelled",
+      "video_count": 5
+    }
+  ],
+  "video_split_manifest": [
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 1292,
+      "retained_class_count": 6,
+      "retained_unique_frame_count": 1292,
+      "split": "test",
+      "video_key": "04a78ef00c5245e0",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/04a78ef00c5245e0.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 1191,
+      "retained_class_count": 3,
+      "retained_unique_frame_count": 1191,
+      "split": "test",
+      "video_key": "0531325b64674948",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/0531325b64674948.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 1499,
+      "retained_class_count": 4,
+      "retained_unique_frame_count": 1499,
+      "split": "train",
+      "video_key": "0728084c8da942d9",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/0728084c8da942d9.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 678,
+      "retained_class_count": 2,
+      "retained_unique_frame_count": 678,
+      "split": "test",
+      "video_key": "07c1fa15a20a4398",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/07c1fa15a20a4398.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 2034,
+      "retained_class_count": 4,
+      "retained_unique_frame_count": 2034,
+      "split": "train",
+      "video_key": "131368cc17e44240",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/131368cc17e44240.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 127,
+      "retained_class_count": 1,
+      "retained_unique_frame_count": 127,
+      "split": "train",
+      "video_key": "2fc3db471f9d44c0",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/2fc3db471f9d44c0.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 237,
+      "retained_class_count": 3,
+      "retained_unique_frame_count": 237,
+      "split": "train",
+      "video_key": "39960e5e099a45ca",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/39960e5e099a45ca.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 1002,
+      "retained_class_count": 4,
+      "retained_unique_frame_count": 1002,
+      "split": "train",
+      "video_key": "3ada4222967f421d",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/3ada4222967f421d.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 1704,
+      "retained_class_count": 2,
+      "retained_unique_frame_count": 1704,
+      "split": "train",
+      "video_key": "3c8d5f0b90d7475d",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/3c8d5f0b90d7475d.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 780,
+      "retained_class_count": 3,
+      "retained_unique_frame_count": 780,
+      "split": "train",
+      "video_key": "4560e83f9afc4685",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/4560e83f9afc4685.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 1379,
+      "retained_class_count": 6,
+      "retained_unique_frame_count": 1379,
+      "split": "train",
+      "video_key": "48579eec79784294",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/48579eec79784294.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 323,
+      "retained_class_count": 2,
+      "retained_unique_frame_count": 323,
+      "split": "test",
+      "video_key": "495f16498db34d3c",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/495f16498db34d3c.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 90,
+      "retained_class_count": 1,
+      "retained_unique_frame_count": 90,
+      "split": "train",
+      "video_key": "4aebc5cb2d4847aa",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/4aebc5cb2d4847aa.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 788,
+      "retained_class_count": 3,
+      "retained_unique_frame_count": 788,
+      "split": "train",
+      "video_key": "5bb1d3cc7dc64cec",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/5bb1d3cc7dc64cec.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 2394,
+      "retained_class_count": 5,
+      "retained_unique_frame_count": 2394,
+      "split": "test",
+      "video_key": "5e59c7fdb16c4228",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/5e59c7fdb16c4228.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 464,
+      "retained_class_count": 2,
+      "retained_unique_frame_count": 464,
+      "split": "test",
+      "video_key": "5e9beaf4e66142c8",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/5e9beaf4e66142c8.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 2159,
+      "retained_class_count": 6,
+      "retained_unique_frame_count": 2159,
+      "split": "train",
+      "video_key": "64440803f87b4843",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/64440803f87b4843.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 884,
+      "retained_class_count": 2,
+      "retained_unique_frame_count": 884,
+      "split": "train",
+      "video_key": "6cb700585c4f4070",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/6cb700585c4f4070.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 436,
+      "retained_class_count": 4,
+      "retained_unique_frame_count": 436,
+      "split": "test",
+      "video_key": "7a47e8eacea04e64",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/7a47e8eacea04e64.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 740,
+      "retained_class_count": 4,
+      "retained_unique_frame_count": 740,
+      "split": "train",
+      "video_key": "7ad22d50ebaf4596",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/7ad22d50ebaf4596.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 2021,
+      "retained_class_count": 5,
+      "retained_unique_frame_count": 2021,
+      "split": "train",
+      "video_key": "8885668afb844852",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/8885668afb844852.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 1198,
+      "retained_class_count": 2,
+      "retained_unique_frame_count": 1198,
+      "split": "train",
+      "video_key": "89cdd41258c542c5",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/89cdd41258c542c5.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 542,
+      "retained_class_count": 2,
+      "retained_unique_frame_count": 542,
+      "split": "train",
+      "video_key": "8a00709108cd4e2b",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/8a00709108cd4e2b.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 1077,
+      "retained_class_count": 6,
+      "retained_unique_frame_count": 1077,
+      "split": "train",
+      "video_key": "8ebf0e483cac48d6",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/8ebf0e483cac48d6.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 74,
+      "retained_class_count": 3,
+      "retained_unique_frame_count": 74,
+      "split": "train",
+      "video_key": "ad91cf7ca91440aa",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/ad91cf7ca91440aa.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 431,
+      "retained_class_count": 3,
+      "retained_unique_frame_count": 431,
+      "split": "test",
+      "video_key": "af9bd7d0e43741e3",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/af9bd7d0e43741e3.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 1297,
+      "retained_class_count": 3,
+      "retained_unique_frame_count": 1297,
+      "split": "validation",
+      "video_key": "b2134f4a6f864613",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/b2134f4a6f864613.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 1891,
+      "retained_class_count": 3,
+      "retained_unique_frame_count": 1891,
+      "split": "train",
+      "video_key": "bc84479c66fe4da6",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/bc84479c66fe4da6.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 1449,
+      "retained_class_count": 4,
+      "retained_unique_frame_count": 1449,
+      "split": "validation",
+      "video_key": "bca26705313a4644",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/bca26705313a4644.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 1000,
+      "retained_class_count": 3,
+      "retained_unique_frame_count": 1000,
+      "split": "validation",
+      "video_key": "c11b28a8b2344716",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/c11b28a8b2344716.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 976,
+      "retained_class_count": 3,
+      "retained_unique_frame_count": 976,
+      "split": "train",
+      "video_key": "c7084b3556e34619",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/c7084b3556e34619.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 1328,
+      "retained_class_count": 4,
+      "retained_unique_frame_count": 1328,
+      "split": "train",
+      "video_key": "d369e4f163df4aba",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/d369e4f163df4aba.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 643,
+      "retained_class_count": 3,
+      "retained_unique_frame_count": 643,
+      "split": "train",
+      "video_key": "d626f4f4a5ac4785",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/d626f4f4a5ac4785.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 945,
+      "retained_class_count": 3,
+      "retained_unique_frame_count": 945,
+      "split": "validation",
+      "video_key": "d7a271f233ba4a40",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/d7a271f233ba4a40.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 2152,
+      "retained_class_count": 4,
+      "retained_unique_frame_count": 2152,
+      "split": "train",
+      "video_key": "dac1e27f7e4d4ef5",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/dac1e27f7e4d4ef5.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 1789,
+      "retained_class_count": 3,
+      "retained_unique_frame_count": 1789,
+      "split": "train",
+      "video_key": "dc221ccc65d34010",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/dc221ccc65d34010.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 1216,
+      "retained_class_count": 3,
+      "retained_unique_frame_count": 1216,
+      "split": "train",
+      "video_key": "dca1377dec974312",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/dca1377dec974312.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 1530,
+      "retained_class_count": 3,
+      "retained_unique_frame_count": 1530,
+      "split": "train",
+      "video_key": "df6b47bafe5143f5",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/df6b47bafe5143f5.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 873,
+      "retained_class_count": 5,
+      "retained_unique_frame_count": 864,
+      "split": "train",
+      "video_key": "eb0203196e284797",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/eb0203196e284797.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 587,
+      "retained_class_count": 3,
+      "retained_unique_frame_count": 587,
+      "split": "train",
+      "video_key": "ed02f27ef36f483e",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/ed02f27ef36f483e.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 2085,
+      "retained_class_count": 3,
+      "retained_unique_frame_count": 2084,
+      "split": "train",
+      "video_key": "fb86bc87d3874cd7",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/fb86bc87d3874cd7.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 1380,
+      "retained_class_count": 2,
+      "retained_unique_frame_count": 1380,
+      "split": "train",
+      "video_key": "fc32def0e7194981",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/fc32def0e7194981.mp4"
+    },
+    {
+      "frame_index_offset": 0,
+      "retained_annotation_count": 554,
+      "retained_class_count": 3,
+      "retained_unique_frame_count": 554,
+      "split": "validation",
+      "video_key": "fe5d372e43f94f68",
+      "video_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_videos/fe5d372e43f94f68.mp4"
+    }
+  ]
+}

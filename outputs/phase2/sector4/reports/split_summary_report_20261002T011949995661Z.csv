@@ -1,0 +1,4 @@
+split,requested_video_fraction,video_count,actual_video_fraction,retained_annotation_count,retained_unique_frame_count,decoded_video_frame_count,partition_validation_passed
+train,0.7,30,0.6976744186046512,34785,34775,1400349,True
+validation,0.15,5,0.11627906976744186,5245,5245,241262,True
+test,0.15,8,0.18604651162790697,7209,7209,337674,True

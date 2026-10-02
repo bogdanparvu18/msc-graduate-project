@@ -1,0 +1,55 @@
+{
+  "artifact": "reports/domain_eligibility_report_20261002T011949995661Z.csv",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "string",
+      "name": "video_key",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "object",
+      "name": "video_annotation_type",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "string",
+      "name": "supervised_split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "object",
+      "name": "data_role",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "Int64",
+      "name": "original_annotation_count"
+    },
+    {
+      "dtype": "Int64",
+      "name": "retained_annotation_count"
+    },
+    {
+      "dtype": "Int64",
+      "name": "excluded_annotation_count"
+    },
+    {
+      "dtype": "bool",
+      "name": "domain_sampling_requested"
+    },
+    {
+      "dtype": "bool",
+      "name": "domain_sampling_eligible"
+    },
+    {
+      "dtype": "object",
+      "name": "domain_sampling_reason",
+      "object_kind": "string"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "e4cc563c227b663db022178566c70f680004b011609423bdc81205b7efcc5369",
+  "rows": 117,
+  "schema_version": 1
+}

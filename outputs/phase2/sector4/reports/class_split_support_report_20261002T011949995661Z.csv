@@ -1,0 +1,43 @@
+finding_class_normalized,split,supporting_video_count,retained_annotation_count,retained_unique_frame_count,total_supporting_video_count,absent_in_split,scarce_video_support,represented_in_all_splits,coverage_status,stratification_guarantees_class_coverage
+ampulla of vater,train,1,10,10,1,False,True,False,fewer_than_three_supporting_videos,False
+ampulla of vater,validation,0,0,0,1,True,True,False,fewer_than_three_supporting_videos,False
+ampulla of vater,test,0,0,0,1,True,True,False,fewer_than_three_supporting_videos,False
+angiectasia,train,4,719,719,6,False,False,True,represented_in_all_splits,False
+angiectasia,validation,1,39,39,6,False,False,True,represented_in_all_splits,False
+angiectasia,test,1,108,108,6,False,False,True,represented_in_all_splits,False
+blood fresh,train,1,424,424,2,False,True,False,fewer_than_three_supporting_videos,False
+blood fresh,validation,0,0,0,2,True,True,False,fewer_than_three_supporting_videos,False
+blood fresh,test,1,22,22,2,False,True,False,fewer_than_three_supporting_videos,False
+blood hematin,train,1,12,12,1,False,True,False,fewer_than_three_supporting_videos,False
+blood hematin,validation,0,0,0,1,True,True,False,fewer_than_three_supporting_videos,False
+blood hematin,test,0,0,0,1,True,True,False,fewer_than_three_supporting_videos,False
+erosion,train,6,387,386,9,False,False,True,represented_in_all_splits,False
+erosion,validation,1,72,72,9,False,False,True,represented_in_all_splits,False
+erosion,test,2,48,48,9,False,False,True,represented_in_all_splits,False
+erythema,train,2,36,36,3,False,False,False,missing_from_at_least_one_split,False
+erythema,validation,0,0,0,3,True,False,False,missing_from_at_least_one_split,False
+erythema,test,1,123,123,3,False,False,False,missing_from_at_least_one_split,False
+foreign body,train,3,770,770,4,False,False,False,missing_from_at_least_one_split,False
+foreign body,validation,0,0,0,4,True,False,False,missing_from_at_least_one_split,False
+foreign body,test,1,6,6,4,False,False,False,missing_from_at_least_one_split,False
+ileocecal valve,train,24,3060,3060,34,False,False,True,represented_in_all_splits,False
+ileocecal valve,validation,3,73,73,34,False,False,True,represented_in_all_splits,False
+ileocecal valve,test,7,1056,1056,34,False,False,True,represented_in_all_splits,False
+lymphangiectasia,train,2,518,518,3,False,False,False,missing_from_at_least_one_split,False
+lymphangiectasia,validation,0,0,0,3,True,False,False,missing_from_at_least_one_split,False
+lymphangiectasia,test,1,74,74,3,False,False,False,missing_from_at_least_one_split,False
+normal clean mucosa,train,26,24910,24910,37,False,False,True,represented_in_all_splits,False
+normal clean mucosa,validation,5,4460,4460,37,False,False,True,represented_in_all_splits,False
+normal clean mucosa,test,6,4968,4968,37,False,False,True,represented_in_all_splits,False
+polyp,train,1,55,55,1,False,True,False,fewer_than_three_supporting_videos,False
+polyp,validation,0,0,0,1,True,True,False,fewer_than_three_supporting_videos,False
+polyp,test,0,0,0,1,True,True,False,fewer_than_three_supporting_videos,False
+pylorus,train,22,962,962,32,False,False,True,represented_in_all_splits,False
+pylorus,validation,5,147,147,32,False,False,True,represented_in_all_splits,False
+pylorus,test,5,420,420,32,False,False,True,represented_in_all_splits,False
+reduced mucosal view,train,5,2213,2213,7,False,False,True,represented_in_all_splits,False
+reduced mucosal view,validation,1,454,454,7,False,False,True,represented_in_all_splits,False
+reduced mucosal view,test,1,239,239,7,False,False,True,represented_in_all_splits,False
+ulcer,train,2,709,709,3,False,False,False,missing_from_at_least_one_split,False
+ulcer,validation,0,0,0,3,True,False,False,missing_from_at_least_one_split,False
+ulcer,test,1,145,145,3,False,False,False,missing_from_at_least_one_split,False
