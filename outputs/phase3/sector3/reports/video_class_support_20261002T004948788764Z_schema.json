@@ -1,9 +1,11 @@
 {
-  "artifact": "reports/20261001_200230_410133/video_class_support.csv",
+  "artifact": "reports/video_class_support_20261002T004948788764Z.csv",
+  "column_axis_name": null,
   "columns": [
     {
       "dtype": "string",
-      "name": "video_key"
+      "name": "video_key",
+      "string_storage": "python"
     },
     {
       "dtype": "int64",
@@ -31,6 +33,7 @@
     }
   ],
   "csv_null_marker": "\\N",
+  "fingerprint": "e0565cc0eeff1fdf9ef5d8ff9c7f1200097597be08facb7a02d89a293749a2ea",
   "rows": 117,
-  "table": "video_class_support"
+  "schema_version": 1
 }

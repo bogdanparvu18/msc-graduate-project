@@ -1,9 +1,11 @@
 {
-  "artifact": "reports/20261001_200230_410133/labelled_frame_bounds_report.csv",
+  "artifact": "reports/labelled_frame_bounds_report_20261002T004948788764Z.csv",
+  "column_axis_name": null,
   "columns": [
     {
       "dtype": "object",
-      "name": "video_key"
+      "name": "video_key",
+      "object_kind": "string"
     },
     {
       "dtype": "Int64",
@@ -31,6 +33,7 @@
     }
   ],
   "csv_null_marker": "\\N",
+  "fingerprint": "92ffd9ae4c99fcb490f277432fec2645be8e31995815290320799175dee3f6ce",
   "rows": 43,
-  "table": "labelled_frame_bounds_report"
+  "schema_version": 1
 }

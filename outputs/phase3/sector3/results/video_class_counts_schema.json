@@ -1,68 +1,71 @@
 {
-  "artifact": "results/20261001_200230_410133/video_class_matrix.csv",
+  "artifact": "results/video_class_counts.csv",
+  "column_axis_name": null,
   "columns": [
     {
       "dtype": "object",
-      "name": "video_key"
+      "name": "video_key",
+      "object_kind": "string"
     },
     {
-      "dtype": "int8",
+      "dtype": "int64",
       "name": "ampulla of vater"
     },
     {
-      "dtype": "int8",
+      "dtype": "int64",
       "name": "angiectasia"
     },
     {
-      "dtype": "int8",
+      "dtype": "int64",
       "name": "blood fresh"
     },
     {
-      "dtype": "int8",
+      "dtype": "int64",
       "name": "blood hematin"
     },
     {
-      "dtype": "int8",
+      "dtype": "int64",
       "name": "erosion"
     },
     {
-      "dtype": "int8",
+      "dtype": "int64",
       "name": "erythema"
     },
     {
-      "dtype": "int8",
+      "dtype": "int64",
       "name": "foreign body"
     },
     {
-      "dtype": "int8",
+      "dtype": "int64",
       "name": "ileocecal valve"
     },
     {
-      "dtype": "int8",
+      "dtype": "int64",
       "name": "lymphangiectasia"
     },
     {
-      "dtype": "int8",
+      "dtype": "int64",
       "name": "normal clean mucosa"
     },
     {
-      "dtype": "int8",
+      "dtype": "int64",
       "name": "polyp"
     },
     {
-      "dtype": "int8",
+      "dtype": "int64",
       "name": "pylorus"
     },
     {
-      "dtype": "int8",
+      "dtype": "int64",
       "name": "reduced mucosal view"
     },
     {
-      "dtype": "int8",
+      "dtype": "int64",
       "name": "ulcer"
     }
   ],
   "csv_null_marker": "\\N",
+  "fingerprint": "18ca0f92a46663d2f23c3a1dd5cb8a7daf2433e31f740e71d1a9659c73de9fa9",
   "rows": 43,
-  "table": "video_class_matrix"
+  "schema_version": 1
 }

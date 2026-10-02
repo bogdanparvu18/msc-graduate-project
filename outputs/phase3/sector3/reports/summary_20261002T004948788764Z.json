@@ -97,8 +97,6 @@
   ],
   "labelled_video_count": 43,
   "phase": 2,
-  "publication_directory": "outputs/phase3/sector3",
-  "run_id": "20261001_200230_410133",
   "sector": 3,
   "spatially_usable_annotation_rows": 4127,
   "table_row_counts": {
@@ -106,7 +104,7 @@
     "bbox_validation_summary": 5,
     "class_distribution_report": 14,
     "clinical_taxonomy_report": 14,
-    "config_conflict_report": 43,
+    "config_conflict_report": 42,
     "frame_inventory_report": 7,
     "labelled_frame_bounds_report": 43,
     "labelled_frame_manifest": 47239,

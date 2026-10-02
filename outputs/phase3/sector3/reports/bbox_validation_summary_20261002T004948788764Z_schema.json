@@ -1,0 +1,19 @@
+{
+  "artifact": "reports/bbox_validation_summary_20261002T004948788764Z.csv",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "object",
+      "name": "bbox_validation_status",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "Int64",
+      "name": "annotation_count"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "ce0d5f60caf1541c67a459520ff3d0000d1bc055058f070f432e4858902f1140",
+  "rows": 5,
+  "schema_version": 1
+}

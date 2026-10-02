@@ -1,12 +1,12 @@
 config_key,sector1_value,sector2_value,resolution
-clinical_group_map,<not declared>,"{""ampulla of vater"": ""anatomical_landmark"", ""angiectasia"": ""vascular_lesion"", ""blood fresh"": ""bleeding"", ""blood hematin"": ""bleeding"", ""erosion"": ""mucosal_lesion"", ""erythema"": ""mucosal_lesion"", ""foreign body"": ""foreign_body"", ""ileocecal valve"": ""anatomical_landmark"", ""lymphangiectasia"": ""lymphatic_lesion"", ""normal clean mucosa"": ""normal_mucosa"", ""polyp"": ""protruding_lesion"", ""pylorus"": ""anatomical_landmark"", ""reduced mucosal view"": ""visibility_limitation"", ""ulcer"": ""mucosal_lesion""}",sector2_runtime_added
+clinical_group_map,<not declared>,"{""ampulla of vater"":""anatomical_landmark"",""angiectasia"":""vascular_lesion"",""blood fresh"":""bleeding"",""blood hematin"":""bleeding"",""erosion"":""mucosal_lesion"",""erythema"":""mucosal_lesion"",""foreign body"":""foreign_body"",""ileocecal valve"":""anatomical_landmark"",""lymphangiectasia"":""lymphatic_lesion"",""normal clean mucosa"":""normal_mucosa"",""polyp"":""protruding_lesion"",""pylorus"":""anatomical_landmark"",""reduced mucosal view"":""visibility_limitation"",""ulcer"":""mucosal_lesion""}",sector2_runtime_added
 decode_audit_allow_cpu_fallback,<not declared>,true,sector2_runtime_added
 decode_audit_backend,<not declared>,"""nvdec""",sector2_runtime_added
 decode_audit_cpu_threads,<not declared>,2,sector2_runtime_added
 decode_audit_force_redecode,<not declared>,false,sector2_runtime_added
 decode_audit_gpu_id,<not declared>,0,sector2_runtime_added
 decode_audit_local_work_dir,<not declared>,"""/content/video_decode_audit_work""",sector2_runtime_added
-decode_audit_published_reference_frames,<not declared>,"{""all_videos"": 4741504, ""fully_unlabelled"": 2785829, ""partially_labelled"": 1955675}",sector2_runtime_added
+decode_audit_published_reference_frames,<not declared>,"{""all_videos"":4741504,""fully_unlabelled"":2785829,""partially_labelled"":1955675}",sector2_runtime_added
 decode_audit_retry_failed,<not declared>,false,sector2_runtime_added
 decode_audit_retry_video_keys,<not declared>,[],sector2_runtime_added
 decode_audit_stage_video_locally,<not declared>,true,sector2_runtime_added
@@ -38,7 +38,6 @@ frame_alignment_ssim_batch_size,<not declared>,16,sector2_runtime_added
 frame_alignment_stage_video_locally,<not declared>,true,sector2_runtime_added
 frame_alignment_video_workers,<not declared>,"""all""",sector2_runtime_added
 frame_alignment_vram_budget_fraction,<not declared>,0.85,sector2_runtime_added
-frame_index_offset_candidates,<not declared>,"[-1, 0, 1]",sector2_runtime_added
+frame_index_offset_candidates,<not declared>,"[-1,0,1]",sector2_runtime_added
 results_dir,<not declared>,"""outputs/phase2/results/""",sector2_runtime_added
-run_id,"""20260910_194753""","""20261001_181334""",sector2_runtime_precedence
 run_id_format,"""%Y%m%d_%H%M%S""",<not declared>,sector1_inherited

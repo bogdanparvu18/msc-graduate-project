@@ -1,9 +1,11 @@
 {
-  "artifact": "reports/20261001_200230_410133/frame_inventory_report.csv",
+  "artifact": "reports/frame_inventory_report_20261002T004948788764Z.csv",
+  "column_axis_name": null,
   "columns": [
     {
       "dtype": "object",
-      "name": "frame_category"
+      "name": "frame_category",
+      "object_kind": "string"
     },
     {
       "dtype": "int64",
@@ -15,7 +17,8 @@
     },
     {
       "dtype": "object",
-      "name": "count_unit"
+      "name": "count_unit",
+      "object_kind": "string"
     },
     {
       "dtype": "Int64",
@@ -35,6 +38,7 @@
     }
   ],
   "csv_null_marker": "\\N",
+  "fingerprint": "f33109cffe6cf84636e77726a2c3af4415ca14e2f262adb214d6f3aa21c2c6bd",
   "rows": 7,
-  "table": "frame_inventory_report"
+  "schema_version": 1
 }

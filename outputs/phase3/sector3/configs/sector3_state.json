@@ -1,0 +1,222 @@
+{
+  "artifacts": [
+    {
+      "bytes": 66088,
+      "relative_path": "configs/sector3_config_20261002T004948788764Z.json",
+      "sha256": "eef052b7a4d44182538d1dc2255e7ec9a38cb70437641471200dbff5eeff2351"
+    },
+    {
+      "bytes": 1262133,
+      "relative_path": "reports/bbox_validation_report_20261002T004948788764Z.csv.gz",
+      "sha256": "9d358e2ed1d9b916825932f63cb154f60e639c19f7a2d4748e357b8516d708fe"
+    },
+    {
+      "bytes": 1973,
+      "relative_path": "reports/bbox_validation_report_20261002T004948788764Z_schema.json",
+      "sha256": "3d6d5119cda3c7ab3e8b6eef6e0a365643564706b3bc94fb3b71b19559cceced"
+    },
+    {
+      "bytes": 121,
+      "relative_path": "reports/bbox_validation_summary_20261002T004948788764Z.csv",
+      "sha256": "cf0310534f6f94d7064c7fe85a098aabcdfe426f4b14bd50ad8f09f800dd45c2"
+    },
+    {
+      "bytes": 453,
+      "relative_path": "reports/bbox_validation_summary_20261002T004948788764Z_schema.json",
+      "sha256": "ed6603fbabcd841764b58c8ea208fa2bf98d24405a8ca274672391d11265a2c0"
+    },
+    {
+      "bytes": 1229,
+      "relative_path": "reports/class_distribution_report_20261002T004948788764Z.csv",
+      "sha256": "54140e0795a424f0e35b7a8dc0253a5f10f4204b5d18a86a5b5fceede221e2dd"
+    },
+    {
+      "bytes": 1213,
+      "relative_path": "reports/class_distribution_report_20261002T004948788764Z_schema.json",
+      "sha256": "a9df1071952ba9aca04fcb1bdec40aedcc6adc53dcef014383e051a44f5c12ce"
+    },
+    {
+      "bytes": 1156,
+      "relative_path": "reports/clinical_taxonomy_report_20261002T004948788764Z.csv",
+      "sha256": "1a40b1f5ab5cc3f92f16b84d5955ab59d20456b5aecfe21fe035aa9a045b484c"
+    },
+    {
+      "bytes": 940,
+      "relative_path": "reports/clinical_taxonomy_report_20261002T004948788764Z_schema.json",
+      "sha256": "7f9d74d1ec81d18e95342aa468621cb78401800227a4e4683478891c87054d35"
+    },
+    {
+      "bytes": 3772,
+      "relative_path": "reports/config_conflict_report_20261002T004948788764Z.csv",
+      "sha256": "b97856cafac5ff83fe2a2457c0a440280e57b1e58849660014f93c5b11a89c74"
+    },
+    {
+      "bytes": 677,
+      "relative_path": "reports/config_conflict_report_20261002T004948788764Z_schema.json",
+      "sha256": "f2722e3cb0ab40d1f4bdb7c84a83243f0a16363dfda7ba88559b4fea15d927ee"
+    },
+    {
+      "bytes": 1026,
+      "relative_path": "reports/executive_report_20261002T004948788764Z.md",
+      "sha256": "eaeb9e5573c3784665ad029547960998750667e921f623ed6abe064a3ded6d51"
+    },
+    {
+      "bytes": 687,
+      "relative_path": "reports/frame_inventory_report_20261002T004948788764Z.csv",
+      "sha256": "6c03f5eda9137ee8c60f9ef066fc36d3d95da6317810ba13596a6c1fc5a672b9"
+    },
+    {
+      "bytes": 914,
+      "relative_path": "reports/frame_inventory_report_20261002T004948788764Z_schema.json",
+      "sha256": "e620612ff9e652da7c042616ccd983f37e4ccdcd2b8ff6d8161a238be3e86ffc"
+    },
+    {
+      "bytes": 2101,
+      "relative_path": "reports/labelled_frame_bounds_report_20261002T004948788764Z.csv",
+      "sha256": "1ddacd4f88537f85c22ca3249d8d4e900178efee6b2d9587e234868e76bb8a0a"
+    },
+    {
+      "bytes": 835,
+      "relative_path": "reports/labelled_frame_bounds_report_20261002T004948788764Z_schema.json",
+      "sha256": "fdce8b4aeac6be1024d720a0ff3b2a800c36c1211ef09d617c93b283378566c9"
+    },
+    {
+      "bytes": 3610,
+      "relative_path": "reports/summary_20261002T004948788764Z.json",
+      "sha256": "104afb5b48fb714bc14b100834d34765b304fa4b8af25b14de885de5a38b17b4"
+    },
+    {
+      "bytes": 4729,
+      "relative_path": "reports/video_class_support_20261002T004948788764Z.csv",
+      "sha256": "6efc595d859bc22d24926a93996f2dfebbdc14da98a09cc1e80acc3a92eea296"
+    },
+    {
+      "bytes": 842,
+      "relative_path": "reports/video_class_support_20261002T004948788764Z_schema.json",
+      "sha256": "d27a4689ab75b01c3de9dcc717d2a0ad407139725c8971ff68e96ebc7f2be7dc"
+    },
+    {
+      "bytes": 5264564,
+      "relative_path": "results/labelled_frame_manifest.parquet",
+      "sha256": "8a9f18c6a8f079db28baaf7eaf056bbba23e7d0b1c8bc8af152fc4fa868279c1"
+    },
+    {
+      "bytes": 4858,
+      "relative_path": "results/labelled_frame_manifest_schema.json",
+      "sha256": "40064c0a39a3d40e87267b1754671bfe84a9b8e584fc449a3509d1de8ee682ef"
+    },
+    {
+      "bytes": 2347,
+      "relative_path": "results/video_class_counts.csv",
+      "sha256": "f6c05516934828db436217e3dbe2a428e122c3c5fbae5998d101fd05af59c1d8"
+    },
+    {
+      "bytes": 1264,
+      "relative_path": "results/video_class_counts_schema.json",
+      "sha256": "5ea88573a03c8fe96111a5724d84226e365480753703db1611b57063df75aa5c"
+    },
+    {
+      "bytes": 2124,
+      "relative_path": "results/video_class_matrix.csv",
+      "sha256": "e9df07e4aac6899484cd3e9aafde09f0f4b5567399c24d9a5d3ec948422c6d01"
+    },
+    {
+      "bytes": 1250,
+      "relative_path": "results/video_class_matrix_schema.json",
+      "sha256": "10ad0fb830ac54c66b0d436501c59a35dc93108dc3a73a67b5f1ba205dd14799"
+    },
+    {
+      "bytes": 26292,
+      "relative_path": "results/video_frame_manifest.parquet",
+      "sha256": "3d31c81c37d6147a675ad6e17df06d60ae61154a46650c4955e9596d106940ab"
+    },
+    {
+      "bytes": 1846,
+      "relative_path": "results/video_frame_manifest_schema.json",
+      "sha256": "6ad3e35c38d33db77a0b954e480344e4c99f52304975e2c5ac74b4a4f9e20b0f"
+    }
+  ],
+  "changed_at_utc": "20261002T004948788764Z",
+  "complete": true,
+  "config_snapshot": "configs/sector3_config_20261002T004948788764Z.json",
+  "content_id": "09dc08f9f99ddd2cdaa02789b76df0ed0af284eb1096c26b235f01f3ea92af59",
+  "core_source_sha256": "9d1df05aaa347645dc1c2f4b3ee91cae86b7d7f5697dc75ed6381dde2641dae8",
+  "input_sha256": {
+    "decode_audit.csv": "e99ca10537849de7b11986dac56c91777268405733710e535bcd37cb69a33994",
+    "frame_alignment_confirmed.parquet": "512a752ea89bb09c5c84c7c24b02646367d901d38d91f9b37ec4a28039796004",
+    "metadata_clean.parquet": "7b7f1425db160db74eb12a39191fa5cc33f8db869a85260b814b684e08eb27cc",
+    "video_manifest.csv": "2fc36b776a9b9947d9e8b3d61f976efb1b0f7809016e5f8698d998a4fa115cbc"
+  },
+  "obsolete_paths": [],
+  "processing_signature": "97d5137ea3b8332af2b5a3e66b3f81bf57bd1532f14b0021da3ea7b9ee19a41d",
+  "schema_version": 2,
+  "semantic_config_fingerprint": "d1b868bcf190cba2d1389c78ed966ebaf415104af71b0afac47cba9ee2fa4f1a",
+  "summary": {
+    "fingerprint": "104afb5b48fb714bc14b100834d34765b304fa4b8af25b14de885de5a38b17b4",
+    "report_fingerprint": "eaeb9e5573c3784665ad029547960998750667e921f623ed6abe064a3ded6d51",
+    "report_relative_path": "reports/executive_report_20261002T004948788764Z.md",
+    "summary_relative_path": "reports/summary_20261002T004948788764Z.json"
+  },
+  "tables": {
+    "bbox_validation_report": {
+      "fingerprint": "955d0228d0cb5b1983457b0f2cff4bdd578357968b9aca19d5b0ed1140e34033",
+      "relative_path": "reports/bbox_validation_report_20261002T004948788764Z.csv.gz",
+      "schema_path": "reports/bbox_validation_report_20261002T004948788764Z_schema.json"
+    },
+    "bbox_validation_summary": {
+      "fingerprint": "ce0d5f60caf1541c67a459520ff3d0000d1bc055058f070f432e4858902f1140",
+      "relative_path": "reports/bbox_validation_summary_20261002T004948788764Z.csv",
+      "schema_path": "reports/bbox_validation_summary_20261002T004948788764Z_schema.json"
+    },
+    "class_distribution_report": {
+      "fingerprint": "8f07eb2ead7525068d57da835549fc498a9f26d15abd974fde61e3273b37b220",
+      "relative_path": "reports/class_distribution_report_20261002T004948788764Z.csv",
+      "schema_path": "reports/class_distribution_report_20261002T004948788764Z_schema.json"
+    },
+    "clinical_taxonomy_report": {
+      "fingerprint": "69fb42316acb57b66f3a94a7664287e9fef80c99ea8a5b2a0afc5ebe1f08a851",
+      "relative_path": "reports/clinical_taxonomy_report_20261002T004948788764Z.csv",
+      "schema_path": "reports/clinical_taxonomy_report_20261002T004948788764Z_schema.json"
+    },
+    "config_conflict_report": {
+      "fingerprint": "72444c303510f9649a070d0e6be3cc0aaf59d52ac1e44b456cb0a4489dcb2e5d",
+      "relative_path": "reports/config_conflict_report_20261002T004948788764Z.csv",
+      "schema_path": "reports/config_conflict_report_20261002T004948788764Z_schema.json"
+    },
+    "frame_inventory_report": {
+      "fingerprint": "f33109cffe6cf84636e77726a2c3af4415ca14e2f262adb214d6f3aa21c2c6bd",
+      "relative_path": "reports/frame_inventory_report_20261002T004948788764Z.csv",
+      "schema_path": "reports/frame_inventory_report_20261002T004948788764Z_schema.json"
+    },
+    "labelled_frame_bounds_report": {
+      "fingerprint": "92ffd9ae4c99fcb490f277432fec2645be8e31995815290320799175dee3f6ce",
+      "relative_path": "reports/labelled_frame_bounds_report_20261002T004948788764Z.csv",
+      "schema_path": "reports/labelled_frame_bounds_report_20261002T004948788764Z_schema.json"
+    },
+    "labelled_frame_manifest": {
+      "fingerprint": "b94f6f3dd609d48f4f1904230313a9574337ca4b43d564b6a406da946fa98c55",
+      "relative_path": "results/labelled_frame_manifest.parquet",
+      "schema_path": "results/labelled_frame_manifest_schema.json"
+    },
+    "video_class_counts": {
+      "fingerprint": "18ca0f92a46663d2f23c3a1dd5cb8a7daf2433e31f740e71d1a9659c73de9fa9",
+      "relative_path": "results/video_class_counts.csv",
+      "schema_path": "results/video_class_counts_schema.json"
+    },
+    "video_class_matrix": {
+      "fingerprint": "835ec905044b22b0f0004305428edb9827d80f74aef6ce205d1f2c8ed60df6ca",
+      "relative_path": "results/video_class_matrix.csv",
+      "schema_path": "results/video_class_matrix_schema.json"
+    },
+    "video_class_support": {
+      "fingerprint": "e0565cc0eeff1fdf9ef5d8ff9c7f1200097597be08facb7a02d89a293749a2ea",
+      "relative_path": "reports/video_class_support_20261002T004948788764Z.csv",
+      "schema_path": "reports/video_class_support_20261002T004948788764Z_schema.json"
+    },
+    "video_frame_manifest": {
+      "fingerprint": "a1d4beaabd365a18c05cdf50081bce83c239413cf5d2fe7bae503e0c2385c2b7",
+      "relative_path": "results/video_frame_manifest.parquet",
+      "schema_path": "results/video_frame_manifest_schema.json"
+    }
+  }
+}

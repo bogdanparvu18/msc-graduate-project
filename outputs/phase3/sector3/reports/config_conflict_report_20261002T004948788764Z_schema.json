@@ -1,0 +1,30 @@
+{
+  "artifact": "reports/config_conflict_report_20261002T004948788764Z.csv",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "string",
+      "name": "config_key",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "sector1_value",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "sector2_value",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "resolution",
+      "string_storage": "python"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "72444c303510f9649a070d0e6be3cc0aaf59d52ac1e44b456cb0a4489dcb2e5d",
+  "rows": 42,
+  "schema_version": 1
+}

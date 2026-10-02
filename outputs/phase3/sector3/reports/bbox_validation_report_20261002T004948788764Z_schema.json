@@ -1,17 +1,21 @@
 {
-  "artifact": "reports/20261001_200230_410133/bbox_validation_report.csv.gz",
+  "artifact": "reports/bbox_validation_report_20261002T004948788764Z.csv.gz",
+  "column_axis_name": null,
   "columns": [
     {
       "dtype": "string",
-      "name": "annotation_id"
+      "name": "annotation_id",
+      "string_storage": "python"
     },
     {
       "dtype": "string",
-      "name": "frame_id"
+      "name": "frame_id",
+      "string_storage": "python"
     },
     {
       "dtype": "object",
-      "name": "video_key"
+      "name": "video_key",
+      "object_kind": "string"
     },
     {
       "dtype": "Int64",
@@ -23,15 +27,18 @@
     },
     {
       "dtype": "object",
-      "name": "filename"
+      "name": "filename",
+      "object_kind": "string"
     },
     {
       "dtype": "string",
-      "name": "image_relpath"
+      "name": "image_relpath",
+      "string_storage": "python"
     },
     {
       "dtype": "object",
-      "name": "finding_class_normalized"
+      "name": "finding_class_normalized",
+      "object_kind": "string"
     },
     {
       "dtype": "boolean",
@@ -83,10 +90,12 @@
     },
     {
       "dtype": "string",
-      "name": "bbox_validation_status"
+      "name": "bbox_validation_status",
+      "string_storage": "python"
     }
   ],
   "csv_null_marker": "\\N",
+  "fingerprint": "955d0228d0cb5b1983457b0f2cff4bdd578357968b9aca19d5b0ed1140e34033",
   "rows": 47239,
-  "table": "bbox_validation_report"
+  "schema_version": 1
 }
