@@ -1,0 +1,36 @@
+{
+  "artifact": "reports/20261001_200230_410133/video_class_support.csv",
+  "columns": [
+    {
+      "dtype": "string",
+      "name": "video_key"
+    },
+    {
+      "dtype": "int64",
+      "name": "original_annotation_count"
+    },
+    {
+      "dtype": "int64",
+      "name": "retained_annotation_count"
+    },
+    {
+      "dtype": "int64",
+      "name": "retained_unique_frame_count"
+    },
+    {
+      "dtype": "int64",
+      "name": "retained_class_count"
+    },
+    {
+      "dtype": "bool",
+      "name": "source_has_annotations"
+    },
+    {
+      "dtype": "bool",
+      "name": "has_accepted_labelled_evidence"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "rows": 117,
+  "table": "video_class_support"
+}

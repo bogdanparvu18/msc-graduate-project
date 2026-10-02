@@ -1,0 +1,52 @@
+{
+  "artifact": "reports/20261001_200230_410133/class_distribution_report.csv",
+  "columns": [
+    {
+      "dtype": "object",
+      "name": "finding_class_normalized"
+    },
+    {
+      "dtype": "object",
+      "name": "clinical_group"
+    },
+    {
+      "dtype": "int64",
+      "name": "original_annotation_count"
+    },
+    {
+      "dtype": "int64",
+      "name": "original_unique_source_frame_count"
+    },
+    {
+      "dtype": "int64",
+      "name": "retained_annotation_count"
+    },
+    {
+      "dtype": "int64",
+      "name": "retained_unique_decoded_frame_count"
+    },
+    {
+      "dtype": "int64",
+      "name": "retained_video_count"
+    },
+    {
+      "dtype": "int64",
+      "name": "excluded_annotation_count"
+    },
+    {
+      "dtype": "float64",
+      "name": "annotation_retention_percent"
+    },
+    {
+      "dtype": "bool",
+      "name": "class_missing_after_alignment"
+    },
+    {
+      "dtype": "bool",
+      "name": "rare_video_support"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "rows": 14,
+  "table": "class_distribution_report"
+}

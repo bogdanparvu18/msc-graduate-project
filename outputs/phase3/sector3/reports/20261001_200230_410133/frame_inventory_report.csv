@@ -1,0 +1,8 @@
+frame_category,actual_frame_count,expected_frame_count,count_unit,difference_from_reference,reference_matches,validation_passed,reference_is_diagnostic
+total_decoded_frames,4765114,4741504,decoded_frame,23610,False,True,True
+original_annotation_rows,47239,\N,annotation,\N,\N,True,True
+original_unique_source_frame_references,47229,47238,source_frame_reference,-9,False,True,True
+accepted_annotation_rows,47239,\N,annotation,\N,\N,True,True
+accepted_unique_decoded_frames,47229,\N,decoded_frame,\N,\N,True,True
+source_frame_references_without_accepted_evidence,0,\N,source_frame_reference,\N,\N,True,True
+decoded_frames_without_accepted_evidence,4717885,\N,decoded_frame,\N,\N,True,True

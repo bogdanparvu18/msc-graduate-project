@@ -1,0 +1,84 @@
+{
+  "artifact": "results/20261001_200230_410133/video_frame_manifest.parquet",
+  "columns": [
+    {
+      "dtype": "string",
+      "name": "video_key"
+    },
+    {
+      "dtype": "object",
+      "name": "video_filename"
+    },
+    {
+      "dtype": "object",
+      "name": "video_path"
+    },
+    {
+      "dtype": "object",
+      "name": "video_relpath"
+    },
+    {
+      "dtype": "object",
+      "name": "video_annotation_type"
+    },
+    {
+      "dtype": "int64",
+      "name": "video_size_bytes"
+    },
+    {
+      "dtype": "bool",
+      "name": "container_opened"
+    },
+    {
+      "dtype": "bool",
+      "name": "first_frame_readable"
+    },
+    {
+      "dtype": "float64",
+      "name": "container_fps"
+    },
+    {
+      "dtype": "int64",
+      "name": "container_reported_frame_count"
+    },
+    {
+      "dtype": "Int64",
+      "name": "width"
+    },
+    {
+      "dtype": "Int64",
+      "name": "height"
+    },
+    {
+      "dtype": "float64",
+      "name": "estimated_container_duration_seconds"
+    },
+    {
+      "dtype": "Int64",
+      "name": "frames_read_before_stop"
+    },
+    {
+      "dtype": "bool",
+      "name": "decoding_completed"
+    },
+    {
+      "dtype": "object",
+      "name": "stop_reason"
+    },
+    {
+      "dtype": "object",
+      "name": "decoder_backend"
+    },
+    {
+      "dtype": "Int64",
+      "name": "frame_count"
+    },
+    {
+      "dtype": "object",
+      "name": "frame_count_source"
+    }
+  ],
+  "csv_null_marker": null,
+  "rows": 117,
+  "table": "video_frame_manifest"
+}

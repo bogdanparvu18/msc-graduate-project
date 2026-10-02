@@ -1,0 +1,36 @@
+{
+  "artifact": "reports/20261001_200230_410133/labelled_frame_bounds_report.csv",
+  "columns": [
+    {
+      "dtype": "object",
+      "name": "video_key"
+    },
+    {
+      "dtype": "Int64",
+      "name": "labelled_frame_count"
+    },
+    {
+      "dtype": "Int64",
+      "name": "minimum_aligned_frame_index"
+    },
+    {
+      "dtype": "Int64",
+      "name": "maximum_aligned_frame_index"
+    },
+    {
+      "dtype": "Int64",
+      "name": "video_frame_count"
+    },
+    {
+      "dtype": "Int64",
+      "name": "out_of_bounds_frame_count"
+    },
+    {
+      "dtype": "boolean",
+      "name": "validation_passed"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "rows": 43,
+  "table": "labelled_frame_bounds_report"
+}

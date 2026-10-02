@@ -1,0 +1,15 @@
+finding_class_normalized,expected_clinical_group,finding_class,clinical_group,original_annotation_count,retained_class_annotation_count,mapping_validation_passed
+ampulla of vater,anatomical_landmark,Ampulla of Vater,anatomical_landmark,10,10,True
+ileocecal valve,anatomical_landmark,Ileocecal valve,anatomical_landmark,4189,4189,True
+pylorus,anatomical_landmark,Pylorus,anatomical_landmark,1529,1529,True
+blood fresh,bleeding,Blood - fresh,bleeding,446,446,True
+blood hematin,bleeding,Blood - hematin,bleeding,12,12,True
+foreign body,foreign_body,Foreign Body,foreign_body,776,776,True
+lymphangiectasia,lymphatic_lesion,Lymphangiectasia,lymphatic_lesion,592,592,True
+erosion,mucosal_lesion,Erosion,mucosal_lesion,507,507,True
+erythema,mucosal_lesion,Erythema,mucosal_lesion,159,159,True
+ulcer,mucosal_lesion,Ulcer,mucosal_lesion,854,854,True
+normal clean mucosa,normal_mucosa,Normal clean mucosa,normal_mucosa,34338,34338,True
+polyp,protruding_lesion,Polyp,protruding_lesion,55,55,True
+angiectasia,vascular_lesion,Angiectasia,vascular_lesion,866,866,True
+reduced mucosal view,visibility_limitation,Reduced Mucosal View,visibility_limitation,2906,2906,True

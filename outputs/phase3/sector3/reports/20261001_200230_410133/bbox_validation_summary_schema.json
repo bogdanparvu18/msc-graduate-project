@@ -1,0 +1,16 @@
+{
+  "artifact": "reports/20261001_200230_410133/bbox_validation_summary.csv",
+  "columns": [
+    {
+      "dtype": "object",
+      "name": "bbox_validation_status"
+    },
+    {
+      "dtype": "Int64",
+      "name": "annotation_count"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "rows": 5,
+  "table": "bbox_validation_summary"
+}

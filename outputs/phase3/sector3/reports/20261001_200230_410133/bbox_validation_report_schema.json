@@ -1,0 +1,92 @@
+{
+  "artifact": "reports/20261001_200230_410133/bbox_validation_report.csv.gz",
+  "columns": [
+    {
+      "dtype": "string",
+      "name": "annotation_id"
+    },
+    {
+      "dtype": "string",
+      "name": "frame_id"
+    },
+    {
+      "dtype": "object",
+      "name": "video_key"
+    },
+    {
+      "dtype": "Int64",
+      "name": "frame_number"
+    },
+    {
+      "dtype": "Int64",
+      "name": "aligned_frame_index"
+    },
+    {
+      "dtype": "object",
+      "name": "filename"
+    },
+    {
+      "dtype": "string",
+      "name": "image_relpath"
+    },
+    {
+      "dtype": "object",
+      "name": "finding_class_normalized"
+    },
+    {
+      "dtype": "boolean",
+      "name": "bbox_annotation_present"
+    },
+    {
+      "dtype": "boolean",
+      "name": "bbox_complete"
+    },
+    {
+      "dtype": "boolean",
+      "name": "bbox_invalid"
+    },
+    {
+      "dtype": "boolean",
+      "name": "has_bbox"
+    },
+    {
+      "dtype": "float64",
+      "name": "bbox_xmin"
+    },
+    {
+      "dtype": "float64",
+      "name": "bbox_ymin"
+    },
+    {
+      "dtype": "float64",
+      "name": "bbox_xmax"
+    },
+    {
+      "dtype": "float64",
+      "name": "bbox_ymax"
+    },
+    {
+      "dtype": "Int64",
+      "name": "source_frame_width"
+    },
+    {
+      "dtype": "Int64",
+      "name": "source_frame_height"
+    },
+    {
+      "dtype": "boolean",
+      "name": "bbox_within_image_bounds"
+    },
+    {
+      "dtype": "boolean",
+      "name": "bbox_spatially_usable"
+    },
+    {
+      "dtype": "string",
+      "name": "bbox_validation_status"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "rows": 47239,
+  "table": "bbox_validation_report"
+}

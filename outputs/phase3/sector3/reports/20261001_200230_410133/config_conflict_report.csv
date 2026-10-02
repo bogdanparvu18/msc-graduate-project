@@ -1,0 +1,44 @@
+config_key,sector1_value,sector2_value,resolution
+clinical_group_map,<not declared>,"{""ampulla of vater"": ""anatomical_landmark"", ""angiectasia"": ""vascular_lesion"", ""blood fresh"": ""bleeding"", ""blood hematin"": ""bleeding"", ""erosion"": ""mucosal_lesion"", ""erythema"": ""mucosal_lesion"", ""foreign body"": ""foreign_body"", ""ileocecal valve"": ""anatomical_landmark"", ""lymphangiectasia"": ""lymphatic_lesion"", ""normal clean mucosa"": ""normal_mucosa"", ""polyp"": ""protruding_lesion"", ""pylorus"": ""anatomical_landmark"", ""reduced mucosal view"": ""visibility_limitation"", ""ulcer"": ""mucosal_lesion""}",sector2_runtime_added
+decode_audit_allow_cpu_fallback,<not declared>,true,sector2_runtime_added
+decode_audit_backend,<not declared>,"""nvdec""",sector2_runtime_added
+decode_audit_cpu_threads,<not declared>,2,sector2_runtime_added
+decode_audit_force_redecode,<not declared>,false,sector2_runtime_added
+decode_audit_gpu_id,<not declared>,0,sector2_runtime_added
+decode_audit_local_work_dir,<not declared>,"""/content/video_decode_audit_work""",sector2_runtime_added
+decode_audit_published_reference_frames,<not declared>,"{""all_videos"": 4741504, ""fully_unlabelled"": 2785829, ""partially_labelled"": 1955675}",sector2_runtime_added
+decode_audit_retry_failed,<not declared>,false,sector2_runtime_added
+decode_audit_retry_video_keys,<not declared>,[],sector2_runtime_added
+decode_audit_stage_video_locally,<not declared>,true,sector2_runtime_added
+expected_classes,<not declared>,14,sector2_runtime_added
+expected_export_container_fps,<not declared>,30.0,sector2_runtime_added
+expected_labelled_frames,<not declared>,47238,sector2_runtime_added
+expected_labelled_videos,<not declared>,43,sector2_runtime_added
+expected_total_extractable_frames,<not declared>,4741504,sector2_runtime_added
+expected_total_videos,<not declared>,117,sector2_runtime_added
+expected_unlabelled_frames,<not declared>,4694266,sector2_runtime_added
+expected_unlabelled_videos,<not declared>,74,sector2_runtime_added
+frame_alignment_copy_workers,<not declared>,6,sector2_runtime_added
+frame_alignment_cuda_backend,<not declared>,"""auto""",sector2_runtime_added
+frame_alignment_cuda_device,<not declared>,"""cuda:0""",sector2_runtime_added
+frame_alignment_define_only,<not declared>,false,sector2_runtime_added
+frame_alignment_force_rescore,<not declared>,false,sector2_runtime_added
+frame_alignment_hash_source_bytes,<not declared>,false,sector2_runtime_added
+frame_alignment_image_workers,<not declared>,16,sector2_runtime_added
+frame_alignment_local_disk_reserve_gib,<not declared>,2.0,sector2_runtime_added
+frame_alignment_local_work_dir,<not declared>,"""/content/frame_alignment_cuda_work""",sector2_runtime_added
+frame_alignment_mapping_batch_size,<not declared>,16,sector2_runtime_added
+frame_alignment_min_margin,<not declared>,0.005,sector2_runtime_added
+frame_alignment_min_ssim,<not declared>,0.92,sector2_runtime_added
+frame_alignment_reference_apply_exif_orientation,<not declared>,true,sector2_runtime_added
+frame_alignment_reference_decoder,<not declared>,"""nvjpeg_hw_only""",sector2_runtime_added
+frame_alignment_reference_fancy_upsampling,<not declared>,true,sector2_runtime_added
+frame_alignment_show_progress,<not declared>,true,sector2_runtime_added
+frame_alignment_ssim_batch_size,<not declared>,16,sector2_runtime_added
+frame_alignment_stage_video_locally,<not declared>,true,sector2_runtime_added
+frame_alignment_video_workers,<not declared>,"""all""",sector2_runtime_added
+frame_alignment_vram_budget_fraction,<not declared>,0.85,sector2_runtime_added
+frame_index_offset_candidates,<not declared>,"[-1, 0, 1]",sector2_runtime_added
+results_dir,<not declared>,"""outputs/phase2/results/""",sector2_runtime_added
+run_id,"""20260910_194753""","""20261001_181334""",sector2_runtime_precedence
+run_id_format,"""%Y%m%d_%H%M%S""",<not declared>,sector1_inherited

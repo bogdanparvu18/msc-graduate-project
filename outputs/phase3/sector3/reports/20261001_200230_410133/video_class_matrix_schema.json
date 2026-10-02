@@ -1,0 +1,68 @@
+{
+  "artifact": "results/20261001_200230_410133/video_class_matrix.csv",
+  "columns": [
+    {
+      "dtype": "object",
+      "name": "video_key"
+    },
+    {
+      "dtype": "int8",
+      "name": "ampulla of vater"
+    },
+    {
+      "dtype": "int8",
+      "name": "angiectasia"
+    },
+    {
+      "dtype": "int8",
+      "name": "blood fresh"
+    },
+    {
+      "dtype": "int8",
+      "name": "blood hematin"
+    },
+    {
+      "dtype": "int8",
+      "name": "erosion"
+    },
+    {
+      "dtype": "int8",
+      "name": "erythema"
+    },
+    {
+      "dtype": "int8",
+      "name": "foreign body"
+    },
+    {
+      "dtype": "int8",
+      "name": "ileocecal valve"
+    },
+    {
+      "dtype": "int8",
+      "name": "lymphangiectasia"
+    },
+    {
+      "dtype": "int8",
+      "name": "normal clean mucosa"
+    },
+    {
+      "dtype": "int8",
+      "name": "polyp"
+    },
+    {
+      "dtype": "int8",
+      "name": "pylorus"
+    },
+    {
+      "dtype": "int8",
+      "name": "reduced mucosal view"
+    },
+    {
+      "dtype": "int8",
+      "name": "ulcer"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "rows": 43,
+  "table": "video_class_matrix"
+}

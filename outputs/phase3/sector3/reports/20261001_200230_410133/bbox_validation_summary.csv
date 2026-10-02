@@ -1,0 +1,6 @@
+bbox_validation_status,annotation_count
+valid,4127
+missing,43004
+incomplete,0
+invalid_geometry,0
+out_of_image_bounds,108

@@ -1,0 +1,36 @@
+{
+  "artifact": "reports/20261001_200230_410133/clinical_taxonomy_report.csv",
+  "columns": [
+    {
+      "dtype": "object",
+      "name": "finding_class_normalized"
+    },
+    {
+      "dtype": "string",
+      "name": "expected_clinical_group"
+    },
+    {
+      "dtype": "object",
+      "name": "finding_class"
+    },
+    {
+      "dtype": "object",
+      "name": "clinical_group"
+    },
+    {
+      "dtype": "int64",
+      "name": "original_annotation_count"
+    },
+    {
+      "dtype": "int64",
+      "name": "retained_class_annotation_count"
+    },
+    {
+      "dtype": "bool",
+      "name": "mapping_validation_passed"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "rows": 14,
+  "table": "clinical_taxonomy_report"
+}

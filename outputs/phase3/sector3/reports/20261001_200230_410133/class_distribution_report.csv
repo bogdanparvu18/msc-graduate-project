@@ -1,0 +1,15 @@
+finding_class_normalized,clinical_group,original_annotation_count,original_unique_source_frame_count,retained_annotation_count,retained_unique_decoded_frame_count,retained_video_count,excluded_annotation_count,annotation_retention_percent,class_missing_after_alignment,rare_video_support
+ampulla of vater,anatomical_landmark,10,10,10,10,1,0,100.0,False,True
+angiectasia,vascular_lesion,866,866,866,866,6,0,100.0,False,False
+blood fresh,bleeding,446,446,446,446,2,0,100.0,False,True
+blood hematin,bleeding,12,12,12,12,1,0,100.0,False,True
+erosion,mucosal_lesion,507,506,507,506,9,0,100.0,False,False
+erythema,mucosal_lesion,159,159,159,159,3,0,100.0,False,False
+foreign body,foreign_body,776,776,776,776,4,0,100.0,False,False
+ileocecal valve,anatomical_landmark,4189,4189,4189,4189,34,0,100.0,False,False
+lymphangiectasia,lymphatic_lesion,592,592,592,592,3,0,100.0,False,False
+normal clean mucosa,normal_mucosa,34338,34338,34338,34338,37,0,100.0,False,False
+polyp,protruding_lesion,55,55,55,55,1,0,100.0,False,True
+pylorus,anatomical_landmark,1529,1529,1529,1529,32,0,100.0,False,False
+reduced mucosal view,visibility_limitation,2906,2906,2906,2906,7,0,100.0,False,False
+ulcer,mucosal_lesion,854,854,854,854,3,0,100.0,False,False

@@ -1,0 +1,40 @@
+{
+  "artifact": "reports/20261001_200230_410133/frame_inventory_report.csv",
+  "columns": [
+    {
+      "dtype": "object",
+      "name": "frame_category"
+    },
+    {
+      "dtype": "int64",
+      "name": "actual_frame_count"
+    },
+    {
+      "dtype": "Int64",
+      "name": "expected_frame_count"
+    },
+    {
+      "dtype": "object",
+      "name": "count_unit"
+    },
+    {
+      "dtype": "Int64",
+      "name": "difference_from_reference"
+    },
+    {
+      "dtype": "boolean",
+      "name": "reference_matches"
+    },
+    {
+      "dtype": "bool",
+      "name": "validation_passed"
+    },
+    {
+      "dtype": "bool",
+      "name": "reference_is_diagnostic"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "rows": 7,
+  "table": "frame_inventory_report"
+}
