@@ -1,0 +1,158 @@
+{
+  "artifact": "results/finding_segment_manifest.parquet",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "object",
+      "name": "finding_segment_id",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "string",
+      "name": "video_key",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "object",
+      "name": "finding_class",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "string",
+      "name": "finding_class_normalized",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "finding_class_variants_json",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "object",
+      "name": "clinical_group",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "Int64",
+      "name": "verified_start_frame"
+    },
+    {
+      "dtype": "Int64",
+      "name": "verified_end_frame"
+    },
+    {
+      "dtype": "Int64",
+      "name": "verified_frame_count"
+    },
+    {
+      "dtype": "Int64",
+      "name": "verified_annotation_count"
+    },
+    {
+      "dtype": "Int64",
+      "name": "target_frame_number"
+    },
+    {
+      "dtype": "Int64",
+      "name": "target_opencv_frame_index"
+    },
+    {
+      "dtype": "object",
+      "name": "target_filename",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "object",
+      "name": "target_image_path",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "object",
+      "name": "target_image_relpath",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "string",
+      "name": "target_image_annotation_id",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "target_annotation_count"
+    },
+    {
+      "dtype": "string",
+      "name": "target_annotation_ids_json",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "target_annotations_json",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "target_bbox_mode",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "target_bbox_count"
+    },
+    {
+      "dtype": "Int64",
+      "name": "target_usable_bbox_count"
+    },
+    {
+      "dtype": "boolean",
+      "name": "target_has_bbox"
+    },
+    {
+      "dtype": "boolean",
+      "name": "target_bbox_spatially_usable"
+    },
+    {
+      "dtype": "string",
+      "name": "target_bbox_validation_status",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Float64",
+      "name": "target_bbox_xmin"
+    },
+    {
+      "dtype": "Float64",
+      "name": "target_bbox_ymin"
+    },
+    {
+      "dtype": "Float64",
+      "name": "target_bbox_xmax"
+    },
+    {
+      "dtype": "Float64",
+      "name": "target_bbox_ymax"
+    },
+    {
+      "dtype": "string",
+      "name": "split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "boolean",
+      "name": "temporal_grounding_candidate"
+    },
+    {
+      "dtype": "string",
+      "name": "temporal_supervision_level",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "bool",
+      "name": "verified_temporal_boundary_available"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "3972e1a6afc9e95ae71aff666162c829e138bc7f61993b330a18627011d94918",
+  "rows": 650,
+  "schema_version": 1
+}

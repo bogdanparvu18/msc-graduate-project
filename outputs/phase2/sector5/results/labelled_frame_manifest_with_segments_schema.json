@@ -1,0 +1,272 @@
+{
+  "artifact": "results/labelled_frame_manifest_with_segments.parquet",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "object",
+      "name": "filename",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "object",
+      "name": "video_id",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "Int64",
+      "name": "frame_number"
+    },
+    {
+      "dtype": "object",
+      "name": "finding_category",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "object",
+      "name": "finding_class",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "float64",
+      "name": "x1"
+    },
+    {
+      "dtype": "float64",
+      "name": "y1"
+    },
+    {
+      "dtype": "float64",
+      "name": "x2"
+    },
+    {
+      "dtype": "float64",
+      "name": "y2"
+    },
+    {
+      "dtype": "float64",
+      "name": "x3"
+    },
+    {
+      "dtype": "float64",
+      "name": "y3"
+    },
+    {
+      "dtype": "float64",
+      "name": "x4"
+    },
+    {
+      "dtype": "float64",
+      "name": "y4"
+    },
+    {
+      "dtype": "object",
+      "name": "finding_class_raw",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "string",
+      "name": "finding_class_normalized",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "object",
+      "name": "clinical_group",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "object",
+      "name": "image_key",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "string",
+      "name": "video_key",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "boolean",
+      "name": "bbox_annotation_present"
+    },
+    {
+      "dtype": "boolean",
+      "name": "bbox_complete"
+    },
+    {
+      "dtype": "boolean",
+      "name": "bbox_invalid"
+    },
+    {
+      "dtype": "boolean",
+      "name": "has_bbox"
+    },
+    {
+      "dtype": "float64",
+      "name": "bbox_xmin"
+    },
+    {
+      "dtype": "float64",
+      "name": "bbox_ymin"
+    },
+    {
+      "dtype": "float64",
+      "name": "bbox_xmax"
+    },
+    {
+      "dtype": "float64",
+      "name": "bbox_ymax"
+    },
+    {
+      "dtype": "float64",
+      "name": "bbox_width"
+    },
+    {
+      "dtype": "float64",
+      "name": "bbox_height"
+    },
+    {
+      "dtype": "float64",
+      "name": "bbox_area"
+    },
+    {
+      "dtype": "Int64",
+      "name": "alignment_mapping_id"
+    },
+    {
+      "dtype": "object",
+      "name": "alignment_image_path",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "object",
+      "name": "alignment_video_path",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "object",
+      "name": "alignment_input_status",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "object",
+      "name": "alignment_input_error",
+      "object_kind": "empty"
+    },
+    {
+      "dtype": "Int64",
+      "name": "alignment_offset"
+    },
+    {
+      "dtype": "Int64",
+      "name": "aligned_frame_index"
+    },
+    {
+      "dtype": "float64",
+      "name": "alignment_ssim"
+    },
+    {
+      "dtype": "float64",
+      "name": "alignment_ssim_margin"
+    },
+    {
+      "dtype": "object",
+      "name": "alignment_status",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "boolean",
+      "name": "alignment_training_eligible"
+    },
+    {
+      "dtype": "string",
+      "name": "annotation_id",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "frame_id",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "opencv_frame_index"
+    },
+    {
+      "dtype": "Int64",
+      "name": "frame_index_offset"
+    },
+    {
+      "dtype": "string",
+      "name": "image_relpath",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "video_relpath",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "image_path",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "video_path",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "object",
+      "name": "annotation_status",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "object",
+      "name": "label_source",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "Int64",
+      "name": "source_frame_width"
+    },
+    {
+      "dtype": "Int64",
+      "name": "source_frame_height"
+    },
+    {
+      "dtype": "boolean",
+      "name": "bbox_within_image_bounds"
+    },
+    {
+      "dtype": "boolean",
+      "name": "bbox_spatially_usable"
+    },
+    {
+      "dtype": "string",
+      "name": "bbox_validation_status",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "object",
+      "name": "bbox_bounds_policy",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "string",
+      "name": "split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "segment_number"
+    },
+    {
+      "dtype": "string",
+      "name": "finding_segment_id",
+      "string_storage": "python"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "f1d97eb54904ab48684395215789b90b057e3aac9ec8f4e820bf627576ffcd2e",
+  "rows": 47239,
+  "schema_version": 1
+}
