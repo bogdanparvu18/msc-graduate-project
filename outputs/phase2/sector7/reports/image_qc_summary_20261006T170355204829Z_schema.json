@@ -1,0 +1,77 @@
+{
+  "artifact": "reports/image_qc_summary_20261006T170355204829Z.parquet",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "string",
+      "name": "qc_status",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "total_unique_images"
+    },
+    {
+      "dtype": "Int64",
+      "name": "readable_images"
+    },
+    {
+      "dtype": "Int64",
+      "name": "unreadable_images"
+    },
+    {
+      "dtype": "Int64",
+      "name": "review_required_images"
+    },
+    {
+      "dtype": "Int64",
+      "name": "model_usable_images"
+    },
+    {
+      "dtype": "string",
+      "name": "threshold_calibration_status",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "threshold_fit_split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "calibration_candidate_images"
+    },
+    {
+      "dtype": "Int64",
+      "name": "calibration_readable_images"
+    },
+    {
+      "dtype": "Int64",
+      "name": "nvidia_gpu_decoded_images"
+    },
+    {
+      "dtype": "Int64",
+      "name": "nvidia_hybrid_decoded_images"
+    },
+    {
+      "dtype": "Int64",
+      "name": "cpu_decoded_images"
+    },
+    {
+      "dtype": "Int64",
+      "name": "gpu_qc_images"
+    },
+    {
+      "dtype": "Int64",
+      "name": "cpu_qc_images"
+    },
+    {
+      "dtype": "Int64",
+      "name": "fallback_images"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "9a72ef1c71988de1ffd6358475a630ae45a4807c20c383911e5dfb167d1a8cd4",
+  "rows": 1,
+  "schema_version": 1
+}

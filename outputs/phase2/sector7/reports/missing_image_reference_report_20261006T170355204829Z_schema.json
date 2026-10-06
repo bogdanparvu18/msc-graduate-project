@@ -1,0 +1,44 @@
+{
+  "artifact": "reports/missing_image_reference_report_20261006T170355204829Z.parquet",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "string",
+      "name": "source_manifest",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "source_row"
+    },
+    {
+      "dtype": "string",
+      "name": "source_reference_id",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "image_path",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "image_relpath",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "reference_status",
+      "string_storage": "python"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "dbe9756f97efebec17fa31a02311e400d19417136cc4fd23961e44b5fbebc47e",
+  "rows": 0,
+  "schema_version": 1
+}

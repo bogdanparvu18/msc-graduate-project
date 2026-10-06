@@ -1,0 +1,131 @@
+{
+  "artifact": "results/image_qc_manifest.parquet",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "string",
+      "name": "image_relpath",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "image_path",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "boolean",
+      "name": "used_by_labelled_manifest"
+    },
+    {
+      "dtype": "boolean",
+      "name": "used_by_temporal_manifest"
+    },
+    {
+      "dtype": "string",
+      "name": "image_sha256",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "boolean",
+      "name": "image_readable"
+    },
+    {
+      "dtype": "string",
+      "name": "image_read_error",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "image_width"
+    },
+    {
+      "dtype": "Int64",
+      "name": "image_height"
+    },
+    {
+      "dtype": "Float64",
+      "name": "brightness_mean"
+    },
+    {
+      "dtype": "Float64",
+      "name": "contrast_std"
+    },
+    {
+      "dtype": "Float64",
+      "name": "blur_laplacian"
+    },
+    {
+      "dtype": "Float64",
+      "name": "underexposed_fraction"
+    },
+    {
+      "dtype": "Float64",
+      "name": "overexposed_fraction"
+    },
+    {
+      "dtype": "Float64",
+      "name": "specular_fraction"
+    },
+    {
+      "dtype": "string",
+      "name": "image_decode_backend",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "image_qc_backend",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "image_fallback_reason",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "boolean",
+      "name": "qc_blur_outlier"
+    },
+    {
+      "dtype": "boolean",
+      "name": "qc_contrast_outlier"
+    },
+    {
+      "dtype": "boolean",
+      "name": "qc_low_brightness_outlier"
+    },
+    {
+      "dtype": "boolean",
+      "name": "qc_high_brightness_outlier"
+    },
+    {
+      "dtype": "boolean",
+      "name": "qc_thresholds_calibrated"
+    },
+    {
+      "dtype": "boolean",
+      "name": "qc_requires_review"
+    },
+    {
+      "dtype": "boolean",
+      "name": "image_usable_for_modelling"
+    },
+    {
+      "dtype": "string",
+      "name": "qc_image_sha256",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "boolean",
+      "name": "qc_source_matches_sector6"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "3537b3a4aaff4c162a894c1b73522106977ace9ea05e164b5851f393aa79e140",
+  "rows": 48641,
+  "schema_version": 1
+}

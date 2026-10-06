@@ -1,0 +1,33 @@
+{
+  "artifact": "results/image_qc_inventory.parquet",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "string",
+      "name": "image_relpath",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "image_path",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "boolean",
+      "name": "used_by_labelled_manifest"
+    },
+    {
+      "dtype": "boolean",
+      "name": "used_by_temporal_manifest"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "f3c302ae96a73585784959e45b8a052ab4f2586aa4342714b22f39de71dcb467",
+  "rows": 48641,
+  "schema_version": 1
+}

@@ -1,0 +1,43 @@
+{
+  "artifact": "reports/image_qc_source_audit_20261006T170355204829Z.parquet",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "string",
+      "name": "image_path",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "image_relpath",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "image_sha256",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "image_bytes"
+    },
+    {
+      "dtype": "string",
+      "name": "source_error",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "sector6_expected_sha256",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "boolean",
+      "name": "source_matches_sector6"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "4259f14f3076c93bb68df2998a76d270d83b1e1443c0d64c74181d690f3a6f97",
+  "rows": 48641,
+  "schema_version": 1
+}

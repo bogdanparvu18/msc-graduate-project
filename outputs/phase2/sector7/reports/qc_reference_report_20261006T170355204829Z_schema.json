@@ -1,0 +1,56 @@
+{
+  "artifact": "reports/qc_reference_report_20261006T170355204829Z.parquet",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "string",
+      "name": "source_manifest",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "source_row"
+    },
+    {
+      "dtype": "string",
+      "name": "source_reference_id",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "image_path",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "image_relpath",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "reference_status",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "boolean",
+      "name": "qc_reference_covered"
+    },
+    {
+      "dtype": "boolean",
+      "name": "image_readable"
+    },
+    {
+      "dtype": "boolean",
+      "name": "qc_requires_review"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "af114dbb6e4f744b99b79dd5bd7a61c2eb74ed45ba35fcc2d7d7345315a7faba",
+  "rows": 50218,
+  "schema_version": 1
+}

@@ -1,0 +1,2 @@
+qc_status,total_unique_images,readable_images,unreadable_images,review_required_images,model_usable_images,threshold_calibration_status,threshold_fit_split,calibration_candidate_images,calibration_readable_images,nvidia_gpu_decoded_images,nvidia_hybrid_decoded_images,cpu_decoded_images,gpu_qc_images,cpu_qc_images,fallback_images
+completed,48641,48641,0,1693,48641,calibrated,train,35858,35858,0,48641,0,48641,0,48641

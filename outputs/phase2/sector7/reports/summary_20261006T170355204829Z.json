@@ -1,0 +1,38 @@
+{
+  "annotation_semantics": "All source annotations and temporal references are preserved.",
+  "phase": 2,
+  "qc": {
+    "calibration_candidate_images": 35858,
+    "calibration_readable_images": 35858,
+    "cpu_decoded_images": 0,
+    "cpu_qc_images": 0,
+    "fallback_images": 48641,
+    "gpu_qc_images": 48641,
+    "model_usable_images": 48641,
+    "nvidia_gpu_decoded_images": 0,
+    "nvidia_hybrid_decoded_images": 48641,
+    "qc_status": "completed",
+    "readable_images": 48641,
+    "review_required_images": 1693,
+    "threshold_calibration_status": "calibrated",
+    "threshold_fit_split": "train",
+    "total_unique_images": 48641,
+    "unreadable_images": 0
+  },
+  "quality_semantics": "Technical proxies and review flags; no clinical quality labels.",
+  "schema_version": 1,
+  "sector": 7,
+  "table_row_counts": {
+    "image_qc_inventory": 48641,
+    "image_qc_manifest": 48641,
+    "image_qc_source_audit": 48641,
+    "image_qc_summary": 1,
+    "image_qc_thresholds": 1,
+    "image_read_failure_report": 0,
+    "labelled_frame_manifest_with_qc": 47239,
+    "missing_image_reference_report": 0,
+    "qc_reference_report": 50218,
+    "temporal_manifest_with_qc": 2979
+  },
+  "threshold_fit_policy": "Configured split only; train by default."
+}

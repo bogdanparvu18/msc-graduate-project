@@ -1,0 +1,48 @@
+{
+  "artifact": "results/image_qc_thresholds.parquet",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "Float64",
+      "name": "blur_laplacian_lower_threshold"
+    },
+    {
+      "dtype": "Float64",
+      "name": "contrast_std_lower_threshold"
+    },
+    {
+      "dtype": "Float64",
+      "name": "brightness_mean_lower_threshold"
+    },
+    {
+      "dtype": "Float64",
+      "name": "brightness_mean_upper_threshold"
+    },
+    {
+      "dtype": "string",
+      "name": "threshold_calibration_status",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "threshold_fit_split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "calibration_candidate_images"
+    },
+    {
+      "dtype": "Int64",
+      "name": "calibration_readable_images"
+    },
+    {
+      "dtype": "Int64",
+      "name": "total_readable_images"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "83b047ec2b93bdcf3a0fa7d4ba4bcceb6a3a81d57cd7df6c952d93f2c8b93985",
+  "rows": 1,
+  "schema_version": 1
+}

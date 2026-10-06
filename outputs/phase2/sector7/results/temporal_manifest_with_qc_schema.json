@@ -1,0 +1,351 @@
+{
+  "artifact": "results/temporal_manifest_with_qc.parquet",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "string",
+      "name": "finding_segment_id",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "video_key",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "video_relpath",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "finding_class",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "finding_class_normalized",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "target_frame_number"
+    },
+    {
+      "dtype": "Int64",
+      "name": "target_opencv_frame_index"
+    },
+    {
+      "dtype": "string",
+      "name": "target_image_annotation_id",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "target_image_path",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "target_image_relpath",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "temporal_supervision_level",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "boolean",
+      "name": "verified_temporal_boundary_available"
+    },
+    {
+      "dtype": "Float64",
+      "name": "temporal_offset_seconds"
+    },
+    {
+      "dtype": "Float64",
+      "name": "effective_temporal_offset_seconds"
+    },
+    {
+      "dtype": "Int64",
+      "name": "frame_delta"
+    },
+    {
+      "dtype": "Int64",
+      "name": "context_frame_number"
+    },
+    {
+      "dtype": "Int64",
+      "name": "opencv_frame_index"
+    },
+    {
+      "dtype": "Int64",
+      "name": "frame_index_offset"
+    },
+    {
+      "dtype": "boolean",
+      "name": "is_target"
+    },
+    {
+      "dtype": "Int64",
+      "name": "requested_context_count"
+    },
+    {
+      "dtype": "Int64",
+      "name": "available_context_count"
+    },
+    {
+      "dtype": "boolean",
+      "name": "temporal_window_complete"
+    },
+    {
+      "dtype": "string",
+      "name": "context_verified_labels",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "context_verified_annotation_ids_json",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "context_verified_annotation_count"
+    },
+    {
+      "dtype": "string",
+      "name": "context_official_images_json",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "context_official_image_count"
+    },
+    {
+      "dtype": "boolean",
+      "name": "context_is_verified"
+    },
+    {
+      "dtype": "boolean",
+      "name": "context_is_verified_same_finding"
+    },
+    {
+      "dtype": "string",
+      "name": "context_official_image_annotation_id",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "context_official_image_path",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "context_official_image_relpath",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "context_image_annotation_ids_json",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "context_image_verified_labels",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "context_image_annotation_count"
+    },
+    {
+      "dtype": "string",
+      "name": "context_annotation_status",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "context_image_path",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "context_image_relpath",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "context_image_source",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "context_image_selection_rule",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "extracted_image_path",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "extracted_image_relpath",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "extraction_status",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "extraction_error",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "source_video_sha256",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "extracted_image_sha256",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "decoder_backend",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "boolean",
+      "name": "image_readable"
+    },
+    {
+      "dtype": "string",
+      "name": "image_sha256",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "image_width"
+    },
+    {
+      "dtype": "Int64",
+      "name": "image_height"
+    },
+    {
+      "dtype": "string",
+      "name": "image_validation_error",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "qc_image_sha256",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "boolean",
+      "name": "qc_image_readable"
+    },
+    {
+      "dtype": "string",
+      "name": "qc_image_read_error",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "qc_image_width"
+    },
+    {
+      "dtype": "Int64",
+      "name": "qc_image_height"
+    },
+    {
+      "dtype": "Float64",
+      "name": "qc_brightness_mean"
+    },
+    {
+      "dtype": "Float64",
+      "name": "qc_contrast_std"
+    },
+    {
+      "dtype": "Float64",
+      "name": "qc_blur_laplacian"
+    },
+    {
+      "dtype": "Float64",
+      "name": "qc_underexposed_fraction"
+    },
+    {
+      "dtype": "Float64",
+      "name": "qc_overexposed_fraction"
+    },
+    {
+      "dtype": "Float64",
+      "name": "qc_specular_fraction"
+    },
+    {
+      "dtype": "string",
+      "name": "qc_image_decode_backend",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "qc_image_qc_backend",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "qc_image_fallback_reason",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "boolean",
+      "name": "qc_blur_outlier"
+    },
+    {
+      "dtype": "boolean",
+      "name": "qc_contrast_outlier"
+    },
+    {
+      "dtype": "boolean",
+      "name": "qc_low_brightness_outlier"
+    },
+    {
+      "dtype": "boolean",
+      "name": "qc_high_brightness_outlier"
+    },
+    {
+      "dtype": "boolean",
+      "name": "qc_thresholds_calibrated"
+    },
+    {
+      "dtype": "boolean",
+      "name": "qc_requires_review"
+    },
+    {
+      "dtype": "boolean",
+      "name": "image_usable_for_modelling"
+    },
+    {
+      "dtype": "boolean",
+      "name": "qc_source_matches_sector6"
+    },
+    {
+      "dtype": "boolean",
+      "name": "qc_reference_covered"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "5043756203338f0ecf61af7e0049cc78558e540b7eed42afd7f44a760ec61868",
+  "rows": 2979,
+  "schema_version": 1
+}
