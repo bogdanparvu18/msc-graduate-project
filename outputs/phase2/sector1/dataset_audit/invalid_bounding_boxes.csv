@@ -1,0 +1,1 @@
+filename,video_id,frame_number,finding_category,finding_class,x1,y1,x2,y2,x3,y3,x4,y4,finding_class_raw,finding_class_normalized,clinical_group,image_key,video_key,bbox_annotation_present,bbox_complete,bbox_invalid,has_bbox,bbox_xmin,bbox_ymin,bbox_xmax,bbox_ymax,bbox_width,bbox_height,bbox_area
