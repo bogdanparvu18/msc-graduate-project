@@ -1,0 +1,42 @@
+{
+  "artifact": "reports/temporal_image_audit_20261005T235616462013Z.csv",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "string",
+      "name": "context_image_path",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "context_image_relpath",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "boolean",
+      "name": "image_readable"
+    },
+    {
+      "dtype": "string",
+      "name": "image_sha256",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "image_width"
+    },
+    {
+      "dtype": "Int64",
+      "name": "image_height"
+    },
+    {
+      "dtype": "string",
+      "name": "image_validation_error",
+      "string_storage": "python"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "6ee1fee401d8cfa2f9fc47d54ef75f8fad6cae9d7b4b0f51f2b58b1a4e660810",
+  "rows": 2921,
+  "schema_version": 1
+}

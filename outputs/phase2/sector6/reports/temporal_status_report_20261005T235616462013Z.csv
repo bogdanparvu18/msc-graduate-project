@@ -1,0 +1,11 @@
+split,context_annotation_status,context_image_source,image_readable,row_count
+test,unlabelled_context,extracted_from_video,True,187
+test,verified_same_finding,official_labelled_image,True,124
+test,verified_target,official_labelled_image,True,79
+train,unlabelled_context,extracted_from_video,True,1099
+train,verified_other_finding,official_labelled_image,True,13
+train,verified_same_finding,official_labelled_image,True,736
+train,verified_target,official_labelled_image,True,466
+validation,unlabelled_context,extracted_from_video,True,142
+validation,verified_same_finding,official_labelled_image,True,78
+validation,verified_target,official_labelled_image,True,55

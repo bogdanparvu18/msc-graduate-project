@@ -1,0 +1,30 @@
+{
+  "annotation_semantics": "Unlabelled means no ground truth; it does not mean normal.",
+  "eligible_segment_windows": 600,
+  "execution_outcome": "complete",
+  "extracted_image_reference_rows": 1428,
+  "failed_extraction_requests": 0,
+  "failure_reference_rows": 0,
+  "incomplete_temporal_windows": 13,
+  "missing_or_unreadable_context_rows": 0,
+  "official_image_reference_rows": 1551,
+  "pending_extraction_requests": 0,
+  "phase": 2,
+  "schema_version": 1,
+  "sector": 6,
+  "table_row_counts": {
+    "extracted_temporal_frames": 1403,
+    "temporal_extraction_failures": 0,
+    "temporal_extraction_requests": 1403,
+    "temporal_image_audit": 2921,
+    "temporal_manifest": 2979,
+    "temporal_status_report": 10,
+    "temporal_window_report": 600
+  },
+  "temporal_reference_rows": 2979,
+  "temporal_semantics": "Container-FPS offsets, not verified clinical boundaries or VFR timestamps.",
+  "unique_context_frames": 2921,
+  "unique_extraction_requests": 1403,
+  "unlabelled_context_reference_rows": 1428,
+  "validation_passed": true
+}

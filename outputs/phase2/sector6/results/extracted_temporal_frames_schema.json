@@ -1,0 +1,54 @@
+{
+  "artifact": "results/extracted_temporal_frames.parquet",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "string",
+      "name": "video_key",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "opencv_frame_index"
+    },
+    {
+      "dtype": "string",
+      "name": "extracted_image_path",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "extracted_image_relpath",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "extraction_status",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "extraction_error",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "source_video_sha256",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "extracted_image_sha256",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "decoder_backend",
+      "string_storage": "python"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "61d8cf3e2ce0689cbeaf452046c86162ca23b1035a0859226d81adacdfb7b496",
+  "rows": 1403,
+  "schema_version": 1
+}

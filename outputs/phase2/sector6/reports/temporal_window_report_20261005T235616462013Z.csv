@@ -1,0 +1,601 @@
+finding_segment_id,video_key,split,finding_class_normalized,requested_context_count,available_context_count,temporal_window_complete
+04a78ef00c5245e0__angiectasia__00001,04a78ef00c5245e0,test,angiectasia,5,5,True
+04a78ef00c5245e0__angiectasia__00002,04a78ef00c5245e0,test,angiectasia,5,5,True
+04a78ef00c5245e0__angiectasia__00003,04a78ef00c5245e0,test,angiectasia,5,5,True
+04a78ef00c5245e0__angiectasia__00004,04a78ef00c5245e0,test,angiectasia,5,5,True
+04a78ef00c5245e0__angiectasia__00005,04a78ef00c5245e0,test,angiectasia,5,5,True
+04a78ef00c5245e0__angiectasia__00006,04a78ef00c5245e0,test,angiectasia,5,5,True
+04a78ef00c5245e0__angiectasia__00007,04a78ef00c5245e0,test,angiectasia,5,5,True
+04a78ef00c5245e0__angiectasia__00008,04a78ef00c5245e0,test,angiectasia,5,5,True
+04a78ef00c5245e0__blood_fresh__00001,04a78ef00c5245e0,test,blood fresh,5,5,True
+04a78ef00c5245e0__blood_fresh__00002,04a78ef00c5245e0,test,blood fresh,5,5,True
+04a78ef00c5245e0__ileocecal_valve__00001,04a78ef00c5245e0,test,ileocecal valve,5,5,True
+04a78ef00c5245e0__lymphangiectasia__00001,04a78ef00c5245e0,test,lymphangiectasia,5,5,True
+04a78ef00c5245e0__normal_clean_mucosa__00001,04a78ef00c5245e0,test,normal clean mucosa,5,5,True
+04a78ef00c5245e0__normal_clean_mucosa__00002,04a78ef00c5245e0,test,normal clean mucosa,5,5,True
+04a78ef00c5245e0__normal_clean_mucosa__00003,04a78ef00c5245e0,test,normal clean mucosa,5,5,True
+04a78ef00c5245e0__normal_clean_mucosa__00004,04a78ef00c5245e0,test,normal clean mucosa,5,5,True
+04a78ef00c5245e0__normal_clean_mucosa__00005,04a78ef00c5245e0,test,normal clean mucosa,5,5,True
+04a78ef00c5245e0__normal_clean_mucosa__00006,04a78ef00c5245e0,test,normal clean mucosa,5,5,True
+04a78ef00c5245e0__pylorus__00001,04a78ef00c5245e0,test,pylorus,5,5,True
+04a78ef00c5245e0__pylorus__00002,04a78ef00c5245e0,test,pylorus,5,5,True
+04a78ef00c5245e0__pylorus__00003,04a78ef00c5245e0,test,pylorus,5,5,True
+0531325b64674948__erosion__00001,0531325b64674948,test,erosion,5,5,True
+0531325b64674948__normal_clean_mucosa__00001,0531325b64674948,test,normal clean mucosa,5,5,True
+0531325b64674948__normal_clean_mucosa__00002,0531325b64674948,test,normal clean mucosa,5,5,True
+0531325b64674948__normal_clean_mucosa__00003,0531325b64674948,test,normal clean mucosa,5,5,True
+0531325b64674948__pylorus__00001,0531325b64674948,test,pylorus,5,5,True
+0728084c8da942d9__erosion__00001,0728084c8da942d9,train,erosion,5,5,True
+0728084c8da942d9__erosion__00002,0728084c8da942d9,train,erosion,5,5,True
+0728084c8da942d9__erosion__00003,0728084c8da942d9,train,erosion,5,5,True
+0728084c8da942d9__erosion__00004,0728084c8da942d9,train,erosion,5,5,True
+0728084c8da942d9__erosion__00005,0728084c8da942d9,train,erosion,5,5,True
+0728084c8da942d9__erosion__00006,0728084c8da942d9,train,erosion,5,5,True
+0728084c8da942d9__erosion__00007,0728084c8da942d9,train,erosion,5,5,True
+0728084c8da942d9__erosion__00008,0728084c8da942d9,train,erosion,5,5,True
+0728084c8da942d9__erosion__00009,0728084c8da942d9,train,erosion,5,5,True
+0728084c8da942d9__ileocecal_valve__00001,0728084c8da942d9,train,ileocecal valve,5,5,True
+0728084c8da942d9__normal_clean_mucosa__00001,0728084c8da942d9,train,normal clean mucosa,5,5,True
+0728084c8da942d9__normal_clean_mucosa__00002,0728084c8da942d9,train,normal clean mucosa,5,5,True
+0728084c8da942d9__normal_clean_mucosa__00003,0728084c8da942d9,train,normal clean mucosa,5,5,True
+0728084c8da942d9__normal_clean_mucosa__00004,0728084c8da942d9,train,normal clean mucosa,5,5,True
+0728084c8da942d9__normal_clean_mucosa__00005,0728084c8da942d9,train,normal clean mucosa,5,5,True
+0728084c8da942d9__normal_clean_mucosa__00006,0728084c8da942d9,train,normal clean mucosa,5,5,True
+0728084c8da942d9__pylorus__00001,0728084c8da942d9,train,pylorus,5,5,True
+07c1fa15a20a4398__ileocecal_valve__00001,07c1fa15a20a4398,test,ileocecal valve,5,3,False
+07c1fa15a20a4398__normal_clean_mucosa__00001,07c1fa15a20a4398,test,normal clean mucosa,5,5,True
+07c1fa15a20a4398__normal_clean_mucosa__00002,07c1fa15a20a4398,test,normal clean mucosa,5,5,True
+07c1fa15a20a4398__normal_clean_mucosa__00003,07c1fa15a20a4398,test,normal clean mucosa,5,5,True
+131368cc17e44240__ileocecal_valve__00001,131368cc17e44240,train,ileocecal valve,5,5,True
+131368cc17e44240__normal_clean_mucosa__00001,131368cc17e44240,train,normal clean mucosa,5,5,True
+131368cc17e44240__normal_clean_mucosa__00002,131368cc17e44240,train,normal clean mucosa,5,5,True
+131368cc17e44240__normal_clean_mucosa__00003,131368cc17e44240,train,normal clean mucosa,5,5,True
+131368cc17e44240__polyp__00001,131368cc17e44240,train,polyp,5,5,True
+131368cc17e44240__polyp__00002,131368cc17e44240,train,polyp,5,5,True
+131368cc17e44240__pylorus__00001,131368cc17e44240,train,pylorus,5,5,True
+2fc3db471f9d44c0__ulcer__00001,2fc3db471f9d44c0,train,ulcer,5,5,True
+2fc3db471f9d44c0__ulcer__00002,2fc3db471f9d44c0,train,ulcer,5,5,True
+2fc3db471f9d44c0__ulcer__00003,2fc3db471f9d44c0,train,ulcer,5,5,True
+2fc3db471f9d44c0__ulcer__00004,2fc3db471f9d44c0,train,ulcer,5,5,True
+2fc3db471f9d44c0__ulcer__00005,2fc3db471f9d44c0,train,ulcer,5,5,True
+39960e5e099a45ca__ileocecal_valve__00001,39960e5e099a45ca,train,ileocecal valve,5,4,False
+39960e5e099a45ca__normal_clean_mucosa__00001,39960e5e099a45ca,train,normal clean mucosa,5,5,True
+39960e5e099a45ca__normal_clean_mucosa__00002,39960e5e099a45ca,train,normal clean mucosa,5,5,True
+39960e5e099a45ca__pylorus__00001,39960e5e099a45ca,train,pylorus,5,5,True
+3ada4222967f421d__foreign_body__00001,3ada4222967f421d,train,foreign body,5,3,False
+3ada4222967f421d__foreign_body__00002,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00003,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00004,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00005,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00007,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00008,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00009,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00010,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00011,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00012,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00013,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00014,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00015,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00016,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00018,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00019,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00020,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00021,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00022,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00023,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00024,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00025,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00026,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00027,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00028,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00029,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00030,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00031,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00032,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00033,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00036,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00037,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00039,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00041,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00042,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00043,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00045,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00046,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00047,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00048,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00050,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00053,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00054,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00056,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00057,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00058,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00059,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00060,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00061,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__foreign_body__00063,3ada4222967f421d,train,foreign body,5,5,True
+3ada4222967f421d__ileocecal_valve__00001,3ada4222967f421d,train,ileocecal valve,5,3,False
+3ada4222967f421d__normal_clean_mucosa__00001,3ada4222967f421d,train,normal clean mucosa,5,5,True
+3ada4222967f421d__pylorus__00001,3ada4222967f421d,train,pylorus,5,5,True
+3c8d5f0b90d7475d__ileocecal_valve__00001,3c8d5f0b90d7475d,train,ileocecal valve,5,3,False
+3c8d5f0b90d7475d__normal_clean_mucosa__00001,3c8d5f0b90d7475d,train,normal clean mucosa,5,5,True
+3c8d5f0b90d7475d__normal_clean_mucosa__00002,3c8d5f0b90d7475d,train,normal clean mucosa,5,5,True
+3c8d5f0b90d7475d__normal_clean_mucosa__00003,3c8d5f0b90d7475d,train,normal clean mucosa,5,5,True
+3c8d5f0b90d7475d__normal_clean_mucosa__00004,3c8d5f0b90d7475d,train,normal clean mucosa,5,5,True
+3c8d5f0b90d7475d__normal_clean_mucosa__00005,3c8d5f0b90d7475d,train,normal clean mucosa,5,5,True
+3c8d5f0b90d7475d__normal_clean_mucosa__00006,3c8d5f0b90d7475d,train,normal clean mucosa,5,5,True
+4560e83f9afc4685__ileocecal_valve__00001,4560e83f9afc4685,train,ileocecal valve,5,5,True
+4560e83f9afc4685__normal_clean_mucosa__00001,4560e83f9afc4685,train,normal clean mucosa,5,5,True
+4560e83f9afc4685__pylorus__00001,4560e83f9afc4685,train,pylorus,5,5,True
+48579eec79784294__erythema__00001,48579eec79784294,train,erythema,5,5,True
+48579eec79784294__erythema__00002,48579eec79784294,train,erythema,5,5,True
+48579eec79784294__foreign_body__00001,48579eec79784294,train,foreign body,5,5,True
+48579eec79784294__foreign_body__00002,48579eec79784294,train,foreign body,5,5,True
+48579eec79784294__ileocecal_valve__00001,48579eec79784294,train,ileocecal valve,5,5,True
+48579eec79784294__normal_clean_mucosa__00001,48579eec79784294,train,normal clean mucosa,5,5,True
+48579eec79784294__normal_clean_mucosa__00002,48579eec79784294,train,normal clean mucosa,5,5,True
+48579eec79784294__normal_clean_mucosa__00003,48579eec79784294,train,normal clean mucosa,5,5,True
+48579eec79784294__normal_clean_mucosa__00004,48579eec79784294,train,normal clean mucosa,5,5,True
+48579eec79784294__pylorus__00001,48579eec79784294,train,pylorus,5,5,True
+48579eec79784294__reduced_mucosal_view__00001,48579eec79784294,train,reduced mucosal view,5,5,True
+48579eec79784294__reduced_mucosal_view__00002,48579eec79784294,train,reduced mucosal view,5,5,True
+495f16498db34d3c__ileocecal_valve__00001,495f16498db34d3c,test,ileocecal valve,5,3,False
+495f16498db34d3c__normal_clean_mucosa__00001,495f16498db34d3c,test,normal clean mucosa,5,5,True
+495f16498db34d3c__normal_clean_mucosa__00002,495f16498db34d3c,test,normal clean mucosa,5,5,True
+4aebc5cb2d4847aa__ileocecal_valve__00001,4aebc5cb2d4847aa,train,ileocecal valve,5,4,False
+5bb1d3cc7dc64cec__ileocecal_valve__00001,5bb1d3cc7dc64cec,train,ileocecal valve,5,4,False
+5bb1d3cc7dc64cec__normal_clean_mucosa__00001,5bb1d3cc7dc64cec,train,normal clean mucosa,5,5,True
+5bb1d3cc7dc64cec__normal_clean_mucosa__00002,5bb1d3cc7dc64cec,train,normal clean mucosa,5,5,True
+5bb1d3cc7dc64cec__normal_clean_mucosa__00003,5bb1d3cc7dc64cec,train,normal clean mucosa,5,5,True
+5bb1d3cc7dc64cec__reduced_mucosal_view__00001,5bb1d3cc7dc64cec,train,reduced mucosal view,5,5,True
+5e59c7fdb16c4228__erosion__00001,5e59c7fdb16c4228,test,erosion,5,5,True
+5e59c7fdb16c4228__erosion__00002,5e59c7fdb16c4228,test,erosion,5,5,True
+5e59c7fdb16c4228__erosion__00003,5e59c7fdb16c4228,test,erosion,5,5,True
+5e59c7fdb16c4228__erosion__00004,5e59c7fdb16c4228,test,erosion,5,5,True
+5e59c7fdb16c4228__erosion__00006,5e59c7fdb16c4228,test,erosion,5,5,True
+5e59c7fdb16c4228__erosion__00007,5e59c7fdb16c4228,test,erosion,5,5,True
+5e59c7fdb16c4228__erosion__00009,5e59c7fdb16c4228,test,erosion,5,5,True
+5e59c7fdb16c4228__erosion__00010,5e59c7fdb16c4228,test,erosion,5,5,True
+5e59c7fdb16c4228__erythema__00001,5e59c7fdb16c4228,test,erythema,5,5,True
+5e59c7fdb16c4228__erythema__00002,5e59c7fdb16c4228,test,erythema,5,5,True
+5e59c7fdb16c4228__erythema__00003,5e59c7fdb16c4228,test,erythema,5,5,True
+5e59c7fdb16c4228__erythema__00004,5e59c7fdb16c4228,test,erythema,5,5,True
+5e59c7fdb16c4228__erythema__00005,5e59c7fdb16c4228,test,erythema,5,5,True
+5e59c7fdb16c4228__erythema__00006,5e59c7fdb16c4228,test,erythema,5,5,True
+5e59c7fdb16c4228__erythema__00007,5e59c7fdb16c4228,test,erythema,5,5,True
+5e59c7fdb16c4228__erythema__00008,5e59c7fdb16c4228,test,erythema,5,5,True
+5e59c7fdb16c4228__erythema__00009,5e59c7fdb16c4228,test,erythema,5,5,True
+5e59c7fdb16c4228__ileocecal_valve__00001,5e59c7fdb16c4228,test,ileocecal valve,5,5,True
+5e59c7fdb16c4228__normal_clean_mucosa__00001,5e59c7fdb16c4228,test,normal clean mucosa,5,5,True
+5e59c7fdb16c4228__normal_clean_mucosa__00002,5e59c7fdb16c4228,test,normal clean mucosa,5,5,True
+5e59c7fdb16c4228__normal_clean_mucosa__00003,5e59c7fdb16c4228,test,normal clean mucosa,5,5,True
+5e59c7fdb16c4228__normal_clean_mucosa__00004,5e59c7fdb16c4228,test,normal clean mucosa,5,5,True
+5e59c7fdb16c4228__normal_clean_mucosa__00005,5e59c7fdb16c4228,test,normal clean mucosa,5,5,True
+5e59c7fdb16c4228__normal_clean_mucosa__00006,5e59c7fdb16c4228,test,normal clean mucosa,5,5,True
+5e59c7fdb16c4228__normal_clean_mucosa__00007,5e59c7fdb16c4228,test,normal clean mucosa,5,5,True
+5e59c7fdb16c4228__normal_clean_mucosa__00008,5e59c7fdb16c4228,test,normal clean mucosa,5,5,True
+5e59c7fdb16c4228__normal_clean_mucosa__00009,5e59c7fdb16c4228,test,normal clean mucosa,5,5,True
+5e59c7fdb16c4228__pylorus__00001,5e59c7fdb16c4228,test,pylorus,5,5,True
+5e9beaf4e66142c8__ileocecal_valve__00001,5e9beaf4e66142c8,test,ileocecal valve,5,4,False
+5e9beaf4e66142c8__normal_clean_mucosa__00001,5e9beaf4e66142c8,test,normal clean mucosa,5,5,True
+5e9beaf4e66142c8__normal_clean_mucosa__00002,5e9beaf4e66142c8,test,normal clean mucosa,5,5,True
+64440803f87b4843__angiectasia__00001,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00002,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00003,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00004,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00005,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00006,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00007,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00008,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00009,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00010,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00011,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00012,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00013,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00014,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00015,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00016,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00017,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00018,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00019,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00020,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00021,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00022,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00023,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00024,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00025,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00026,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00027,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00028,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00029,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__angiectasia__00030,64440803f87b4843,train,angiectasia,5,5,True
+64440803f87b4843__erythema__00001,64440803f87b4843,train,erythema,5,5,True
+64440803f87b4843__erythema__00002,64440803f87b4843,train,erythema,5,5,True
+64440803f87b4843__ileocecal_valve__00001,64440803f87b4843,train,ileocecal valve,5,5,True
+64440803f87b4843__lymphangiectasia__00001,64440803f87b4843,train,lymphangiectasia,5,5,True
+64440803f87b4843__lymphangiectasia__00002,64440803f87b4843,train,lymphangiectasia,5,5,True
+64440803f87b4843__lymphangiectasia__00003,64440803f87b4843,train,lymphangiectasia,5,5,True
+64440803f87b4843__lymphangiectasia__00004,64440803f87b4843,train,lymphangiectasia,5,5,True
+64440803f87b4843__lymphangiectasia__00005,64440803f87b4843,train,lymphangiectasia,5,5,True
+64440803f87b4843__lymphangiectasia__00006,64440803f87b4843,train,lymphangiectasia,5,5,True
+64440803f87b4843__lymphangiectasia__00007,64440803f87b4843,train,lymphangiectasia,5,5,True
+64440803f87b4843__lymphangiectasia__00008,64440803f87b4843,train,lymphangiectasia,5,5,True
+64440803f87b4843__lymphangiectasia__00010,64440803f87b4843,train,lymphangiectasia,5,5,True
+64440803f87b4843__lymphangiectasia__00011,64440803f87b4843,train,lymphangiectasia,5,5,True
+64440803f87b4843__normal_clean_mucosa__00001,64440803f87b4843,train,normal clean mucosa,5,5,True
+64440803f87b4843__normal_clean_mucosa__00002,64440803f87b4843,train,normal clean mucosa,5,5,True
+64440803f87b4843__normal_clean_mucosa__00003,64440803f87b4843,train,normal clean mucosa,5,5,True
+64440803f87b4843__normal_clean_mucosa__00004,64440803f87b4843,train,normal clean mucosa,5,5,True
+64440803f87b4843__pylorus__00001,64440803f87b4843,train,pylorus,5,5,True
+6cb700585c4f4070__ileocecal_valve__00001,6cb700585c4f4070,train,ileocecal valve,5,5,True
+6cb700585c4f4070__normal_clean_mucosa__00001,6cb700585c4f4070,train,normal clean mucosa,5,5,True
+6cb700585c4f4070__normal_clean_mucosa__00002,6cb700585c4f4070,train,normal clean mucosa,5,5,True
+6cb700585c4f4070__normal_clean_mucosa__00003,6cb700585c4f4070,train,normal clean mucosa,5,5,True
+6cb700585c4f4070__normal_clean_mucosa__00004,6cb700585c4f4070,train,normal clean mucosa,5,5,True
+7a47e8eacea04e64__foreign_body__00001,7a47e8eacea04e64,test,foreign body,5,5,True
+7a47e8eacea04e64__ileocecal_valve__00001,7a47e8eacea04e64,test,ileocecal valve,5,5,True
+7a47e8eacea04e64__pylorus__00001,7a47e8eacea04e64,test,pylorus,5,5,True
+7a47e8eacea04e64__ulcer__00001,7a47e8eacea04e64,test,ulcer,5,5,True
+7a47e8eacea04e64__ulcer__00002,7a47e8eacea04e64,test,ulcer,5,5,True
+7a47e8eacea04e64__ulcer__00003,7a47e8eacea04e64,test,ulcer,5,5,True
+7a47e8eacea04e64__ulcer__00004,7a47e8eacea04e64,test,ulcer,5,5,True
+7a47e8eacea04e64__ulcer__00005,7a47e8eacea04e64,test,ulcer,5,5,True
+7a47e8eacea04e64__ulcer__00006,7a47e8eacea04e64,test,ulcer,5,5,True
+7a47e8eacea04e64__ulcer__00007,7a47e8eacea04e64,test,ulcer,5,5,True
+7a47e8eacea04e64__ulcer__00008,7a47e8eacea04e64,test,ulcer,5,5,True
+7a47e8eacea04e64__ulcer__00009,7a47e8eacea04e64,test,ulcer,5,5,True
+7ad22d50ebaf4596__ileocecal_valve__00001,7ad22d50ebaf4596,train,ileocecal valve,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00001,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00002,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00003,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00004,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00005,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00006,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00007,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00009,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00010,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00011,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00012,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00013,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00014,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00015,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00016,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00017,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00018,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00019,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00020,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00021,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00022,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00023,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00024,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00025,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00026,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00027,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00028,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00030,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00032,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00033,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00034,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00035,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00036,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00037,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00038,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00039,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00040,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00041,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00042,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__lymphangiectasia__00043,7ad22d50ebaf4596,train,lymphangiectasia,5,5,True
+7ad22d50ebaf4596__normal_clean_mucosa__00001,7ad22d50ebaf4596,train,normal clean mucosa,5,5,True
+7ad22d50ebaf4596__normal_clean_mucosa__00002,7ad22d50ebaf4596,train,normal clean mucosa,5,5,True
+7ad22d50ebaf4596__pylorus__00001,7ad22d50ebaf4596,train,pylorus,5,5,True
+8885668afb844852__foreign_body__00001,8885668afb844852,train,foreign body,5,5,True
+8885668afb844852__foreign_body__00002,8885668afb844852,train,foreign body,5,5,True
+8885668afb844852__foreign_body__00003,8885668afb844852,train,foreign body,5,5,True
+8885668afb844852__foreign_body__00004,8885668afb844852,train,foreign body,5,5,True
+8885668afb844852__foreign_body__00005,8885668afb844852,train,foreign body,5,5,True
+8885668afb844852__foreign_body__00006,8885668afb844852,train,foreign body,5,5,True
+8885668afb844852__foreign_body__00007,8885668afb844852,train,foreign body,5,5,True
+8885668afb844852__foreign_body__00008,8885668afb844852,train,foreign body,5,5,True
+8885668afb844852__ileocecal_valve__00001,8885668afb844852,train,ileocecal valve,5,5,True
+8885668afb844852__normal_clean_mucosa__00001,8885668afb844852,train,normal clean mucosa,5,5,True
+8885668afb844852__normal_clean_mucosa__00002,8885668afb844852,train,normal clean mucosa,5,5,True
+8885668afb844852__normal_clean_mucosa__00003,8885668afb844852,train,normal clean mucosa,5,5,True
+8885668afb844852__normal_clean_mucosa__00004,8885668afb844852,train,normal clean mucosa,5,5,True
+8885668afb844852__pylorus__00001,8885668afb844852,train,pylorus,5,5,True
+8885668afb844852__reduced_mucosal_view__00001,8885668afb844852,train,reduced mucosal view,5,5,True
+89cdd41258c542c5__normal_clean_mucosa__00001,89cdd41258c542c5,train,normal clean mucosa,5,5,True
+89cdd41258c542c5__normal_clean_mucosa__00002,89cdd41258c542c5,train,normal clean mucosa,5,5,True
+89cdd41258c542c5__normal_clean_mucosa__00003,89cdd41258c542c5,train,normal clean mucosa,5,5,True
+89cdd41258c542c5__normal_clean_mucosa__00004,89cdd41258c542c5,train,normal clean mucosa,5,5,True
+89cdd41258c542c5__pylorus__00001,89cdd41258c542c5,train,pylorus,5,5,True
+8a00709108cd4e2b__ileocecal_valve__00001,8a00709108cd4e2b,train,ileocecal valve,5,3,False
+8a00709108cd4e2b__normal_clean_mucosa__00001,8a00709108cd4e2b,train,normal clean mucosa,5,5,True
+8a00709108cd4e2b__normal_clean_mucosa__00002,8a00709108cd4e2b,train,normal clean mucosa,5,5,True
+8a00709108cd4e2b__normal_clean_mucosa__00003,8a00709108cd4e2b,train,normal clean mucosa,5,5,True
+8ebf0e483cac48d6__blood_hematin__00001,8ebf0e483cac48d6,train,blood hematin,5,5,True
+8ebf0e483cac48d6__erosion__00001,8ebf0e483cac48d6,train,erosion,5,5,True
+8ebf0e483cac48d6__erosion__00002,8ebf0e483cac48d6,train,erosion,5,5,True
+8ebf0e483cac48d6__erosion__00003,8ebf0e483cac48d6,train,erosion,5,5,True
+8ebf0e483cac48d6__erosion__00004,8ebf0e483cac48d6,train,erosion,5,5,True
+8ebf0e483cac48d6__erosion__00005,8ebf0e483cac48d6,train,erosion,5,5,True
+8ebf0e483cac48d6__erosion__00006,8ebf0e483cac48d6,train,erosion,5,5,True
+8ebf0e483cac48d6__erosion__00007,8ebf0e483cac48d6,train,erosion,5,5,True
+8ebf0e483cac48d6__ileocecal_valve__00001,8ebf0e483cac48d6,train,ileocecal valve,5,5,True
+8ebf0e483cac48d6__normal_clean_mucosa__00001,8ebf0e483cac48d6,train,normal clean mucosa,5,5,True
+8ebf0e483cac48d6__normal_clean_mucosa__00002,8ebf0e483cac48d6,train,normal clean mucosa,5,5,True
+8ebf0e483cac48d6__normal_clean_mucosa__00003,8ebf0e483cac48d6,train,normal clean mucosa,5,5,True
+8ebf0e483cac48d6__pylorus__00001,8ebf0e483cac48d6,train,pylorus,5,5,True
+8ebf0e483cac48d6__reduced_mucosal_view__00001,8ebf0e483cac48d6,train,reduced mucosal view,5,5,True
+ad91cf7ca91440aa__angiectasia__00001,ad91cf7ca91440aa,train,angiectasia,5,5,True
+ad91cf7ca91440aa__angiectasia__00002,ad91cf7ca91440aa,train,angiectasia,5,5,True
+ad91cf7ca91440aa__angiectasia__00003,ad91cf7ca91440aa,train,angiectasia,5,5,True
+ad91cf7ca91440aa__ileocecal_valve__00001,ad91cf7ca91440aa,train,ileocecal valve,5,4,False
+ad91cf7ca91440aa__pylorus__00001,ad91cf7ca91440aa,train,pylorus,5,5,True
+af9bd7d0e43741e3__ileocecal_valve__00001,af9bd7d0e43741e3,test,ileocecal valve,5,5,True
+af9bd7d0e43741e3__pylorus__00001,af9bd7d0e43741e3,test,pylorus,5,5,True
+af9bd7d0e43741e3__reduced_mucosal_view__00001,af9bd7d0e43741e3,test,reduced mucosal view,5,5,True
+b2134f4a6f864613__angiectasia__00001,b2134f4a6f864613,validation,angiectasia,5,5,True
+b2134f4a6f864613__angiectasia__00002,b2134f4a6f864613,validation,angiectasia,5,5,True
+b2134f4a6f864613__angiectasia__00003,b2134f4a6f864613,validation,angiectasia,5,5,True
+b2134f4a6f864613__angiectasia__00004,b2134f4a6f864613,validation,angiectasia,5,5,True
+b2134f4a6f864613__angiectasia__00005,b2134f4a6f864613,validation,angiectasia,5,5,True
+b2134f4a6f864613__angiectasia__00006,b2134f4a6f864613,validation,angiectasia,5,5,True
+b2134f4a6f864613__angiectasia__00007,b2134f4a6f864613,validation,angiectasia,5,5,True
+b2134f4a6f864613__angiectasia__00008,b2134f4a6f864613,validation,angiectasia,5,5,True
+b2134f4a6f864613__normal_clean_mucosa__00001,b2134f4a6f864613,validation,normal clean mucosa,5,5,True
+b2134f4a6f864613__normal_clean_mucosa__00002,b2134f4a6f864613,validation,normal clean mucosa,5,5,True
+b2134f4a6f864613__normal_clean_mucosa__00003,b2134f4a6f864613,validation,normal clean mucosa,5,5,True
+b2134f4a6f864613__normal_clean_mucosa__00004,b2134f4a6f864613,validation,normal clean mucosa,5,5,True
+b2134f4a6f864613__normal_clean_mucosa__00005,b2134f4a6f864613,validation,normal clean mucosa,5,5,True
+b2134f4a6f864613__pylorus__00001,b2134f4a6f864613,validation,pylorus,5,5,True
+bc84479c66fe4da6__ileocecal_valve__00001,bc84479c66fe4da6,train,ileocecal valve,5,5,True
+bc84479c66fe4da6__normal_clean_mucosa__00001,bc84479c66fe4da6,train,normal clean mucosa,5,5,True
+bc84479c66fe4da6__pylorus__00001,bc84479c66fe4da6,train,pylorus,5,5,True
+bca26705313a4644__erosion__00001,bca26705313a4644,validation,erosion,5,5,True
+bca26705313a4644__erosion__00002,bca26705313a4644,validation,erosion,5,5,True
+bca26705313a4644__erosion__00003,bca26705313a4644,validation,erosion,5,5,True
+bca26705313a4644__erosion__00004,bca26705313a4644,validation,erosion,5,5,True
+bca26705313a4644__erosion__00005,bca26705313a4644,validation,erosion,5,5,True
+bca26705313a4644__erosion__00006,bca26705313a4644,validation,erosion,5,5,True
+bca26705313a4644__erosion__00007,bca26705313a4644,validation,erosion,5,5,True
+bca26705313a4644__erosion__00008,bca26705313a4644,validation,erosion,5,5,True
+bca26705313a4644__erosion__00009,bca26705313a4644,validation,erosion,5,5,True
+bca26705313a4644__erosion__00010,bca26705313a4644,validation,erosion,5,5,True
+bca26705313a4644__erosion__00011,bca26705313a4644,validation,erosion,5,5,True
+bca26705313a4644__erosion__00012,bca26705313a4644,validation,erosion,5,5,True
+bca26705313a4644__erosion__00013,bca26705313a4644,validation,erosion,5,5,True
+bca26705313a4644__erosion__00014,bca26705313a4644,validation,erosion,5,5,True
+bca26705313a4644__erosion__00015,bca26705313a4644,validation,erosion,5,5,True
+bca26705313a4644__erosion__00016,bca26705313a4644,validation,erosion,5,5,True
+bca26705313a4644__erosion__00017,bca26705313a4644,validation,erosion,5,5,True
+bca26705313a4644__erosion__00018,bca26705313a4644,validation,erosion,5,5,True
+bca26705313a4644__erosion__00019,bca26705313a4644,validation,erosion,5,5,True
+bca26705313a4644__ileocecal_valve__00001,bca26705313a4644,validation,ileocecal valve,5,5,True
+bca26705313a4644__normal_clean_mucosa__00001,bca26705313a4644,validation,normal clean mucosa,5,5,True
+bca26705313a4644__normal_clean_mucosa__00002,bca26705313a4644,validation,normal clean mucosa,5,5,True
+bca26705313a4644__normal_clean_mucosa__00003,bca26705313a4644,validation,normal clean mucosa,5,5,True
+bca26705313a4644__normal_clean_mucosa__00004,bca26705313a4644,validation,normal clean mucosa,5,5,True
+bca26705313a4644__normal_clean_mucosa__00005,bca26705313a4644,validation,normal clean mucosa,5,5,True
+bca26705313a4644__normal_clean_mucosa__00006,bca26705313a4644,validation,normal clean mucosa,5,5,True
+bca26705313a4644__pylorus__00001,bca26705313a4644,validation,pylorus,5,5,True
+c11b28a8b2344716__normal_clean_mucosa__00001,c11b28a8b2344716,validation,normal clean mucosa,5,5,True
+c11b28a8b2344716__normal_clean_mucosa__00002,c11b28a8b2344716,validation,normal clean mucosa,5,5,True
+c11b28a8b2344716__pylorus__00001,c11b28a8b2344716,validation,pylorus,5,5,True
+c11b28a8b2344716__reduced_mucosal_view__00001,c11b28a8b2344716,validation,reduced mucosal view,5,5,True
+c11b28a8b2344716__reduced_mucosal_view__00002,c11b28a8b2344716,validation,reduced mucosal view,5,5,True
+c7084b3556e34619__ileocecal_valve__00001,c7084b3556e34619,train,ileocecal valve,5,5,True
+c7084b3556e34619__normal_clean_mucosa__00001,c7084b3556e34619,train,normal clean mucosa,5,5,True
+c7084b3556e34619__normal_clean_mucosa__00002,c7084b3556e34619,train,normal clean mucosa,5,5,True
+c7084b3556e34619__normal_clean_mucosa__00003,c7084b3556e34619,train,normal clean mucosa,5,5,True
+c7084b3556e34619__normal_clean_mucosa__00004,c7084b3556e34619,train,normal clean mucosa,5,5,True
+c7084b3556e34619__pylorus__00001,c7084b3556e34619,train,pylorus,5,5,True
+d369e4f163df4aba__angiectasia__00001,d369e4f163df4aba,train,angiectasia,5,5,True
+d369e4f163df4aba__angiectasia__00002,d369e4f163df4aba,train,angiectasia,5,5,True
+d369e4f163df4aba__angiectasia__00005,d369e4f163df4aba,train,angiectasia,5,5,True
+d369e4f163df4aba__angiectasia__00006,d369e4f163df4aba,train,angiectasia,5,5,True
+d369e4f163df4aba__blood_fresh__00001,d369e4f163df4aba,train,blood fresh,5,5,True
+d369e4f163df4aba__blood_fresh__00002,d369e4f163df4aba,train,blood fresh,5,5,True
+d369e4f163df4aba__blood_fresh__00003,d369e4f163df4aba,train,blood fresh,5,5,True
+d369e4f163df4aba__blood_fresh__00004,d369e4f163df4aba,train,blood fresh,5,5,True
+d369e4f163df4aba__blood_fresh__00005,d369e4f163df4aba,train,blood fresh,5,5,True
+d369e4f163df4aba__blood_fresh__00006,d369e4f163df4aba,train,blood fresh,5,5,True
+d369e4f163df4aba__blood_fresh__00008,d369e4f163df4aba,train,blood fresh,5,5,True
+d369e4f163df4aba__blood_fresh__00009,d369e4f163df4aba,train,blood fresh,5,5,True
+d369e4f163df4aba__blood_fresh__00010,d369e4f163df4aba,train,blood fresh,5,5,True
+d369e4f163df4aba__blood_fresh__00011,d369e4f163df4aba,train,blood fresh,5,5,True
+d369e4f163df4aba__blood_fresh__00012,d369e4f163df4aba,train,blood fresh,5,5,True
+d369e4f163df4aba__blood_fresh__00013,d369e4f163df4aba,train,blood fresh,5,5,True
+d369e4f163df4aba__blood_fresh__00014,d369e4f163df4aba,train,blood fresh,5,5,True
+d369e4f163df4aba__blood_fresh__00015,d369e4f163df4aba,train,blood fresh,5,5,True
+d369e4f163df4aba__blood_fresh__00016,d369e4f163df4aba,train,blood fresh,5,5,True
+d369e4f163df4aba__blood_fresh__00017,d369e4f163df4aba,train,blood fresh,5,5,True
+d369e4f163df4aba__blood_fresh__00018,d369e4f163df4aba,train,blood fresh,5,5,True
+d369e4f163df4aba__blood_fresh__00019,d369e4f163df4aba,train,blood fresh,5,5,True
+d369e4f163df4aba__blood_fresh__00020,d369e4f163df4aba,train,blood fresh,5,5,True
+d369e4f163df4aba__blood_fresh__00021,d369e4f163df4aba,train,blood fresh,5,5,True
+d369e4f163df4aba__blood_fresh__00022,d369e4f163df4aba,train,blood fresh,5,5,True
+d369e4f163df4aba__blood_fresh__00023,d369e4f163df4aba,train,blood fresh,5,5,True
+d369e4f163df4aba__normal_clean_mucosa__00001,d369e4f163df4aba,train,normal clean mucosa,5,5,True
+d369e4f163df4aba__normal_clean_mucosa__00002,d369e4f163df4aba,train,normal clean mucosa,5,5,True
+d369e4f163df4aba__normal_clean_mucosa__00003,d369e4f163df4aba,train,normal clean mucosa,5,5,True
+d369e4f163df4aba__normal_clean_mucosa__00004,d369e4f163df4aba,train,normal clean mucosa,5,5,True
+d369e4f163df4aba__normal_clean_mucosa__00005,d369e4f163df4aba,train,normal clean mucosa,5,5,True
+d369e4f163df4aba__pylorus__00001,d369e4f163df4aba,train,pylorus,5,5,True
+d626f4f4a5ac4785__erosion__00001,d626f4f4a5ac4785,train,erosion,5,5,True
+d626f4f4a5ac4785__erosion__00002,d626f4f4a5ac4785,train,erosion,5,5,True
+d626f4f4a5ac4785__erosion__00003,d626f4f4a5ac4785,train,erosion,5,5,True
+d626f4f4a5ac4785__erosion__00004,d626f4f4a5ac4785,train,erosion,5,5,True
+d626f4f4a5ac4785__erosion__00005,d626f4f4a5ac4785,train,erosion,5,5,True
+d626f4f4a5ac4785__erosion__00008,d626f4f4a5ac4785,train,erosion,5,5,True
+d626f4f4a5ac4785__erosion__00009,d626f4f4a5ac4785,train,erosion,5,5,True
+d626f4f4a5ac4785__erosion__00010,d626f4f4a5ac4785,train,erosion,5,5,True
+d626f4f4a5ac4785__erosion__00011,d626f4f4a5ac4785,train,erosion,5,5,True
+d626f4f4a5ac4785__pylorus__00001,d626f4f4a5ac4785,train,pylorus,5,5,True
+d626f4f4a5ac4785__ulcer__00001,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00002,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00005,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00006,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00007,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00008,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00009,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00010,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00011,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00012,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00013,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00015,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00016,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00017,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00018,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00019,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00020,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00021,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00022,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00024,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00025,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00026,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00027,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00028,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00029,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00030,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00032,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00033,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00034,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00035,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00036,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00038,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00039,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00040,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00041,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00042,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00043,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00044,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00045,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00046,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00048,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00049,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00050,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00051,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00052,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00053,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00054,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00055,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00056,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00057,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00058,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00059,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00060,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00061,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00062,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00063,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00064,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00065,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00066,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00067,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00069,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00071,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00072,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00073,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00074,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00075,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00076,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00077,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00078,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00079,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00080,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00084,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00085,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00086,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00088,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00089,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00090,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00091,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00092,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00093,d626f4f4a5ac4785,train,ulcer,5,5,True
+d626f4f4a5ac4785__ulcer__00094,d626f4f4a5ac4785,train,ulcer,5,3,False
+d7a271f233ba4a40__ileocecal_valve__00001,d7a271f233ba4a40,validation,ileocecal valve,5,5,True
+d7a271f233ba4a40__normal_clean_mucosa__00001,d7a271f233ba4a40,validation,normal clean mucosa,5,5,True
+d7a271f233ba4a40__normal_clean_mucosa__00002,d7a271f233ba4a40,validation,normal clean mucosa,5,5,True
+d7a271f233ba4a40__normal_clean_mucosa__00003,d7a271f233ba4a40,validation,normal clean mucosa,5,5,True
+d7a271f233ba4a40__normal_clean_mucosa__00004,d7a271f233ba4a40,validation,normal clean mucosa,5,5,True
+d7a271f233ba4a40__pylorus__00001,d7a271f233ba4a40,validation,pylorus,5,5,True
+dac1e27f7e4d4ef5__erosion__00002,dac1e27f7e4d4ef5,train,erosion,5,5,True
+dac1e27f7e4d4ef5__erosion__00004,dac1e27f7e4d4ef5,train,erosion,5,5,True
+dac1e27f7e4d4ef5__erosion__00005,dac1e27f7e4d4ef5,train,erosion,5,5,True
+dac1e27f7e4d4ef5__erosion__00006,dac1e27f7e4d4ef5,train,erosion,5,5,True
+dac1e27f7e4d4ef5__erosion__00007,dac1e27f7e4d4ef5,train,erosion,5,5,True
+dac1e27f7e4d4ef5__erosion__00008,dac1e27f7e4d4ef5,train,erosion,5,5,True
+dac1e27f7e4d4ef5__erosion__00009,dac1e27f7e4d4ef5,train,erosion,5,5,True
+dac1e27f7e4d4ef5__ileocecal_valve__00001,dac1e27f7e4d4ef5,train,ileocecal valve,5,5,True
+dac1e27f7e4d4ef5__normal_clean_mucosa__00001,dac1e27f7e4d4ef5,train,normal clean mucosa,5,5,True
+dac1e27f7e4d4ef5__normal_clean_mucosa__00002,dac1e27f7e4d4ef5,train,normal clean mucosa,5,5,True
+dac1e27f7e4d4ef5__normal_clean_mucosa__00003,dac1e27f7e4d4ef5,train,normal clean mucosa,5,5,True
+dac1e27f7e4d4ef5__normal_clean_mucosa__00004,dac1e27f7e4d4ef5,train,normal clean mucosa,5,5,True
+dac1e27f7e4d4ef5__normal_clean_mucosa__00005,dac1e27f7e4d4ef5,train,normal clean mucosa,5,5,True
+dac1e27f7e4d4ef5__normal_clean_mucosa__00006,dac1e27f7e4d4ef5,train,normal clean mucosa,5,5,True
+dac1e27f7e4d4ef5__pylorus__00001,dac1e27f7e4d4ef5,train,pylorus,5,5,True
+dc221ccc65d34010__ileocecal_valve__00001,dc221ccc65d34010,train,ileocecal valve,5,5,True
+dc221ccc65d34010__normal_clean_mucosa__00001,dc221ccc65d34010,train,normal clean mucosa,5,5,True
+dc221ccc65d34010__normal_clean_mucosa__00002,dc221ccc65d34010,train,normal clean mucosa,5,5,True
+dc221ccc65d34010__reduced_mucosal_view__00001,dc221ccc65d34010,train,reduced mucosal view,5,5,True
+dc221ccc65d34010__reduced_mucosal_view__00002,dc221ccc65d34010,train,reduced mucosal view,5,5,True
+dca1377dec974312__ileocecal_valve__00001,dca1377dec974312,train,ileocecal valve,5,5,True
+dca1377dec974312__normal_clean_mucosa__00001,dca1377dec974312,train,normal clean mucosa,5,5,True
+dca1377dec974312__normal_clean_mucosa__00002,dca1377dec974312,train,normal clean mucosa,5,5,True
+dca1377dec974312__normal_clean_mucosa__00003,dca1377dec974312,train,normal clean mucosa,5,5,True
+dca1377dec974312__normal_clean_mucosa__00004,dca1377dec974312,train,normal clean mucosa,5,5,True
+dca1377dec974312__normal_clean_mucosa__00005,dca1377dec974312,train,normal clean mucosa,5,5,True
+dca1377dec974312__pylorus__00001,dca1377dec974312,train,pylorus,5,5,True
+df6b47bafe5143f5__ileocecal_valve__00001,df6b47bafe5143f5,train,ileocecal valve,5,3,False
+df6b47bafe5143f5__normal_clean_mucosa__00001,df6b47bafe5143f5,train,normal clean mucosa,5,5,True
+df6b47bafe5143f5__normal_clean_mucosa__00002,df6b47bafe5143f5,train,normal clean mucosa,5,5,True
+df6b47bafe5143f5__normal_clean_mucosa__00003,df6b47bafe5143f5,train,normal clean mucosa,5,5,True
+df6b47bafe5143f5__normal_clean_mucosa__00004,df6b47bafe5143f5,train,normal clean mucosa,5,5,True
+df6b47bafe5143f5__normal_clean_mucosa__00005,df6b47bafe5143f5,train,normal clean mucosa,5,5,True
+df6b47bafe5143f5__normal_clean_mucosa__00006,df6b47bafe5143f5,train,normal clean mucosa,5,5,True
+df6b47bafe5143f5__pylorus__00001,df6b47bafe5143f5,train,pylorus,5,5,True
+eb0203196e284797__ampulla_of_vater__00001,eb0203196e284797,train,ampulla of vater,5,5,True
+eb0203196e284797__ampulla_of_vater__00003,eb0203196e284797,train,ampulla of vater,5,5,True
+eb0203196e284797__ampulla_of_vater__00004,eb0203196e284797,train,ampulla of vater,5,5,True
+eb0203196e284797__angiectasia__00001,eb0203196e284797,train,angiectasia,5,5,True
+eb0203196e284797__angiectasia__00002,eb0203196e284797,train,angiectasia,5,5,True
+eb0203196e284797__angiectasia__00004,eb0203196e284797,train,angiectasia,5,5,True
+eb0203196e284797__angiectasia__00005,eb0203196e284797,train,angiectasia,5,5,True
+eb0203196e284797__erosion__00001,eb0203196e284797,train,erosion,5,5,True
+eb0203196e284797__erosion__00002,eb0203196e284797,train,erosion,5,5,True
+eb0203196e284797__erosion__00003,eb0203196e284797,train,erosion,5,5,True
+eb0203196e284797__erosion__00004,eb0203196e284797,train,erosion,5,5,True
+eb0203196e284797__erosion__00005,eb0203196e284797,train,erosion,5,5,True
+eb0203196e284797__erosion__00006,eb0203196e284797,train,erosion,5,5,True
+eb0203196e284797__erosion__00007,eb0203196e284797,train,erosion,5,5,True
+eb0203196e284797__erosion__00009,eb0203196e284797,train,erosion,5,5,True
+eb0203196e284797__normal_clean_mucosa__00001,eb0203196e284797,train,normal clean mucosa,5,5,True
+eb0203196e284797__normal_clean_mucosa__00002,eb0203196e284797,train,normal clean mucosa,5,5,True
+eb0203196e284797__normal_clean_mucosa__00003,eb0203196e284797,train,normal clean mucosa,5,5,True
+eb0203196e284797__pylorus__00001,eb0203196e284797,train,pylorus,5,5,True
+ed02f27ef36f483e__ileocecal_valve__00001,ed02f27ef36f483e,train,ileocecal valve,5,5,True
+ed02f27ef36f483e__normal_clean_mucosa__00001,ed02f27ef36f483e,train,normal clean mucosa,5,5,True
+ed02f27ef36f483e__pylorus__00001,ed02f27ef36f483e,train,pylorus,5,5,True
+fb86bc87d3874cd7__erosion__00001,fb86bc87d3874cd7,train,erosion,5,5,True
+fb86bc87d3874cd7__erosion__00002,fb86bc87d3874cd7,train,erosion,5,5,True
+fb86bc87d3874cd7__erosion__00004,fb86bc87d3874cd7,train,erosion,5,5,True
+fb86bc87d3874cd7__erosion__00005,fb86bc87d3874cd7,train,erosion,5,5,True
+fb86bc87d3874cd7__erosion__00006,fb86bc87d3874cd7,train,erosion,5,5,True
+fb86bc87d3874cd7__erosion__00007,fb86bc87d3874cd7,train,erosion,5,5,True
+fb86bc87d3874cd7__erosion__00008,fb86bc87d3874cd7,train,erosion,5,5,True
+fb86bc87d3874cd7__normal_clean_mucosa__00001,fb86bc87d3874cd7,train,normal clean mucosa,5,5,True
+fb86bc87d3874cd7__normal_clean_mucosa__00002,fb86bc87d3874cd7,train,normal clean mucosa,5,5,True
+fb86bc87d3874cd7__normal_clean_mucosa__00003,fb86bc87d3874cd7,train,normal clean mucosa,5,5,True
+fb86bc87d3874cd7__normal_clean_mucosa__00004,fb86bc87d3874cd7,train,normal clean mucosa,5,5,True
+fb86bc87d3874cd7__normal_clean_mucosa__00005,fb86bc87d3874cd7,train,normal clean mucosa,5,5,True
+fb86bc87d3874cd7__normal_clean_mucosa__00006,fb86bc87d3874cd7,train,normal clean mucosa,5,5,True
+fb86bc87d3874cd7__normal_clean_mucosa__00007,fb86bc87d3874cd7,train,normal clean mucosa,5,5,True
+fb86bc87d3874cd7__normal_clean_mucosa__00008,fb86bc87d3874cd7,train,normal clean mucosa,5,5,True
+fb86bc87d3874cd7__normal_clean_mucosa__00009,fb86bc87d3874cd7,train,normal clean mucosa,5,5,True
+fb86bc87d3874cd7__pylorus__00001,fb86bc87d3874cd7,train,pylorus,5,5,True
+fc32def0e7194981__ileocecal_valve__00001,fc32def0e7194981,train,ileocecal valve,5,5,True
+fc32def0e7194981__normal_clean_mucosa__00001,fc32def0e7194981,train,normal clean mucosa,5,5,True
+fc32def0e7194981__normal_clean_mucosa__00002,fc32def0e7194981,train,normal clean mucosa,5,5,True
+fc32def0e7194981__normal_clean_mucosa__00003,fc32def0e7194981,train,normal clean mucosa,5,5,True
+fc32def0e7194981__normal_clean_mucosa__00004,fc32def0e7194981,train,normal clean mucosa,5,5,True
+fe5d372e43f94f68__ileocecal_valve__00001,fe5d372e43f94f68,validation,ileocecal valve,5,5,True
+fe5d372e43f94f68__normal_clean_mucosa__00001,fe5d372e43f94f68,validation,normal clean mucosa,5,5,True
+fe5d372e43f94f68__pylorus__00001,fe5d372e43f94f68,validation,pylorus,5,5,True

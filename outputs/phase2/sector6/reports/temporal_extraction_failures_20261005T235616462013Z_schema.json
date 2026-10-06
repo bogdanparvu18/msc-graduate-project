@@ -1,0 +1,58 @@
+{
+  "artifact": "reports/temporal_extraction_failures_20261005T235616462013Z.csv",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "string",
+      "name": "finding_segment_id",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "video_key",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "opencv_frame_index"
+    },
+    {
+      "dtype": "Float64",
+      "name": "temporal_offset_seconds"
+    },
+    {
+      "dtype": "string",
+      "name": "context_image_path",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "context_image_source",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "context_annotation_status",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "extraction_status",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "extraction_error",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "image_validation_error",
+      "string_storage": "python"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "dbda1b48d6102af0c0bf226793ae2fd3a81b83f013bfd153146f2ae954486cab",
+  "rows": 0,
+  "schema_version": 1
+}
