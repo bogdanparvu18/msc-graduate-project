@@ -1,14 +1,10 @@
 {
-  "complete": true,
-  "created_utc": "2026-10-07T18:27:45.575184+00:00",
+  "schema": "frame-alignment-attempt-v1",
   "attempt_id": "05734e3cb8b24fe6b89d019e335c34b9",
-  "fallback_report": {
-    "run_id": "20261007_140342",
-    "warning_emitted": false,
-    "events_by_stage": {},
-    "example_reasons": {}
-  },
   "run_id": "20261007_140342",
+  "status": "completed",
+  "complete": true,
+  "started_utc": "2026-10-07T18:07:10.591744+00:00",
   "effective_settings": {
     "allow_cpu_fallback": true,
     "cpu_video_workers": 4,
@@ -160,44 +156,6 @@
     "ssim_precision": "float32_window_sums_float64_metric",
     "actual_backend_evidence": "per_video_checkpoint_timings_and_performance"
   },
-  "input_sha256": {
-    "metadata_clean.parquet": "40bad10eda042ee5992f75512717a6bb3c1fe5557a8bd0181973f0b06da40d22",
-    "physical_image_inventory.csv": "5244b460c4a1193abd6eac255973c07fab7df1f465eaff72f8e292275bb04894",
-    "video_manifest.csv": "2fc36b776a9b9947d9e8b3d61f976efb1b0f7809016e5f8698d998a4fa115cbc"
-  },
-  "evaluated_offsets": [
-    -2,
-    -1,
-    0,
-    1,
-    2
-  ],
-  "original_annotation_rows": 47239,
-  "unique_mappings": 47238,
-  "confirmed_mappings": 47238,
-  "confirmed_annotation_rows": 47239,
-  "excluded_annotation_rows": 0,
-  "videos_reused": 0,
-  "videos_rescored": 43,
-  "ssim_numerical_self_check": {
-    "ssim_implementation": "uniform_7x7_sample_covariance_valid_color_v1",
-    "torch_version": "2.11.0+cu130",
-    "skimage_version": "0.25.2",
-    "device": "cuda:0",
-    "precision": "float32_exact_sums_float64_moments",
-    "self_check_pairs": 10,
-    "self_check_max_absolute_error": 1.9206858326015208e-14,
-    "self_check_tolerance": 1e-10
-  },
-  "source_fingerprint_method": "SHA256 of mappings, engine, file paths/sizes/mtimes; not source bytes",
-  "output_sha256": {
-    "frame_alignment_audit.csv": "a78b07700eb03f1813832e8af8ddb8f97dae3d9d58c65065269d1bcfdc4c9ed0",
-    "frame_alignment_candidates.csv": "281db26aa112b7dec79454d44e86a198e83fd2381b4ddf8e41519d2033c2be2c",
-    "frame_alignment_offset_summary.csv": "bb519368e30252b050015ba75977dcea0bb29e8adefb2c3be5e8973ebc516cfe",
-    "frame_alignment_confirmed.csv": "c907b83bf9bc201a880d0e779137aa195aa097f996f5b43cc25d28c4468db43d",
-    "frame_alignment_excluded.csv": "4f97276bfca310d4a0052270b7be2b93e5c36b75317d7633cff486abfeede5e4",
-    "frame_alignment_confirmed.parquet": "6479d9514763443ae9e22ec7689a0ff0f0f25b5d4a97176be290e4024ce0bd3b",
-    "frame_alignment_performance.csv": "8113fca242721eb8833476e3c5f49b75477b9673670695c5df06173660d3f2ec"
-  },
-  "interpretation": "Technical acceptance under configured SSIM/ambiguity rules; not proof of clinical or historical frame identity."
+  "finished_utc": "2026-10-07T18:27:47.324449+00:00",
+  "final_state_sha256": "fe6cf8faa80375b4dfb93679beea68d9d2d54b572d6a178f1f9eeb52759a6b69"
 }
