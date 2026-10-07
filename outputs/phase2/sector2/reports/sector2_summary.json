@@ -1,22 +1,64 @@
 {
-  "alignment_created_utc": "2026-10-07T01:38:20.074619+00:00",
+  "alignment_created_utc": "2026-10-07T17:08:54.505356+00:00",
   "alignment_engine": {
-    "backend_id": "torchcodec_cuda_nvjpeg_hw_reference_ssim_uniform7_v4",
-    "cpu_fallback_allowed": false,
+    "actual_backend_evidence": "per_video_checkpoint_timings_and_performance",
+    "backend_id": "gpu_preferred_pyav_opencv_fallback_ssim_uniform7_v5",
+    "cpu_fallback_allowed": true,
     "cuda_backend": "nvdec",
-    "decoded_color": "RGB",
-    "decoder": "torchcodec",
-    "decoder_device": "cuda:0",
+    "decoded_color": "RGB_uint8",
     "gpu_capability": [
       12,
       0
     ],
     "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "image_extensions": [
+      ".jpeg",
+      ".jpg",
+      ".png"
+    ],
+    "index_policy": "torchcodec_exact_or_pyav_sequential_ordinal",
     "nvidia_driver": "580.82.07",
+    "opencv": "4.14.0",
+    "preferred_video_backend": "torchcodec_cuda",
+    "pyav": "18.1.0",
+    "pyav_libraries": {
+      "libavcodec": [
+        62,
+        28,
+        102
+      ],
+      "libavdevice": [
+        62,
+        3,
+        102
+      ],
+      "libavfilter": [
+        11,
+        14,
+        102
+      ],
+      "libavformat": [
+        62,
+        12,
+        102
+      ],
+      "libavutil": [
+        60,
+        26,
+        102
+      ],
+      "libswresample": [
+        6,
+        3,
+        102
+      ],
+      "libswscale": [
+        9,
+        5,
+        102
+      ]
+    },
     "reference_apply_exif_orientation": true,
-    "reference_backend": "HW_GPU_ONLY",
-    "reference_cpu_fallback_allowed": false,
-    "reference_decoder": "nvImageCodec/nvJPEG",
     "reference_fancy_upsampling": true,
     "reference_library_versions": {
       "nvidia-nvimgcodec-cu12": "0.9.0.20",
@@ -61,13 +103,13 @@
       "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/nvimgcodec_impl.cpython-39-x86_64-linux-gnu.so": "1e6f9eae21548f700318f3d111b4ea467fa6e18367f6b02eed3a92cbe62125e0",
       "nvidia-nvjpeg-cu12/nvidia/nvjpeg/lib/libnvjpeg.so.12": "27e1eb1834b20db64f99deba379746d8ec46b92975ccb4cdfa06a84d77e4c11e"
     },
-    "reference_output": "RGB_uint8_CHW_cuda",
-    "scoring_version": 4,
-    "seek_mode": "exact",
+    "reference_output": "RGB_uint8_CHW_on_ssim_device",
+    "reference_policy": "gpu_preferred",
+    "scoring_version": 5,
     "skimage": "0.25.2",
+    "ssim_device": "cuda:0",
     "ssim_method": "uniform7_sample_covariance_valid_color_uint8",
     "ssim_precision": "float32_window_sums_float64_metric",
-    "stream_strategy": "worker_local_torch_cuda_streams",
     "torch": "2.11.0+cu130",
     "torch_cuda": "13.0",
     "torchcodec": "0.16.0+cu130",
@@ -137,7 +179,7 @@
   "excluded_annotation_rows": 0,
   "interpretation": "Completed technical audit, not a medical validation. Published-reference discrepancies and exclusions are retained. Source videos/images and decoder caches are not included.",
   "original_annotation_rows": 47239,
-  "run_id": "20261006_213246",
+  "run_id": "20261007_123658",
   "schema": "mmvqa-sector2-export-v1",
   "total_container_reported_frames": 4765114,
   "unique_alignment_mappings": 47238,

@@ -1,14 +1,21 @@
 {
   "complete": true,
-  "started_utc": "2026-10-07T01:36:04.577466+00:00",
+  "started_utc": "2026-10-07T16:47:45.867725+00:00",
   "input_fingerprint": "71c40620653ad663cb215a8ec25b554f7fed3fdd9cdb26cb01c9fe3d5c3d410a",
   "settings": {
     "requested_backend": "nvdec",
     "gpu_id": 0,
     "allow_cpu_fallback": true,
+    "allow_cpu_startup_fallback": true,
     "cpu_threads": 2,
     "stage_video_locally": true,
     "local_work_dir": "/content/video_decode_audit_work",
+    "staging_min_free_mib": 4096,
+    "staging_budget_mib": "auto",
+    "prefetch_videos": 21,
+    "copy_workers": 21,
+    "video_workers": 9,
+    "cpu_video_workers": 9,
     "force_redecode": false,
     "retry_failed": false,
     "retry_video_keys": [],
@@ -21,7 +28,18 @@
   },
   "videos_total": 117,
   "videos_completed": 117,
+  "pipeline": {
+    "video_workers": 9,
+    "copy_workers": 21,
+    "prefetch_videos": 21,
+    "cpu_video_workers": 9,
+    "max_active_videos": 0,
+    "max_prepared_videos": 0,
+    "max_staged_videos": 0,
+    "max_reserved_bytes": 0,
+    "largest_window_bytes": 0
+  },
   "videos_reused": 117,
   "videos_decoded": 0,
-  "finished_utc": "2026-10-07T01:36:55.998996+00:00"
+  "finished_utc": "2026-10-07T16:47:46.968909+00:00"
 }

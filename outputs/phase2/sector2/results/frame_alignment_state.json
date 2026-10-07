@@ -1,8 +1,23 @@
 {
   "complete": true,
-  "created_utc": "2026-10-07T01:38:20.074619+00:00",
-  "run_id": "20261006_213246",
+  "created_utc": "2026-10-07T17:08:54.505356+00:00",
+  "attempt_id": "b1cbff54818f41bd8394c8d679ff8b5a",
+  "fallback_report": {
+    "run_id": "20261007_123658",
+    "warning_emitted": false,
+    "events_by_stage": {},
+    "example_reasons": {}
+  },
+  "run_id": "20261007_123658",
   "effective_settings": {
+    "allow_cpu_fallback": true,
+    "cpu_video_workers": 4,
+    "cpu_memory_budget_mib": 512,
+    "image_extensions": [
+      ".jpeg",
+      ".jpg",
+      ".png"
+    ],
     "candidate_offsets": [
       -1,
       0,
@@ -22,24 +37,28 @@
     "local_work_dir": "/content/frame_alignment_cuda_work",
     "local_disk_reserve_gib": 2.0,
     "force_rescore": false,
+    "retry_failed": true,
+    "retry_video_keys": [],
     "hash_source_bytes": false,
     "show_progress": true,
-    "reference_decoder": "nvjpeg_hw_only",
+    "reference_decoder": "gpu_preferred",
     "reference_fancy_upsampling": true,
     "reference_apply_exif_orientation": true,
+    "video_backend": "torchcodec_cuda",
+    "video_fallback_reason": "CUDA device or compatible TorchCodec binding unavailable.",
     "effective_video_workers": 43,
-    "transient_vram_budget_bytes": 86096681369
+    "transient_tensor_budget_bytes": 86096681369
   },
   "engine": {
-    "scoring_version": 4,
-    "backend_id": "torchcodec_cuda_nvjpeg_hw_reference_ssim_uniform7_v4",
-    "decoder": "torchcodec",
+    "scoring_version": 5,
+    "backend_id": "gpu_preferred_pyav_opencv_fallback_ssim_uniform7_v5",
+    "preferred_video_backend": "torchcodec_cuda",
     "torchcodec": "0.16.0+cu130",
     "cuda_backend": "nvdec",
-    "decoder_device": "cuda:0",
-    "seek_mode": "exact",
-    "decoded_color": "RGB",
-    "cpu_fallback_allowed": false,
+    "ssim_device": "cuda:0",
+    "index_policy": "torchcodec_exact_or_pyav_sequential_ordinal",
+    "decoded_color": "RGB_uint8",
+    "cpu_fallback_allowed": true,
     "torch": "2.11.0+cu130",
     "torch_cuda": "13.0",
     "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
@@ -65,12 +84,15 @@
       "libtorchcodec_image.so": "377d9e8578729c4080cb4a582d98f4907cb9596b2c8b4ecd7fdffbd3c808c1f9",
       "libtorchcodec_pybind_ops.so": "77d31010ad10fc1e6e5a1d24bdbfaaad35a952aa480d31a88c3295881ebd57e7"
     },
-    "reference_decoder": "nvImageCodec/nvJPEG",
-    "reference_backend": "HW_GPU_ONLY",
-    "reference_cpu_fallback_allowed": false,
-    "reference_output": "RGB_uint8_CHW_cuda",
+    "reference_policy": "gpu_preferred",
+    "reference_output": "RGB_uint8_CHW_on_ssim_device",
     "reference_fancy_upsampling": true,
     "reference_apply_exif_orientation": true,
+    "image_extensions": [
+      ".jpeg",
+      ".jpg",
+      ".png"
+    ],
     "reference_library_versions": {
       "nvimgcodec_module": "0.9.0",
       "nvidia-nvimgcodec-cu12": "0.9.0.20",
@@ -114,10 +136,49 @@
       "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/nvimgcodec_impl.cpython-39-x86_64-linux-gnu.so": "1e6f9eae21548f700318f3d111b4ea467fa6e18367f6b02eed3a92cbe62125e0",
       "nvidia-nvjpeg-cu12/nvidia/nvjpeg/lib/libnvjpeg.so.12": "27e1eb1834b20db64f99deba379746d8ec46b92975ccb4cdfa06a84d77e4c11e"
     },
+    "opencv": "4.14.0",
+    "pyav": "18.1.0",
+    "pyav_libraries": {
+      "libavutil": [
+        60,
+        26,
+        102
+      ],
+      "libavcodec": [
+        62,
+        28,
+        102
+      ],
+      "libavformat": [
+        62,
+        12,
+        102
+      ],
+      "libavdevice": [
+        62,
+        3,
+        102
+      ],
+      "libavfilter": [
+        11,
+        14,
+        102
+      ],
+      "libswscale": [
+        9,
+        5,
+        102
+      ],
+      "libswresample": [
+        6,
+        3,
+        102
+      ]
+    },
     "skimage": "0.25.2",
     "ssim_method": "uniform7_sample_covariance_valid_color_uint8",
     "ssim_precision": "float32_window_sums_float64_metric",
-    "stream_strategy": "worker_local_torch_cuda_streams"
+    "actual_backend_evidence": "per_video_checkpoint_timings_and_performance"
   },
   "input_sha256": {
     "metadata_clean.parquet": "40bad10eda042ee5992f75512717a6bb3c1fe5557a8bd0181973f0b06da40d22",
@@ -136,8 +197,8 @@
   "confirmed_mappings": 47238,
   "confirmed_annotation_rows": 47239,
   "excluded_annotation_rows": 0,
-  "videos_reused": 43,
-  "videos_rescored": 0,
+  "videos_reused": 0,
+  "videos_rescored": 43,
   "ssim_numerical_self_check": {
     "ssim_implementation": "uniform_7x7_sample_covariance_valid_color_v1",
     "torch_version": "2.11.0+cu130",
@@ -150,13 +211,13 @@
   },
   "source_fingerprint_method": "SHA256 of mappings, engine, file paths/sizes/mtimes; not source bytes",
   "output_sha256": {
-    "frame_alignment_audit.csv": "de76869f355536fac86034629f19abc301ab78b8ffa19c114a947b2737e4e125",
-    "frame_alignment_candidates.csv": "fda19f3a83c939b50e4e7625857212a12e023479232279b4ec0cac29f08e19a3",
+    "frame_alignment_audit.csv": "15c58da9b1caf0af68b990c4036fd39d6c2b7c3378c0d872c1418c9d2aef4e58",
+    "frame_alignment_candidates.csv": "fc961b00ca11ba20c60191c1d46387365490d03df7d36496f83f8da7fdebab34",
     "frame_alignment_offset_summary.csv": "62efeb7f13a124e6fc8c67e2b251a555065b25e996759d678366596d95b80d4f",
-    "frame_alignment_confirmed.csv": "5797b37afcbdcd2d66344b389efe8900989461ffe411a84db5f1840748900744",
+    "frame_alignment_confirmed.csv": "67464e66f133ca0c32232da6a2c851ed93c518c7d5b4ee1a34699f585803f9d6",
     "frame_alignment_excluded.csv": "4f97276bfca310d4a0052270b7be2b93e5c36b75317d7633cff486abfeede5e4",
-    "frame_alignment_confirmed.parquet": "512a752ea89bb09c5c84c7c24b02646367d901d38d91f9b37ec4a28039796004",
-    "frame_alignment_performance.csv": "51703edb61b82da118214a03b7474bcfcc9a2991d9261574e101cebef54ce265"
+    "frame_alignment_confirmed.parquet": "600e2bb4d46421cc8ffc51287e6c6b05c126eefcddd0c1d17e1d9949ac1c9ae3",
+    "frame_alignment_performance.csv": "08af666133b171d5eb6bdc6d3e907017d9a47cd97a89df3b6315ca21dd4fa935"
   },
   "interpretation": "Technical acceptance under configured SSIM/ambiguity rules; not proof of clinical or historical frame identity."
 }

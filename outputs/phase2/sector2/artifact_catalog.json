@@ -1,5 +1,5 @@
 {
-  "alignment_created_utc": "2026-10-07T01:38:20.074619+00:00",
+  "alignment_created_utc": "2026-10-07T17:08:54.505356+00:00",
   "artifacts": [
     {
       "bytes": 3248,
@@ -22,11 +22,11 @@
       "source_storage_relative": null
     },
     {
-      "bytes": 3331,
+      "bytes": 6962,
       "encoding": "identity",
-      "logical_path": "configs/phase2_02_video_frame_validation_20261006_213246_config.json",
-      "path": "configs/phase2_02_video_frame_validation_20261006_213246_config.json",
-      "sha256": "0b9075d8d25a9199a03f5b67cb30bf977defad2ee5b42b1f50fbcd7a7f44cd72",
+      "logical_path": "configs/phase2_02_video_frame_validation_20261007_123658_config.json",
+      "path": "configs/phase2_02_video_frame_validation_20261007_123658_config.json",
+      "sha256": "a139bae9b7b371dbf9de647743e27c6b7814e67612db972ac22abfda9070e3d9",
       "source_bytes": null,
       "source_sha256": null,
       "source_storage_relative": null
@@ -82,11 +82,11 @@
       "source_storage_relative": "data/curated/phase2/manifests/video_manifest_state.json"
     },
     {
-      "bytes": 10087,
+      "bytes": 10709,
       "encoding": "identity",
       "logical_path": "reports/sector2_summary.json",
       "path": "reports/sector2_summary.json",
-      "sha256": "31ec43463c5f1856ae500887b94c843e2251741fcb214eee8190d237662cc626",
+      "sha256": "72e73c67c0844532c2f0cf48a70b5c57b6e839100da3953ab6f58135c3874da8",
       "source_bytes": null,
       "source_sha256": null,
       "source_storage_relative": null
@@ -96,29 +96,29 @@
       "encoding": "identity",
       "logical_path": "reports/sector2_summary.md",
       "path": "reports/sector2_summary.md",
-      "sha256": "2425f0c794bd82aac3ce2539ecc2fa32cc2d37420c3228d00120756d9d9c8112",
+      "sha256": "e3aebf123ed4914b452236497b6e82a830cfd77ec4f73ad4bd8858d33e099083",
       "source_bytes": null,
       "source_sha256": null,
       "source_storage_relative": null
     },
     {
-      "bytes": 63467,
+      "bytes": 63776,
       "encoding": "identity",
       "logical_path": "results/decode_audit.csv",
       "path": "results/decode_audit.csv",
-      "sha256": "e99ca10537849de7b11986dac56c91777268405733710e535bcd37cb69a33994",
-      "source_bytes": 63467,
-      "source_sha256": "e99ca10537849de7b11986dac56c91777268405733710e535bcd37cb69a33994",
+      "sha256": "703edc2389cc0bc7ef712697d547604a5250be364d42752d05352efc31888a5f",
+      "source_bytes": 63776,
+      "source_sha256": "703edc2389cc0bc7ef712697d547604a5250be364d42752d05352efc31888a5f",
       "source_storage_relative": "outputs/phase2/results/decode_audit.csv"
     },
     {
-      "bytes": 788,
+      "bytes": 1268,
       "encoding": "identity",
       "logical_path": "results/decode_audit_run_state.json",
       "path": "results/decode_audit_run_state.json",
-      "sha256": "11a0f580c448f19efb89c1f1eec63ff468c29b17675a17f79b1d2f6ebed0396d",
-      "source_bytes": 788,
-      "source_sha256": "11a0f580c448f19efb89c1f1eec63ff468c29b17675a17f79b1d2f6ebed0396d",
+      "sha256": "64c52277179a0c0f6ca79ea0fb10cd66591cdb84ebe151352e3001da4dc56b7d",
+      "source_bytes": 1268,
+      "source_sha256": "64c52277179a0c0f6ca79ea0fb10cd66591cdb84ebe151352e3001da4dc56b7d",
       "source_storage_relative": "outputs/phase2/results/decode_audit_run_state.json"
     },
     {
@@ -126,9 +126,9 @@
       "encoding": "identity",
       "logical_path": "results/decode_audit_state.json",
       "path": "results/decode_audit_state.json",
-      "sha256": "b286e975687e5021cd1278ade31fcb9eeb02986dead97720d1fb8148eee8e2d8",
+      "sha256": "ae843989d5d29df9d4c8df1d4b2223e7df4163b4d84a60a60209cb17cf350c8d",
       "source_bytes": 1132,
-      "source_sha256": "b286e975687e5021cd1278ade31fcb9eeb02986dead97720d1fb8148eee8e2d8",
+      "source_sha256": "ae843989d5d29df9d4c8df1d4b2223e7df4163b4d84a60a60209cb17cf350c8d",
       "source_storage_relative": "outputs/phase2/results/decode_audit_state.json"
     },
     {
@@ -142,43 +142,43 @@
       "source_storage_relative": "outputs/phase2/results/decode_audit_summary.csv"
     },
     {
-      "bytes": 2053908,
+      "bytes": 2076199,
       "encoding": "gzip",
       "logical_path": "results/frame_alignment_audit.csv",
       "path": "results/frame_alignment_audit.csv.gz",
-      "sha256": "82efc5c62aeb1e92aa32350c05f76b566c7a5f76072760ad2407e6174a6de320",
-      "source_bytes": 23447280,
-      "source_sha256": "de76869f355536fac86034629f19abc301ab78b8ffa19c114a947b2737e4e125",
+      "sha256": "6b332cdc3ced9c9a5748a9ec3a84b8679f2587fd8b944a4429440eefc09ff95f",
+      "source_bytes": 23785435,
+      "source_sha256": "15c58da9b1caf0af68b990c4036fd39d6c2b7c3378c0d872c1418c9d2aef4e58",
       "source_storage_relative": "outputs/phase2/results/frame_alignment_audit.csv"
     },
     {
-      "bytes": 3584280,
+      "bytes": 3600062,
       "encoding": "gzip",
       "logical_path": "results/frame_alignment_candidates.csv",
       "path": "results/frame_alignment_candidates.csv.gz",
-      "sha256": "83c80cabf07b70527e7e73177fcdc34bcca9f86caa6c991760275a0b5d0561b7",
-      "source_bytes": 26837980,
-      "source_sha256": "fda19f3a83c939b50e4e7625857212a12e023479232279b4ec0cac29f08e19a3",
+      "sha256": "c981923d7695c402450b831648a65243b7f352b27cdba607dc936f66508bdc7a",
+      "source_bytes": 28508151,
+      "source_sha256": "fc961b00ca11ba20c60191c1d46387365490d03df7d36496f83f8da7fdebab34",
       "source_storage_relative": "outputs/phase2/results/frame_alignment_candidates.csv"
     },
     {
-      "bytes": 2003161,
+      "bytes": 2012391,
       "encoding": "gzip",
       "logical_path": "results/frame_alignment_confirmed.csv",
       "path": "results/frame_alignment_confirmed.csv.gz",
-      "sha256": "8a54ccc80f98cca9d4e31beff9b40d055ca3de5ea42bdd705f9b4025be6183eb",
-      "source_bytes": 25206255,
-      "source_sha256": "5797b37afcbdcd2d66344b389efe8900989461ffe411a84db5f1840748900744",
+      "sha256": "e5cb40b7be7bf5f9ffdaae6c853fe16de453b494c4d82a0dc4e2ce2cab465aa0",
+      "source_bytes": 25211648,
+      "source_sha256": "67464e66f133ca0c32232da6a2c851ed93c518c7d5b4ee1a34699f585803f9d6",
       "source_storage_relative": "outputs/phase2/results/frame_alignment_confirmed.csv"
     },
     {
-      "bytes": 2904301,
+      "bytes": 2904303,
       "encoding": "identity",
       "logical_path": "results/frame_alignment_confirmed.parquet",
       "path": "results/frame_alignment_confirmed.parquet",
-      "sha256": "512a752ea89bb09c5c84c7c24b02646367d901d38d91f9b37ec4a28039796004",
-      "source_bytes": 2904301,
-      "source_sha256": "512a752ea89bb09c5c84c7c24b02646367d901d38d91f9b37ec4a28039796004",
+      "sha256": "600e2bb4d46421cc8ffc51287e6c6b05c126eefcddd0c1d17e1d9949ac1c9ae3",
+      "source_bytes": 2904303,
+      "source_sha256": "600e2bb4d46421cc8ffc51287e6c6b05c126eefcddd0c1d17e1d9949ac1c9ae3",
       "source_storage_relative": "outputs/phase2/results/frame_alignment_confirmed.parquet"
     },
     {
@@ -202,47 +202,47 @@
       "source_storage_relative": "outputs/phase2/results/frame_alignment_offset_summary.csv"
     },
     {
-      "bytes": 10628,
+      "bytes": 21556,
       "encoding": "identity",
       "logical_path": "results/frame_alignment_performance.csv",
       "path": "results/frame_alignment_performance.csv",
-      "sha256": "51703edb61b82da118214a03b7474bcfcc9a2991d9261574e101cebef54ce265",
-      "source_bytes": 10628,
-      "source_sha256": "51703edb61b82da118214a03b7474bcfcc9a2991d9261574e101cebef54ce265",
+      "sha256": "08af666133b171d5eb6bdc6d3e907017d9a47cd97a89df3b6315ca21dd4fa935",
+      "source_bytes": 21556,
+      "source_sha256": "08af666133b171d5eb6bdc6d3e907017d9a47cd97a89df3b6315ca21dd4fa935",
       "source_storage_relative": "outputs/phase2/results/frame_alignment_performance.csv"
     },
     {
-      "bytes": 11215,
+      "bytes": 12387,
       "encoding": "identity",
       "logical_path": "results/frame_alignment_state.json",
       "path": "results/frame_alignment_state.json",
-      "sha256": "d151f67c3ddc854fa90448c9c8b4971338fbcefcac6c6971a44b9fc74c7584b3",
-      "source_bytes": 11215,
-      "source_sha256": "d151f67c3ddc854fa90448c9c8b4971338fbcefcac6c6971a44b9fc74c7584b3",
+      "sha256": "4641749ec67b495f7abaef9f66ea94e9e3afaf716d31e63a0ee5ca405d90255c",
+      "source_bytes": 12387,
+      "source_sha256": "4641749ec67b495f7abaef9f66ea94e9e3afaf716d31e63a0ee5ca405d90255c",
       "source_storage_relative": "outputs/phase2/results/frame_alignment_state.json"
     },
     {
-      "bytes": 23530,
+      "bytes": 23701,
       "encoding": "identity",
       "logical_path": "results/labelled_video_decode_audit.csv",
       "path": "results/labelled_video_decode_audit.csv",
-      "sha256": "b35f5055847208e73b07f77c59fa9fa1e4d5d0492cb17221882aeac5909aaa64",
-      "source_bytes": 23530,
-      "source_sha256": "b35f5055847208e73b07f77c59fa9fa1e4d5d0492cb17221882aeac5909aaa64",
+      "sha256": "943f1b669332c2815a0278f359b74ba89e337124afab4cdd8390f8dfe1115b56",
+      "source_bytes": 23701,
+      "source_sha256": "943f1b669332c2815a0278f359b74ba89e337124afab4cdd8390f8dfe1115b56",
       "source_storage_relative": "outputs/phase2/results/labelled_video_decode_audit.csv"
     },
     {
-      "bytes": 40358,
+      "bytes": 40515,
       "encoding": "identity",
       "logical_path": "results/unlabelled_video_decode_audit.csv",
       "path": "results/unlabelled_video_decode_audit.csv",
-      "sha256": "ea5da594ef0a1e99c2ec66c74e01207ccd87c00ab89507b5818cca588eb0889b",
-      "source_bytes": 40358,
-      "source_sha256": "ea5da594ef0a1e99c2ec66c74e01207ccd87c00ab89507b5818cca588eb0889b",
+      "sha256": "59863d8ed068a49a29233956d6c9dc4a3e57bb9e6e129235dd9d1e7dc66388ed",
+      "source_bytes": 40515,
+      "source_sha256": "59863d8ed068a49a29233956d6c9dc4a3e57bb9e6e129235dd9d1e7dc66388ed",
       "source_storage_relative": "outputs/phase2/results/unlabelled_video_decode_audit.csv"
     }
   ],
-  "config_file": "configs/phase2_02_video_frame_validation_20261006_213246_config.json",
+  "config_file": "configs/phase2_02_video_frame_validation_20261007_123658_config.json",
   "excluded_families": [
     "raw videos",
     "raw images",
@@ -254,6 +254,6 @@
   ],
   "notes": "CSV gzip hashes differ from originals. Validate original audit SHA-256 after decompression. This catalog describes the current export; earlier config snapshots may remain in Git history/working tree.",
   "optional_files_not_found": [],
-  "run_id": "20261006_213246",
+  "run_id": "20261007_123658",
   "schema": "mmvqa-sector2-export-v1"
 }
