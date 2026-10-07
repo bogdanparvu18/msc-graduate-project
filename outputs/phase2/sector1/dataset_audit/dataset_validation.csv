@@ -13,6 +13,7 @@ metadata_frame_class_pairs_exist_on_disk,0,0,True
 physical_frame_class_pairs_exist_in_metadata,0,0,True
 one_physical_instance_per_frame_class,0,0,True
 no_exact_duplicates_after_cleaning,0,0,True
+valid_bounding_boxes_when_present,0,0,True
 all_physical_files_accounted_for,47371,47371,True
 all_annotation_rows_accounted_for,47248,47248,True
 all_duplicate_rows_accounted_for,18,18,True

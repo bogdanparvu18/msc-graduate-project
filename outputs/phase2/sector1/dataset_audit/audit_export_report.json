@@ -39,8 +39,8 @@
         "bbox_area": "float64"
       },
       "json_columns": [],
-      "file_size_bytes": 951007,
-      "file_sha256": "7b7f1425db160db74eb12a39191fa5cc33f8db869a85260b814b684e08eb27cc"
+      "file_size_bytes": 944939,
+      "file_sha256": "40bad10eda042ee5992f75512717a6bb3c1fe5557a8bd0181973f0b06da40d22"
     },
     {
       "artifact": "physical_image_inventory",
@@ -83,7 +83,7 @@
       "artifact": "dataset_validation",
       "format": "csv",
       "filename": "dataset_validation.csv",
-      "rows": 21,
+      "rows": 22,
       "columns": 4,
       "dtypes": {
         "characteristic": "object",
@@ -92,8 +92,8 @@
         "validation_passed": "bool"
       },
       "json_columns": [],
-      "file_size_bytes": 1051,
-      "file_sha256": "efe24a2ee28ca46359ba09a2a47bc9acc952e8225605edf5f3b84fbda917641d"
+      "file_size_bytes": 1094,
+      "file_sha256": "f864528223206dbbd791e5fb58604314e4418a59eae67204ec3002f022b5fc03"
     },
     {
       "artifact": "duplicate_annotations",
@@ -190,6 +190,47 @@
       "json_columns": [],
       "file_size_bytes": 476,
       "file_sha256": "8c44804ab67061b69385baea68c8e86f6986d92a9a3da94e7c314c9d86469b53"
+    },
+    {
+      "artifact": "invalid_bounding_boxes",
+      "format": "csv",
+      "filename": "invalid_bounding_boxes.csv",
+      "rows": 0,
+      "columns": 29,
+      "dtypes": {
+        "filename": "object",
+        "video_id": "object",
+        "frame_number": "int64",
+        "finding_category": "object",
+        "finding_class": "object",
+        "x1": "float64",
+        "y1": "float64",
+        "x2": "float64",
+        "y2": "float64",
+        "x3": "float64",
+        "y3": "float64",
+        "x4": "float64",
+        "y4": "float64",
+        "finding_class_raw": "object",
+        "finding_class_normalized": "object",
+        "clinical_group": "object",
+        "image_key": "object",
+        "video_key": "object",
+        "bbox_annotation_present": "bool",
+        "bbox_complete": "bool",
+        "bbox_invalid": "bool",
+        "has_bbox": "bool",
+        "bbox_xmin": "float64",
+        "bbox_ymin": "float64",
+        "bbox_xmax": "float64",
+        "bbox_ymax": "float64",
+        "bbox_width": "float64",
+        "bbox_height": "float64",
+        "bbox_area": "float64"
+      },
+      "json_columns": [],
+      "file_size_bytes": 297,
+      "file_sha256": "d20518e5b19f32d2a2bae159ea8f3e5f8cc31a1ea33e6a9ffc80e27baea14db7"
     }
   ]
 }
