@@ -1,55 +1,56 @@
-# Phase 2 — Sector 2 artifacts
+# Executive report: Phase 2, Sector 2 — Kvasir-Capsule video and frame validation
 
-This folder contains completed video/frame audit outputs and downstream metadata.
-It does not contain the raw Kvasir-Capsule images/videos, model weights or runtime caches.
-The current artifact set, file hashes and optional gzip encodings are listed in `artifact_catalog.json`.
-Git history versions the data; timestamps do not duplicate entire result folders.
+**Source:** [`phase2_02_video_frame_validation.ipynb`](https://github.com/bogdanparvu18/msc-graduate-project/blob/3b0e5a8736fd23478caa13f6005de45349355970/notebooks/phase2/phase2_02_video_frame_validation.ipynb)  
+**Review date:** 7 October 2026  
+**Basis:** Notebook code, its saved execution outputs, and published video/frame-audit files at repository commit `3b0e5a8736fd23478caa13f6005de45349355970`; the dataset was not rerun for this report.  
+**Saved run reviewed:** `20261007_140342` (`America/Toronto`).
 
-## Downstream inputs
+## Executive summary
 
-- `data/metadata_clean.parquet`: original cleaned Sector 1 annotations; not replaced by filtering.
-- `data/physical_image_inventory.csv` (possibly `.gz`): Sector 1 image-path lookup.
-- `results/frame_alignment_confirmed.parquet`: aligned subset, including zero-based `aligned_frame_index`.
-- `manifests/video_manifest.csv`: source video identifiers and container probe metadata.
-- `results/decode_audit.csv`: observed decoded counts and decoder provenance.
-- `results/frame_alignment_audit.csv`, candidates, exclusions, offset summary and state JSON: all decisions and their evidence.
+This notebook connects the cleaned Sector 1 annotations to the physical Kvasir-Capsule videos and checks whether the annotated images match the referenced video frames. It inherits the upstream configuration, mounts persistent Google Drive storage, builds a physical video inventory and manifest, audits frame counts through full-video decoding, and evaluates image-to-video alignment using structural similarity (SSIM). NVIDIA GPU acceleration, concurrent processing, local file staging, and verified per-video checkpoints support repeated execution. CPU fallback handles unavailable or unsupported operations while preserving decoder provenance. The resulting aligned metadata and audit reports are saved for later sectors. A separate, confirmation-gated step publishes selected artifacts to GitHub with SHA-256 integrity checks.
 
-```python
-from pathlib import Path
-import json, pandas as pd
+The saved execution and published reports show **117 videos successfully decoded**, **4,765,114 observed decoded frames**, **47,238 accepted image-to-video mappings**, and **47,239 confirmed annotation rows**, with **zero excluded annotation rows**. All accepted mappings use **offset 0** under the configured SSIM and ambiguity rules. The observed frame total remains **23,610 above the published reference of 4,741,504**; successful decoding does not resolve that discrepancy. This run reused all 117 full-video decode checkpoints and recalculated alignment for all 43 annotated videos. Annotation rows, physical-image mappings, and distinct logical frames measure different things and should not be used interchangeably.
 
-bundle = Path("outputs/phase2/sector2")  # relative to your repository root
-catalog = json.loads((bundle / "artifact_catalog.json").read_text())
-paths = {r["logical_path"]: bundle / r["path"] for r in catalog["artifacts"]}
-df_clean = pd.read_parquet(paths["data/metadata_clean.parquet"])
-df_alignment_confirmed = pd.read_parquet(paths["results/frame_alignment_confirmed.parquet"])
-video_manifest = pd.read_csv(paths["manifests/video_manifest.csv"], dtype={"video_key": "string"})
-candidates = pd.read_csv(paths["results/frame_alignment_candidates.csv"], dtype={"video_key": "string"})
-```
+## Workflow
 
-Pandas reads `.csv.gz` automatically. The data are not all-to-all matches: each image
-is tested only against candidate frames in its own video. Acceptance is a technical
-filter under the documented rules, not proof that excluded labels are medically wrong.
+| Stage | What the notebook does |
+| --- | --- |
+| Configuration and storage | Loads the literal Sector 1 configuration from the project checkout, records its source commit and hashes, and merges explicit Sector 2 overrides while preserving shared storage and dataset settings. It creates a Toronto-timezone run ID, prepares the decoding dependencies, mounts Google Drive, and resolves the input and output directories. |
+| Video inventory and manifest | Matches annotated video IDs to physical files, rejects duplicate video identifiers, and saves a deterministic inventory. Container probing records dimensions, frame rate, reported frame count, and first-frame readability. A saved manifest is reused when its inventory fingerprint and CSV checksum remain valid. |
+| Full-video decoding | Uses PyNvVideoCodec/NVDEC to count decoded frames through end of stream, including decoder flushing, with PyAV CPU fallback when permitted. The configured pipeline supports up to 9 simultaneous video decodes and 21 additional videos copying or ready, with 21 copy workers and an automatic local-disk budget that preserves 4 GiB free. Verified checkpoints avoid repeating unchanged work. |
+| Manifest validation | Checks video identities, annotation membership, expected group counts, paths, container properties, and referenced frame-number ranges. It compares observed totals with the configured published reference and retains the unresolved frame-count difference as a warning rather than altering the data to match the reference. |
+| Frame alignment | Resolves annotations through the physical-image inventory and compares each reference image only with candidate frames from its own video. It evaluates offsets −2 through +2, accepts configured offsets −1, 0, or +1, and applies SSIM ≥ 0.92, a best-versus-second-best margin ≥ 0.005, and consistent accepted offsets within each video. This run used 43 video workers, 6 copy workers, and 16 reference-image workers; these settings are separate from the full-video decode pipeline. |
+| Persistence and publication | Saves candidate scores, decisions, confirmed and excluded metadata, summaries, performance records, and state files on Drive. Publication requires a completed current alignment attempt, matching input/output checksums, and compatible configuration. After an explicit `PUSH` confirmation, selected new or changed artifacts are committed under `outputs/phase2/sector2/`; large CSVs are compressed and unchanged files are skipped. The README is maintained separately. |
 
-## Paths and provenance
+## Results visible in the saved notebook
 
-Source absolute paths are preserved as audit evidence; they are NOT portable by themselves.
-In `video_manifest.csv`, `video_relpath` is relative to CONFIG's `storage_root`.
-In `decode_audit.csv`, `video_relpath` is relative to `DIRS["dataset_root_dir"]`.
-In the Sector 1 image inventory, `relative_path` is relative to `DIRS["raw_data_dir"]`.
-To read actual pixels in another runtime, mount/download the original dataset and rebase
-these paths. GitHub alone does not provide raw videos or images.
-For confirmed `alignment_image_path` / `alignment_video_path`, replace the saved
-CONFIG storage-root prefix with your new storage root, retaining the remaining path.
+| Measure | Saved result | Interpretation |
+| --- | ---: | --- |
+| Discovered videos / annotated video IDs without a file | 117 / 0 | All 43 video IDs represented in the annotations resolve to physical files. |
+| Partially labelled / fully unlabelled videos | 43 / 74 | The two groups partition the 117-video inventory. |
+| Successfully decoded videos / videos needing decode review | 117 / 0 | All saved decode records completed; the recorded backend is `nvdec` for every video. |
+| Container-reported / observed decoded frames | 4,765,114 / 4,765,114 | Aggregate container metadata and the full-video decode audit agree. |
+| Published-reference frames / observed difference | 4,741,504 / +23,610 | The reference discrepancy remains unresolved and is confined to the partially labelled group. |
+| Original clean annotation rows | 47,239 | Sector 1 annotation records retained as the input; multiple records may refer to one physical image or logical frame. |
+| Unique image-to-video alignment mappings | 47,238 | Physical-image-path-based mappings evaluated across 43 annotated videos; these are not the 47,229 distinct logical frames reported by Sector 1. |
+| Candidate comparisons / scored candidates | 236,190 / 236,154 | Five evaluated offsets per mapping; 36 candidates fall beyond the end of their videos. |
+| Accepted mappings / confirmed annotation rows / excluded rows | 47,238 / 47,239 / 0 | Every mapping passes the configured rules, and all associated annotation records remain available downstream. |
+| Accepted offset / mean SSIM at offset 0 | 0 / 0.952873 | All accepted mappings use offset 0; the displayed mean is calculated over 47,214 mappings with scores at all five evaluated offsets. |
 
-State JSONs are copied unchanged. Their output hashes refer to ORIGINAL report bytes.
-For gzipped reports, decompress before comparing to those hashes; the catalog also
-stores the hash of the compressed Git artifact. Do not copy these state JSONs back as
-working decoder caches: the per-video caches remain on Drive.
+The frame-count relationships are **4,765,114 = 1,979,285 + 2,785,829** (observed partially labelled plus fully unlabelled frames) and **4,741,504 = 1,955,675 + 2,785,829** (the corresponding published reference). Thus **1,979,285 − 1,955,675 = 23,610** accounts for the entire discrepancy, as recorded in [`decode_audit_summary.csv`](results/decode_audit_summary.csv). Separately, **47,239 = 47,238 + 1** reflects the extra same-image annotation retained by Sector 1, while **47,238 = 47,229 + 9** reflects additional class-specific image instances for multiclass frames. Alignment evaluates physical-image mappings and joins accepted decisions back to all corresponding annotation rows; it does not deduplicate away those annotations.
 
-## Source attribution
+The candidate relationship is **236,190 = 47,238 × 5**, with **236,154 scored candidates + 36 out-of-range candidates**. These 36 boundary cases occur among the positive offset alternatives and do not represent 36 failed annotations. The decision function requires every in-range candidate to have a valid score, at least two in-range candidates for comparison, the configured SSIM threshold and margin, an allowed winning offset, and consistency within the video. Out-of-range alternatives remain visible in the audit. The [`offset summary`](results/frame_alignment_offset_summary.csv) reports 47,238 confirmations at offset 0; its mean SSIM is descriptive, while acceptance is decided separately for each mapping. The saved numerical SSIM self-check compared 10 pairs against the reference implementation and reported a maximum absolute error of approximately `1.92e-14`, below its `1e-10` tolerance.
 
-Kvasir-Capsule dataset: https://datasets.simula.no/kvasir-capsule/
-Dataset paper: https://doi.org/10.1038/s41597-021-00920-z
-These exports derive from the dataset and this project's processing, not a new official
-dataset release. Preserve source attribution and applicable source terms when reusing them.
+The saved run loaded the existing video manifest without repeating its probes and reused **117 verified decode checkpoints**, with **zero videos decoded again during that execution**. Alignment separately reported **43 videos rescored and zero reused**. Its recorded engine used TorchCodec/NVDEC, NVIDIA JPEG decoding, and CUDA SSIM on an NVIDIA RTX PRO 6000 Blackwell Server Edition; no CPU fallback event was recorded for that alignment run. The final publication selected **25 files**, including the catalog, and pushed **13 new or changed files** to `main` in commit [`c3baf40`](https://github.com/bogdanparvu18/msc-graduate-project/commit/c3baf402c83308a9dc129f466a64836913a442b5). The bundle size reported by the notebook was **11.82 MiB**. The reviewed notebook itself was saved in the later source commit identified above.
+
+## Outputs and scope
+
+The main downstream artifact is `outputs/phase2/results/frame_alignment_confirmed.parquet` under the configured Google Drive root. It retains accepted annotation rows and adds alignment evidence, including the zero-based `aligned_frame_index`, accepted offset, SSIM score, margin, and training-eligibility flag. The original `data/curated/phase2/dataset_audit/metadata_clean.parquet` remains a separate upstream artifact. Video inventory and manifest files are stored under `data/curated/phase2/manifests/`; decode and alignment reports, checkpoints, and state files are stored under `outputs/phase2/results/`.
+
+An alignment mapping binds a resolved physical reference-image path to a video and frame number. It is distinct from an annotation row and from Sector 1's normalized `image_key`. Multiple annotations can share one mapping, and class-specific image files can represent the same logical frame. The confirmed output restores all associated annotation records. If a related mapping fails, the implementation excludes the related video/frame annotations together to avoid retaining only part of a multilabel frame. An accepted mapping establishes agreement under the configured visual-similarity rules; it does not independently verify the clinical label or prove historical capture identity.
+
+The GitHub destination is **`outputs/phase2/sector2/`**, with `data/`, `manifests/`, `results/`, `configs/`, and `reports/` subdirectories. The current [`artifact_catalog.json`](artifact_catalog.json) lists **24 exported artifacts**, with the catalog itself forming the twenty-fifth selected file. Unlike Sector 1's publication, this export includes both the original clean metadata Parquet and the physical-image inventory, alongside the confirmed alignment Parquet. Four CSV artifacts are gzip-compressed: the image inventory, alignment audit, candidate scores, and confirmed annotations. The catalog records original and exported SHA-256 hashes, byte sizes, and encodings. State-file output hashes refer to the original report bytes and must be checked after decompression. Raw videos, raw images, temporary copies, and per-video caches remain outside the export; absolute source paths require rebasing when the dataset is mounted elsewhere.
+
+Integrity checks bind the alignment to the exact bytes read from `metadata_clean.parquet`, `physical_image_inventory.csv`, and `video_manifest.csv`. Per-video cache signatures additionally cover mappings, evaluated offsets, source-file identities, and the processing engine, including library versions and native-library SHA-256 hashes. A changed engine invalidates the corresponding score caches and requires recalculation. A new run ID alone does not invalidate scores, and changed acceptance thresholds can reuse scores while producing new decisions. Both decode and alignment retries are enabled for saved technical failures in the reviewed configuration. Alignment stores the current attempt separately from the last completed result; inspection and publication verify the attempt identity and final-state hash. The publisher rechecks watched source files and verifies staged Git bytes before committing.
+
+The configured source-file fingerprints use paths, sizes, and modification times for raw media; full image/video byte hashing is not enabled for alignment, and the decode fingerprint does not hash video contents. SHA-256 protection of input tables and reports therefore does not constitute a full content audit of every raw media file. GPU support is checked separately from Python decoder availability, and fallback preserves processing coverage for unsupported cases, including configured PNG references; the saved alignment run contained JPEG references only. Successful decoding does not certify the absence of codec concealment, and the published frame-count discrepancy remains open. This sector establishes technical video/frame correspondence and reusable metadata; it does not create data splits or temporal windows, train a model, or perform medical question answering.
