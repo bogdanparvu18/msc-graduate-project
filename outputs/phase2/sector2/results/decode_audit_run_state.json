@@ -1,6 +1,6 @@
 {
   "complete": true,
-  "started_utc": "2026-10-01T22:16:26.596183+00:00",
+  "started_utc": "2026-10-07T01:36:04.577466+00:00",
   "input_fingerprint": "71c40620653ad663cb215a8ec25b554f7fed3fdd9cdb26cb01c9fe3d5c3d410a",
   "settings": {
     "requested_backend": "nvdec",
@@ -23,5 +23,5 @@
   "videos_completed": 117,
   "videos_reused": 117,
   "videos_decoded": 0,
-  "finished_utc": "2026-10-01T22:17:22.455634+00:00"
+  "finished_utc": "2026-10-07T01:36:55.998996+00:00"
 }

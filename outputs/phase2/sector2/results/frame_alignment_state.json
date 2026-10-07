@@ -1,7 +1,7 @@
 {
   "complete": true,
-  "created_utc": "2026-10-01T22:18:45.856569+00:00",
-  "run_id": "20261001_181334",
+  "created_utc": "2026-10-07T01:38:20.074619+00:00",
+  "run_id": "20261006_213246",
   "effective_settings": {
     "candidate_offsets": [
       -1,
@@ -119,6 +119,11 @@
     "ssim_precision": "float32_window_sums_float64_metric",
     "stream_strategy": "worker_local_torch_cuda_streams"
   },
+  "input_sha256": {
+    "metadata_clean.parquet": "40bad10eda042ee5992f75512717a6bb3c1fe5557a8bd0181973f0b06da40d22",
+    "physical_image_inventory.csv": "5244b460c4a1193abd6eac255973c07fab7df1f465eaff72f8e292275bb04894",
+    "video_manifest.csv": "2fc36b776a9b9947d9e8b3d61f976efb1b0f7809016e5f8698d998a4fa115cbc"
+  },
   "evaluated_offsets": [
     -2,
     -1,
@@ -151,7 +156,7 @@
     "frame_alignment_confirmed.csv": "5797b37afcbdcd2d66344b389efe8900989461ffe411a84db5f1840748900744",
     "frame_alignment_excluded.csv": "4f97276bfca310d4a0052270b7be2b93e5c36b75317d7633cff486abfeede5e4",
     "frame_alignment_confirmed.parquet": "512a752ea89bb09c5c84c7c24b02646367d901d38d91f9b37ec4a28039796004",
-    "frame_alignment_performance.csv": "72c93aec9b12b27287a4ed95d27aea853ecde2de42da0c6192f26ca7db8c2454"
+    "frame_alignment_performance.csv": "51703edb61b82da118214a03b7474bcfcc9a2991d9261574e101cebef54ce265"
   },
   "interpretation": "Technical acceptance under configured SSIM/ambiguity rules; not proof of clinical or historical frame identity."
 }
