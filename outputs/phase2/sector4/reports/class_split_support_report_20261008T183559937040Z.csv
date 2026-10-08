@@ -1,0 +1,43 @@
+finding_class_normalized,split,supporting_video_count,retained_annotation_count,retained_unique_frame_count,total_supporting_video_count,total_unique_frame_count,minimum_required_frame_count,absent_in_split,scarce_video_support,represented_in_all_splits,coverage_status,stratification_guarantees_class_coverage
+ampulla of vater,train,1,7,7,1,10,1,False,True,True,represented_in_all_splits,True
+ampulla of vater,validation,1,1,1,1,10,1,False,True,True,represented_in_all_splits,True
+ampulla of vater,test,1,2,2,1,10,1,False,True,True,represented_in_all_splits,True
+angiectasia,train,6,606,606,6,866,1,False,False,True,represented_in_all_splits,True
+angiectasia,validation,6,130,130,6,866,1,False,False,True,represented_in_all_splits,True
+angiectasia,test,5,130,130,6,866,1,False,False,True,represented_in_all_splits,True
+blood fresh,train,2,312,312,2,446,1,False,True,True,represented_in_all_splits,True
+blood fresh,validation,2,67,67,2,446,1,False,True,True,represented_in_all_splits,True
+blood fresh,test,2,67,67,2,446,1,False,True,True,represented_in_all_splits,True
+blood hematin,train,1,8,8,1,12,1,False,True,True,represented_in_all_splits,True
+blood hematin,validation,1,2,2,1,12,1,False,True,True,represented_in_all_splits,True
+blood hematin,test,1,2,2,1,12,1,False,True,True,represented_in_all_splits,True
+erosion,train,9,355,354,9,506,1,False,False,True,represented_in_all_splits,True
+erosion,validation,9,76,76,9,506,1,False,False,True,represented_in_all_splits,True
+erosion,test,9,76,76,9,506,1,False,False,True,represented_in_all_splits,True
+erythema,train,3,111,111,3,159,1,False,False,True,represented_in_all_splits,True
+erythema,validation,2,24,24,3,159,1,False,False,True,represented_in_all_splits,True
+erythema,test,3,24,24,3,159,1,False,False,True,represented_in_all_splits,True
+foreign body,train,4,543,543,4,776,1,False,False,True,represented_in_all_splits,True
+foreign body,validation,4,117,117,4,776,1,False,False,True,represented_in_all_splits,True
+foreign body,test,3,116,116,4,776,1,False,False,True,represented_in_all_splits,True
+ileocecal valve,train,34,2932,2932,34,4189,1,False,False,True,represented_in_all_splits,True
+ileocecal valve,validation,33,628,628,34,4189,1,False,False,True,represented_in_all_splits,True
+ileocecal valve,test,31,629,629,34,4189,1,False,False,True,represented_in_all_splits,True
+lymphangiectasia,train,3,414,414,3,592,1,False,False,True,represented_in_all_splits,True
+lymphangiectasia,validation,3,89,89,3,592,1,False,False,True,represented_in_all_splits,True
+lymphangiectasia,test,3,89,89,3,592,1,False,False,True,represented_in_all_splits,True
+normal clean mucosa,train,37,24037,24037,37,34338,1,False,False,True,represented_in_all_splits,True
+normal clean mucosa,validation,37,5151,5151,37,34338,1,False,False,True,represented_in_all_splits,True
+normal clean mucosa,test,37,5150,5150,37,34338,1,False,False,True,represented_in_all_splits,True
+polyp,train,1,39,39,1,55,1,False,True,True,represented_in_all_splits,True
+polyp,validation,1,8,8,1,55,1,False,True,True,represented_in_all_splits,True
+polyp,test,1,8,8,1,55,1,False,True,True,represented_in_all_splits,True
+pylorus,train,32,1070,1070,32,1529,1,False,False,True,represented_in_all_splits,True
+pylorus,validation,29,229,229,32,1529,1,False,False,True,represented_in_all_splits,True
+pylorus,test,30,230,230,32,1529,1,False,False,True,represented_in_all_splits,True
+reduced mucosal view,train,7,2034,2034,7,2906,1,False,False,True,represented_in_all_splits,True
+reduced mucosal view,validation,7,436,436,7,2906,1,False,False,True,represented_in_all_splits,True
+reduced mucosal view,test,7,436,436,7,2906,1,False,False,True,represented_in_all_splits,True
+ulcer,train,3,598,598,3,854,1,False,False,True,represented_in_all_splits,True
+ulcer,validation,3,128,128,3,854,1,False,False,True,represented_in_all_splits,True
+ulcer,test,3,128,128,3,854,1,False,False,True,represented_in_all_splits,True

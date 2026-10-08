@@ -1,0 +1,56 @@
+{
+  "artifact": "reports/split_summary_report_20261008T183559937040Z.csv",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "object",
+      "name": "split",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "object",
+      "name": "split_unit",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "float64",
+      "name": "requested_frame_fraction"
+    },
+    {
+      "dtype": "float64",
+      "name": "actual_frame_fraction"
+    },
+    {
+      "dtype": "int64",
+      "name": "video_count"
+    },
+    {
+      "dtype": "int64",
+      "name": "retained_annotation_count"
+    },
+    {
+      "dtype": "int64",
+      "name": "retained_unique_frame_count"
+    },
+    {
+      "dtype": "int64",
+      "name": "represented_class_count"
+    },
+    {
+      "dtype": "int64",
+      "name": "expected_class_count"
+    },
+    {
+      "dtype": "bool",
+      "name": "frame_partition_validation_passed"
+    },
+    {
+      "dtype": "bool",
+      "name": "video_overlap_allowed"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "55aed507ae9ba5b99875c59b6fbe55cdde1f2544db473e1bcb0ee22090b4f0ff",
+  "rows": 3,
+  "schema_version": 1
+}
