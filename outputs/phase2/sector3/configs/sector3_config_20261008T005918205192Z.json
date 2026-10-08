@@ -1,0 +1,2062 @@
+{
+  "changed_at_utc": "20261008T005918205192Z",
+  "effective_config": {
+    "clinical_group_map": {
+      "ampulla of vater": "anatomical_landmark",
+      "angiectasia": "vascular_lesion",
+      "blood fresh": "bleeding",
+      "blood hematin": "bleeding",
+      "erosion": "mucosal_lesion",
+      "erythema": "mucosal_lesion",
+      "foreign body": "foreign_body",
+      "ileocecal valve": "anatomical_landmark",
+      "lymphangiectasia": "lymphatic_lesion",
+      "normal clean mucosa": "normal_mucosa",
+      "polyp": "protruding_lesion",
+      "pylorus": "anatomical_landmark",
+      "reduced mucosal view": "visibility_limitation",
+      "ulcer": "mucosal_lesion"
+    },
+    "config_conflict_report": [
+      {
+        "config_key": "config_source",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "{\"git_commit\": \"9b82259ed75fce8eda7d0ae9c4e12c89ab671824\", \"interpretation\": \"Provenance of the literal CONFIG definition read from Git. This is not evidence of the configuration used by a Sector 1 runtime. The consumed artifact bytes are identified separately by input_sha256.\", \"kind\": \"sector1_notebook_literal_config\", \"literal_config_sha256\": \"b64ff55faa72b5a37e87d8fc7bd5b9e84242d44575c10a271ed6cd24e66c750c\", \"notebook\": \"notebooks/phase2/phase2_01_ingestion.ipynb\", \"notebook_sha256\": \"7ee148785278092420e2cf05c1dab41556612ae707f41a21cbf23ba9421a8315\", \"repository\": \"https://github.com/bogdanparvu18/msc-graduate-project.git\"}"
+      },
+      {
+        "config_key": "decode_audit_allow_cpu_fallback",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "true"
+      },
+      {
+        "config_key": "decode_audit_allow_cpu_startup_fallback",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "true"
+      },
+      {
+        "config_key": "decode_audit_backend",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "\"nvdec\""
+      },
+      {
+        "config_key": "decode_audit_copy_workers",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "21"
+      },
+      {
+        "config_key": "decode_audit_cpu_threads",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "2"
+      },
+      {
+        "config_key": "decode_audit_cpu_video_workers",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "9"
+      },
+      {
+        "config_key": "decode_audit_force_redecode",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "false"
+      },
+      {
+        "config_key": "decode_audit_gpu_id",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "0"
+      },
+      {
+        "config_key": "decode_audit_local_work_dir",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "\"/content/video_decode_audit_work\""
+      },
+      {
+        "config_key": "decode_audit_prefetch_videos",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "21"
+      },
+      {
+        "config_key": "decode_audit_published_reference_frames",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "{\"all_videos\": 4741504, \"fully_unlabelled\": 2785829, \"partially_labelled\": 1955675}"
+      },
+      {
+        "config_key": "decode_audit_retry_failed",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "true"
+      },
+      {
+        "config_key": "decode_audit_retry_video_keys",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "[]"
+      },
+      {
+        "config_key": "decode_audit_stage_video_locally",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "true"
+      },
+      {
+        "config_key": "decode_audit_staging_budget_mib",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "\"auto\""
+      },
+      {
+        "config_key": "decode_audit_staging_min_free_mib",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "4096"
+      },
+      {
+        "config_key": "decode_audit_video_workers",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "9"
+      },
+      {
+        "config_key": "expected_classes",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "14"
+      },
+      {
+        "config_key": "expected_export_container_fps",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "30.0"
+      },
+      {
+        "config_key": "expected_labelled_frames",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "47238"
+      },
+      {
+        "config_key": "expected_labelled_videos",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "43"
+      },
+      {
+        "config_key": "expected_total_extractable_frames",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "4741504"
+      },
+      {
+        "config_key": "expected_total_videos",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "117"
+      },
+      {
+        "config_key": "expected_unlabelled_frames",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "4694266"
+      },
+      {
+        "config_key": "expected_unlabelled_videos",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "74"
+      },
+      {
+        "config_key": "frame_alignment_allow_cpu_fallback",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "true"
+      },
+      {
+        "config_key": "frame_alignment_copy_workers",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "6"
+      },
+      {
+        "config_key": "frame_alignment_cpu_memory_budget_mib",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "512"
+      },
+      {
+        "config_key": "frame_alignment_cpu_video_workers",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "4"
+      },
+      {
+        "config_key": "frame_alignment_cuda_backend",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "\"auto\""
+      },
+      {
+        "config_key": "frame_alignment_cuda_device",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "\"cuda:0\""
+      },
+      {
+        "config_key": "frame_alignment_define_only",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "false"
+      },
+      {
+        "config_key": "frame_alignment_force_rescore",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "false"
+      },
+      {
+        "config_key": "frame_alignment_hash_source_bytes",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "false"
+      },
+      {
+        "config_key": "frame_alignment_image_workers",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "16"
+      },
+      {
+        "config_key": "frame_alignment_local_disk_reserve_gib",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "2.0"
+      },
+      {
+        "config_key": "frame_alignment_local_work_dir",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "\"/content/frame_alignment_cuda_work\""
+      },
+      {
+        "config_key": "frame_alignment_mapping_batch_size",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "16"
+      },
+      {
+        "config_key": "frame_alignment_min_margin",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "0.005"
+      },
+      {
+        "config_key": "frame_alignment_min_ssim",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "0.92"
+      },
+      {
+        "config_key": "frame_alignment_reference_apply_exif_orientation",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "true"
+      },
+      {
+        "config_key": "frame_alignment_reference_decoder",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "\"gpu_preferred\""
+      },
+      {
+        "config_key": "frame_alignment_reference_fancy_upsampling",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "true"
+      },
+      {
+        "config_key": "frame_alignment_retry_failed",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "true"
+      },
+      {
+        "config_key": "frame_alignment_retry_video_keys",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "[]"
+      },
+      {
+        "config_key": "frame_alignment_show_progress",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "true"
+      },
+      {
+        "config_key": "frame_alignment_ssim_batch_size",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "16"
+      },
+      {
+        "config_key": "frame_alignment_stage_video_locally",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "true"
+      },
+      {
+        "config_key": "frame_alignment_video_workers",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "\"all\""
+      },
+      {
+        "config_key": "frame_alignment_vram_budget_fraction",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "0.85"
+      },
+      {
+        "config_key": "frame_index_offset_candidates",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "[-1, 0, 1]"
+      },
+      {
+        "config_key": "run_id",
+        "resolution": "sector2_runtime_precedence",
+        "sector1_value": "\"20261006_200455\"",
+        "sector2_value": "\"20261007_140342\""
+      },
+      {
+        "config_key": "sector2_overrides",
+        "resolution": "sector2_runtime_added",
+        "sector1_value": "<not declared>",
+        "sector2_value": "{\"decode_audit_allow_cpu_fallback\": true, \"decode_audit_allow_cpu_startup_fallback\": true, \"decode_audit_backend\": \"nvdec\", \"decode_audit_copy_workers\": 21, \"decode_audit_cpu_threads\": 2, \"decode_audit_cpu_video_workers\": 9, \"decode_audit_force_redecode\": false, \"decode_audit_gpu_id\": 0, \"decode_audit_local_work_dir\": \"/content/video_decode_audit_work\", \"decode_audit_prefetch_videos\": 21, \"decode_audit_published_reference_frames\": {\"all_videos\": 4741504, \"fully_unlabelled\": 2785829, \"partially_labelled\": 1955675}, \"decode_audit_retry_failed\": true, \"decode_audit_retry_video_keys\": [], \"decode_audit_stage_video_locally\": true, \"decode_audit_staging_budget_mib\": \"auto\", \"decode_audit_staging_min_free_mib\": 4096, \"decode_audit_video_workers\": 9, \"expected_classes\": 14, \"expected_export_container_fps\": 30.0, \"expected_labelled_frames\": 47238, \"expected_labelled_videos\": 43, \"expected_total_extractable_frames\": 4741504, \"expected_total_videos\": 117, \"expected_unlabelled_frames\": 4694266, \"expected_unlabelled_videos\": 74, \"frame_alignment_allow_cpu_fallback\": true, \"frame_alignment_copy_workers\": 6, \"frame_alignment_cpu_memory_budget_mib\": 512, \"frame_alignment_cpu_video_workers\": 4, \"frame_alignment_cuda_backend\": \"auto\", \"frame_alignment_cuda_device\": \"cuda:0\", \"frame_alignment_define_only\": false, \"frame_alignment_force_rescore\": false, \"frame_alignment_hash_source_bytes\": false, \"frame_alignment_image_workers\": 16, \"frame_alignment_local_disk_reserve_gib\": 2.0, \"frame_alignment_local_work_dir\": \"/content/frame_alignment_cuda_work\", \"frame_alignment_mapping_batch_size\": 16, \"frame_alignment_min_margin\": 0.005, \"frame_alignment_min_ssim\": 0.92, \"frame_alignment_reference_apply_exif_orientation\": true, \"frame_alignment_reference_decoder\": \"gpu_preferred\", \"frame_alignment_reference_fancy_upsampling\": true, \"frame_alignment_retry_failed\": true, \"frame_alignment_retry_video_keys\": [], \"frame_alignment_show_progress\": true, \"frame_alignment_ssim_batch_size\": 16, \"frame_alignment_stage_video_locally\": true, \"frame_alignment_video_workers\": \"all\", \"frame_alignment_vram_budget_fraction\": 0.85, \"frame_index_offset_candidates\": [-1, 0, 1]}"
+      }
+    ],
+    "config_inheritance_policy": "Sector 1 base; Sector 2 runtime precedence; declared config_overrides last.",
+    "config_provenance": {
+      "config_sources": {
+        "sector1": {
+          "kind": "saved_runtime",
+          "path": "/content/drive/MyDrive/MMVQA_Clinical/outputs/phase2/configs/phase2_01_ingestion_20261006_200455_config.json",
+          "sha256": "a5cfde846717724dc37aeb75df83b6e6fd08796309f39c8ee5219d5562392198"
+        },
+        "sector2": {
+          "kind": "saved_runtime",
+          "path": "/content/drive/MyDrive/MMVQA_Clinical/outputs/phase2/configs/phase2_02_video_frame_validation_20261007_140342_config.json",
+          "sha256": "721b7d2b9a7fde452f03949ea3e569fc1b2885850985e8eaf722b0e52cf3f7f9"
+        }
+      },
+      "literal_configs": {
+        "sector1": {
+          "clinical_group_map": {
+            "ampulla of vater": "anatomical_landmark",
+            "angiectasia": "vascular_lesion",
+            "blood fresh": "bleeding",
+            "blood hematin": "bleeding",
+            "erosion": "mucosal_lesion",
+            "erythema": "mucosal_lesion",
+            "foreign body": "foreign_body",
+            "ileocecal valve": "anatomical_landmark",
+            "lymphangiectasia": "lymphatic_lesion",
+            "normal clean mucosa": "normal_mucosa",
+            "polyp": "protruding_lesion",
+            "pylorus": "anatomical_landmark",
+            "reduced mucosal view": "visibility_limitation",
+            "ulcer": "mucosal_lesion"
+          },
+          "curated_data_dir": "data/curated/phase2",
+          "dataset_archive_repair_enabled": true,
+          "dataset_download_enabled": true,
+          "dataset_google_drive_folder_url": "https://drive.google.com/drive/folders/18vEHN1CG7oNFKdT2NmhtJjrFhb3tLG1Z",
+          "dataset_validation": {
+            "image_extensions": [
+              ".png",
+              ".jpg",
+              ".jpeg"
+            ],
+            "labelled_images_subdir": "labelled_images",
+            "minimum_labelled_images": 47238,
+            "minimum_video_files": 117,
+            "osf_storage_subdir": "osfstorage",
+            "required_metadata_file": "metadata.csv",
+            "video_extensions": [
+              ".avi",
+              ".mp4",
+              ".mkv"
+            ]
+          },
+          "interim_data_dir": "data/interim/phase2",
+          "output_dir": "outputs/phase2",
+          "raw_data_dir": "data/raw/kvasir_capsule",
+          "seed": 42,
+          "storage_backend": "google_drive",
+          "storage_root": "/content/drive/MyDrive/MMVQA_Clinical"
+        },
+        "sector2": {
+          "clinical_group_map": {
+            "ampulla of vater": "anatomical_landmark",
+            "angiectasia": "vascular_lesion",
+            "blood fresh": "bleeding",
+            "blood hematin": "bleeding",
+            "erosion": "mucosal_lesion",
+            "erythema": "mucosal_lesion",
+            "foreign body": "foreign_body",
+            "ileocecal valve": "anatomical_landmark",
+            "lymphangiectasia": "lymphatic_lesion",
+            "normal clean mucosa": "normal_mucosa",
+            "polyp": "protruding_lesion",
+            "pylorus": "anatomical_landmark",
+            "reduced mucosal view": "visibility_limitation",
+            "ulcer": "mucosal_lesion"
+          },
+          "curated_data_dir": "data/curated/phase2",
+          "dataset_archive_repair_enabled": true,
+          "dataset_download_enabled": true,
+          "dataset_google_drive_folder_url": "https://drive.google.com/drive/folders/18vEHN1CG7oNFKdT2NmhtJjrFhb3tLG1Z",
+          "dataset_validation": {
+            "image_extensions": [
+              ".png",
+              ".jpg",
+              ".jpeg"
+            ],
+            "labelled_images_subdir": "labelled_images",
+            "minimum_labelled_images": 47238,
+            "minimum_video_files": 117,
+            "osf_storage_subdir": "osfstorage",
+            "required_metadata_file": "metadata.csv",
+            "video_extensions": [
+              ".avi",
+              ".mp4",
+              ".mkv"
+            ]
+          },
+          "decode_audit_allow_cpu_fallback": true,
+          "decode_audit_allow_cpu_startup_fallback": true,
+          "decode_audit_backend": "nvdec",
+          "decode_audit_copy_workers": 21,
+          "decode_audit_cpu_threads": 2,
+          "decode_audit_cpu_video_workers": 9,
+          "decode_audit_force_redecode": false,
+          "decode_audit_gpu_id": 0,
+          "decode_audit_local_work_dir": "/content/video_decode_audit_work",
+          "decode_audit_prefetch_videos": 21,
+          "decode_audit_published_reference_frames": {
+            "all_videos": 4741504,
+            "fully_unlabelled": 2785829,
+            "partially_labelled": 1955675
+          },
+          "decode_audit_retry_failed": true,
+          "decode_audit_retry_video_keys": [],
+          "decode_audit_stage_video_locally": true,
+          "decode_audit_staging_budget_mib": "auto",
+          "decode_audit_staging_min_free_mib": 4096,
+          "decode_audit_video_workers": 9,
+          "expected_classes": 14,
+          "expected_export_container_fps": 30.0,
+          "expected_labelled_frames": 47238,
+          "expected_labelled_videos": 43,
+          "expected_total_extractable_frames": 4741504,
+          "expected_total_videos": 117,
+          "expected_unlabelled_frames": 4694266,
+          "expected_unlabelled_videos": 74,
+          "frame_alignment_allow_cpu_fallback": true,
+          "frame_alignment_copy_workers": 6,
+          "frame_alignment_cpu_memory_budget_mib": 512,
+          "frame_alignment_cpu_video_workers": 4,
+          "frame_alignment_cuda_backend": "auto",
+          "frame_alignment_cuda_device": "cuda:0",
+          "frame_alignment_define_only": false,
+          "frame_alignment_force_rescore": false,
+          "frame_alignment_hash_source_bytes": false,
+          "frame_alignment_image_workers": 16,
+          "frame_alignment_local_disk_reserve_gib": 2.0,
+          "frame_alignment_local_work_dir": "/content/frame_alignment_cuda_work",
+          "frame_alignment_mapping_batch_size": 16,
+          "frame_alignment_min_margin": 0.005,
+          "frame_alignment_min_ssim": 0.92,
+          "frame_alignment_reference_apply_exif_orientation": true,
+          "frame_alignment_reference_decoder": "gpu_preferred",
+          "frame_alignment_reference_fancy_upsampling": true,
+          "frame_alignment_retry_failed": true,
+          "frame_alignment_retry_video_keys": [],
+          "frame_alignment_show_progress": true,
+          "frame_alignment_ssim_batch_size": 16,
+          "frame_alignment_stage_video_locally": true,
+          "frame_alignment_video_workers": "all",
+          "frame_alignment_vram_budget_fraction": 0.85,
+          "frame_index_offset_candidates": [
+            -1,
+            0,
+            1
+          ],
+          "interim_data_dir": "data/interim/phase2",
+          "output_dir": "outputs/phase2",
+          "raw_data_dir": "data/raw/kvasir_capsule",
+          "results_dir": "outputs/phase2/results/",
+          "seed": 42,
+          "storage_backend": "google_drive",
+          "storage_root": "/content/drive/MyDrive/MMVQA_Clinical"
+        }
+      },
+      "runtime_storage_backend": "google_drive",
+      "runtime_storage_root": "/content/drive/MyDrive/MMVQA_Clinical",
+      "sector1_catalog_verified": true,
+      "source_commit": "3b85fec226847e90de35374fcc93a4b36ed40141",
+      "source_notebooks": {
+        "sector1": {
+          "notebook_path": "notebooks/phase2/phase2_01_ingestion.ipynb",
+          "notebook_sha256": "7ee148785278092420e2cf05c1dab41556612ae707f41a21cbf23ba9421a8315"
+        },
+        "sector2": {
+          "notebook_path": "notebooks/phase2/phase2_02_video_frame_validation.ipynb",
+          "notebook_sha256": "4dd4adcfbdae307fbcc0b790bfb5e8ed0e525316680b4f0a48cfa6c2e314d9cf"
+        }
+      },
+      "upstream_alignment_run_id": "20261007_140342"
+    },
+    "config_source": {
+      "git_commit": "9b82259ed75fce8eda7d0ae9c4e12c89ab671824",
+      "interpretation": "Provenance of the literal CONFIG definition read from Git. This is not evidence of the configuration used by a Sector 1 runtime. The consumed artifact bytes are identified separately by input_sha256.",
+      "kind": "sector1_notebook_literal_config",
+      "literal_config_sha256": "b64ff55faa72b5a37e87d8fc7bd5b9e84242d44575c10a271ed6cd24e66c750c",
+      "notebook": "notebooks/phase2/phase2_01_ingestion.ipynb",
+      "notebook_sha256": "7ee148785278092420e2cf05c1dab41556612ae707f41a21cbf23ba9421a8315",
+      "repository": "https://github.com/bogdanparvu18/msc-graduate-project.git"
+    },
+    "created_at": "2026-10-07T20:58:59.386978-04:00",
+    "curated_data_dir": "data/curated/phase2",
+    "dataset_archive_repair_enabled": true,
+    "dataset_download_enabled": true,
+    "dataset_google_drive_folder_url": "https://drive.google.com/drive/folders/18vEHN1CG7oNFKdT2NmhtJjrFhb3tLG1Z",
+    "dataset_validation": {
+      "image_extensions": [
+        ".png",
+        ".jpg",
+        ".jpeg"
+      ],
+      "labelled_images_subdir": "labelled_images",
+      "minimum_labelled_images": 47238,
+      "minimum_video_files": 117,
+      "osf_storage_subdir": "osfstorage",
+      "required_metadata_file": "metadata.csv",
+      "video_extensions": [
+        ".avi",
+        ".mp4",
+        ".mkv"
+      ]
+    },
+    "decode_audit_allow_cpu_fallback": true,
+    "decode_audit_allow_cpu_startup_fallback": true,
+    "decode_audit_backend": "nvdec",
+    "decode_audit_copy_workers": 21,
+    "decode_audit_cpu_threads": 2,
+    "decode_audit_cpu_video_workers": 9,
+    "decode_audit_force_redecode": false,
+    "decode_audit_gpu_id": 0,
+    "decode_audit_local_work_dir": "/content/video_decode_audit_work",
+    "decode_audit_prefetch_videos": 21,
+    "decode_audit_published_reference_frames": {
+      "all_videos": 4741504,
+      "fully_unlabelled": 2785829,
+      "partially_labelled": 1955675
+    },
+    "decode_audit_retry_failed": true,
+    "decode_audit_retry_video_keys": [],
+    "decode_audit_stage_video_locally": true,
+    "decode_audit_staging_budget_mib": "auto",
+    "decode_audit_staging_min_free_mib": 4096,
+    "decode_audit_video_workers": 9,
+    "expected_classes": 14,
+    "expected_export_container_fps": 30.0,
+    "expected_labelled_frames": 47238,
+    "expected_labelled_videos": 43,
+    "expected_total_extractable_frames": 4741504,
+    "expected_total_videos": 117,
+    "expected_unlabelled_frames": 4694266,
+    "expected_unlabelled_videos": 74,
+    "frame_alignment_allow_cpu_fallback": true,
+    "frame_alignment_copy_workers": 6,
+    "frame_alignment_cpu_memory_budget_mib": 512,
+    "frame_alignment_cpu_video_workers": 4,
+    "frame_alignment_cuda_backend": "auto",
+    "frame_alignment_cuda_device": "cuda:0",
+    "frame_alignment_define_only": false,
+    "frame_alignment_force_rescore": false,
+    "frame_alignment_hash_source_bytes": false,
+    "frame_alignment_image_workers": 16,
+    "frame_alignment_local_disk_reserve_gib": 2.0,
+    "frame_alignment_local_work_dir": "/content/frame_alignment_cuda_work",
+    "frame_alignment_mapping_batch_size": 16,
+    "frame_alignment_min_margin": 0.005,
+    "frame_alignment_min_ssim": 0.92,
+    "frame_alignment_reference_apply_exif_orientation": true,
+    "frame_alignment_reference_decoder": "gpu_preferred",
+    "frame_alignment_reference_fancy_upsampling": true,
+    "frame_alignment_retry_failed": true,
+    "frame_alignment_retry_video_keys": [],
+    "frame_alignment_show_progress": true,
+    "frame_alignment_ssim_batch_size": 16,
+    "frame_alignment_stage_video_locally": true,
+    "frame_alignment_video_workers": "all",
+    "frame_alignment_vram_budget_fraction": 0.85,
+    "frame_index_offset_candidates": [
+      -1,
+      0,
+      1
+    ],
+    "github": {
+      "allow_local_test_remote": false,
+      "allowed_extensions": [
+        ".json",
+        ".csv",
+        ".md",
+        ".txt"
+      ],
+      "author_email": "bparvu@lakeheadu.ca",
+      "author_name": "Bogdan Parvu",
+      "branch": "main",
+      "commit_message": "Phase 2 Sector 3: publish labelled-frame manifest and clinical audits",
+      "config_notebook_name": "phase2_01_ingestion.ipynb",
+      "config_output_filename": "phase2_01_ingestion_{run_id}_config.json",
+      "dataset_audit_excluded_artifacts": [
+        "physical_image_inventory",
+        "metadata_clean"
+      ],
+      "dataset_audit_subdir": "dataset_audit",
+      "dry_run": false,
+      "github_username": "bogdanparvu18",
+      "local_repo_dir": "/content/msc-graduate-project",
+      "max_file_size_mib": 20,
+      "output_groups": [
+        "configs",
+        "results",
+        "reports"
+      ],
+      "output_include_patterns": {
+        "configs": [
+          "phase2_01_ingestion_*_config.json"
+        ],
+        "reports": [
+          "archive_repair/**"
+        ]
+      },
+      "push": true,
+      "repo_output_dir": "outputs/phase2/sector3",
+      "repo_url": "https://github.com/bogdanparvu18/msc-graduate-project.git",
+      "token_secret_name": "GITHUB_TOKEN"
+    },
+    "interim_data_dir": "data/interim/phase2",
+    "output_dir": "outputs/phase2",
+    "phase": 2,
+    "raw_data_dir": "data/raw/kvasir_capsule",
+    "run_id": "20261007_205859_386978",
+    "run_id_format": "%Y%m%d_%H%M%S",
+    "sector": 3,
+    "sector2_overrides": {
+      "decode_audit_allow_cpu_fallback": true,
+      "decode_audit_allow_cpu_startup_fallback": true,
+      "decode_audit_backend": "nvdec",
+      "decode_audit_copy_workers": 21,
+      "decode_audit_cpu_threads": 2,
+      "decode_audit_cpu_video_workers": 9,
+      "decode_audit_force_redecode": false,
+      "decode_audit_gpu_id": 0,
+      "decode_audit_local_work_dir": "/content/video_decode_audit_work",
+      "decode_audit_prefetch_videos": 21,
+      "decode_audit_published_reference_frames": {
+        "all_videos": 4741504,
+        "fully_unlabelled": 2785829,
+        "partially_labelled": 1955675
+      },
+      "decode_audit_retry_failed": true,
+      "decode_audit_retry_video_keys": [],
+      "decode_audit_stage_video_locally": true,
+      "decode_audit_staging_budget_mib": "auto",
+      "decode_audit_staging_min_free_mib": 4096,
+      "decode_audit_video_workers": 9,
+      "expected_classes": 14,
+      "expected_export_container_fps": 30.0,
+      "expected_labelled_frames": 47238,
+      "expected_labelled_videos": 43,
+      "expected_total_extractable_frames": 4741504,
+      "expected_total_videos": 117,
+      "expected_unlabelled_frames": 4694266,
+      "expected_unlabelled_videos": 74,
+      "frame_alignment_allow_cpu_fallback": true,
+      "frame_alignment_copy_workers": 6,
+      "frame_alignment_cpu_memory_budget_mib": 512,
+      "frame_alignment_cpu_video_workers": 4,
+      "frame_alignment_cuda_backend": "auto",
+      "frame_alignment_cuda_device": "cuda:0",
+      "frame_alignment_define_only": false,
+      "frame_alignment_force_rescore": false,
+      "frame_alignment_hash_source_bytes": false,
+      "frame_alignment_image_workers": 16,
+      "frame_alignment_local_disk_reserve_gib": 2.0,
+      "frame_alignment_local_work_dir": "/content/frame_alignment_cuda_work",
+      "frame_alignment_mapping_batch_size": 16,
+      "frame_alignment_min_margin": 0.005,
+      "frame_alignment_min_ssim": 0.92,
+      "frame_alignment_reference_apply_exif_orientation": true,
+      "frame_alignment_reference_decoder": "gpu_preferred",
+      "frame_alignment_reference_fancy_upsampling": true,
+      "frame_alignment_retry_failed": true,
+      "frame_alignment_retry_video_keys": [],
+      "frame_alignment_show_progress": true,
+      "frame_alignment_ssim_batch_size": 16,
+      "frame_alignment_stage_video_locally": true,
+      "frame_alignment_video_workers": "all",
+      "frame_alignment_vram_budget_fraction": 0.85,
+      "frame_index_offset_candidates": [
+        -1,
+        0,
+        1
+      ]
+    },
+    "sector3": {
+      "config_overrides": {},
+      "dry_run": false,
+      "export_dir": "outputs/phase2/sector3",
+      "local_output_dir": "outputs/phase2/sector3",
+      "push": true,
+      "require_any_bbox": true,
+      "require_valid_bbox": true,
+      "verify_all_upstream_reports": false
+    },
+    "seed": 42,
+    "source_configs": {
+      "literal_notebooks": {
+        "sector1": {
+          "clinical_group_map": {
+            "ampulla of vater": "anatomical_landmark",
+            "angiectasia": "vascular_lesion",
+            "blood fresh": "bleeding",
+            "blood hematin": "bleeding",
+            "erosion": "mucosal_lesion",
+            "erythema": "mucosal_lesion",
+            "foreign body": "foreign_body",
+            "ileocecal valve": "anatomical_landmark",
+            "lymphangiectasia": "lymphatic_lesion",
+            "normal clean mucosa": "normal_mucosa",
+            "polyp": "protruding_lesion",
+            "pylorus": "anatomical_landmark",
+            "reduced mucosal view": "visibility_limitation",
+            "ulcer": "mucosal_lesion"
+          },
+          "curated_data_dir": "data/curated/phase2",
+          "dataset_archive_repair_enabled": true,
+          "dataset_download_enabled": true,
+          "dataset_google_drive_folder_url": "https://drive.google.com/drive/folders/18vEHN1CG7oNFKdT2NmhtJjrFhb3tLG1Z",
+          "dataset_validation": {
+            "image_extensions": [
+              ".png",
+              ".jpg",
+              ".jpeg"
+            ],
+            "labelled_images_subdir": "labelled_images",
+            "minimum_labelled_images": 47238,
+            "minimum_video_files": 117,
+            "osf_storage_subdir": "osfstorage",
+            "required_metadata_file": "metadata.csv",
+            "video_extensions": [
+              ".avi",
+              ".mp4",
+              ".mkv"
+            ]
+          },
+          "interim_data_dir": "data/interim/phase2",
+          "output_dir": "outputs/phase2",
+          "raw_data_dir": "data/raw/kvasir_capsule",
+          "seed": 42,
+          "storage_backend": "google_drive",
+          "storage_root": "/content/drive/MyDrive/MMVQA_Clinical"
+        },
+        "sector2": {
+          "clinical_group_map": {
+            "ampulla of vater": "anatomical_landmark",
+            "angiectasia": "vascular_lesion",
+            "blood fresh": "bleeding",
+            "blood hematin": "bleeding",
+            "erosion": "mucosal_lesion",
+            "erythema": "mucosal_lesion",
+            "foreign body": "foreign_body",
+            "ileocecal valve": "anatomical_landmark",
+            "lymphangiectasia": "lymphatic_lesion",
+            "normal clean mucosa": "normal_mucosa",
+            "polyp": "protruding_lesion",
+            "pylorus": "anatomical_landmark",
+            "reduced mucosal view": "visibility_limitation",
+            "ulcer": "mucosal_lesion"
+          },
+          "curated_data_dir": "data/curated/phase2",
+          "dataset_archive_repair_enabled": true,
+          "dataset_download_enabled": true,
+          "dataset_google_drive_folder_url": "https://drive.google.com/drive/folders/18vEHN1CG7oNFKdT2NmhtJjrFhb3tLG1Z",
+          "dataset_validation": {
+            "image_extensions": [
+              ".png",
+              ".jpg",
+              ".jpeg"
+            ],
+            "labelled_images_subdir": "labelled_images",
+            "minimum_labelled_images": 47238,
+            "minimum_video_files": 117,
+            "osf_storage_subdir": "osfstorage",
+            "required_metadata_file": "metadata.csv",
+            "video_extensions": [
+              ".avi",
+              ".mp4",
+              ".mkv"
+            ]
+          },
+          "decode_audit_allow_cpu_fallback": true,
+          "decode_audit_allow_cpu_startup_fallback": true,
+          "decode_audit_backend": "nvdec",
+          "decode_audit_copy_workers": 21,
+          "decode_audit_cpu_threads": 2,
+          "decode_audit_cpu_video_workers": 9,
+          "decode_audit_force_redecode": false,
+          "decode_audit_gpu_id": 0,
+          "decode_audit_local_work_dir": "/content/video_decode_audit_work",
+          "decode_audit_prefetch_videos": 21,
+          "decode_audit_published_reference_frames": {
+            "all_videos": 4741504,
+            "fully_unlabelled": 2785829,
+            "partially_labelled": 1955675
+          },
+          "decode_audit_retry_failed": true,
+          "decode_audit_retry_video_keys": [],
+          "decode_audit_stage_video_locally": true,
+          "decode_audit_staging_budget_mib": "auto",
+          "decode_audit_staging_min_free_mib": 4096,
+          "decode_audit_video_workers": 9,
+          "expected_classes": 14,
+          "expected_export_container_fps": 30.0,
+          "expected_labelled_frames": 47238,
+          "expected_labelled_videos": 43,
+          "expected_total_extractable_frames": 4741504,
+          "expected_total_videos": 117,
+          "expected_unlabelled_frames": 4694266,
+          "expected_unlabelled_videos": 74,
+          "frame_alignment_allow_cpu_fallback": true,
+          "frame_alignment_copy_workers": 6,
+          "frame_alignment_cpu_memory_budget_mib": 512,
+          "frame_alignment_cpu_video_workers": 4,
+          "frame_alignment_cuda_backend": "auto",
+          "frame_alignment_cuda_device": "cuda:0",
+          "frame_alignment_define_only": false,
+          "frame_alignment_force_rescore": false,
+          "frame_alignment_hash_source_bytes": false,
+          "frame_alignment_image_workers": 16,
+          "frame_alignment_local_disk_reserve_gib": 2.0,
+          "frame_alignment_local_work_dir": "/content/frame_alignment_cuda_work",
+          "frame_alignment_mapping_batch_size": 16,
+          "frame_alignment_min_margin": 0.005,
+          "frame_alignment_min_ssim": 0.92,
+          "frame_alignment_reference_apply_exif_orientation": true,
+          "frame_alignment_reference_decoder": "gpu_preferred",
+          "frame_alignment_reference_fancy_upsampling": true,
+          "frame_alignment_retry_failed": true,
+          "frame_alignment_retry_video_keys": [],
+          "frame_alignment_show_progress": true,
+          "frame_alignment_ssim_batch_size": 16,
+          "frame_alignment_stage_video_locally": true,
+          "frame_alignment_video_workers": "all",
+          "frame_alignment_vram_budget_fraction": 0.85,
+          "frame_index_offset_candidates": [
+            -1,
+            0,
+            1
+          ],
+          "interim_data_dir": "data/interim/phase2",
+          "output_dir": "outputs/phase2",
+          "raw_data_dir": "data/raw/kvasir_capsule",
+          "results_dir": "outputs/phase2/results/",
+          "seed": 42,
+          "storage_backend": "google_drive",
+          "storage_root": "/content/drive/MyDrive/MMVQA_Clinical"
+        }
+      },
+      "sector1": {
+        "clinical_group_map": {
+          "ampulla of vater": "anatomical_landmark",
+          "angiectasia": "vascular_lesion",
+          "blood fresh": "bleeding",
+          "blood hematin": "bleeding",
+          "erosion": "mucosal_lesion",
+          "erythema": "mucosal_lesion",
+          "foreign body": "foreign_body",
+          "ileocecal valve": "anatomical_landmark",
+          "lymphangiectasia": "lymphatic_lesion",
+          "normal clean mucosa": "normal_mucosa",
+          "polyp": "protruding_lesion",
+          "pylorus": "anatomical_landmark",
+          "reduced mucosal view": "visibility_limitation",
+          "ulcer": "mucosal_lesion"
+        },
+        "curated_data_dir": "data/curated/phase2",
+        "dataset_archive_repair_enabled": true,
+        "dataset_download_enabled": true,
+        "dataset_google_drive_folder_url": "https://drive.google.com/drive/folders/18vEHN1CG7oNFKdT2NmhtJjrFhb3tLG1Z",
+        "dataset_validation": {
+          "image_extensions": [
+            ".png",
+            ".jpg",
+            ".jpeg"
+          ],
+          "labelled_images_subdir": "labelled_images",
+          "minimum_labelled_images": 47238,
+          "minimum_video_files": 117,
+          "osf_storage_subdir": "osfstorage",
+          "required_metadata_file": "metadata.csv",
+          "video_extensions": [
+            ".avi",
+            ".mp4",
+            ".mkv"
+          ]
+        },
+        "interim_data_dir": "data/interim/phase2",
+        "output_dir": "outputs/phase2",
+        "raw_data_dir": "data/raw/kvasir_capsule",
+        "run_id": "20261006_200455",
+        "run_id_format": "%Y%m%d_%H%M%S",
+        "seed": 42,
+        "storage_backend": "google_drive",
+        "storage_root": "/content/drive/MyDrive/MMVQA_Clinical",
+        "timezone": "America/Toronto"
+      },
+      "sector2": {
+        "clinical_group_map": {
+          "ampulla of vater": "anatomical_landmark",
+          "angiectasia": "vascular_lesion",
+          "blood fresh": "bleeding",
+          "blood hematin": "bleeding",
+          "erosion": "mucosal_lesion",
+          "erythema": "mucosal_lesion",
+          "foreign body": "foreign_body",
+          "ileocecal valve": "anatomical_landmark",
+          "lymphangiectasia": "lymphatic_lesion",
+          "normal clean mucosa": "normal_mucosa",
+          "polyp": "protruding_lesion",
+          "pylorus": "anatomical_landmark",
+          "reduced mucosal view": "visibility_limitation",
+          "ulcer": "mucosal_lesion"
+        },
+        "config_source": {
+          "git_commit": "9b82259ed75fce8eda7d0ae9c4e12c89ab671824",
+          "interpretation": "Provenance of the literal CONFIG definition read from Git. This is not evidence of the configuration used by a Sector 1 runtime. The consumed artifact bytes are identified separately by input_sha256.",
+          "kind": "sector1_notebook_literal_config",
+          "literal_config_sha256": "b64ff55faa72b5a37e87d8fc7bd5b9e84242d44575c10a271ed6cd24e66c750c",
+          "notebook": "notebooks/phase2/phase2_01_ingestion.ipynb",
+          "notebook_sha256": "7ee148785278092420e2cf05c1dab41556612ae707f41a21cbf23ba9421a8315",
+          "repository": "https://github.com/bogdanparvu18/msc-graduate-project.git"
+        },
+        "curated_data_dir": "data/curated/phase2",
+        "dataset_archive_repair_enabled": true,
+        "dataset_download_enabled": true,
+        "dataset_google_drive_folder_url": "https://drive.google.com/drive/folders/18vEHN1CG7oNFKdT2NmhtJjrFhb3tLG1Z",
+        "dataset_validation": {
+          "image_extensions": [
+            ".png",
+            ".jpg",
+            ".jpeg"
+          ],
+          "labelled_images_subdir": "labelled_images",
+          "minimum_labelled_images": 47238,
+          "minimum_video_files": 117,
+          "osf_storage_subdir": "osfstorage",
+          "required_metadata_file": "metadata.csv",
+          "video_extensions": [
+            ".avi",
+            ".mp4",
+            ".mkv"
+          ]
+        },
+        "decode_audit_allow_cpu_fallback": true,
+        "decode_audit_allow_cpu_startup_fallback": true,
+        "decode_audit_backend": "nvdec",
+        "decode_audit_copy_workers": 21,
+        "decode_audit_cpu_threads": 2,
+        "decode_audit_cpu_video_workers": 9,
+        "decode_audit_force_redecode": false,
+        "decode_audit_gpu_id": 0,
+        "decode_audit_local_work_dir": "/content/video_decode_audit_work",
+        "decode_audit_prefetch_videos": 21,
+        "decode_audit_published_reference_frames": {
+          "all_videos": 4741504,
+          "fully_unlabelled": 2785829,
+          "partially_labelled": 1955675
+        },
+        "decode_audit_retry_failed": true,
+        "decode_audit_retry_video_keys": [],
+        "decode_audit_stage_video_locally": true,
+        "decode_audit_staging_budget_mib": "auto",
+        "decode_audit_staging_min_free_mib": 4096,
+        "decode_audit_video_workers": 9,
+        "expected_classes": 14,
+        "expected_export_container_fps": 30.0,
+        "expected_labelled_frames": 47238,
+        "expected_labelled_videos": 43,
+        "expected_total_extractable_frames": 4741504,
+        "expected_total_videos": 117,
+        "expected_unlabelled_frames": 4694266,
+        "expected_unlabelled_videos": 74,
+        "frame_alignment_allow_cpu_fallback": true,
+        "frame_alignment_copy_workers": 6,
+        "frame_alignment_cpu_memory_budget_mib": 512,
+        "frame_alignment_cpu_video_workers": 4,
+        "frame_alignment_cuda_backend": "auto",
+        "frame_alignment_cuda_device": "cuda:0",
+        "frame_alignment_define_only": false,
+        "frame_alignment_force_rescore": false,
+        "frame_alignment_hash_source_bytes": false,
+        "frame_alignment_image_workers": 16,
+        "frame_alignment_local_disk_reserve_gib": 2.0,
+        "frame_alignment_local_work_dir": "/content/frame_alignment_cuda_work",
+        "frame_alignment_mapping_batch_size": 16,
+        "frame_alignment_min_margin": 0.005,
+        "frame_alignment_min_ssim": 0.92,
+        "frame_alignment_reference_apply_exif_orientation": true,
+        "frame_alignment_reference_decoder": "gpu_preferred",
+        "frame_alignment_reference_fancy_upsampling": true,
+        "frame_alignment_retry_failed": true,
+        "frame_alignment_retry_video_keys": [],
+        "frame_alignment_show_progress": true,
+        "frame_alignment_ssim_batch_size": 16,
+        "frame_alignment_stage_video_locally": true,
+        "frame_alignment_video_workers": "all",
+        "frame_alignment_vram_budget_fraction": 0.85,
+        "frame_index_offset_candidates": [
+          -1,
+          0,
+          1
+        ],
+        "interim_data_dir": "data/interim/phase2",
+        "output_dir": "outputs/phase2",
+        "raw_data_dir": "data/raw/kvasir_capsule",
+        "run_id": "20261007_140342",
+        "run_id_format": "%Y%m%d_%H%M%S",
+        "sector2_overrides": {
+          "decode_audit_allow_cpu_fallback": true,
+          "decode_audit_allow_cpu_startup_fallback": true,
+          "decode_audit_backend": "nvdec",
+          "decode_audit_copy_workers": 21,
+          "decode_audit_cpu_threads": 2,
+          "decode_audit_cpu_video_workers": 9,
+          "decode_audit_force_redecode": false,
+          "decode_audit_gpu_id": 0,
+          "decode_audit_local_work_dir": "/content/video_decode_audit_work",
+          "decode_audit_prefetch_videos": 21,
+          "decode_audit_published_reference_frames": {
+            "all_videos": 4741504,
+            "fully_unlabelled": 2785829,
+            "partially_labelled": 1955675
+          },
+          "decode_audit_retry_failed": true,
+          "decode_audit_retry_video_keys": [],
+          "decode_audit_stage_video_locally": true,
+          "decode_audit_staging_budget_mib": "auto",
+          "decode_audit_staging_min_free_mib": 4096,
+          "decode_audit_video_workers": 9,
+          "expected_classes": 14,
+          "expected_export_container_fps": 30.0,
+          "expected_labelled_frames": 47238,
+          "expected_labelled_videos": 43,
+          "expected_total_extractable_frames": 4741504,
+          "expected_total_videos": 117,
+          "expected_unlabelled_frames": 4694266,
+          "expected_unlabelled_videos": 74,
+          "frame_alignment_allow_cpu_fallback": true,
+          "frame_alignment_copy_workers": 6,
+          "frame_alignment_cpu_memory_budget_mib": 512,
+          "frame_alignment_cpu_video_workers": 4,
+          "frame_alignment_cuda_backend": "auto",
+          "frame_alignment_cuda_device": "cuda:0",
+          "frame_alignment_define_only": false,
+          "frame_alignment_force_rescore": false,
+          "frame_alignment_hash_source_bytes": false,
+          "frame_alignment_image_workers": 16,
+          "frame_alignment_local_disk_reserve_gib": 2.0,
+          "frame_alignment_local_work_dir": "/content/frame_alignment_cuda_work",
+          "frame_alignment_mapping_batch_size": 16,
+          "frame_alignment_min_margin": 0.005,
+          "frame_alignment_min_ssim": 0.92,
+          "frame_alignment_reference_apply_exif_orientation": true,
+          "frame_alignment_reference_decoder": "gpu_preferred",
+          "frame_alignment_reference_fancy_upsampling": true,
+          "frame_alignment_retry_failed": true,
+          "frame_alignment_retry_video_keys": [],
+          "frame_alignment_show_progress": true,
+          "frame_alignment_ssim_batch_size": 16,
+          "frame_alignment_stage_video_locally": true,
+          "frame_alignment_video_workers": "all",
+          "frame_alignment_vram_budget_fraction": 0.85,
+          "frame_index_offset_candidates": [
+            -1,
+            0,
+            1
+          ]
+        },
+        "seed": 42,
+        "storage_backend": "google_drive",
+        "storage_root": "/content/drive/MyDrive/MMVQA_Clinical",
+        "timezone": "America/Toronto"
+      }
+    },
+    "source_storage_root": "/content/drive/MyDrive/MMVQA_Clinical",
+    "source_storage_roots": {
+      "sector1": "/content/drive/MyDrive/MMVQA_Clinical",
+      "sector2": "/content/drive/MyDrive/MMVQA_Clinical"
+    },
+    "storage_backend": "google_drive",
+    "storage_root": "/content/drive/MyDrive/MMVQA_Clinical",
+    "taxonomy_validation_policy": "Validate the effective map against source and confirmed annotation groups; preserve original labels.",
+    "timezone": "America/Toronto"
+  },
+  "lineage": {
+    "config_conflict_report": {
+      "columns": [
+        "config_key",
+        "sector1_value",
+        "sector2_value",
+        "resolution"
+      ],
+      "dtypes": {
+        "config_key": "string",
+        "resolution": "string",
+        "sector1_value": "string",
+        "sector2_value": "string"
+      },
+      "records": [
+        {
+          "config_key": "config_source",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "{\"git_commit\":\"9b82259ed75fce8eda7d0ae9c4e12c89ab671824\",\"interpretation\":\"Provenance of the literal CONFIG definition read from Git. This is not evidence of the configuration used by a Sector 1 runtime. The consumed artifact bytes are identified separately by input_sha256.\",\"kind\":\"sector1_notebook_literal_config\",\"literal_config_sha256\":\"b64ff55faa72b5a37e87d8fc7bd5b9e84242d44575c10a271ed6cd24e66c750c\",\"notebook\":\"notebooks/phase2/phase2_01_ingestion.ipynb\",\"notebook_sha256\":\"7ee148785278092420e2cf05c1dab41556612ae707f41a21cbf23ba9421a8315\",\"repository\":\"https://github.com/bogdanparvu18/msc-graduate-project.git\"}"
+        },
+        {
+          "config_key": "decode_audit_allow_cpu_fallback",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "true"
+        },
+        {
+          "config_key": "decode_audit_allow_cpu_startup_fallback",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "true"
+        },
+        {
+          "config_key": "decode_audit_backend",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "\"nvdec\""
+        },
+        {
+          "config_key": "decode_audit_copy_workers",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "21"
+        },
+        {
+          "config_key": "decode_audit_cpu_threads",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "2"
+        },
+        {
+          "config_key": "decode_audit_cpu_video_workers",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "9"
+        },
+        {
+          "config_key": "decode_audit_force_redecode",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "false"
+        },
+        {
+          "config_key": "decode_audit_gpu_id",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "0"
+        },
+        {
+          "config_key": "decode_audit_local_work_dir",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "\"/content/video_decode_audit_work\""
+        },
+        {
+          "config_key": "decode_audit_prefetch_videos",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "21"
+        },
+        {
+          "config_key": "decode_audit_published_reference_frames",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "{\"all_videos\":4741504,\"fully_unlabelled\":2785829,\"partially_labelled\":1955675}"
+        },
+        {
+          "config_key": "decode_audit_retry_failed",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "true"
+        },
+        {
+          "config_key": "decode_audit_retry_video_keys",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "[]"
+        },
+        {
+          "config_key": "decode_audit_stage_video_locally",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "true"
+        },
+        {
+          "config_key": "decode_audit_staging_budget_mib",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "\"auto\""
+        },
+        {
+          "config_key": "decode_audit_staging_min_free_mib",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "4096"
+        },
+        {
+          "config_key": "decode_audit_video_workers",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "9"
+        },
+        {
+          "config_key": "expected_classes",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "14"
+        },
+        {
+          "config_key": "expected_export_container_fps",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "30.0"
+        },
+        {
+          "config_key": "expected_labelled_frames",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "47238"
+        },
+        {
+          "config_key": "expected_labelled_videos",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "43"
+        },
+        {
+          "config_key": "expected_total_extractable_frames",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "4741504"
+        },
+        {
+          "config_key": "expected_total_videos",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "117"
+        },
+        {
+          "config_key": "expected_unlabelled_frames",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "4694266"
+        },
+        {
+          "config_key": "expected_unlabelled_videos",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "74"
+        },
+        {
+          "config_key": "frame_alignment_allow_cpu_fallback",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "true"
+        },
+        {
+          "config_key": "frame_alignment_copy_workers",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "6"
+        },
+        {
+          "config_key": "frame_alignment_cpu_memory_budget_mib",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "512"
+        },
+        {
+          "config_key": "frame_alignment_cpu_video_workers",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "4"
+        },
+        {
+          "config_key": "frame_alignment_cuda_backend",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "\"auto\""
+        },
+        {
+          "config_key": "frame_alignment_cuda_device",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "\"cuda:0\""
+        },
+        {
+          "config_key": "frame_alignment_define_only",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "false"
+        },
+        {
+          "config_key": "frame_alignment_force_rescore",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "false"
+        },
+        {
+          "config_key": "frame_alignment_hash_source_bytes",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "false"
+        },
+        {
+          "config_key": "frame_alignment_image_workers",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "16"
+        },
+        {
+          "config_key": "frame_alignment_local_disk_reserve_gib",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "2.0"
+        },
+        {
+          "config_key": "frame_alignment_local_work_dir",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "\"/content/frame_alignment_cuda_work\""
+        },
+        {
+          "config_key": "frame_alignment_mapping_batch_size",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "16"
+        },
+        {
+          "config_key": "frame_alignment_min_margin",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "0.005"
+        },
+        {
+          "config_key": "frame_alignment_min_ssim",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "0.92"
+        },
+        {
+          "config_key": "frame_alignment_reference_apply_exif_orientation",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "true"
+        },
+        {
+          "config_key": "frame_alignment_reference_decoder",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "\"gpu_preferred\""
+        },
+        {
+          "config_key": "frame_alignment_reference_fancy_upsampling",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "true"
+        },
+        {
+          "config_key": "frame_alignment_retry_failed",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "true"
+        },
+        {
+          "config_key": "frame_alignment_retry_video_keys",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "[]"
+        },
+        {
+          "config_key": "frame_alignment_show_progress",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "true"
+        },
+        {
+          "config_key": "frame_alignment_ssim_batch_size",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "16"
+        },
+        {
+          "config_key": "frame_alignment_stage_video_locally",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "true"
+        },
+        {
+          "config_key": "frame_alignment_video_workers",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "\"all\""
+        },
+        {
+          "config_key": "frame_alignment_vram_budget_fraction",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "0.85"
+        },
+        {
+          "config_key": "frame_index_offset_candidates",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "[-1,0,1]"
+        },
+        {
+          "config_key": "sector2_overrides",
+          "resolution": "sector2_runtime_added",
+          "sector1_value": "<not declared>",
+          "sector2_value": "{\"decode_audit_allow_cpu_fallback\":true,\"decode_audit_allow_cpu_startup_fallback\":true,\"decode_audit_backend\":\"nvdec\",\"decode_audit_copy_workers\":21,\"decode_audit_cpu_threads\":2,\"decode_audit_cpu_video_workers\":9,\"decode_audit_force_redecode\":false,\"decode_audit_gpu_id\":0,\"decode_audit_local_work_dir\":\"/content/video_decode_audit_work\",\"decode_audit_prefetch_videos\":21,\"decode_audit_published_reference_frames\":{\"all_videos\":4741504,\"fully_unlabelled\":2785829,\"partially_labelled\":1955675},\"decode_audit_retry_failed\":true,\"decode_audit_retry_video_keys\":[],\"decode_audit_stage_video_locally\":true,\"decode_audit_staging_budget_mib\":\"auto\",\"decode_audit_staging_min_free_mib\":4096,\"decode_audit_video_workers\":9,\"expected_classes\":14,\"expected_export_container_fps\":30.0,\"expected_labelled_frames\":47238,\"expected_labelled_videos\":43,\"expected_total_extractable_frames\":4741504,\"expected_total_videos\":117,\"expected_unlabelled_frames\":4694266,\"expected_unlabelled_videos\":74,\"frame_alignment_allow_cpu_fallback\":true,\"frame_alignment_copy_workers\":6,\"frame_alignment_cpu_memory_budget_mib\":512,\"frame_alignment_cpu_video_workers\":4,\"frame_alignment_cuda_backend\":\"auto\",\"frame_alignment_cuda_device\":\"cuda:0\",\"frame_alignment_define_only\":false,\"frame_alignment_force_rescore\":false,\"frame_alignment_hash_source_bytes\":false,\"frame_alignment_image_workers\":16,\"frame_alignment_local_disk_reserve_gib\":2.0,\"frame_alignment_local_work_dir\":\"/content/frame_alignment_cuda_work\",\"frame_alignment_mapping_batch_size\":16,\"frame_alignment_min_margin\":0.005,\"frame_alignment_min_ssim\":0.92,\"frame_alignment_reference_apply_exif_orientation\":true,\"frame_alignment_reference_decoder\":\"gpu_preferred\",\"frame_alignment_reference_fancy_upsampling\":true,\"frame_alignment_retry_failed\":true,\"frame_alignment_retry_video_keys\":[],\"frame_alignment_show_progress\":true,\"frame_alignment_ssim_batch_size\":16,\"frame_alignment_stage_video_locally\":true,\"frame_alignment_video_workers\":\"all\",\"frame_alignment_vram_budget_fraction\":0.85,\"frame_index_offset_candidates\":[-1,0,1]}"
+        }
+      ],
+      "type": "dataframe"
+    },
+    "core_source_sha256": "8aedd99df509c3504b382fc2190579c36f9e5fa49be6170776e59cb1ddd06e5a",
+    "excluded_annotation_rows": 0,
+    "input_sha256": {
+      "/content/drive/MyDrive/MMVQA_Clinical/data/curated/phase2/dataset_audit/metadata_clean.parquet": "40bad10eda042ee5992f75512717a6bb3c1fe5557a8bd0181973f0b06da40d22",
+      "/content/drive/MyDrive/MMVQA_Clinical/data/curated/phase2/dataset_audit/physical_image_inventory.csv": "5244b460c4a1193abd6eac255973c07fab7df1f465eaff72f8e292275bb04894",
+      "/content/drive/MyDrive/MMVQA_Clinical/data/curated/phase2/manifests/video_manifest.csv": "2fc36b776a9b9947d9e8b3d61f976efb1b0f7809016e5f8698d998a4fa115cbc",
+      "/content/drive/MyDrive/MMVQA_Clinical/outputs/phase2/results/decode_audit.csv": "703edc2389cc0bc7ef712697d547604a5250be364d42752d05352efc31888a5f",
+      "/content/drive/MyDrive/MMVQA_Clinical/outputs/phase2/results/frame_alignment_confirmed.parquet": "6479d9514763443ae9e22ec7689a0ff0f0f25b5d4a97176be290e4024ce0bd3b",
+      "/content/drive/MyDrive/MMVQA_Clinical/outputs/phase2/results/frame_alignment_excluded.csv": "4f97276bfca310d4a0052270b7be2b93e5c36b75317d7633cff486abfeede5e4"
+    },
+    "source_config_provenance": {
+      "config_sources": {
+        "sector1": {
+          "kind": "saved_runtime",
+          "path": "/content/drive/MyDrive/MMVQA_Clinical/outputs/phase2/configs/phase2_01_ingestion_20261006_200455_config.json",
+          "sha256": "a5cfde846717724dc37aeb75df83b6e6fd08796309f39c8ee5219d5562392198"
+        },
+        "sector2": {
+          "kind": "saved_runtime",
+          "path": "/content/drive/MyDrive/MMVQA_Clinical/outputs/phase2/configs/phase2_02_video_frame_validation_20261007_140342_config.json",
+          "sha256": "721b7d2b9a7fde452f03949ea3e569fc1b2885850985e8eaf722b0e52cf3f7f9"
+        }
+      },
+      "literal_configs": {
+        "sector1": {
+          "clinical_group_map": {
+            "ampulla of vater": "anatomical_landmark",
+            "angiectasia": "vascular_lesion",
+            "blood fresh": "bleeding",
+            "blood hematin": "bleeding",
+            "erosion": "mucosal_lesion",
+            "erythema": "mucosal_lesion",
+            "foreign body": "foreign_body",
+            "ileocecal valve": "anatomical_landmark",
+            "lymphangiectasia": "lymphatic_lesion",
+            "normal clean mucosa": "normal_mucosa",
+            "polyp": "protruding_lesion",
+            "pylorus": "anatomical_landmark",
+            "reduced mucosal view": "visibility_limitation",
+            "ulcer": "mucosal_lesion"
+          },
+          "curated_data_dir": "data/curated/phase2",
+          "dataset_archive_repair_enabled": true,
+          "dataset_download_enabled": true,
+          "dataset_google_drive_folder_url": "https://drive.google.com/drive/folders/18vEHN1CG7oNFKdT2NmhtJjrFhb3tLG1Z",
+          "dataset_validation": {
+            "image_extensions": [
+              ".png",
+              ".jpg",
+              ".jpeg"
+            ],
+            "labelled_images_subdir": "labelled_images",
+            "minimum_labelled_images": 47238,
+            "minimum_video_files": 117,
+            "osf_storage_subdir": "osfstorage",
+            "required_metadata_file": "metadata.csv",
+            "video_extensions": [
+              ".avi",
+              ".mp4",
+              ".mkv"
+            ]
+          },
+          "interim_data_dir": "data/interim/phase2",
+          "output_dir": "outputs/phase2",
+          "raw_data_dir": "data/raw/kvasir_capsule",
+          "seed": 42,
+          "storage_backend": "google_drive",
+          "storage_root": "/content/drive/MyDrive/MMVQA_Clinical"
+        },
+        "sector2": {
+          "clinical_group_map": {
+            "ampulla of vater": "anatomical_landmark",
+            "angiectasia": "vascular_lesion",
+            "blood fresh": "bleeding",
+            "blood hematin": "bleeding",
+            "erosion": "mucosal_lesion",
+            "erythema": "mucosal_lesion",
+            "foreign body": "foreign_body",
+            "ileocecal valve": "anatomical_landmark",
+            "lymphangiectasia": "lymphatic_lesion",
+            "normal clean mucosa": "normal_mucosa",
+            "polyp": "protruding_lesion",
+            "pylorus": "anatomical_landmark",
+            "reduced mucosal view": "visibility_limitation",
+            "ulcer": "mucosal_lesion"
+          },
+          "curated_data_dir": "data/curated/phase2",
+          "dataset_archive_repair_enabled": true,
+          "dataset_download_enabled": true,
+          "dataset_google_drive_folder_url": "https://drive.google.com/drive/folders/18vEHN1CG7oNFKdT2NmhtJjrFhb3tLG1Z",
+          "dataset_validation": {
+            "image_extensions": [
+              ".png",
+              ".jpg",
+              ".jpeg"
+            ],
+            "labelled_images_subdir": "labelled_images",
+            "minimum_labelled_images": 47238,
+            "minimum_video_files": 117,
+            "osf_storage_subdir": "osfstorage",
+            "required_metadata_file": "metadata.csv",
+            "video_extensions": [
+              ".avi",
+              ".mp4",
+              ".mkv"
+            ]
+          },
+          "decode_audit_allow_cpu_fallback": true,
+          "decode_audit_allow_cpu_startup_fallback": true,
+          "decode_audit_backend": "nvdec",
+          "decode_audit_copy_workers": 21,
+          "decode_audit_cpu_threads": 2,
+          "decode_audit_cpu_video_workers": 9,
+          "decode_audit_force_redecode": false,
+          "decode_audit_gpu_id": 0,
+          "decode_audit_local_work_dir": "/content/video_decode_audit_work",
+          "decode_audit_prefetch_videos": 21,
+          "decode_audit_published_reference_frames": {
+            "all_videos": 4741504,
+            "fully_unlabelled": 2785829,
+            "partially_labelled": 1955675
+          },
+          "decode_audit_retry_failed": true,
+          "decode_audit_retry_video_keys": [],
+          "decode_audit_stage_video_locally": true,
+          "decode_audit_staging_budget_mib": "auto",
+          "decode_audit_staging_min_free_mib": 4096,
+          "decode_audit_video_workers": 9,
+          "expected_classes": 14,
+          "expected_export_container_fps": 30.0,
+          "expected_labelled_frames": 47238,
+          "expected_labelled_videos": 43,
+          "expected_total_extractable_frames": 4741504,
+          "expected_total_videos": 117,
+          "expected_unlabelled_frames": 4694266,
+          "expected_unlabelled_videos": 74,
+          "frame_alignment_allow_cpu_fallback": true,
+          "frame_alignment_copy_workers": 6,
+          "frame_alignment_cpu_memory_budget_mib": 512,
+          "frame_alignment_cpu_video_workers": 4,
+          "frame_alignment_cuda_backend": "auto",
+          "frame_alignment_cuda_device": "cuda:0",
+          "frame_alignment_define_only": false,
+          "frame_alignment_force_rescore": false,
+          "frame_alignment_hash_source_bytes": false,
+          "frame_alignment_image_workers": 16,
+          "frame_alignment_local_disk_reserve_gib": 2.0,
+          "frame_alignment_local_work_dir": "/content/frame_alignment_cuda_work",
+          "frame_alignment_mapping_batch_size": 16,
+          "frame_alignment_min_margin": 0.005,
+          "frame_alignment_min_ssim": 0.92,
+          "frame_alignment_reference_apply_exif_orientation": true,
+          "frame_alignment_reference_decoder": "gpu_preferred",
+          "frame_alignment_reference_fancy_upsampling": true,
+          "frame_alignment_retry_failed": true,
+          "frame_alignment_retry_video_keys": [],
+          "frame_alignment_show_progress": true,
+          "frame_alignment_ssim_batch_size": 16,
+          "frame_alignment_stage_video_locally": true,
+          "frame_alignment_video_workers": "all",
+          "frame_alignment_vram_budget_fraction": 0.85,
+          "frame_index_offset_candidates": [
+            -1,
+            0,
+            1
+          ],
+          "interim_data_dir": "data/interim/phase2",
+          "output_dir": "outputs/phase2",
+          "raw_data_dir": "data/raw/kvasir_capsule",
+          "results_dir": "outputs/phase2/results/",
+          "seed": 42,
+          "storage_backend": "google_drive",
+          "storage_root": "/content/drive/MyDrive/MMVQA_Clinical"
+        }
+      },
+      "runtime_storage_backend": "google_drive",
+      "runtime_storage_root": "/content/drive/MyDrive/MMVQA_Clinical",
+      "sector1_catalog_verified": true,
+      "source_commit": "3b85fec226847e90de35374fcc93a4b36ed40141",
+      "source_notebooks": {
+        "sector1": {
+          "notebook_path": "notebooks/phase2/phase2_01_ingestion.ipynb",
+          "notebook_sha256": "7ee148785278092420e2cf05c1dab41556612ae707f41a21cbf23ba9421a8315"
+        },
+        "sector2": {
+          "notebook_path": "notebooks/phase2/phase2_02_video_frame_validation.ipynb",
+          "notebook_sha256": "4dd4adcfbdae307fbcc0b790bfb5e8ed0e525316680b4f0a48cfa6c2e314d9cf"
+        }
+      },
+      "upstream_alignment_run_id": "20261007_140342"
+    },
+    "state_sha256": {
+      "alignment": "fe6cf8faa80375b4dfb93679beea68d9d2d54b572d6a178f1f9eeb52759a6b69",
+      "alignment_attempt": "6e3f621729dcb359c41a8dfd7fb60ff88a4804557cb81339352e068685e5f465",
+      "decode": "ae843989d5d29df9d4c8df1d4b2223e7df4163b4d84a60a60209cb17cf350c8d",
+      "manifest": "10887dfd0e348313d1f492399b16ac7289242dd837297b786eb0f39354153221"
+    },
+    "upstream_states": {
+      "alignment": {
+        "attempt_id": "05734e3cb8b24fe6b89d019e335c34b9",
+        "complete": true,
+        "confirmed_annotation_rows": 47239,
+        "confirmed_mappings": 47238,
+        "created_utc": "2026-10-07T18:27:45.575184+00:00",
+        "effective_settings": {
+          "allow_cpu_fallback": true,
+          "candidate_offsets": [
+            -1,
+            0,
+            1
+          ],
+          "copy_workers": 6,
+          "cpu_memory_budget_mib": 512,
+          "cpu_video_workers": 4,
+          "cuda_backend": "nvdec",
+          "device": "cuda:0",
+          "effective_video_workers": 43,
+          "force_rescore": false,
+          "hash_source_bytes": false,
+          "image_extensions": [
+            ".jpeg",
+            ".jpg",
+            ".png"
+          ],
+          "image_workers": 16,
+          "local_disk_reserve_gib": 2.0,
+          "local_work_dir": "/content/frame_alignment_cuda_work",
+          "mapping_batch_size": 16,
+          "min_margin": 0.005,
+          "min_ssim": 0.92,
+          "reference_apply_exif_orientation": true,
+          "reference_decoder": "gpu_preferred",
+          "reference_fancy_upsampling": true,
+          "retry_failed": true,
+          "retry_video_keys": [],
+          "show_progress": true,
+          "ssim_batch_size": 16,
+          "stage_video_locally": true,
+          "transient_tensor_budget_bytes": 86096681369,
+          "video_backend": "torchcodec_cuda",
+          "video_fallback_reason": "CUDA device or compatible TorchCodec binding unavailable.",
+          "video_workers": "all",
+          "vram_budget_fraction": 0.85
+        },
+        "engine": {
+          "actual_backend_evidence": "per_video_checkpoint_timings_and_performance",
+          "backend_id": "gpu_preferred_pyav_opencv_fallback_ssim_uniform7_v5",
+          "cpu_fallback_allowed": true,
+          "cuda_backend": "nvdec",
+          "decoded_color": "RGB_uint8",
+          "gpu_capability": [
+            12,
+            0
+          ],
+          "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "image_extensions": [
+            ".jpeg",
+            ".jpg",
+            ".png"
+          ],
+          "index_policy": "torchcodec_exact_or_pyav_sequential_ordinal",
+          "nvidia_driver": "580.82.07",
+          "opencv": "4.14.0",
+          "preferred_video_backend": "torchcodec_cuda",
+          "pyav": "18.1.0",
+          "pyav_libraries": {
+            "libavcodec": [
+              62,
+              28,
+              102
+            ],
+            "libavdevice": [
+              62,
+              3,
+              102
+            ],
+            "libavfilter": [
+              11,
+              14,
+              102
+            ],
+            "libavformat": [
+              62,
+              12,
+              102
+            ],
+            "libavutil": [
+              60,
+              26,
+              102
+            ],
+            "libswresample": [
+              6,
+              3,
+              102
+            ],
+            "libswscale": [
+              9,
+              5,
+              102
+            ]
+          },
+          "reference_apply_exif_orientation": true,
+          "reference_fancy_upsampling": true,
+          "reference_library_versions": {
+            "nvidia-nvimgcodec-cu13": "0.8.0.22",
+            "nvimgcodec_module": "0.8.0"
+          },
+          "reference_native_sha256": {
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/extensions/libjpeg_turbo_ext.so.0.8.0": "dddf7789b91e06619c33ed5b432cf39c004b9ca67a1eca60df907794eae458e5",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/extensions/libnvbmp_ext.so.0.8.0": "38d90c62bf56429e9f817525fa81253816c25fc26454f418af7b7c70e87f8748",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/extensions/libnvjpeg2k_ext.so.0.8.0": "c3b1ac075a54d397c7cc2d1fda1db11534930ae9cc1617e956afd8f782be520a",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/extensions/libnvjpeg_ext.so.0.8.0": "4009073a8da72deb224a15b2897c9201b0e6e8c711354d1ff2cffa65bb965e79",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/extensions/libnvpnm_ext.so.0.8.0": "799978b9a38ae7e7e2a187723884e7554106247b48e6a2f053a9d4430c5d15f9",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/extensions/libnvtiff_ext.so.0.8.0": "e66a704ce64bfd998a1a3e866779eb45f0c1a444bf9ab94c88de9b79e770a6a6",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/extensions/libopencv_ext.so.0.8.0": "a0a7315f1f2d7273acecaa6d2fbdffaf1282b94e1dc4079a71bd29261d8afc0c",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/extensions/libtiff_ext.so.0.8.0": "20c3b0ed6a1d419c5c1c510d249d06097c24459e32934584ece91ad8510431b3",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/libnvimgcodec.so.0": "d82ec51d94d5a72d7da50f4ba6e57c29f603cd56e99529fad057806f3959b892",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/nvimgcodec_impl.cpython-310-x86_64-linux-gnu.so": "7ce3fcdbb3d6af39ffff4e11783d77a72e6fba99a3d1b6c655025a10bc46e219",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/nvimgcodec_impl.cpython-311-x86_64-linux-gnu.so": "3f6e23a964fa83ff1c83a949b89432373c7803de08a4a152d6b032c336a7afc4",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/nvimgcodec_impl.cpython-312-x86_64-linux-gnu.so": "a06715d9f5f375e928b64c7b758e91596ed936867333454051f5b4027517beae",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/nvimgcodec_impl.cpython-313-x86_64-linux-gnu.so": "87efe3e653e1b7658fa466e06a6f7ac3b12c0f3701798a7e9e145ea0fdb98ec0",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/nvimgcodec_impl.cpython-313t-x86_64-linux-gnu.so": "3fd795e38b7610c25165e25aa9e4ddb6ac2b4c59b9566e6a7d1c5d417a94f88b",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/nvimgcodec_impl.cpython-314-x86_64-linux-gnu.so": "40e2de6b4711a7933f1cbee7247260f9ec04f674eaca16aa54467d1acf693b63",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/nvimgcodec_impl.cpython-314t-x86_64-linux-gnu.so": "518d14efb04925c4c6ef60f3bce86d748879c73fc91b0fba0c373f4d9f28494e",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/nvimgcodec_impl.cpython-39-x86_64-linux-gnu.so": "cc0b8eaa35f7793df05f6ee547c0d05bb7cf5e9d876e660572b1490ed8e58e27"
+          },
+          "reference_output": "RGB_uint8_CHW_on_ssim_device",
+          "reference_policy": "gpu_preferred",
+          "scoring_version": 5,
+          "skimage": "0.25.2",
+          "ssim_device": "cuda:0",
+          "ssim_method": "uniform7_sample_covariance_valid_color_uint8",
+          "ssim_precision": "float32_window_sums_float64_metric",
+          "torch": "2.11.0+cu130",
+          "torch_cuda": "13.0",
+          "torchcodec": "0.16.0+cu130",
+          "torchcodec_native_sha256": {
+            "libtorchcodec_core4.so": "ebf49b830463327fdcf5c720ffb98b755aed4c860b51ab3a08e2d742095255b5",
+            "libtorchcodec_core5.so": "a74d5208ac63e011a5067d55822b4d483667ec6945636dbeee5ed2eaa1f815af",
+            "libtorchcodec_core6.so": "b594b381f57739f55ea7cf5508f914239031688c7b6f24715bbbe6f6248f4330",
+            "libtorchcodec_core7.so": "d96dfec40e43a041840ee54d94fa2976d37b4f988a4e74349d31c5ad5e618fb0",
+            "libtorchcodec_core8.so": "15b1be7367d55a51b14eb89acaddb23965d1ea3c5c007d749144a041ee69416d",
+            "libtorchcodec_core9.so": "10f63fde87fdd2487c3337b709ddd7156dd14a98d3bef07afb4404e4619235e4",
+            "libtorchcodec_custom_ops4.so": "c46d7a70cd9ccb162621bd1735c83700f562af31503e98be001abc37308eea7a",
+            "libtorchcodec_custom_ops5.so": "8e59753bcd6b521377b9d6c12a4cc5b0278cba5fda946b810f842e06c5729635",
+            "libtorchcodec_custom_ops6.so": "93b80b46738f76c6c0e6620df9c95788ecee9497aecbce4b5c63042e7de1bb24",
+            "libtorchcodec_custom_ops7.so": "78c2418773b06e9bf509d7b0b17d49e5362cfe4101d16d6ce96cb90ddcff9b7b",
+            "libtorchcodec_custom_ops8.so": "6bba67d520d2d5b146a745b822bf15dac1516490da5dd55ca03f0227c036d8c9",
+            "libtorchcodec_custom_ops9.so": "f0cce4454e2f1655dcd1ac356081bf85a3e9a0e0b033bd9a969f53eaf35a8f57",
+            "libtorchcodec_heic.so": "c0cbfdcafc685eb45201fa9f1cd44f475618106afaf9ae5802172d84d6916f7c",
+            "libtorchcodec_image.so": "377d9e8578729c4080cb4a582d98f4907cb9596b2c8b4ecd7fdffbd3c808c1f9",
+            "libtorchcodec_pybind_ops.so": "77d31010ad10fc1e6e5a1d24bdbfaaad35a952aa480d31a88c3295881ebd57e7"
+          }
+        },
+        "evaluated_offsets": [
+          -2,
+          -1,
+          0,
+          1,
+          2
+        ],
+        "excluded_annotation_rows": 0,
+        "fallback_report": {
+          "events_by_stage": {},
+          "example_reasons": {},
+          "run_id": "20261007_140342",
+          "warning_emitted": false
+        },
+        "input_sha256": {
+          "metadata_clean.parquet": "40bad10eda042ee5992f75512717a6bb3c1fe5557a8bd0181973f0b06da40d22",
+          "physical_image_inventory.csv": "5244b460c4a1193abd6eac255973c07fab7df1f465eaff72f8e292275bb04894",
+          "video_manifest.csv": "2fc36b776a9b9947d9e8b3d61f976efb1b0f7809016e5f8698d998a4fa115cbc"
+        },
+        "interpretation": "Technical acceptance under configured SSIM/ambiguity rules; not proof of clinical or historical frame identity.",
+        "original_annotation_rows": 47239,
+        "output_sha256": {
+          "frame_alignment_audit.csv": "a78b07700eb03f1813832e8af8ddb8f97dae3d9d58c65065269d1bcfdc4c9ed0",
+          "frame_alignment_candidates.csv": "281db26aa112b7dec79454d44e86a198e83fd2381b4ddf8e41519d2033c2be2c",
+          "frame_alignment_confirmed.csv": "c907b83bf9bc201a880d0e779137aa195aa097f996f5b43cc25d28c4468db43d",
+          "frame_alignment_confirmed.parquet": "6479d9514763443ae9e22ec7689a0ff0f0f25b5d4a97176be290e4024ce0bd3b",
+          "frame_alignment_excluded.csv": "4f97276bfca310d4a0052270b7be2b93e5c36b75317d7633cff486abfeede5e4",
+          "frame_alignment_offset_summary.csv": "bb519368e30252b050015ba75977dcea0bb29e8adefb2c3be5e8973ebc516cfe",
+          "frame_alignment_performance.csv": "8113fca242721eb8833476e3c5f49b75477b9673670695c5df06173660d3f2ec"
+        },
+        "run_id": "20261007_140342",
+        "source_fingerprint_method": "SHA256 of mappings, engine, file paths/sizes/mtimes; not source bytes",
+        "ssim_numerical_self_check": {
+          "device": "cuda:0",
+          "precision": "float32_exact_sums_float64_moments",
+          "self_check_max_absolute_error": 1.9206858326015208e-14,
+          "self_check_pairs": 10,
+          "self_check_tolerance": 1e-10,
+          "skimage_version": "0.25.2",
+          "ssim_implementation": "uniform_7x7_sample_covariance_valid_color_v1",
+          "torch_version": "2.11.0+cu130"
+        },
+        "unique_mappings": 47238,
+        "videos_rescored": 43,
+        "videos_reused": 0
+      },
+      "alignment_attempt": {
+        "attempt_id": "05734e3cb8b24fe6b89d019e335c34b9",
+        "complete": true,
+        "effective_settings": {
+          "allow_cpu_fallback": true,
+          "candidate_offsets": [
+            -1,
+            0,
+            1
+          ],
+          "copy_workers": 6,
+          "cpu_memory_budget_mib": 512,
+          "cpu_video_workers": 4,
+          "cuda_backend": "nvdec",
+          "device": "cuda:0",
+          "effective_video_workers": 43,
+          "force_rescore": false,
+          "hash_source_bytes": false,
+          "image_extensions": [
+            ".jpeg",
+            ".jpg",
+            ".png"
+          ],
+          "image_workers": 16,
+          "local_disk_reserve_gib": 2.0,
+          "local_work_dir": "/content/frame_alignment_cuda_work",
+          "mapping_batch_size": 16,
+          "min_margin": 0.005,
+          "min_ssim": 0.92,
+          "reference_apply_exif_orientation": true,
+          "reference_decoder": "gpu_preferred",
+          "reference_fancy_upsampling": true,
+          "retry_failed": true,
+          "retry_video_keys": [],
+          "show_progress": true,
+          "ssim_batch_size": 16,
+          "stage_video_locally": true,
+          "transient_tensor_budget_bytes": 86096681369,
+          "video_backend": "torchcodec_cuda",
+          "video_fallback_reason": "CUDA device or compatible TorchCodec binding unavailable.",
+          "video_workers": "all",
+          "vram_budget_fraction": 0.85
+        },
+        "engine": {
+          "actual_backend_evidence": "per_video_checkpoint_timings_and_performance",
+          "backend_id": "gpu_preferred_pyav_opencv_fallback_ssim_uniform7_v5",
+          "cpu_fallback_allowed": true,
+          "cuda_backend": "nvdec",
+          "decoded_color": "RGB_uint8",
+          "gpu_capability": [
+            12,
+            0
+          ],
+          "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "image_extensions": [
+            ".jpeg",
+            ".jpg",
+            ".png"
+          ],
+          "index_policy": "torchcodec_exact_or_pyav_sequential_ordinal",
+          "nvidia_driver": "580.82.07",
+          "opencv": "4.14.0",
+          "preferred_video_backend": "torchcodec_cuda",
+          "pyav": "18.1.0",
+          "pyav_libraries": {
+            "libavcodec": [
+              62,
+              28,
+              102
+            ],
+            "libavdevice": [
+              62,
+              3,
+              102
+            ],
+            "libavfilter": [
+              11,
+              14,
+              102
+            ],
+            "libavformat": [
+              62,
+              12,
+              102
+            ],
+            "libavutil": [
+              60,
+              26,
+              102
+            ],
+            "libswresample": [
+              6,
+              3,
+              102
+            ],
+            "libswscale": [
+              9,
+              5,
+              102
+            ]
+          },
+          "reference_apply_exif_orientation": true,
+          "reference_fancy_upsampling": true,
+          "reference_library_versions": {
+            "nvidia-nvimgcodec-cu13": "0.8.0.22",
+            "nvimgcodec_module": "0.8.0"
+          },
+          "reference_native_sha256": {
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/extensions/libjpeg_turbo_ext.so.0.8.0": "dddf7789b91e06619c33ed5b432cf39c004b9ca67a1eca60df907794eae458e5",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/extensions/libnvbmp_ext.so.0.8.0": "38d90c62bf56429e9f817525fa81253816c25fc26454f418af7b7c70e87f8748",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/extensions/libnvjpeg2k_ext.so.0.8.0": "c3b1ac075a54d397c7cc2d1fda1db11534930ae9cc1617e956afd8f782be520a",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/extensions/libnvjpeg_ext.so.0.8.0": "4009073a8da72deb224a15b2897c9201b0e6e8c711354d1ff2cffa65bb965e79",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/extensions/libnvpnm_ext.so.0.8.0": "799978b9a38ae7e7e2a187723884e7554106247b48e6a2f053a9d4430c5d15f9",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/extensions/libnvtiff_ext.so.0.8.0": "e66a704ce64bfd998a1a3e866779eb45f0c1a444bf9ab94c88de9b79e770a6a6",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/extensions/libopencv_ext.so.0.8.0": "a0a7315f1f2d7273acecaa6d2fbdffaf1282b94e1dc4079a71bd29261d8afc0c",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/extensions/libtiff_ext.so.0.8.0": "20c3b0ed6a1d419c5c1c510d249d06097c24459e32934584ece91ad8510431b3",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/libnvimgcodec.so.0": "d82ec51d94d5a72d7da50f4ba6e57c29f603cd56e99529fad057806f3959b892",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/nvimgcodec_impl.cpython-310-x86_64-linux-gnu.so": "7ce3fcdbb3d6af39ffff4e11783d77a72e6fba99a3d1b6c655025a10bc46e219",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/nvimgcodec_impl.cpython-311-x86_64-linux-gnu.so": "3f6e23a964fa83ff1c83a949b89432373c7803de08a4a152d6b032c336a7afc4",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/nvimgcodec_impl.cpython-312-x86_64-linux-gnu.so": "a06715d9f5f375e928b64c7b758e91596ed936867333454051f5b4027517beae",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/nvimgcodec_impl.cpython-313-x86_64-linux-gnu.so": "87efe3e653e1b7658fa466e06a6f7ac3b12c0f3701798a7e9e145ea0fdb98ec0",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/nvimgcodec_impl.cpython-313t-x86_64-linux-gnu.so": "3fd795e38b7610c25165e25aa9e4ddb6ac2b4c59b9566e6a7d1c5d417a94f88b",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/nvimgcodec_impl.cpython-314-x86_64-linux-gnu.so": "40e2de6b4711a7933f1cbee7247260f9ec04f674eaca16aa54467d1acf693b63",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/nvimgcodec_impl.cpython-314t-x86_64-linux-gnu.so": "518d14efb04925c4c6ef60f3bce86d748879c73fc91b0fba0c373f4d9f28494e",
+            "nvidia-nvimgcodec-cu13/nvidia/nvimgcodec/nvimgcodec_impl.cpython-39-x86_64-linux-gnu.so": "cc0b8eaa35f7793df05f6ee547c0d05bb7cf5e9d876e660572b1490ed8e58e27"
+          },
+          "reference_output": "RGB_uint8_CHW_on_ssim_device",
+          "reference_policy": "gpu_preferred",
+          "scoring_version": 5,
+          "skimage": "0.25.2",
+          "ssim_device": "cuda:0",
+          "ssim_method": "uniform7_sample_covariance_valid_color_uint8",
+          "ssim_precision": "float32_window_sums_float64_metric",
+          "torch": "2.11.0+cu130",
+          "torch_cuda": "13.0",
+          "torchcodec": "0.16.0+cu130",
+          "torchcodec_native_sha256": {
+            "libtorchcodec_core4.so": "ebf49b830463327fdcf5c720ffb98b755aed4c860b51ab3a08e2d742095255b5",
+            "libtorchcodec_core5.so": "a74d5208ac63e011a5067d55822b4d483667ec6945636dbeee5ed2eaa1f815af",
+            "libtorchcodec_core6.so": "b594b381f57739f55ea7cf5508f914239031688c7b6f24715bbbe6f6248f4330",
+            "libtorchcodec_core7.so": "d96dfec40e43a041840ee54d94fa2976d37b4f988a4e74349d31c5ad5e618fb0",
+            "libtorchcodec_core8.so": "15b1be7367d55a51b14eb89acaddb23965d1ea3c5c007d749144a041ee69416d",
+            "libtorchcodec_core9.so": "10f63fde87fdd2487c3337b709ddd7156dd14a98d3bef07afb4404e4619235e4",
+            "libtorchcodec_custom_ops4.so": "c46d7a70cd9ccb162621bd1735c83700f562af31503e98be001abc37308eea7a",
+            "libtorchcodec_custom_ops5.so": "8e59753bcd6b521377b9d6c12a4cc5b0278cba5fda946b810f842e06c5729635",
+            "libtorchcodec_custom_ops6.so": "93b80b46738f76c6c0e6620df9c95788ecee9497aecbce4b5c63042e7de1bb24",
+            "libtorchcodec_custom_ops7.so": "78c2418773b06e9bf509d7b0b17d49e5362cfe4101d16d6ce96cb90ddcff9b7b",
+            "libtorchcodec_custom_ops8.so": "6bba67d520d2d5b146a745b822bf15dac1516490da5dd55ca03f0227c036d8c9",
+            "libtorchcodec_custom_ops9.so": "f0cce4454e2f1655dcd1ac356081bf85a3e9a0e0b033bd9a969f53eaf35a8f57",
+            "libtorchcodec_heic.so": "c0cbfdcafc685eb45201fa9f1cd44f475618106afaf9ae5802172d84d6916f7c",
+            "libtorchcodec_image.so": "377d9e8578729c4080cb4a582d98f4907cb9596b2c8b4ecd7fdffbd3c808c1f9",
+            "libtorchcodec_pybind_ops.so": "77d31010ad10fc1e6e5a1d24bdbfaaad35a952aa480d31a88c3295881ebd57e7"
+          }
+        },
+        "final_state_sha256": "fe6cf8faa80375b4dfb93679beea68d9d2d54b572d6a178f1f9eeb52759a6b69",
+        "finished_utc": "2026-10-07T18:27:47.324449+00:00",
+        "run_id": "20261007_140342",
+        "schema": "frame-alignment-attempt-v1",
+        "started_utc": "2026-10-07T18:07:10.591744+00:00",
+        "status": "completed"
+      },
+      "decode": {
+        "all_videos_decoded": true,
+        "audit_version": 2,
+        "complete": true,
+        "created_utc": "2026-10-07T16:41:18.885189+00:00",
+        "decoder_signature": {
+          "allow_cpu_fallback": true,
+          "gpu_id": 0,
+          "method": "demux_decode_eos_native_frames_v3",
+          "pyav_version": "18.1.0",
+          "pynvvideocodec_version": "2.2.3",
+          "requested_backend": "nvdec"
+        },
+        "input_fingerprint": "71c40620653ad663cb215a8ec25b554f7fed3fdd9cdb26cb01c9fe3d5c3d410a",
+        "output_sha256": {
+          "decode_audit.csv": "703edc2389cc0bc7ef712697d547604a5250be364d42752d05352efc31888a5f",
+          "decode_audit_summary.csv": "8d97fa93a3fbb74d8e0eba9a8f1d65de9879db35ea279e0e55c7f97609034cb3",
+          "labelled_video_decode_audit.csv": "943f1b669332c2815a0278f359b74ba89e337124afab4cdd8390f8dfe1115b56",
+          "unlabelled_video_decode_audit.csv": "59863d8ed068a49a29233956d6c9dc4a3e57bb9e6e129235dd9d1e7dc66388ed"
+        },
+        "report_fingerprint": "575452dc9390f541254c7d33962a0a7b5162c62355cfffaaa7f4e64742d497f3",
+        "source_fingerprint_method": "SHA-256 of paths, sizes, mtimes and decoder settings; not video bytes",
+        "video_count": 117,
+        "videos_needing_review": 0
+      },
+      "manifest": {
+        "cache_version": 1,
+        "complete": true,
+        "created_utc": "2026-10-01T20:09:39.933059+00:00",
+        "csv_sha256": "2fc36b776a9b9947d9e8b3d61f976efb1b0f7809016e5f8698d998a4fa115cbc",
+        "input_fingerprint": "92c5b126bdd9c5ad641292276ab4dc426fa6c1295cb22e50220cd68550fa32b4",
+        "video_count": 117
+      }
+    }
+  },
+  "schema_version": 2,
+  "semantic_config_fingerprint": "54ef48dbe44ea9c31de70811723c63dc0639fa4d1931cddf70a9ca4b28c4d4da"
+}

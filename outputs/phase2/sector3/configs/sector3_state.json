@@ -16,6 +16,11 @@
       "sha256": "caf919b46e9b83ba3ace0640b6191e61cf5b8682a72dfa49df20d30e9c7e7001"
     },
     {
+      "bytes": 92120,
+      "relative_path": "configs/sector3_config_20261008T005918205192Z.json",
+      "sha256": "70eabfbcbb7d9ab469b361ff390d234c8ddf1295fe86901924966b6844f6bc90"
+    },
+    {
       "bytes": 1262133,
       "relative_path": "reports/bbox_validation_report_20261002T004948788764Z.csv.gz",
       "sha256": "9d358e2ed1d9b916825932f63cb154f60e639c19f7a2d4748e357b8516d708fe"
@@ -161,11 +166,11 @@
       "sha256": "6ad3e35c38d33db77a0b954e480344e4c99f52304975e2c5ac74b4a4f9e20b0f"
     }
   ],
-  "changed_at_utc": "20261008T003651096340Z",
+  "changed_at_utc": "20261008T005918205192Z",
   "complete": true,
-  "config_snapshot": "configs/sector3_config_20261008T003651096340Z.json",
-  "content_id": "5d6312664ccd0c6fce0f9ab174a0b1b8c549607a75cc480d1c183e4223857fc9",
-  "core_source_sha256": "b148234c2c2173d5a4298f446dc2f55bfd87f79352d8413b6f637d812ca8421c",
+  "config_snapshot": "configs/sector3_config_20261008T005918205192Z.json",
+  "content_id": "ac08d1cac69e2da55186a6990f191adf4708b9e4a070dab2f38067a52765be08",
+  "core_source_sha256": "8aedd99df509c3504b382fc2190579c36f9e5fa49be6170776e59cb1ddd06e5a",
   "input_sha256": {
     "decode_audit.csv": "703edc2389cc0bc7ef712697d547604a5250be364d42752d05352efc31888a5f",
     "frame_alignment_confirmed.parquet": "6479d9514763443ae9e22ec7689a0ff0f0f25b5d4a97176be290e4024ce0bd3b",
@@ -173,9 +178,9 @@
     "video_manifest.csv": "2fc36b776a9b9947d9e8b3d61f976efb1b0f7809016e5f8698d998a4fa115cbc"
   },
   "obsolete_paths": [],
-  "processing_signature": "737fbda942e4b83829ac506a9eb11254457c373057c9989838214263dccbc393",
+  "processing_signature": "4e7402d0a72de284317c80b737ba48ff4491848658854fafa663631579ce8993",
   "schema_version": 2,
-  "semantic_config_fingerprint": "0733efa7f8f209a62f79b562218382c148774ca54fa5238e05b1d5db08425373",
+  "semantic_config_fingerprint": "54ef48dbe44ea9c31de70811723c63dc0639fa4d1931cddf70a9ca4b28c4d4da",
   "summary": {
     "fingerprint": "168886b922c6ec633c60ea1a2bd43b5d8f5f592aa6439848ec2591b220ae486d",
     "report_fingerprint": "eaeb9e5573c3784665ad029547960998750667e921f623ed6abe064a3ded6d51",
