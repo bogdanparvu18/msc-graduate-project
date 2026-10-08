@@ -6,6 +6,11 @@
       "sha256": "7c4b4196fd9ff1fe562266f980ef7274cdd56b7bfb6bf7c2281c1569b5449b9d"
     },
     {
+      "bytes": 52987,
+      "relative_path": "configs/sector4_config_20261008T185842263489Z.json",
+      "sha256": "5c0174af104cbdd0f1a712e0d0fbcec17ae9492ab553b24f4094abb899e62451"
+    },
+    {
       "bytes": 3904,
       "relative_path": "reports/class_split_support_report_20261008T183559937040Z.csv",
       "sha256": "e1ceec5fbf4ec2b9e29930e7682dbd5ee7d3e778fa2bb886da3267e1a8b97851"
@@ -24,6 +29,16 @@
       "bytes": 681,
       "relative_path": "reports/config_inheritance_report_20261008T183559937040Z_schema.json",
       "sha256": "2f1aaff5e88c382f2c955b41f7848df9d8542f0610af19c7ed07947193de991a"
+    },
+    {
+      "bytes": 14579,
+      "relative_path": "reports/config_inheritance_report_20261008T185842263489Z.csv",
+      "sha256": "d5497d426f535519612351d37068da2764b3c70b9463daf1d7093ee51858a42d"
+    },
+    {
+      "bytes": 681,
+      "relative_path": "reports/config_inheritance_report_20261008T185842263489Z_schema.json",
+      "sha256": "8a45924e48c82a05bb81ccbda5cd506dc1c1800fe3550cfdbf0fe57ace979889"
     },
     {
       "bytes": 195,
@@ -64,6 +79,11 @@
       "bytes": 44559,
       "relative_path": "reports/summary_20261008T183559937040Z.json",
       "sha256": "0ea2d9a7a92505ccca2b02b696aa62d900a5f45ee887452d72ea3684f9139f61"
+    },
+    {
+      "bytes": 44559,
+      "relative_path": "reports/summary_20261008T185842263489Z.json",
+      "sha256": "08b363dca4ebac7651f53d61c24968de6bf28867b1932f36dc708656799352c9"
     },
     {
       "bytes": 152,
@@ -136,10 +156,10 @@
       "sha256": "0e69af145f1b35e6b1bb41ef3d7d0d273f5b8f489cb0a4200f5e4b7a68ff6441"
     }
   ],
-  "changed_at_utc": "20261008T183559937040Z",
+  "changed_at_utc": "20261008T185842263489Z",
   "complete": true,
-  "config_snapshot": "configs/sector4_config_20261008T183559937040Z.json",
-  "content_id": "e5ef36a8a4d943331b4a4c0f4fd68719b3375c2cd82a10a8a875133f1349d14d",
+  "config_snapshot": "configs/sector4_config_20261008T185842263489Z.json",
+  "content_id": "28404b9a7e693ef9fd9030fc736f7d01cc4419c47fe7415602d46dc858fda11d",
   "core_source_sha256": "418de084ae3b3f303114d3a02241c9f361991b8bd43e2a7a15e405623ff084cb",
   "input_sha256": {
     "labelled_frame_manifest/relative_path": "62b052accac5ae4af35447e4acf67ee33a62d838d9611da484300aeb18965b06",
@@ -154,12 +174,12 @@
   "obsolete_paths": [],
   "processing_signature": "ea12b1752e841212652d25646d4e7094f741e87e886818bf46caf8f53ce165f9",
   "schema_version": 2,
-  "semantic_config_fingerprint": "15924be787989338917e622fae14b9e0cbb49864050b9c0ffe0da4b41c60e471",
+  "semantic_config_fingerprint": "1b25929a6356107deca80bc660b52b439f6999dd6155834d2a1375c35844b9ab",
   "summary": {
-    "fingerprint": "0ea2d9a7a92505ccca2b02b696aa62d900a5f45ee887452d72ea3684f9139f61",
+    "fingerprint": "08b363dca4ebac7651f53d61c24968de6bf28867b1932f36dc708656799352c9",
     "report_fingerprint": "d05fe2006e8fb2914b82a3e8dd359a8fb7d6af67bf6e1059dc4e459e46a29649",
     "report_relative_path": "reports/executive_report_20261008T183559937040Z.md",
-    "summary_relative_path": "reports/summary_20261008T183559937040Z.json"
+    "summary_relative_path": "reports/summary_20261008T185842263489Z.json"
   },
   "tables": {
     "class_split_support_report": {
@@ -168,9 +188,9 @@
       "schema_path": "reports/class_split_support_report_20261008T183559937040Z_schema.json"
     },
     "config_inheritance_report": {
-      "fingerprint": "69025997a1b8e338cd0db997c6e05a81919cced028bfcd4524c92741dfa185e7",
-      "relative_path": "reports/config_inheritance_report_20261008T183559937040Z.csv",
-      "schema_path": "reports/config_inheritance_report_20261008T183559937040Z_schema.json"
+      "fingerprint": "242d17d609f387134cd96e2e9ee169952c4697507af8e58b36b95de04b8ec54d",
+      "relative_path": "reports/config_inheritance_report_20261008T185842263489Z.csv",
+      "schema_path": "reports/config_inheritance_report_20261008T185842263489Z_schema.json"
     },
     "domain_adaptation_manifest": {
       "fingerprint": "3a4be0b7f31f7842985c10f7bd0ee4615a68fa3c3f19ab3d3f4c76b0244bfa38",

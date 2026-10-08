@@ -1,0 +1,1456 @@
+{
+  "changed_at_utc": "20261008T185842263489Z",
+  "effective_config": {
+    "clinical_group_map": {
+      "ampulla of vater": "anatomical_landmark",
+      "angiectasia": "vascular_lesion",
+      "blood fresh": "bleeding",
+      "blood hematin": "bleeding",
+      "erosion": "mucosal_lesion",
+      "erythema": "mucosal_lesion",
+      "foreign body": "foreign_body",
+      "ileocecal valve": "anatomical_landmark",
+      "lymphangiectasia": "lymphatic_lesion",
+      "normal clean mucosa": "normal_mucosa",
+      "polyp": "protruding_lesion",
+      "pylorus": "anatomical_landmark",
+      "reduced mucosal view": "visibility_limitation",
+      "ulcer": "mucosal_lesion"
+    },
+    "config_source": {
+      "git_commit": "9b82259ed75fce8eda7d0ae9c4e12c89ab671824",
+      "interpretation": "Provenance of the literal CONFIG definition read from Git. This is not evidence of the configuration used by a Sector 1 runtime. The consumed artifact bytes are identified separately by input_sha256.",
+      "kind": "sector1_notebook_literal_config",
+      "literal_config_sha256": "b64ff55faa72b5a37e87d8fc7bd5b9e84242d44575c10a271ed6cd24e66c750c",
+      "notebook": "notebooks/phase2/phase2_01_ingestion.ipynb",
+      "repository": "https://github.com/bogdanparvu18/msc-graduate-project.git"
+    },
+    "curated_data_dir": "data/curated/phase2",
+    "dataset_archive_repair_enabled": true,
+    "dataset_download_enabled": true,
+    "dataset_google_drive_folder_url": "https://drive.google.com/drive/folders/18vEHN1CG7oNFKdT2NmhtJjrFhb3tLG1Z",
+    "dataset_validation": {
+      "image_extensions": [
+        ".png",
+        ".jpg",
+        ".jpeg"
+      ],
+      "labelled_images_subdir": "labelled_images",
+      "minimum_labelled_images": 47238,
+      "minimum_video_files": 117,
+      "osf_storage_subdir": "osfstorage",
+      "required_metadata_file": "metadata.csv",
+      "video_extensions": [
+        ".avi",
+        ".mp4",
+        ".mkv"
+      ]
+    },
+    "decode_audit_allow_cpu_fallback": true,
+    "decode_audit_allow_cpu_startup_fallback": true,
+    "decode_audit_backend": "nvdec",
+    "decode_audit_copy_workers": 21,
+    "decode_audit_cpu_threads": 2,
+    "decode_audit_cpu_video_workers": 9,
+    "decode_audit_force_redecode": false,
+    "decode_audit_gpu_id": 0,
+    "decode_audit_local_work_dir": "/content/video_decode_audit_work",
+    "decode_audit_prefetch_videos": 21,
+    "decode_audit_published_reference_frames": {
+      "all_videos": 4741504,
+      "fully_unlabelled": 2785829,
+      "partially_labelled": 1955675
+    },
+    "decode_audit_retry_failed": true,
+    "decode_audit_retry_video_keys": [],
+    "decode_audit_stage_video_locally": true,
+    "decode_audit_staging_budget_mib": "auto",
+    "decode_audit_staging_min_free_mib": 4096,
+    "decode_audit_video_workers": 9,
+    "domain_adaptation_enabled": true,
+    "domain_adaptation_include_fully_unlabelled_videos": true,
+    "domain_adaptation_include_train_video_unlabelled_frames": true,
+    "domain_adaptation_sampling_seconds": 0.5,
+    "expected_classes": 14,
+    "expected_export_container_fps": 30.0,
+    "expected_labelled_frames": 47238,
+    "expected_labelled_videos": 43,
+    "expected_total_extractable_frames": 4741504,
+    "expected_total_videos": 117,
+    "expected_unlabelled_frames": 4694266,
+    "expected_unlabelled_videos": 74,
+    "frame_alignment_allow_cpu_fallback": true,
+    "frame_alignment_copy_workers": 6,
+    "frame_alignment_cpu_memory_budget_mib": 512,
+    "frame_alignment_cpu_video_workers": 4,
+    "frame_alignment_cuda_backend": "auto",
+    "frame_alignment_cuda_device": "cuda:0",
+    "frame_alignment_define_only": false,
+    "frame_alignment_force_rescore": false,
+    "frame_alignment_hash_source_bytes": false,
+    "frame_alignment_image_workers": 16,
+    "frame_alignment_local_disk_reserve_gib": 2.0,
+    "frame_alignment_local_work_dir": "/content/frame_alignment_cuda_work",
+    "frame_alignment_mapping_batch_size": 16,
+    "frame_alignment_min_margin": 0.005,
+    "frame_alignment_min_ssim": 0.92,
+    "frame_alignment_reference_apply_exif_orientation": true,
+    "frame_alignment_reference_decoder": "gpu_preferred",
+    "frame_alignment_reference_fancy_upsampling": true,
+    "frame_alignment_retry_failed": true,
+    "frame_alignment_retry_video_keys": [],
+    "frame_alignment_show_progress": true,
+    "frame_alignment_ssim_batch_size": 16,
+    "frame_alignment_stage_video_locally": true,
+    "frame_alignment_video_workers": "all",
+    "frame_alignment_vram_budget_fraction": 0.85,
+    "frame_index_offset_candidates": [
+      -1,
+      0,
+      1
+    ],
+    "github": {
+      "allow_local_test_remote": false,
+      "allowed_extensions": [
+        ".json",
+        ".csv",
+        ".md",
+        ".txt"
+      ],
+      "author_email": "bparvu@lakeheadu.ca",
+      "author_name": "Bogdan Parvu",
+      "branch": "main",
+      "commit_message": "Phase 2 Sector 4: publish frame splits and domain-adaptation manifests",
+      "config_notebook_name": "phase2_01_ingestion.ipynb",
+      "config_output_filename": "phase2_01_ingestion_{run_id}_config.json",
+      "dataset_audit_excluded_artifacts": [
+        "physical_image_inventory",
+        "metadata_clean"
+      ],
+      "dataset_audit_subdir": "dataset_audit",
+      "dry_run": false,
+      "github_username": "bogdanparvu18",
+      "local_repo_dir": "/content/msc-graduate-project",
+      "max_file_size_mib": 20,
+      "output_groups": [
+        "configs",
+        "results",
+        "reports"
+      ],
+      "output_include_patterns": {
+        "configs": [
+          "phase2_01_ingestion_*_config.json"
+        ],
+        "reports": [
+          "archive_repair/**"
+        ]
+      },
+      "push": true,
+      "repo_output_dir": "outputs/phase2/sector4",
+      "repo_url": "https://github.com/bogdanparvu18/msc-graduate-project.git",
+      "token_secret_name": "GITHUB_TOKEN"
+    },
+    "interim_data_dir": "data/interim/phase2",
+    "min_frames_per_class_per_split": 1,
+    "output_dir": "outputs/phase2",
+    "phase": 2,
+    "raw_data_dir": "data/raw/kvasir_capsule",
+    "require_all_classes_in_all_splits": true,
+    "run_id_format": "%Y%m%d_%H%M%S",
+    "sector": 4,
+    "sector2_overrides": {
+      "decode_audit_allow_cpu_fallback": true,
+      "decode_audit_allow_cpu_startup_fallback": true,
+      "decode_audit_backend": "nvdec",
+      "decode_audit_copy_workers": 21,
+      "decode_audit_cpu_threads": 2,
+      "decode_audit_cpu_video_workers": 9,
+      "decode_audit_force_redecode": false,
+      "decode_audit_gpu_id": 0,
+      "decode_audit_local_work_dir": "/content/video_decode_audit_work",
+      "decode_audit_prefetch_videos": 21,
+      "decode_audit_published_reference_frames": {
+        "all_videos": 4741504,
+        "fully_unlabelled": 2785829,
+        "partially_labelled": 1955675
+      },
+      "decode_audit_retry_failed": true,
+      "decode_audit_retry_video_keys": [],
+      "decode_audit_stage_video_locally": true,
+      "decode_audit_staging_budget_mib": "auto",
+      "decode_audit_staging_min_free_mib": 4096,
+      "decode_audit_video_workers": 9,
+      "expected_classes": 14,
+      "expected_export_container_fps": 30.0,
+      "expected_labelled_frames": 47238,
+      "expected_labelled_videos": 43,
+      "expected_total_extractable_frames": 4741504,
+      "expected_total_videos": 117,
+      "expected_unlabelled_frames": 4694266,
+      "expected_unlabelled_videos": 74,
+      "frame_alignment_allow_cpu_fallback": true,
+      "frame_alignment_copy_workers": 6,
+      "frame_alignment_cpu_memory_budget_mib": 512,
+      "frame_alignment_cpu_video_workers": 4,
+      "frame_alignment_cuda_backend": "auto",
+      "frame_alignment_cuda_device": "cuda:0",
+      "frame_alignment_define_only": false,
+      "frame_alignment_force_rescore": false,
+      "frame_alignment_hash_source_bytes": false,
+      "frame_alignment_image_workers": 16,
+      "frame_alignment_local_disk_reserve_gib": 2.0,
+      "frame_alignment_local_work_dir": "/content/frame_alignment_cuda_work",
+      "frame_alignment_mapping_batch_size": 16,
+      "frame_alignment_min_margin": 0.005,
+      "frame_alignment_min_ssim": 0.92,
+      "frame_alignment_reference_apply_exif_orientation": true,
+      "frame_alignment_reference_decoder": "gpu_preferred",
+      "frame_alignment_reference_fancy_upsampling": true,
+      "frame_alignment_retry_failed": true,
+      "frame_alignment_retry_video_keys": [],
+      "frame_alignment_show_progress": true,
+      "frame_alignment_ssim_batch_size": 16,
+      "frame_alignment_stage_video_locally": true,
+      "frame_alignment_video_workers": "all",
+      "frame_alignment_vram_budget_fraction": 0.85,
+      "frame_index_offset_candidates": [
+        -1,
+        0,
+        1
+      ]
+    },
+    "sector3": {
+      "config_overrides": {},
+      "dry_run": false,
+      "export_dir": "outputs/phase2/sector3",
+      "local_output_dir": "outputs/phase2/sector3",
+      "push": true,
+      "require_any_bbox": true,
+      "require_valid_bbox": true,
+      "verify_all_upstream_reports": false
+    },
+    "sector4": {
+      "dry_run": false,
+      "export_dir": "outputs/phase2/sector4",
+      "local_output_dir": "outputs/phase2/sector4",
+      "push": true,
+      "recover_invalid_outputs": true
+    },
+    "seed": 42,
+    "source_storage_root": "/content/drive/MyDrive/MMVQA_Clinical",
+    "source_storage_roots": {
+      "sector1": "/content/drive/MyDrive/MMVQA_Clinical",
+      "sector2": "/content/drive/MyDrive/MMVQA_Clinical"
+    },
+    "split_strategy": "frame_level_constrained_multilabel",
+    "storage_backend": "google_drive",
+    "storage_root": "/content/drive/MyDrive/MMVQA_Clinical",
+    "test_fraction": 0.15,
+    "timezone": "America/Toronto",
+    "train_fraction": 0.7,
+    "validation_fraction": 0.15
+  },
+  "lineage": {
+    "config_conflict_report": {
+      "columns": [
+        "config_key",
+        "sector3_value",
+        "sector4_value",
+        "resolution"
+      ],
+      "dtypes": {
+        "config_key": "string",
+        "resolution": "string",
+        "sector3_value": "string",
+        "sector4_value": "string"
+      },
+      "records": [
+        {
+          "config_key": "clinical_group_map.ampulla of vater",
+          "resolution": "inherited",
+          "sector3_value": "\"anatomical_landmark\"",
+          "sector4_value": "\"anatomical_landmark\""
+        },
+        {
+          "config_key": "clinical_group_map.angiectasia",
+          "resolution": "inherited",
+          "sector3_value": "\"vascular_lesion\"",
+          "sector4_value": "\"vascular_lesion\""
+        },
+        {
+          "config_key": "clinical_group_map.blood fresh",
+          "resolution": "inherited",
+          "sector3_value": "\"bleeding\"",
+          "sector4_value": "\"bleeding\""
+        },
+        {
+          "config_key": "clinical_group_map.blood hematin",
+          "resolution": "inherited",
+          "sector3_value": "\"bleeding\"",
+          "sector4_value": "\"bleeding\""
+        },
+        {
+          "config_key": "clinical_group_map.erosion",
+          "resolution": "inherited",
+          "sector3_value": "\"mucosal_lesion\"",
+          "sector4_value": "\"mucosal_lesion\""
+        },
+        {
+          "config_key": "clinical_group_map.erythema",
+          "resolution": "inherited",
+          "sector3_value": "\"mucosal_lesion\"",
+          "sector4_value": "\"mucosal_lesion\""
+        },
+        {
+          "config_key": "clinical_group_map.foreign body",
+          "resolution": "inherited",
+          "sector3_value": "\"foreign_body\"",
+          "sector4_value": "\"foreign_body\""
+        },
+        {
+          "config_key": "clinical_group_map.ileocecal valve",
+          "resolution": "inherited",
+          "sector3_value": "\"anatomical_landmark\"",
+          "sector4_value": "\"anatomical_landmark\""
+        },
+        {
+          "config_key": "clinical_group_map.lymphangiectasia",
+          "resolution": "inherited",
+          "sector3_value": "\"lymphatic_lesion\"",
+          "sector4_value": "\"lymphatic_lesion\""
+        },
+        {
+          "config_key": "clinical_group_map.normal clean mucosa",
+          "resolution": "inherited",
+          "sector3_value": "\"normal_mucosa\"",
+          "sector4_value": "\"normal_mucosa\""
+        },
+        {
+          "config_key": "clinical_group_map.polyp",
+          "resolution": "inherited",
+          "sector3_value": "\"protruding_lesion\"",
+          "sector4_value": "\"protruding_lesion\""
+        },
+        {
+          "config_key": "clinical_group_map.pylorus",
+          "resolution": "inherited",
+          "sector3_value": "\"anatomical_landmark\"",
+          "sector4_value": "\"anatomical_landmark\""
+        },
+        {
+          "config_key": "clinical_group_map.reduced mucosal view",
+          "resolution": "inherited",
+          "sector3_value": "\"visibility_limitation\"",
+          "sector4_value": "\"visibility_limitation\""
+        },
+        {
+          "config_key": "clinical_group_map.ulcer",
+          "resolution": "inherited",
+          "sector3_value": "\"mucosal_lesion\"",
+          "sector4_value": "\"mucosal_lesion\""
+        },
+        {
+          "config_key": "config_source.git_commit",
+          "resolution": "inherited",
+          "sector3_value": "\"9b82259ed75fce8eda7d0ae9c4e12c89ab671824\"",
+          "sector4_value": "\"9b82259ed75fce8eda7d0ae9c4e12c89ab671824\""
+        },
+        {
+          "config_key": "config_source.interpretation",
+          "resolution": "inherited",
+          "sector3_value": "\"Provenance of the literal CONFIG definition read from Git. This is not evidence of the configuration used by a Sector 1 runtime. The consumed artifact bytes are identified separately by input_sha256.\"",
+          "sector4_value": "\"Provenance of the literal CONFIG definition read from Git. This is not evidence of the configuration used by a Sector 1 runtime. The consumed artifact bytes are identified separately by input_sha256.\""
+        },
+        {
+          "config_key": "config_source.kind",
+          "resolution": "inherited",
+          "sector3_value": "\"sector1_notebook_literal_config\"",
+          "sector4_value": "\"sector1_notebook_literal_config\""
+        },
+        {
+          "config_key": "config_source.literal_config_sha256",
+          "resolution": "inherited",
+          "sector3_value": "\"b64ff55faa72b5a37e87d8fc7bd5b9e84242d44575c10a271ed6cd24e66c750c\"",
+          "sector4_value": "\"b64ff55faa72b5a37e87d8fc7bd5b9e84242d44575c10a271ed6cd24e66c750c\""
+        },
+        {
+          "config_key": "config_source.notebook",
+          "resolution": "inherited",
+          "sector3_value": "\"notebooks/phase2/phase2_01_ingestion.ipynb\"",
+          "sector4_value": "\"notebooks/phase2/phase2_01_ingestion.ipynb\""
+        },
+        {
+          "config_key": "config_source.repository",
+          "resolution": "inherited",
+          "sector3_value": "\"https://github.com/bogdanparvu18/msc-graduate-project.git\"",
+          "sector4_value": "\"https://github.com/bogdanparvu18/msc-graduate-project.git\""
+        },
+        {
+          "config_key": "curated_data_dir",
+          "resolution": "inherited",
+          "sector3_value": "\"data/curated/phase2\"",
+          "sector4_value": "\"data/curated/phase2\""
+        },
+        {
+          "config_key": "dataset_archive_repair_enabled",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "dataset_download_enabled",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "dataset_google_drive_folder_url",
+          "resolution": "inherited",
+          "sector3_value": "\"https://drive.google.com/drive/folders/18vEHN1CG7oNFKdT2NmhtJjrFhb3tLG1Z\"",
+          "sector4_value": "\"https://drive.google.com/drive/folders/18vEHN1CG7oNFKdT2NmhtJjrFhb3tLG1Z\""
+        },
+        {
+          "config_key": "dataset_validation.image_extensions",
+          "resolution": "inherited",
+          "sector3_value": "[\".png\",\".jpg\",\".jpeg\"]",
+          "sector4_value": "[\".png\",\".jpg\",\".jpeg\"]"
+        },
+        {
+          "config_key": "dataset_validation.labelled_images_subdir",
+          "resolution": "inherited",
+          "sector3_value": "\"labelled_images\"",
+          "sector4_value": "\"labelled_images\""
+        },
+        {
+          "config_key": "dataset_validation.minimum_labelled_images",
+          "resolution": "inherited",
+          "sector3_value": "47238",
+          "sector4_value": "47238"
+        },
+        {
+          "config_key": "dataset_validation.minimum_video_files",
+          "resolution": "inherited",
+          "sector3_value": "117",
+          "sector4_value": "117"
+        },
+        {
+          "config_key": "dataset_validation.osf_storage_subdir",
+          "resolution": "inherited",
+          "sector3_value": "\"osfstorage\"",
+          "sector4_value": "\"osfstorage\""
+        },
+        {
+          "config_key": "dataset_validation.required_metadata_file",
+          "resolution": "inherited",
+          "sector3_value": "\"metadata.csv\"",
+          "sector4_value": "\"metadata.csv\""
+        },
+        {
+          "config_key": "dataset_validation.video_extensions",
+          "resolution": "inherited",
+          "sector3_value": "[\".avi\",\".mp4\",\".mkv\"]",
+          "sector4_value": "[\".avi\",\".mp4\",\".mkv\"]"
+        },
+        {
+          "config_key": "decode_audit_allow_cpu_fallback",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "decode_audit_allow_cpu_startup_fallback",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "decode_audit_backend",
+          "resolution": "inherited",
+          "sector3_value": "\"nvdec\"",
+          "sector4_value": "\"nvdec\""
+        },
+        {
+          "config_key": "decode_audit_copy_workers",
+          "resolution": "inherited",
+          "sector3_value": "21",
+          "sector4_value": "21"
+        },
+        {
+          "config_key": "decode_audit_cpu_threads",
+          "resolution": "inherited",
+          "sector3_value": "2",
+          "sector4_value": "2"
+        },
+        {
+          "config_key": "decode_audit_cpu_video_workers",
+          "resolution": "inherited",
+          "sector3_value": "9",
+          "sector4_value": "9"
+        },
+        {
+          "config_key": "decode_audit_force_redecode",
+          "resolution": "inherited",
+          "sector3_value": "false",
+          "sector4_value": "false"
+        },
+        {
+          "config_key": "decode_audit_gpu_id",
+          "resolution": "inherited",
+          "sector3_value": "0",
+          "sector4_value": "0"
+        },
+        {
+          "config_key": "decode_audit_local_work_dir",
+          "resolution": "inherited",
+          "sector3_value": "\"/content/video_decode_audit_work\"",
+          "sector4_value": "\"/content/video_decode_audit_work\""
+        },
+        {
+          "config_key": "decode_audit_prefetch_videos",
+          "resolution": "inherited",
+          "sector3_value": "21",
+          "sector4_value": "21"
+        },
+        {
+          "config_key": "decode_audit_published_reference_frames.all_videos",
+          "resolution": "inherited",
+          "sector3_value": "4741504",
+          "sector4_value": "4741504"
+        },
+        {
+          "config_key": "decode_audit_published_reference_frames.fully_unlabelled",
+          "resolution": "inherited",
+          "sector3_value": "2785829",
+          "sector4_value": "2785829"
+        },
+        {
+          "config_key": "decode_audit_published_reference_frames.partially_labelled",
+          "resolution": "inherited",
+          "sector3_value": "1955675",
+          "sector4_value": "1955675"
+        },
+        {
+          "config_key": "decode_audit_retry_failed",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "decode_audit_retry_video_keys",
+          "resolution": "inherited",
+          "sector3_value": "[]",
+          "sector4_value": "[]"
+        },
+        {
+          "config_key": "decode_audit_stage_video_locally",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "decode_audit_staging_budget_mib",
+          "resolution": "inherited",
+          "sector3_value": "\"auto\"",
+          "sector4_value": "\"auto\""
+        },
+        {
+          "config_key": "decode_audit_staging_min_free_mib",
+          "resolution": "inherited",
+          "sector3_value": "4096",
+          "sector4_value": "4096"
+        },
+        {
+          "config_key": "decode_audit_video_workers",
+          "resolution": "inherited",
+          "sector3_value": "9",
+          "sector4_value": "9"
+        },
+        {
+          "config_key": "domain_adaptation_enabled",
+          "resolution": "sector4_override",
+          "sector3_value": "\"<not declared>\"",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "domain_adaptation_include_fully_unlabelled_videos",
+          "resolution": "sector4_override",
+          "sector3_value": "\"<not declared>\"",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "domain_adaptation_include_train_video_unlabelled_frames",
+          "resolution": "sector4_override",
+          "sector3_value": "\"<not declared>\"",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "domain_adaptation_sampling_seconds",
+          "resolution": "sector4_override",
+          "sector3_value": "\"<not declared>\"",
+          "sector4_value": "0.5"
+        },
+        {
+          "config_key": "expected_classes",
+          "resolution": "inherited",
+          "sector3_value": "14",
+          "sector4_value": "14"
+        },
+        {
+          "config_key": "expected_export_container_fps",
+          "resolution": "inherited",
+          "sector3_value": "30.0",
+          "sector4_value": "30.0"
+        },
+        {
+          "config_key": "expected_labelled_frames",
+          "resolution": "inherited",
+          "sector3_value": "47238",
+          "sector4_value": "47238"
+        },
+        {
+          "config_key": "expected_labelled_videos",
+          "resolution": "inherited",
+          "sector3_value": "43",
+          "sector4_value": "43"
+        },
+        {
+          "config_key": "expected_total_extractable_frames",
+          "resolution": "inherited",
+          "sector3_value": "4741504",
+          "sector4_value": "4741504"
+        },
+        {
+          "config_key": "expected_total_videos",
+          "resolution": "inherited",
+          "sector3_value": "117",
+          "sector4_value": "117"
+        },
+        {
+          "config_key": "expected_unlabelled_frames",
+          "resolution": "inherited",
+          "sector3_value": "4694266",
+          "sector4_value": "4694266"
+        },
+        {
+          "config_key": "expected_unlabelled_videos",
+          "resolution": "inherited",
+          "sector3_value": "74",
+          "sector4_value": "74"
+        },
+        {
+          "config_key": "frame_alignment_allow_cpu_fallback",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "frame_alignment_copy_workers",
+          "resolution": "inherited",
+          "sector3_value": "6",
+          "sector4_value": "6"
+        },
+        {
+          "config_key": "frame_alignment_cpu_memory_budget_mib",
+          "resolution": "inherited",
+          "sector3_value": "512",
+          "sector4_value": "512"
+        },
+        {
+          "config_key": "frame_alignment_cpu_video_workers",
+          "resolution": "inherited",
+          "sector3_value": "4",
+          "sector4_value": "4"
+        },
+        {
+          "config_key": "frame_alignment_cuda_backend",
+          "resolution": "inherited",
+          "sector3_value": "\"auto\"",
+          "sector4_value": "\"auto\""
+        },
+        {
+          "config_key": "frame_alignment_cuda_device",
+          "resolution": "inherited",
+          "sector3_value": "\"cuda:0\"",
+          "sector4_value": "\"cuda:0\""
+        },
+        {
+          "config_key": "frame_alignment_define_only",
+          "resolution": "inherited",
+          "sector3_value": "false",
+          "sector4_value": "false"
+        },
+        {
+          "config_key": "frame_alignment_force_rescore",
+          "resolution": "inherited",
+          "sector3_value": "false",
+          "sector4_value": "false"
+        },
+        {
+          "config_key": "frame_alignment_hash_source_bytes",
+          "resolution": "inherited",
+          "sector3_value": "false",
+          "sector4_value": "false"
+        },
+        {
+          "config_key": "frame_alignment_image_workers",
+          "resolution": "inherited",
+          "sector3_value": "16",
+          "sector4_value": "16"
+        },
+        {
+          "config_key": "frame_alignment_local_disk_reserve_gib",
+          "resolution": "inherited",
+          "sector3_value": "2.0",
+          "sector4_value": "2.0"
+        },
+        {
+          "config_key": "frame_alignment_local_work_dir",
+          "resolution": "inherited",
+          "sector3_value": "\"/content/frame_alignment_cuda_work\"",
+          "sector4_value": "\"/content/frame_alignment_cuda_work\""
+        },
+        {
+          "config_key": "frame_alignment_mapping_batch_size",
+          "resolution": "inherited",
+          "sector3_value": "16",
+          "sector4_value": "16"
+        },
+        {
+          "config_key": "frame_alignment_min_margin",
+          "resolution": "inherited",
+          "sector3_value": "0.005",
+          "sector4_value": "0.005"
+        },
+        {
+          "config_key": "frame_alignment_min_ssim",
+          "resolution": "inherited",
+          "sector3_value": "0.92",
+          "sector4_value": "0.92"
+        },
+        {
+          "config_key": "frame_alignment_reference_apply_exif_orientation",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "frame_alignment_reference_decoder",
+          "resolution": "inherited",
+          "sector3_value": "\"gpu_preferred\"",
+          "sector4_value": "\"gpu_preferred\""
+        },
+        {
+          "config_key": "frame_alignment_reference_fancy_upsampling",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "frame_alignment_retry_failed",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "frame_alignment_retry_video_keys",
+          "resolution": "inherited",
+          "sector3_value": "[]",
+          "sector4_value": "[]"
+        },
+        {
+          "config_key": "frame_alignment_show_progress",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "frame_alignment_ssim_batch_size",
+          "resolution": "inherited",
+          "sector3_value": "16",
+          "sector4_value": "16"
+        },
+        {
+          "config_key": "frame_alignment_stage_video_locally",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "frame_alignment_video_workers",
+          "resolution": "inherited",
+          "sector3_value": "\"all\"",
+          "sector4_value": "\"all\""
+        },
+        {
+          "config_key": "frame_alignment_vram_budget_fraction",
+          "resolution": "inherited",
+          "sector3_value": "0.85",
+          "sector4_value": "0.85"
+        },
+        {
+          "config_key": "frame_index_offset_candidates",
+          "resolution": "inherited",
+          "sector3_value": "[-1,0,1]",
+          "sector4_value": "[-1,0,1]"
+        },
+        {
+          "config_key": "github.allow_local_test_remote",
+          "resolution": "inherited",
+          "sector3_value": "false",
+          "sector4_value": "false"
+        },
+        {
+          "config_key": "github.allowed_extensions",
+          "resolution": "inherited",
+          "sector3_value": "[\".json\",\".csv\",\".md\",\".txt\"]",
+          "sector4_value": "[\".json\",\".csv\",\".md\",\".txt\"]"
+        },
+        {
+          "config_key": "github.author_email",
+          "resolution": "inherited",
+          "sector3_value": "\"bparvu@lakeheadu.ca\"",
+          "sector4_value": "\"bparvu@lakeheadu.ca\""
+        },
+        {
+          "config_key": "github.author_name",
+          "resolution": "inherited",
+          "sector3_value": "\"Bogdan Parvu\"",
+          "sector4_value": "\"Bogdan Parvu\""
+        },
+        {
+          "config_key": "github.branch",
+          "resolution": "inherited",
+          "sector3_value": "\"main\"",
+          "sector4_value": "\"main\""
+        },
+        {
+          "config_key": "github.commit_message",
+          "resolution": "sector4_override",
+          "sector3_value": "\"Phase 2 Sector 3: publish labelled-frame manifest and clinical audits\"",
+          "sector4_value": "\"Phase 2 Sector 4: publish frame splits and domain-adaptation manifests\""
+        },
+        {
+          "config_key": "github.config_notebook_name",
+          "resolution": "inherited",
+          "sector3_value": "\"phase2_01_ingestion.ipynb\"",
+          "sector4_value": "\"phase2_01_ingestion.ipynb\""
+        },
+        {
+          "config_key": "github.config_output_filename",
+          "resolution": "inherited",
+          "sector3_value": "\"phase2_01_ingestion_{run_id}_config.json\"",
+          "sector4_value": "\"phase2_01_ingestion_{run_id}_config.json\""
+        },
+        {
+          "config_key": "github.dataset_audit_excluded_artifacts",
+          "resolution": "inherited",
+          "sector3_value": "[\"physical_image_inventory\",\"metadata_clean\"]",
+          "sector4_value": "[\"physical_image_inventory\",\"metadata_clean\"]"
+        },
+        {
+          "config_key": "github.dataset_audit_subdir",
+          "resolution": "inherited",
+          "sector3_value": "\"dataset_audit\"",
+          "sector4_value": "\"dataset_audit\""
+        },
+        {
+          "config_key": "github.dry_run",
+          "resolution": "inherited",
+          "sector3_value": "false",
+          "sector4_value": "false"
+        },
+        {
+          "config_key": "github.github_username",
+          "resolution": "inherited",
+          "sector3_value": "\"bogdanparvu18\"",
+          "sector4_value": "\"bogdanparvu18\""
+        },
+        {
+          "config_key": "github.local_repo_dir",
+          "resolution": "inherited",
+          "sector3_value": "\"/content/msc-graduate-project\"",
+          "sector4_value": "\"/content/msc-graduate-project\""
+        },
+        {
+          "config_key": "github.max_file_size_mib",
+          "resolution": "inherited",
+          "sector3_value": "20",
+          "sector4_value": "20"
+        },
+        {
+          "config_key": "github.output_groups",
+          "resolution": "inherited",
+          "sector3_value": "[\"configs\",\"results\",\"reports\"]",
+          "sector4_value": "[\"configs\",\"results\",\"reports\"]"
+        },
+        {
+          "config_key": "github.output_include_patterns.configs",
+          "resolution": "inherited",
+          "sector3_value": "[\"phase2_01_ingestion_*_config.json\"]",
+          "sector4_value": "[\"phase2_01_ingestion_*_config.json\"]"
+        },
+        {
+          "config_key": "github.output_include_patterns.reports",
+          "resolution": "inherited",
+          "sector3_value": "[\"archive_repair/**\"]",
+          "sector4_value": "[\"archive_repair/**\"]"
+        },
+        {
+          "config_key": "github.push",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "github.repo_output_dir",
+          "resolution": "sector4_override",
+          "sector3_value": "\"outputs/phase2/sector3\"",
+          "sector4_value": "\"outputs/phase2/sector4\""
+        },
+        {
+          "config_key": "github.repo_url",
+          "resolution": "inherited",
+          "sector3_value": "\"https://github.com/bogdanparvu18/msc-graduate-project.git\"",
+          "sector4_value": "\"https://github.com/bogdanparvu18/msc-graduate-project.git\""
+        },
+        {
+          "config_key": "github.token_secret_name",
+          "resolution": "inherited",
+          "sector3_value": "\"GITHUB_TOKEN\"",
+          "sector4_value": "\"GITHUB_TOKEN\""
+        },
+        {
+          "config_key": "interim_data_dir",
+          "resolution": "inherited",
+          "sector3_value": "\"data/interim/phase2\"",
+          "sector4_value": "\"data/interim/phase2\""
+        },
+        {
+          "config_key": "min_frames_per_class_per_split",
+          "resolution": "sector4_override",
+          "sector3_value": "\"<not declared>\"",
+          "sector4_value": "1"
+        },
+        {
+          "config_key": "output_dir",
+          "resolution": "inherited",
+          "sector3_value": "\"outputs/phase2\"",
+          "sector4_value": "\"outputs/phase2\""
+        },
+        {
+          "config_key": "phase",
+          "resolution": "inherited",
+          "sector3_value": "2",
+          "sector4_value": "2"
+        },
+        {
+          "config_key": "raw_data_dir",
+          "resolution": "inherited",
+          "sector3_value": "\"data/raw/kvasir_capsule\"",
+          "sector4_value": "\"data/raw/kvasir_capsule\""
+        },
+        {
+          "config_key": "require_all_classes_in_all_splits",
+          "resolution": "sector4_override",
+          "sector3_value": "\"<not declared>\"",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "run_id_format",
+          "resolution": "inherited",
+          "sector3_value": "\"%Y%m%d_%H%M%S\"",
+          "sector4_value": "\"%Y%m%d_%H%M%S\""
+        },
+        {
+          "config_key": "sector",
+          "resolution": "sector4_override",
+          "sector3_value": "3",
+          "sector4_value": "4"
+        },
+        {
+          "config_key": "sector2_overrides.decode_audit_allow_cpu_fallback",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "sector2_overrides.decode_audit_allow_cpu_startup_fallback",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "sector2_overrides.decode_audit_backend",
+          "resolution": "inherited",
+          "sector3_value": "\"nvdec\"",
+          "sector4_value": "\"nvdec\""
+        },
+        {
+          "config_key": "sector2_overrides.decode_audit_copy_workers",
+          "resolution": "inherited",
+          "sector3_value": "21",
+          "sector4_value": "21"
+        },
+        {
+          "config_key": "sector2_overrides.decode_audit_cpu_threads",
+          "resolution": "inherited",
+          "sector3_value": "2",
+          "sector4_value": "2"
+        },
+        {
+          "config_key": "sector2_overrides.decode_audit_cpu_video_workers",
+          "resolution": "inherited",
+          "sector3_value": "9",
+          "sector4_value": "9"
+        },
+        {
+          "config_key": "sector2_overrides.decode_audit_force_redecode",
+          "resolution": "inherited",
+          "sector3_value": "false",
+          "sector4_value": "false"
+        },
+        {
+          "config_key": "sector2_overrides.decode_audit_gpu_id",
+          "resolution": "inherited",
+          "sector3_value": "0",
+          "sector4_value": "0"
+        },
+        {
+          "config_key": "sector2_overrides.decode_audit_local_work_dir",
+          "resolution": "inherited",
+          "sector3_value": "\"/content/video_decode_audit_work\"",
+          "sector4_value": "\"/content/video_decode_audit_work\""
+        },
+        {
+          "config_key": "sector2_overrides.decode_audit_prefetch_videos",
+          "resolution": "inherited",
+          "sector3_value": "21",
+          "sector4_value": "21"
+        },
+        {
+          "config_key": "sector2_overrides.decode_audit_published_reference_frames.all_videos",
+          "resolution": "inherited",
+          "sector3_value": "4741504",
+          "sector4_value": "4741504"
+        },
+        {
+          "config_key": "sector2_overrides.decode_audit_published_reference_frames.fully_unlabelled",
+          "resolution": "inherited",
+          "sector3_value": "2785829",
+          "sector4_value": "2785829"
+        },
+        {
+          "config_key": "sector2_overrides.decode_audit_published_reference_frames.partially_labelled",
+          "resolution": "inherited",
+          "sector3_value": "1955675",
+          "sector4_value": "1955675"
+        },
+        {
+          "config_key": "sector2_overrides.decode_audit_retry_failed",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "sector2_overrides.decode_audit_retry_video_keys",
+          "resolution": "inherited",
+          "sector3_value": "[]",
+          "sector4_value": "[]"
+        },
+        {
+          "config_key": "sector2_overrides.decode_audit_stage_video_locally",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "sector2_overrides.decode_audit_staging_budget_mib",
+          "resolution": "inherited",
+          "sector3_value": "\"auto\"",
+          "sector4_value": "\"auto\""
+        },
+        {
+          "config_key": "sector2_overrides.decode_audit_staging_min_free_mib",
+          "resolution": "inherited",
+          "sector3_value": "4096",
+          "sector4_value": "4096"
+        },
+        {
+          "config_key": "sector2_overrides.decode_audit_video_workers",
+          "resolution": "inherited",
+          "sector3_value": "9",
+          "sector4_value": "9"
+        },
+        {
+          "config_key": "sector2_overrides.expected_classes",
+          "resolution": "inherited",
+          "sector3_value": "14",
+          "sector4_value": "14"
+        },
+        {
+          "config_key": "sector2_overrides.expected_export_container_fps",
+          "resolution": "inherited",
+          "sector3_value": "30.0",
+          "sector4_value": "30.0"
+        },
+        {
+          "config_key": "sector2_overrides.expected_labelled_frames",
+          "resolution": "inherited",
+          "sector3_value": "47238",
+          "sector4_value": "47238"
+        },
+        {
+          "config_key": "sector2_overrides.expected_labelled_videos",
+          "resolution": "inherited",
+          "sector3_value": "43",
+          "sector4_value": "43"
+        },
+        {
+          "config_key": "sector2_overrides.expected_total_extractable_frames",
+          "resolution": "inherited",
+          "sector3_value": "4741504",
+          "sector4_value": "4741504"
+        },
+        {
+          "config_key": "sector2_overrides.expected_total_videos",
+          "resolution": "inherited",
+          "sector3_value": "117",
+          "sector4_value": "117"
+        },
+        {
+          "config_key": "sector2_overrides.expected_unlabelled_frames",
+          "resolution": "inherited",
+          "sector3_value": "4694266",
+          "sector4_value": "4694266"
+        },
+        {
+          "config_key": "sector2_overrides.expected_unlabelled_videos",
+          "resolution": "inherited",
+          "sector3_value": "74",
+          "sector4_value": "74"
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_allow_cpu_fallback",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_copy_workers",
+          "resolution": "inherited",
+          "sector3_value": "6",
+          "sector4_value": "6"
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_cpu_memory_budget_mib",
+          "resolution": "inherited",
+          "sector3_value": "512",
+          "sector4_value": "512"
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_cpu_video_workers",
+          "resolution": "inherited",
+          "sector3_value": "4",
+          "sector4_value": "4"
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_cuda_backend",
+          "resolution": "inherited",
+          "sector3_value": "\"auto\"",
+          "sector4_value": "\"auto\""
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_cuda_device",
+          "resolution": "inherited",
+          "sector3_value": "\"cuda:0\"",
+          "sector4_value": "\"cuda:0\""
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_define_only",
+          "resolution": "inherited",
+          "sector3_value": "false",
+          "sector4_value": "false"
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_force_rescore",
+          "resolution": "inherited",
+          "sector3_value": "false",
+          "sector4_value": "false"
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_hash_source_bytes",
+          "resolution": "inherited",
+          "sector3_value": "false",
+          "sector4_value": "false"
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_image_workers",
+          "resolution": "inherited",
+          "sector3_value": "16",
+          "sector4_value": "16"
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_local_disk_reserve_gib",
+          "resolution": "inherited",
+          "sector3_value": "2.0",
+          "sector4_value": "2.0"
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_local_work_dir",
+          "resolution": "inherited",
+          "sector3_value": "\"/content/frame_alignment_cuda_work\"",
+          "sector4_value": "\"/content/frame_alignment_cuda_work\""
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_mapping_batch_size",
+          "resolution": "inherited",
+          "sector3_value": "16",
+          "sector4_value": "16"
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_min_margin",
+          "resolution": "inherited",
+          "sector3_value": "0.005",
+          "sector4_value": "0.005"
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_min_ssim",
+          "resolution": "inherited",
+          "sector3_value": "0.92",
+          "sector4_value": "0.92"
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_reference_apply_exif_orientation",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_reference_decoder",
+          "resolution": "inherited",
+          "sector3_value": "\"gpu_preferred\"",
+          "sector4_value": "\"gpu_preferred\""
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_reference_fancy_upsampling",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_retry_failed",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_retry_video_keys",
+          "resolution": "inherited",
+          "sector3_value": "[]",
+          "sector4_value": "[]"
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_show_progress",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_ssim_batch_size",
+          "resolution": "inherited",
+          "sector3_value": "16",
+          "sector4_value": "16"
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_stage_video_locally",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_video_workers",
+          "resolution": "inherited",
+          "sector3_value": "\"all\"",
+          "sector4_value": "\"all\""
+        },
+        {
+          "config_key": "sector2_overrides.frame_alignment_vram_budget_fraction",
+          "resolution": "inherited",
+          "sector3_value": "0.85",
+          "sector4_value": "0.85"
+        },
+        {
+          "config_key": "sector2_overrides.frame_index_offset_candidates",
+          "resolution": "inherited",
+          "sector3_value": "[-1,0,1]",
+          "sector4_value": "[-1,0,1]"
+        },
+        {
+          "config_key": "sector3.dry_run",
+          "resolution": "inherited",
+          "sector3_value": "false",
+          "sector4_value": "false"
+        },
+        {
+          "config_key": "sector3.export_dir",
+          "resolution": "inherited",
+          "sector3_value": "\"outputs/phase2/sector3\"",
+          "sector4_value": "\"outputs/phase2/sector3\""
+        },
+        {
+          "config_key": "sector3.local_output_dir",
+          "resolution": "inherited",
+          "sector3_value": "\"outputs/phase2/sector3\"",
+          "sector4_value": "\"outputs/phase2/sector3\""
+        },
+        {
+          "config_key": "sector3.push",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "sector3.require_any_bbox",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "sector3.require_valid_bbox",
+          "resolution": "inherited",
+          "sector3_value": "true",
+          "sector4_value": "true"
+        },
+        {
+          "config_key": "sector3.verify_all_upstream_reports",
+          "resolution": "inherited",
+          "sector3_value": "false",
+          "sector4_value": "false"
+        },
+        {
+          "config_key": "sector4",
+          "resolution": "sector4_override",
+          "sector3_value": "\"<not declared>\"",
+          "sector4_value": "{\"dry_run\":false,\"export_dir\":\"outputs/phase2/sector4\",\"local_output_dir\":\"outputs/phase2/sector4\",\"push\":true,\"recover_invalid_outputs\":true}"
+        },
+        {
+          "config_key": "seed",
+          "resolution": "inherited",
+          "sector3_value": "42",
+          "sector4_value": "42"
+        },
+        {
+          "config_key": "source_storage_root",
+          "resolution": "inherited",
+          "sector3_value": "\"/content/drive/MyDrive/MMVQA_Clinical\"",
+          "sector4_value": "\"/content/drive/MyDrive/MMVQA_Clinical\""
+        },
+        {
+          "config_key": "source_storage_roots.sector1",
+          "resolution": "inherited",
+          "sector3_value": "\"/content/drive/MyDrive/MMVQA_Clinical\"",
+          "sector4_value": "\"/content/drive/MyDrive/MMVQA_Clinical\""
+        },
+        {
+          "config_key": "source_storage_roots.sector2",
+          "resolution": "inherited",
+          "sector3_value": "\"/content/drive/MyDrive/MMVQA_Clinical\"",
+          "sector4_value": "\"/content/drive/MyDrive/MMVQA_Clinical\""
+        },
+        {
+          "config_key": "split_strategy",
+          "resolution": "sector4_override",
+          "sector3_value": "\"<not declared>\"",
+          "sector4_value": "\"frame_level_constrained_multilabel\""
+        },
+        {
+          "config_key": "storage_backend",
+          "resolution": "inherited",
+          "sector3_value": "\"google_drive\"",
+          "sector4_value": "\"google_drive\""
+        },
+        {
+          "config_key": "storage_root",
+          "resolution": "inherited",
+          "sector3_value": "\"/content/drive/MyDrive/MMVQA_Clinical\"",
+          "sector4_value": "\"/content/drive/MyDrive/MMVQA_Clinical\""
+        },
+        {
+          "config_key": "test_fraction",
+          "resolution": "sector4_override",
+          "sector3_value": "\"<not declared>\"",
+          "sector4_value": "0.15"
+        },
+        {
+          "config_key": "timezone",
+          "resolution": "inherited",
+          "sector3_value": "\"America/Toronto\"",
+          "sector4_value": "\"America/Toronto\""
+        },
+        {
+          "config_key": "train_fraction",
+          "resolution": "sector4_override",
+          "sector3_value": "\"<not declared>\"",
+          "sector4_value": "0.7"
+        },
+        {
+          "config_key": "validation_fraction",
+          "resolution": "sector4_override",
+          "sector3_value": "\"<not declared>\"",
+          "sector4_value": "0.15"
+        }
+      ],
+      "type": "dataframe"
+    },
+    "config_inheritance_policy": "Current Sector 3 effective config; explicit Sector 4 split/domain defaults and overrides.",
+    "core_source_sha256": "418de084ae3b3f303114d3a02241c9f361991b8bd43e2a7a15e405623ff084cb",
+    "dependency_versions": {
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "pyarrow": "23.0.1",
+      "scipy": "1.16.3"
+    },
+    "input_descriptors": {
+      "labelled_frame_manifest": {
+        "fingerprint": "c4660f3cad8d58ae373259e7a70c1850ea0d44f459ad3adab586278b5f17ce43",
+        "relative_path": "results/labelled_frame_manifest.parquet",
+        "schema_path": "results/labelled_frame_manifest_schema.json"
+      },
+      "video_class_matrix": {
+        "fingerprint": "835ec905044b22b0f0004305428edb9827d80f74aef6ce205d1f2c8ed60df6ca",
+        "relative_path": "results/video_class_matrix.csv",
+        "schema_path": "results/video_class_matrix_schema.json"
+      },
+      "video_class_support": {
+        "fingerprint": "e0565cc0eeff1fdf9ef5d8ff9c7f1200097597be08facb7a02d89a293749a2ea",
+        "relative_path": "reports/video_class_support_20261002T004948788764Z.csv",
+        "schema_path": "reports/video_class_support_20261002T004948788764Z_schema.json"
+      },
+      "video_frame_manifest": {
+        "fingerprint": "a1d4beaabd365a18c05cdf50081bce83c239413cf5d2fe7bae503e0c2385c2b7",
+        "relative_path": "results/video_frame_manifest.parquet",
+        "schema_path": "results/video_frame_manifest_schema.json"
+      }
+    },
+    "input_sha256": {
+      "labelled_frame_manifest/relative_path": "62b052accac5ae4af35447e4acf67ee33a62d838d9611da484300aeb18965b06",
+      "labelled_frame_manifest/schema_path": "7ba5c1a1efd70fb8ed0bd6de61644597d07930a8e21b09402b1a61c19b33cfa5",
+      "video_class_matrix/relative_path": "e9df07e4aac6899484cd3e9aafde09f0f4b5567399c24d9a5d3ec948422c6d01",
+      "video_class_matrix/schema_path": "10ad0fb830ac54c66b0d436501c59a35dc93108dc3a73a67b5f1ba205dd14799",
+      "video_class_support/relative_path": "6efc595d859bc22d24926a93996f2dfebbdc14da98a09cc1e80acc3a92eea296",
+      "video_class_support/schema_path": "d27a4689ab75b01c3de9dcc717d2a0ad407139725c8971ff68e96ebc7f2be7dc",
+      "video_frame_manifest/relative_path": "3d31c81c37d6147a675ad6e17df06d60ae61154a46650c4955e9596d106940ab",
+      "video_frame_manifest/schema_path": "6ad3e35c38d33db77a0b954e480344e4c99f52304975e2c5ac74b4a4f9e20b0f"
+    },
+    "sector3_config_snapshot": "configs/sector3_config_20261008T005918205192Z.json",
+    "sector3_config_snapshot_sha256": "70eabfbcbb7d9ab469b361ff390d234c8ddf1295fe86901924966b6844f6bc90",
+    "sector3_content_id": "ac08d1cac69e2da55186a6990f191adf4708b9e4a070dab2f38067a52765be08",
+    "sector3_root": "/content/drive/MyDrive/MMVQA_Clinical/outputs/phase2/sector3",
+    "sector3_semantic_config_fingerprint": "54ef48dbe44ea9c31de70811723c63dc0639fa4d1931cddf70a9ca4b28c4d4da",
+    "sector3_state_path": "/content/drive/MyDrive/MMVQA_Clinical/outputs/phase2/sector3/configs/sector3_state.json",
+    "sector3_state_sha256": "3c370ae0c2e9d8616979716544ff56dbe2b17fef3b27db77e2f39846996f1467"
+  },
+  "lineage_fingerprint": "3f2ef2d75a90c8166135247034e91e68c8317ab73baef7cdda702aaec53f7995",
+  "schema_version": 2,
+  "semantic_config_fingerprint": "1b25929a6356107deca80bc660b52b439f6999dd6155834d2a1375c35844b9ab"
+}
