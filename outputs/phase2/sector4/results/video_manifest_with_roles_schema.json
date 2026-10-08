@@ -103,6 +103,22 @@
       "name": "retained_class_count"
     },
     {
+      "dtype": "bool",
+      "name": "has_train_frames"
+    },
+    {
+      "dtype": "bool",
+      "name": "has_validation_frames"
+    },
+    {
+      "dtype": "bool",
+      "name": "has_test_frames"
+    },
+    {
+      "dtype": "bool",
+      "name": "has_evaluation_frames"
+    },
+    {
       "dtype": "string",
       "name": "supervised_split",
       "string_storage": "python"
@@ -135,7 +151,7 @@
     }
   ],
   "csv_null_marker": "\\N",
-  "fingerprint": "5e805f17a8dc30b2398b347ea9c531d2c8bad368065b139e0403c9ab7534b9e4",
+  "fingerprint": "84ef3186248daaa0e778c867f500b8c99f2a3fbdd935e9d76bd17ddadfc50f48",
   "rows": 117,
   "schema_version": 1
 }

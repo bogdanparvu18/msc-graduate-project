@@ -1,0 +1,65 @@
+{
+  "artifact": "reports/class_split_support_report_20261008T161637979140Z.csv",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "object",
+      "name": "finding_class_normalized",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "object",
+      "name": "split",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "int64",
+      "name": "supporting_video_count"
+    },
+    {
+      "dtype": "int64",
+      "name": "retained_annotation_count"
+    },
+    {
+      "dtype": "int64",
+      "name": "retained_unique_frame_count"
+    },
+    {
+      "dtype": "int64",
+      "name": "total_supporting_video_count"
+    },
+    {
+      "dtype": "int64",
+      "name": "total_unique_frame_count"
+    },
+    {
+      "dtype": "int64",
+      "name": "minimum_required_frame_count"
+    },
+    {
+      "dtype": "bool",
+      "name": "absent_in_split"
+    },
+    {
+      "dtype": "bool",
+      "name": "scarce_video_support"
+    },
+    {
+      "dtype": "bool",
+      "name": "represented_in_all_splits"
+    },
+    {
+      "dtype": "object",
+      "name": "coverage_status",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "bool",
+      "name": "stratification_guarantees_class_coverage"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "377ac9b504f0c22c72b6a96547e8c271477e7f43774bbd21211c4978e088fc53",
+  "rows": 42,
+  "schema_version": 1
+}

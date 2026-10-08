@@ -1,0 +1,30 @@
+{
+  "artifact": "reports/config_inheritance_report_20261008T161637979140Z.csv",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "string",
+      "name": "config_key",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "sector3_value",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "sector4_value",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "resolution",
+      "string_storage": "python"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "4f9b99b842cef36295c3a3b6facd6f48783a1e0754a9376c8fb9fa4e0f5929ac",
+  "rows": 189,
+  "schema_version": 1
+}

@@ -22,20 +22,20 @@
       "name": "frame_index_offset"
     },
     {
-      "dtype": "Int64",
+      "dtype": "int64",
       "name": "retained_annotation_count"
     },
     {
-      "dtype": "Int64",
+      "dtype": "int64",
       "name": "retained_unique_frame_count"
     },
     {
-      "dtype": "Int64",
+      "dtype": "int64",
       "name": "retained_class_count"
     }
   ],
   "csv_null_marker": "\\N",
-  "fingerprint": "45f95f63810d3932e6472a87fb952067bf40b6f2dd0167aa19a408318dfd2bb9",
-  "rows": 43,
+  "fingerprint": "cb0e031a480967023046790f5da5d85ace93fffe649a53f452e88b4111e53577",
+  "rows": 129,
   "schema_version": 1
 }

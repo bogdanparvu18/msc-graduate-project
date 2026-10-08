@@ -1,0 +1,24 @@
+{
+  "artifact": "results/frame_split_manifest.parquet",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "string",
+      "name": "video_key",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "opencv_frame_index"
+    },
+    {
+      "dtype": "string",
+      "name": "split",
+      "string_storage": "python"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "dd87420e5517abbdc0073169ce2454f0e73764d074e4c5be7740115bf38ef615",
+  "rows": 47229,
+  "schema_version": 1
+}
