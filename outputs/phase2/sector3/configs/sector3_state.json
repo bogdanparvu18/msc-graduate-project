@@ -6,6 +6,11 @@
       "sha256": "eef052b7a4d44182538d1dc2255e7ec9a38cb70437641471200dbff5eeff2351"
     },
     {
+      "bytes": 93425,
+      "relative_path": "configs/sector3_config_20261008T001953882922Z.json",
+      "sha256": "c51c4fa39a7259cd3320f5c93096c0a1275868966a43addde2538e1884cbc1ea"
+    },
+    {
       "bytes": 1262133,
       "relative_path": "reports/bbox_validation_report_20261002T004948788764Z.csv.gz",
       "sha256": "9d358e2ed1d9b916825932f63cb154f60e639c19f7a2d4748e357b8516d708fe"
@@ -56,6 +61,16 @@
       "sha256": "f2722e3cb0ab40d1f4bdb7c84a83243f0a16363dfda7ba88559b4fea15d927ee"
     },
     {
+      "bytes": 6874,
+      "relative_path": "reports/config_conflict_report_20261008T001953882922Z.csv",
+      "sha256": "bd3e062fb6b5e29f9c4d9f1f80201f0509d1135c19e81ca78ef60e52c2cc6449"
+    },
+    {
+      "bytes": 677,
+      "relative_path": "reports/config_conflict_report_20261008T001953882922Z_schema.json",
+      "sha256": "5ce8ebebbbe9d3b081a55e32bc4f78276fb3e107d9fca1a546746a2da239fc89"
+    },
+    {
       "bytes": 1026,
       "relative_path": "reports/executive_report_20261002T004948788764Z.md",
       "sha256": "eaeb9e5573c3784665ad029547960998750667e921f623ed6abe064a3ded6d51"
@@ -86,6 +101,11 @@
       "sha256": "104afb5b48fb714bc14b100834d34765b304fa4b8af25b14de885de5a38b17b4"
     },
     {
+      "bytes": 3610,
+      "relative_path": "reports/summary_20261008T001953882922Z.json",
+      "sha256": "168886b922c6ec633c60ea1a2bd43b5d8f5f592aa6439848ec2591b220ae486d"
+    },
+    {
       "bytes": 4729,
       "relative_path": "reports/video_class_support_20261002T004948788764Z.csv",
       "sha256": "6efc595d859bc22d24926a93996f2dfebbdc14da98a09cc1e80acc3a92eea296"
@@ -96,14 +116,14 @@
       "sha256": "d27a4689ab75b01c3de9dcc717d2a0ad407139725c8971ff68e96ebc7f2be7dc"
     },
     {
-      "bytes": 5264564,
+      "bytes": 5264563,
       "relative_path": "results/labelled_frame_manifest.parquet",
-      "sha256": "8a9f18c6a8f079db28baaf7eaf056bbba23e7d0b1c8bc8af152fc4fa868279c1"
+      "sha256": "62b052accac5ae4af35447e4acf67ee33a62d838d9611da484300aeb18965b06"
     },
     {
       "bytes": 4858,
       "relative_path": "results/labelled_frame_manifest_schema.json",
-      "sha256": "40064c0a39a3d40e87267b1754671bfe84a9b8e584fc449a3509d1de8ee682ef"
+      "sha256": "7ba5c1a1efd70fb8ed0bd6de61644597d07930a8e21b09402b1a61c19b33cfa5"
     },
     {
       "bytes": 2347,
@@ -136,26 +156,26 @@
       "sha256": "6ad3e35c38d33db77a0b954e480344e4c99f52304975e2c5ac74b4a4f9e20b0f"
     }
   ],
-  "changed_at_utc": "20261002T004948788764Z",
+  "changed_at_utc": "20261008T001953882922Z",
   "complete": true,
-  "config_snapshot": "configs/sector3_config_20261002T004948788764Z.json",
-  "content_id": "09dc08f9f99ddd2cdaa02789b76df0ed0af284eb1096c26b235f01f3ea92af59",
-  "core_source_sha256": "9d1df05aaa347645dc1c2f4b3ee91cae86b7d7f5697dc75ed6381dde2641dae8",
+  "config_snapshot": "configs/sector3_config_20261008T001953882922Z.json",
+  "content_id": "fe074de8b90921972876c5a4968b7403569f1d083c012133501c59806eb51ba9",
+  "core_source_sha256": "410d4541ec129ace8ad619fc259161a1e0e4e3c4d3fbee5eace1a4b1376b0376",
   "input_sha256": {
-    "decode_audit.csv": "e99ca10537849de7b11986dac56c91777268405733710e535bcd37cb69a33994",
-    "frame_alignment_confirmed.parquet": "512a752ea89bb09c5c84c7c24b02646367d901d38d91f9b37ec4a28039796004",
-    "metadata_clean.parquet": "7b7f1425db160db74eb12a39191fa5cc33f8db869a85260b814b684e08eb27cc",
+    "decode_audit.csv": "703edc2389cc0bc7ef712697d547604a5250be364d42752d05352efc31888a5f",
+    "frame_alignment_confirmed.parquet": "6479d9514763443ae9e22ec7689a0ff0f0f25b5d4a97176be290e4024ce0bd3b",
+    "metadata_clean.parquet": "40bad10eda042ee5992f75512717a6bb3c1fe5557a8bd0181973f0b06da40d22",
     "video_manifest.csv": "2fc36b776a9b9947d9e8b3d61f976efb1b0f7809016e5f8698d998a4fa115cbc"
   },
   "obsolete_paths": [],
-  "processing_signature": "97d5137ea3b8332af2b5a3e66b3f81bf57bd1532f14b0021da3ea7b9ee19a41d",
+  "processing_signature": "0d342dadc4aa2acdad6d1e9dcd1949569360af10f5032a58ad20c60e42e3770a",
   "schema_version": 2,
-  "semantic_config_fingerprint": "d1b868bcf190cba2d1389c78ed966ebaf415104af71b0afac47cba9ee2fa4f1a",
+  "semantic_config_fingerprint": "0733efa7f8f209a62f79b562218382c148774ca54fa5238e05b1d5db08425373",
   "summary": {
-    "fingerprint": "104afb5b48fb714bc14b100834d34765b304fa4b8af25b14de885de5a38b17b4",
+    "fingerprint": "168886b922c6ec633c60ea1a2bd43b5d8f5f592aa6439848ec2591b220ae486d",
     "report_fingerprint": "eaeb9e5573c3784665ad029547960998750667e921f623ed6abe064a3ded6d51",
     "report_relative_path": "reports/executive_report_20261002T004948788764Z.md",
-    "summary_relative_path": "reports/summary_20261002T004948788764Z.json"
+    "summary_relative_path": "reports/summary_20261008T001953882922Z.json"
   },
   "tables": {
     "bbox_validation_report": {
@@ -179,9 +199,9 @@
       "schema_path": "reports/clinical_taxonomy_report_20261002T004948788764Z_schema.json"
     },
     "config_conflict_report": {
-      "fingerprint": "72444c303510f9649a070d0e6be3cc0aaf59d52ac1e44b456cb0a4489dcb2e5d",
-      "relative_path": "reports/config_conflict_report_20261002T004948788764Z.csv",
-      "schema_path": "reports/config_conflict_report_20261002T004948788764Z_schema.json"
+      "fingerprint": "0c6bfdf7ebe0c913bb0df280d1eb60ed2992f8ce7eb2975b1dde5684504b1f2f",
+      "relative_path": "reports/config_conflict_report_20261008T001953882922Z.csv",
+      "schema_path": "reports/config_conflict_report_20261008T001953882922Z_schema.json"
     },
     "frame_inventory_report": {
       "fingerprint": "f33109cffe6cf84636e77726a2c3af4415ca14e2f262adb214d6f3aa21c2c6bd",
@@ -194,7 +214,7 @@
       "schema_path": "reports/labelled_frame_bounds_report_20261002T004948788764Z_schema.json"
     },
     "labelled_frame_manifest": {
-      "fingerprint": "b94f6f3dd609d48f4f1904230313a9574337ca4b43d564b6a406da946fa98c55",
+      "fingerprint": "c4660f3cad8d58ae373259e7a70c1850ea0d44f459ad3adab586278b5f17ce43",
       "relative_path": "results/labelled_frame_manifest.parquet",
       "schema_path": "results/labelled_frame_manifest_schema.json"
     },

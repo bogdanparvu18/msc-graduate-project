@@ -1,0 +1,124 @@
+{
+  "accepted_unique_video_frames": 47229,
+  "annotation_rows": 47239,
+  "bbox_validation": [
+    {
+      "annotation_count": 4127,
+      "bbox_validation_status": "valid"
+    },
+    {
+      "annotation_count": 43004,
+      "bbox_validation_status": "missing"
+    },
+    {
+      "annotation_count": 0,
+      "bbox_validation_status": "incomplete"
+    },
+    {
+      "annotation_count": 0,
+      "bbox_validation_status": "invalid_geometry"
+    },
+    {
+      "annotation_count": 108,
+      "bbox_validation_status": "out_of_image_bounds"
+    }
+  ],
+  "inventory": [
+    {
+      "actual_frame_count": 4765114,
+      "count_unit": "decoded_frame",
+      "difference_from_reference": 23610,
+      "expected_frame_count": 4741504,
+      "frame_category": "total_decoded_frames",
+      "reference_is_diagnostic": true,
+      "reference_matches": false,
+      "validation_passed": true
+    },
+    {
+      "actual_frame_count": 47239,
+      "count_unit": "annotation",
+      "difference_from_reference": null,
+      "expected_frame_count": null,
+      "frame_category": "original_annotation_rows",
+      "reference_is_diagnostic": true,
+      "reference_matches": null,
+      "validation_passed": true
+    },
+    {
+      "actual_frame_count": 47229,
+      "count_unit": "source_frame_reference",
+      "difference_from_reference": -9,
+      "expected_frame_count": 47238,
+      "frame_category": "original_unique_source_frame_references",
+      "reference_is_diagnostic": true,
+      "reference_matches": false,
+      "validation_passed": true
+    },
+    {
+      "actual_frame_count": 47239,
+      "count_unit": "annotation",
+      "difference_from_reference": null,
+      "expected_frame_count": null,
+      "frame_category": "accepted_annotation_rows",
+      "reference_is_diagnostic": true,
+      "reference_matches": null,
+      "validation_passed": true
+    },
+    {
+      "actual_frame_count": 47229,
+      "count_unit": "decoded_frame",
+      "difference_from_reference": null,
+      "expected_frame_count": null,
+      "frame_category": "accepted_unique_decoded_frames",
+      "reference_is_diagnostic": true,
+      "reference_matches": null,
+      "validation_passed": true
+    },
+    {
+      "actual_frame_count": 0,
+      "count_unit": "source_frame_reference",
+      "difference_from_reference": null,
+      "expected_frame_count": null,
+      "frame_category": "source_frame_references_without_accepted_evidence",
+      "reference_is_diagnostic": true,
+      "reference_matches": null,
+      "validation_passed": true
+    },
+    {
+      "actual_frame_count": 4717885,
+      "count_unit": "decoded_frame",
+      "difference_from_reference": null,
+      "expected_frame_count": null,
+      "frame_category": "decoded_frames_without_accepted_evidence",
+      "reference_is_diagnostic": true,
+      "reference_matches": null,
+      "validation_passed": true
+    }
+  ],
+  "labelled_video_count": 43,
+  "phase": 2,
+  "sector": 3,
+  "spatially_usable_annotation_rows": 4127,
+  "table_row_counts": {
+    "bbox_validation_report": 47239,
+    "bbox_validation_summary": 5,
+    "class_distribution_report": 14,
+    "clinical_taxonomy_report": 14,
+    "config_conflict_report": 53,
+    "frame_inventory_report": 7,
+    "labelled_frame_bounds_report": 43,
+    "labelled_frame_manifest": 47239,
+    "video_class_counts": 43,
+    "video_class_matrix": 43,
+    "video_class_support": 117,
+    "video_frame_manifest": 117
+  },
+  "units": {
+    "frame_identity": [
+      "video_key",
+      "aligned_frame_index"
+    ],
+    "manifest": "source annotation",
+    "video_class_matrix": "binary annotated-class presence"
+  }
+}
