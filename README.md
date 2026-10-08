@@ -154,6 +154,14 @@ The current saved audit covers **117 videos** and records **4,765,114 decoded fr
 
 Processing uses NVIDIA GPU acceleration, parallel execution, CPU fallback, and per-video checkpoints. SHA-256 checks verify input tables and saved reports, while cache fingerprints detect changes to source-file identities and processing libraries that require recalculation. Completed outputs, configuration snapshots, and audit evidence are published under [`outputs/phase2/sector2/`](outputs/phase2/sector2/). Alignment acceptance establishes technical image-to-video correspondence under the configured rules; it does not independently validate clinical labels.
 
+#### Implemented Sector 3: clinical taxonomy and labelled-frame manifest
+
+[Sector 3 notebook](notebooks/phase2/phase2_03_labelled_frame_manifest.ipynb) combines cleaned annotations with verified alignment results to build a labelled-frame manifest, a video manifest, and clinical-label coverage reports. Pure table transformations preserve annotation identities and alignment provenance, validate frame indices and bounding boxes, and measure class support without repeating video decoding or SSIM alignment.
+
+The current outputs retain **47,239 annotations across 47,229 distinct frames**, covering **43 labelled videos**, **14 finding classes**, and **9 clinical groups**. Spatial validation identifies **4,127 usable bounding boxes** and flags **108 out-of-bounds boxes** while preserving their annotation rows. Class-coverage reports highlight findings with limited video-level support for subsequent split design.
+
+SHA-256 input checks, transformation caching, and verified persistence support reproducible execution. Manifests, reports, and configuration snapshots are published under [`outputs/phase2/sector3/`](outputs/phase2/sector3/), with results and scope documented in the [Sector 3 executive report](outputs/phase2/sector3/README.md).
+
 The work in this phase includes downloading and registering the dataset, parsing the metadata file, linking each labelled image to its original video and frame number, extracting neighbouring frames around each labelled finding, normalizing medical labels into broader clinical categories, creating derived quality-control fields, and preparing video-level train, validation, and test splits. Data normalization step is required because medical datasets are often imbalanced. Some classes have many images, while rare findings have very few examples, the balance matter is also mentioned in the paper description of the dataset which creates a challenge for machine learning.
 Since Kvasir-Capsule does not provide a complete good/bad image-quality label, the project derives basic quality indicators such as reduced mucosal visibility, blur, brightness, contrast, and evidence sufficiency. If needed, an additional cleanliness or visibility dataset may be added later to strengthen this quality-control component.
 
