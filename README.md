@@ -170,6 +170,14 @@ The sector also generates **185,755 unlabelled frame references from 74 videos**
 
 SHA-256 verification, transformation caching, and automatic recovery of missing or invalid outputs support reproducibility. Manifests, reports, and configuration snapshots are published under [`outputs/phase2/sector4/`](outputs/phase2/sector4/), with results and scope documented in the [Sector 4 executive report](outputs/phase2/sector4/README.md).
 
+#### Implemented Sector 5: finding segments and temporal supervision
+
+[Sector 5 notebook](notebooks/phase2/phase2_05_finding_segments_and_temporal_supervision.ipynb) organizes **47,239 verified annotations from 43 videos into 22,220 finding segments**, grouping temporally adjacent frames of the same finding class while preserving every annotation and its existing train, validation, or test assignment. Each segment receives a reproducible identifier, observed frame limits, and a representative verified frame.
+
+The current outputs contain **13,378 single-frame segments** and **8,842 multi-frame weak-supervision candidates**, with all **14 finding classes represented in every split**. Observed segment limits describe available evidence; they do not establish exact clinical onset, offset, or continuous finding visibility.
+
+SHA-256 verification, processing signatures, and recovery of missing or corrupt S5 outputs support reproducibility. Manifests, reports, and configuration snapshots are published under [`outputs/phase2/sector5/`](outputs/phase2/sector5/), with results and scope documented in the [Sector 5 executive report](outputs/phase2/sector5/README.md).
+
 The work in this phase includes downloading and registering the dataset, parsing the metadata file, linking each labelled image to its original video and frame number, extracting neighbouring frames around each labelled finding, normalizing medical labels into broader clinical categories, creating derived quality-control fields, and preparing frame-level train, validation, and test splits. Data normalization step is required because medical datasets are often imbalanced. Some classes have many images, while rare findings have very few examples, the balance matter is also mentioned in the paper description of the dataset which creates a challenge for machine learning.
 Since Kvasir-Capsule does not provide a complete good/bad image-quality label, the project derives basic quality indicators such as reduced mucosal visibility, blur, brightness, contrast, and evidence sufficiency. If needed, an additional cleanliness or visibility dataset may be added later to strengthen this quality-control component.
 
