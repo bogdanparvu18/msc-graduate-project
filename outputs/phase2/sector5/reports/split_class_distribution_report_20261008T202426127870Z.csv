@@ -1,0 +1,43 @@
+split,finding_class_normalized,clinical_group,labelled_frame_count,video_count,segment_count,frame_fraction_within_split,class_present_in_split
+test,normal clean mucosa,normal_mucosa,5150,37,4324,0.7266826583885988,True
+test,ileocecal valve,anatomical_landmark,629,31,528,0.08875405672357839,True
+test,reduced mucosal view,visibility_limitation,436,7,365,0.06152109496260759,True
+test,pylorus,anatomical_landmark,230,30,193,0.032453788627063634,True
+test,angiectasia,vascular_lesion,130,5,113,0.018343445745731622,True
+test,ulcer,mucosal_lesion,128,3,116,0.018061238888104982,True
+test,foreign body,foreign_body,116,3,98,0.01636799774234514,True
+test,lymphangiectasia,lymphatic_lesion,89,3,75,0.012558205164385494,True
+test,erosion,mucosal_lesion,76,9,64,0.010723860589812333,True
+test,blood fresh,bleeding,67,2,57,0.009453929730492451,True
+test,erythema,mucosal_lesion,24,3,21,0.003386482291519684,True
+test,polyp,protruding_lesion,8,1,7,0.0011288274305065614,True
+test,ampulla of vater,anatomical_landmark,2,1,2,0.00028220685762664035,True
+test,blood hematin,bleeding,2,1,2,0.00028220685762664035,True
+train,normal clean mucosa,normal_mucosa,24037,37,7267,0.726962044457886,True
+train,ileocecal valve,anatomical_landmark,2932,34,884,0.08867382428549826,True
+train,reduced mucosal view,visibility_limitation,2034,7,603,0.061515197338575536,True
+train,pylorus,anatomical_landmark,1070,32,346,0.03236050204143354,True
+train,angiectasia,vascular_lesion,606,6,217,0.01832753667019507,True
+train,ulcer,mucosal_lesion,598,3,240,0.018085588991380613,True
+train,foreign body,foreign_body,543,4,206,0.016422198699531227,True
+train,lymphangiectasia,lymphatic_lesion,414,3,156,0.012520792378648117,True
+train,erosion,mucosal_lesion,354,9,151,0.010706184787539694,True
+train,blood fresh,bleeding,312,2,109,0.009435959473763798,True
+train,erythema,mucosal_lesion,111,3,44,0.003357024043550582,True
+train,polyp,protruding_lesion,39,1,13,0.0011794949342204747,True
+train,blood hematin,bleeding,8,1,4,0.00024194767881445637,True
+train,ampulla of vater,anatomical_landmark,7,1,3,0.00021170421896264934,True
+validation,normal clean mucosa,normal_mucosa,5151,37,4355,0.72692633361558,True
+validation,ileocecal valve,anatomical_landmark,628,33,524,0.08862545865086086,True
+validation,reduced mucosal view,visibility_limitation,436,7,371,0.061529777025119956,True
+validation,pylorus,anatomical_landmark,229,29,199,0.03231724527236805,True
+validation,angiectasia,vascular_lesion,130,6,115,0.0183460344340954,True
+validation,ulcer,mucosal_lesion,128,3,107,0.018063787750493932,True
+validation,foreign body,foreign_body,117,4,106,0.01651143099068586,True
+validation,lymphangiectasia,lymphatic_lesion,89,3,76,0.012559977420265312,True
+validation,erosion,mucosal_lesion,76,9,67,0.010725373976855771,True
+validation,blood fresh,bleeding,67,2,59,0.009455263900649167,True
+validation,erythema,mucosal_lesion,24,2,23,0.003386960203217612,True
+validation,polyp,protruding_lesion,8,1,7,0.0011289867344058708,True
+validation,blood hematin,bleeding,2,1,2,0.0002822466836014677,True
+validation,ampulla of vater,anatomical_landmark,1,1,1,0.00014112334180073385,True

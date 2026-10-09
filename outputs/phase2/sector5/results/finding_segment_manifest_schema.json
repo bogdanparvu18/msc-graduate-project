@@ -152,7 +152,7 @@
     }
   ],
   "csv_null_marker": "\\N",
-  "fingerprint": "3972e1a6afc9e95ae71aff666162c829e138bc7f61993b330a18627011d94918",
-  "rows": 650,
+  "fingerprint": "5d49ee287fd4cbe7598d8a805c850eef37bcc902d4d9b6acfd695afce2f351bf",
+  "rows": 22220,
   "schema_version": 1
 }

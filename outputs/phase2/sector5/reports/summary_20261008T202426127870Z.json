@@ -1,0 +1,447 @@
+{
+  "missing_split_class_support_count": 0,
+  "phase": 2,
+  "policy": "Observed anchor limits are not verified clinical onset/offset. Unannotated intermediate frames remain unknown.",
+  "sector": 5,
+  "split_class_distribution": [
+    {
+      "class_present_in_split": true,
+      "clinical_group": "normal_mucosa",
+      "finding_class_normalized": "normal clean mucosa",
+      "frame_fraction_within_split": 0.7266826583885988,
+      "labelled_frame_count": 5150,
+      "segment_count": 4324,
+      "split": "test",
+      "video_count": 37
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "anatomical_landmark",
+      "finding_class_normalized": "ileocecal valve",
+      "frame_fraction_within_split": 0.08875405672357839,
+      "labelled_frame_count": 629,
+      "segment_count": 528,
+      "split": "test",
+      "video_count": 31
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "visibility_limitation",
+      "finding_class_normalized": "reduced mucosal view",
+      "frame_fraction_within_split": 0.06152109496260759,
+      "labelled_frame_count": 436,
+      "segment_count": 365,
+      "split": "test",
+      "video_count": 7
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "anatomical_landmark",
+      "finding_class_normalized": "pylorus",
+      "frame_fraction_within_split": 0.032453788627063634,
+      "labelled_frame_count": 230,
+      "segment_count": 193,
+      "split": "test",
+      "video_count": 30
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "vascular_lesion",
+      "finding_class_normalized": "angiectasia",
+      "frame_fraction_within_split": 0.018343445745731622,
+      "labelled_frame_count": 130,
+      "segment_count": 113,
+      "split": "test",
+      "video_count": 5
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "mucosal_lesion",
+      "finding_class_normalized": "ulcer",
+      "frame_fraction_within_split": 0.018061238888104982,
+      "labelled_frame_count": 128,
+      "segment_count": 116,
+      "split": "test",
+      "video_count": 3
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "foreign_body",
+      "finding_class_normalized": "foreign body",
+      "frame_fraction_within_split": 0.01636799774234514,
+      "labelled_frame_count": 116,
+      "segment_count": 98,
+      "split": "test",
+      "video_count": 3
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "lymphatic_lesion",
+      "finding_class_normalized": "lymphangiectasia",
+      "frame_fraction_within_split": 0.012558205164385494,
+      "labelled_frame_count": 89,
+      "segment_count": 75,
+      "split": "test",
+      "video_count": 3
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "mucosal_lesion",
+      "finding_class_normalized": "erosion",
+      "frame_fraction_within_split": 0.010723860589812333,
+      "labelled_frame_count": 76,
+      "segment_count": 64,
+      "split": "test",
+      "video_count": 9
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "bleeding",
+      "finding_class_normalized": "blood fresh",
+      "frame_fraction_within_split": 0.009453929730492451,
+      "labelled_frame_count": 67,
+      "segment_count": 57,
+      "split": "test",
+      "video_count": 2
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "mucosal_lesion",
+      "finding_class_normalized": "erythema",
+      "frame_fraction_within_split": 0.003386482291519684,
+      "labelled_frame_count": 24,
+      "segment_count": 21,
+      "split": "test",
+      "video_count": 3
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "protruding_lesion",
+      "finding_class_normalized": "polyp",
+      "frame_fraction_within_split": 0.0011288274305065614,
+      "labelled_frame_count": 8,
+      "segment_count": 7,
+      "split": "test",
+      "video_count": 1
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "anatomical_landmark",
+      "finding_class_normalized": "ampulla of vater",
+      "frame_fraction_within_split": 0.00028220685762664035,
+      "labelled_frame_count": 2,
+      "segment_count": 2,
+      "split": "test",
+      "video_count": 1
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "bleeding",
+      "finding_class_normalized": "blood hematin",
+      "frame_fraction_within_split": 0.00028220685762664035,
+      "labelled_frame_count": 2,
+      "segment_count": 2,
+      "split": "test",
+      "video_count": 1
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "normal_mucosa",
+      "finding_class_normalized": "normal clean mucosa",
+      "frame_fraction_within_split": 0.726962044457886,
+      "labelled_frame_count": 24037,
+      "segment_count": 7267,
+      "split": "train",
+      "video_count": 37
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "anatomical_landmark",
+      "finding_class_normalized": "ileocecal valve",
+      "frame_fraction_within_split": 0.08867382428549826,
+      "labelled_frame_count": 2932,
+      "segment_count": 884,
+      "split": "train",
+      "video_count": 34
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "visibility_limitation",
+      "finding_class_normalized": "reduced mucosal view",
+      "frame_fraction_within_split": 0.061515197338575536,
+      "labelled_frame_count": 2034,
+      "segment_count": 603,
+      "split": "train",
+      "video_count": 7
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "anatomical_landmark",
+      "finding_class_normalized": "pylorus",
+      "frame_fraction_within_split": 0.03236050204143354,
+      "labelled_frame_count": 1070,
+      "segment_count": 346,
+      "split": "train",
+      "video_count": 32
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "vascular_lesion",
+      "finding_class_normalized": "angiectasia",
+      "frame_fraction_within_split": 0.01832753667019507,
+      "labelled_frame_count": 606,
+      "segment_count": 217,
+      "split": "train",
+      "video_count": 6
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "mucosal_lesion",
+      "finding_class_normalized": "ulcer",
+      "frame_fraction_within_split": 0.018085588991380613,
+      "labelled_frame_count": 598,
+      "segment_count": 240,
+      "split": "train",
+      "video_count": 3
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "foreign_body",
+      "finding_class_normalized": "foreign body",
+      "frame_fraction_within_split": 0.016422198699531227,
+      "labelled_frame_count": 543,
+      "segment_count": 206,
+      "split": "train",
+      "video_count": 4
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "lymphatic_lesion",
+      "finding_class_normalized": "lymphangiectasia",
+      "frame_fraction_within_split": 0.012520792378648117,
+      "labelled_frame_count": 414,
+      "segment_count": 156,
+      "split": "train",
+      "video_count": 3
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "mucosal_lesion",
+      "finding_class_normalized": "erosion",
+      "frame_fraction_within_split": 0.010706184787539694,
+      "labelled_frame_count": 354,
+      "segment_count": 151,
+      "split": "train",
+      "video_count": 9
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "bleeding",
+      "finding_class_normalized": "blood fresh",
+      "frame_fraction_within_split": 0.009435959473763798,
+      "labelled_frame_count": 312,
+      "segment_count": 109,
+      "split": "train",
+      "video_count": 2
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "mucosal_lesion",
+      "finding_class_normalized": "erythema",
+      "frame_fraction_within_split": 0.003357024043550582,
+      "labelled_frame_count": 111,
+      "segment_count": 44,
+      "split": "train",
+      "video_count": 3
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "protruding_lesion",
+      "finding_class_normalized": "polyp",
+      "frame_fraction_within_split": 0.0011794949342204747,
+      "labelled_frame_count": 39,
+      "segment_count": 13,
+      "split": "train",
+      "video_count": 1
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "bleeding",
+      "finding_class_normalized": "blood hematin",
+      "frame_fraction_within_split": 0.00024194767881445637,
+      "labelled_frame_count": 8,
+      "segment_count": 4,
+      "split": "train",
+      "video_count": 1
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "anatomical_landmark",
+      "finding_class_normalized": "ampulla of vater",
+      "frame_fraction_within_split": 0.00021170421896264934,
+      "labelled_frame_count": 7,
+      "segment_count": 3,
+      "split": "train",
+      "video_count": 1
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "normal_mucosa",
+      "finding_class_normalized": "normal clean mucosa",
+      "frame_fraction_within_split": 0.72692633361558,
+      "labelled_frame_count": 5151,
+      "segment_count": 4355,
+      "split": "validation",
+      "video_count": 37
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "anatomical_landmark",
+      "finding_class_normalized": "ileocecal valve",
+      "frame_fraction_within_split": 0.08862545865086086,
+      "labelled_frame_count": 628,
+      "segment_count": 524,
+      "split": "validation",
+      "video_count": 33
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "visibility_limitation",
+      "finding_class_normalized": "reduced mucosal view",
+      "frame_fraction_within_split": 0.061529777025119956,
+      "labelled_frame_count": 436,
+      "segment_count": 371,
+      "split": "validation",
+      "video_count": 7
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "anatomical_landmark",
+      "finding_class_normalized": "pylorus",
+      "frame_fraction_within_split": 0.03231724527236805,
+      "labelled_frame_count": 229,
+      "segment_count": 199,
+      "split": "validation",
+      "video_count": 29
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "vascular_lesion",
+      "finding_class_normalized": "angiectasia",
+      "frame_fraction_within_split": 0.0183460344340954,
+      "labelled_frame_count": 130,
+      "segment_count": 115,
+      "split": "validation",
+      "video_count": 6
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "mucosal_lesion",
+      "finding_class_normalized": "ulcer",
+      "frame_fraction_within_split": 0.018063787750493932,
+      "labelled_frame_count": 128,
+      "segment_count": 107,
+      "split": "validation",
+      "video_count": 3
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "foreign_body",
+      "finding_class_normalized": "foreign body",
+      "frame_fraction_within_split": 0.01651143099068586,
+      "labelled_frame_count": 117,
+      "segment_count": 106,
+      "split": "validation",
+      "video_count": 4
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "lymphatic_lesion",
+      "finding_class_normalized": "lymphangiectasia",
+      "frame_fraction_within_split": 0.012559977420265312,
+      "labelled_frame_count": 89,
+      "segment_count": 76,
+      "split": "validation",
+      "video_count": 3
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "mucosal_lesion",
+      "finding_class_normalized": "erosion",
+      "frame_fraction_within_split": 0.010725373976855771,
+      "labelled_frame_count": 76,
+      "segment_count": 67,
+      "split": "validation",
+      "video_count": 9
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "bleeding",
+      "finding_class_normalized": "blood fresh",
+      "frame_fraction_within_split": 0.009455263900649167,
+      "labelled_frame_count": 67,
+      "segment_count": 59,
+      "split": "validation",
+      "video_count": 2
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "mucosal_lesion",
+      "finding_class_normalized": "erythema",
+      "frame_fraction_within_split": 0.003386960203217612,
+      "labelled_frame_count": 24,
+      "segment_count": 23,
+      "split": "validation",
+      "video_count": 2
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "protruding_lesion",
+      "finding_class_normalized": "polyp",
+      "frame_fraction_within_split": 0.0011289867344058708,
+      "labelled_frame_count": 8,
+      "segment_count": 7,
+      "split": "validation",
+      "video_count": 1
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "bleeding",
+      "finding_class_normalized": "blood hematin",
+      "frame_fraction_within_split": 0.0002822466836014677,
+      "labelled_frame_count": 2,
+      "segment_count": 2,
+      "split": "validation",
+      "video_count": 1
+    },
+    {
+      "class_present_in_split": true,
+      "clinical_group": "anatomical_landmark",
+      "finding_class_normalized": "ampulla of vater",
+      "frame_fraction_within_split": 0.00014112334180073385,
+      "labelled_frame_count": 1,
+      "segment_count": 1,
+      "split": "validation",
+      "video_count": 1
+    }
+  ],
+  "table_row_counts": {
+    "finding_segment_manifest": 22220,
+    "labelled_frame_manifest_with_segments": 47239,
+    "split_class_distribution_report": 42
+  },
+  "target_multi_annotation_segment_count": 1,
+  "temporal_grounding_candidate_count": 8842,
+  "temporal_supervision_counts": {
+    "multi_frame_weak_supervision": 8842,
+    "single_frame_anchor_only": 13378
+  },
+  "units": {
+    "finding_segment_manifest": "finding segment",
+    "labelled_frame_manifest_with_segments": "accepted source annotation",
+    "split_class_distribution_report": "split/class combination"
+  },
+  "verified_annotation_count": 47239,
+  "verified_frame_class_memberships": 47238,
+  "verified_temporal_boundary_count": 0
+}

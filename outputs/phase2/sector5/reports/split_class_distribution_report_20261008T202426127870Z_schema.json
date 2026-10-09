@@ -1,0 +1,45 @@
+{
+  "artifact": "reports/split_class_distribution_report_20261008T202426127870Z.csv",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "object",
+      "name": "split",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "string",
+      "name": "finding_class_normalized",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "object",
+      "name": "clinical_group",
+      "object_kind": "string"
+    },
+    {
+      "dtype": "Int64",
+      "name": "labelled_frame_count"
+    },
+    {
+      "dtype": "Int64",
+      "name": "video_count"
+    },
+    {
+      "dtype": "Int64",
+      "name": "segment_count"
+    },
+    {
+      "dtype": "float64",
+      "name": "frame_fraction_within_split"
+    },
+    {
+      "dtype": "boolean",
+      "name": "class_present_in_split"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "eeba8baeab14c5f2e619c88e6d7de0908feb3fc7278755eedd4180061b1ea0fe",
+  "rows": 42,
+  "schema_version": 1
+}
