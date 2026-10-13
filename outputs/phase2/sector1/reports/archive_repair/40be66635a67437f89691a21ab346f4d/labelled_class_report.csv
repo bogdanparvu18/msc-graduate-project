@@ -1,0 +1,15 @@
+class_name,actual_images,expected_images,difference,status
+Ampulla of vater,10,10,0,complete
+Angiectasia,866,866,0,complete
+Blood - fresh,446,446,0,complete
+Blood - hematin,12,12,0,complete
+Erosion,506,506,0,complete
+Erythema,159,159,0,complete
+Foreign body,776,776,0,complete
+Ileocecal valve,4189,4189,0,complete
+Lymphangiectasia,592,592,0,complete
+Normal clean mucosa,34338,34338,0,complete
+Polyp,55,55,0,complete
+Pylorus,1529,1529,0,complete
+Reduced mucosal view,2906,2906,0,complete
+Ulcer,854,854,0,complete
