@@ -1,9 +1,9 @@
 {
   "complete": true,
-  "audit_version": 2,
-  "created_utc": "2026-10-07T16:41:18.885189+00:00",
-  "input_fingerprint": "71c40620653ad663cb215a8ec25b554f7fed3fdd9cdb26cb01c9fe3d5c3d410a",
-  "report_fingerprint": "575452dc9390f541254c7d33962a0a7b5162c62355cfffaaa7f4e64742d497f3",
+  "audit_version": 3,
+  "created_utc": "2026-10-15T17:36:38.376147+00:00",
+  "input_fingerprint": "9fcb4f9f51b028b001258df6c6d6a690dd5a81d09f9fd2f65f48341e7ba2f36b",
+  "report_fingerprint": "738a824cc3a3c10b51964fc1b0afde1ab952b6264d0bc28c5f85788441c54371",
   "video_count": 117,
   "all_videos_decoded": true,
   "videos_needing_review": 0,
@@ -16,10 +16,14 @@
     "gpu_id": 0
   },
   "output_sha256": {
-    "decode_audit.csv": "703edc2389cc0bc7ef712697d547604a5250be364d42752d05352efc31888a5f",
-    "labelled_video_decode_audit.csv": "943f1b669332c2815a0278f359b74ba89e337124afab4cdd8390f8dfe1115b56",
-    "unlabelled_video_decode_audit.csv": "59863d8ed068a49a29233956d6c9dc4a3e57bb9e6e129235dd9d1e7dc66388ed",
+    "decode_audit.csv": "5fb7fa79743994b89b8122687bdb012d076f76574e3c2f0b442420572b9211b8",
+    "labelled_video_decode_audit.csv": "7fb8560087b15f46ef2553e6d90ee97966d90b600cb2ac72860b57bdf5fa536e",
+    "unlabelled_video_decode_audit.csv": "abbc32c1a79ddc0ae8c95999800b552e7d524254b940e7ad38b164a7a99f7918",
     "decode_audit_summary.csv": "8d97fa93a3fbb74d8e0eba9a8f1d65de9879db35ea279e0e55c7f97609034cb3"
   },
-  "source_fingerprint_method": "SHA-256 of paths, sizes, mtimes and decoder settings; not video bytes"
+  "source_fingerprint_method": "SHA-256 of video content identities (video_key, relative path, size, video_sha256), decoder signature and audit version",
+  "raw_integrity_version": 1,
+  "video_snapshot_id": "69b03694d92c4481a14b4cc77f2eff818dc46565422906132bc1246e14be2045",
+  "video_manifest_sha256": "ecb89a11048d1eb606b3ff928bf21529be09d9db1a9a06aa15a61d2aeb9970d4",
+  "video_state_sha256": "7b4ef84bbd69d18a946324e64f345164dd0a29f01d0a23abf63267c30590de11"
 }

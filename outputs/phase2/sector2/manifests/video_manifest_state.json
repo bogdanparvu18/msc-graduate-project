@@ -1,8 +1,11 @@
 {
+  "cache_version": 2,
   "complete": true,
-  "cache_version": 1,
-  "input_fingerprint": "92c5b126bdd9c5ad641292276ab4dc426fa6c1295cb22e50220cd68550fa32b4",
-  "csv_sha256": "2fc36b776a9b9947d9e8b3d61f976efb1b0f7809016e5f8698d998a4fa115cbc",
+  "created_utc": "2026-10-15T17:26:43.501282+00:00",
+  "csv_sha256": "ecb89a11048d1eb606b3ff928bf21529be09d9db1a9a06aa15a61d2aeb9970d4",
+  "input_fingerprint": "994106c1d1fae1878fe65bd86865a19f145623dfb69f590e885ed30247130d51",
+  "raw_integrity_complete": true,
+  "raw_integrity_version": 1,
   "video_count": 117,
-  "created_utc": "2026-10-01T20:09:39.933059+00:00"
+  "video_snapshot_id": "69b03694d92c4481a14b4cc77f2eff818dc46565422906132bc1246e14be2045"
 }

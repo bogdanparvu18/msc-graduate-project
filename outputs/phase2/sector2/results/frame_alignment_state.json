@@ -1,14 +1,14 @@
 {
   "complete": true,
-  "created_utc": "2026-10-07T18:27:45.575184+00:00",
-  "attempt_id": "05734e3cb8b24fe6b89d019e335c34b9",
+  "created_utc": "2026-10-15T17:59:21.675023+00:00",
+  "attempt_id": "4a3b651446af4d4797d845a411073ff0",
   "fallback_report": {
-    "run_id": "20261007_140342",
+    "run_id": "20261015_132222",
     "warning_emitted": false,
     "events_by_stage": {},
     "example_reasons": {}
   },
-  "run_id": "20261007_140342",
+  "run_id": "20261015_132222",
   "effective_settings": {
     "allow_cpu_fallback": true,
     "cpu_video_workers": 4,
@@ -44,14 +44,22 @@
     "reference_decoder": "gpu_preferred",
     "reference_fancy_upsampling": true,
     "reference_apply_exif_orientation": true,
+    "raw_integrity": {
+      "s1_catalog_sha256": "fcf1c0889da3ff8f93a36692003b64726a0a42680adad29b45dde59e5ff379ab",
+      "video_state_sha256": "7b4ef84bbd69d18a946324e64f345164dd0a29f01d0a23abf63267c30590de11",
+      "batch_size": 1000,
+      "max_image_bytes": 67108864,
+      "retry_attempts": 3
+    },
+    "storage_root": "/content/drive/MyDrive/MMVQA_Clinical",
     "video_backend": "torchcodec_cuda",
     "video_fallback_reason": "CUDA device or compatible TorchCodec binding unavailable.",
     "effective_video_workers": 43,
-    "transient_tensor_budget_bytes": 86096681369
+    "transient_tensor_budget_bytes": 86094898790
   },
   "engine": {
-    "scoring_version": 5,
-    "backend_id": "gpu_preferred_pyav_opencv_fallback_ssim_uniform7_v5",
+    "scoring_version": 6,
+    "backend_id": "gpu_preferred_ssim_uniform7_raw_bound_v6",
     "preferred_video_backend": "torchcodec_cuda",
     "torchcodec": "0.16.0+cu130",
     "cuda_backend": "nvdec",
@@ -158,12 +166,15 @@
     "skimage": "0.25.2",
     "ssim_method": "uniform7_sample_covariance_valid_color_uint8",
     "ssim_precision": "float32_window_sums_float64_metric",
-    "actual_backend_evidence": "per_video_checkpoint_timings_and_performance"
+    "actual_backend_evidence": "per_video_checkpoint_timings_and_performance",
+    "raw_integrity_version": 1
   },
   "input_sha256": {
     "metadata_clean.parquet": "40bad10eda042ee5992f75512717a6bb3c1fe5557a8bd0181973f0b06da40d22",
-    "physical_image_inventory.csv": "5244b460c4a1193abd6eac255973c07fab7df1f465eaff72f8e292275bb04894",
-    "video_manifest.csv": "2fc36b776a9b9947d9e8b3d61f976efb1b0f7809016e5f8698d998a4fa115cbc"
+    "physical_image_inventory.csv": "16f34711b03cc33aed8fa9732a5ea48c2e9b32b7e35979a7e0bbb6ef6c617df9",
+    "video_manifest.csv": "ecb89a11048d1eb606b3ff928bf21529be09d9db1a9a06aa15a61d2aeb9970d4",
+    "audit_export_report.json": "fcf1c0889da3ff8f93a36692003b64726a0a42680adad29b45dde59e5ff379ab",
+    "video_manifest_state.json": "7b4ef84bbd69d18a946324e64f345164dd0a29f01d0a23abf63267c30590de11"
   },
   "evaluated_offsets": [
     -2,
@@ -189,15 +200,23 @@
     "self_check_max_absolute_error": 1.9206858326015208e-14,
     "self_check_tolerance": 1e-10
   },
-  "source_fingerprint_method": "SHA256 of mappings, engine, file paths/sizes/mtimes; not source bytes",
+  "source_fingerprint_method": "Pinned raw digests and mappings; consumed image buffers and staged videos verified before processing",
   "output_sha256": {
-    "frame_alignment_audit.csv": "a78b07700eb03f1813832e8af8ddb8f97dae3d9d58c65065269d1bcfdc4c9ed0",
-    "frame_alignment_candidates.csv": "281db26aa112b7dec79454d44e86a198e83fd2381b4ddf8e41519d2033c2be2c",
+    "frame_alignment_audit.csv": "f40fc958823dd1c17db6fcc69572c92475dfdde01c754eb62417aa24df758842",
+    "frame_alignment_candidates.csv": "60526f160e8e58f9445ab6a3b8f06f6783bd91b03c9dce8ec34cb98071b3ab6f",
     "frame_alignment_offset_summary.csv": "bb519368e30252b050015ba75977dcea0bb29e8adefb2c3be5e8973ebc516cfe",
-    "frame_alignment_confirmed.csv": "c907b83bf9bc201a880d0e779137aa195aa097f996f5b43cc25d28c4468db43d",
-    "frame_alignment_excluded.csv": "4f97276bfca310d4a0052270b7be2b93e5c36b75317d7633cff486abfeede5e4",
-    "frame_alignment_confirmed.parquet": "6479d9514763443ae9e22ec7689a0ff0f0f25b5d4a97176be290e4024ce0bd3b",
-    "frame_alignment_performance.csv": "8113fca242721eb8833476e3c5f49b75477b9673670695c5df06173660d3f2ec"
+    "frame_alignment_confirmed.csv": "0fe97005cb13cc953d4b6acf28d07cfb3d5966469ac6b029d2e1e17123d96fab",
+    "frame_alignment_excluded.csv": "1c34fc71c5b1f7c769eead767f5b9eb69f0e25c22eff605e96be9e4ca0b6273f",
+    "frame_alignment_confirmed.parquet": "53682960de211122e059590f188646d9d6fa76b5c7601af00c658f2f52010eab",
+    "frame_alignment_performance.csv": "9ea11070c9b88e4f7eceaad3fb02d9e61eb4e56c1c41ec1e442b49aa44b88299",
+    "raw_integrity_report.csv": "8c8ca616d27782d04c4be33584324352309aaaaeec912e11aaa80918d5872165"
   },
-  "interpretation": "Technical acceptance under configured SSIM/ambiguity rules; not proof of clinical or historical frame identity."
+  "interpretation": "Technical acceptance under configured SSIM/ambiguity rules; not proof of clinical or historical frame identity.",
+  "raw_integrity_version": 1,
+  "raw_integrity_complete": true,
+  "raw_integrity_scope": "ready_alignment_inputs",
+  "raw_reference_catalogs": {
+    "s1_catalog_sha256": "fcf1c0889da3ff8f93a36692003b64726a0a42680adad29b45dde59e5ff379ab",
+    "video_state_sha256": "7b4ef84bbd69d18a946324e64f345164dd0a29f01d0a23abf63267c30590de11"
+  }
 }

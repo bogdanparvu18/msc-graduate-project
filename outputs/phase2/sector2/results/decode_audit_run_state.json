@@ -1,7 +1,7 @@
 {
   "complete": true,
-  "started_utc": "2026-10-07T18:06:26.952971+00:00",
-  "input_fingerprint": "71c40620653ad663cb215a8ec25b554f7fed3fdd9cdb26cb01c9fe3d5c3d410a",
+  "started_utc": "2026-10-15T17:26:44.681323+00:00",
+  "input_fingerprint": "9fcb4f9f51b028b001258df6c6d6a690dd5a81d09f9fd2f65f48341e7ba2f36b",
   "settings": {
     "requested_backend": "nvdec",
     "gpu_id": 0,
@@ -24,22 +24,73 @@
       "fully_unlabelled": 2785829,
       "all_videos": 4741504
     },
-    "show_progress": true
+    "show_progress": true,
+    "raw_integrity": {
+      "mode": "bootstrap",
+      "expected_video_state_sha256": null,
+      "retry_attempts": 3,
+      "chunk_bytes": 1048576,
+      "cache_hash_workers": 2
+    }
   },
   "videos_total": 117,
   "videos_completed": 117,
+  "gpu_startup_diagnostics": {
+    "checked_utc": "2026-10-15T17:26:44.693325+00:00",
+    "gpu_id": 0,
+    "cuda_visible_devices": null,
+    "setup_errors": {},
+    "optional_import_errors": {},
+    "torch": {
+      "version": "2.11.0+cu130",
+      "cuda_build": "13.0",
+      "cuda_available": true,
+      "device_count": 1,
+      "device_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "compute_capability": [
+        12,
+        0
+      ]
+    },
+    "cuda_driver_library": {
+      "available": true,
+      "library": "libcuda.so.1"
+    },
+    "cuda_device": {
+      "available": true,
+      "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "driver_api_version": 13000
+    },
+    "nvdec_driver_library": {
+      "available": true,
+      "library": "libnvcuvid.so.1"
+    },
+    "cuda_visible_device_count": 1,
+    "pynvvideocodec": {
+      "imported": true,
+      "version": "2.2.3",
+      "required_api_present": true,
+      "missing_api": []
+    },
+    "startup_failures": [],
+    "nvdec_preflight_ready": true,
+    "codec_support": "not_tested_until_each_video_is_opened"
+  },
   "pipeline": {
     "video_workers": 9,
     "copy_workers": 21,
     "prefetch_videos": 21,
     "cpu_video_workers": 9,
-    "max_active_videos": 0,
-    "max_prepared_videos": 0,
-    "max_staged_videos": 0,
-    "max_reserved_bytes": 0,
-    "largest_window_bytes": 0
+    "max_active_videos": 9,
+    "max_prepared_videos": 21,
+    "max_staged_videos": 30,
+    "max_reserved_bytes": 31406579776,
+    "largest_window_bytes": 41502268369,
+    "staging_budget_bytes": 41502268369,
+    "initial_free_bytes": 71217385472,
+    "free_space_reserve_bytes": 4294967296
   },
-  "videos_reused": 117,
-  "videos_decoded": 0,
-  "finished_utc": "2026-10-07T18:07:10.290554+00:00"
+  "videos_reused": 0,
+  "videos_decoded": 117,
+  "finished_utc": "2026-10-15T17:36:38.380979+00:00"
 }
