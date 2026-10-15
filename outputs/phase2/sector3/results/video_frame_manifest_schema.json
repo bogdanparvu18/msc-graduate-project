@@ -32,6 +32,11 @@
       "name": "video_size_bytes"
     },
     {
+      "dtype": "object",
+      "name": "video_sha256",
+      "object_kind": "string"
+    },
+    {
       "dtype": "bool",
       "name": "container_opened"
     },
@@ -88,7 +93,7 @@
     }
   ],
   "csv_null_marker": "\\N",
-  "fingerprint": "a1d4beaabd365a18c05cdf50081bce83c239413cf5d2fe7bae503e0c2385c2b7",
+  "fingerprint": "2b1d48d12870bb7e1bf411cd725c862f3da7d2b8783e243789d45befb8c1d859",
   "rows": 117,
   "schema_version": 1
 }

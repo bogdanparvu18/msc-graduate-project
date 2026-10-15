@@ -152,6 +152,34 @@
       "object_kind": "empty"
     },
     {
+      "dtype": "string",
+      "name": "source_image_sha256",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "source_video_sha256",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "image_snapshot_id",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "video_snapshot_id",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "source_image_size_bytes"
+    },
+    {
+      "dtype": "Int64",
+      "name": "source_video_size_bytes"
+    },
+    {
       "dtype": "Int64",
       "name": "alignment_offset"
     },
@@ -252,7 +280,7 @@
     }
   ],
   "csv_null_marker": "\\N",
-  "fingerprint": "c4660f3cad8d58ae373259e7a70c1850ea0d44f459ad3adab586278b5f17ce43",
+  "fingerprint": "46ad0fdcf6091a018d870b1eb830d0b39fb72f16baa0a170a6f712f13cf461e4",
   "rows": 47239,
   "schema_version": 1
 }
