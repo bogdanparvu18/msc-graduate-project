@@ -1,0 +1,4 @@
+split,split_unit,requested_frame_fraction,actual_frame_fraction,video_count,retained_annotation_count,retained_unique_frame_count,represented_class_count,expected_class_count,frame_partition_validation_passed,video_overlap_allowed
+train,unique_decoded_frame,0.7,0.6999936479705265,43,33066,33060,14,14,True,True
+validation,unique_decoded_frame,0.15,0.14999258929894768,43,7086,7084,14,14,True,True
+test,unique_decoded_frame,0.15,0.15001376273052575,43,7087,7085,14,14,True,True

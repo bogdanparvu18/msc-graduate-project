@@ -1,0 +1,3 @@
+video_annotation_type,supervised_split,data_role,video_count
+fully_unlabelled,\N,domain_adaptation_only,74
+partially_labelled,mixed,supervised_mixed,43

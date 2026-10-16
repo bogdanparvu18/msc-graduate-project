@@ -1,0 +1,3 @@
+source_type,eligible_video_count,sampled_video_count,frame_reference_count,unlabelled_only_validation_passed
+fully_unlabelled_video,74,74,185755,True
+unlabelled_frame_from_train_video,0,0,0,True
