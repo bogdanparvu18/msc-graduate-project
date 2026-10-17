@@ -1,0 +1,58 @@
+{
+  "artifact": "reports/temporal_window_report.csv",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "string",
+      "name": "finding_segment_id",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "video_key",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "finding_class_normalized",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "requested_context_count"
+    },
+    {
+      "dtype": "Int64",
+      "name": "available_context_count"
+    },
+    {
+      "dtype": "boolean",
+      "name": "temporal_window_complete"
+    },
+    {
+      "dtype": "Int64",
+      "name": "split_allowed_context_count"
+    },
+    {
+      "dtype": "Int64",
+      "name": "split_excluded_context_count"
+    },
+    {
+      "dtype": "Int64",
+      "name": "usable_context_count"
+    },
+    {
+      "dtype": "boolean",
+      "name": "temporal_window_usable_complete"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "d48127193022603869bb2aa206595970c683c18ede9d9e43e5062f3d26bb87a8",
+  "rows": 22220,
+  "schema_version": 1
+}

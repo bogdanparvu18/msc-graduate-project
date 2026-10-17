@@ -191,6 +191,25 @@
     },
     {
       "dtype": "string",
+      "name": "context_frame_split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "boolean",
+      "name": "context_split_allowed"
+    },
+    {
+      "dtype": "string",
+      "name": "context_split_status",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "audit_excluded_context_metadata_json",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
       "name": "extracted_image_path",
       "string_storage": "python"
     },
@@ -248,7 +267,7 @@
     }
   ],
   "csv_null_marker": "\\N",
-  "fingerprint": "9550154e26aefe3dbec1df8f7d3626988984e33e9c8da6c682b14b411787a0f2",
-  "rows": 2979,
+  "fingerprint": "dfada495efb6faf63b4a77133512a84a3a718e4207426c366f6e9896e0b2a5a1",
+  "rows": 110666,
   "schema_version": 1
 }

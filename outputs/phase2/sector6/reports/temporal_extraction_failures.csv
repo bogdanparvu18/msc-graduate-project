@@ -1,0 +1,1 @@
+finding_segment_id,video_key,opencv_frame_index,temporal_offset_seconds,context_image_path,context_image_source,context_annotation_status,extraction_status,extraction_error,image_validation_error

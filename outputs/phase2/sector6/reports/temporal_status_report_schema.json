@@ -1,0 +1,42 @@
+{
+  "artifact": "reports/temporal_status_report.csv",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "string",
+      "name": "split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "context_annotation_status",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "context_image_source",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "context_split_status",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "boolean",
+      "name": "context_split_allowed"
+    },
+    {
+      "dtype": "boolean",
+      "name": "image_readable"
+    },
+    {
+      "dtype": "Int64",
+      "name": "row_count"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "1f4eddf3decd86d37091e59d20ae6582c591470ed64a4ed6bd6206009bf7f6a6",
+  "rows": 18,
+  "schema_version": 1
+}
