@@ -4,7 +4,7 @@
   "columns": [
     {
       "dtype": "string",
-      "name": "split",
+      "name": "upstream_split",
       "string_storage": "python"
     },
     {
@@ -19,12 +19,22 @@
     },
     {
       "dtype": "string",
-      "name": "context_split_status",
+      "name": "context_split_provenance_status",
       "string_storage": "python"
     },
     {
       "dtype": "boolean",
-      "name": "context_split_allowed"
+      "name": "context_upstream_split_conflict"
+    },
+    {
+      "dtype": "string",
+      "name": "final_split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "split_assignment_status",
+      "string_storage": "python"
     },
     {
       "dtype": "boolean",
@@ -36,7 +46,7 @@
     }
   ],
   "csv_null_marker": "\\N",
-  "fingerprint": "1f4eddf3decd86d37091e59d20ae6582c591470ed64a4ed6bd6206009bf7f6a6",
-  "rows": 18,
+  "fingerprint": "0392b582777050c9ee7deb47b29c3ed256574389322d954a4e5935ff2c9d86b7",
+  "rows": 27,
   "schema_version": 1
 }

@@ -36,7 +36,7 @@
     }
   ],
   "csv_null_marker": "\\N",
-  "fingerprint": "5cdae495fc0e87755648235499341e63715d4516a5c108f6d134511fd6b9a7a6",
-  "rows": 51396,
+  "fingerprint": "ddc93b9bb57c8d26803806213a3121d6f1cecd10deff7baddae0ff47c9185d4d",
+  "rows": 61329,
   "schema_version": 1
 }

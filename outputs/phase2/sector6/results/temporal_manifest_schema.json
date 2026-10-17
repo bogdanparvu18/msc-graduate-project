@@ -29,7 +29,7 @@
     },
     {
       "dtype": "string",
-      "name": "split",
+      "name": "upstream_split",
       "string_storage": "python"
     },
     {
@@ -191,21 +191,35 @@
     },
     {
       "dtype": "string",
-      "name": "context_frame_split",
+      "name": "context_frame_upstream_split",
       "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "context_frame_id",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "context_requested_upstream_split_count"
     },
     {
       "dtype": "boolean",
-      "name": "context_split_allowed"
+      "name": "context_upstream_split_conflict"
     },
     {
       "dtype": "string",
-      "name": "context_split_status",
+      "name": "context_split_provenance_status",
       "string_storage": "python"
     },
     {
       "dtype": "string",
-      "name": "audit_excluded_context_metadata_json",
+      "name": "final_split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "split_assignment_status",
       "string_storage": "python"
     },
     {
@@ -267,7 +281,7 @@
     }
   ],
   "csv_null_marker": "\\N",
-  "fingerprint": "dfada495efb6faf63b4a77133512a84a3a718e4207426c366f6e9896e0b2a5a1",
+  "fingerprint": "7152a3b08a11c82415c626e706bbc0087a7ed1393b248f875d7a0f02c643f86a",
   "rows": 110666,
   "schema_version": 1
 }

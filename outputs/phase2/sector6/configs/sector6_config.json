@@ -330,6 +330,7 @@
       "temporal_context_offsets_seconds": null,
       "temporal_context_png_compression": null,
       "temporal_context_reuse_existing": null,
+      "temporal_context_split_policy": "deferred",
       "temporal_context_workers": 10
     },
     "seed": 42,
@@ -359,6 +360,7 @@
     ],
     "temporal_context_png_compression": 3,
     "temporal_context_reuse_existing": true,
+    "temporal_context_split_policy": "deferred",
     "temporal_context_workers": 10,
     "test_fraction": 0.15,
     "timezone": "America/Toronto",
@@ -383,5 +385,5 @@
     }
   },
   "schema_version": 2,
-  "semantic_config_fingerprint": "ef440c74a368a70e255eb24a6d27d03749b23c4d70dd9b935348eac65820c86c"
+  "semantic_config_fingerprint": "e8144db258a5f53b813aed07d450a334a7696d212d59048986d5cb200f4db1dd"
 }

@@ -14,7 +14,7 @@
     },
     {
       "dtype": "string",
-      "name": "split",
+      "name": "upstream_split",
       "string_storage": "python"
     },
     {
@@ -36,23 +36,29 @@
     },
     {
       "dtype": "Int64",
-      "name": "split_allowed_context_count"
+      "name": "upstream_split_conflict_context_count"
     },
     {
       "dtype": "Int64",
-      "name": "split_excluded_context_count"
-    },
-    {
-      "dtype": "Int64",
-      "name": "usable_context_count"
+      "name": "readable_context_count"
     },
     {
       "dtype": "boolean",
-      "name": "temporal_window_usable_complete"
+      "name": "temporal_window_readable_complete"
+    },
+    {
+      "dtype": "string",
+      "name": "final_split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "split_assignment_status",
+      "string_storage": "python"
     }
   ],
   "csv_null_marker": "\\N",
-  "fingerprint": "d48127193022603869bb2aa206595970c683c18ede9d9e43e5062f3d26bb87a8",
+  "fingerprint": "d0e29ac3eaade246644b53452ec0ba6cc30e281df0660b3130c89c8dbf00c23e",
   "rows": 22220,
   "schema_version": 1
 }
