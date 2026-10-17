@@ -3,7 +3,6 @@
 **Source:** [`phase2_06_temporal_context_images.ipynb`](https://github.com/bogdanparvu18/msc-graduate-project/blob/0ea45708177f0bdc26306711561dfa1b6b6b7d0a/notebooks/phase2/phase2_06_temporal_context_images.ipynb)  
 **Review date:** 17 October 2026  
 **Basis:** The revised notebook and published S1–S5/S6 metadata at repository commit `0ea45708177f0bdc26306711561dfa1b6b6b7d0a`, together with the local metadata-validation and temporal-planning checks performed for the merged implementation. Those checks used the same upstream artifacts, verified their lineage, and exercised the pure transformations. Google Drive media copying and hardware NVDEC execution were not performed during those checks.  
-**Saved run reviewed:** The revised notebook has no saved execution outputs. Its new Colab run is in progress and has not published a completed result in the reviewed snapshot. The existing S6 catalog, updated `20261005T235616462013Z` (UTC), describes an earlier implementation and is identified separately below.
 
 ## Executive summary
 
