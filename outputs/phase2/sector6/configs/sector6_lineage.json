@@ -704,7 +704,7 @@
     "repo_url": "https://github.com/bogdanparvu18/msc-graduate-project.git",
     "snapshot_sha256": "7a9f660d31a951365abc278151b8ae84d5e29916bd994eb2a6a5f346119447e5",
     "source_branch": "main",
-    "source_commit": "459de2297271185190b854d6cc5e83682db49970"
+    "source_commit": "bb6f9ad48580e903b326fc29ee90aa85b691c6ae"
   },
   "image_audit_dependencies": {
     "nvidia-nvimgcodec-cu13": "0.8.0.22",
@@ -85999,7 +85999,7 @@
     "s1_catalog_sha256": "fcf1c0889da3ff8f93a36692003b64726a0a42680adad29b45dde59e5ff379ab",
     "sector2_artifact_catalog_sha256": "2394f2854cf26adf3948fdceebeae635cc92af3495aa35b679336410ecf2d816",
     "source_branch": "main",
-    "source_commit": "459de2297271185190b854d6cc5e83682db49970"
+    "source_commit": "bb6f9ad48580e903b326fc29ee90aa85b691c6ae"
   },
   "raw_references": {
     "confirmed_annotation_count": 47239,
@@ -86452,7 +86452,7 @@
     "input_source": "published_git_objects_only",
     "repo_url": "https://github.com/bogdanparvu18/msc-graduate-project.git",
     "source_branch": "main",
-    "source_commit": "459de2297271185190b854d6cc5e83682db49970"
+    "source_commit": "bb6f9ad48580e903b326fc29ee90aa85b691c6ae"
   },
   "source_table_fingerprint": "e793a3abfa94537ed211fc35e053828eb6f5ba7c815e1bd2f73fcfb588c2198f",
   "upstream": {
