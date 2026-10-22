@@ -6,9 +6,9 @@
       "sha256": "fce5057103a042f808df71c8034f75d76cba051db4f4382d39016ae2518110ee"
     },
     {
-      "bytes": 17578650,
+      "bytes": 17578649,
       "relative_path": "configs/sector6_lineage.json",
-      "sha256": "a2895a6f4fd9ff19d810a7153b36bf0fe6a6a3e7dc93dedb3be43d73ec5acf9d"
+      "sha256": "8f22d1502d12ee4142317d5227b2014351eaf74485bda16b434bdb57c6f10335"
     },
     {
       "bytes": 890,
@@ -93,7 +93,7 @@
   ],
   "complete": true,
   "config_snapshot": "configs/sector6_config.json",
-  "content_id": "276a653985a143eb75358ca757f422a20016d0f74ab5bcb643d44b41486ec805",
+  "content_id": "16fc3061fc23aeda59957a9adcef8b444e2f81c2944f7219b1ec77b3c4c3b473",
   "core_source_sha256": "9abd8ea9034273cac6ddc961781718a9efa1c9e47acbbb2f3a2e2d8476db9b56",
   "input_sha256": {
     "official_image/data/raw/kvasir_capsule/osfstorage/labelled_images/Ampulla of vater/eb0203196e284797_1158.jpg": "95beb7c14d3ba5d5fe60b3cd6750142bde1fbd56e592ea71e1ba9f8c89773d0e",
