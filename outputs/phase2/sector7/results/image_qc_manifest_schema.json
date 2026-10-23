@@ -14,7 +14,35 @@
     },
     {
       "dtype": "string",
-      "name": "split",
+      "name": "physical_frame_id",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "video_key",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "opencv_frame_index"
+    },
+    {
+      "dtype": "string",
+      "name": "upstream_splits_json",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "upstream_split_count"
+    },
+    {
+      "dtype": "string",
+      "name": "final_split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "split_assignment_status",
       "string_storage": "python"
     },
     {
@@ -112,20 +140,33 @@
     },
     {
       "dtype": "boolean",
+      "name": "image_technically_usable"
+    },
+    {
+      "dtype": "boolean",
+      "name": "training_ready"
+    },
+    {
+      "dtype": "boolean",
       "name": "image_usable_for_modelling"
     },
     {
       "dtype": "string",
-      "name": "qc_image_sha256",
+      "name": "qc_assessment_status",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "qc_verified_source_sha256",
       "string_storage": "python"
     },
     {
       "dtype": "boolean",
-      "name": "qc_source_matches_sector6"
+      "name": "qc_source_matches_upstream"
     }
   ],
   "csv_null_marker": "\\N",
-  "fingerprint": "3537b3a4aaff4c162a894c1b73522106977ace9ea05e164b5851f393aa79e140",
-  "rows": 48641,
+  "fingerprint": "eff9a7bf6e4a2144f717627343f1312677b27f5cd0fb4c81cbf6a2a69dc0966a",
+  "rows": 66127,
   "schema_version": 1
 }

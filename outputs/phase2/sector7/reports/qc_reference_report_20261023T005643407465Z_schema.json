@@ -1,0 +1,80 @@
+{
+  "artifact": "reports/qc_reference_report_20261023T005643407465Z.parquet",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "string",
+      "name": "source_manifest",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "source_row"
+    },
+    {
+      "dtype": "string",
+      "name": "source_reference_id",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "image_path",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "image_relpath",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "physical_frame_id",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "video_key",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "opencv_frame_index"
+    },
+    {
+      "dtype": "string",
+      "name": "upstream_split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "final_split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "split_assignment_status",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "reference_status",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "boolean",
+      "name": "qc_reference_covered"
+    },
+    {
+      "dtype": "boolean",
+      "name": "image_readable"
+    },
+    {
+      "dtype": "boolean",
+      "name": "qc_requires_review"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "7d1908349f25720948e8334537df84bd2e30f272a3714c921b06248839823e07",
+  "rows": 157905,
+  "schema_version": 1
+}

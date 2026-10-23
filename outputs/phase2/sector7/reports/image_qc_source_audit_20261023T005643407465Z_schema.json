@@ -1,0 +1,86 @@
+{
+  "artifact": "reports/image_qc_source_audit_20261023T005643407465Z.parquet",
+  "column_axis_name": null,
+  "columns": [
+    {
+      "dtype": "string",
+      "name": "image_path",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "image_relpath",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "video_key",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "opencv_frame_index"
+    },
+    {
+      "dtype": "string",
+      "name": "local_image_path",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "image_sha256",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "image_bytes"
+    },
+    {
+      "dtype": "string",
+      "name": "expected_sha256",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "expected_bytes"
+    },
+    {
+      "dtype": "string",
+      "name": "expected_hash_sources_json",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "source_status",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "boolean",
+      "name": "source_matches_upstream"
+    },
+    {
+      "dtype": "string",
+      "name": "source_error",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "local_provenance_path",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "provenance_sha256",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "expected_provenance_json",
+      "string_storage": "python"
+    }
+  ],
+  "csv_null_marker": "\\N",
+  "fingerprint": "66daebd385ccb248b1289d4e4e8cbde464dc2e25c0d2b4276df914aa733fdf3e",
+  "rows": 66127,
+  "schema_version": 1
+}

@@ -14,7 +14,35 @@
     },
     {
       "dtype": "string",
-      "name": "split",
+      "name": "physical_frame_id",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "video_key",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "opencv_frame_index"
+    },
+    {
+      "dtype": "string",
+      "name": "upstream_splits_json",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "upstream_split_count"
+    },
+    {
+      "dtype": "string",
+      "name": "final_split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "split_assignment_status",
       "string_storage": "python"
     },
     {
@@ -27,7 +55,7 @@
     }
   ],
   "csv_null_marker": "\\N",
-  "fingerprint": "f3c302ae96a73585784959e45b8a052ab4f2586aa4342714b22f39de71dcb467",
-  "rows": 48641,
+  "fingerprint": "5ed4ab65a75f40a920fe358b589e7365da09cb41b590bb0780c9640aaea57cca",
+  "rows": 66127,
   "schema_version": 1
 }

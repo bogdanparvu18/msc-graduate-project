@@ -29,7 +29,7 @@
     },
     {
       "dtype": "string",
-      "name": "split",
+      "name": "upstream_split",
       "string_storage": "python"
     },
     {
@@ -191,6 +191,39 @@
     },
     {
       "dtype": "string",
+      "name": "context_frame_upstream_split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "context_frame_id",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "context_requested_upstream_split_count"
+    },
+    {
+      "dtype": "boolean",
+      "name": "context_upstream_split_conflict"
+    },
+    {
+      "dtype": "string",
+      "name": "context_split_provenance_status",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "final_split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "split_assignment_status",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
       "name": "extracted_image_path",
       "string_storage": "python"
     },
@@ -333,11 +366,29 @@
     },
     {
       "dtype": "boolean",
-      "name": "image_usable_for_modelling"
+      "name": "image_technically_usable"
     },
     {
       "dtype": "boolean",
-      "name": "qc_source_matches_sector6"
+      "name": "training_ready"
+    },
+    {
+      "dtype": "boolean",
+      "name": "image_usable_for_modelling"
+    },
+    {
+      "dtype": "string",
+      "name": "qc_assessment_status",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "qc_verified_source_sha256",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "boolean",
+      "name": "qc_source_matches_upstream"
     },
     {
       "dtype": "boolean",
@@ -345,7 +396,7 @@
     }
   ],
   "csv_null_marker": "\\N",
-  "fingerprint": "5043756203338f0ecf61af7e0049cc78558e540b7eed42afd7f44a760ec61868",
-  "rows": 2979,
+  "fingerprint": "4585351ea1200537085de627ffe1aa5a0150d3b22577236eafb71097290ac282",
+  "rows": 110666,
   "schema_version": 1
 }

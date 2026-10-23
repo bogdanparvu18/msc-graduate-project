@@ -152,6 +152,34 @@
       "object_kind": "empty"
     },
     {
+      "dtype": "string",
+      "name": "source_image_sha256",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "source_video_sha256",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "image_snapshot_id",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "video_snapshot_id",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "Int64",
+      "name": "source_image_size_bytes"
+    },
+    {
+      "dtype": "Int64",
+      "name": "source_video_size_bytes"
+    },
+    {
       "dtype": "Int64",
       "name": "alignment_offset"
     },
@@ -351,19 +379,52 @@
     },
     {
       "dtype": "boolean",
-      "name": "image_usable_for_modelling"
+      "name": "image_technically_usable"
     },
     {
       "dtype": "boolean",
-      "name": "qc_source_matches_sector6"
+      "name": "training_ready"
+    },
+    {
+      "dtype": "boolean",
+      "name": "image_usable_for_modelling"
+    },
+    {
+      "dtype": "string",
+      "name": "qc_assessment_status",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "qc_verified_source_sha256",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "boolean",
+      "name": "qc_source_matches_upstream"
     },
     {
       "dtype": "boolean",
       "name": "qc_reference_covered"
+    },
+    {
+      "dtype": "string",
+      "name": "upstream_split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "final_split",
+      "string_storage": "python"
+    },
+    {
+      "dtype": "string",
+      "name": "split_assignment_status",
+      "string_storage": "python"
     }
   ],
   "csv_null_marker": "\\N",
-  "fingerprint": "797c4e58af8ab1a06117b710c7608272fba8a173d88b8c40883394ec3f86653d",
+  "fingerprint": "9f6b7452fd52bf24e1976d1eea412a9931404dc1bf1b57a5fe7281cb6e84b608",
   "rows": 47239,
   "schema_version": 1
 }
