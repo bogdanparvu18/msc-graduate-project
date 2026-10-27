@@ -1,0 +1,25 @@
+{
+  "columns": [
+    "assignment_constraint",
+    "final_split",
+    "physical_frame_ids_json",
+    "shared_source_group_id",
+    "source_image_relpaths_json",
+    "source_sha256_values_json",
+    "split_assignment_status",
+    "training_ready",
+    "upstream_splits_json"
+  ],
+  "dtypes": {
+    "assignment_constraint": "object",
+    "final_split": "object",
+    "physical_frame_ids_json": "object",
+    "shared_source_group_id": "object",
+    "source_image_relpaths_json": "object",
+    "source_sha256_values_json": "object",
+    "split_assignment_status": "object",
+    "training_ready": "bool",
+    "upstream_splits_json": "object"
+  },
+  "rows": 237
+}

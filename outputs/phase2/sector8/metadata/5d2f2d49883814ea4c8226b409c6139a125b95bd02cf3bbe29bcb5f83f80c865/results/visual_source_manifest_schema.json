@@ -1,0 +1,43 @@
+{
+  "columns": [
+    "annotation_ids_json",
+    "artifact_id",
+    "final_split",
+    "finding_segment_id",
+    "frame_index",
+    "image_relpath",
+    "is_target",
+    "panel_index",
+    "physical_frame_id",
+    "role",
+    "source_height",
+    "source_index",
+    "source_sha256",
+    "source_width",
+    "time_offset_seconds",
+    "training_ready",
+    "upstream_splits_json",
+    "video_key"
+  ],
+  "dtypes": {
+    "annotation_ids_json": "object",
+    "artifact_id": "object",
+    "final_split": "object",
+    "finding_segment_id": "object",
+    "frame_index": "int64",
+    "image_relpath": "object",
+    "is_target": "bool",
+    "panel_index": "int64",
+    "physical_frame_id": "object",
+    "role": "object",
+    "source_height": "int64",
+    "source_index": "int64",
+    "source_sha256": "object",
+    "source_width": "int64",
+    "time_offset_seconds": "float64",
+    "training_ready": "bool",
+    "upstream_splits_json": "object",
+    "video_key": "object"
+  },
+  "rows": 478701
+}

@@ -1,0 +1,63 @@
+{
+  "benchmark_coverage": {
+    "examples": 216808,
+    "examples_by_variant": {
+      "combined": 24164,
+      "comparison": 3357,
+      "crop": 4127,
+      "full": 47239,
+      "fullcrop": 4127,
+      "fullcrop_panel": 4127,
+      "overlay": 4127,
+      "progression": 33861,
+      "qc": 47239,
+      "temporal_collage": 22220,
+      "temporal_multi": 22220
+    },
+    "final_split_assignment": "pending",
+    "pixels_available_examples": 216808,
+    "questions_and_answers": "not_authored",
+    "same_cohort_subjects": 2183,
+    "same_cohort_variants": [
+      "full",
+      "crop",
+      "fullcrop",
+      "overlay",
+      "temporal_multi",
+      "temporal_collage"
+    ],
+    "shared_source_groups": 237,
+    "subjects": 47239,
+    "training_ready": false
+  },
+  "benchmark_examples": 216808,
+  "complete": true,
+  "derived_jpegs": 118201,
+  "kind_counts": {
+    "bbox_overlay": 4126,
+    "combined_panel": 24164,
+    "comparison_panel": 3357,
+    "evidence_panel": 4127,
+    "full_frame": 66127,
+    "progression_panel": 8842,
+    "quality_panel": 47238,
+    "roi_crop": 4127,
+    "temporal_collage": 22220
+  },
+  "limitations": [
+    "No generated clinical ground truth or QA pairs.",
+    "Observed anchor appearance is not clinical disease progression.",
+    "QC selection uses uncalibrated metrics; no clinical quality ground truth.",
+    "Final benchmark splits and question eligibility require downstream validation."
+  ],
+  "original_reference_views": 66127,
+  "phase": 2,
+  "sector": 8,
+  "selection_max_subjects": null,
+  "skipped": 80475,
+  "source_files_in_catalog": 66127,
+  "split_assignment_status": "pending",
+  "subjects": 47239,
+  "training_ready": false,
+  "upstream_commit": "cb4ac8d8f94caeb83dcddfccf495cdd4188bf9f0"
+}

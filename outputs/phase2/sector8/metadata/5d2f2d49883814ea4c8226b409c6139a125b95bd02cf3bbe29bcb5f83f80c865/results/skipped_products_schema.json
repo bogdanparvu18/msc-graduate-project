@@ -1,0 +1,29 @@
+{
+  "columns": [
+    "available_verified_frame_indices_json",
+    "available_verified_frames",
+    "available_verified_source_paths_json",
+    "finding_segment_id",
+    "image_relpath",
+    "kind",
+    "reason",
+    "required_verified_frames",
+    "selection_scope",
+    "status",
+    "subject_id"
+  ],
+  "dtypes": {
+    "available_verified_frame_indices_json": "object",
+    "available_verified_frames": "float64",
+    "available_verified_source_paths_json": "object",
+    "finding_segment_id": "object",
+    "image_relpath": "object",
+    "kind": "object",
+    "reason": "object",
+    "required_verified_frames": "float64",
+    "selection_scope": "object",
+    "status": "object",
+    "subject_id": "object"
+  },
+  "rows": 80475
+}

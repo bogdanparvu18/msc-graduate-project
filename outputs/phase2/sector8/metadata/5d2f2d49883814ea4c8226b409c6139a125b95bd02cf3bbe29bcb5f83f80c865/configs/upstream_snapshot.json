@@ -1,0 +1,16 @@
+{
+  "commit": "cb4ac8d8f94caeb83dcddfccf495cdd4188bf9f0",
+  "consumed_sha256": {
+    "configs/sector7_config_20261023T005643407465Z.json": "09d8dd10436c9a4b169ed0a0517c7eff9768907529b4b24b640d6f90443daf7d",
+    "configs/sector7_lineage.json": "3bd4e016af7ce129ee221878e9de926a8ee61c944483b306f231cc8bd1850450",
+    "reports/summary_20261023T005643407465Z.json": "3562142cd43fd2a19678863f97787e113e84a55f9cf5660477cae2db177081cd",
+    "results/image_qc_manifest.parquet": "b392213f98f018b0693b0a3cddd3ba3d8c5a6482f4829c13aca01452c143ae19",
+    "results/image_qc_manifest_schema.json": "24d2266c6d22056eb50068f9c347065f6a43760d6e4d994ff3f380e8c50e45a3",
+    "results/labelled_frame_manifest_with_qc.parquet": "4eca3c5a49bfb9f2b754c2b25d3699af03ea7a644956f12ef0d6aaba79589e98",
+    "results/labelled_frame_manifest_with_qc_schema.json": "8077f3a7484014fa0e6213dfc6b1dd11e552ca271cf6d27756f033e0ce94a49a",
+    "results/temporal_manifest_with_qc.parquet": "f2864e8df696444a54f04e714231824b24a1dc4addd18477cad5920be798565c",
+    "results/temporal_manifest_with_qc_schema.json": "879e7e81b4c2056b1bd6a5ad74bc4493180d09e74d3621b8834315efad7af8b9"
+  },
+  "repository": "bogdanparvu18/msc-graduate-project",
+  "sector7_state_sha256": "a90f4048491f9aef0be931b2d4c85cf4a8ac61236534d44ca50c3331b073fd69"
+}
