@@ -2,7 +2,7 @@
 
 > **Status:** Research ideas / proposed future work — **not implemented**.  
 > **Created:** 2026-10-23  
-> **Target:** [Phase 6 — Add retrieval and multimodal grounding](README.md#phase-6--add-retrieval-and-multimodal-grounding), with evaluation in Phase 9.  
+> **Target:** [Phase 5 — Add retrieval and multimodal grounding](README.md#phase-5--add-retrieval-and-multimodal-grounding), with evaluation in Phase 8.  
 > **Dataset:** Kvasir-Capsule. These ideas should be refined after the dataset, evidence-unit definitions, and final train/validation/test split are fixed.
 
 ## 1. Motivation and research question
@@ -47,8 +47,8 @@ Reuse existing project artifacts rather than rebuilding the dataset:
 - **Phase 2, Sector 5:** Finding segments and frame/annotation identities.
 - **Phase 2, Sector 6:** Provenance-tracked representative and neighboring frames, temporal references, and source-video/frame identifiers.
 - **Phase 2, Sector 7:** Image quality-control indicators and source integrity.
-- **Phase 3:** Standardized visual artifacts, such as crops, overlays, strips, and multi-panel evidence.
-- **Phase 4:** QA examples, question types, expected answers, and evidence references.
+- **Phase 2, Sector 8:** Standardized visual artifacts, such as crops, overlays, temporal collages and multi-panel evidence, with source provenance and ordered input recipes.
+- **Phase 3:** QA examples, question types, expected answers, and evidence references.
 
 Build a **canonical evidence catalog** with stable identifiers and provenance, then maintain the modality-specific index views required by each retriever. Candidate evidence may include verified frames, finding segments, visual derivatives, label definitions, curated terminology, dataset documentation, and appropriately sourced external medical reference text.
 
@@ -122,4 +122,4 @@ Use paired comparisons on the same questions; report per-category results, uncer
 
 The paper studies GMU-based fusion of medical image and question representations for retrieval while keeping the underlying medical vision-language generator frozen. It is a **preprint submitted to ECIR**, not an established result on capsule-endoscopy data. Its reported findings are motivation for an ablation, **not** evidence that GMU will improve Kvasir-Capsule performance.
 
-**Project placement:** This draft augments the existing [Phase 6 retrieval and multimodal grounding plan](README.md#phase-6--add-retrieval-and-multimodal-grounding). It does not replace the current Phase 2 sector implementations or claim that RAG experiments have been run.
+**Project placement:** This draft augments the existing [Phase 5 retrieval and multimodal grounding plan](README.md#phase-5--add-retrieval-and-multimodal-grounding). It does not replace the current Phase 2 sector implementations or claim that RAG experiments have been run.

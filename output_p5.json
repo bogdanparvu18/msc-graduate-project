@@ -1,26 +1,22 @@
 {
-  "answer": "The frame shows angiectasia.",
-  "answer_type": "short_label",
-  "clinical_finding": "angiectasia",
-  "broad_category": "vascular_lesion",
+  "answer": "Yes. The artifact should be flagged for clinician review because it contains a bleeding-related finding.",
+  "answer_type": "prioritization",
+  "clinical_finding": "fresh_blood",
+  "broad_category": "bleeding_related_finding",
   "normal_abnormal": "abnormal",
   "evidence_refs": [
-    "target_frame",
-    "lesion_crop"
+    "bbox_overlay",
+    "lesion_crop",
+    "metadata_label",
+    "kg_context"
   ],
   "localization": {
-    "type": "crop",
-    "bbox": null,
+    "type": "highlighted_region",
+    "bbox": [88, 74, 201, 180],
     "frame_ref": "target_frame"
   },
-  "temporal_assessment": {
-    "requires_temporal_context": false,
-    "finding_persistence": "not_applicable",
-    "clearest_frame": null
-  },
-  "confidence": 0.82,
+  "confidence": 0.86,
   "uncertainty_reason": null,
   "decision_support": "flag_for_clinician_review",
-  "safety_flags": [],
-  "notes": "The response identifies the annotated visual finding but does not make a final clinical diagnosis."
+  "safety_flags": []
 }
