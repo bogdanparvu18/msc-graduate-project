@@ -123,3 +123,50 @@ Use paired comparisons on the same questions; report per-category results, uncer
 The paper studies GMU-based fusion of medical image and question representations for retrieval while keeping the underlying medical vision-language generator frozen. It is a **preprint submitted to ECIR**, not an established result on capsule-endoscopy data. Its reported findings are motivation for an ablation, **not** evidence that GMU will improve Kvasir-Capsule performance.
 
 **Project placement:** This draft augments the existing [Phase 5 retrieval and multimodal grounding plan](README.md#phase-5--add-retrieval-and-multimodal-grounding). It does not replace the current Phase 2 sector implementations or claim that RAG experiments have been run.
+
+---
+
+## 9. Candidate Medical Visual Tokenizer — MedVTok (review later)
+
+> **Added:** 2026-10-27  
+> **Status:** **Draft research idea / not implemented or benchmarked on Kvasir-Capsule.**  
+> **Open-source availability:** Official [GitHub repository](https://github.com/Masaaki-75/medvtok) contains model, inference, and training code and states that original project contributions are under the **MIT license**. Its README links to a [pretrained checkpoint on Hugging Face](https://huggingface.co/massaki75/medvtok) (including `config.json` and `ckpt.pth`); actual checkpoint download and execution have **not yet been verified** for this project. Third-party components and expert models have their own licenses.
+
+**Paper:** Chenglong Ma et al., *MedVTok: A General-Purpose Medical Visual Tokenizer*, NeurIPS 2026, [arXiv:2610.35842](https://arxiv.org/abs/2610.35842) (arXiv submission: 26 October 2026).  
+**Code:** https://github.com/Masaaki-75/medvtok  
+**Weights:** https://huggingface.co/massaki75/medvtok  
+**Setup/inference guide:** https://github.com/Masaaki-75/medvtok/blob/main/GUIDELINE.md
+
+### Why it is interesting
+
+MedVTok maps 2D medical images and 3D medical volumes from heterogeneous imaging modalities into a shared visual token space. Its contributions include:
+
+- **Slice Differential Regularization (SliDR):** encourages anatomical continuity across adjacent slices in volumetric data.
+- **Multi-Expert Representation Alignment (MERA):** aligns outputs with complementary medical expert encoders while retaining modality-specific information.
+- A shared encoder/decoder interface exposing features, spatial patch tokens, and latent representations for multiple tasks.
+
+The authors report training on **28 million images and 70,000 volumes across nine imaging modalities**, and evaluation on **24 downstream benchmarks** (classification, retrieval, segmentation, synthesis, VQA, and reporting). These are author-reported outcomes, **not evidence of a performance gain on capsule endoscopy**.
+
+### Proposed use in this MMVQA project
+
+**Primary candidate:** Evaluate MedVTok as an alternative **visual feature extractor** in the planned Phase 5 RAG retrieval ablation, especially:
+
+1. **RAG-V:** Compare embeddings/features from MedVTok on representative capsule frames with the current general-purpose visual retrieval encoder baseline (and a medical encoder baseline, if available).
+2. **RAG-MM:** Combine question embeddings with MedVTok frame features using an explicitly aligned/projection-based fusion method; compare with the original text+visual fusion baseline. Do not assume MedVTok's visual embedding space is already aligned to arbitrary text embeddings.
+3. **RAG-MM-GMU (optional):** Test whether a train-only learned gate improves retrieval relevance over fixed fusion for the same feature encoders.
+4. **Temporal extension (optional):** Extract MedVTok representations independently per verified frame/window from Phase 2 Sector 6, then evaluate temporal pooling or aggregation. **Its 3D volume capability is not automatically video understanding**: anatomical slice continuity and time-ordered endoscopy frames are different problems.
+
+**Key ablation:** Freeze the downstream generator, question set, evidence catalog, split definitions, top-K, and evaluation protocol; change only the visual encoder/tokenizer where possible. Compare **Recall@K, MRR, nDCG@K, evidence grounding, answer accuracy, small-lesion/localization fidelity, extraction/indexing latency, throughput, and GPU memory**. Report results by finding category and image-quality condition.
+
+**Risks and checks:** Confirm (a) checkpoint availability and external expert dependencies, (b) inference compatibility and memory needs in Colab, (c) licensing of code, weights, and dependencies, (d) relevance of the pretraining imaging modalities to capsule endoscopy, and (e) whether spatial resolution/token compression loses subtle visual findings. Preserve the project's group-aware split and provenance controls to avoid evidence leakage.
+
+### Follow-up checklist
+
+- [ ] Download and verify the official MedVTok checkpoint and run the included 2D inference example.
+- [ ] Inspect the MIT repository license and individual third-party/weight usage terms.
+- [ ] Extract features for a small, **split-safe** sample of Kvasir-Capsule representative frames.
+- [ ] Assess image resolution, fine-grained pathology preservation, and embedding separation across findings.
+- [ ] Decide whether it warrants full RAG-V and RAG-MM benchmarking against existing encoders.
+- [ ] Record measured results and limitations before considering integration into the project pipeline.
+
+**Decision:** **Keep as an open-source encoder candidate to review later; do not treat it as an implemented Phase 5 component or a validated improvement.**
