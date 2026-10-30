@@ -170,3 +170,57 @@ The authors report training on **28 million images and 70,000 volumes across nin
 - [ ] Record measured results and limitations before considering integration into the project pipeline.
 
 **Decision:** **Keep as an open-source encoder candidate to review later; do not treat it as an implemented Phase 5 component or a validated improvement.**
+
+---
+
+## 10. Candidate Unified Multimodal Embedder — EmbeddingGemma 2 (review later)
+
+> **Added:** 2026-10-30  
+> **Status:** Draft research idea — **not implemented, downloaded, or evaluated on Kvasir-Capsule**.  
+> **Availability:** Google DeepMind provides an **open-weight model under Apache 2.0** on [Hugging Face](https://huggingface.co/google/embeddinggemma-2), with a documented inference API. The public model launch was **6 October 2026**; the detailed arXiv technical report was submitted on **27 October 2026**. These are different publication events.
+
+**Paper:** Henrique Schechter Vera et al., *EmbeddingGemma 2: Unified and Efficient Multimodal Representations*, [arXiv:2610.37364](https://arxiv.org/abs/2610.37364).  
+**Model/weights:** https://huggingface.co/google/embeddinggemma-2  
+**Technical documentation:** https://ai.google.dev/gemma/docs/embeddinggemma/model_card_2  
+**Release announcement:** https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/
+
+### Research motivation
+
+EmbeddingGemma 2 projects **text, images, video, audio, and interleaved multimodal inputs** into a **shared 768-dimensional embedding space**. This is especially interesting for the planned **RAG-T, RAG-V, and RAG-MM** experiments: unlike a visual-only medical tokenizer, the same pretrained model can embed both natural-language clinical questions and representative endoscopy frames, including a combined question–image input.
+
+Google reports approximately **740M total parameters** (744M in the technical paper), with modular text (~270M), vision (~170M), and audio (~300M) components. The text+vision configuration is roughly **440M parameters** and does not need the audio encoder. Matryoshka Representation Learning supports **768, 512, 256, or 128-dimensional embeddings**, potentially reducing vector-index size at a measurable retrieval-quality cost.
+
+**Reported evidence (not MMVQA results):** In the authors' MMEB-v2 ablation, multimodal pre-finetuning scored **52.27**, additional roughly compute-matched distillation scored **52.28**, and the contrastive/spread-out finetuning stage scored **55.46** on the overall metric. Thus the improvement is attributable to the different finetuning objective rather than simply extending distillation in this experiment. These figures are from **Table 3 of the paper**, not a benchmark on Kvasir-Capsule. The complete released model's MMEB-v2 overall score is reported separately; do **not** confuse the ablation checkpoints with its final cross-task evaluation.
+
+### Proposed MMVQA evaluation
+
+Use this as a **candidate retrieval encoder**, not as a replacement for the response-generating VLM.
+
+1. **RAG-T — text only:** Embed the medical question with the documented query prompt. Search a text index of permitted evidence descriptions, metadata, label definitions, and curated clinical references. Avoid including test answers or derived evaluation labels in the retrieval text.
+2. **RAG-V — frame only:** Embed the verified representative capsule frame, retrieve visually relevant evidence from the same split-safe candidate catalog, and exclude exact query-frame/self-duplicates when the task is finding other evidence.
+3. **RAG-MM — question + frame:** Embed an interleaved clinical question and its representative image as **one multimodal query**, then retrieve relevant evidence in the shared embedding space. Test whether this outperforms text-only and frame-only retrieval on the *same question IDs and relevant evidence judgments*. This is different from merely concatenating independently trained text and visual vectors.
+4. **RAG-MM-T (optional):** Compare a fixed set of neighboring Sector 6 frames with the representative-frame query, controlling frame count, temporal sampling, visual token budget, and context length. The model's video support is not proof of adequate detection of subtle capsule-endoscopy findings.
+
+**Comparison against MedVTok (Section 9):** MedVTok is a medical visual tokenizer with potentially useful domain-specific representations; EmbeddingGemma 2 is a general-purpose **joint text/visual embedding** model. Compare both in **RAG-V** under the same evidence protocol. For **RAG-MM**, compare EmbeddingGemma 2's native cross-modal representation with appropriately aligned/projected MedVTok + text embeddings, without assuming raw vector-space compatibility.
+
+### Controlled ablations and evaluation
+
+- Keep final split assignments, evidence IDs/provenance, question sets, index-corpus definitions, top-K, downstream generator, prompting and answer-validation rules fixed wherever possible.
+- Compare **Recall@K, Precision@K, MRR, nDCG@K, evidence/segment recall, localization and temporal grounding, answer accuracy, abstention, retrieval latency, embedding throughput, index storage, and GPU memory**.
+- Test embedding dimensions **768 / 512 / 256** first; include 128 only as an explicit lower-quality compression experiment. Re-normalize embeddings after truncation and ensure query and index vectors have identical dimensions.
+- Evaluate the image token budget on small or low-contrast lesions; higher token budgets may preserve detail at additional computation cost.
+- Report retrieval results by pathology/finding category, visual quality and question type; assess whether gains in retrieval actually improve **grounded** VQA responses.
+- Maintain strict data isolation across physical frames, derivatives, temporal windows and, where feasible, source videos; never tune parameters or select configurations using the test set.
+- Distinguish general multimodal benchmark results from capsule-endoscopy evidence. The model has **not been validated on Kvasir-Capsule** in the cited work.
+
+### Practical checks before adoption
+
+- [ ] Confirm download, applicable license/terms, and successful inference of the published checkpoint on available hardware.
+- [ ] Use **bfloat16 or float32**; the official model card warns that **float16 can produce NaNs or degraded embeddings**.
+- [ ] Reproduce a tiny text↔image retrieval example using the model's query/document instruction format.
+- [ ] Create a small, split-safe Kvasir-Capsule index and compare with the existing general embedding baseline.
+- [ ] Compare **MedVTok vs. EmbeddingGemma 2** on visual retrieval and test native image+question joint retrieval.
+- [ ] Measure the impact of embedding truncation and vision token budget on subtle findings.
+- [ ] Decide on further experiments using validated retrieval and grounding results, not vendor benchmark rankings alone.
+
+**Decision:** Retain EmbeddingGemma 2 as an **open-weight multimodal retrieval candidate to investigate later**. No claims of implementation, clinically validated performance, or improvement on the MMVQA benchmark.
