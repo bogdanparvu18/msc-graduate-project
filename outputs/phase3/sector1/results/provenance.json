@@ -1,0 +1,1599 @@
+[
+  {
+    "example_id": "baca35b22ef88effe4a12699dda73dba38b22378dfa1883621af69ce731914bd",
+    "subject_id": "000742039dbdf90791a921c24315e0a0e53c67049a02f5acdb7dd02723417ded",
+    "ground_truth_ref": "8ebfe914d48a35d94168d49d45891ecfd400af580605a0e267bae885dbf66d26",
+    "variant": "full",
+    "annotation_assisted": false,
+    "shared_source_group_id": "867a7e57db03f0ba3033b17f0e4297437aaa4957b9a575fd656b515146d303ee",
+    "final_split": null,
+    "split_assignment_status": "pending",
+    "question_status": "preview_only",
+    "inputs": [
+      {
+        "input": {
+          "artifact_id": "d64e96181a3358284b05f73cc55a6ffbf8a2627be46f86ac117119776c341338",
+          "height": 336,
+          "image_role": "target",
+          "input_id": "a4ef9d0d84058d92d7499b203387c2eb7953c3a0536abb73e9e1089a527301f1",
+          "input_order": 0,
+          "relative_path": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8112.jpg",
+          "sha256": "ccfa70c75f7237b763e9884338ac50a2794ea3478188a6f75f82afa2d34128ff",
+          "storage": "original",
+          "width": 336
+        },
+        "sources": [
+          {
+            "artifact_id": "d64e96181a3358284b05f73cc55a6ffbf8a2627be46f86ac117119776c341338",
+            "final_split": null,
+            "finding_segment_id": null,
+            "frame_index": 8112,
+            "image_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8112.jpg",
+            "is_target": true,
+            "panel_index": 0,
+            "physical_frame_id": "[\"8885668afb844852\",8112]",
+            "role": "target",
+            "source_height": 336,
+            "source_index": 0,
+            "source_sha256": "ccfa70c75f7237b763e9884338ac50a2794ea3478188a6f75f82afa2d34128ff",
+            "source_width": 336,
+            "time_offset_seconds": null,
+            "training_ready": false,
+            "video_key": "8885668afb844852",
+            "annotation_ids": [
+              "annotation_338d7a01a2c7032b_0"
+            ],
+            "upstream_splits": [
+              "test",
+              "train",
+              "validation"
+            ]
+          }
+        ],
+        "resolution": {
+          "resolution": "original",
+          "local_path": "/content/drive/MyDrive/MMVQA_Clinical/data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8112.jpg",
+          "input_id": "a4ef9d0d84058d92d7499b203387c2eb7953c3a0536abb73e9e1089a527301f1",
+          "artifact_id": "d64e96181a3358284b05f73cc55a6ffbf8a2627be46f86ac117119776c341338",
+          "input_order": 0,
+          "storage": "original",
+          "relative_path": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8112.jpg",
+          "sha256": "ccfa70c75f7237b763e9884338ac50a2794ea3478188a6f75f82afa2d34128ff",
+          "bytes": 14374,
+          "width": 336,
+          "height": 336
+        }
+      }
+    ],
+    "source_snapshot": {
+      "schema_version": 1,
+      "repository": "bogdanparvu18/msc-graduate-project",
+      "requested_ref": "main",
+      "resolved_commit": "8b91a1b92b01870242a09a8f98c1fc4f7f5e6abe",
+      "s8_root": "outputs/phase2/sector8",
+      "storage_index": {
+        "relative_path": "configs/sector8_github_storage.json",
+        "bytes": 16497,
+        "sha256": "2ac736a80b8730e7431924f59f5289c0ad9d90381d12a8625506d31c8564d34b"
+      },
+      "resolution_status": "verified",
+      "source_catalog_sha256": "2ccf17c63d568c2d4ba36e390fe90c9418fea5ca1a95b818715ec1920134ea4d",
+      "consumed_artifacts": [
+        {
+          "relative_path": "configs/sector8_archive_state.json",
+          "bytes": 35760510,
+          "sha256": "2ccf17c63d568c2d4ba36e390fe90c9418fea5ca1a95b818715ec1920134ea4d",
+          "storage": "parts",
+          "parts": [
+            {
+              "bytes": 33554432,
+              "offset": 0,
+              "ordinal": 0,
+              "relative_path": "metadata/_github_chunks/8513359d8f914f9ecbfb8946e657da604ecd84c9f3420a502e539477b0c83286.bin",
+              "sha256": "8513359d8f914f9ecbfb8946e657da604ecd84c9f3420a502e539477b0c83286"
+            },
+            {
+              "bytes": 2206078,
+              "offset": 33554432,
+              "ordinal": 1,
+              "relative_path": "metadata/_github_chunks/14bbba0f9d01140cd25099568e46d87ba2b17d89492ffd904a4ea3e981b6f3d0.bin",
+              "sha256": "14bbba0f9d01140cd25099568e46d87ba2b17d89492ffd904a4ea3e981b6f3d0"
+            }
+          ]
+        },
+        {
+          "relative_path": "configs/sector8_archives.json",
+          "bytes": 38106604,
+          "sha256": "354806f5db0f11af465721c0db0ffb5040f3c7692c563b1615bed314c958d39c",
+          "storage": "parts",
+          "parts": [
+            {
+              "bytes": 33554432,
+              "offset": 0,
+              "ordinal": 0,
+              "relative_path": "metadata/_github_chunks/1eb8f46b444dd00318c46f4213c88db4017431143cb67428aaa73f1690754c18.bin",
+              "sha256": "1eb8f46b444dd00318c46f4213c88db4017431143cb67428aaa73f1690754c18"
+            },
+            {
+              "bytes": 4552172,
+              "offset": 33554432,
+              "ordinal": 1,
+              "relative_path": "metadata/_github_chunks/2c699eb037fa6bceaa3ebadf8fa153710552e6ff70014e92cb5dbf7a0c2c82de.bin",
+              "sha256": "2c699eb037fa6bceaa3ebadf8fa153710552e6ff70014e92cb5dbf7a0c2c82de"
+            }
+          ]
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/benchmark/model_inputs.jsonl.gz",
+          "bytes": 63690422,
+          "sha256": "060cbcb925022d1ca5cbd0dc7bd7ead214b2d2e3d49d9f7d9b3c26e124553e74",
+          "storage": "parts",
+          "parts": [
+            {
+              "bytes": 33554432,
+              "offset": 0,
+              "ordinal": 0,
+              "relative_path": "metadata/_github_chunks/e21ff29b9ca5bf322dfa5264af6c5b57547e52fbf0c21552e54e4562fbd616a3.bin",
+              "sha256": "e21ff29b9ca5bf322dfa5264af6c5b57547e52fbf0c21552e54e4562fbd616a3"
+            },
+            {
+              "bytes": 30135990,
+              "offset": 33554432,
+              "ordinal": 1,
+              "relative_path": "metadata/_github_chunks/c5bfd7f2be5cba2eaab3dca6abc4abd6e4a99f1aa150d47d9cb3e5fd3b3cfcad.bin",
+              "sha256": "c5bfd7f2be5cba2eaab3dca6abc4abd6e4a99f1aa150d47d9cb3e5fd3b3cfcad"
+            }
+          ]
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/benchmark_ground_truth_manifest.parquet",
+          "bytes": 12823295,
+          "sha256": "6fdd3eebcb1b77e05d08acee201cd3ae0f6e0eb88012b6ef8484e36a6c9033d0",
+          "storage": "direct"
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/benchmark_ground_truth_manifest_schema.json",
+          "bytes": 1165,
+          "sha256": "4a6c9b0b568f5ce60fad439bf21b7f6eb6ab9d338c761264527323ef365f022c",
+          "storage": "direct"
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/source_evidence_manifest.parquet",
+          "bytes": 20098917,
+          "sha256": "8cff5ed473ca5f34c4e65d4a963b34075e030c3b5c6c51fbd3985ad0f248cb54",
+          "storage": "direct"
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/source_evidence_manifest_schema.json",
+          "bytes": 1715,
+          "sha256": "78a04aa6ae578f4d19abdbc83213af1eaf95ff2e5d5fb89619a5847b21f1b1d9",
+          "storage": "direct"
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/visual_source_manifest.parquet",
+          "bytes": 62429449,
+          "sha256": "0e5b10bd087592ded405a984ef5f8d9fda37e9fe0fc72e61df0581b24754b881",
+          "storage": "parts",
+          "parts": [
+            {
+              "bytes": 33554432,
+              "offset": 0,
+              "ordinal": 0,
+              "relative_path": "metadata/_github_chunks/d1f51b932d8cf42f9ed794fca45976060d498b3a2f86299e5d794b5c15362cff.bin",
+              "sha256": "d1f51b932d8cf42f9ed794fca45976060d498b3a2f86299e5d794b5c15362cff"
+            },
+            {
+              "bytes": 28875017,
+              "offset": 33554432,
+              "ordinal": 1,
+              "relative_path": "metadata/_github_chunks/14f32d7680109dc90e95fb6facd1f254b9ab5a9f706e183daab4d73876e4034c.bin",
+              "sha256": "14f32d7680109dc90e95fb6facd1f254b9ab5a9f706e183daab4d73876e4034c"
+            }
+          ]
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/visual_source_manifest_schema.json",
+          "bytes": 990,
+          "sha256": "37b10630e18a21dd946d623558e7d6c50e4b27f31ea3e2aa4a715b687ef862fc",
+          "storage": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "example_id": "c697eb2f6978206d74981b8ab6c2ef650f48c74a13eb0009d00731496779f02f",
+    "subject_id": "000742039dbdf90791a921c24315e0a0e53c67049a02f5acdb7dd02723417ded",
+    "ground_truth_ref": "8ebfe914d48a35d94168d49d45891ecfd400af580605a0e267bae885dbf66d26",
+    "variant": "crop",
+    "annotation_assisted": true,
+    "shared_source_group_id": "867a7e57db03f0ba3033b17f0e4297437aaa4957b9a575fd656b515146d303ee",
+    "final_split": null,
+    "split_assignment_status": "pending",
+    "question_status": "preview_only",
+    "inputs": [
+      {
+        "input": {
+          "artifact_id": "c1101db3e8489eb16fec2e1d7f466761258ec2bb079c6a782b3f9d7e463b1324",
+          "height": 283,
+          "image_role": "crop",
+          "input_id": "bea5b97d90ed1a2ee3abf8c57ea2c9636a0ce99d195fc5032144ad0c89b2b519",
+          "input_order": 0,
+          "relative_path": "products/roi_crop/c1101db3e8489eb16fec2e1d7f466761258ec2bb079c6a782b3f9d7e463b1324_9f810b0d74a9163d9b147af958130ae47a56a9d5895d059fe5a5923b17e1aea7.jpg",
+          "sha256": "2c41d692d94a8edbfd785149770cd328aa08b0ef90985c2d52d727e8f1b1ad04",
+          "storage": "derived",
+          "width": 336
+        },
+        "sources": [
+          {
+            "artifact_id": "c1101db3e8489eb16fec2e1d7f466761258ec2bb079c6a782b3f9d7e463b1324",
+            "final_split": null,
+            "finding_segment_id": "8885668afb844852__foreign_body__00012",
+            "frame_index": 8112,
+            "image_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8112.jpg",
+            "is_target": true,
+            "panel_index": 0,
+            "physical_frame_id": "[\"8885668afb844852\",8112]",
+            "role": "target",
+            "source_height": 336,
+            "source_index": 0,
+            "source_sha256": "ccfa70c75f7237b763e9884338ac50a2794ea3478188a6f75f82afa2d34128ff",
+            "source_width": 336,
+            "time_offset_seconds": null,
+            "training_ready": false,
+            "video_key": "8885668afb844852",
+            "annotation_ids": [
+              "annotation_338d7a01a2c7032b_0"
+            ],
+            "upstream_splits": [
+              "test",
+              "train",
+              "validation"
+            ]
+          }
+        ],
+        "resolution": {
+          "resolution": "archive_member",
+          "archive_relative_path": "archives/roi_crop.tar",
+          "archive_sha256": "82e105c9ab5b71bacb9b8efaa10e78e50e2a4413068a41629e9049d1a79fe057",
+          "archive_verified": true,
+          "member_relative_path": "products/roi_crop/c1101db3e8489eb16fec2e1d7f466761258ec2bb079c6a782b3f9d7e463b1324_9f810b0d74a9163d9b147af958130ae47a56a9d5895d059fe5a5923b17e1aea7.jpg",
+          "member_sha256": "2c41d692d94a8edbfd785149770cd328aa08b0ef90985c2d52d727e8f1b1ad04",
+          "input_id": "bea5b97d90ed1a2ee3abf8c57ea2c9636a0ce99d195fc5032144ad0c89b2b519",
+          "artifact_id": "c1101db3e8489eb16fec2e1d7f466761258ec2bb079c6a782b3f9d7e463b1324",
+          "input_order": 0,
+          "storage": "derived",
+          "relative_path": "products/roi_crop/c1101db3e8489eb16fec2e1d7f466761258ec2bb079c6a782b3f9d7e463b1324_9f810b0d74a9163d9b147af958130ae47a56a9d5895d059fe5a5923b17e1aea7.jpg",
+          "sha256": "2c41d692d94a8edbfd785149770cd328aa08b0ef90985c2d52d727e8f1b1ad04",
+          "bytes": 29172,
+          "width": 336,
+          "height": 283
+        }
+      }
+    ],
+    "source_snapshot": {
+      "schema_version": 1,
+      "repository": "bogdanparvu18/msc-graduate-project",
+      "requested_ref": "main",
+      "resolved_commit": "8b91a1b92b01870242a09a8f98c1fc4f7f5e6abe",
+      "s8_root": "outputs/phase2/sector8",
+      "storage_index": {
+        "relative_path": "configs/sector8_github_storage.json",
+        "bytes": 16497,
+        "sha256": "2ac736a80b8730e7431924f59f5289c0ad9d90381d12a8625506d31c8564d34b"
+      },
+      "resolution_status": "verified",
+      "source_catalog_sha256": "2ccf17c63d568c2d4ba36e390fe90c9418fea5ca1a95b818715ec1920134ea4d",
+      "consumed_artifacts": [
+        {
+          "relative_path": "configs/sector8_archive_state.json",
+          "bytes": 35760510,
+          "sha256": "2ccf17c63d568c2d4ba36e390fe90c9418fea5ca1a95b818715ec1920134ea4d",
+          "storage": "parts",
+          "parts": [
+            {
+              "bytes": 33554432,
+              "offset": 0,
+              "ordinal": 0,
+              "relative_path": "metadata/_github_chunks/8513359d8f914f9ecbfb8946e657da604ecd84c9f3420a502e539477b0c83286.bin",
+              "sha256": "8513359d8f914f9ecbfb8946e657da604ecd84c9f3420a502e539477b0c83286"
+            },
+            {
+              "bytes": 2206078,
+              "offset": 33554432,
+              "ordinal": 1,
+              "relative_path": "metadata/_github_chunks/14bbba0f9d01140cd25099568e46d87ba2b17d89492ffd904a4ea3e981b6f3d0.bin",
+              "sha256": "14bbba0f9d01140cd25099568e46d87ba2b17d89492ffd904a4ea3e981b6f3d0"
+            }
+          ]
+        },
+        {
+          "relative_path": "configs/sector8_archives.json",
+          "bytes": 38106604,
+          "sha256": "354806f5db0f11af465721c0db0ffb5040f3c7692c563b1615bed314c958d39c",
+          "storage": "parts",
+          "parts": [
+            {
+              "bytes": 33554432,
+              "offset": 0,
+              "ordinal": 0,
+              "relative_path": "metadata/_github_chunks/1eb8f46b444dd00318c46f4213c88db4017431143cb67428aaa73f1690754c18.bin",
+              "sha256": "1eb8f46b444dd00318c46f4213c88db4017431143cb67428aaa73f1690754c18"
+            },
+            {
+              "bytes": 4552172,
+              "offset": 33554432,
+              "ordinal": 1,
+              "relative_path": "metadata/_github_chunks/2c699eb037fa6bceaa3ebadf8fa153710552e6ff70014e92cb5dbf7a0c2c82de.bin",
+              "sha256": "2c699eb037fa6bceaa3ebadf8fa153710552e6ff70014e92cb5dbf7a0c2c82de"
+            }
+          ]
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/benchmark/model_inputs.jsonl.gz",
+          "bytes": 63690422,
+          "sha256": "060cbcb925022d1ca5cbd0dc7bd7ead214b2d2e3d49d9f7d9b3c26e124553e74",
+          "storage": "parts",
+          "parts": [
+            {
+              "bytes": 33554432,
+              "offset": 0,
+              "ordinal": 0,
+              "relative_path": "metadata/_github_chunks/e21ff29b9ca5bf322dfa5264af6c5b57547e52fbf0c21552e54e4562fbd616a3.bin",
+              "sha256": "e21ff29b9ca5bf322dfa5264af6c5b57547e52fbf0c21552e54e4562fbd616a3"
+            },
+            {
+              "bytes": 30135990,
+              "offset": 33554432,
+              "ordinal": 1,
+              "relative_path": "metadata/_github_chunks/c5bfd7f2be5cba2eaab3dca6abc4abd6e4a99f1aa150d47d9cb3e5fd3b3cfcad.bin",
+              "sha256": "c5bfd7f2be5cba2eaab3dca6abc4abd6e4a99f1aa150d47d9cb3e5fd3b3cfcad"
+            }
+          ]
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/benchmark_ground_truth_manifest.parquet",
+          "bytes": 12823295,
+          "sha256": "6fdd3eebcb1b77e05d08acee201cd3ae0f6e0eb88012b6ef8484e36a6c9033d0",
+          "storage": "direct"
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/benchmark_ground_truth_manifest_schema.json",
+          "bytes": 1165,
+          "sha256": "4a6c9b0b568f5ce60fad439bf21b7f6eb6ab9d338c761264527323ef365f022c",
+          "storage": "direct"
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/source_evidence_manifest.parquet",
+          "bytes": 20098917,
+          "sha256": "8cff5ed473ca5f34c4e65d4a963b34075e030c3b5c6c51fbd3985ad0f248cb54",
+          "storage": "direct"
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/source_evidence_manifest_schema.json",
+          "bytes": 1715,
+          "sha256": "78a04aa6ae578f4d19abdbc83213af1eaf95ff2e5d5fb89619a5847b21f1b1d9",
+          "storage": "direct"
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/visual_source_manifest.parquet",
+          "bytes": 62429449,
+          "sha256": "0e5b10bd087592ded405a984ef5f8d9fda37e9fe0fc72e61df0581b24754b881",
+          "storage": "parts",
+          "parts": [
+            {
+              "bytes": 33554432,
+              "offset": 0,
+              "ordinal": 0,
+              "relative_path": "metadata/_github_chunks/d1f51b932d8cf42f9ed794fca45976060d498b3a2f86299e5d794b5c15362cff.bin",
+              "sha256": "d1f51b932d8cf42f9ed794fca45976060d498b3a2f86299e5d794b5c15362cff"
+            },
+            {
+              "bytes": 28875017,
+              "offset": 33554432,
+              "ordinal": 1,
+              "relative_path": "metadata/_github_chunks/14f32d7680109dc90e95fb6facd1f254b9ab5a9f706e183daab4d73876e4034c.bin",
+              "sha256": "14f32d7680109dc90e95fb6facd1f254b9ab5a9f706e183daab4d73876e4034c"
+            }
+          ]
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/visual_source_manifest_schema.json",
+          "bytes": 990,
+          "sha256": "37b10630e18a21dd946d623558e7d6c50e4b27f31ea3e2aa4a715b687ef862fc",
+          "storage": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "example_id": "d861ef1b4b4b8a02d4d69e2acb447eb79ae06a646da7082147c5da68e56abf2e",
+    "subject_id": "000742039dbdf90791a921c24315e0a0e53c67049a02f5acdb7dd02723417ded",
+    "ground_truth_ref": "8ebfe914d48a35d94168d49d45891ecfd400af580605a0e267bae885dbf66d26",
+    "variant": "overlay",
+    "annotation_assisted": true,
+    "shared_source_group_id": "867a7e57db03f0ba3033b17f0e4297437aaa4957b9a575fd656b515146d303ee",
+    "final_split": null,
+    "split_assignment_status": "pending",
+    "question_status": "preview_only",
+    "inputs": [
+      {
+        "input": {
+          "artifact_id": "9f8bbb1fe9f9426d4e2f89a81683adb0fb720c2c1b09326a14bfff35292c8915",
+          "height": 336,
+          "image_role": "overlay",
+          "input_id": "31ebdc3a07f29d19cc2e71f1731bbc473b50b1737093253573329319b299c1d8",
+          "input_order": 0,
+          "relative_path": "products/bbox_overlay/9f8bbb1fe9f9426d4e2f89a81683adb0fb720c2c1b09326a14bfff35292c8915_3f610b9abea49d7423c28279c164b685c51f4a43392cc69954fb222e90bc2be3.jpg",
+          "sha256": "7a0024555879a77edbb86a3054fd1227dde3dc3ee7c7aa8f67f850b9b51c4671",
+          "storage": "derived",
+          "width": 336
+        },
+        "sources": [
+          {
+            "artifact_id": "9f8bbb1fe9f9426d4e2f89a81683adb0fb720c2c1b09326a14bfff35292c8915",
+            "final_split": null,
+            "finding_segment_id": null,
+            "frame_index": 8112,
+            "image_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8112.jpg",
+            "is_target": true,
+            "panel_index": 0,
+            "physical_frame_id": "[\"8885668afb844852\",8112]",
+            "role": "target",
+            "source_height": 336,
+            "source_index": 0,
+            "source_sha256": "ccfa70c75f7237b763e9884338ac50a2794ea3478188a6f75f82afa2d34128ff",
+            "source_width": 336,
+            "time_offset_seconds": null,
+            "training_ready": false,
+            "video_key": "8885668afb844852",
+            "annotation_ids": [
+              "annotation_338d7a01a2c7032b_0"
+            ],
+            "upstream_splits": [
+              "test",
+              "train",
+              "validation"
+            ]
+          }
+        ],
+        "resolution": {
+          "resolution": "archive_member",
+          "archive_relative_path": "archives/bbox_overlay.tar",
+          "archive_sha256": "dbf5951f546e02e47e39853bac75bf2d56aa12432fdfbec1e740547d2b3ef5bc",
+          "archive_verified": true,
+          "member_relative_path": "products/bbox_overlay/9f8bbb1fe9f9426d4e2f89a81683adb0fb720c2c1b09326a14bfff35292c8915_3f610b9abea49d7423c28279c164b685c51f4a43392cc69954fb222e90bc2be3.jpg",
+          "member_sha256": "7a0024555879a77edbb86a3054fd1227dde3dc3ee7c7aa8f67f850b9b51c4671",
+          "input_id": "31ebdc3a07f29d19cc2e71f1731bbc473b50b1737093253573329319b299c1d8",
+          "artifact_id": "9f8bbb1fe9f9426d4e2f89a81683adb0fb720c2c1b09326a14bfff35292c8915",
+          "input_order": 0,
+          "storage": "derived",
+          "relative_path": "products/bbox_overlay/9f8bbb1fe9f9426d4e2f89a81683adb0fb720c2c1b09326a14bfff35292c8915_3f610b9abea49d7423c28279c164b685c51f4a43392cc69954fb222e90bc2be3.jpg",
+          "sha256": "7a0024555879a77edbb86a3054fd1227dde3dc3ee7c7aa8f67f850b9b51c4671",
+          "bytes": 29560,
+          "width": 336,
+          "height": 336
+        }
+      }
+    ],
+    "source_snapshot": {
+      "schema_version": 1,
+      "repository": "bogdanparvu18/msc-graduate-project",
+      "requested_ref": "main",
+      "resolved_commit": "8b91a1b92b01870242a09a8f98c1fc4f7f5e6abe",
+      "s8_root": "outputs/phase2/sector8",
+      "storage_index": {
+        "relative_path": "configs/sector8_github_storage.json",
+        "bytes": 16497,
+        "sha256": "2ac736a80b8730e7431924f59f5289c0ad9d90381d12a8625506d31c8564d34b"
+      },
+      "resolution_status": "verified",
+      "source_catalog_sha256": "2ccf17c63d568c2d4ba36e390fe90c9418fea5ca1a95b818715ec1920134ea4d",
+      "consumed_artifacts": [
+        {
+          "relative_path": "configs/sector8_archive_state.json",
+          "bytes": 35760510,
+          "sha256": "2ccf17c63d568c2d4ba36e390fe90c9418fea5ca1a95b818715ec1920134ea4d",
+          "storage": "parts",
+          "parts": [
+            {
+              "bytes": 33554432,
+              "offset": 0,
+              "ordinal": 0,
+              "relative_path": "metadata/_github_chunks/8513359d8f914f9ecbfb8946e657da604ecd84c9f3420a502e539477b0c83286.bin",
+              "sha256": "8513359d8f914f9ecbfb8946e657da604ecd84c9f3420a502e539477b0c83286"
+            },
+            {
+              "bytes": 2206078,
+              "offset": 33554432,
+              "ordinal": 1,
+              "relative_path": "metadata/_github_chunks/14bbba0f9d01140cd25099568e46d87ba2b17d89492ffd904a4ea3e981b6f3d0.bin",
+              "sha256": "14bbba0f9d01140cd25099568e46d87ba2b17d89492ffd904a4ea3e981b6f3d0"
+            }
+          ]
+        },
+        {
+          "relative_path": "configs/sector8_archives.json",
+          "bytes": 38106604,
+          "sha256": "354806f5db0f11af465721c0db0ffb5040f3c7692c563b1615bed314c958d39c",
+          "storage": "parts",
+          "parts": [
+            {
+              "bytes": 33554432,
+              "offset": 0,
+              "ordinal": 0,
+              "relative_path": "metadata/_github_chunks/1eb8f46b444dd00318c46f4213c88db4017431143cb67428aaa73f1690754c18.bin",
+              "sha256": "1eb8f46b444dd00318c46f4213c88db4017431143cb67428aaa73f1690754c18"
+            },
+            {
+              "bytes": 4552172,
+              "offset": 33554432,
+              "ordinal": 1,
+              "relative_path": "metadata/_github_chunks/2c699eb037fa6bceaa3ebadf8fa153710552e6ff70014e92cb5dbf7a0c2c82de.bin",
+              "sha256": "2c699eb037fa6bceaa3ebadf8fa153710552e6ff70014e92cb5dbf7a0c2c82de"
+            }
+          ]
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/benchmark/model_inputs.jsonl.gz",
+          "bytes": 63690422,
+          "sha256": "060cbcb925022d1ca5cbd0dc7bd7ead214b2d2e3d49d9f7d9b3c26e124553e74",
+          "storage": "parts",
+          "parts": [
+            {
+              "bytes": 33554432,
+              "offset": 0,
+              "ordinal": 0,
+              "relative_path": "metadata/_github_chunks/e21ff29b9ca5bf322dfa5264af6c5b57547e52fbf0c21552e54e4562fbd616a3.bin",
+              "sha256": "e21ff29b9ca5bf322dfa5264af6c5b57547e52fbf0c21552e54e4562fbd616a3"
+            },
+            {
+              "bytes": 30135990,
+              "offset": 33554432,
+              "ordinal": 1,
+              "relative_path": "metadata/_github_chunks/c5bfd7f2be5cba2eaab3dca6abc4abd6e4a99f1aa150d47d9cb3e5fd3b3cfcad.bin",
+              "sha256": "c5bfd7f2be5cba2eaab3dca6abc4abd6e4a99f1aa150d47d9cb3e5fd3b3cfcad"
+            }
+          ]
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/benchmark_ground_truth_manifest.parquet",
+          "bytes": 12823295,
+          "sha256": "6fdd3eebcb1b77e05d08acee201cd3ae0f6e0eb88012b6ef8484e36a6c9033d0",
+          "storage": "direct"
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/benchmark_ground_truth_manifest_schema.json",
+          "bytes": 1165,
+          "sha256": "4a6c9b0b568f5ce60fad439bf21b7f6eb6ab9d338c761264527323ef365f022c",
+          "storage": "direct"
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/source_evidence_manifest.parquet",
+          "bytes": 20098917,
+          "sha256": "8cff5ed473ca5f34c4e65d4a963b34075e030c3b5c6c51fbd3985ad0f248cb54",
+          "storage": "direct"
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/source_evidence_manifest_schema.json",
+          "bytes": 1715,
+          "sha256": "78a04aa6ae578f4d19abdbc83213af1eaf95ff2e5d5fb89619a5847b21f1b1d9",
+          "storage": "direct"
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/visual_source_manifest.parquet",
+          "bytes": 62429449,
+          "sha256": "0e5b10bd087592ded405a984ef5f8d9fda37e9fe0fc72e61df0581b24754b881",
+          "storage": "parts",
+          "parts": [
+            {
+              "bytes": 33554432,
+              "offset": 0,
+              "ordinal": 0,
+              "relative_path": "metadata/_github_chunks/d1f51b932d8cf42f9ed794fca45976060d498b3a2f86299e5d794b5c15362cff.bin",
+              "sha256": "d1f51b932d8cf42f9ed794fca45976060d498b3a2f86299e5d794b5c15362cff"
+            },
+            {
+              "bytes": 28875017,
+              "offset": 33554432,
+              "ordinal": 1,
+              "relative_path": "metadata/_github_chunks/14f32d7680109dc90e95fb6facd1f254b9ab5a9f706e183daab4d73876e4034c.bin",
+              "sha256": "14f32d7680109dc90e95fb6facd1f254b9ab5a9f706e183daab4d73876e4034c"
+            }
+          ]
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/visual_source_manifest_schema.json",
+          "bytes": 990,
+          "sha256": "37b10630e18a21dd946d623558e7d6c50e4b27f31ea3e2aa4a715b687ef862fc",
+          "storage": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "example_id": "2f1a37c3a345b63b74710a1e9e57e83091e0274ab9803442e97751b0b4cc227c",
+    "subject_id": "000742039dbdf90791a921c24315e0a0e53c67049a02f5acdb7dd02723417ded",
+    "ground_truth_ref": "8ebfe914d48a35d94168d49d45891ecfd400af580605a0e267bae885dbf66d26",
+    "variant": "fullcrop",
+    "annotation_assisted": true,
+    "shared_source_group_id": "867a7e57db03f0ba3033b17f0e4297437aaa4957b9a575fd656b515146d303ee",
+    "final_split": null,
+    "split_assignment_status": "pending",
+    "question_status": "preview_only",
+    "inputs": [
+      {
+        "input": {
+          "artifact_id": "d64e96181a3358284b05f73cc55a6ffbf8a2627be46f86ac117119776c341338",
+          "height": 336,
+          "image_role": "full_frame",
+          "input_id": "3ca21049dbf1fc6486c79fc39148ef3427ad97421bd42d863f1354205b73bcdd",
+          "input_order": 0,
+          "relative_path": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8112.jpg",
+          "sha256": "ccfa70c75f7237b763e9884338ac50a2794ea3478188a6f75f82afa2d34128ff",
+          "storage": "original",
+          "width": 336
+        },
+        "sources": [
+          {
+            "artifact_id": "d64e96181a3358284b05f73cc55a6ffbf8a2627be46f86ac117119776c341338",
+            "final_split": null,
+            "finding_segment_id": null,
+            "frame_index": 8112,
+            "image_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8112.jpg",
+            "is_target": true,
+            "panel_index": 0,
+            "physical_frame_id": "[\"8885668afb844852\",8112]",
+            "role": "target",
+            "source_height": 336,
+            "source_index": 0,
+            "source_sha256": "ccfa70c75f7237b763e9884338ac50a2794ea3478188a6f75f82afa2d34128ff",
+            "source_width": 336,
+            "time_offset_seconds": null,
+            "training_ready": false,
+            "video_key": "8885668afb844852",
+            "annotation_ids": [
+              "annotation_338d7a01a2c7032b_0"
+            ],
+            "upstream_splits": [
+              "test",
+              "train",
+              "validation"
+            ]
+          }
+        ],
+        "resolution": {
+          "resolution": "original",
+          "local_path": "/content/drive/MyDrive/MMVQA_Clinical/data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8112.jpg",
+          "input_id": "3ca21049dbf1fc6486c79fc39148ef3427ad97421bd42d863f1354205b73bcdd",
+          "artifact_id": "d64e96181a3358284b05f73cc55a6ffbf8a2627be46f86ac117119776c341338",
+          "input_order": 0,
+          "storage": "original",
+          "relative_path": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8112.jpg",
+          "sha256": "ccfa70c75f7237b763e9884338ac50a2794ea3478188a6f75f82afa2d34128ff",
+          "bytes": 14374,
+          "width": 336,
+          "height": 336
+        }
+      },
+      {
+        "input": {
+          "artifact_id": "c1101db3e8489eb16fec2e1d7f466761258ec2bb079c6a782b3f9d7e463b1324",
+          "height": 283,
+          "image_role": "region_of_interest",
+          "input_id": "533006ddc7235ffb751e62a59e85fc3aac151b5cd97adca55791ca76110bfff1",
+          "input_order": 1,
+          "relative_path": "products/roi_crop/c1101db3e8489eb16fec2e1d7f466761258ec2bb079c6a782b3f9d7e463b1324_9f810b0d74a9163d9b147af958130ae47a56a9d5895d059fe5a5923b17e1aea7.jpg",
+          "sha256": "2c41d692d94a8edbfd785149770cd328aa08b0ef90985c2d52d727e8f1b1ad04",
+          "storage": "derived",
+          "width": 336
+        },
+        "sources": [
+          {
+            "artifact_id": "c1101db3e8489eb16fec2e1d7f466761258ec2bb079c6a782b3f9d7e463b1324",
+            "final_split": null,
+            "finding_segment_id": "8885668afb844852__foreign_body__00012",
+            "frame_index": 8112,
+            "image_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8112.jpg",
+            "is_target": true,
+            "panel_index": 0,
+            "physical_frame_id": "[\"8885668afb844852\",8112]",
+            "role": "target",
+            "source_height": 336,
+            "source_index": 0,
+            "source_sha256": "ccfa70c75f7237b763e9884338ac50a2794ea3478188a6f75f82afa2d34128ff",
+            "source_width": 336,
+            "time_offset_seconds": null,
+            "training_ready": false,
+            "video_key": "8885668afb844852",
+            "annotation_ids": [
+              "annotation_338d7a01a2c7032b_0"
+            ],
+            "upstream_splits": [
+              "test",
+              "train",
+              "validation"
+            ]
+          }
+        ],
+        "resolution": {
+          "resolution": "archive_member",
+          "archive_relative_path": "archives/roi_crop.tar",
+          "archive_sha256": "82e105c9ab5b71bacb9b8efaa10e78e50e2a4413068a41629e9049d1a79fe057",
+          "archive_verified": true,
+          "member_relative_path": "products/roi_crop/c1101db3e8489eb16fec2e1d7f466761258ec2bb079c6a782b3f9d7e463b1324_9f810b0d74a9163d9b147af958130ae47a56a9d5895d059fe5a5923b17e1aea7.jpg",
+          "member_sha256": "2c41d692d94a8edbfd785149770cd328aa08b0ef90985c2d52d727e8f1b1ad04",
+          "input_id": "533006ddc7235ffb751e62a59e85fc3aac151b5cd97adca55791ca76110bfff1",
+          "artifact_id": "c1101db3e8489eb16fec2e1d7f466761258ec2bb079c6a782b3f9d7e463b1324",
+          "input_order": 1,
+          "storage": "derived",
+          "relative_path": "products/roi_crop/c1101db3e8489eb16fec2e1d7f466761258ec2bb079c6a782b3f9d7e463b1324_9f810b0d74a9163d9b147af958130ae47a56a9d5895d059fe5a5923b17e1aea7.jpg",
+          "sha256": "2c41d692d94a8edbfd785149770cd328aa08b0ef90985c2d52d727e8f1b1ad04",
+          "bytes": 29172,
+          "width": 336,
+          "height": 283
+        }
+      }
+    ],
+    "source_snapshot": {
+      "schema_version": 1,
+      "repository": "bogdanparvu18/msc-graduate-project",
+      "requested_ref": "main",
+      "resolved_commit": "8b91a1b92b01870242a09a8f98c1fc4f7f5e6abe",
+      "s8_root": "outputs/phase2/sector8",
+      "storage_index": {
+        "relative_path": "configs/sector8_github_storage.json",
+        "bytes": 16497,
+        "sha256": "2ac736a80b8730e7431924f59f5289c0ad9d90381d12a8625506d31c8564d34b"
+      },
+      "resolution_status": "verified",
+      "source_catalog_sha256": "2ccf17c63d568c2d4ba36e390fe90c9418fea5ca1a95b818715ec1920134ea4d",
+      "consumed_artifacts": [
+        {
+          "relative_path": "configs/sector8_archive_state.json",
+          "bytes": 35760510,
+          "sha256": "2ccf17c63d568c2d4ba36e390fe90c9418fea5ca1a95b818715ec1920134ea4d",
+          "storage": "parts",
+          "parts": [
+            {
+              "bytes": 33554432,
+              "offset": 0,
+              "ordinal": 0,
+              "relative_path": "metadata/_github_chunks/8513359d8f914f9ecbfb8946e657da604ecd84c9f3420a502e539477b0c83286.bin",
+              "sha256": "8513359d8f914f9ecbfb8946e657da604ecd84c9f3420a502e539477b0c83286"
+            },
+            {
+              "bytes": 2206078,
+              "offset": 33554432,
+              "ordinal": 1,
+              "relative_path": "metadata/_github_chunks/14bbba0f9d01140cd25099568e46d87ba2b17d89492ffd904a4ea3e981b6f3d0.bin",
+              "sha256": "14bbba0f9d01140cd25099568e46d87ba2b17d89492ffd904a4ea3e981b6f3d0"
+            }
+          ]
+        },
+        {
+          "relative_path": "configs/sector8_archives.json",
+          "bytes": 38106604,
+          "sha256": "354806f5db0f11af465721c0db0ffb5040f3c7692c563b1615bed314c958d39c",
+          "storage": "parts",
+          "parts": [
+            {
+              "bytes": 33554432,
+              "offset": 0,
+              "ordinal": 0,
+              "relative_path": "metadata/_github_chunks/1eb8f46b444dd00318c46f4213c88db4017431143cb67428aaa73f1690754c18.bin",
+              "sha256": "1eb8f46b444dd00318c46f4213c88db4017431143cb67428aaa73f1690754c18"
+            },
+            {
+              "bytes": 4552172,
+              "offset": 33554432,
+              "ordinal": 1,
+              "relative_path": "metadata/_github_chunks/2c699eb037fa6bceaa3ebadf8fa153710552e6ff70014e92cb5dbf7a0c2c82de.bin",
+              "sha256": "2c699eb037fa6bceaa3ebadf8fa153710552e6ff70014e92cb5dbf7a0c2c82de"
+            }
+          ]
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/benchmark/model_inputs.jsonl.gz",
+          "bytes": 63690422,
+          "sha256": "060cbcb925022d1ca5cbd0dc7bd7ead214b2d2e3d49d9f7d9b3c26e124553e74",
+          "storage": "parts",
+          "parts": [
+            {
+              "bytes": 33554432,
+              "offset": 0,
+              "ordinal": 0,
+              "relative_path": "metadata/_github_chunks/e21ff29b9ca5bf322dfa5264af6c5b57547e52fbf0c21552e54e4562fbd616a3.bin",
+              "sha256": "e21ff29b9ca5bf322dfa5264af6c5b57547e52fbf0c21552e54e4562fbd616a3"
+            },
+            {
+              "bytes": 30135990,
+              "offset": 33554432,
+              "ordinal": 1,
+              "relative_path": "metadata/_github_chunks/c5bfd7f2be5cba2eaab3dca6abc4abd6e4a99f1aa150d47d9cb3e5fd3b3cfcad.bin",
+              "sha256": "c5bfd7f2be5cba2eaab3dca6abc4abd6e4a99f1aa150d47d9cb3e5fd3b3cfcad"
+            }
+          ]
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/benchmark_ground_truth_manifest.parquet",
+          "bytes": 12823295,
+          "sha256": "6fdd3eebcb1b77e05d08acee201cd3ae0f6e0eb88012b6ef8484e36a6c9033d0",
+          "storage": "direct"
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/benchmark_ground_truth_manifest_schema.json",
+          "bytes": 1165,
+          "sha256": "4a6c9b0b568f5ce60fad439bf21b7f6eb6ab9d338c761264527323ef365f022c",
+          "storage": "direct"
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/source_evidence_manifest.parquet",
+          "bytes": 20098917,
+          "sha256": "8cff5ed473ca5f34c4e65d4a963b34075e030c3b5c6c51fbd3985ad0f248cb54",
+          "storage": "direct"
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/source_evidence_manifest_schema.json",
+          "bytes": 1715,
+          "sha256": "78a04aa6ae578f4d19abdbc83213af1eaf95ff2e5d5fb89619a5847b21f1b1d9",
+          "storage": "direct"
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/visual_source_manifest.parquet",
+          "bytes": 62429449,
+          "sha256": "0e5b10bd087592ded405a984ef5f8d9fda37e9fe0fc72e61df0581b24754b881",
+          "storage": "parts",
+          "parts": [
+            {
+              "bytes": 33554432,
+              "offset": 0,
+              "ordinal": 0,
+              "relative_path": "metadata/_github_chunks/d1f51b932d8cf42f9ed794fca45976060d498b3a2f86299e5d794b5c15362cff.bin",
+              "sha256": "d1f51b932d8cf42f9ed794fca45976060d498b3a2f86299e5d794b5c15362cff"
+            },
+            {
+              "bytes": 28875017,
+              "offset": 33554432,
+              "ordinal": 1,
+              "relative_path": "metadata/_github_chunks/14f32d7680109dc90e95fb6facd1f254b9ab5a9f706e183daab4d73876e4034c.bin",
+              "sha256": "14f32d7680109dc90e95fb6facd1f254b9ab5a9f706e183daab4d73876e4034c"
+            }
+          ]
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/visual_source_manifest_schema.json",
+          "bytes": 990,
+          "sha256": "37b10630e18a21dd946d623558e7d6c50e4b27f31ea3e2aa4a715b687ef862fc",
+          "storage": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "example_id": "0ef41b59662513a9cb6662af7ab5196eade18fb426002866ed116f650efab23d",
+    "subject_id": "000742039dbdf90791a921c24315e0a0e53c67049a02f5acdb7dd02723417ded",
+    "ground_truth_ref": "8ebfe914d48a35d94168d49d45891ecfd400af580605a0e267bae885dbf66d26",
+    "variant": "temporal_multi",
+    "annotation_assisted": false,
+    "shared_source_group_id": "867a7e57db03f0ba3033b17f0e4297437aaa4957b9a575fd656b515146d303ee",
+    "final_split": null,
+    "split_assignment_status": "pending",
+    "question_status": "preview_only",
+    "inputs": [
+      {
+        "input": {
+          "artifact_id": "25862571940b5cba85f39cc731f7e71703c0df5c90e52ea164fe4cc13ecb7cec",
+          "frame_index": 8052,
+          "height": 336,
+          "image_role": "temporal_context",
+          "input_id": "dec2b5d3c0d1933ca3723344ccd7b23d19911fad9e476b48e998723aed2a92d8",
+          "input_order": 0,
+          "is_target": false,
+          "relative_path": "curated/phase2/temporal_frames/8885668afb844852/frame_00008052.jpg",
+          "sha256": "2b38ccd7727a0600960846936d0b6a2944c1f1e741614d766df535ea124129aa",
+          "storage": "original",
+          "time_offset_seconds": -2.0,
+          "width": 336
+        },
+        "sources": [
+          {
+            "artifact_id": "25862571940b5cba85f39cc731f7e71703c0df5c90e52ea164fe4cc13ecb7cec",
+            "final_split": null,
+            "finding_segment_id": null,
+            "frame_index": 8052,
+            "image_relpath": "curated/phase2/temporal_frames/8885668afb844852/frame_00008052.jpg",
+            "is_target": true,
+            "panel_index": 0,
+            "physical_frame_id": "[\"8885668afb844852\",8052]",
+            "role": "target",
+            "source_height": 336,
+            "source_index": 0,
+            "source_sha256": "2b38ccd7727a0600960846936d0b6a2944c1f1e741614d766df535ea124129aa",
+            "source_width": 336,
+            "time_offset_seconds": null,
+            "training_ready": false,
+            "video_key": "8885668afb844852",
+            "annotation_ids": [],
+            "upstream_splits": [
+              "train"
+            ]
+          }
+        ],
+        "resolution": {
+          "resolution": "original",
+          "local_path": "/content/drive/MyDrive/MMVQA_Clinical/curated/phase2/temporal_frames/8885668afb844852/frame_00008052.jpg",
+          "input_id": "dec2b5d3c0d1933ca3723344ccd7b23d19911fad9e476b48e998723aed2a92d8",
+          "artifact_id": "25862571940b5cba85f39cc731f7e71703c0df5c90e52ea164fe4cc13ecb7cec",
+          "input_order": 0,
+          "storage": "original",
+          "relative_path": "curated/phase2/temporal_frames/8885668afb844852/frame_00008052.jpg",
+          "sha256": "2b38ccd7727a0600960846936d0b6a2944c1f1e741614d766df535ea124129aa",
+          "bytes": 32966,
+          "width": 336,
+          "height": 336
+        }
+      },
+      {
+        "input": {
+          "artifact_id": "a8611e5186cb371eb1860406da1c212e6816a2f1626287a6127b89b98075b945",
+          "frame_index": 8082,
+          "height": 336,
+          "image_role": "temporal_context",
+          "input_id": "b0ebd30502a5573e8c18509ebc9dac391ce70f22f633d0bc75379d13c3cfb3f2",
+          "input_order": 1,
+          "is_target": false,
+          "relative_path": "curated/phase2/temporal_frames/8885668afb844852/frame_00008082.jpg",
+          "sha256": "77625150d1a71e2547bdd90acca29aaf16f971ee117878afe29446f89f248532",
+          "storage": "original",
+          "time_offset_seconds": -1.0,
+          "width": 336
+        },
+        "sources": [
+          {
+            "artifact_id": "a8611e5186cb371eb1860406da1c212e6816a2f1626287a6127b89b98075b945",
+            "final_split": null,
+            "finding_segment_id": null,
+            "frame_index": 8082,
+            "image_relpath": "curated/phase2/temporal_frames/8885668afb844852/frame_00008082.jpg",
+            "is_target": true,
+            "panel_index": 0,
+            "physical_frame_id": "[\"8885668afb844852\",8082]",
+            "role": "target",
+            "source_height": 336,
+            "source_index": 0,
+            "source_sha256": "77625150d1a71e2547bdd90acca29aaf16f971ee117878afe29446f89f248532",
+            "source_width": 336,
+            "time_offset_seconds": null,
+            "training_ready": false,
+            "video_key": "8885668afb844852",
+            "annotation_ids": [],
+            "upstream_splits": [
+              "train",
+              "validation"
+            ]
+          }
+        ],
+        "resolution": {
+          "resolution": "original",
+          "local_path": "/content/drive/MyDrive/MMVQA_Clinical/curated/phase2/temporal_frames/8885668afb844852/frame_00008082.jpg",
+          "input_id": "b0ebd30502a5573e8c18509ebc9dac391ce70f22f633d0bc75379d13c3cfb3f2",
+          "artifact_id": "a8611e5186cb371eb1860406da1c212e6816a2f1626287a6127b89b98075b945",
+          "input_order": 1,
+          "storage": "original",
+          "relative_path": "curated/phase2/temporal_frames/8885668afb844852/frame_00008082.jpg",
+          "sha256": "77625150d1a71e2547bdd90acca29aaf16f971ee117878afe29446f89f248532",
+          "bytes": 35455,
+          "width": 336,
+          "height": 336
+        }
+      },
+      {
+        "input": {
+          "artifact_id": "d64e96181a3358284b05f73cc55a6ffbf8a2627be46f86ac117119776c341338",
+          "frame_index": 8112,
+          "height": 336,
+          "image_role": "target",
+          "input_id": "6c7c766ea6266169c669dabc20536f939f9f1195b2ab4196d30935d6c4a40796",
+          "input_order": 2,
+          "is_target": true,
+          "relative_path": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8112.jpg",
+          "sha256": "ccfa70c75f7237b763e9884338ac50a2794ea3478188a6f75f82afa2d34128ff",
+          "storage": "original",
+          "time_offset_seconds": 0.0,
+          "width": 336
+        },
+        "sources": [
+          {
+            "artifact_id": "d64e96181a3358284b05f73cc55a6ffbf8a2627be46f86ac117119776c341338",
+            "final_split": null,
+            "finding_segment_id": null,
+            "frame_index": 8112,
+            "image_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8112.jpg",
+            "is_target": true,
+            "panel_index": 0,
+            "physical_frame_id": "[\"8885668afb844852\",8112]",
+            "role": "target",
+            "source_height": 336,
+            "source_index": 0,
+            "source_sha256": "ccfa70c75f7237b763e9884338ac50a2794ea3478188a6f75f82afa2d34128ff",
+            "source_width": 336,
+            "time_offset_seconds": null,
+            "training_ready": false,
+            "video_key": "8885668afb844852",
+            "annotation_ids": [
+              "annotation_338d7a01a2c7032b_0"
+            ],
+            "upstream_splits": [
+              "test",
+              "train",
+              "validation"
+            ]
+          }
+        ],
+        "resolution": {
+          "resolution": "original",
+          "local_path": "/content/drive/MyDrive/MMVQA_Clinical/data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8112.jpg",
+          "input_id": "6c7c766ea6266169c669dabc20536f939f9f1195b2ab4196d30935d6c4a40796",
+          "artifact_id": "d64e96181a3358284b05f73cc55a6ffbf8a2627be46f86ac117119776c341338",
+          "input_order": 2,
+          "storage": "original",
+          "relative_path": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8112.jpg",
+          "sha256": "ccfa70c75f7237b763e9884338ac50a2794ea3478188a6f75f82afa2d34128ff",
+          "bytes": 14374,
+          "width": 336,
+          "height": 336
+        }
+      },
+      {
+        "input": {
+          "artifact_id": "ceb5ee54281dc8509fb08db40fd74db4808771de3bc51ddc6d863d2083598914",
+          "frame_index": 8142,
+          "height": 336,
+          "image_role": "temporal_context",
+          "input_id": "f059e1b4663de18a4d9814b35d8f1cf0547331a6125131c99c90aa92365e5be7",
+          "input_order": 3,
+          "is_target": false,
+          "relative_path": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8142.jpg",
+          "sha256": "d42b2d40ee230ccfdf0be2f6e4c5076bacbb16d02b48d4fa88ace534fbd0b2a7",
+          "storage": "original",
+          "time_offset_seconds": 1.0,
+          "width": 336
+        },
+        "sources": [
+          {
+            "artifact_id": "ceb5ee54281dc8509fb08db40fd74db4808771de3bc51ddc6d863d2083598914",
+            "final_split": null,
+            "finding_segment_id": null,
+            "frame_index": 8142,
+            "image_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8142.jpg",
+            "is_target": true,
+            "panel_index": 0,
+            "physical_frame_id": "[\"8885668afb844852\",8142]",
+            "role": "target",
+            "source_height": 336,
+            "source_index": 0,
+            "source_sha256": "d42b2d40ee230ccfdf0be2f6e4c5076bacbb16d02b48d4fa88ace534fbd0b2a7",
+            "source_width": 336,
+            "time_offset_seconds": null,
+            "training_ready": false,
+            "video_key": "8885668afb844852",
+            "annotation_ids": [
+              "annotation_54158740235ed778_0"
+            ],
+            "upstream_splits": [
+              "test",
+              "train",
+              "validation"
+            ]
+          }
+        ],
+        "resolution": {
+          "resolution": "original",
+          "local_path": "/content/drive/MyDrive/MMVQA_Clinical/data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8142.jpg",
+          "input_id": "f059e1b4663de18a4d9814b35d8f1cf0547331a6125131c99c90aa92365e5be7",
+          "artifact_id": "ceb5ee54281dc8509fb08db40fd74db4808771de3bc51ddc6d863d2083598914",
+          "input_order": 3,
+          "storage": "original",
+          "relative_path": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8142.jpg",
+          "sha256": "d42b2d40ee230ccfdf0be2f6e4c5076bacbb16d02b48d4fa88ace534fbd0b2a7",
+          "bytes": 14169,
+          "width": 336,
+          "height": 336
+        }
+      },
+      {
+        "input": {
+          "artifact_id": "4026a27ac3b4455ee600b4ee942f53919f46544f3e231913b27a4905228b1197",
+          "frame_index": 8172,
+          "height": 336,
+          "image_role": "temporal_context",
+          "input_id": "ee209524f087e333c5fc27e798854a5649a82a334c3448877a3ed480b369c8e5",
+          "input_order": 4,
+          "is_target": false,
+          "relative_path": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8172.jpg",
+          "sha256": "3b2e2eee47b4ecee0ce067fc1ac897de9a10a9ac207d9e1860d60ab56e07695a",
+          "storage": "original",
+          "time_offset_seconds": 2.0,
+          "width": 336
+        },
+        "sources": [
+          {
+            "artifact_id": "4026a27ac3b4455ee600b4ee942f53919f46544f3e231913b27a4905228b1197",
+            "final_split": null,
+            "finding_segment_id": null,
+            "frame_index": 8172,
+            "image_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8172.jpg",
+            "is_target": true,
+            "panel_index": 0,
+            "physical_frame_id": "[\"8885668afb844852\",8172]",
+            "role": "target",
+            "source_height": 336,
+            "source_index": 0,
+            "source_sha256": "3b2e2eee47b4ecee0ce067fc1ac897de9a10a9ac207d9e1860d60ab56e07695a",
+            "source_width": 336,
+            "time_offset_seconds": null,
+            "training_ready": false,
+            "video_key": "8885668afb844852",
+            "annotation_ids": [
+              "annotation_75e0a93015cc857c_0"
+            ],
+            "upstream_splits": [
+              "test",
+              "train",
+              "validation"
+            ]
+          }
+        ],
+        "resolution": {
+          "resolution": "original",
+          "local_path": "/content/drive/MyDrive/MMVQA_Clinical/data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8172.jpg",
+          "input_id": "ee209524f087e333c5fc27e798854a5649a82a334c3448877a3ed480b369c8e5",
+          "artifact_id": "4026a27ac3b4455ee600b4ee942f53919f46544f3e231913b27a4905228b1197",
+          "input_order": 4,
+          "storage": "original",
+          "relative_path": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8172.jpg",
+          "sha256": "3b2e2eee47b4ecee0ce067fc1ac897de9a10a9ac207d9e1860d60ab56e07695a",
+          "bytes": 12809,
+          "width": 336,
+          "height": 336
+        }
+      }
+    ],
+    "source_snapshot": {
+      "schema_version": 1,
+      "repository": "bogdanparvu18/msc-graduate-project",
+      "requested_ref": "main",
+      "resolved_commit": "8b91a1b92b01870242a09a8f98c1fc4f7f5e6abe",
+      "s8_root": "outputs/phase2/sector8",
+      "storage_index": {
+        "relative_path": "configs/sector8_github_storage.json",
+        "bytes": 16497,
+        "sha256": "2ac736a80b8730e7431924f59f5289c0ad9d90381d12a8625506d31c8564d34b"
+      },
+      "resolution_status": "verified",
+      "source_catalog_sha256": "2ccf17c63d568c2d4ba36e390fe90c9418fea5ca1a95b818715ec1920134ea4d",
+      "consumed_artifacts": [
+        {
+          "relative_path": "configs/sector8_archive_state.json",
+          "bytes": 35760510,
+          "sha256": "2ccf17c63d568c2d4ba36e390fe90c9418fea5ca1a95b818715ec1920134ea4d",
+          "storage": "parts",
+          "parts": [
+            {
+              "bytes": 33554432,
+              "offset": 0,
+              "ordinal": 0,
+              "relative_path": "metadata/_github_chunks/8513359d8f914f9ecbfb8946e657da604ecd84c9f3420a502e539477b0c83286.bin",
+              "sha256": "8513359d8f914f9ecbfb8946e657da604ecd84c9f3420a502e539477b0c83286"
+            },
+            {
+              "bytes": 2206078,
+              "offset": 33554432,
+              "ordinal": 1,
+              "relative_path": "metadata/_github_chunks/14bbba0f9d01140cd25099568e46d87ba2b17d89492ffd904a4ea3e981b6f3d0.bin",
+              "sha256": "14bbba0f9d01140cd25099568e46d87ba2b17d89492ffd904a4ea3e981b6f3d0"
+            }
+          ]
+        },
+        {
+          "relative_path": "configs/sector8_archives.json",
+          "bytes": 38106604,
+          "sha256": "354806f5db0f11af465721c0db0ffb5040f3c7692c563b1615bed314c958d39c",
+          "storage": "parts",
+          "parts": [
+            {
+              "bytes": 33554432,
+              "offset": 0,
+              "ordinal": 0,
+              "relative_path": "metadata/_github_chunks/1eb8f46b444dd00318c46f4213c88db4017431143cb67428aaa73f1690754c18.bin",
+              "sha256": "1eb8f46b444dd00318c46f4213c88db4017431143cb67428aaa73f1690754c18"
+            },
+            {
+              "bytes": 4552172,
+              "offset": 33554432,
+              "ordinal": 1,
+              "relative_path": "metadata/_github_chunks/2c699eb037fa6bceaa3ebadf8fa153710552e6ff70014e92cb5dbf7a0c2c82de.bin",
+              "sha256": "2c699eb037fa6bceaa3ebadf8fa153710552e6ff70014e92cb5dbf7a0c2c82de"
+            }
+          ]
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/benchmark/model_inputs.jsonl.gz",
+          "bytes": 63690422,
+          "sha256": "060cbcb925022d1ca5cbd0dc7bd7ead214b2d2e3d49d9f7d9b3c26e124553e74",
+          "storage": "parts",
+          "parts": [
+            {
+              "bytes": 33554432,
+              "offset": 0,
+              "ordinal": 0,
+              "relative_path": "metadata/_github_chunks/e21ff29b9ca5bf322dfa5264af6c5b57547e52fbf0c21552e54e4562fbd616a3.bin",
+              "sha256": "e21ff29b9ca5bf322dfa5264af6c5b57547e52fbf0c21552e54e4562fbd616a3"
+            },
+            {
+              "bytes": 30135990,
+              "offset": 33554432,
+              "ordinal": 1,
+              "relative_path": "metadata/_github_chunks/c5bfd7f2be5cba2eaab3dca6abc4abd6e4a99f1aa150d47d9cb3e5fd3b3cfcad.bin",
+              "sha256": "c5bfd7f2be5cba2eaab3dca6abc4abd6e4a99f1aa150d47d9cb3e5fd3b3cfcad"
+            }
+          ]
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/benchmark_ground_truth_manifest.parquet",
+          "bytes": 12823295,
+          "sha256": "6fdd3eebcb1b77e05d08acee201cd3ae0f6e0eb88012b6ef8484e36a6c9033d0",
+          "storage": "direct"
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/benchmark_ground_truth_manifest_schema.json",
+          "bytes": 1165,
+          "sha256": "4a6c9b0b568f5ce60fad439bf21b7f6eb6ab9d338c761264527323ef365f022c",
+          "storage": "direct"
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/source_evidence_manifest.parquet",
+          "bytes": 20098917,
+          "sha256": "8cff5ed473ca5f34c4e65d4a963b34075e030c3b5c6c51fbd3985ad0f248cb54",
+          "storage": "direct"
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/source_evidence_manifest_schema.json",
+          "bytes": 1715,
+          "sha256": "78a04aa6ae578f4d19abdbc83213af1eaf95ff2e5d5fb89619a5847b21f1b1d9",
+          "storage": "direct"
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/visual_source_manifest.parquet",
+          "bytes": 62429449,
+          "sha256": "0e5b10bd087592ded405a984ef5f8d9fda37e9fe0fc72e61df0581b24754b881",
+          "storage": "parts",
+          "parts": [
+            {
+              "bytes": 33554432,
+              "offset": 0,
+              "ordinal": 0,
+              "relative_path": "metadata/_github_chunks/d1f51b932d8cf42f9ed794fca45976060d498b3a2f86299e5d794b5c15362cff.bin",
+              "sha256": "d1f51b932d8cf42f9ed794fca45976060d498b3a2f86299e5d794b5c15362cff"
+            },
+            {
+              "bytes": 28875017,
+              "offset": 33554432,
+              "ordinal": 1,
+              "relative_path": "metadata/_github_chunks/14f32d7680109dc90e95fb6facd1f254b9ab5a9f706e183daab4d73876e4034c.bin",
+              "sha256": "14f32d7680109dc90e95fb6facd1f254b9ab5a9f706e183daab4d73876e4034c"
+            }
+          ]
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/visual_source_manifest_schema.json",
+          "bytes": 990,
+          "sha256": "37b10630e18a21dd946d623558e7d6c50e4b27f31ea3e2aa4a715b687ef862fc",
+          "storage": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "example_id": "2faadc41ae4f56bbab5e8a5b906909f5a33430e4d8574806edafbad5989e685d",
+    "subject_id": "000742039dbdf90791a921c24315e0a0e53c67049a02f5acdb7dd02723417ded",
+    "ground_truth_ref": "8ebfe914d48a35d94168d49d45891ecfd400af580605a0e267bae885dbf66d26",
+    "variant": "temporal_collage",
+    "annotation_assisted": false,
+    "shared_source_group_id": "867a7e57db03f0ba3033b17f0e4297437aaa4957b9a575fd656b515146d303ee",
+    "final_split": null,
+    "split_assignment_status": "pending",
+    "question_status": "preview_only",
+    "inputs": [
+      {
+        "input": {
+          "artifact_id": "f7f2e5d2d1ac5fabd2bb765d2eea24f0533f23d6ee16dd903767416463143332",
+          "height": 366,
+          "image_role": "temporal_collage",
+          "input_id": "3c67fa0543da3eb255b799b0c51e4ea0b805951152805fce11e4736d9f8fcd81",
+          "input_order": 0,
+          "relative_path": "products/temporal_collage/f7f2e5d2d1ac5fabd2bb765d2eea24f0533f23d6ee16dd903767416463143332_c96b988e5225d4199d83a8e1b88cde42d9aa7f6d11a90f19224292569d7084d3.jpg",
+          "sha256": "8835e89314c8f24cf699a764388ddd1dc23732ca992988900860c6e1b1adadbc",
+          "storage": "derived",
+          "width": 1680
+        },
+        "sources": [
+          {
+            "artifact_id": "f7f2e5d2d1ac5fabd2bb765d2eea24f0533f23d6ee16dd903767416463143332",
+            "final_split": null,
+            "finding_segment_id": "8885668afb844852__foreign_body__00012",
+            "frame_index": 8052,
+            "image_relpath": "curated/phase2/temporal_frames/8885668afb844852/frame_00008052.jpg",
+            "is_target": false,
+            "panel_index": 0,
+            "physical_frame_id": "[\"8885668afb844852\",8052]",
+            "role": "temporal_context",
+            "source_height": 336,
+            "source_index": 0,
+            "source_sha256": "2b38ccd7727a0600960846936d0b6a2944c1f1e741614d766df535ea124129aa",
+            "source_width": 336,
+            "time_offset_seconds": -2.0,
+            "training_ready": false,
+            "video_key": "8885668afb844852",
+            "annotation_ids": [],
+            "upstream_splits": [
+              "train"
+            ]
+          },
+          {
+            "artifact_id": "f7f2e5d2d1ac5fabd2bb765d2eea24f0533f23d6ee16dd903767416463143332",
+            "final_split": null,
+            "finding_segment_id": "8885668afb844852__foreign_body__00012",
+            "frame_index": 8082,
+            "image_relpath": "curated/phase2/temporal_frames/8885668afb844852/frame_00008082.jpg",
+            "is_target": false,
+            "panel_index": 1,
+            "physical_frame_id": "[\"8885668afb844852\",8082]",
+            "role": "temporal_context",
+            "source_height": 336,
+            "source_index": 1,
+            "source_sha256": "77625150d1a71e2547bdd90acca29aaf16f971ee117878afe29446f89f248532",
+            "source_width": 336,
+            "time_offset_seconds": -1.0,
+            "training_ready": false,
+            "video_key": "8885668afb844852",
+            "annotation_ids": [],
+            "upstream_splits": [
+              "train",
+              "validation"
+            ]
+          },
+          {
+            "artifact_id": "f7f2e5d2d1ac5fabd2bb765d2eea24f0533f23d6ee16dd903767416463143332",
+            "final_split": null,
+            "finding_segment_id": "8885668afb844852__foreign_body__00012",
+            "frame_index": 8112,
+            "image_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8112.jpg",
+            "is_target": true,
+            "panel_index": 2,
+            "physical_frame_id": "[\"8885668afb844852\",8112]",
+            "role": "target",
+            "source_height": 336,
+            "source_index": 2,
+            "source_sha256": "ccfa70c75f7237b763e9884338ac50a2794ea3478188a6f75f82afa2d34128ff",
+            "source_width": 336,
+            "time_offset_seconds": 0.0,
+            "training_ready": false,
+            "video_key": "8885668afb844852",
+            "annotation_ids": [
+              "annotation_338d7a01a2c7032b_0"
+            ],
+            "upstream_splits": [
+              "test",
+              "train",
+              "validation"
+            ]
+          },
+          {
+            "artifact_id": "f7f2e5d2d1ac5fabd2bb765d2eea24f0533f23d6ee16dd903767416463143332",
+            "final_split": null,
+            "finding_segment_id": "8885668afb844852__foreign_body__00012",
+            "frame_index": 8142,
+            "image_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8142.jpg",
+            "is_target": false,
+            "panel_index": 3,
+            "physical_frame_id": "[\"8885668afb844852\",8142]",
+            "role": "temporal_context",
+            "source_height": 336,
+            "source_index": 3,
+            "source_sha256": "d42b2d40ee230ccfdf0be2f6e4c5076bacbb16d02b48d4fa88ace534fbd0b2a7",
+            "source_width": 336,
+            "time_offset_seconds": 1.0,
+            "training_ready": false,
+            "video_key": "8885668afb844852",
+            "annotation_ids": [
+              "annotation_54158740235ed778_0"
+            ],
+            "upstream_splits": [
+              "test",
+              "train",
+              "validation"
+            ]
+          },
+          {
+            "artifact_id": "f7f2e5d2d1ac5fabd2bb765d2eea24f0533f23d6ee16dd903767416463143332",
+            "final_split": null,
+            "finding_segment_id": "8885668afb844852__foreign_body__00012",
+            "frame_index": 8172,
+            "image_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8172.jpg",
+            "is_target": false,
+            "panel_index": 4,
+            "physical_frame_id": "[\"8885668afb844852\",8172]",
+            "role": "temporal_context",
+            "source_height": 336,
+            "source_index": 4,
+            "source_sha256": "3b2e2eee47b4ecee0ce067fc1ac897de9a10a9ac207d9e1860d60ab56e07695a",
+            "source_width": 336,
+            "time_offset_seconds": 2.0,
+            "training_ready": false,
+            "video_key": "8885668afb844852",
+            "annotation_ids": [
+              "annotation_75e0a93015cc857c_0"
+            ],
+            "upstream_splits": [
+              "test",
+              "train",
+              "validation"
+            ]
+          }
+        ],
+        "resolution": {
+          "resolution": "archive_member",
+          "archive_relative_path": "archives/temporal_collage.tar",
+          "archive_sha256": "71b3d9a296dfd4050d007711b0f615cb4ba8c630accac70148ab41da56c53595",
+          "archive_verified": true,
+          "member_relative_path": "products/temporal_collage/f7f2e5d2d1ac5fabd2bb765d2eea24f0533f23d6ee16dd903767416463143332_c96b988e5225d4199d83a8e1b88cde42d9aa7f6d11a90f19224292569d7084d3.jpg",
+          "member_sha256": "8835e89314c8f24cf699a764388ddd1dc23732ca992988900860c6e1b1adadbc",
+          "input_id": "3c67fa0543da3eb255b799b0c51e4ea0b805951152805fce11e4736d9f8fcd81",
+          "artifact_id": "f7f2e5d2d1ac5fabd2bb765d2eea24f0533f23d6ee16dd903767416463143332",
+          "input_order": 0,
+          "storage": "derived",
+          "relative_path": "products/temporal_collage/f7f2e5d2d1ac5fabd2bb765d2eea24f0533f23d6ee16dd903767416463143332_c96b988e5225d4199d83a8e1b88cde42d9aa7f6d11a90f19224292569d7084d3.jpg",
+          "sha256": "8835e89314c8f24cf699a764388ddd1dc23732ca992988900860c6e1b1adadbc",
+          "bytes": 155900,
+          "width": 1680,
+          "height": 366
+        }
+      }
+    ],
+    "source_snapshot": {
+      "schema_version": 1,
+      "repository": "bogdanparvu18/msc-graduate-project",
+      "requested_ref": "main",
+      "resolved_commit": "8b91a1b92b01870242a09a8f98c1fc4f7f5e6abe",
+      "s8_root": "outputs/phase2/sector8",
+      "storage_index": {
+        "relative_path": "configs/sector8_github_storage.json",
+        "bytes": 16497,
+        "sha256": "2ac736a80b8730e7431924f59f5289c0ad9d90381d12a8625506d31c8564d34b"
+      },
+      "resolution_status": "verified",
+      "source_catalog_sha256": "2ccf17c63d568c2d4ba36e390fe90c9418fea5ca1a95b818715ec1920134ea4d",
+      "consumed_artifacts": [
+        {
+          "relative_path": "configs/sector8_archive_state.json",
+          "bytes": 35760510,
+          "sha256": "2ccf17c63d568c2d4ba36e390fe90c9418fea5ca1a95b818715ec1920134ea4d",
+          "storage": "parts",
+          "parts": [
+            {
+              "bytes": 33554432,
+              "offset": 0,
+              "ordinal": 0,
+              "relative_path": "metadata/_github_chunks/8513359d8f914f9ecbfb8946e657da604ecd84c9f3420a502e539477b0c83286.bin",
+              "sha256": "8513359d8f914f9ecbfb8946e657da604ecd84c9f3420a502e539477b0c83286"
+            },
+            {
+              "bytes": 2206078,
+              "offset": 33554432,
+              "ordinal": 1,
+              "relative_path": "metadata/_github_chunks/14bbba0f9d01140cd25099568e46d87ba2b17d89492ffd904a4ea3e981b6f3d0.bin",
+              "sha256": "14bbba0f9d01140cd25099568e46d87ba2b17d89492ffd904a4ea3e981b6f3d0"
+            }
+          ]
+        },
+        {
+          "relative_path": "configs/sector8_archives.json",
+          "bytes": 38106604,
+          "sha256": "354806f5db0f11af465721c0db0ffb5040f3c7692c563b1615bed314c958d39c",
+          "storage": "parts",
+          "parts": [
+            {
+              "bytes": 33554432,
+              "offset": 0,
+              "ordinal": 0,
+              "relative_path": "metadata/_github_chunks/1eb8f46b444dd00318c46f4213c88db4017431143cb67428aaa73f1690754c18.bin",
+              "sha256": "1eb8f46b444dd00318c46f4213c88db4017431143cb67428aaa73f1690754c18"
+            },
+            {
+              "bytes": 4552172,
+              "offset": 33554432,
+              "ordinal": 1,
+              "relative_path": "metadata/_github_chunks/2c699eb037fa6bceaa3ebadf8fa153710552e6ff70014e92cb5dbf7a0c2c82de.bin",
+              "sha256": "2c699eb037fa6bceaa3ebadf8fa153710552e6ff70014e92cb5dbf7a0c2c82de"
+            }
+          ]
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/benchmark/model_inputs.jsonl.gz",
+          "bytes": 63690422,
+          "sha256": "060cbcb925022d1ca5cbd0dc7bd7ead214b2d2e3d49d9f7d9b3c26e124553e74",
+          "storage": "parts",
+          "parts": [
+            {
+              "bytes": 33554432,
+              "offset": 0,
+              "ordinal": 0,
+              "relative_path": "metadata/_github_chunks/e21ff29b9ca5bf322dfa5264af6c5b57547e52fbf0c21552e54e4562fbd616a3.bin",
+              "sha256": "e21ff29b9ca5bf322dfa5264af6c5b57547e52fbf0c21552e54e4562fbd616a3"
+            },
+            {
+              "bytes": 30135990,
+              "offset": 33554432,
+              "ordinal": 1,
+              "relative_path": "metadata/_github_chunks/c5bfd7f2be5cba2eaab3dca6abc4abd6e4a99f1aa150d47d9cb3e5fd3b3cfcad.bin",
+              "sha256": "c5bfd7f2be5cba2eaab3dca6abc4abd6e4a99f1aa150d47d9cb3e5fd3b3cfcad"
+            }
+          ]
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/benchmark_ground_truth_manifest.parquet",
+          "bytes": 12823295,
+          "sha256": "6fdd3eebcb1b77e05d08acee201cd3ae0f6e0eb88012b6ef8484e36a6c9033d0",
+          "storage": "direct"
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/benchmark_ground_truth_manifest_schema.json",
+          "bytes": 1165,
+          "sha256": "4a6c9b0b568f5ce60fad439bf21b7f6eb6ab9d338c761264527323ef365f022c",
+          "storage": "direct"
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/source_evidence_manifest.parquet",
+          "bytes": 20098917,
+          "sha256": "8cff5ed473ca5f34c4e65d4a963b34075e030c3b5c6c51fbd3985ad0f248cb54",
+          "storage": "direct"
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/source_evidence_manifest_schema.json",
+          "bytes": 1715,
+          "sha256": "78a04aa6ae578f4d19abdbc83213af1eaf95ff2e5d5fb89619a5847b21f1b1d9",
+          "storage": "direct"
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/visual_source_manifest.parquet",
+          "bytes": 62429449,
+          "sha256": "0e5b10bd087592ded405a984ef5f8d9fda37e9fe0fc72e61df0581b24754b881",
+          "storage": "parts",
+          "parts": [
+            {
+              "bytes": 33554432,
+              "offset": 0,
+              "ordinal": 0,
+              "relative_path": "metadata/_github_chunks/d1f51b932d8cf42f9ed794fca45976060d498b3a2f86299e5d794b5c15362cff.bin",
+              "sha256": "d1f51b932d8cf42f9ed794fca45976060d498b3a2f86299e5d794b5c15362cff"
+            },
+            {
+              "bytes": 28875017,
+              "offset": 33554432,
+              "ordinal": 1,
+              "relative_path": "metadata/_github_chunks/14f32d7680109dc90e95fb6facd1f254b9ab5a9f706e183daab4d73876e4034c.bin",
+              "sha256": "14f32d7680109dc90e95fb6facd1f254b9ab5a9f706e183daab4d73876e4034c"
+            }
+          ]
+        },
+        {
+          "relative_path": "metadata/5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865/results/visual_source_manifest_schema.json",
+          "bytes": 990,
+          "sha256": "37b10630e18a21dd946d623558e7d6c50e4b27f31ea3e2aa4a715b687ef862fc",
+          "storage": "direct"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,326 @@
+[
+  {
+    "reference_answer": null,
+    "qa_validation_status": "not_authored",
+    "source_annotation_evidence": {
+      "annotation_id": "annotation_338d7a01a2c7032b_0",
+      "answer": null,
+      "bbox_xyxy": [
+        35.0,
+        100.0,
+        333.0,
+        332.0
+      ],
+      "clinical_group": "foreign_body",
+      "comparison_reference_image_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_images/Normal clean mucosa/8885668afb844852_17499.jpg",
+      "finding_segment_id": "8885668afb844852__foreign_body__00012",
+      "frame_index": 8112,
+      "ground_truth_ref": "8ebfe914d48a35d94168d49d45891ecfd400af580605a0e267bae885dbf66d26",
+      "ground_truth_scope": "Source annotations only; not automatic answers to arbitrary future questions.",
+      "image_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8112.jpg",
+      "qa_validation_status": "not_authored",
+      "question": null,
+      "source_label": "foreign body",
+      "subject_id": "000742039dbdf90791a921c24315e0a0e53c67049a02f5acdb7dd02723417ded",
+      "video_key": "8885668afb844852",
+      "comparison_reference_verified_labels": [
+        "normal clean mucosa"
+      ],
+      "source_qc": {
+        "blur_laplacian": 63.78889822587506,
+        "brightness_mean": 0.40290457163522175,
+        "contrast_std": 0.22586364807237816,
+        "image_decode_backend": "nvidia_gpu",
+        "image_qc_backend": "cupy_gpu",
+        "image_read_error": null,
+        "image_readable": true,
+        "image_technically_usable": true,
+        "overexposed_fraction": 0.0,
+        "qc_assessment_status": "metrics_only_final_split_pending",
+        "qc_blur_outlier": null,
+        "qc_contrast_outlier": null,
+        "qc_high_brightness_outlier": null,
+        "qc_low_brightness_outlier": null,
+        "qc_requires_review": false,
+        "qc_source_matches_upstream": true,
+        "qc_thresholds_calibrated": false,
+        "specular_fraction": 0.0,
+        "underexposed_fraction": 0.0
+      },
+      "verified_source_labels": [
+        "foreign body"
+      ]
+    },
+    "scope": "Source annotations only; the preview question has no validated answer."
+  },
+  {
+    "reference_answer": null,
+    "qa_validation_status": "not_authored",
+    "source_annotation_evidence": {
+      "annotation_id": "annotation_338d7a01a2c7032b_0",
+      "answer": null,
+      "bbox_xyxy": [
+        35.0,
+        100.0,
+        333.0,
+        332.0
+      ],
+      "clinical_group": "foreign_body",
+      "comparison_reference_image_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_images/Normal clean mucosa/8885668afb844852_17499.jpg",
+      "finding_segment_id": "8885668afb844852__foreign_body__00012",
+      "frame_index": 8112,
+      "ground_truth_ref": "8ebfe914d48a35d94168d49d45891ecfd400af580605a0e267bae885dbf66d26",
+      "ground_truth_scope": "Source annotations only; not automatic answers to arbitrary future questions.",
+      "image_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8112.jpg",
+      "qa_validation_status": "not_authored",
+      "question": null,
+      "source_label": "foreign body",
+      "subject_id": "000742039dbdf90791a921c24315e0a0e53c67049a02f5acdb7dd02723417ded",
+      "video_key": "8885668afb844852",
+      "comparison_reference_verified_labels": [
+        "normal clean mucosa"
+      ],
+      "source_qc": {
+        "blur_laplacian": 63.78889822587506,
+        "brightness_mean": 0.40290457163522175,
+        "contrast_std": 0.22586364807237816,
+        "image_decode_backend": "nvidia_gpu",
+        "image_qc_backend": "cupy_gpu",
+        "image_read_error": null,
+        "image_readable": true,
+        "image_technically_usable": true,
+        "overexposed_fraction": 0.0,
+        "qc_assessment_status": "metrics_only_final_split_pending",
+        "qc_blur_outlier": null,
+        "qc_contrast_outlier": null,
+        "qc_high_brightness_outlier": null,
+        "qc_low_brightness_outlier": null,
+        "qc_requires_review": false,
+        "qc_source_matches_upstream": true,
+        "qc_thresholds_calibrated": false,
+        "specular_fraction": 0.0,
+        "underexposed_fraction": 0.0
+      },
+      "verified_source_labels": [
+        "foreign body"
+      ]
+    },
+    "scope": "Source annotations only; the preview question has no validated answer."
+  },
+  {
+    "reference_answer": null,
+    "qa_validation_status": "not_authored",
+    "source_annotation_evidence": {
+      "annotation_id": "annotation_338d7a01a2c7032b_0",
+      "answer": null,
+      "bbox_xyxy": [
+        35.0,
+        100.0,
+        333.0,
+        332.0
+      ],
+      "clinical_group": "foreign_body",
+      "comparison_reference_image_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_images/Normal clean mucosa/8885668afb844852_17499.jpg",
+      "finding_segment_id": "8885668afb844852__foreign_body__00012",
+      "frame_index": 8112,
+      "ground_truth_ref": "8ebfe914d48a35d94168d49d45891ecfd400af580605a0e267bae885dbf66d26",
+      "ground_truth_scope": "Source annotations only; not automatic answers to arbitrary future questions.",
+      "image_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8112.jpg",
+      "qa_validation_status": "not_authored",
+      "question": null,
+      "source_label": "foreign body",
+      "subject_id": "000742039dbdf90791a921c24315e0a0e53c67049a02f5acdb7dd02723417ded",
+      "video_key": "8885668afb844852",
+      "comparison_reference_verified_labels": [
+        "normal clean mucosa"
+      ],
+      "source_qc": {
+        "blur_laplacian": 63.78889822587506,
+        "brightness_mean": 0.40290457163522175,
+        "contrast_std": 0.22586364807237816,
+        "image_decode_backend": "nvidia_gpu",
+        "image_qc_backend": "cupy_gpu",
+        "image_read_error": null,
+        "image_readable": true,
+        "image_technically_usable": true,
+        "overexposed_fraction": 0.0,
+        "qc_assessment_status": "metrics_only_final_split_pending",
+        "qc_blur_outlier": null,
+        "qc_contrast_outlier": null,
+        "qc_high_brightness_outlier": null,
+        "qc_low_brightness_outlier": null,
+        "qc_requires_review": false,
+        "qc_source_matches_upstream": true,
+        "qc_thresholds_calibrated": false,
+        "specular_fraction": 0.0,
+        "underexposed_fraction": 0.0
+      },
+      "verified_source_labels": [
+        "foreign body"
+      ]
+    },
+    "scope": "Source annotations only; the preview question has no validated answer."
+  },
+  {
+    "reference_answer": null,
+    "qa_validation_status": "not_authored",
+    "source_annotation_evidence": {
+      "annotation_id": "annotation_338d7a01a2c7032b_0",
+      "answer": null,
+      "bbox_xyxy": [
+        35.0,
+        100.0,
+        333.0,
+        332.0
+      ],
+      "clinical_group": "foreign_body",
+      "comparison_reference_image_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_images/Normal clean mucosa/8885668afb844852_17499.jpg",
+      "finding_segment_id": "8885668afb844852__foreign_body__00012",
+      "frame_index": 8112,
+      "ground_truth_ref": "8ebfe914d48a35d94168d49d45891ecfd400af580605a0e267bae885dbf66d26",
+      "ground_truth_scope": "Source annotations only; not automatic answers to arbitrary future questions.",
+      "image_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8112.jpg",
+      "qa_validation_status": "not_authored",
+      "question": null,
+      "source_label": "foreign body",
+      "subject_id": "000742039dbdf90791a921c24315e0a0e53c67049a02f5acdb7dd02723417ded",
+      "video_key": "8885668afb844852",
+      "comparison_reference_verified_labels": [
+        "normal clean mucosa"
+      ],
+      "source_qc": {
+        "blur_laplacian": 63.78889822587506,
+        "brightness_mean": 0.40290457163522175,
+        "contrast_std": 0.22586364807237816,
+        "image_decode_backend": "nvidia_gpu",
+        "image_qc_backend": "cupy_gpu",
+        "image_read_error": null,
+        "image_readable": true,
+        "image_technically_usable": true,
+        "overexposed_fraction": 0.0,
+        "qc_assessment_status": "metrics_only_final_split_pending",
+        "qc_blur_outlier": null,
+        "qc_contrast_outlier": null,
+        "qc_high_brightness_outlier": null,
+        "qc_low_brightness_outlier": null,
+        "qc_requires_review": false,
+        "qc_source_matches_upstream": true,
+        "qc_thresholds_calibrated": false,
+        "specular_fraction": 0.0,
+        "underexposed_fraction": 0.0
+      },
+      "verified_source_labels": [
+        "foreign body"
+      ]
+    },
+    "scope": "Source annotations only; the preview question has no validated answer."
+  },
+  {
+    "reference_answer": null,
+    "qa_validation_status": "not_authored",
+    "source_annotation_evidence": {
+      "annotation_id": "annotation_338d7a01a2c7032b_0",
+      "answer": null,
+      "bbox_xyxy": [
+        35.0,
+        100.0,
+        333.0,
+        332.0
+      ],
+      "clinical_group": "foreign_body",
+      "comparison_reference_image_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_images/Normal clean mucosa/8885668afb844852_17499.jpg",
+      "finding_segment_id": "8885668afb844852__foreign_body__00012",
+      "frame_index": 8112,
+      "ground_truth_ref": "8ebfe914d48a35d94168d49d45891ecfd400af580605a0e267bae885dbf66d26",
+      "ground_truth_scope": "Source annotations only; not automatic answers to arbitrary future questions.",
+      "image_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8112.jpg",
+      "qa_validation_status": "not_authored",
+      "question": null,
+      "source_label": "foreign body",
+      "subject_id": "000742039dbdf90791a921c24315e0a0e53c67049a02f5acdb7dd02723417ded",
+      "video_key": "8885668afb844852",
+      "comparison_reference_verified_labels": [
+        "normal clean mucosa"
+      ],
+      "source_qc": {
+        "blur_laplacian": 63.78889822587506,
+        "brightness_mean": 0.40290457163522175,
+        "contrast_std": 0.22586364807237816,
+        "image_decode_backend": "nvidia_gpu",
+        "image_qc_backend": "cupy_gpu",
+        "image_read_error": null,
+        "image_readable": true,
+        "image_technically_usable": true,
+        "overexposed_fraction": 0.0,
+        "qc_assessment_status": "metrics_only_final_split_pending",
+        "qc_blur_outlier": null,
+        "qc_contrast_outlier": null,
+        "qc_high_brightness_outlier": null,
+        "qc_low_brightness_outlier": null,
+        "qc_requires_review": false,
+        "qc_source_matches_upstream": true,
+        "qc_thresholds_calibrated": false,
+        "specular_fraction": 0.0,
+        "underexposed_fraction": 0.0
+      },
+      "verified_source_labels": [
+        "foreign body"
+      ]
+    },
+    "scope": "Source annotations only; the preview question has no validated answer."
+  },
+  {
+    "reference_answer": null,
+    "qa_validation_status": "not_authored",
+    "source_annotation_evidence": {
+      "annotation_id": "annotation_338d7a01a2c7032b_0",
+      "answer": null,
+      "bbox_xyxy": [
+        35.0,
+        100.0,
+        333.0,
+        332.0
+      ],
+      "clinical_group": "foreign_body",
+      "comparison_reference_image_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_images/Normal clean mucosa/8885668afb844852_17499.jpg",
+      "finding_segment_id": "8885668afb844852__foreign_body__00012",
+      "frame_index": 8112,
+      "ground_truth_ref": "8ebfe914d48a35d94168d49d45891ecfd400af580605a0e267bae885dbf66d26",
+      "ground_truth_scope": "Source annotations only; not automatic answers to arbitrary future questions.",
+      "image_relpath": "data/raw/kvasir_capsule/osfstorage/labelled_images/Foreign body/8885668afb844852_8112.jpg",
+      "qa_validation_status": "not_authored",
+      "question": null,
+      "source_label": "foreign body",
+      "subject_id": "000742039dbdf90791a921c24315e0a0e53c67049a02f5acdb7dd02723417ded",
+      "video_key": "8885668afb844852",
+      "comparison_reference_verified_labels": [
+        "normal clean mucosa"
+      ],
+      "source_qc": {
+        "blur_laplacian": 63.78889822587506,
+        "brightness_mean": 0.40290457163522175,
+        "contrast_std": 0.22586364807237816,
+        "image_decode_backend": "nvidia_gpu",
+        "image_qc_backend": "cupy_gpu",
+        "image_read_error": null,
+        "image_readable": true,
+        "image_technically_usable": true,
+        "overexposed_fraction": 0.0,
+        "qc_assessment_status": "metrics_only_final_split_pending",
+        "qc_blur_outlier": null,
+        "qc_contrast_outlier": null,
+        "qc_high_brightness_outlier": null,
+        "qc_low_brightness_outlier": null,
+        "qc_requires_review": false,
+        "qc_source_matches_upstream": true,
+        "qc_thresholds_calibrated": false,
+        "specular_fraction": 0.0,
+        "underexposed_fraction": 0.0
+      },
+      "verified_source_labels": [
+        "foreign body"
+      ]
+    },
+    "scope": "Source annotations only; the preview question has no validated answer."
+  }
+]

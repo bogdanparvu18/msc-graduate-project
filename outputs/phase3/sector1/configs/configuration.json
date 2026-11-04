@@ -1,0 +1,22 @@
+{
+  "repository": "bogdanparvu18/msc-graduate-project",
+  "ref": "main",
+  "work_root": "/content/mmvqa_phase3_start",
+  "storage_root": "/content/drive/MyDrive/MMVQA_Clinical",
+  "mount_google_drive": true,
+  "read_colab_secret": true,
+  "load_images": true,
+  "save_reports_to_drive": true,
+  "variants": [
+    "full",
+    "crop",
+    "overlay",
+    "fullcrop",
+    "temporal_multi",
+    "temporal_collage"
+  ],
+  "per_variant": 1,
+  "derived_roots": [],
+  "preview_question": "Describe the visible image content. This is an input-loading preview, not a validated benchmark question.",
+  "progress": true
+}

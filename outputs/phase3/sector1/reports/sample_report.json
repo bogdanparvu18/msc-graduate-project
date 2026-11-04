@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "run_id": "20261104T183559_825320Z",
+  "started_at": "2026-11-04T18:35:59.825684+00:00",
+  "status": "image_smoke_passed",
+  "preview_only": true,
+  "training_ready": false,
+  "environment": {
+    "python": "3.13.18",
+    "Pillow": "11.3.0",
+    "pyarrow": "23.0.1"
+  },
+  "samples": [
+    {
+      "example_id": "baca35b22ef88effe4a12699dda73dba38b22378dfa1883621af69ce731914bd",
+      "subject_id": "000742039dbdf90791a921c24315e0a0e53c67049a02f5acdb7dd02723417ded",
+      "variant": "full",
+      "annotation_assisted": false,
+      "image_count": 1,
+      "pixels_verified_now": true,
+      "image_sizes": [
+        [
+          336,
+          336
+        ]
+      ]
+    },
+    {
+      "example_id": "c697eb2f6978206d74981b8ab6c2ef650f48c74a13eb0009d00731496779f02f",
+      "subject_id": "000742039dbdf90791a921c24315e0a0e53c67049a02f5acdb7dd02723417ded",
+      "variant": "crop",
+      "annotation_assisted": true,
+      "image_count": 1,
+      "pixels_verified_now": true,
+      "image_sizes": [
+        [
+          336,
+          283
+        ]
+      ]
+    },
+    {
+      "example_id": "d861ef1b4b4b8a02d4d69e2acb447eb79ae06a646da7082147c5da68e56abf2e",
+      "subject_id": "000742039dbdf90791a921c24315e0a0e53c67049a02f5acdb7dd02723417ded",
+      "variant": "overlay",
+      "annotation_assisted": true,
+      "image_count": 1,
+      "pixels_verified_now": true,
+      "image_sizes": [
+        [
+          336,
+          336
+        ]
+      ]
+    },
+    {
+      "example_id": "2f1a37c3a345b63b74710a1e9e57e83091e0274ab9803442e97751b0b4cc227c",
+      "subject_id": "000742039dbdf90791a921c24315e0a0e53c67049a02f5acdb7dd02723417ded",
+      "variant": "fullcrop",
+      "annotation_assisted": true,
+      "image_count": 2,
+      "pixels_verified_now": true,
+      "image_sizes": [
+        [
+          336,
+          336
+        ],
+        [
+          336,
+          283
+        ]
+      ]
+    },
+    {
+      "example_id": "0ef41b59662513a9cb6662af7ab5196eade18fb426002866ed116f650efab23d",
+      "subject_id": "000742039dbdf90791a921c24315e0a0e53c67049a02f5acdb7dd02723417ded",
+      "variant": "temporal_multi",
+      "annotation_assisted": false,
+      "image_count": 5,
+      "pixels_verified_now": true,
+      "image_sizes": [
+        [
+          336,
+          336
+        ],
+        [
+          336,
+          336
+        ],
+        [
+          336,
+          336
+        ],
+        [
+          336,
+          336
+        ],
+        [
+          336,
+          336
+        ]
+      ]
+    },
+    {
+      "example_id": "2faadc41ae4f56bbab5e8a5b906909f5a33430e4d8574806edafbad5989e685d",
+      "subject_id": "000742039dbdf90791a921c24315e0a0e53c67049a02f5acdb7dd02723417ded",
+      "variant": "temporal_collage",
+      "annotation_assisted": false,
+      "image_count": 1,
+      "pixels_verified_now": true,
+      "image_sizes": [
+        [
+          1680,
+          366
+        ]
+      ]
+    }
+  ],
+  "resolved_commit": "8b91a1b92b01870242a09a8f98c1fc4f7f5e6abe",
+  "processing_signature": "5d2f2d49883814ea4c8226b409c6139a125b95bd02cf3bbe29bcb5f83f80c865",
+  "updated_at": "2026-11-04T18:38:51.108493+00:00",
+  "finished_at": "2026-11-04T18:38:51.499697+00:00"
+}
