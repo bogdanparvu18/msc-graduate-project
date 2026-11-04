@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mmvqa-clinical"
+version = "0.1.0"
+description = "Reproducible Phase 3 benchmark inputs for MMVQA Clinical"
+requires-python = ">=3.10"
+dependencies = ["Pillow>=10", "pyarrow>=14"]
+
+[project.optional-dependencies]
+test = ["pytest>=7", "nbformat>=5"]
+
+[project.scripts]
+mmvqa-phase3 = "mmvqa.phase3.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["mmvqa*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

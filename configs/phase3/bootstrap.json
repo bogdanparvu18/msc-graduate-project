@@ -1,0 +1,12 @@
+{
+  "repository": "bogdanparvu18/msc-graduate-project",
+  "ref": "main",
+  "cache_dir": ".cache/mmvqa-phase3",
+  "output_dir": "outputs/phase3/local/bootstrap",
+  "original_roots": ["/content/drive/MyDrive/MMVQA_Clinical"],
+  "archive_root": "/content/drive/MyDrive/MMVQA_Clinical/outputs/phase2/sector8",
+  "derived_roots": [],
+  "variants": ["full", "crop", "overlay", "fullcrop", "temporal_multi", "temporal_collage"],
+  "per_variant": 1,
+  "preview_question": "Describe the visible image content. This is an input-loading preview, not a validated benchmark question."
+}

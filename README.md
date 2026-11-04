@@ -1,5 +1,7 @@
 # Capsule-Endoscopy MMVQA with Grounded Clinical Decision Support
 
+**Phase 3 input bootstrap:** [run guide and data contract](docs/phase3/README.md) · [Colab/Jupyter notebook](notebooks/phase3/phase3_01_benchmark_bootstrap.ipynb). Resolves the current GitHub data commit, verifies existing S8 metadata and mounted image samples, and separates model inputs from evaluation evidence. QA authoring and final split assignment remain pending.
+
 ## Executive workflow summary 
 
 A clinician or medical researcher asks a natural-language question about capsule-endoscopy evidence, and the system retrieves and reasons over capsule-endoscopy frames, short frame sequences, visual finding annotations, temporal context, metadata, and structured labels to produce an evidence-grounded answer, a clinical finding interpretation, and a guarded decision-support recommendation.
