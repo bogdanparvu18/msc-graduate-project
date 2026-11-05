@@ -224,3 +224,60 @@ Use this as a **candidate retrieval encoder**, not as a replacement for the resp
 - [ ] Decide on further experiments using validated retrieval and grounding results, not vendor benchmark rankings alone.
 
 **Decision:** Retain EmbeddingGemma 2 as an **open-weight multimodal retrieval candidate to investigate later**. No claims of implementation, clinically validated performance, or improvement on the MMVQA benchmark.
+
+
+---
+
+## 11. Multi-granularity retrieval relevance — frame, temporal segment, and finding (proposed)
+
+> **Added:** 2026-11-05  
+> **Status:** Research/evaluation idea; **not implemented or validated**.
+
+A single reference frame should not be treated as the only valid retrieval result. For example, **if five verified frames from the same finding segment all visibly show a hemorrhage**, retrieving frame B rather than the originally designated reference frame A should not automatically count as a retrieval failure. This is a hypothetical illustration, not a claim about a specific annotated Kvasir-Capsule segment.
+
+### Proposed evaluation
+- Define **frame-level relevance** for individually verified frames that visually support the clinical claim.
+- Define **temporal-segment relevance** for locating a verified finding segment; report this separately from whether a particular frame actually shows the finding.
+- Define **finding-level relevance** for distinct evidence items supporting the same verified clinical finding, without treating a shared broad class label as sufficient proof.
+- Allow **multiple judged relevant frames** and, where justified, graded relevance (direct visible evidence versus indirect contextual support).
+- Compare strict single-reference **Recall@K, MRR, nDCG@K** with multi-reference frame, segment and finding metrics, and determine whether they better predict grounded VQA correctness.
+- Maintain group-aware train/validation/test isolation for source videos where feasible, physical frames, derivatives, and overlapping temporal windows. Equivalent evidence references **do not** permit cross-split leakage.
+- Build relevance judgments from Phase 2 Sector 5/6 provenance and review ambiguous cases; an unlabeled or nearby frame must not automatically be treated as a confirmed positive or negative.
+
+**Research question:** Does single-frame scoring underestimate retrieval quality when several frames genuinely document the same finding, and do multi-granularity relevance labels improve correlation with supported clinical answers?
+
+**Decision:** Keep as a proposed Phase 5 retrieval / Phase 8 evaluation protocol, not an implemented result.
+
+---
+
+## 12. Priority reading — Annotation-Free Polyp Retrieval versus MedVTok and EmbeddingGemma 2
+
+> **Added:** 2026-11-05  
+> **Status:** High-priority reading / candidate Phase 5 experiment; **not implemented or tested on Kvasir-Capsule**.
+
+**Paper:** *Annotation-Free Representation Learning for Polyp Retrieval in Colonoscopy Videos*, [arXiv:2610.39648](https://arxiv.org/abs/2610.39648).  
+**Code:** https://github.com/lparolari/freerep
+
+### Why this is a distinct research direction
+
+Put this work on the priority reading list **alongside MedVTok (Section 9) and EmbeddingGemma 2 (Section 10)**. Their contributions are complementary rather than interchangeable:
+
+| Candidate | Main research direction | Proposed role in MMVQA |
+| --- | --- | --- |
+| **MedVTok** | Medical visual representations and tokenization | Medical-domain frame features for RAG-V and aligned RAG-MM |
+| **EmbeddingGemma 2** | Unified image/text multimodal alignment for retrieval | Native text, image and joint image–question retrieval baselines |
+| **Annotation-Free Polyp Retrieval** | **Temporal self-supervision without manual spatial/identity annotations** | Learn/retrieve representations from consecutive endoscopy frames and compare temporal retrieval quality |
+
+The polyp-retrieval work uses temporal consistency and pseudo-positive frame relationships as self-supervision instead of requiring manually supplied bounding boxes or polyp identity labels. Its results on colonoscopy are **not** evidence of improved retrieval on capsule endoscopy: camera motion, revisits, event duration and visibility differ.
+
+### Proposed controlled experiment
+
+1. Read the paper and examine its open-source training/inference pipeline, input assumptions, checkpoints and licensing.
+2. Assess whether verified frame order, source-video IDs and Sector 6 temporal references suffice to construct valid temporal pseudo-positive pairs **without using validation/test information in training**.
+3. Compare a reproducible visual-retrieval baseline against **MedVTok**, **EmbeddingGemma 2**, and a temporally self-supervised encoder on the same split-safe evidence corpus.
+4. Evaluate strict frame-level and multi-reference **finding/segment-level Recall@K, mAP, nDCG@K**, temporal retrieval, small/subtle findings, and downstream grounded VQA; record latency, throughput and memory costs.
+5. Prevent trivial temporal-neighbor memorization, same-frame retrieval, near-duplicate leakage or overlap between train and test. Confirm equivalence of retrieved frames through annotation/review instead of assuming that temporal proximity implies relevance.
+
+**Hypothesis:** Temporally learned endoscopy embeddings may retrieve recurring or adjacent evidence more effectively than general-purpose or medical-image-only features; **this must be measured**, not assumed.
+
+**Decision:** Prioritize reading and a small split-safe feasibility study before considering full RAG-V/RAG-MM-T integration.
