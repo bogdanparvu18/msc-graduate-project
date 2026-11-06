@@ -281,3 +281,36 @@ The polyp-retrieval work uses temporal consistency and pseudo-positive frame rel
 **Hypothesis:** Temporally learned endoscopy embeddings may retrieve recurring or adjacent evidence more effectively than general-purpose or medical-image-only features; **this must be measured**, not assumed.
 
 **Decision:** Prioritize reading and a small split-safe feasibility study before considering full RAG-V/RAG-MM-T integration.
+
+---
+
+## 13. Priority: split-integrity and provenance audit before Phase 2 train/validation/test freeze
+
+> **Added:** 2026-11-06  
+> **Status:** Proposed audit and priority reading — **not yet executed; no leakage in this project's pipeline has been established**.
+
+**Reference to read first:** *ReuScope: Auditing Data Reuse and Evaluation Sensitivity in Capsule Vision 2024*, [arXiv:2610.41835](https://arxiv.org/abs/2610.41835).  
+**Audit code:** https://github.com/eunseobchoi/ReuScope
+
+### Motivation and scope
+
+The study raises an important concern about **source-level split independence** in a benchmark reusing Kvasir-Capsule data. Its findings concern **Capsule Vision 2024**, **not proof of leakage in this MMVQA project's own S5/S6/S7/S8 artifacts**. Before freezing the Phase 2 train/validation/test split, conduct an explicit audit of existing manifests and provenance. Reuse existing metadata rather than reconstructing or re-extracting the dataset by default.
+
+### Proposed audit checklist
+
+- [ ] **S5 — findings/segments:** enumerate stable finding and segment IDs, source-video IDs, class labels and start/end frame or time ranges; identify segments that overlap or refer to the same underlying finding.
+- [ ] **S6 — temporal evidence:** validate source-video IDs, original and verified frame indices, temporal neighbors/windows and their parent finding/segment IDs; ensure a temporal window cannot silently bridge split boundaries.
+- [ ] **S7 — physical images:** map all physical frame paths and identities to the original source video and frame. Check missing or conflicting provenance, exact content hashes, and suspected near-duplicates where feasible; keep distinct source IDs and byte identity as separate concepts.
+- [ ] **S8 — derived artifacts:** trace every crop, overlay, collage, multi-panel image and other transformed visual input through its parent/source frame IDs and content hashes; ensure all derivatives inherit the correct split and no cross-split reuse occurs.
+- [ ] **Cross-sector consistency:** reconcile S5/S6/S7/S8 identifiers and reference counts; flag orphan artifacts, reused images, inconsistent timestamps, overlapping windows and conflicts in source-to-split mapping.
+- [ ] **Group-aware split policy:** evaluate **source-video-level isolation** as the preferred strict option where feasible; at minimum prohibit cross-split sharing of physical frames, their derivatives and overlapping temporal evidence. If weaker isolation is unavoidable, document and measure the residual same-video exposure.
+- [ ] **Relevance groups:** keep alternate valid evidence frames from the same verified finding or temporal segment identifiable as a group (see Section 11), while preventing those groups from straddling split boundaries.
+- [ ] **Independent validation:** record the audit's rules, counts, hashes, exceptions and reviewed false positives in a versioned report before declaring the split final or setting `training_ready=true`.
+
+### Suggested deliverables and decision gate
+
+Produce a **read-only first-pass audit** over the current S5–S8 manifests: provenance/lineage table, exact-duplicate and suspected-near-duplicate reports, video/segment/frame overlap report, unresolved metadata exceptions, and recommended grouping keys for the final split. Fix upstream issues only after reviewing their causes; do **not** silently relabel or discard evidence.
+
+**Gate:** Do not finalize training/validation/test assignments or claim unbiased retrieval/VQA evaluation until cross-split source/derivative/temporal overlap is either eliminated or explicitly documented with a justified evaluation protocol.
+
+**Decision:** Read ReuScope first and prioritize a split/provenance audit as a **Phase 2 prerequisite**, not as evidence of a confirmed defect in the current pipeline.
