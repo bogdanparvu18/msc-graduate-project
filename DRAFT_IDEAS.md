@@ -314,3 +314,37 @@ Produce a **read-only first-pass audit** over the current S5–S8 manifests: pro
 **Gate:** Do not finalize training/validation/test assignments or claim unbiased retrieval/VQA evaluation until cross-split source/derivative/temporal overlap is either eliminated or explicitly documented with a justified evaluation protocol.
 
 **Decision:** Read ReuScope first and prioritize a split/provenance audit as a **Phase 2 prerequisite**, not as evidence of a confirmed defect in the current pipeline.
+
+---
+
+## 14. Guarded MMVQA — answer, request more evidence, or abstain (StreamClarify-inspired)
+
+> **Added:** 2026-11-06  
+> **Status:** Proposed research experiment; **not implemented or validated on Kvasir-Capsule**.
+
+**Reading reference:** *StreamClarify* — [arXiv:2611.01263](https://arxiv.org/abs/2611.01263). The paper studies evidence sufficiency and clarification in streaming-video question answering; its reported results are **not medical or capsule-endoscopy validation**.
+
+### Research motivation
+
+A fluent answer is **not necessarily a grounded clinical conclusion**. An MMVQA system should distinguish three possible outcomes instead of always producing a medical finding:
+
+1. **Answer:** Available frame/segment evidence adequately supports a bounded, cited answer.
+2. **Request additional evidence / clarification:** The question is ambiguous, the temporal context or visual coverage is incomplete, or a specific missing frame/region could help resolve uncertainty.
+3. **Abstain / insufficient evidence:** The evidence is absent, unreliable, contradictory, or insufficient for a responsible conclusion; do not invent a finding or autonomous clinical decision.
+
+### Proposed evaluation protocol
+
+- Build held-out, split-safe examples for **sufficient evidence**, **ambiguous question**, **missing temporal evidence**, **poor visibility**, **conflicting retrieved evidence**, and **no supporting finding**.
+- Record the *available* evidence and the *missing* information separately. Do not treat an unannotated frame as confirmed normal or as proof that a finding is absent.
+- Define a structured decision output, e.g. `decision = answer | request_more_evidence | abstain`, with `evidence_ids`, `supported_claims`, `uncertainty_reason`, and an optional `requested_evidence_type`. Keep the clinical response guarded, non-autonomous, and traceable to verified frames.
+- Compare a forced-answer baseline against **evidence-aware selective answering** using the same questions, retrievers, generator, and split-safe evidence catalog; if possible, also test optional Sector 6 temporal retrieval (**RAG-MM-T**) to resolve missing history.
+- Report **decision accuracy**, unsupported-claim rate, answer accuracy on answered cases, **coverage versus selective risk**, abstention precision/recall, clarification appropriateness, evidence grounding, and extra retrieval/inference cost. Separate correct abstention from a missed opportunity to answer.
+- Calibrate thresholds using training/validation data only, then assess on untouched test data. Test whether adding an irrelevant or conflicting frame incorrectly changes the model's interpretation of a verified finding.
+
+### Practical first step
+
+Prototype an offline decision layer over existing Phase 3 QA/evidence references and Phase 2 S5–S8 provenance, using a fixed VLM. Begin with labeled sufficiency/ambiguity cases and compare against forced answering before considering training or integrating the mechanism into production.
+
+**Research question:** Can evidence-aware triage improve clinical grounding and reduce unsupported claims without excessive unnecessary abstention or clarification requests?
+
+**Decision:** Keep as a high-priority Phase 5/Phase 8 evaluation idea for the *guarded decision support* component, not a claim of clinical safety or implemented functionality.
