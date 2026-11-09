@@ -1,15 +1,16 @@
 # Executive report: Phase 3, Sector 1 — Verified benchmark input loading
 
-**Source:** [`phase3_01_benchmark_bootstrap.ipynb`](https://github.com/bogdanparvu18/msc-graduate-project/blob/f567456c9ab7260ad1fec39ca6d4f4ea1f1b286d/notebooks/phase3/phase3_01_benchmark_bootstrap.ipynb)  
-**Review date:** 4 November 2026  
-**Basis:** Notebook code and its saved Colab execution outputs at repository commit `f567456c9ab7260ad1fec39ca6d4f4ea1f1b286d`, together with the repository's published file inventory. The dataset and Drive report files were not rerun or independently revalidated for this report.  
-**Saved run reviewed:** `20261104T183559_825320Z` (UTC; 13:35:59 on 4 November 2026 in `America/Toronto`).
+**Source:** [`phase3_01_benchmark_bootstrap.ipynb`](https://github.com/bogdanparvu18/msc-graduate-project/blob/0bc717ffdd3f8662ec380905ef9c3f29ddd58fbb/notebooks/phase3/phase3_01_benchmark_bootstrap.ipynb)  
+**Review date:** 9 November 2026  
+**Basis:** Notebook code, saved Colab execution outputs and all five published JSON artifacts at repository commit `0bc717ffdd3f8662ec380905ef9c3f29ddd58fbb`. The published files were checked for consistent sample identities, source revision, counts and verification status. The notebook and dataset were not rerun, and current Drive contents were not independently revalidated.  
+**Saved run reviewed:** `20261104T183559_825320Z` (UTC; 13:35:59 on 4 November 2026 in `America/Toronto`).  
+**Artifact publication:** [`8831f7b696aa6a93d7284658e572eb0f7f88194b`](https://github.com/bogdanparvu18/msc-graduate-project/commit/8831f7b696aa6a93d7284658e572eb0f7f88194b), 4 November 2026, 14:43:23 in `America/Toronto`; all five JSON artifacts were added together.
 
 ## Executive summary
 
 This notebook establishes the first Phase 3 interface to the visual evidence already prepared in Phase 2, Sector 8. It resolves the configured GitHub source ref to its actual commit, reads and verifies the selected S8 catalog and metadata, selects a small set of visual-input recipes, and loads their existing image bytes from mounted Google Drive storage. Original frames remain source references, while crops, overlays and collages are read from the existing S8 TAR archives. The notebook does not regenerate these images.
 
-The saved execution records **`image_smoke_passed` for six variants**, comprising **11 image input slots and eight distinct image paths**. All six variants were selected for the same annotation-based subject. The input-slot count includes repeated use of the target frame and crop; it is not the number of newly created images. The run verifies three selected image archives and displays the loaded images. It then saves five JSON artifacts containing configuration, source identity, sample verification, evaluator evidence and provenance.
+The saved execution records **`image_smoke_passed` for six variants**, comprising **11 image input slots and eight distinct image paths**. All six variants were selected for the same annotation-based subject. The input-slot count includes repeated use of the target frame and crop; it is not the number of newly created images. The run verifies three selected image archives and displays the loaded images. It saves five JSON artifacts containing configuration, source identity, sample verification, evaluator evidence and provenance. All five are now published under `outputs/phase3/sector1/` in one commit. The notebook includes a dedicated publication cell, whose saved output records successful publication.
 
 The actual data revision resolved during that run was [`8b91a1b92b01870242a09a8f98c1fc4f7f5e6abe`](https://github.com/bogdanparvu18/msc-graduate-project/commit/8b91a1b92b01870242a09a8f98c1fc4f7f5e6abe). This is distinct from the later commit containing the saved notebook. The result establishes successful loading of the selected sample, not a complete-dataset audit or a validated QA benchmark. The saved output explicitly retains **`training_ready=False`**, **`qa_validation_status="not_authored"`** and a **`None` reference answer**.
 
@@ -23,7 +24,8 @@ The actual data revision resolved during that run was [`8b91a1b92b01870242a09a8f
 | Sample selection | Selects one subject with all six requested variants: `full`, `crop`, `overlay`, `fullcrop`, `temporal_multi` and `temporal_collage`. Retains annotation-assistance flags and pending split information. Shared-subject sampling does not by itself validate clinical task equivalence. |
 | Mounted-image loading | Reads originals from their exact portable paths and derivatives from declared regular TAR members. Checks archive and consumed-image hashes, available byte counts and image dimensions. Reads members without extracting the full archive or overwriting source data. |
 | Input separation and display | Creates a model projection containing the question, RGB images, neutral image roles and explicitly allowed context. Keeps source annotation evidence and provenance separate, clears image metadata, and displays the verified inputs. |
-| Persistence | Writes five JSON artifacts to a local run directory and, after successful completion with the default configuration, to a separate Drive run directory. The reviewed notebook has no GitHub publication cell. |
+| Persistence | Writes five JSON artifacts to a local run directory and, after successful completion with the default configuration, to a separate Drive run directory. `save_reports_to_drive` controls the Drive copy. |
+| GitHub publication | Uses `PUBLISH_CONFIG` to preview or publish the five saved artifacts. Validates a completed image-loading run, commits changed files together, and reads back the committed bytes for comparison. Unchanged files are reused; an unchanged set creates no new commit. The saved publication completed successfully. |
 
 ## Results visible in the saved notebook
 
@@ -38,7 +40,7 @@ The actual data revision resolved during that run was [`8b91a1b92b01870242a09a8f
 | Physical metadata file reads shown | 14 | Five direct logical files, eight parts for four logical files, and the index; commit resolution is a separate API call. |
 | Model-facing fields | 4 | `question`, `images`, `image_roles` and `context`. |
 | Reference answer / QA validation | `None` / `not_authored` | Source annotation labels were not converted into answers to the preview question. |
-| Saved report artifacts | 5 JSON files | Configuration, source snapshot, sample report, evaluator records and provenance. |
+| Published report artifacts | 5 JSON files | Configuration, source snapshot, sample report, evaluator records and provenance, added together in commit `8831f7b`. |
 | Training readiness | `False` | Validated QA and final source-group-safe split assignment remain downstream requirements. |
 
 The displayed inputs have the following sizes:
@@ -57,7 +59,7 @@ The target is frame **8112** of video **`8885668afb844852`**. The temporal seque
 
 The saved archive checks report approximately **32.5 MB** for `roi_crop.tar`, **109.3 MB** for `bbox_overlay.tar` and **2991.2 MB** for `temporal_collage.tar`. The selected archive is hashed on first use; unchanged archive verification is reused within the resolver instance, while consumed image members are checked individually.
 
-The recorded environment is **Python 3.13.18**, **Pillow 11.3.0** and **PyArrow 23.0.1**, running in Colab. The synthetic self-test passed, all 13 code cells have sequential saved execution counts, and there are no saved error outputs. These observations describe the preserved execution; they are not a fresh inspection of the current Drive contents.
+The recorded environment is **Python 3.13.18**, **Pillow 11.3.0** and **PyArrow 23.0.1**, running in Colab. The synthetic self-test passed. The current notebook contains **14 code cells**, including the publication cell, and has no saved error outputs. Its execution counters show selective reruns rather than one sequential execution from a fresh runtime; the publication cell has execution count 19 and records `published` with commit `8831f7b`. These observations describe the preserved execution; they are not a fresh notebook run or inspection of the current Drive contents.
 
 ## Outputs and scope
 
@@ -67,13 +69,15 @@ The saved local report directory is:
 /content/mmvqa_phase3_start/reports/20261104T183559_825320Z/
 ```
 
-The final cell reports the corresponding persistent Drive directory:
+The report-saving cell records the corresponding persistent Drive directory:
 
 ```text
 /content/drive/MyDrive/MMVQA_Clinical/outputs/phase3/bootstrap_reports/20261104T183559_825320Z_8b91a1b92b01/
 ```
 
-The notebook's `save_reports_to_drive=True` setting controls that Drive copy. It does not publish files to GitHub. All five files are written together in the run directory; the subdirectories below describe their intended GitHub organization under `outputs/phase3/sector1/`.
+The notebook's `save_reports_to_drive=True` setting controls that Drive copy. GitHub publication is controlled separately by `PUBLISH_CONFIG["mode"]`: `"preview"` checks and displays proposed changes, while `"publish"` commits changed artifacts. The current saved configuration uses `"publish"`. The publisher takes the repository from `CONFIG["repository"]`, the target branch from `CONFIG.get("publication_branch", CONFIG["ref"])`, and the source directory from `REPORT_DIR`.
+
+All five files are saved in the run directory and are now published at the destinations below. The parent output directory is `outputs/phase3/`, with `sector1/` as its subdirectory.
 
 | Artifact | Contents | GitHub destination |
 | --- | --- | --- |
@@ -83,7 +87,11 @@ The notebook's `save_reports_to_drive=True` setting controls that Drive copy. It
 | `evaluator_records.json` | Source annotation evidence for the selected recipes, with no validated reference answers. | `results/evaluator_records.json` |
 | `provenance.json` | Example, subject, annotation, source and product links, hashes, pending split fields and verified image-resolution records. | `results/provenance.json` |
 
-At the reviewed repository snapshot, these five report files had not been published to GitHub; the saved notebook records their Drive persistence. Publishing them requires uploading the five files from the same completed run or adding a dedicated publication cell. The intended publication should preserve their exact bytes and commit the selected set together. For a full image-loading result, the report must retain `status="image_smoke_passed"` with every selected sample's `pixels_verified_now=true`. A metadata-only run can be published separately with its original `metadata_verified_images_not_checked` status rather than being presented as pixel verification.
+The five artifacts from run `20261104T183559_825320Z` were published together in [commit `8831f7b`](https://github.com/bogdanparvu18/msc-graduate-project/commit/8831f7b696aa6a93d7284658e572eb0f7f88194b). The published `sample_report.json` retains `status="image_smoke_passed"`, with `pixels_verified_now=true` for all six selected samples and `training_ready=false`. The report and provenance identify the same source revision, `8b91a1b92b01870242a09a8f98c1fc4f7f5e6abe`, and their sample identities and counts agree with the evaluator records.
+
+The publication cell reads each local artifact into a byte snapshot, validates the set, and verifies the committed bytes against those snapshots before reporting success. Its saved output records that successful verification; this review does not independently compare the current Drive copies with GitHub. The publisher updates the target branch without forcing it and stops if the branch moves during preparation.
+
+The current publication cell requires a completed `image_smoke_passed` run with every selected sample's `pixels_verified_now=true`. It rejects `metadata_verified_images_not_checked` runs. A metadata-only run remains a valid metadata check, but publishing it would require a separate publication path or an explicit extension of this validation contract; its status must not be changed to imply pixel verification.
 
 No new `data/` directory or duplicate S8 dataset is produced. Original images, temporal frames, image TARs and the metadata cache remain in their existing storage locations. The two `results/` files are sample-level annotation/provenance exports, not predictions or evaluation scores.
 
