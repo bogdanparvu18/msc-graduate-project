@@ -1,0 +1,79 @@
+{
+  "schema_version": "mmvqa-gi-supplement-v1",
+  "terminology": "SBCE_VASCULAR_DELPHI_2019",
+  "version": "2019",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6395173/",
+  "doi": "10.1055/a-0761-9742",
+  "source_locator": "Table 2 and Results: Angiectasia/angiodysplasia; Red spot/dot",
+  "citation": "Leenhardt et al. Nomenclature and semantic description of vascular lesions in small bowel capsule endoscopy: an international Delphi consensus statement. Endoscopy International Open. 2019;7:E372–E379.",
+  "scope": "Selected nomenclature facts from a later capsule vascular consensus; not the original CEST 2005 vocabulary or its full contents.",
+  "terms": [
+    {
+      "term_id": "SBCE2019:angiectasia",
+      "preferred_term": "Angiectasia",
+      "source_label": "Angiectasia/angiodysplasia",
+      "term_type": "finding",
+      "section": "Small bowel vascular lesions",
+      "source_locator": "Table 2, row Angiectasia/angiodysplasia"
+    },
+    {
+      "term_id": "SBCE2019:erythematous_patch",
+      "preferred_term": "Erythematous patch",
+      "source_label": "Erythematous patch",
+      "term_type": "finding",
+      "section": "Small bowel vascular lesions",
+      "source_locator": "Table 2, row Erythematous patch"
+    },
+    {
+      "term_id": "SBCE2019:red_spot",
+      "preferred_term": "Red spot",
+      "source_label": "Red spot/dot",
+      "term_type": "finding",
+      "section": "Small bowel vascular lesions",
+      "source_locator": "Table 2, row Red spot/dot"
+    },
+    {
+      "term_id": "SBCE2019:phlebectasia",
+      "preferred_term": "Phlebectasia",
+      "source_label": "Phlebectasia",
+      "term_type": "finding",
+      "section": "Small bowel vascular lesions",
+      "source_locator": "Table 2, row Phlebectasia"
+    }
+  ],
+  "synonyms": [
+    {
+      "term_id": "SBCE2019:angiectasia",
+      "synonym": "Angiodysplasia",
+      "language": "en",
+      "relation": "source_attested_equivalent_name",
+      "source_locator": "Table 2; Results, Angiectasia/angiodysplasia",
+      "evidence": "Both names denote the same lesion class in the consensus; preference between names was not agreed."
+    },
+    {
+      "term_id": "SBCE2019:red_spot",
+      "synonym": "Red dot",
+      "language": "en",
+      "relation": "source_attested_equivalent_name",
+      "source_locator": "Table 2; Results, Red spot/dot",
+      "evidence": "Both names denote the same lesion class in the consensus; preference between names was not agreed."
+    }
+  ],
+  "not_synonyms": [
+    [
+      "SBCE2019:angiectasia",
+      "SBCE2019:erythematous_patch"
+    ],
+    [
+      "SBCE2019:erythematous_patch",
+      "SBCE2019:red_spot"
+    ]
+  ],
+  "excluded_terms": [
+    {
+      "label": "Diminutive angiectasia",
+      "reason": "Consensus was not reached on the nomenclature."
+    }
+  ],
+  "patient_attribute_policy": "Descriptions of lesion classes do not assert observations for individual dataset frames."
+}
