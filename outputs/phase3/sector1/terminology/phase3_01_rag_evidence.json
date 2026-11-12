@@ -27,14 +27,19 @@
       "sha256": "111fccdb70d401a8bad8552d5f0ad20330484897f7b02419b82861bdcb95faa2"
     }
   ],
-  "scope": "Terminology associations and conservative lexical policy only; existing task rules and QA coverage remain unchanged.",
+  "scope": "Concept-bound terminology associations, source-accepted vocabulary, and explicit relation/usage policies; existing task rules, Phase 2 observations and QA coverage remain unchanged.",
   "limitations": [
     "Medical papers support term meaning, not the truth of each image annotation or answer.",
     "Independent means an external publication rather than dataset annotation validation; overlap and source reuse are recorded.",
     "No CEST/SNOMED concept IDs are invented. Their actual imported source and runtime checks remain required.",
     "Empty target-type lists deliberately prevent lexical autoapproval where role or specificity is insufficient.",
     "Related mappings do not license exact synonym substitution or new diagnostic claims.",
-    "Frozen decisions replay deterministically; fresh RAG retrieval or model evaluation need not be deterministic."
+    "Frozen decisions replay deterministically; fresh RAG retrieval or model evaluation need not be deterministic.",
+    "The v2 SNOMED policies are conditional class-level mappings, not an exhaustive search of all possible concepts or a claim that any named FSN exists in every edition.",
+    "Anatomical Structure, Entire and Part wording is interpreted explicitly; it is never removed as generic noise.",
+    "A related disorder, object or substance association is vocabulary/navigation support and does not assert an image finding, patient diagnosis or class equivalence.",
+    "This revision performs no SNOMED postcoordination or MRCM validation. Missing attributes remain missing.",
+    "The legacy lexical allowlists remain unchanged for older notebooks; the v1.4.6 concept policy and source-bound synonym handling supersede them only in the new engine."
   ],
   "sources": [
     {
@@ -586,6 +591,96 @@
       "year": 2020,
       "canonical_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005999/",
       "source_type": "primary_international_delphi_consensus"
+    },
+    {
+      "source_id": "SNOMED_SYNONYM_GUIDANCE_2026",
+      "url": "https://docs.snomed.org/snomed-international-documents/snomed-ct-glossary/s/synonym",
+      "title": "SNOMED CT Glossary: synonym",
+      "authors": "SNOMED International",
+      "publisher": "SNOMED International",
+      "independent_of_dataset": true,
+      "source_role": "terminology_specification",
+      "review_date": "2026-11-12",
+      "retrieved_at": "2026-11-12",
+      "retrieval_ref": "turn818844946view0",
+      "access_scope": "relevant source sections read",
+      "source_type": "official_primary_terminology_documentation",
+      "evidence_kind": "paraphrase"
+    },
+    {
+      "source_id": "SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
+      "url": "https://docs.snomed.org/snomed-ct-specifications/snomed-ct-release-file-specification/reference-set-release-file-specification/5.2-reference-set-types/5.2.2.1-language-reference-set",
+      "title": "SNOMED CT Release File Specification: Language Reference Sets",
+      "authors": "SNOMED International",
+      "publisher": "SNOMED International",
+      "independent_of_dataset": true,
+      "source_role": "terminology_specification",
+      "review_date": "2026-11-12",
+      "retrieved_at": "2026-11-12",
+      "retrieval_ref": "turn818844946view1",
+      "access_scope": "relevant source sections read",
+      "source_type": "official_primary_terminology_documentation",
+      "evidence_kind": "paraphrase"
+    },
+    {
+      "source_id": "SNOMED_ANATOMICAL_MODEL_2026",
+      "url": "https://docs.snomed.org/snomed-ct-specifications/snomed-ct-editorial-guide/readme/authoring/domain-specific-modeling/body-structure/anatomical-concept-model",
+      "title": "SNOMED CT Editorial Guide: Anatomical Concept Model",
+      "authors": "SNOMED International",
+      "publisher": "SNOMED International",
+      "independent_of_dataset": true,
+      "source_role": "terminology_specification",
+      "review_date": "2026-11-12",
+      "retrieved_at": "2026-11-12",
+      "retrieval_ref": "turn818844946view2",
+      "access_scope": "relevant source sections read",
+      "source_type": "official_primary_terminology_documentation",
+      "evidence_kind": "paraphrase"
+    },
+    {
+      "source_id": "SNOMED_IDENTICAL_TERMS_GUIDANCE_2026",
+      "url": "https://docs.snomed.org/snomed-ct-practical-guides/snomed-ct-search-and-data-entry-guide/5-optimize-display-of-search-results/5.2-distinguish-identical-terms-of-different-concepts",
+      "title": "SNOMED CT Search and Data Entry Guide: Distinguish Identical Terms of Different Concepts",
+      "authors": "SNOMED International",
+      "publisher": "SNOMED International",
+      "independent_of_dataset": true,
+      "source_role": "terminology_specification",
+      "review_date": "2026-11-12",
+      "retrieved_at": "2026-11-12",
+      "retrieval_ref": "turn822906068view0",
+      "access_scope": "relevant source sections read",
+      "source_type": "official_primary_terminology_documentation",
+      "evidence_kind": "paraphrase"
+    },
+    {
+      "source_id": "NLM_LYMPHANGIECTASIS_2026",
+      "url": "https://meshb.nlm.nih.gov/record/ui?ui=D008200",
+      "title": "MeSH Descriptor Data 2026: Lymphangiectasis",
+      "authors": "National Library of Medicine",
+      "publisher": "National Library of Medicine",
+      "independent_of_dataset": true,
+      "source_role": "medical_reference",
+      "review_date": "2026-11-12",
+      "retrieved_at": "2026-11-12",
+      "retrieval_ref": "turn818844946view3",
+      "access_scope": "relevant source sections read",
+      "source_type": "official_primary_terminology_documentation",
+      "evidence_kind": "paraphrase"
+    },
+    {
+      "source_id": "NLM_INTESTINAL_LYMPHANGIECTASIS_2026",
+      "url": "https://meshb.nlm.nih.gov/record/ui?ui=D008201",
+      "title": "MeSH Descriptor Data 2026: Lymphangiectasis, Intestinal",
+      "authors": "National Library of Medicine",
+      "publisher": "National Library of Medicine",
+      "independent_of_dataset": true,
+      "source_role": "medical_reference",
+      "review_date": "2026-11-12",
+      "retrieved_at": "2026-11-12",
+      "retrieval_ref": "turn818844946view4",
+      "access_scope": "relevant source sections read",
+      "source_type": "official_primary_terminology_documentation",
+      "evidence_kind": "paraphrase"
     }
   ],
   "passages": [
@@ -716,6 +811,54 @@
       "paraphrase": "Consensus distinguishes aphthoid erosion from superficial/deep ulceration; tissue loss and redness are descriptive findings. Etiology and depth can remain uncertain.",
       "evidence_kind": "paraphrase",
       "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:SNOMED_SYNONYM_GUIDANCE_2026",
+      "source_id": "SNOMED_SYNONYM_GUIDANCE_2026",
+      "location": "Definition and Notes, lines 6-11",
+      "paraphrase": "A concept can have several acceptable ways of being named in a language context. A synonym string can also be shared by different concepts, so term identity alone cannot establish concept identity.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
+      "source_id": "SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
+      "location": "Purpose and Language Reference Rules and Guidance, lines 3-8 and 19-28",
+      "paraphrase": "Language reference sets specify description acceptability within a language or dialect. An active reference-set member identifies a description as preferred or acceptable; absence of active membership does not establish acceptability in that context.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:SNOMED_ANATOMICAL_MODEL_2026",
+      "source_id": "SNOMED_ANATOMICAL_MODEL_2026",
+      "location": "The Structure-Entire-Part model, lines 3-18",
+      "paraphrase": "Anatomical structure, entire entity, and part are distinct modeling categories. A general structure concept supports references to an entity or its parts; removing these words indiscriminately can change meaning. Anatomical class mappings must preserve the intended scope.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026",
+      "source_id": "SNOMED_IDENTICAL_TERMS_GUIDANCE_2026",
+      "location": "Search result disambiguation, lines 3-5",
+      "paraphrase": "The same displayed term can identify different concepts. Fully specified names and the relevant ancestor hierarchy provide information needed to distinguish their meanings.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:NLM_LYMPHANGIECTASIS_2026",
+      "source_id": "NLM_LYMPHANGIECTASIS_2026",
+      "location": "Scope Note and tree placement, lines 24-25 and 67-74",
+      "paraphrase": "The descriptor concerns dilation of lymphatic vessels and has an intestinal subtype. This supports retrieval of lymphangiectasis vocabulary, but does not establish a specific disease cause in an image.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:NLM_INTESTINAL_LYMPHANGIECTASIS_2026",
+      "source_id": "NLM_INTESTINAL_LYMPHANGIECTASIS_2026",
+      "location": "Scope Note and Entry Terms, lines 25-29",
+      "paraphrase": "The intestinal descriptor lists both lymphangiectasis and lymphangiectasia wording. Its clinical scope includes more than a visible mucosal appearance, so a diagnostic association must not silently replace an image-level observation.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
     }
   ],
   "profiles": [
@@ -748,7 +891,48 @@
       "decision_is_inference": true,
       "human_reviewed": false,
       "scope": "Annotated class meaning only; no new image-level clinical attributes.",
-      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply.",
+      "snomed_concept_policy": {
+        "policy_version": "snomed-concept-policy-v1",
+        "search_aliases": [
+          "Structure of ampulla of Vater",
+          "Ampulla of Vater structure",
+          "Ampulla of Vater"
+        ],
+        "rules": [
+          {
+            "rule_id": "ampulla_of_vater_anatomical_structure",
+            "relation": "exact",
+            "semantic_tags": [
+              "body structure"
+            ],
+            "accepted_fsn_labels": [
+              "Structure of ampulla of Vater",
+              "Ampulla of Vater structure",
+              "Ampulla of Vater"
+            ],
+            "match_labels": [
+              "Structure of ampulla of Vater",
+              "Ampulla of Vater structure",
+              "Ampulla of Vater"
+            ],
+            "passage_ids": [
+              "passage:KVASIR_2021",
+              "passage:MIRILAS_2005",
+              "passage:NAKAMURA_2009",
+              "passage:SNOMED_SYNONYM_GUIDANCE_2026",
+              "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
+              "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026",
+              "passage:SNOMED_ANATOMICAL_MODEL_2026"
+            ],
+            "rationale": "The dataset label denotes a general anatomical landmark. Accept only the explicitly named structure in the body-structure domain, without asserting visualization of the whole organ or substituting a neighboring structure. Exact means the scoped anatomical class meaning, not image revalidation. Entire/part qualifiers are not removed or inferred. The major papilla remains a separate related MST landmark and cannot become an exact synonym of the internal ampulla.",
+            "interpretation": "Conditional source-concept rule; not a claim that every named concept occurs in the imported release. Runtime must establish an active matching concept, accepted description, source identity and required uniqueness.",
+            "usage_scope": "Class-level meaning only, preserving Phase 2 observation role and original qualifiers; no new image attributes or patient diagnosis."
+          }
+        ],
+        "unmapped_reason": "no_source_accepted_candidate_for_current_search_seeds",
+        "retrieval_note": "Search seeds locate possible source concepts. They are not automatically approved synonyms; the source concept, FSN and semantic role must satisfy a rule. No token-overlap or qualifier-dropping approval is allowed."
+      }
     },
     {
       "class_label": "angiectasia",
@@ -787,7 +971,45 @@
       "decision_is_inference": true,
       "human_reviewed": false,
       "scope": "Annotated class meaning only; no new image-level clinical attributes.",
-      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply.",
+      "snomed_concept_policy": {
+        "policy_version": "snomed-concept-policy-v1",
+        "search_aliases": [
+          "Angiectasia",
+          "Angiodysplasia"
+        ],
+        "rules": [
+          {
+            "rule_id": "angiectasia_observed_finding",
+            "relation": "exact",
+            "semantic_tags": [
+              "finding",
+              "morphologic abnormality"
+            ],
+            "accepted_fsn_labels": [
+              "Angiectasia",
+              "Angiodysplasia"
+            ],
+            "match_labels": [
+              "Angiectasia",
+              "Angiodysplasia"
+            ],
+            "passage_ids": [
+              "passage:KVASIR_2021",
+              "passage:MST3_OFFICIAL_TABLES",
+              "passage:SBCE_VASCULAR_DELPHI_2019",
+              "passage:SNOMED_SYNONYM_GUIDANCE_2026",
+              "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
+              "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026"
+            ],
+            "rationale": "Retain the generic observed finding or morphology represented by this dataset class. The source FSN must contain no unapproved anatomical, etiological, severity, histological or disease qualifier. No diagnosis is inferred merely from a matching display term.",
+            "interpretation": "Conditional source-concept rule; not a claim that every named concept occurs in the imported release. Runtime must establish an active matching concept, accepted description, source identity and required uniqueness.",
+            "usage_scope": "Class-level meaning only, preserving Phase 2 observation role and original qualifiers; no new image attributes or patient diagnosis."
+          }
+        ],
+        "unmapped_reason": "no_source_accepted_candidate_for_current_search_seeds",
+        "retrieval_note": "Search seeds locate possible source concepts. They are not automatically approved synonyms; the source concept, FSN and semantic role must satisfy a rule. No token-overlap or qualifier-dropping approval is allowed."
+      }
     },
     {
       "class_label": "blood fresh",
@@ -821,7 +1043,43 @@
       "decision_is_inference": true,
       "human_reviewed": false,
       "scope": "Annotated class meaning only; no new image-level clinical attributes.",
-      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply.",
+      "snomed_concept_policy": {
+        "policy_version": "snomed-concept-policy-v1",
+        "search_aliases": [
+          "Fresh blood",
+          "Blood fresh",
+          "Blood"
+        ],
+        "rules": [
+          {
+            "rule_id": "fresh_blood_material_context",
+            "relation": "related",
+            "semantic_tags": [
+              "substance"
+            ],
+            "accepted_fsn_labels": [
+              "Blood"
+            ],
+            "match_labels": [
+              "Blood"
+            ],
+            "passage_ids": [
+              "passage:KVASIR_2021",
+              "passage:MST3_OFFICIAL_TABLES",
+              "passage:SCHMIDT_HEMOPILL_2019",
+              "passage:SNOMED_SYNONYM_GUIDANCE_2026",
+              "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
+              "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026"
+            ],
+            "rationale": "The observed class includes the Fresh qualifier. A generic Blood substance concept is only a material-context link; it must never replace the qualified class name or assert active bleeding. The exact MST representation remains Blood with Type=Fresh.",
+            "interpretation": "Conditional source-concept rule; not a claim that every named concept occurs in the imported release. Runtime must establish an active matching concept, accepted description, source identity and required uniqueness.",
+            "usage_scope": "Class-level meaning only, preserving Phase 2 observation role and original qualifiers; no new image attributes or patient diagnosis."
+          }
+        ],
+        "unmapped_reason": "no_validated_exact_snomed_expression_preserving_fresh_qualifier",
+        "retrieval_note": "Search seeds locate possible source concepts. They are not automatically approved synonyms; the source concept, FSN and semantic role must satisfy a rule. No token-overlap or qualifier-dropping approval is allowed."
+      }
     },
     {
       "class_label": "blood hematin",
@@ -855,7 +1113,70 @@
       "decision_is_inference": true,
       "human_reviewed": false,
       "scope": "Annotated class meaning only; no new image-level clinical attributes.",
-      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply.",
+      "snomed_concept_policy": {
+        "policy_version": "snomed-concept-policy-v1",
+        "search_aliases": [
+          "Blood hematin",
+          "Hematin",
+          "Haematin",
+          "Blood"
+        ],
+        "rules": [
+          {
+            "rule_id": "hematin_material_context",
+            "relation": "related",
+            "semantic_tags": [
+              "substance"
+            ],
+            "accepted_fsn_labels": [
+              "Hematin",
+              "Haematin"
+            ],
+            "match_labels": [
+              "Hematin",
+              "Haematin"
+            ],
+            "passage_ids": [
+              "passage:KVASIR_2021",
+              "passage:MST3_OFFICIAL_TABLES",
+              "passage:SCHMIDT_HEMOPILL_2019",
+              "passage:SNOMED_SYNONYM_GUIDANCE_2026",
+              "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
+              "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026"
+            ],
+            "rationale": "The material name supports a related vocabulary connection for the observed blood-hematin class. A substance concept alone does not encode its endoscopic appearance or the full class meaning and cannot become an interchangeable class term.",
+            "interpretation": "Conditional source-concept rule; not a claim that every named concept occurs in the imported release. Runtime must establish an active matching concept, accepted description, source identity and required uniqueness.",
+            "usage_scope": "Class-level meaning only, preserving Phase 2 observation role and original qualifiers; no new image attributes or patient diagnosis."
+          },
+          {
+            "rule_id": "hematin_blood_context",
+            "relation": "related",
+            "semantic_tags": [
+              "substance"
+            ],
+            "accepted_fsn_labels": [
+              "Blood"
+            ],
+            "match_labels": [
+              "Blood"
+            ],
+            "passage_ids": [
+              "passage:KVASIR_2021",
+              "passage:MST3_OFFICIAL_TABLES",
+              "passage:SCHMIDT_HEMOPILL_2019",
+              "passage:SNOMED_SYNONYM_GUIDANCE_2026",
+              "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
+              "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026"
+            ],
+            "rationale": "The generic blood concept is contextual only. Preserve Hematin explicitly, including the existing MST Type constraint; do not equate hematin with fresh blood, clot, melena, or an active bleeding event.",
+            "interpretation": "Conditional source-concept rule; not a claim that every named concept occurs in the imported release. Runtime must establish an active matching concept, accepted description, source identity and required uniqueness.",
+            "usage_scope": "Class-level meaning only, preserving Phase 2 observation role and original qualifiers; no new image attributes or patient diagnosis."
+          }
+        ],
+        "unmapped_reason": "no_validated_exact_snomed_expression_preserving_hematin_qualifier",
+        "retrieval_note": "Search seeds locate possible source concepts. They are not automatically approved synonyms; the source concept, FSN and semantic role must satisfy a rule. No token-overlap or qualifier-dropping approval is allowed."
+      }
     },
     {
       "class_label": "erosion",
@@ -891,7 +1212,42 @@
       "decision_is_inference": true,
       "human_reviewed": false,
       "scope": "Annotated class meaning only; no new image-level clinical attributes.",
-      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply.",
+      "snomed_concept_policy": {
+        "policy_version": "snomed-concept-policy-v1",
+        "search_aliases": [
+          "Erosion"
+        ],
+        "rules": [
+          {
+            "rule_id": "erosion_observed_finding",
+            "relation": "exact",
+            "semantic_tags": [
+              "finding",
+              "morphologic abnormality"
+            ],
+            "accepted_fsn_labels": [
+              "Erosion"
+            ],
+            "match_labels": [
+              "Erosion"
+            ],
+            "passage_ids": [
+              "passage:KVASIR_2021",
+              "passage:MST3_OFFICIAL_TABLES",
+              "passage:leenhardt_inflammatory_2020",
+              "passage:SNOMED_SYNONYM_GUIDANCE_2026",
+              "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
+              "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026"
+            ],
+            "rationale": "Retain the generic observed finding or morphology represented by this dataset class. The source FSN must contain no unapproved anatomical, etiological, severity, histological or disease qualifier. No diagnosis is inferred merely from a matching display term.",
+            "interpretation": "Conditional source-concept rule; not a claim that every named concept occurs in the imported release. Runtime must establish an active matching concept, accepted description, source identity and required uniqueness.",
+            "usage_scope": "Class-level meaning only, preserving Phase 2 observation role and original qualifiers; no new image attributes or patient diagnosis."
+          }
+        ],
+        "unmapped_reason": "no_source_accepted_candidate_for_current_search_seeds",
+        "retrieval_note": "Search seeds locate possible source concepts. They are not automatically approved synonyms; the source concept, FSN and semantic role must satisfy a rule. No token-overlap or qualifier-dropping approval is allowed."
+      }
     },
     {
       "class_label": "erythema",
@@ -926,7 +1282,41 @@
       "decision_is_inference": true,
       "human_reviewed": false,
       "scope": "Annotated class meaning only; no new image-level clinical attributes.",
-      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply.",
+      "snomed_concept_policy": {
+        "policy_version": "snomed-concept-policy-v1",
+        "search_aliases": [
+          "Erythema"
+        ],
+        "rules": [
+          {
+            "rule_id": "erythema_observed_finding",
+            "relation": "exact",
+            "semantic_tags": [
+              "finding"
+            ],
+            "accepted_fsn_labels": [
+              "Erythema"
+            ],
+            "match_labels": [
+              "Erythema"
+            ],
+            "passage_ids": [
+              "passage:KVASIR_2021",
+              "passage:MST3_OFFICIAL_TABLES",
+              "passage:annese_ecco_2013",
+              "passage:SNOMED_SYNONYM_GUIDANCE_2026",
+              "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
+              "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026"
+            ],
+            "rationale": "Retain the generic observed finding or morphology represented by this dataset class. The source FSN must contain no unapproved anatomical, etiological, severity, histological or disease qualifier. No diagnosis is inferred merely from a matching display term.",
+            "interpretation": "Conditional source-concept rule; not a claim that every named concept occurs in the imported release. Runtime must establish an active matching concept, accepted description, source identity and required uniqueness.",
+            "usage_scope": "Class-level meaning only, preserving Phase 2 observation role and original qualifiers; no new image attributes or patient diagnosis."
+          }
+        ],
+        "unmapped_reason": "no_source_accepted_candidate_for_current_search_seeds",
+        "retrieval_note": "Search seeds locate possible source concepts. They are not automatically approved synonyms; the source concept, FSN and semantic role must satisfy a rule. No token-overlap or qualifier-dropping approval is allowed."
+      }
     },
     {
       "class_label": "foreign body",
@@ -959,7 +1349,71 @@
       "decision_is_inference": true,
       "human_reviewed": false,
       "scope": "Annotated class meaning only; no new image-level clinical attributes.",
-      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply.",
+      "snomed_concept_policy": {
+        "policy_version": "snomed-concept-policy-v1",
+        "search_aliases": [
+          "Foreign body",
+          "Foreign body of body structure",
+          "Disorder due to presence of foreign body"
+        ],
+        "rules": [
+          {
+            "rule_id": "foreign_body_object_vocabulary",
+            "relation": "related",
+            "semantic_tags": [
+              "physical object"
+            ],
+            "accepted_fsn_labels": [
+              "Foreign body"
+            ],
+            "match_labels": [
+              "Foreign body",
+              "Foreign body of body structure",
+              "Disorder due to presence of foreign body"
+            ],
+            "passage_ids": [
+              "passage:KVASIR_2021",
+              "passage:MST3_OFFICIAL_TABLES",
+              "passage:ESGE_SBCE_2022",
+              "passage:SNOMED_SYNONYM_GUIDANCE_2026",
+              "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
+              "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026"
+            ],
+            "rationale": "A visible luminal object can be linked to object terminology for contextual vocabulary. The object category is not an interchangeable observation class, and it does not establish material, retention, location beyond the verified context, or a complication.",
+            "interpretation": "Conditional source-concept rule; not a claim that every named concept occurs in the imported release. Runtime must establish an active matching concept, accepted description, source identity and required uniqueness.",
+            "usage_scope": "Class-level meaning only, preserving Phase 2 observation role and original qualifiers; no new image attributes or patient diagnosis."
+          },
+          {
+            "rule_id": "foreign_body_disorder_vocabulary",
+            "relation": "related",
+            "semantic_tags": [
+              "disorder"
+            ],
+            "accepted_fsn_labels": [
+              "Foreign body"
+            ],
+            "match_labels": [
+              "Foreign body",
+              "Foreign body of body structure",
+              "Disorder due to presence of foreign body"
+            ],
+            "passage_ids": [
+              "passage:KVASIR_2021",
+              "passage:MST3_OFFICIAL_TABLES",
+              "passage:ESGE_SBCE_2022",
+              "passage:SNOMED_SYNONYM_GUIDANCE_2026",
+              "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
+              "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026"
+            ],
+            "rationale": "Retain a related terminology link to the generic disorder concept. Seeing tablet residue or a capsule does not by itself establish the disorder, retention or a need for removal. This relation cannot produce exact class synonyms.",
+            "interpretation": "Conditional source-concept rule; not a claim that every named concept occurs in the imported release. Runtime must establish an active matching concept, accepted description, source identity and required uniqueness.",
+            "usage_scope": "Class-level meaning only, preserving Phase 2 observation role and original qualifiers; no new image attributes or patient diagnosis."
+          }
+        ],
+        "unmapped_reason": "no_source_accepted_candidate_for_current_search_seeds",
+        "retrieval_note": "Search seeds locate possible source concepts. They are not automatically approved synonyms; the source concept, FSN and semantic role must satisfy a rule. No token-overlap or qualifier-dropping approval is allowed."
+      }
     },
     {
       "class_label": "ileocecal valve",
@@ -990,7 +1444,48 @@
       "decision_is_inference": true,
       "human_reviewed": false,
       "scope": "Annotated class meaning only; no new image-level clinical attributes.",
-      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply.",
+      "snomed_concept_policy": {
+        "policy_version": "snomed-concept-policy-v1",
+        "search_aliases": [
+          "Ileocecal valve structure",
+          "Structure of ileocecal valve",
+          "Ileocecal valve"
+        ],
+        "rules": [
+          {
+            "rule_id": "ileocecal_valve_anatomical_structure",
+            "relation": "exact",
+            "semantic_tags": [
+              "body structure"
+            ],
+            "accepted_fsn_labels": [
+              "Ileocecal valve structure",
+              "Structure of ileocecal valve",
+              "Ileocecal valve"
+            ],
+            "match_labels": [
+              "Ileocecal valve structure",
+              "Structure of ileocecal valve",
+              "Ileocecal valve"
+            ],
+            "passage_ids": [
+              "passage:KVASIR_2021",
+              "passage:MESH_ILEOCECAL",
+              "passage:NAKAMURA_2009",
+              "passage:SNOMED_SYNONYM_GUIDANCE_2026",
+              "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
+              "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026",
+              "passage:SNOMED_ANATOMICAL_MODEL_2026"
+            ],
+            "rationale": "The dataset label denotes a general anatomical landmark. Accept only the explicitly named structure in the body-structure domain, without asserting visualization of the whole organ or substituting a neighboring structure. Exact means the scoped anatomical class meaning, not image revalidation. Entire/part qualifiers are not removed or inferred.",
+            "interpretation": "Conditional source-concept rule; not a claim that every named concept occurs in the imported release. Runtime must establish an active matching concept, accepted description, source identity and required uniqueness.",
+            "usage_scope": "Class-level meaning only, preserving Phase 2 observation role and original qualifiers; no new image attributes or patient diagnosis."
+          }
+        ],
+        "unmapped_reason": "no_source_accepted_candidate_for_current_search_seeds",
+        "retrieval_note": "Search seeds locate possible source concepts. They are not automatically approved synonyms; the source concept, FSN and semantic role must satisfy a rule. No token-overlap or qualifier-dropping approval is allowed."
+      }
     },
     {
       "class_label": "lymphangiectasia",
@@ -1025,7 +1520,77 @@
       "decision_is_inference": true,
       "human_reviewed": false,
       "scope": "Annotated class meaning only; no new image-level clinical attributes.",
-      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply.",
+      "snomed_concept_policy": {
+        "policy_version": "snomed-concept-policy-v1",
+        "search_aliases": [
+          "Lymphangiectasia",
+          "Lymphangiectasis"
+        ],
+        "rules": [
+          {
+            "rule_id": "lymphangiectasia_visible_morphology",
+            "relation": "exact",
+            "semantic_tags": [
+              "finding",
+              "morphologic abnormality"
+            ],
+            "accepted_fsn_labels": [
+              "Lymphangiectasia",
+              "Lymphangiectasis"
+            ],
+            "match_labels": [
+              "Lymphangiectasia",
+              "Lymphangiectasis"
+            ],
+            "passage_ids": [
+              "passage:KVASIR_2021",
+              "passage:MST3_OFFICIAL_TABLES",
+              "passage:LEENHARDT_RELEVANCE_2021",
+              "passage:PNDS_LYMPHANGIECTASIA_2025",
+              "passage:SNOMED_SYNONYM_GUIDANCE_2026",
+              "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
+              "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026",
+              "passage:NLM_LYMPHANGIECTASIS_2026",
+              "passage:NLM_INTESTINAL_LYMPHANGIECTASIS_2026"
+            ],
+            "rationale": "The spelling variants can locate the same generic lymphatic-dilation finding. An exact association is limited to a source finding/morphology concept without a disease subtype, anatomical qualifier or syndrome. Actual source synonym identity must still be verified.",
+            "interpretation": "Conditional source-concept rule; not a claim that every named concept occurs in the imported release. Runtime must establish an active matching concept, accepted description, source identity and required uniqueness.",
+            "usage_scope": "Class-level meaning only, preserving Phase 2 observation role and original qualifiers; no new image attributes or patient diagnosis."
+          },
+          {
+            "rule_id": "lymphangiectasia_disorder_vocabulary",
+            "relation": "related",
+            "semantic_tags": [
+              "disorder"
+            ],
+            "accepted_fsn_labels": [
+              "Lymphangiectasia",
+              "Lymphangiectasis"
+            ],
+            "match_labels": [
+              "Lymphangiectasia",
+              "Lymphangiectasis"
+            ],
+            "passage_ids": [
+              "passage:KVASIR_2021",
+              "passage:MST3_OFFICIAL_TABLES",
+              "passage:LEENHARDT_RELEVANCE_2021",
+              "passage:PNDS_LYMPHANGIECTASIA_2025",
+              "passage:SNOMED_SYNONYM_GUIDANCE_2026",
+              "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
+              "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026",
+              "passage:NLM_LYMPHANGIECTASIS_2026",
+              "passage:NLM_INTESTINAL_LYMPHANGIECTASIS_2026"
+            ],
+            "rationale": "A generic disease concept supplies a related vocabulary link only. The annotated mucosal appearance does not establish primary intestinal lymphangiectasia, Waldmann disease, protein loss, etiology or biopsy confirmation.",
+            "interpretation": "Conditional source-concept rule; not a claim that every named concept occurs in the imported release. Runtime must establish an active matching concept, accepted description, source identity and required uniqueness.",
+            "usage_scope": "Class-level meaning only, preserving Phase 2 observation role and original qualifiers; no new image attributes or patient diagnosis."
+          }
+        ],
+        "unmapped_reason": "no_source_accepted_candidate_for_current_search_seeds",
+        "retrieval_note": "Search seeds locate possible source concepts. They are not automatically approved synonyms; the source concept, FSN and semantic role must satisfy a rule. No token-overlap or qualifier-dropping approval is allowed."
+      }
     },
     {
       "class_label": "normal clean mucosa",
@@ -1051,7 +1616,14 @@
       "decision_is_inference": true,
       "human_reviewed": false,
       "scope": "Annotated class meaning only; no new image-level clinical attributes.",
-      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply.",
+      "snomed_concept_policy": {
+        "policy_version": "snomed-concept-policy-v1",
+        "search_aliases": [],
+        "rules": [],
+        "unmapped_reason": "native_composite_observation_no_reviewed_exact_external_equivalence",
+        "retrieval_note": "Preserve the original composite dataset observation. This policy does not establish that no external representation exists; no reviewed exact concept or validated compositional expression is supplied in this revision."
+      }
     },
     {
       "class_label": "polyp",
@@ -1088,7 +1660,43 @@
       "decision_is_inference": true,
       "human_reviewed": false,
       "scope": "Annotated class meaning only; no new image-level clinical attributes.",
-      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply.",
+      "snomed_concept_policy": {
+        "policy_version": "snomed-concept-policy-v1",
+        "search_aliases": [
+          "Polyp"
+        ],
+        "rules": [
+          {
+            "rule_id": "polyp_observed_finding",
+            "relation": "exact",
+            "semantic_tags": [
+              "finding",
+              "morphologic abnormality"
+            ],
+            "accepted_fsn_labels": [
+              "Polyp"
+            ],
+            "match_labels": [
+              "Polyp"
+            ],
+            "passage_ids": [
+              "passage:KVASIR_2021",
+              "passage:MST3_OFFICIAL_TABLES",
+              "passage:jiang_capsule_supplement_2024",
+              "passage:ferlitsch_esge_2024",
+              "passage:SNOMED_SYNONYM_GUIDANCE_2026",
+              "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
+              "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026"
+            ],
+            "rationale": "Retain the generic observed finding or morphology represented by this dataset class. The source FSN must contain no unapproved anatomical, etiological, severity, histological or disease qualifier. No diagnosis is inferred merely from a matching display term.",
+            "interpretation": "Conditional source-concept rule; not a claim that every named concept occurs in the imported release. Runtime must establish an active matching concept, accepted description, source identity and required uniqueness.",
+            "usage_scope": "Class-level meaning only, preserving Phase 2 observation role and original qualifiers; no new image attributes or patient diagnosis."
+          }
+        ],
+        "unmapped_reason": "no_source_accepted_candidate_for_current_search_seeds",
+        "retrieval_note": "Search seeds locate possible source concepts. They are not automatically approved synonyms; the source concept, FSN and semantic role must satisfy a rule. No token-overlap or qualifier-dropping approval is allowed."
+      }
     },
     {
       "class_label": "pylorus",
@@ -1118,7 +1726,51 @@
       "decision_is_inference": true,
       "human_reviewed": false,
       "scope": "Annotated class meaning only; no new image-level clinical attributes.",
-      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply.",
+      "snomed_concept_policy": {
+        "policy_version": "snomed-concept-policy-v1",
+        "search_aliases": [
+          "Pyloric structure of stomach",
+          "Pylorus structure",
+          "Structure of pylorus",
+          "Pylorus"
+        ],
+        "rules": [
+          {
+            "rule_id": "pylorus_anatomical_structure",
+            "relation": "exact",
+            "semantic_tags": [
+              "body structure"
+            ],
+            "accepted_fsn_labels": [
+              "Pyloric structure of stomach",
+              "Pylorus structure",
+              "Structure of pylorus",
+              "Pylorus"
+            ],
+            "match_labels": [
+              "Pyloric structure of stomach",
+              "Pylorus structure",
+              "Structure of pylorus",
+              "Pylorus"
+            ],
+            "passage_ids": [
+              "passage:KVASIR_2021",
+              "passage:NCI_PYLORUS",
+              "passage:NAKAMURA_2009",
+              "passage:SNOMED_SYNONYM_GUIDANCE_2026",
+              "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
+              "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026",
+              "passage:SNOMED_ANATOMICAL_MODEL_2026"
+            ],
+            "rationale": "The dataset label denotes a general anatomical landmark. Accept only the explicitly named structure in the body-structure domain, without asserting visualization of the whole organ or substituting a neighboring structure. Exact means the scoped anatomical class meaning, not image revalidation. Entire/part qualifiers are not removed or inferred.",
+            "interpretation": "Conditional source-concept rule; not a claim that every named concept occurs in the imported release. Runtime must establish an active matching concept, accepted description, source identity and required uniqueness.",
+            "usage_scope": "Class-level meaning only, preserving Phase 2 observation role and original qualifiers; no new image attributes or patient diagnosis."
+          }
+        ],
+        "unmapped_reason": "no_source_accepted_candidate_for_current_search_seeds",
+        "retrieval_note": "Search seeds locate possible source concepts. They are not automatically approved synonyms; the source concept, FSN and semantic role must satisfy a rule. No token-overlap or qualifier-dropping approval is allowed."
+      }
     },
     {
       "class_label": "reduced mucosal view",
@@ -1144,7 +1796,14 @@
       "decision_is_inference": true,
       "human_reviewed": false,
       "scope": "Annotated class meaning only; no new image-level clinical attributes.",
-      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply.",
+      "snomed_concept_policy": {
+        "policy_version": "snomed-concept-policy-v1",
+        "search_aliases": [],
+        "rules": [],
+        "unmapped_reason": "native_composite_observation_no_reviewed_exact_external_equivalence",
+        "retrieval_note": "Preserve the original composite dataset observation. This policy does not establish that no external representation exists; no reviewed exact concept or validated compositional expression is supplied in this revision."
+      }
     },
     {
       "class_label": "ulcer",
@@ -1180,7 +1839,42 @@
       "decision_is_inference": true,
       "human_reviewed": false,
       "scope": "Annotated class meaning only; no new image-level clinical attributes.",
-      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply.",
+      "snomed_concept_policy": {
+        "policy_version": "snomed-concept-policy-v1",
+        "search_aliases": [
+          "Ulcer"
+        ],
+        "rules": [
+          {
+            "rule_id": "ulcer_observed_finding",
+            "relation": "exact",
+            "semantic_tags": [
+              "finding",
+              "morphologic abnormality"
+            ],
+            "accepted_fsn_labels": [
+              "Ulcer"
+            ],
+            "match_labels": [
+              "Ulcer"
+            ],
+            "passage_ids": [
+              "passage:KVASIR_2021",
+              "passage:MST3_OFFICIAL_TABLES",
+              "passage:leenhardt_inflammatory_2020",
+              "passage:SNOMED_SYNONYM_GUIDANCE_2026",
+              "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
+              "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026"
+            ],
+            "rationale": "Retain the generic observed finding or morphology represented by this dataset class. The source FSN must contain no unapproved anatomical, etiological, severity, histological or disease qualifier. No diagnosis is inferred merely from a matching display term.",
+            "interpretation": "Conditional source-concept rule; not a claim that every named concept occurs in the imported release. Runtime must establish an active matching concept, accepted description, source identity and required uniqueness.",
+            "usage_scope": "Class-level meaning only, preserving Phase 2 observation role and original qualifiers; no new image attributes or patient diagnosis."
+          }
+        ],
+        "unmapped_reason": "no_source_accepted_candidate_for_current_search_seeds",
+        "retrieval_note": "Search seeds locate possible source concepts. They are not automatically approved synonyms; the source concept, FSN and semantic role must satisfy a rule. No token-overlap or qualifier-dropping approval is allowed."
+      }
     }
   ],
   "target_decisions": [
@@ -1563,11 +2257,43 @@
     }
   ],
   "summary": {
-    "sources": 16,
-    "passages": 16,
+    "sources": 22,
+    "passages": 22,
     "class_profiles": 14,
     "target_decisions": 15,
     "approved_targets": 13,
-    "rejected_targets": 2
+    "rejected_targets": 2,
+    "snomed_concept_policies": 14,
+    "snomed_concept_rules": 15,
+    "policy_version": "concept-bound-mapping-v2"
+  },
+  "policy_version": "concept-bound-mapping-v2",
+  "evidence_version": "2026-11-12.2",
+  "minimum_concept_policy_engine": "phase3-sector1-terminology-v1.4.6",
+  "supersedes_artifact_sha256": "861fa6516ebaf37e58b705413eaff91bd520f481179dcedc5cdf5e59c04b2403",
+  "compatibility": {
+    "legacy_profile_fields_preserved": true,
+    "legacy_target_decisions_preserved": true,
+    "new_semantic_policy_field": "snomed_concept_policy",
+    "legacy_engine_behavior": "Older engines ignore the new field and retain their conservative lexical checks; new relation types must never be inferred from changed legacy allowlists."
+  },
+  "synonym_policy": {
+    "policy_version": "source-concept-synonyms-v1",
+    "basis": "After an exact class-to-concept association is approved, source-accepted descriptions of that same concept provide alternative terms. The retrieval seed list is not a synonym whitelist.",
+    "snomed_requirements": [
+      "same approved concept identifier",
+      "active concept and active synonym description",
+      "active language-reference-set membership with preferred or acceptable status in the selected language context",
+      "same imported source fingerprint",
+      "no unresolved source-description conflicts"
+    ],
+    "non_exact_use": "Terms attached to related, broader, narrower or compositional mappings are retained for contextual vocabulary/navigation, never substituted for the full Phase 2 class label.",
+    "ambiguity_policy": "Preserve mapping, concept, description and refset provenance. Identical strings across concepts or classes require their concept/class context; do not create a global word equivalence.",
+    "deduplication_policy": "Report distinct normalized terms per class separately from description/refset provenance rows; retain every source context.",
+    "passage_ids": [
+      "passage:SNOMED_SYNONYM_GUIDANCE_2026",
+      "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
+      "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026"
+    ]
   }
 }
