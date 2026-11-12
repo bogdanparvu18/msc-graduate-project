@@ -1,0 +1,1573 @@
+{
+  "schema_version": "mmvqa-rag-evidence-v1",
+  "review_date": "2026-11-12",
+  "review_method": "AI_retrieval_grounded_review",
+  "human_reviewed": false,
+  "decision_is_inference": true,
+  "inputs": [
+    {
+      "file": "rag_anatomy_evidence.json",
+      "sha256": "d3c030073501eaa3462290b5815e540a367ba6eef4a369e5b2beef0543fd6435"
+    },
+    {
+      "file": "rag_mucosal_evidence.json",
+      "sha256": "2ba0007675f5bc77935bbac521df768a345c5baabf172d6ece148a8c74aa75bd"
+    },
+    {
+      "file": "rag_vascular_evidence.json",
+      "sha256": "092b572fb442ea1f660e2674281af20a03fbd0cff829da5562367d87a9a381c1"
+    },
+    {
+      "file": "mapping_review_seed.json",
+      "sha256": "4bd724911b1a122d05d094bacced0d8c24035ac1272d2282fe12fd38445ccfd8"
+    },
+    {
+      "file": "/workspace/scratch/429dddf77ff4/terminology_work/runtime/outputs/phase3/sector1/runs/20261112T151400_171021Z/terminology/class_crosswalk.json",
+      "role": "baseline_crosswalk",
+      "sha256": "111fccdb70d401a8bad8552d5f0ad20330484897f7b02419b82861bdcb95faa2"
+    }
+  ],
+  "scope": "Terminology associations and conservative lexical policy only; existing task rules and QA coverage remain unchanged.",
+  "limitations": [
+    "Medical papers support term meaning, not the truth of each image annotation or answer.",
+    "Independent means an external publication rather than dataset annotation validation; overlap and source reuse are recorded.",
+    "No CEST/SNOMED concept IDs are invented. Their actual imported source and runtime checks remain required.",
+    "Empty target-type lists deliberately prevent lexical autoapproval where role or specificity is insufficient.",
+    "Related mappings do not license exact synonym substitution or new diagnostic claims.",
+    "Frozen decisions replay deterministically; fresh RAG retrieval or model evaluation need not be deterministic."
+  ],
+  "sources": [
+    {
+      "source_id": "ALAGEELI_KODA_2020",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7373654/",
+      "title": "KODA score: an updated and validated bowel preparation scale for patients undergoing small bowel capsule endoscopy",
+      "authors": "Alageeli et al.",
+      "independent_of_dataset": true,
+      "source_role": "medical_reference",
+      "review_date": "2026-11-12",
+      "original_metadata": [
+        {
+          "review_file": "rag_anatomy_evidence.json",
+          "source_id": "ALAGEELI_KODA_2020",
+          "title": "KODA score: an updated and validated bowel preparation scale for patients undergoing small bowel capsule endoscopy",
+          "authors": "Alageeli et al.",
+          "publication_date": "2020-07-21",
+          "issue_date": "2020-08",
+          "source_type": "original_independent_scale_validation_study",
+          "independent_of_dataset": true,
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7373654/",
+          "doi": "10.1055/a-1176-9889",
+          "retrieved_at": "2026-11-12",
+          "retrieval_ref": "turn547248147view0",
+          "access_scope": "full_text_relevant_sections_read",
+          "locator": "Patients and methods > Small bowel preparation scale; HTML lines 287-291",
+          "evidence_kind": "paraphrase"
+        }
+      ],
+      "doi": "10.1055/a-1176-9889",
+      "publication_date": "2020-07-21",
+      "source_type": "original_independent_scale_validation_study"
+    },
+    {
+      "source_id": "ESGE_SBCE_2022",
+      "url": "https://www.esge.com/assets/downloads/pdfs/guidelines/2022_a-1973-3796.pdf",
+      "title": "Small-bowel capsule endoscopy and device-assisted enteroscopy for diagnosis and treatment of small-bowel disorders: European Society of Gastrointestinal Endoscopy (ESGE) Guideline – Update 2022",
+      "authors": "Pennazio et al.",
+      "independent_of_dataset": true,
+      "source_role": "medical_reference",
+      "review_date": "2026-11-12",
+      "original_metadata": [
+        {
+          "review_file": "rag_vascular_evidence.json",
+          "source_id": "ESGE_SBCE_2022",
+          "title": "Small-bowel capsule endoscopy and device-assisted enteroscopy for diagnosis and treatment of small-bowel disorders: European Society of Gastrointestinal Endoscopy (ESGE) Guideline – Update 2022",
+          "authors": "Pennazio et al.",
+          "year": 2022,
+          "journal_issue_year": 2023,
+          "doi": "10.1055/a-1973-3796",
+          "url": "https://www.esge.com/assets/downloads/pdfs/guidelines/2022_a-1973-3796.pdf",
+          "source_kind": "official_society_guideline",
+          "retrieval_status": "full_text_pdf_opened",
+          "web_reference": "turn800752315view1",
+          "locator": "Foreign body retrieval, PDF page 25 (zero-based page 24), lines 1949–1954",
+          "independence_note": "External society guideline. It supports object terminology and the duration requirement, not a retention diagnosis in any Kvasir frame.",
+          "retrieved_on": "2026-11-12",
+          "excerpt_kind": "paraphrase_not_verbatim",
+          "clinician_reviewed": false
+        }
+      ],
+      "doi": "10.1055/a-1973-3796",
+      "year": 2022,
+      "source_kind": "official_society_guideline"
+    },
+    {
+      "source_id": "KVASIR_2021",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8160146/",
+      "title": "Kvasir-Capsule, a video capsule endoscopy dataset",
+      "authors": "Smedsrud et al.",
+      "independent_of_dataset": false,
+      "source_role": "dataset_definition",
+      "review_date": "2026-11-12",
+      "original_metadata": [
+        {
+          "review_file": "rag_anatomy_evidence.json",
+          "source_id": "KVASIR_2021",
+          "title": "Kvasir-Capsule, a video capsule endoscopy dataset",
+          "authors": "Smedsrud et al.",
+          "publication_date": "2021-05-27",
+          "source_type": "original_dataset_publication",
+          "independent_of_dataset": false,
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8160146/",
+          "doi": "10.1038/s41597-021-00920-z",
+          "retrieved_at": "2026-11-12",
+          "retrieval_ref": "turn606508139view2",
+          "access_scope": "full_text_relevant_sections_read",
+          "locator": "Categories of findings > Anatomy and Luminal findings; Methods annotation verification; HTML lines 339-342 and 382-394",
+          "evidence_kind": "paraphrase"
+        },
+        {
+          "review_file": "rag_mucosal_evidence.json",
+          "source_id": "kvasir_capsule_2021",
+          "title": "Kvasir-Capsule, a video capsule endoscopy dataset",
+          "authors": "Smedsrud et al.",
+          "year": 2021,
+          "doi": "10.1038/s41597-021-00920-z",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8160146/",
+          "publisher_url": "https://www.nature.com/articles/s41597-021-00920-z",
+          "source_type": "original_dataset_paper",
+          "independent_of_source_dataset": false,
+          "read_status": "relevant_full_text_read",
+          "location": "Categories of findings; Luminal findings, paragraphs 1–5",
+          "citation_refs": [
+            "turn437591301view1",
+            "turn437591301view2"
+          ]
+        },
+        {
+          "review_file": "rag_vascular_evidence.json",
+          "source_id": "KVASIR_CAPSULE_2021",
+          "title": "Kvasir-Capsule, a video capsule endoscopy dataset",
+          "authors": "Smedsrud et al.",
+          "year": 2021,
+          "doi": "10.1038/s41597-021-00920-z",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8160146/",
+          "source_kind": "original_dataset_paper",
+          "retrieval_status": "full_text_opened",
+          "web_reference": "turn105629843view0",
+          "locator": "Categories of findings > Luminal findings, paragraphs 2–4 (PMC lines 391–394)",
+          "independence_note": "Defines the source labels; not independent validation. The dataset taxonomy cites MST 3.0.",
+          "retrieved_on": "2026-11-12",
+          "excerpt_kind": "paraphrase_not_verbatim",
+          "clinician_reviewed": false
+        }
+      ],
+      "doi": "10.1038/s41597-021-00920-z",
+      "publication_date": "2021-05-27",
+      "source_type": "original_dataset_publication",
+      "year": 2021,
+      "source_kind": "original_dataset_paper"
+    },
+    {
+      "source_id": "LEENHARDT_RELEVANCE_2021",
+      "url": "https://www.pure.ed.ac.uk/ws/portalfiles/portal/298739824/CLINRE_D_20_00281_R1_1.pdf",
+      "title": "A guide for assessing the clinical relevance of findings in small bowel capsule endoscopy: Analysis of 8064 answers of international experts to an illustrated script questionnaire",
+      "authors": "Leenhardt et al.",
+      "independent_of_dataset": true,
+      "source_role": "medical_reference",
+      "review_date": "2026-11-12",
+      "original_metadata": [
+        {
+          "review_file": "rag_vascular_evidence.json",
+          "source_id": "LEENHARDT_RELEVANCE_2021",
+          "title": "A guide for assessing the clinical relevance of findings in small bowel capsule endoscopy: Analysis of 8064 answers of international experts to an illustrated script questionnaire",
+          "authors": "Leenhardt et al.",
+          "year": 2021,
+          "doi": "10.1016/j.clinre.2021.101637",
+          "url": "https://www.pure.ed.ac.uk/ws/portalfiles/portal/298739824/CLINRE_D_20_00281_R1_1.pdf",
+          "canonical_url": "https://doi.org/10.1016/j.clinre.2021.101637",
+          "source_kind": "primary_expert_questionnaire_study",
+          "retrieval_status": "full_peer_reviewed_manuscript_opened",
+          "web_reference": "turn800752315view0",
+          "locator": "Results, PDF page 16 (zero-based page 15), lines 805–809; Discussion, PDF page 17, lines 905–909",
+          "independence_note": "External study rather than evaluation of these mappings. Shares investigators with the vascular consensus and one Kvasir author; not a fully independent expert panel. Findings are scenario-specific, not universal benignity.",
+          "retrieved_on": "2026-11-12",
+          "excerpt_kind": "paraphrase_not_verbatim",
+          "clinician_reviewed": false
+        }
+      ],
+      "doi": "10.1016/j.clinre.2021.101637",
+      "year": 2021,
+      "canonical_url": "https://doi.org/10.1016/j.clinre.2021.101637",
+      "source_kind": "primary_expert_questionnaire_study"
+    },
+    {
+      "source_id": "MESH_ILEOCECAL",
+      "url": "https://www.ncbi.nlm.nih.gov/mesh/68007080",
+      "title": "Ileocecal Valve — MeSH",
+      "authors": "US National Library of Medicine",
+      "independent_of_dataset": true,
+      "source_role": "medical_reference",
+      "review_date": "2026-11-12",
+      "original_metadata": [
+        {
+          "review_file": "rag_anatomy_evidence.json",
+          "source_id": "MESH_ILEOCECAL",
+          "title": "Ileocecal Valve — MeSH",
+          "authors": "US National Library of Medicine",
+          "publication_date": null,
+          "source_type": "official_controlled_vocabulary",
+          "independent_of_dataset": true,
+          "url": "https://www.ncbi.nlm.nih.gov/mesh/68007080",
+          "identifier": "MeSH:D007080",
+          "retrieved_at": "2026-11-12",
+          "retrieval_ref": "turn357456612view3",
+          "access_scope": "complete_entry_read",
+          "locator": "Scope note and MeSH Unique ID; HTML lines 52-54 and 91",
+          "evidence_kind": "paraphrase"
+        }
+      ],
+      "source_type": "official_controlled_vocabulary"
+    },
+    {
+      "source_id": "MIRILAS_2005",
+      "url": "https://journals.sagepub.com/doi/10.1177/000313480507100321",
+      "title": "Benign Anatomical Mistakes: Ampulla of Vater and Papilla of Vater",
+      "authors": "Mirilas et al.",
+      "independent_of_dataset": true,
+      "source_role": "medical_reference",
+      "review_date": "2026-11-12",
+      "original_metadata": [
+        {
+          "review_file": "rag_anatomy_evidence.json",
+          "source_id": "MIRILAS_2005",
+          "title": "Benign Anatomical Mistakes: Ampulla of Vater and Papilla of Vater",
+          "authors": "Mirilas et al.",
+          "publication_date": "2005-03",
+          "source_type": "peer_reviewed_original_terminological_analysis",
+          "independent_of_dataset": true,
+          "url": "https://journals.sagepub.com/doi/10.1177/000313480507100321",
+          "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15869148/",
+          "doi": "10.1177/000313480507100321",
+          "retrieved_at": "2026-11-12",
+          "retrieval_ref": "turn302317157view0",
+          "access_scope": "publisher_abstract_read_full_text_restricted",
+          "locator": "Abstract; HTML lines 30-33",
+          "evidence_kind": "paraphrase"
+        }
+      ],
+      "doi": "10.1177/000313480507100321",
+      "publication_date": "2005-03",
+      "source_type": "peer_reviewed_original_terminological_analysis"
+    },
+    {
+      "source_id": "MST3_OFFICIAL_TABLES",
+      "url": "https://www.worldendo.org/assets-craft/pdf/resources/mst30_tables.xls",
+      "title": "MST 3.0 tables",
+      "authors": "World Endoscopy Organization",
+      "independent_of_dataset": false,
+      "source_role": "terminology_source",
+      "review_date": "2026-11-12",
+      "original_metadata": [
+        {
+          "review_file": "rag_mucosal_evidence.json",
+          "source_id": "weo_mst3_workbook",
+          "title": "MST 3.0 tables",
+          "authors": "World Endoscopy Organization",
+          "year": 2009,
+          "url": "https://www.worldendo.org/assets-craft/pdf/resources/mst30_tables.xls",
+          "source_type": "official_target_terminology_workbook",
+          "independent_of_source_dataset": false,
+          "read_status": "local_workbook_cells_read_with_xlrd",
+          "sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
+          "location": "Luminal_findings!R46C2, R90C2, R134C2, R148C2; Diagnoses!R103C2"
+        },
+        {
+          "review_file": "rag_vascular_evidence.json",
+          "source_id": "MST3_OFFICIAL_TABLES",
+          "title": "Minimal Standard Terminology 3.0 tables",
+          "authors": "World Endoscopy Organization",
+          "year": null,
+          "url": "https://www.worldendo.org/assets-craft/pdf/resources/mst30_tables.xls",
+          "source_kind": "official_target_terminology",
+          "retrieval_status": "local_imported_cells_inspected",
+          "locator": "Luminal_findings!R33C1:R36C4; Luminal_findings!R67C1:C4; Diagnoses!R77C2; Diagnoses!R92C2",
+          "source_sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
+          "independence_note": "Target terminology, not independent corroboration. The release year was not reverified in this evidence review.",
+          "retrieved_on": "2026-11-12",
+          "excerpt_kind": "paraphrase_not_verbatim",
+          "clinician_reviewed": false,
+          "version": "3.0"
+        }
+      ],
+      "year": 2009,
+      "source_type": "official_target_terminology_workbook",
+      "source_kind": "official_target_terminology"
+    },
+    {
+      "source_id": "NAKAMURA_2009",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20214201/",
+      "title": "Advance of video capsule endoscopy and the detection of anatomic landmarks",
+      "authors": "Nakamura et al.",
+      "independent_of_dataset": true,
+      "source_role": "medical_reference",
+      "review_date": "2026-11-12",
+      "original_metadata": [
+        {
+          "review_file": "rag_anatomy_evidence.json",
+          "source_id": "NAKAMURA_2009",
+          "title": "Advance of video capsule endoscopy and the detection of anatomic landmarks",
+          "authors": "Nakamura et al.",
+          "publication_date": "2009-11/12",
+          "source_type": "original_retrospective_capsule_endoscopy_study",
+          "independent_of_dataset": true,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20214201/",
+          "identifier": "PMID:20214201",
+          "retrieved_at": "2026-11-12",
+          "retrieval_ref": "turn964812619view0",
+          "access_scope": "abstract_read",
+          "locator": "Abstract > Methodology and Results; HTML lines 225-231",
+          "evidence_kind": "paraphrase"
+        }
+      ],
+      "publication_date": "2009-11/12",
+      "source_type": "original_retrospective_capsule_endoscopy_study"
+    },
+    {
+      "source_id": "NCI_PYLORUS",
+      "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/pylorus",
+      "title": "Definition of pylorus — NCI Dictionary of Cancer Terms",
+      "authors": "National Cancer Institute",
+      "independent_of_dataset": true,
+      "source_role": "medical_reference",
+      "review_date": "2026-11-12",
+      "original_metadata": [
+        {
+          "review_file": "rag_anatomy_evidence.json",
+          "source_id": "NCI_PYLORUS",
+          "title": "Definition of pylorus — NCI Dictionary of Cancer Terms",
+          "authors": "National Cancer Institute",
+          "publication_date": null,
+          "source_type": "official_medical_dictionary",
+          "independent_of_dataset": true,
+          "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/pylorus",
+          "retrieved_at": "2026-11-12",
+          "retrieval_ref": "turn357456612view2",
+          "access_scope": "complete_entry_read",
+          "locator": "pylorus definition; HTML line 17",
+          "evidence_kind": "paraphrase"
+        }
+      ],
+      "source_type": "official_medical_dictionary"
+    },
+    {
+      "source_id": "PNDS_LYMPHANGIECTASIA_2025",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12247264/",
+      "title": "Primary intestinal lymphangiectasia: French National Diagnosis and Care Protocol (PNDS; Protocole National de Diagnostic et de Soins)",
+      "authors": "Vignes et al.",
+      "independent_of_dataset": true,
+      "source_role": "medical_reference",
+      "review_date": "2026-11-12",
+      "original_metadata": [
+        {
+          "review_file": "rag_vascular_evidence.json",
+          "source_id": "PNDS_LYMPHANGIECTASIA_2025",
+          "title": "Primary intestinal lymphangiectasia: French National Diagnosis and Care Protocol (PNDS; Protocole National de Diagnostic et de Soins)",
+          "authors": "Vignes et al.",
+          "year": 2025,
+          "doi": "10.1186/s13023-025-03657-9",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12247264/",
+          "source_kind": "official_diagnostic_care_protocol_expert_consensus",
+          "retrieval_status": "full_text_opened",
+          "web_reference": "turn998154985view2",
+          "locator": "Introduction: Definition of the disease; Complementary examinations > EGD with duodenal biopsies; Capsule endoscopy (PMC lines 154–156, 243–258)",
+          "independence_note": "Independent disease-specific consensus. It does not adjudicate the Kvasir class or require biopsy for every visual use of the word lymphangiectasia.",
+          "retrieved_on": "2026-11-12",
+          "excerpt_kind": "paraphrase_not_verbatim",
+          "clinician_reviewed": false
+        }
+      ],
+      "doi": "10.1186/s13023-025-03657-9",
+      "year": 2025,
+      "source_kind": "official_diagnostic_care_protocol_expert_consensus"
+    },
+    {
+      "source_id": "SBCE_VASCULAR_DELPHI_2019",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6395173/",
+      "title": "Nomenclature and semantic description of vascular lesions in small bowel capsule endoscopy: an international Delphi consensus statement",
+      "authors": "Leenhardt et al.",
+      "independent_of_dataset": true,
+      "source_role": "medical_reference",
+      "review_date": "2026-11-12",
+      "original_metadata": [
+        {
+          "review_file": "rag_vascular_evidence.json",
+          "source_id": "SBCE_VASCULAR_DELPHI_2019",
+          "title": "Nomenclature and semantic description of vascular lesions in small bowel capsule endoscopy: an international Delphi consensus statement",
+          "authors": "Leenhardt et al.",
+          "year": 2019,
+          "doi": "10.1055/a-0761-9742",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6395173/",
+          "source_kind": "primary_expert_delphi_consensus",
+          "retrieval_status": "full_text_opened",
+          "web_reference": "turn236392405view1",
+          "locator": "Table 2, Angiectasia/angiodysplasia; Discussion paragraphs on nomenclature and limitations (PMC lines 308–319, 385–389)",
+          "independence_note": "External published consensus, independent of this mapping code. It is not blinded validation of Kvasir frames, and is already used by the supplemental vocabulary.",
+          "retrieved_on": "2026-11-12",
+          "excerpt_kind": "paraphrase_not_verbatim",
+          "clinician_reviewed": false
+        }
+      ],
+      "doi": "10.1055/a-0761-9742",
+      "year": 2019,
+      "source_kind": "primary_expert_delphi_consensus"
+    },
+    {
+      "source_id": "SCHMIDT_HEMOPILL_2019",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6524997/",
+      "title": "Novel telemetric sensor capsule for EGD urgency triage: a feasibility study",
+      "authors": "Schmidt et al.",
+      "independent_of_dataset": true,
+      "source_role": "medical_reference",
+      "review_date": "2026-11-12",
+      "original_metadata": [
+        {
+          "review_file": "rag_vascular_evidence.json",
+          "source_id": "SCHMIDT_HEMOPILL_2019",
+          "title": "Novel telemetric sensor capsule for EGD urgency triage: a feasibility study",
+          "authors": "Schmidt et al.",
+          "year": 2019,
+          "doi": "10.1055/a-0880-5312",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6524997/",
+          "source_kind": "primary_prospective_clinical_feasibility_study",
+          "retrieval_status": "full_text_opened",
+          "web_reference": "turn811145655view0",
+          "locator": "Patients and methods > Description of the device and procedure; Study design and patients (PMC lines 112–138)",
+          "independence_note": "Independent external clinical study. Upper-GI endoscopy and a non-imaging capsule; supports the semantic distinction, not Kvasir pixel classification.",
+          "retrieved_on": "2026-11-12",
+          "excerpt_kind": "paraphrase_not_verbatim",
+          "clinician_reviewed": false
+        }
+      ],
+      "doi": "10.1055/a-0880-5312",
+      "year": 2019,
+      "source_kind": "primary_prospective_clinical_feasibility_study"
+    },
+    {
+      "source_id": "annese_ecco_2013",
+      "url": "https://www.friendsofendoscopy.org/uploads/1/3/4/3/134371631/annese_v._european_evidence_based_consensus_for_endoscopy_in_inflammatory_bowel_disease_j_crohns_colitis_2013_7_12__982-1018.pdf",
+      "title": "European evidence based consensus for endoscopy in inflammatory bowel disease",
+      "authors": "Annese et al., on behalf of ECCO",
+      "independent_of_dataset": true,
+      "source_role": "medical_reference",
+      "review_date": "2026-11-12",
+      "original_metadata": [
+        {
+          "review_file": "rag_mucosal_evidence.json",
+          "source_id": "annese_ecco_2013",
+          "title": "European evidence based consensus for endoscopy in inflammatory bowel disease",
+          "authors": "Annese et al., on behalf of ECCO",
+          "year": 2013,
+          "doi": "10.1016/j.crohns.2013.09.016",
+          "url": "https://www.friendsofendoscopy.org/uploads/1/3/4/3/134371631/annese_v._european_evidence_based_consensus_for_endoscopy_in_inflammatory_bowel_disease_j_crohns_colitis_2013_7_12__982-1018.pdf",
+          "canonical_url": "https://academic.oup.com/ecco-jcc/article/7/12/982/446087",
+          "source_type": "primary_professional_society_consensus",
+          "independent_of_source_dataset": true,
+          "read_status": "relevant_full_text_read_in_reproduced_primary_article",
+          "location": "Table 2.1, journal p.987, Erythema row; section 5.1, Statement 5A",
+          "scope_limit": "IBD endoscopy terminology is used only to corroborate generic redness; no disease, distribution, or size criteria are transferred to the dataset.",
+          "citation_refs": [
+            "turn251512665view0"
+          ]
+        }
+      ],
+      "doi": "10.1016/j.crohns.2013.09.016",
+      "year": 2013,
+      "canonical_url": "https://academic.oup.com/ecco-jcc/article/7/12/982/446087",
+      "source_type": "primary_professional_society_consensus"
+    },
+    {
+      "source_id": "ferlitsch_esge_2024",
+      "url": "https://www.esge.com/assets/downloads/pdfs/guidelines/2024_a-2304-3219.pdf",
+      "title": "Colorectal polypectomy and endoscopic mucosal resection: European Society of Gastrointestinal Endoscopy (ESGE) Guideline – Update 2024",
+      "authors": "Ferlitsch et al.",
+      "independent_of_dataset": true,
+      "source_role": "medical_reference",
+      "review_date": "2026-11-12",
+      "original_metadata": [
+        {
+          "review_file": "rag_mucosal_evidence.json",
+          "source_id": "ferlitsch_esge_2024",
+          "title": "Colorectal polypectomy and endoscopic mucosal resection: European Society of Gastrointestinal Endoscopy (ESGE) Guideline – Update 2024",
+          "authors": "Ferlitsch et al.",
+          "year": 2024,
+          "doi": "10.1055/a-2304-3219",
+          "url": "https://www.esge.com/assets/downloads/pdfs/guidelines/2024_a-2304-3219.pdf",
+          "source_type": "primary_professional_society_guideline",
+          "independent_of_source_dataset": true,
+          "read_status": "relevant_full_text_read",
+          "location": "Section 4, Removal and retrieval of polyps for histology; PDF page 8 (zero-based page 7)",
+          "scope_limit": "Colorectal treatment recommendations are not transferred to small-bowel capsule findings; cited only to constrain histologic overclaim.",
+          "citation_refs": [
+            "turn405142873view3"
+          ]
+        }
+      ],
+      "doi": "10.1055/a-2304-3219",
+      "year": 2024,
+      "source_type": "primary_professional_society_guideline"
+    },
+    {
+      "source_id": "jiang_capsule_supplement_2024",
+      "url": "https://cdn-links.lww.com/permalink/sgmj/a/sgmj_65_3_2024_03_23_bochao_133_sdc1.pdf",
+      "title": "Development and validation of a deep learning system for detection of small bowel pathologies in capsule endoscopy: a pilot study in a Singapore institution — Supplemental Digital Content",
+      "authors": "Jiang et al.",
+      "independent_of_dataset": false,
+      "source_role": "medical_reference",
+      "review_date": "2026-11-12",
+      "original_metadata": [
+        {
+          "review_file": "rag_mucosal_evidence.json",
+          "source_id": "jiang_capsule_supplement_2024",
+          "title": "Development and validation of a deep learning system for detection of small bowel pathologies in capsule endoscopy: a pilot study in a Singapore institution — Supplemental Digital Content",
+          "authors": "Jiang et al.",
+          "year": 2024,
+          "doi": "10.4103/singaporemedj.SMJ-2023-187",
+          "url": "https://cdn-links.lww.com/permalink/sgmj/a/sgmj_65_3_2024_03_23_bochao_133_sdc1.pdf",
+          "canonical_url": "https://pubmed.ncbi.nlm.nih.gov/38527297/",
+          "source_type": "primary_clinical_study_supplement",
+          "independent_of_source_dataset": false,
+          "independence_note": "Separate authors and local Singapore images, but the study also reused Kvasir-Capsule. Do not count this as wholly independent dataset evidence.",
+          "read_status": "relevant_full_text_read",
+          "location": "Table S2, supplemental PDF p.6 (zero-based page 5), Erythema/Erosion/Ulcer/Polyp rows",
+          "scope_limit": "Illustrative morphology is vocabulary evidence, not new observed attributes for every Kvasir frame.",
+          "citation_refs": [
+            "turn704679040view2",
+            "turn764942985search0"
+          ]
+        }
+      ],
+      "doi": "10.4103/singaporemedj.SMJ-2023-187",
+      "year": 2024,
+      "canonical_url": "https://pubmed.ncbi.nlm.nih.gov/38527297/",
+      "source_type": "primary_clinical_study_supplement"
+    },
+    {
+      "source_id": "leenhardt_inflammatory_2020",
+      "url": "https://www.um.edu.mt/library/oar/bitstream/123456789/120471/1/Nomenclature_and_semantic_descriptions_of_ulcerative_and_inflammatory_lesions_seen_in_Crohns_disease_in_small_bowel_capsule_endoscopy_an_international_Delphi_consensus_statement_2020.pdf",
+      "title": "Nomenclature and semantic descriptions of ulcerative and inflammatory lesions seen in Crohn’s disease in small bowel capsule endoscopy: An international Delphi consensus statement",
+      "authors": "Leenhardt et al.",
+      "independent_of_dataset": true,
+      "source_role": "medical_reference",
+      "review_date": "2026-11-12",
+      "original_metadata": [
+        {
+          "review_file": "rag_mucosal_evidence.json",
+          "source_id": "leenhardt_inflammatory_2020",
+          "title": "Nomenclature and semantic descriptions of ulcerative and inflammatory lesions seen in Crohn’s disease in small bowel capsule endoscopy: An international Delphi consensus statement",
+          "authors": "Leenhardt et al.",
+          "year": 2020,
+          "online_publication_date": "2019-12-23",
+          "doi": "10.1177/2050640619895864",
+          "url": "https://www.um.edu.mt/library/oar/bitstream/123456789/120471/1/Nomenclature_and_semantic_descriptions_of_ulcerative_and_inflammatory_lesions_seen_in_Crohns_disease_in_small_bowel_capsule_endoscopy_an_international_Delphi_consensus_statement_2020.pdf",
+          "canonical_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005999/",
+          "source_type": "primary_international_delphi_consensus",
+          "independent_of_source_dataset": true,
+          "independence_note": "Consensus examined CAD-CAP images, not Kvasir-Capsule images. It consulted prior digestive endoscopy terminology, including MST/CEST; it is independent corroboration, not a source with no shared terminology ancestry.",
+          "read_status": "relevant_full_text_read_in_university_repository",
+          "location": "Table 2, journal p.103; Discussion, pp.105–106",
+          "scope_limit": "Crohn-associated capsule images were the study population. This does not diagnose Crohn disease in Kvasir classes or provide per-image subtype, histology, or measurements.",
+          "citation_refs": [
+            "turn251512665view1",
+            "turn411203206view1"
+          ]
+        }
+      ],
+      "doi": "10.1177/2050640619895864",
+      "year": 2020,
+      "canonical_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005999/",
+      "source_type": "primary_international_delphi_consensus"
+    }
+  ],
+  "passages": [
+    {
+      "passage_id": "passage:ALAGEELI_KODA_2020",
+      "source_id": "ALAGEELI_KODA_2020",
+      "location": "Patients and methods > Small bowel preparation scale; HTML lines 287-291",
+      "paraphrase": "KODA separately measures visible mucosa and image obstruction from debris, bubbles, and bile. Shadows affect visibility without necessarily constituting obstruction. These are image-quality domains, not disease diagnoses.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:ESGE_SBCE_2022",
+      "source_id": "ESGE_SBCE_2022",
+      "location": "Foreign body retrieval, PDF page 25 (zero-based page 24), lines 1949–1954",
+      "paraphrase": "Retained small-bowel foreign bodies commonly include endoscopy capsules and devices. Capsule retention means persistence in the digestive tract for at least two weeks.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:KVASIR_2021",
+      "source_id": "KVASIR_2021",
+      "location": "Categories of findings > Anatomy and Luminal findings; Methods annotation verification; HTML lines 339-342 and 382-394; Categories of findings; Luminal findings, paragraphs 1–5; Categories of findings > Luminal findings, paragraphs 2–4 (PMC lines 391–394)",
+      "paraphrase": "The source defines three anatomical landmarks, normal clean mucosa, and reduced mucosal view. Normal clean mucosa combines a clean visible surface with no pathological finding. Reduced view concerns obscuration by intestinal content. Its simplified categories were organized using MST 3.0. The dataset organizes its classes using MST 3.0; erythema is redness, erosions/ulcers are excavated findings, and polyps protrude. Fresh blood: red liquid. Hematin: dark mucosal streaks. Foreign body: tablet residue/capsules. Angiectasia: superficial dilated vessels. Lymphangiectasia: dilated mucosal lymphatics.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:LEENHARDT_RELEVANCE_2021",
+      "source_id": "LEENHARDT_RELEVANCE_2021",
+      "location": "Results, PDF page 16 (zero-based page 15), lines 805–809; Discussion, PDF page 17, lines 905–909",
+      "paraphrase": "Experts assigned lymphangiectasia low relevance in the illustrated bleeding/Crohn scenarios. The authors state it may represent a normal variant in most cases.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:MESH_ILEOCECAL",
+      "source_id": "MESH_ILEOCECAL",
+      "location": "Scope note and MeSH Unique ID; HTML lines 52-54 and 91",
+      "paraphrase": "This anatomical descriptor identifies the valve guarding the opening where the ileum enters the large intestine.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:MIRILAS_2005",
+      "source_id": "MIRILAS_2005",
+      "location": "Abstract; HTML lines 30-33",
+      "paraphrase": "The authors distinguish the ductal dilation called the hepatopancreatic ampulla from the structure termed the major duodenal papilla. They recommend separate anatomical names for these entities.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:MST3_OFFICIAL_TABLES",
+      "source_id": "MST3_OFFICIAL_TABLES",
+      "location": "Luminal_findings!R46C2, R90C2, R134C2, R148C2; Diagnoses!R103C2; Luminal_findings!R33C1:R36C4; Luminal_findings!R67C1:C4; Diagnoses!R77C2; Diagnoses!R92C2",
+      "paraphrase": "Verified target labels and their worksheet roles; rows are local source locators, not global ontology concept identifiers. Target vocabulary contains the named findings, separate Blood Type values, and diagnostic entries. These source cells establish terms and categories, not patient truth.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:NAKAMURA_2009",
+      "source_id": "NAKAMURA_2009",
+      "location": "Abstract > Methodology and Results; HTML lines 225-231",
+      "paraphrase": "A study of 100 capsule examinations treats the pyloric ring, major duodenal papilla, and ileocecal valve as identifiable anatomical landmarks.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:NCI_PYLORUS",
+      "source_id": "NCI_PYLORUS",
+      "location": "pylorus definition; HTML line 17",
+      "paraphrase": "The pylorus connects the stomach with the duodenum and regulates passage of stomach contents into the small intestine.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:PNDS_LYMPHANGIECTASIA_2025",
+      "source_id": "PNDS_LYMPHANGIECTASIA_2025",
+      "location": "Introduction: Definition of the disease; Complementary examinations > EGD with duodenal biopsies; Capsule endoscopy (PMC lines 154–156, 243–258)",
+      "paraphrase": "The protocol distinguishes lymphatic dilations from primary disease after excluding secondary causes. Biopsies contribute confirmation; capsule imaging can identify lesions and assess extent.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:SBCE_VASCULAR_DELPHI_2019",
+      "source_id": "SBCE_VASCULAR_DELPHI_2019",
+      "location": "Table 2, Angiectasia/angiodysplasia; Discussion paragraphs on nomenclature and limitations (PMC lines 308–319, 385–389)",
+      "paraphrase": "The panel jointly names angiectasia/angiodysplasia for a flat red mucosal lesion with clustered dilated capillaries. It distinguishes phlebectasia and red spots. Consensus describes morphology, not bleeding relevance.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:SCHMIDT_HEMOPILL_2019",
+      "source_id": "SCHMIDT_HEMOPILL_2019",
+      "location": "Patients and methods > Description of the device and procedure; Study design and patients (PMC lines 112–138)",
+      "paraphrase": "Endoscopists recorded blood or hematin separately from clinical context. The non-imaging sensor could detect blood-related absorption but could not distinguish fresh blood from hematin.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:annese_ecco_2013",
+      "source_id": "annese_ecco_2013",
+      "location": "Table 2.1, journal p.987, Erythema row; section 5.1, Statement 5A",
+      "paraphrase": "Erythema denotes abnormal mucosal redness. Endoscopic features alone do not uniquely establish Crohn disease or ulcerative colitis.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:ferlitsch_esge_2024",
+      "source_id": "ferlitsch_esge_2024",
+      "location": "Section 4, Removal and retrieval of polyps for histology; PDF page 8 (zero-based page 7)",
+      "paraphrase": "Polyp histology requires separate assessment; the guideline distinguishes histopathology from expert optical diagnosis.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:jiang_capsule_supplement_2024",
+      "source_id": "jiang_capsule_supplement_2024",
+      "location": "Table S2, supplemental PDF p.6 (zero-based page 5), Erythema/Erosion/Ulcer/Polyp rows",
+      "paraphrase": "Its capsule examples describe erythema as red patches, erosion as limited epithelial loss, ulcer as depressed loss, and polyp as protrusion.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:leenhardt_inflammatory_2020",
+      "source_id": "leenhardt_inflammatory_2020",
+      "location": "Table 2, journal p.103; Discussion, pp.105–106",
+      "paraphrase": "Consensus distinguishes aphthoid erosion from superficial/deep ulceration; tissue loss and redness are descriptive findings. Etiology and depth can remain uncertain.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    }
+  ],
+  "profiles": [
+    {
+      "class_label": "ampulla of vater",
+      "rationale": "Independent anatomical terminology distinguishes ampulla and papilla. The supplied MST association is defensible as a related endoscopic landmark, but not as exact equivalence.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MIRILAS_2005",
+        "passage:NAKAMURA_2009"
+      ],
+      "outcome": "mapped",
+      "allowed_lexical_labels": [
+        "ampulla of vater"
+      ],
+      "allowed_target_types": {
+        "SNOMED_CT": [
+          "body structure"
+        ],
+        "CEST": [
+          "anatomical_site"
+        ],
+        "SBCE_VASCULAR_DELPHI_2019": []
+      },
+      "limitations": [
+        "This review does not determine whether each original image depicts the papilla rather than the internal ampulla.",
+        "The exact MST row and ontology release must still be bound to the imported terminology manifest."
+      ],
+      "review_method": "AI_retrieval_grounded_review",
+      "decision_is_inference": true,
+      "human_reviewed": false,
+      "scope": "Annotated class meaning only; no new image-level clinical attributes.",
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+    },
+    {
+      "class_label": "angiectasia",
+      "rationale": "Dataset meaning and the target finding category align. External consensus corroborates this lesion vocabulary. Retain the observation role.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MST3_OFFICIAL_TABLES",
+        "passage:SBCE_VASCULAR_DELPHI_2019"
+      ],
+      "outcome": "mapped",
+      "allowed_lexical_labels": [
+        "angiectasia",
+        "angiodysplasia"
+      ],
+      "allowed_target_types": {
+        "SNOMED_CT": [
+          "finding",
+          "morphologic abnormality"
+        ],
+        "CEST": [
+          "finding"
+        ],
+        "SBCE_VASCULAR_DELPHI_2019": [
+          "finding"
+        ]
+      },
+      "limitations": [
+        "active bleeding",
+        "anemia",
+        "arteriovenous malformation as unrestricted synonym",
+        "hereditary hemorrhagic telangiectasia",
+        "numeric lesion size without measurement",
+        "bleeding severity"
+      ],
+      "review_method": "AI_retrieval_grounded_review",
+      "decision_is_inference": true,
+      "human_reviewed": false,
+      "scope": "Annotated class meaning only; no new image-level clinical attributes.",
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+    },
+    {
+      "class_label": "blood fresh",
+      "rationale": "The annotated qualifier is preserved by the target attribute. Mapping to generic Blood alone would lose the distinction required by this class.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MST3_OFFICIAL_TABLES",
+        "passage:SCHMIDT_HEMOPILL_2019"
+      ],
+      "outcome": "mapped",
+      "allowed_lexical_labels": [
+        "blood fresh",
+        "fresh blood"
+      ],
+      "allowed_target_types": {
+        "SNOMED_CT": [],
+        "CEST": [
+          "finding"
+        ],
+        "SBCE_VASCULAR_DELPHI_2019": []
+      },
+      "limitations": [
+        "ongoing active bleeding",
+        "identified bleeding source",
+        "bleeding volume",
+        "bleeding severity",
+        "fresh blood = hematin",
+        "fresh blood = clot"
+      ],
+      "review_method": "AI_retrieval_grounded_review",
+      "decision_is_inference": true,
+      "human_reviewed": false,
+      "scope": "Annotated class meaning only; no new image-level clinical attributes.",
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+    },
+    {
+      "class_label": "blood hematin",
+      "rationale": "Preserve Hematin explicitly. MST lists Fresh, Clot, and Hematin separately; external endoscopy research also distinguishes fresh blood and hematin.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MST3_OFFICIAL_TABLES",
+        "passage:SCHMIDT_HEMOPILL_2019"
+      ],
+      "outcome": "mapped",
+      "allowed_lexical_labels": [
+        "blood hematin"
+      ],
+      "allowed_target_types": {
+        "SNOMED_CT": [],
+        "CEST": [
+          "finding"
+        ],
+        "SBCE_VASCULAR_DELPHI_2019": []
+      },
+      "limitations": [
+        "melena as exact synonym",
+        "blood clot as exact synonym",
+        "coffee-ground emesis as exact synonym",
+        "active bleeding",
+        "time since bleeding",
+        "gastric source",
+        "bleeding volume"
+      ],
+      "review_method": "AI_retrieval_grounded_review",
+      "decision_is_inference": true,
+      "human_reviewed": false,
+      "scope": "Annotated class meaning only; no new image-level clinical attributes.",
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+    },
+    {
+      "class_label": "erosion",
+      "rationale": "The source class and generic target finding align. Capsule consensus supports keeping erosion separate from ulcer subclasses; no aphthoid subtype is asserted.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MST3_OFFICIAL_TABLES",
+        "passage:leenhardt_inflammatory_2020"
+      ],
+      "outcome": "mapped",
+      "allowed_lexical_labels": [
+        "erosion"
+      ],
+      "allowed_target_types": {
+        "SNOMED_CT": [
+          "finding",
+          "morphologic abnormality"
+        ],
+        "CEST": [
+          "finding"
+        ],
+        "SBCE_VASCULAR_DELPHI_2019": []
+      },
+      "limitations": [
+        "class_label_granularity_only",
+        "no_new_per_image_attributes",
+        "no_disease_etiology_inference",
+        "no_size_depth_severity_inference",
+        "no_histology_inference",
+        "no_clinical_review_claim"
+      ],
+      "review_method": "AI_retrieval_grounded_review",
+      "decision_is_inference": true,
+      "human_reviewed": false,
+      "scope": "Annotated class meaning only; no new image-level clinical attributes.",
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+    },
+    {
+      "class_label": "erythema",
+      "rationale": "Dataset redness aligns with the target mucosal descriptor. Keep related because a noun label and a contextual adjective are not unrestricted interchangeable identifiers.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MST3_OFFICIAL_TABLES",
+        "passage:annese_ecco_2013"
+      ],
+      "outcome": "mapped",
+      "allowed_lexical_labels": [
+        "erythema"
+      ],
+      "allowed_target_types": {
+        "SNOMED_CT": [
+          "finding"
+        ],
+        "CEST": [
+          "finding"
+        ],
+        "SBCE_VASCULAR_DELPHI_2019": []
+      },
+      "limitations": [
+        "class_label_granularity_only",
+        "no_new_per_image_attributes",
+        "no_disease_etiology_inference",
+        "no_size_depth_severity_inference",
+        "no_histology_inference",
+        "no_clinical_review_claim"
+      ],
+      "review_method": "AI_retrieval_grounded_review",
+      "decision_is_inference": true,
+      "human_reviewed": false,
+      "scope": "Annotated class meaning only; no new image-level clinical attributes.",
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+    },
+    {
+      "class_label": "foreign body",
+      "rationale": "The dataset observation and target Contents finding align. Device retention is a possible example, not an attribute shared by every member of the class.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MST3_OFFICIAL_TABLES",
+        "passage:ESGE_SBCE_2022"
+      ],
+      "outcome": "mapped",
+      "allowed_lexical_labels": [
+        "foreign body"
+      ],
+      "allowed_target_types": {
+        "SNOMED_CT": [],
+        "CEST": [
+          "finding"
+        ],
+        "SBCE_VASCULAR_DELPHI_2019": []
+      },
+      "limitations": [
+        "capsule retention from a single frame",
+        "tablet identity or drug name",
+        "obstruction",
+        "perforation",
+        "need for removal",
+        "object material or size without annotation"
+      ],
+      "review_method": "AI_retrieval_grounded_review",
+      "decision_is_inference": true,
+      "human_reviewed": false,
+      "scope": "Annotated class meaning only; no new image-level clinical attributes.",
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+    },
+    {
+      "class_label": "ileocecal valve",
+      "rationale": "The source label and target name designate the same anatomical valve; NLM's scope note and independent capsule research support that interpretation.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MESH_ILEOCECAL",
+        "passage:NAKAMURA_2009"
+      ],
+      "outcome": "mapped",
+      "allowed_lexical_labels": [
+        "ileocecal valve"
+      ],
+      "allowed_target_types": {
+        "SNOMED_CT": [
+          "body structure"
+        ],
+        "CEST": [
+          "anatomical_site"
+        ],
+        "SBCE_VASCULAR_DELPHI_2019": []
+      },
+      "limitations": [
+        "Term-level agreement does not independently revalidate individual image annotations.",
+        "MeSH D007080 is supporting evidence, not a SNOMED CT identifier."
+      ],
+      "review_method": "AI_retrieval_grounded_review",
+      "decision_is_inference": true,
+      "human_reviewed": false,
+      "scope": "Annotated class meaning only; no new image-level clinical attributes.",
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+    },
+    {
+      "class_label": "lymphangiectasia",
+      "rationale": "The name matches, but the target belongs to Diagnoses whereas the source is a visible observation. Retain the link for vocabulary/navigation; prevent automatic diagnostic expansion.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MST3_OFFICIAL_TABLES",
+        "passage:LEENHARDT_RELEVANCE_2021",
+        "passage:PNDS_LYMPHANGIECTASIA_2025"
+      ],
+      "outcome": "mapped",
+      "allowed_lexical_labels": [
+        "lymphangiectasia"
+      ],
+      "allowed_target_types": {
+        "SNOMED_CT": [],
+        "CEST": [
+          "finding"
+        ],
+        "SBCE_VASCULAR_DELPHI_2019": []
+      },
+      "limitations": [
+        "primary intestinal lymphangiectasia",
+        "Waldmann disease",
+        "protein-losing enteropathy",
+        "lymphoid hyperplasia as synonym",
+        "benign in this patient",
+        "specific syndrome",
+        "biopsy-confirmed pathology"
+      ],
+      "review_method": "AI_retrieval_grounded_review",
+      "decision_is_inference": true,
+      "human_reviewed": false,
+      "scope": "Annotated class meaning only; no new image-level clinical attributes.",
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+    },
+    {
+      "class_label": "normal clean mucosa",
+      "rationale": "This is a composite dataset observation combining cleanliness and visible normality. No supplied MST term establishes exact equivalence. Visibility and pathological status should remain distinct.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:ALAGEELI_KODA_2020"
+      ],
+      "outcome": "native_only",
+      "allowed_lexical_labels": [
+        "normal clean mucosa"
+      ],
+      "allowed_target_types": {
+        "SNOMED_CT": [],
+        "CEST": [],
+        "SBCE_VASCULAR_DELPHI_2019": []
+      },
+      "limitations": [
+        "An exact imported CEST/MST equivalent may be assessed separately if present; this review does not prove no equivalent exists in any release.",
+        "No measured visibility percentage or KODA score is supplied by the class itself."
+      ],
+      "review_method": "AI_retrieval_grounded_review",
+      "decision_is_inference": true,
+      "human_reviewed": false,
+      "scope": "Annotated class meaning only; no new image-level clinical attributes.",
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+    },
+    {
+      "class_label": "polyp",
+      "rationale": "The source class matches the generic protruding finding. The decision supplies no histologic classification; independent guidance supports retaining a separate histology requirement.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MST3_OFFICIAL_TABLES",
+        "passage:jiang_capsule_supplement_2024",
+        "passage:ferlitsch_esge_2024"
+      ],
+      "outcome": "mapped",
+      "allowed_lexical_labels": [
+        "polyp"
+      ],
+      "allowed_target_types": {
+        "SNOMED_CT": [
+          "finding",
+          "morphologic abnormality"
+        ],
+        "CEST": [
+          "finding"
+        ],
+        "SBCE_VASCULAR_DELPHI_2019": []
+      },
+      "limitations": [
+        "class_label_granularity_only",
+        "no_new_per_image_attributes",
+        "no_disease_etiology_inference",
+        "no_size_depth_severity_inference",
+        "no_histology_inference",
+        "no_clinical_review_claim"
+      ],
+      "review_method": "AI_retrieval_grounded_review",
+      "decision_is_inference": true,
+      "human_reviewed": false,
+      "scope": "Annotated class meaning only; no new image-level clinical attributes.",
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+    },
+    {
+      "class_label": "pylorus",
+      "rationale": "Both names designate the stomach-to-duodenum structure defined by NCI. Independent capsule research corroborates its use as an anatomical landmark.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:NCI_PYLORUS",
+        "passage:NAKAMURA_2009"
+      ],
+      "outcome": "mapped",
+      "allowed_lexical_labels": [
+        "pylorus"
+      ],
+      "allowed_target_types": {
+        "SNOMED_CT": [
+          "body structure"
+        ],
+        "CEST": [
+          "anatomical_site"
+        ],
+        "SBCE_VASCULAR_DELPHI_2019": []
+      },
+      "limitations": [
+        "Do not infer gastric emptying function, obstruction, or examination completeness from this label alone."
+      ],
+      "review_method": "AI_retrieval_grounded_review",
+      "decision_is_inference": true,
+      "human_reviewed": false,
+      "scope": "Annotated class meaning only; no new image-level clinical attributes.",
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+    },
+    {
+      "class_label": "reduced mucosal view",
+      "rationale": "The label describes limited visualization. Independent KODA methodology supports treating obstruction and visibility as quality observations; it does not supply an exact MST equivalent.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:ALAGEELI_KODA_2020"
+      ],
+      "outcome": "native_only",
+      "allowed_lexical_labels": [
+        "reduced mucosal view"
+      ],
+      "allowed_target_types": {
+        "SNOMED_CT": [],
+        "CEST": [],
+        "SBCE_VASCULAR_DELPHI_2019": []
+      },
+      "limitations": [
+        "The binary class cannot determine a KODA score or a specific obstructing material in every frame.",
+        "No supplied target establishes an exact CEST/MST mapping; do not force a disease code."
+      ],
+      "review_method": "AI_retrieval_grounded_review",
+      "decision_is_inference": true,
+      "human_reviewed": false,
+      "scope": "Annotated class meaning only; no new image-level clinical attributes.",
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+    },
+    {
+      "class_label": "ulcer",
+      "rationale": "The source class matches the generic excavated finding. Capsule consensus supports distinguishing ulceration from erosion without choosing superficial/deep or an etiology.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MST3_OFFICIAL_TABLES",
+        "passage:leenhardt_inflammatory_2020"
+      ],
+      "outcome": "mapped",
+      "allowed_lexical_labels": [
+        "ulcer"
+      ],
+      "allowed_target_types": {
+        "SNOMED_CT": [
+          "finding",
+          "morphologic abnormality"
+        ],
+        "CEST": [
+          "finding"
+        ],
+        "SBCE_VASCULAR_DELPHI_2019": []
+      },
+      "limitations": [
+        "class_label_granularity_only",
+        "no_new_per_image_attributes",
+        "no_disease_etiology_inference",
+        "no_size_depth_severity_inference",
+        "no_histology_inference",
+        "no_clinical_review_claim"
+      ],
+      "review_method": "AI_retrieval_grounded_review",
+      "decision_is_inference": true,
+      "human_reviewed": false,
+      "scope": "Annotated class meaning only; no new image-level clinical attributes.",
+      "lexical_policy_note": "Allowlist membership is necessary but insufficient: imported source, active concept, semantic role and provenance checks still apply."
+    }
+  ],
+  "target_decisions": [
+    {
+      "class_label": "ampulla of vater",
+      "terminology": "MST",
+      "target_id": "MST3:Anatomy:R35:C2",
+      "target_term": "Major papilla",
+      "target_type": "anatomical_site",
+      "source_sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
+      "decision": "approved",
+      "relation": "related",
+      "required_attribute_constraints": [],
+      "rationale": "Approve only the scoped class-level association described by its evidence profile; preserve every required qualifier.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MIRILAS_2005",
+        "passage:NAKAMURA_2009",
+        "passage:MST3_OFFICIAL_TABLES"
+      ],
+      "source_locator": "Anatomy!R35C2",
+      "source_url": "https://www.worldendo.org/assets-craft/pdf/resources/mst30_tables.xls",
+      "baseline_mapping_id": "map:d39bd7ad8badfcec00a5c9d7",
+      "reviewer_type": "AI",
+      "human_reviewed": false,
+      "decision_is_inference": true,
+      "review_method": "AI_retrieval_grounded_review"
+    },
+    {
+      "class_label": "angiectasia",
+      "terminology": "MST",
+      "target_id": "MST3:Diagnoses:R77:C2",
+      "target_term": "Angiectasia",
+      "target_type": "diagnosis",
+      "source_sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
+      "decision": "rejected",
+      "relation": "related",
+      "required_attribute_constraints": [],
+      "rationale": "Exclude duplicate diagnosis-role target from this finding crosswalk; prefer its luminal finding entry. This does not declare the diagnosis medically false.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MST3_OFFICIAL_TABLES",
+        "passage:SBCE_VASCULAR_DELPHI_2019"
+      ],
+      "source_locator": "Diagnoses!R77C2",
+      "source_url": "https://www.worldendo.org/assets-craft/pdf/resources/mst30_tables.xls",
+      "baseline_mapping_id": "map:6d8a8e222bd38ba3c7d815d2",
+      "reviewer_type": "AI",
+      "human_reviewed": false,
+      "decision_is_inference": true,
+      "review_method": "AI_retrieval_grounded_review"
+    },
+    {
+      "class_label": "angiectasia",
+      "terminology": "MST",
+      "target_id": "MST3:Luminal_findings:R67:C2",
+      "target_term": "Angiectasia",
+      "target_type": "finding",
+      "source_sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
+      "decision": "approved",
+      "relation": "exact",
+      "required_attribute_constraints": [],
+      "rationale": "Approve only the scoped class-level association described by its evidence profile; preserve every required qualifier.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MST3_OFFICIAL_TABLES",
+        "passage:SBCE_VASCULAR_DELPHI_2019"
+      ],
+      "source_locator": "Luminal_findings!R67C2",
+      "source_url": "https://www.worldendo.org/assets-craft/pdf/resources/mst30_tables.xls",
+      "baseline_mapping_id": "map:00b274f7fa189608c67b6294",
+      "reviewer_type": "AI",
+      "human_reviewed": false,
+      "decision_is_inference": true,
+      "review_method": "AI_retrieval_grounded_review"
+    },
+    {
+      "class_label": "angiectasia",
+      "terminology": "SBCE_VASCULAR_DELPHI_2019",
+      "target_id": "SBCE2019:angiectasia",
+      "target_term": "Angiectasia",
+      "target_type": "finding",
+      "source_sha256": "217b9e173ada9786ae855e84a050b7dc2109034c35ccb3f60c4d6dea452aa652",
+      "decision": "approved",
+      "relation": "exact",
+      "required_attribute_constraints": [],
+      "rationale": "Approve only the scoped class-level association described by its evidence profile; preserve every required qualifier.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MST3_OFFICIAL_TABLES",
+        "passage:SBCE_VASCULAR_DELPHI_2019"
+      ],
+      "source_locator": "Table 2, row Angiectasia/angiodysplasia",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6395173/",
+      "baseline_mapping_id": "map:3b301ee60d9780270294887d",
+      "reviewer_type": "AI",
+      "human_reviewed": false,
+      "decision_is_inference": true,
+      "review_method": "AI_retrieval_grounded_review"
+    },
+    {
+      "class_label": "blood fresh",
+      "terminology": "MST",
+      "target_id": "MST3:Luminal_findings:R34:C2",
+      "target_term": "Blood",
+      "target_type": "finding",
+      "source_sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
+      "decision": "approved",
+      "relation": "compositional",
+      "required_attribute_constraints": [
+        {
+          "attribute": "Type",
+          "source_locator": "Luminal_findings!R34C3:C4",
+          "value": "Fresh"
+        }
+      ],
+      "rationale": "Approve only the scoped class-level association described by its evidence profile; preserve every required qualifier.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MST3_OFFICIAL_TABLES",
+        "passage:SCHMIDT_HEMOPILL_2019"
+      ],
+      "source_locator": "Luminal_findings!R34C2",
+      "source_url": "https://www.worldendo.org/assets-craft/pdf/resources/mst30_tables.xls",
+      "baseline_mapping_id": "map:111733714f308047e32f57b4",
+      "reviewer_type": "AI",
+      "human_reviewed": false,
+      "decision_is_inference": true,
+      "review_method": "AI_retrieval_grounded_review"
+    },
+    {
+      "class_label": "blood hematin",
+      "terminology": "MST",
+      "target_id": "MST3:Luminal_findings:R34:C2",
+      "target_term": "Blood",
+      "target_type": "finding",
+      "source_sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
+      "decision": "approved",
+      "relation": "compositional",
+      "required_attribute_constraints": [
+        {
+          "attribute": "Type",
+          "source_locator": "Luminal_findings!R36C4",
+          "value": "Hematin"
+        }
+      ],
+      "rationale": "Approve only the scoped class-level association described by its evidence profile; preserve every required qualifier.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MST3_OFFICIAL_TABLES",
+        "passage:SCHMIDT_HEMOPILL_2019"
+      ],
+      "source_locator": "Luminal_findings!R34C2",
+      "source_url": "https://www.worldendo.org/assets-craft/pdf/resources/mst30_tables.xls",
+      "baseline_mapping_id": "map:da01aafaf19cf14f3b7c859b",
+      "reviewer_type": "AI",
+      "human_reviewed": false,
+      "decision_is_inference": true,
+      "review_method": "AI_retrieval_grounded_review"
+    },
+    {
+      "class_label": "erosion",
+      "terminology": "MST",
+      "target_id": "MST3:Luminal_findings:R134:C2",
+      "target_term": "Erosion",
+      "target_type": "finding",
+      "source_sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
+      "decision": "approved",
+      "relation": "exact",
+      "required_attribute_constraints": [],
+      "rationale": "Approve only the scoped class-level association described by its evidence profile; preserve every required qualifier.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MST3_OFFICIAL_TABLES",
+        "passage:leenhardt_inflammatory_2020"
+      ],
+      "source_locator": "Luminal_findings!R134C2",
+      "source_url": "https://www.worldendo.org/assets-craft/pdf/resources/mst30_tables.xls",
+      "baseline_mapping_id": "map:7e144de517b4eae2c330a847",
+      "reviewer_type": "AI",
+      "human_reviewed": false,
+      "decision_is_inference": true,
+      "review_method": "AI_retrieval_grounded_review"
+    },
+    {
+      "class_label": "erythema",
+      "terminology": "MST",
+      "target_id": "MST3:Luminal_findings:R46:C2",
+      "target_term": "Erythematous",
+      "target_type": "finding",
+      "source_sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
+      "decision": "approved",
+      "relation": "related",
+      "required_attribute_constraints": [],
+      "rationale": "Approve only the scoped class-level association described by its evidence profile; preserve every required qualifier.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MST3_OFFICIAL_TABLES",
+        "passage:annese_ecco_2013"
+      ],
+      "source_locator": "Luminal_findings!R46C2",
+      "source_url": "https://www.worldendo.org/assets-craft/pdf/resources/mst30_tables.xls",
+      "baseline_mapping_id": "map:24539875c156d45fbb6e3f3f",
+      "reviewer_type": "AI",
+      "human_reviewed": false,
+      "decision_is_inference": true,
+      "review_method": "AI_retrieval_grounded_review"
+    },
+    {
+      "class_label": "foreign body",
+      "terminology": "MST",
+      "target_id": "MST3:Luminal_findings:R33:C2",
+      "target_term": "Foreign body",
+      "target_type": "finding",
+      "source_sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
+      "decision": "approved",
+      "relation": "exact",
+      "required_attribute_constraints": [],
+      "rationale": "Approve only the scoped class-level association described by its evidence profile; preserve every required qualifier.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MST3_OFFICIAL_TABLES",
+        "passage:ESGE_SBCE_2022"
+      ],
+      "source_locator": "Luminal_findings!R33C2",
+      "source_url": "https://www.worldendo.org/assets-craft/pdf/resources/mst30_tables.xls",
+      "baseline_mapping_id": "map:c0334fecdc1131b2658ad8ae",
+      "reviewer_type": "AI",
+      "human_reviewed": false,
+      "decision_is_inference": true,
+      "review_method": "AI_retrieval_grounded_review"
+    },
+    {
+      "class_label": "ileocecal valve",
+      "terminology": "MST",
+      "target_id": "MST3:Anatomy:R68:C2",
+      "target_term": "Ileocecal valve",
+      "target_type": "anatomical_site",
+      "source_sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
+      "decision": "approved",
+      "relation": "exact",
+      "required_attribute_constraints": [],
+      "rationale": "Approve only the scoped class-level association described by its evidence profile; preserve every required qualifier.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MESH_ILEOCECAL",
+        "passage:NAKAMURA_2009",
+        "passage:MST3_OFFICIAL_TABLES"
+      ],
+      "source_locator": "Anatomy!R68C2",
+      "source_url": "https://www.worldendo.org/assets-craft/pdf/resources/mst30_tables.xls",
+      "baseline_mapping_id": "map:ebe67e1b9cf2c88ba54b49df",
+      "reviewer_type": "AI",
+      "human_reviewed": false,
+      "decision_is_inference": true,
+      "review_method": "AI_retrieval_grounded_review"
+    },
+    {
+      "class_label": "lymphangiectasia",
+      "terminology": "MST",
+      "target_id": "MST3:Diagnoses:R92:C2",
+      "target_term": "Lymphangiectasia",
+      "target_type": "diagnosis",
+      "source_sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
+      "decision": "approved",
+      "relation": "related",
+      "required_attribute_constraints": [],
+      "rationale": "Retain a related vocabulary link with observation-role restriction; do not entail a patient diagnosis.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MST3_OFFICIAL_TABLES",
+        "passage:LEENHARDT_RELEVANCE_2021",
+        "passage:PNDS_LYMPHANGIECTASIA_2025"
+      ],
+      "source_locator": "Diagnoses!R92C2",
+      "source_url": "https://www.worldendo.org/assets-craft/pdf/resources/mst30_tables.xls",
+      "baseline_mapping_id": "map:3b84beab5f1d192f7a00738d",
+      "reviewer_type": "AI",
+      "human_reviewed": false,
+      "decision_is_inference": true,
+      "review_method": "AI_retrieval_grounded_review"
+    },
+    {
+      "class_label": "polyp",
+      "terminology": "MST",
+      "target_id": "MST3:Luminal_findings:R90:C2",
+      "target_term": "Polyp",
+      "target_type": "finding",
+      "source_sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
+      "decision": "approved",
+      "relation": "exact",
+      "required_attribute_constraints": [],
+      "rationale": "Approve only the scoped class-level association described by its evidence profile; preserve every required qualifier.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MST3_OFFICIAL_TABLES",
+        "passage:jiang_capsule_supplement_2024",
+        "passage:ferlitsch_esge_2024"
+      ],
+      "source_locator": "Luminal_findings!R90C2",
+      "source_url": "https://www.worldendo.org/assets-craft/pdf/resources/mst30_tables.xls",
+      "baseline_mapping_id": "map:4cdbe924dfa11ac4d0cdf496",
+      "reviewer_type": "AI",
+      "human_reviewed": false,
+      "decision_is_inference": true,
+      "review_method": "AI_retrieval_grounded_review"
+    },
+    {
+      "class_label": "pylorus",
+      "terminology": "MST",
+      "target_id": "MST3:Anatomy:R22:C2",
+      "target_term": "Pylorus",
+      "target_type": "anatomical_site",
+      "source_sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
+      "decision": "approved",
+      "relation": "exact",
+      "required_attribute_constraints": [],
+      "rationale": "Approve only the scoped class-level association described by its evidence profile; preserve every required qualifier.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:NCI_PYLORUS",
+        "passage:NAKAMURA_2009",
+        "passage:MST3_OFFICIAL_TABLES"
+      ],
+      "source_locator": "Anatomy!R22C2",
+      "source_url": "https://www.worldendo.org/assets-craft/pdf/resources/mst30_tables.xls",
+      "baseline_mapping_id": "map:b821beb6a4e9bd9f26365865",
+      "reviewer_type": "AI",
+      "human_reviewed": false,
+      "decision_is_inference": true,
+      "review_method": "AI_retrieval_grounded_review"
+    },
+    {
+      "class_label": "ulcer",
+      "terminology": "MST",
+      "target_id": "MST3:Diagnoses:R103:C2",
+      "target_term": "Ulcer",
+      "target_type": "diagnosis",
+      "source_sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
+      "decision": "rejected",
+      "relation": "related",
+      "required_attribute_constraints": [],
+      "rationale": "Exclude duplicate diagnosis-role target from this finding crosswalk; prefer its luminal finding entry. This does not declare the diagnosis medically false.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MST3_OFFICIAL_TABLES",
+        "passage:leenhardt_inflammatory_2020"
+      ],
+      "source_locator": "Diagnoses!R103C2",
+      "source_url": "https://www.worldendo.org/assets-craft/pdf/resources/mst30_tables.xls",
+      "baseline_mapping_id": "map:b78b90482ad6282d38de28f0",
+      "reviewer_type": "AI",
+      "human_reviewed": false,
+      "decision_is_inference": true,
+      "review_method": "AI_retrieval_grounded_review"
+    },
+    {
+      "class_label": "ulcer",
+      "terminology": "MST",
+      "target_id": "MST3:Luminal_findings:R148:C2",
+      "target_term": "Ulcer",
+      "target_type": "finding",
+      "source_sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
+      "decision": "approved",
+      "relation": "exact",
+      "required_attribute_constraints": [],
+      "rationale": "Approve only the scoped class-level association described by its evidence profile; preserve every required qualifier.",
+      "passage_ids": [
+        "passage:KVASIR_2021",
+        "passage:MST3_OFFICIAL_TABLES",
+        "passage:leenhardt_inflammatory_2020"
+      ],
+      "source_locator": "Luminal_findings!R148C2",
+      "source_url": "https://www.worldendo.org/assets-craft/pdf/resources/mst30_tables.xls",
+      "baseline_mapping_id": "map:2fe2eaf5b736a6df0bf8d5a3",
+      "reviewer_type": "AI",
+      "human_reviewed": false,
+      "decision_is_inference": true,
+      "review_method": "AI_retrieval_grounded_review"
+    }
+  ],
+  "summary": {
+    "sources": 16,
+    "passages": 16,
+    "class_profiles": 14,
+    "target_decisions": 15,
+    "approved_targets": 13,
+    "rejected_targets": 2
+  }
+}
