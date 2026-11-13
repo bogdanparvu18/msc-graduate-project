@@ -39,7 +39,7 @@
     "Anatomical Structure, Entire and Part wording is interpreted explicitly; it is never removed as generic noise.",
     "A related disorder, object or substance association is vocabulary/navigation support and does not assert an image finding, patient diagnosis or class equivalence.",
     "This revision performs no SNOMED postcoordination or MRCM validation. Missing attributes remain missing.",
-    "The v1.4.6 concept policy and source-bound synonym handling supersede lexical allowlists. In this revision only the ulcer legacy SNOMED type list changes to disorder; related morphology is handled by its explicit concept rule."
+    "The v1.4.6 concept policy and source-bound synonym handling supersede lexical allowlists. The ulcer legacy SNOMED type list was aligned to disorder in evidence version 2026-11-13.1; its explicit related-morphology rule remains unchanged."
   ],
   "sources": [
     {
@@ -1458,6 +1458,33 @@
             "rationale": "Retain a related terminology link to the generic disorder concept. Seeing tablet residue or a capsule does not by itself establish the disorder, retention or a need for removal. This relation cannot produce exact class synonyms.",
             "interpretation": "Conditional source-concept rule; not a claim that every named concept occurs in the imported release. Runtime must establish an active matching concept, accepted description, source identity and required uniqueness.",
             "usage_scope": "Class-level meaning only, preserving Phase 2 observation role and original qualifiers; no new image attributes or patient diagnosis."
+          },
+          {
+            "rule_id": "foreign_body_visible_morphology",
+            "relation": "exact",
+            "semantic_tags": [
+              "morphologic abnormality"
+            ],
+            "accepted_fsn_labels": [
+              "Foreign body"
+            ],
+            "match_labels": [
+              "Foreign body"
+            ],
+            "passage_ids": [
+              "passage:ESGE_SBCE_2022",
+              "passage:KVASIR_2021",
+              "passage:MST3_OFFICIAL_TABLES",
+              "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026",
+              "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
+              "passage:SNOMED_SYNONYM_GUIDANCE_2026"
+            ],
+            "rationale": "At the annotated class-meaning level, the generic foreign-body morphology can represent observed foreign material. This does not assert retention, obstruction, perforation, material, site, device identity or a patient disorder.",
+            "interpretation": "Conditional class-level policy; an actual active concept and accepted descriptions must be verified in the imported RF2 source.",
+            "usage_scope": "Annotated class meaning or related vocabulary only; no new image attributes or patient diagnosis.",
+            "policy_origin": "notebook-requested-snomed-extension-v1",
+            "decision_is_inference": true,
+            "human_reviewed": false
           }
         ],
         "unmapped_reason": "no_source_accepted_candidate_for_current_search_seeds",
@@ -1574,7 +1601,9 @@
         "policy_version": "snomed-concept-policy-v1",
         "search_aliases": [
           "Lymphangiectasia",
-          "Lymphangiectasis"
+          "Lymphangiectasis",
+          "Intestinal lymphangiectasia",
+          "Intestinal lymphangiectasis"
         ],
         "rules": [
           {
@@ -1635,6 +1664,38 @@
             "rationale": "A generic disease concept supplies a related vocabulary link only. The annotated mucosal appearance does not establish primary intestinal lymphangiectasia, Waldmann disease, protein loss, etiology or biopsy confirmation.",
             "interpretation": "Conditional source-concept rule; not a claim that every named concept occurs in the imported release. Runtime must establish an active matching concept, accepted description, source identity and required uniqueness.",
             "usage_scope": "Class-level meaning only, preserving Phase 2 observation role and original qualifiers; no new image attributes or patient diagnosis."
+          },
+          {
+            "rule_id": "lymphangiectasia_intestinal_disorder_vocabulary",
+            "relation": "related",
+            "semantic_tags": [
+              "disorder"
+            ],
+            "accepted_fsn_labels": [
+              "Intestinal lymphangiectasia",
+              "Intestinal lymphangiectasis"
+            ],
+            "match_labels": [
+              "Intestinal lymphangiectasia",
+              "Intestinal lymphangiectasis"
+            ],
+            "passage_ids": [
+              "passage:KVASIR_2021",
+              "passage:LEENHARDT_RELEVANCE_2021",
+              "passage:MST3_OFFICIAL_TABLES",
+              "passage:NLM_INTESTINAL_LYMPHANGIECTASIS_2026",
+              "passage:NLM_LYMPHANGIECTASIS_2026",
+              "passage:PNDS_LYMPHANGIECTASIA_2025",
+              "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026",
+              "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
+              "passage:SNOMED_SYNONYM_GUIDANCE_2026"
+            ],
+            "rationale": "The intestinal disorder is a related vocabulary/navigation concept, never an exact synonym of the generic visual class. No patient diagnosis, primary intestinal lymphangiectasia, Waldmann disease, protein-losing enteropathy or histological confirmation follows from this association.",
+            "interpretation": "Conditional class-level policy; an actual active concept and accepted descriptions must be verified in the imported RF2 source.",
+            "usage_scope": "Annotated class meaning or related vocabulary only; no new image attributes or patient diagnosis.",
+            "policy_origin": "notebook-requested-snomed-extension-v1",
+            "decision_is_inference": true,
+            "human_reviewed": false
           }
         ],
         "unmapped_reason": "no_source_accepted_candidate_for_current_search_seeds",
@@ -2335,22 +2396,23 @@
     "approved_targets": 14,
     "rejected_targets": 1,
     "snomed_concept_policies": 14,
-    "snomed_concept_rules": 16,
+    "snomed_concept_rules": 18,
     "policy_version": "concept-bound-mapping-v2"
   },
   "policy_version": "concept-bound-mapping-v2",
-  "evidence_version": "2026-11-13.1",
+  "evidence_version": "2026-11-13.2",
   "minimum_concept_policy_engine": "phase3-sector1-terminology-v1.4.6",
-  "supersedes_artifact_sha256": "ada83d98ed659c514d132dd4489cf241b4ac2fe098f17acdd82931ea52dec96d",
+  "supersedes_artifact_sha256": "4dd6c96b893c5b039d8bf9cf4a3d395a000b1a220d2797178e5fbf2b37790856",
   "compatibility": {
     "legacy_profile_fields_preserved": false,
     "legacy_target_decisions_preserved": false,
     "new_semantic_policy_field": "snomed_concept_policy",
     "legacy_engine_behavior": "This ulcer revision requires the existing v1.4.6 concept-policy engine; legacy field-level checks are not a substitute for the two scoped rules.",
     "revised_class_labels": [
-      "ulcer"
+      "foreign body",
+      "lymphangiectasia"
     ],
-    "revision_scope": "Only the ulcer profile and its MST diagnosis decision change; all other class profiles and target decisions are preserved."
+    "revision_scope": "Publish the existing foreign-body and intestinal-lymphangiectasia notebook additions and aliases; preserve the previous effective policy, all target decisions and all other class profiles, including the ulcer revision."
   },
   "synonym_policy": {
     "policy_version": "source-concept-synonyms-v1",
@@ -2370,5 +2432,29 @@
       "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
       "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026"
     ]
+  },
+  "policy_migration": {
+    "migration_id": "notebook-rules-to-rag-v1",
+    "source_notebook_path": "notebooks/phase3/phase3_01_terminology_mapping.ipynb",
+    "source_notebook_blob_sha": "60a9995d5e6fc235a9fdb06085b672bdc40b27c4",
+    "source_function": "rag_extend_requested_snomed_policies",
+    "previous_extension_id": "notebook-requested-snomed-extension-v1",
+    "previous_effective_bundle_content_sha256": "449bc056374b3c2f9e999ccbfe9a65667708e11796205498db6803e8c3d7da68",
+    "class_labels": [
+      "foreign body",
+      "lymphangiectasia"
+    ],
+    "added_rule_ids": {
+      "foreign body": [
+        "foreign_body_visible_morphology"
+      ],
+      "lymphangiectasia": [
+        "lymphangiectasia_intestinal_disorder_vocabulary"
+      ]
+    },
+    "migration_scope": "Copy the two existing notebook policy additions and their search aliases into the manifest-verified source bundle. Preserve rule fields, evidence references and all other class policies.",
+    "semantic_change_from_previous_notebook_effective_policy": false,
+    "new_medical_evidence_added": false,
+    "human_reviewed": false
   }
 }
