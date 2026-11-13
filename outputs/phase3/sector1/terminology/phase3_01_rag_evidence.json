@@ -1,6 +1,6 @@
 {
   "schema_version": "mmvqa-rag-evidence-v1",
-  "review_date": "2026-11-12",
+  "review_date": "2026-11-13",
   "review_method": "AI_retrieval_grounded_review",
   "human_reviewed": false,
   "decision_is_inference": true,
@@ -39,7 +39,7 @@
     "Anatomical Structure, Entire and Part wording is interpreted explicitly; it is never removed as generic noise.",
     "A related disorder, object or substance association is vocabulary/navigation support and does not assert an image finding, patient diagnosis or class equivalence.",
     "This revision performs no SNOMED postcoordination or MRCM validation. Missing attributes remain missing.",
-    "The legacy lexical allowlists remain unchanged for older notebooks; the v1.4.6 concept policy and source-bound synonym handling supersede them only in the new engine."
+    "The v1.4.6 concept policy and source-bound synonym handling supersede lexical allowlists. In this revision only the ulcer legacy SNOMED type list changes to disorder; related morphology is handled by its explicit concept rule."
   ],
   "sources": [
     {
@@ -681,6 +681,29 @@
       "access_scope": "relevant source sections read",
       "source_type": "official_primary_terminology_documentation",
       "evidence_kind": "paraphrase"
+    },
+    {
+      "source_id": "SNOMED_AU_ULCER_SEMANTIC_DISTINCTION_2020",
+      "url": "https://www.healthterminologies.gov.au/library/DH_3243_2020_SNOMED-CT-AU_Australian-Technical-Implementation-Guide_v2.5.pdf",
+      "title": "SNOMED CT-AU Australian Technical Implementation Guide, version 2.5",
+      "authors": "Australian Digital Health Agency",
+      "publication_date": "2020-07-03",
+      "independent_of_dataset": true,
+      "source_role": "terminology_guidance",
+      "review_date": "2026-11-13",
+      "access_scope": "Section 8.1.2 and 8.1.2.1 read, printed pages 43-44",
+      "independence_note": "Official implementation guidance; supports the distinction between ulcer representations, not a Kvasir crosswalk or current Canadian RF2 content."
+    },
+    {
+      "source_id": "SNOMED_MORPHOLOGY_FINDING_GUIDANCE_2026",
+      "url": "https://docs.snomed.org/snomed-ct-specifications/snomed-ct-editorial-guide/readme/authoring/domain-specific-modeling/body-structure/index-2/morphologic-abnormalities-vs-findings",
+      "title": "SNOMED CT Editorial Guide: Morphologic Abnormalities vs. Findings",
+      "authors": "SNOMED International",
+      "independent_of_dataset": true,
+      "source_role": "terminology_guidance",
+      "review_date": "2026-11-13",
+      "access_scope": "Complete guidance text read",
+      "independence_note": "Official semantic modeling guidance; not an independent assessment of individual dataset annotations."
     }
   ],
   "passages": [
@@ -858,6 +881,32 @@
       "location": "Scope Note and Entry Terms, lines 25-29",
       "paraphrase": "The intestinal descriptor lists both lymphangiectasis and lymphangiectasia wording. Its clinical scope includes more than a visible mucosal appearance, so a diagnostic association must not silently replace an image-level observation.",
       "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:SNOMED_AU_ULCER_SEMANTIC_DISTINCTION_2020",
+      "source_id": "SNOMED_AU_ULCER_SEMANTIC_DISTINCTION_2020",
+      "location": "Sections 8.1.2 and 8.1.2.1, printed pages 43-44; PDF pages 42-43 zero-based",
+      "paraphrase": "The guide distinguishes concept 56208002, which represents ulcer morphology, from concept 429040005, which represents the ulcer disorder recorded in a clinical encounter. Its clinical-finding reference-set example selects the latter. These examples establish different semantic purposes despite a shared display term; the imported edition still requires runtime verification.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:SNOMED_MORPHOLOGY_FINDING_GUIDANCE_2026",
+      "source_id": "SNOMED_MORPHOLOGY_FINDING_GUIDANCE_2026",
+      "location": "Morphologic Abnormalities vs. Findings, opening guidance and attribute modeling explanation",
+      "paraphrase": "SNOMED distinguishes structural abnormalities from clinical findings and advises against substituting a morphology concept for a finding. Morphology concepts can supply defining attribute values. This supports retaining the ulcer morphology as context while selecting a separate clinical representation for the annotated finding.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:MST3_ULCER_ROLES",
+      "source_id": "MST3_OFFICIAL_TABLES",
+      "location": "Luminal_findings!R148C2 and Diagnoses!R103C2; Diagnoses!R1C1 and R76C1 establish the endoscopic/enteroscopy context",
+      "paraphrase": "The workbook places Ulcer in both the luminal finding table and the enteroscopy portion of Endoscopic Diagnoses. These source rows have distinct table roles. The project retains the luminal entry as the exact finding mapping and the endoscopic diagnosis entry as related context, without deriving a cause or an additional patient diagnosis.",
+      "source_sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
+      "evidence_kind": "source_cells_and_explicit_project_interpretation",
+      "decision_is_inference": true,
       "human_reviewed": false
     }
   ],
@@ -1807,11 +1856,13 @@
     },
     {
       "class_label": "ulcer",
-      "rationale": "The source class matches the generic excavated finding. Capsule consensus supports distinguishing ulceration from erosion without choosing superficial/deep or an etiology.",
+      "rationale": "Represent the generic clinically identified ulcer documented by a verified source endoscopic annotation. Use the clinical disorder concept as the canonical class-level representation and retain the distinct morphology as related context. This project mapping adds no site, cause, subtype, severity, complication or histological assertion.",
       "passage_ids": [
         "passage:KVASIR_2021",
         "passage:MST3_OFFICIAL_TABLES",
-        "passage:leenhardt_inflammatory_2020"
+        "passage:leenhardt_inflammatory_2020",
+        "passage:SNOMED_AU_ULCER_SEMANTIC_DISTINCTION_2020",
+        "passage:SNOMED_MORPHOLOGY_FINDING_GUIDANCE_2026"
       ],
       "outcome": "mapped",
       "allowed_lexical_labels": [
@@ -1819,8 +1870,7 @@
       ],
       "allowed_target_types": {
         "SNOMED_CT": [
-          "finding",
-          "morphologic abnormality"
+          "disorder"
         ],
         "CEST": [
           "finding"
@@ -1847,10 +1897,31 @@
         ],
         "rules": [
           {
-            "rule_id": "ulcer_observed_finding",
+            "rule_id": "ulcer_observed_clinical_finding",
             "relation": "exact",
             "semantic_tags": [
-              "finding",
+              "disorder"
+            ],
+            "accepted_fsn_labels": [
+              "Ulcer"
+            ],
+            "match_labels": [
+              "Ulcer"
+            ],
+            "passage_ids": [
+              "passage:KVASIR_2021",
+              "passage:leenhardt_inflammatory_2020",
+              "passage:SNOMED_AU_ULCER_SEMANTIC_DISTINCTION_2020",
+              "passage:SNOMED_MORPHOLOGY_FINDING_GUIDANCE_2026"
+            ],
+            "rationale": "Represent the generic clinical finding of an ulcer documented by the verified source endoscopic annotation. Do not infer additional anatomical specificity, etiology, subtype, severity, complications or histological findings.",
+            "interpretation": "Project-specific conditional mapping, not an official Kvasir-SNOMED crosswalk. Runtime must verify the active imported concept, complete FSN and semantic tag, accepted source descriptions, source fingerprint and required uniqueness. The policy does not validate the image annotation itself.",
+            "usage_scope": "Class-level clinical finding identification, preserving the source annotation provenance and context."
+          },
+          {
+            "rule_id": "ulcer_morphology_context",
+            "relation": "related",
+            "semantic_tags": [
               "morphologic abnormality"
             ],
             "accepted_fsn_labels": [
@@ -1861,15 +1932,13 @@
             ],
             "passage_ids": [
               "passage:KVASIR_2021",
-              "passage:MST3_OFFICIAL_TABLES",
               "passage:leenhardt_inflammatory_2020",
-              "passage:SNOMED_SYNONYM_GUIDANCE_2026",
-              "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
-              "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026"
+              "passage:SNOMED_AU_ULCER_SEMANTIC_DISTINCTION_2020",
+              "passage:SNOMED_MORPHOLOGY_FINDING_GUIDANCE_2026"
             ],
-            "rationale": "Retain the generic observed finding or morphology represented by this dataset class. The source FSN must contain no unapproved anatomical, etiological, severity, histological or disease qualifier. No diagnosis is inferred merely from a matching display term.",
-            "interpretation": "Conditional source-concept rule; not a claim that every named concept occurs in the imported release. Runtime must establish an active matching concept, accepted description, source identity and required uniqueness.",
-            "usage_scope": "Class-level meaning only, preserving Phase 2 observation role and original qualifiers; no new image attributes or patient diagnosis."
+            "rationale": "Retain the associated morphology as a distinct semantic representation, not as an interchangeable clinical finding.",
+            "interpretation": "Project-specific conditional mapping, not an official Kvasir-SNOMED crosswalk. Runtime must verify the active imported concept, complete FSN and semantic tag, accepted source descriptions, source fingerprint and required uniqueness. The policy does not validate the image annotation itself.",
+            "usage_scope": "Morphology context only; not an interchangeable label for the complete observed-finding representation."
           }
         ],
         "unmapped_reason": "no_source_accepted_candidate_for_current_search_seeds",
@@ -2214,14 +2283,15 @@
       "target_term": "Ulcer",
       "target_type": "diagnosis",
       "source_sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
-      "decision": "rejected",
+      "decision": "approved",
       "relation": "related",
       "required_attribute_constraints": [],
-      "rationale": "Exclude duplicate diagnosis-role target from this finding crosswalk; prefer its luminal finding entry. This does not declare the diagnosis medically false.",
+      "rationale": "Retain the source-located generic ulcer entry from MST Endoscopic Diagnoses as related endoscopic diagnostic context. The separate luminal finding entry remains the exact class mapping. This contextual association adds no etiology, subtype, severity, complications, histology or independent patient-level diagnosis.",
       "passage_ids": [
         "passage:KVASIR_2021",
         "passage:MST3_OFFICIAL_TABLES",
-        "passage:leenhardt_inflammatory_2020"
+        "passage:leenhardt_inflammatory_2020",
+        "passage:MST3_ULCER_ROLES"
       ],
       "source_locator": "Diagnoses!R103C2",
       "source_url": "https://www.worldendo.org/assets-craft/pdf/resources/mst30_tables.xls",
@@ -2229,7 +2299,8 @@
       "reviewer_type": "AI",
       "human_reviewed": false,
       "decision_is_inference": true,
-      "review_method": "AI_retrieval_grounded_review"
+      "review_method": "AI_retrieval_grounded_review",
+      "usage_scope": "Related endoscopic terminology only; excluded from interchangeable class synonym generation."
     },
     {
       "class_label": "ulcer",
@@ -2257,25 +2328,29 @@
     }
   ],
   "summary": {
-    "sources": 22,
-    "passages": 22,
+    "sources": 24,
+    "passages": 25,
     "class_profiles": 14,
     "target_decisions": 15,
-    "approved_targets": 13,
-    "rejected_targets": 2,
+    "approved_targets": 14,
+    "rejected_targets": 1,
     "snomed_concept_policies": 14,
-    "snomed_concept_rules": 15,
+    "snomed_concept_rules": 16,
     "policy_version": "concept-bound-mapping-v2"
   },
   "policy_version": "concept-bound-mapping-v2",
-  "evidence_version": "2026-11-12.2",
+  "evidence_version": "2026-11-13.1",
   "minimum_concept_policy_engine": "phase3-sector1-terminology-v1.4.6",
-  "supersedes_artifact_sha256": "861fa6516ebaf37e58b705413eaff91bd520f481179dcedc5cdf5e59c04b2403",
+  "supersedes_artifact_sha256": "ada83d98ed659c514d132dd4489cf241b4ac2fe098f17acdd82931ea52dec96d",
   "compatibility": {
-    "legacy_profile_fields_preserved": true,
-    "legacy_target_decisions_preserved": true,
+    "legacy_profile_fields_preserved": false,
+    "legacy_target_decisions_preserved": false,
     "new_semantic_policy_field": "snomed_concept_policy",
-    "legacy_engine_behavior": "Older engines ignore the new field and retain their conservative lexical checks; new relation types must never be inferred from changed legacy allowlists."
+    "legacy_engine_behavior": "This ulcer revision requires the existing v1.4.6 concept-policy engine; legacy field-level checks are not a substitute for the two scoped rules.",
+    "revised_class_labels": [
+      "ulcer"
+    ],
+    "revision_scope": "Only the ulcer profile and its MST diagnosis decision change; all other class profiles and target decisions are preserved."
   },
   "synonym_policy": {
     "policy_version": "source-concept-synonyms-v1",

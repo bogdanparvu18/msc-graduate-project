@@ -2,12 +2,12 @@
   "schema_version": "mmvqa-rag-github-manifest-v1",
   "artifact": {
     "path": "outputs/phase3/sector1/terminology/phase3_01_rag_evidence.json",
-    "bytes": 113611,
-    "sha256": "ada83d98ed659c514d132dd4489cf241b4ac2fe098f17acdd82931ea52dec96d",
+    "bytes": 119209,
+    "sha256": "4dd6c96b893c5b039d8bf9cf4a3d395a000b1a220d2797178e5fbf2b37790856",
     "schema_version": "mmvqa-rag-evidence-v1"
   },
-  "bundle_review_date": "2026-11-12",
-  "bundle_content_sha256": "34d7cdbb421e4a76ceb5c01760547384fe0dd382737346facacede1c07ecf90e",
+  "bundle_review_date": "2026-11-13",
+  "bundle_content_sha256": "4a2e5364dcfe403341fa42e2a9acc07698b126111e05b2a49b4c3b3185e12b1a",
   "phase2_source_commit_at_review": "35ffcb93020f84fde4bab7896c1a75e6ea322f7e",
   "verification_policy": "Fetch this manifest and its artifact from main; compare the downloaded artifact bytes to artifact.sha256 before parsing or using them.",
   "digest_scope": {
