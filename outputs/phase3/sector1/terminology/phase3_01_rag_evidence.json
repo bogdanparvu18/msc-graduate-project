@@ -704,6 +704,30 @@
       "review_date": "2026-11-13",
       "access_scope": "Complete guidance text read",
       "independence_note": "Official semantic modeling guidance; not an independent assessment of individual dataset annotations."
+    },
+    {
+      "source_id": "NCI_POLYP_DEFINITION_2026",
+      "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/polyp",
+      "title": "NCI Dictionary of Cancer Terms: polyp",
+      "authors": "National Cancer Institute",
+      "independent_of_dataset": true,
+      "source_role": "medical_reference",
+      "source_type": "primary_institutional_medical_definition",
+      "review_date": "2026-11-13",
+      "access_scope": "Complete polyp definition read",
+      "independence_note": "Defines a generic polyp; does not assess individual source images or establish a Kvasir-SNOMED mapping."
+    },
+    {
+      "source_id": "SNOMED_CLINICAL_FINDING_DISORDER_GUIDANCE_2026",
+      "url": "https://docs.snomed.org/snomed-ct-specifications/snomed-ct-editorial-guide/readme/authoring/domain-specific-modeling/clinical-finding-and-disorder",
+      "title": "SNOMED CT Editorial Guide: Clinical Finding and Disorder",
+      "authors": "SNOMED International",
+      "independent_of_dataset": true,
+      "source_role": "terminology_guidance",
+      "source_type": "official_primary_terminology_documentation",
+      "review_date": "2026-11-13",
+      "access_scope": "Definition, context and Findings and Disorders sections read",
+      "independence_note": "Explains the semantic hierarchy and clinical context; does not itself approve a mapping for the dataset."
     }
   ],
   "passages": [
@@ -907,6 +931,22 @@
       "source_sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
       "evidence_kind": "source_cells_and_explicit_project_interpretation",
       "decision_is_inference": true,
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:NCI_POLYP_DEFINITION_2026",
+      "source_id": "NCI_POLYP_DEFINITION_2026",
+      "location": "Definition of polyp, main definition paragraph",
+      "paraphrase": "A polyp is a growth projecting from a mucosal surface. This generic definition does not specify a histological subtype.",
+      "evidence_kind": "paraphrase",
+      "human_reviewed": false
+    },
+    {
+      "passage_id": "passage:SNOMED_CLINICAL_FINDING_DISORDER_GUIDANCE_2026",
+      "source_id": "SNOMED_CLINICAL_FINDING_DISORDER_GUIDANCE_2026",
+      "location": "Opening definitions and Findings and Disorders section",
+      "paraphrase": "The Clinical finding hierarchy includes Disorder as a subhierarchy. Disorder concepts represent necessarily abnormal clinical states; clinical findings can represent normal or abnormal observations, judgments or assessments. Selecting a concept still requires an appropriate clinical context.",
+      "evidence_kind": "paraphrase",
       "human_reviewed": false
     }
   ],
@@ -1764,12 +1804,15 @@
     },
     {
       "class_label": "polyp",
-      "rationale": "The source class matches the generic protruding finding. The decision supplies no histologic classification; independent guidance supports retaining a separate histology requirement.",
+      "rationale": "Represent the generic clinically identified polyp documented by a verified source endoscopic annotation. Use the generic clinical disorder concept as the canonical class-level representation and retain the distinct morphology as related context. No anatomical specificity, histological subtype, benign or malignant behavior, etiology, severity or histological confirmation is added.",
       "passage_ids": [
         "passage:KVASIR_2021",
         "passage:MST3_OFFICIAL_TABLES",
         "passage:jiang_capsule_supplement_2024",
-        "passage:ferlitsch_esge_2024"
+        "passage:ferlitsch_esge_2024",
+        "passage:NCI_POLYP_DEFINITION_2026",
+        "passage:SNOMED_CLINICAL_FINDING_DISORDER_GUIDANCE_2026",
+        "passage:SNOMED_MORPHOLOGY_FINDING_GUIDANCE_2026"
       ],
       "outcome": "mapped",
       "allowed_lexical_labels": [
@@ -1777,8 +1820,7 @@
       ],
       "allowed_target_types": {
         "SNOMED_CT": [
-          "finding",
-          "morphologic abnormality"
+          "disorder"
         ],
         "CEST": [
           "finding"
@@ -1805,10 +1847,39 @@
         ],
         "rules": [
           {
-            "rule_id": "polyp_observed_finding",
+            "rule_id": "polyp_observed_clinical_finding",
             "relation": "exact",
             "semantic_tags": [
-              "finding",
+              "disorder"
+            ],
+            "accepted_fsn_labels": [
+              "Polyp"
+            ],
+            "match_labels": [
+              "Polyp"
+            ],
+            "passage_ids": [
+              "passage:KVASIR_2021",
+              "passage:MST3_OFFICIAL_TABLES",
+              "passage:jiang_capsule_supplement_2024",
+              "passage:ferlitsch_esge_2024",
+              "passage:SNOMED_SYNONYM_GUIDANCE_2026",
+              "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
+              "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026",
+              "passage:NCI_POLYP_DEFINITION_2026",
+              "passage:SNOMED_CLINICAL_FINDING_DISORDER_GUIDANCE_2026",
+              "passage:SNOMED_MORPHOLOGY_FINDING_GUIDANCE_2026"
+            ],
+            "rationale": "Represent the generic clinically identified polyp documented by the verified source endoscopic annotation. Do not infer an additional anatomical site, histological subtype, dysplasia, benign or malignant behavior, etiology, severity or histological confirmation.",
+            "interpretation": "Conditional project-level mapping, not an official Kvasir-SNOMED crosswalk or a new diagnosis inferred from image pixels. Runtime must verify an active imported concept, the complete FSN and its semantic tag, accepted source descriptions, source provenance and the required uniqueness. The policy does not validate the source image annotation itself.",
+            "usage_scope": "Class-level clinical finding identification only, preserving Phase 2 annotation provenance and context. Only this exact clinical representation can supply interchangeable source-accepted class terms after the existing synonym audit.",
+            "decision_is_inference": true,
+            "human_reviewed": false
+          },
+          {
+            "rule_id": "polyp_morphology_context",
+            "relation": "related",
+            "semantic_tags": [
               "morphologic abnormality"
             ],
             "accepted_fsn_labels": [
@@ -1824,15 +1895,21 @@
               "passage:ferlitsch_esge_2024",
               "passage:SNOMED_SYNONYM_GUIDANCE_2026",
               "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
-              "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026"
+              "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026",
+              "passage:NCI_POLYP_DEFINITION_2026",
+              "passage:SNOMED_CLINICAL_FINDING_DISORDER_GUIDANCE_2026",
+              "passage:SNOMED_MORPHOLOGY_FINDING_GUIDANCE_2026"
             ],
-            "rationale": "Retain the generic observed finding or morphology represented by this dataset class. The source FSN must contain no unapproved anatomical, etiological, severity, histological or disease qualifier. No diagnosis is inferred merely from a matching display term.",
-            "interpretation": "Conditional source-concept rule; not a claim that every named concept occurs in the imported release. Runtime must establish an active matching concept, accepted description, source identity and required uniqueness.",
-            "usage_scope": "Class-level meaning only, preserving Phase 2 observation role and original qualifiers; no new image attributes or patient diagnosis."
+            "rationale": "Retain the generic polyp morphology as a distinct contextual terminology association. Morphology and the clinical polyp are separate semantic representations even when they share a display term; the morphology is not an interchangeable representation of the complete annotated clinical finding.",
+            "interpretation": "Conditional project-level mapping, not an official Kvasir-SNOMED crosswalk or a new diagnosis inferred from image pixels. Runtime must verify an active imported concept, the complete FSN and its semantic tag, accepted source descriptions, source provenance and the required uniqueness. The policy does not validate the source image annotation itself. This related association neither asserts nor verifies a direct Associated morphology relationship between imported concepts.",
+            "usage_scope": "Contextual terminology and RAG navigation only. Do not supply interchangeable class terms, replace the exact clinical representation, or infer image-level morphology attributes, histology, malignancy, etiology or severity.",
+            "decision_is_inference": true,
+            "human_reviewed": false
           }
         ],
         "unmapped_reason": "no_source_accepted_candidate_for_current_search_seeds",
-        "retrieval_note": "Search seeds locate possible source concepts. They are not automatically approved synonyms; the source concept, FSN and semantic role must satisfy a rule. No token-overlap or qualifier-dropping approval is allowed."
+        "retrieval_note": "Search seeds locate possible source concepts. They are not automatically approved synonyms; the source concept, FSN and semantic role must satisfy a rule. No token-overlap or qualifier-dropping approval is allowed.",
+        "semantic_role_note": "The explicit rules govern SNOMED candidates: disorder is eligible for exact class-level mapping, while morphologic abnormality is eligible only for related context. The legacy allowed_target_types field records the canonical clinical role. A shared term does not prove equivalence or a direct source relationship between the concepts."
       }
     },
     {
@@ -2423,29 +2500,29 @@
     }
   ],
   "summary": {
-    "sources": 24,
-    "passages": 25,
+    "sources": 26,
+    "passages": 27,
     "class_profiles": 14,
     "target_decisions": 15,
     "approved_targets": 14,
     "rejected_targets": 1,
     "snomed_concept_policies": 14,
-    "snomed_concept_rules": 19,
+    "snomed_concept_rules": 20,
     "policy_version": "concept-bound-mapping-v2"
   },
   "policy_version": "concept-bound-mapping-v2",
-  "evidence_version": "2026-11-13.4",
+  "evidence_version": "2026-11-13.5",
   "minimum_concept_policy_engine": "phase3-sector1-terminology-v1.4.6",
-  "supersedes_artifact_sha256": "e82a1a05d70a41384a70bdb204f164d772054e01ad5231ef7eec166477292728",
+  "supersedes_artifact_sha256": "1bce1d283eb6f204cb0e5b484766d9a59009195db52e429c17d4580808c6acdf",
   "compatibility": {
     "legacy_profile_fields_preserved": false,
     "legacy_target_decisions_preserved": false,
     "new_semantic_policy_field": "snomed_concept_policy",
-    "legacy_engine_behavior": "This ulcer revision requires the existing v1.4.6 concept-policy engine; legacy field-level checks are not a substitute for the two scoped rules.",
+    "legacy_engine_behavior": "These scoped SNOMED concept-role policies require the existing v1.4.6 concept-policy engine; legacy field-level checks are not a substitute for the explicit role-specific rules.",
     "revised_class_labels": [
-      "erythema"
+      "polyp"
     ],
-    "revision_scope": "Add an explicit related-only erythema morphology rule alongside the existing exact observed-finding rule. Clarify the finding rationale and shared morphology guidance paraphrase. Preserve other class profiles, target decisions, search aliases, source-description gates and source-synonym policy."
+    "revision_scope": "Replace the polyp rule that allowed finding/morphology exact matches with one generic clinical disorder exact rule and one morphology related rule. Add primary definition and semantic hierarchy evidence. Preserve all other class profiles, existing evidence, target decisions, retrieval behavior and synonym validation logic."
   },
   "synonym_policy": {
     "policy_version": "source-concept-synonyms-v1",
@@ -2510,17 +2587,37 @@
     "human_reviewed": false
   },
   "semantic_policy_update": {
-    "update_id": "erythema-contextual-morphology-v1",
+    "update_id": "polyp-clinical-and-morphology-roles-v1",
     "class_labels": [
-      "erythema"
+      "polyp"
+    ],
+    "replaced_rule_ids": [
+      "polyp_observed_finding"
     ],
     "added_rule_ids": [
-      "erythema_morphology_context"
+      "polyp_observed_clinical_finding",
+      "polyp_morphology_context"
     ],
     "source_guidance_review_date": "2026-11-13",
     "source_relationship_asserted": false,
     "decision_is_inference": true,
     "human_reviewed": false,
     "requires_runtime_source_validation": true
-  }
+  },
+  "semantic_policy_update_history": [
+    {
+      "update_id": "erythema-contextual-morphology-v1",
+      "class_labels": [
+        "erythema"
+      ],
+      "added_rule_ids": [
+        "erythema_morphology_context"
+      ],
+      "source_guidance_review_date": "2026-11-13",
+      "source_relationship_asserted": false,
+      "decision_is_inference": true,
+      "human_reviewed": false,
+      "requires_runtime_source_validation": true
+    }
+  ]
 }
