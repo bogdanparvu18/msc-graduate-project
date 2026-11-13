@@ -895,7 +895,7 @@
       "passage_id": "passage:SNOMED_MORPHOLOGY_FINDING_GUIDANCE_2026",
       "source_id": "SNOMED_MORPHOLOGY_FINDING_GUIDANCE_2026",
       "location": "Morphologic Abnormalities vs. Findings, opening guidance and attribute modeling explanation",
-      "paraphrase": "SNOMED distinguishes structural abnormalities from clinical findings and advises against substituting a morphology concept for a finding. Morphology concepts can supply defining attribute values. This supports retaining the ulcer morphology as context while selecting a separate clinical representation for the annotated finding.",
+      "paraphrase": "SNOMED distinguishes structural morphologic abnormalities from clinical findings and advises against substituting a morphology concept for a finding. Morphology concepts can supply values of defining attributes of findings and procedures. This general guidance does not establish a specific relationship between individual concepts in an imported release.",
       "evidence_kind": "paraphrase",
       "human_reviewed": false
     },
@@ -1300,7 +1300,7 @@
     },
     {
       "class_label": "erythema",
-      "rationale": "Dataset redness aligns with the target mucosal descriptor. Keep related because a noun label and a contextual adjective are not unrestricted interchangeable identifiers.",
+      "rationale": "The source class denotes observed erythema/redness. A verified generic SNOMED finding can represent this class-level meaning; a morphology concept is retained only as related context. The MST adjective Erythematous remains a contextual descriptor rather than an unrestricted interchangeable identifier.",
       "passage_ids": [
         "passage:KVASIR_2021",
         "passage:MST3_OFFICIAL_TABLES",
@@ -1358,13 +1358,40 @@
               "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
               "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026"
             ],
-            "rationale": "Retain the generic observed finding or morphology represented by this dataset class. The source FSN must contain no unapproved anatomical, etiological, severity, histological or disease qualifier. No diagnosis is inferred merely from a matching display term.",
+            "rationale": "Retain the generic observed erythema finding represented by this dataset class. The source FSN must contain no unapproved anatomical, etiological, severity, histological or disease qualifier. No diagnosis is inferred merely from a matching display term. Morphology concepts are handled separately as related context.",
             "interpretation": "Conditional source-concept rule; not a claim that every named concept occurs in the imported release. Runtime must establish an active matching concept, accepted description, source identity and required uniqueness.",
             "usage_scope": "Class-level meaning only, preserving Phase 2 observation role and original qualifiers; no new image attributes or patient diagnosis."
+          },
+          {
+            "rule_id": "erythema_morphology_context",
+            "relation": "related",
+            "semantic_tags": [
+              "morphologic abnormality"
+            ],
+            "accepted_fsn_labels": [
+              "Erythema"
+            ],
+            "match_labels": [
+              "Erythema"
+            ],
+            "passage_ids": [
+              "passage:KVASIR_2021",
+              "passage:annese_ecco_2013",
+              "passage:SNOMED_MORPHOLOGY_FINDING_GUIDANCE_2026",
+              "passage:SNOMED_SYNONYM_GUIDANCE_2026",
+              "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
+              "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026"
+            ],
+            "rationale": "Retain the generic erythema morphology as a contextual terminology association for the source class. The morphology and the clinical finding are distinct semantic representations, even when they share the term Erythema. This association does not establish exact equivalence with the complete annotated finding.",
+            "interpretation": "Conditional project-level mapping rule. Runtime must verify an active imported concept, the accepted FSN label, the morphologic abnormality semantic tag, accepted source descriptions and source provenance. This rule neither asserts nor verifies a direct Associated morphology relationship between SNOMED concepts.",
+            "usage_scope": "Contextual terminology and RAG navigation only. Do not use this mapping to supply interchangeable class terms, replace the approved finding representation, or infer an etiology, histological confirmation, severity or additional image-level attributes.",
+            "decision_is_inference": true,
+            "human_reviewed": false
           }
         ],
         "unmapped_reason": "no_source_accepted_candidate_for_current_search_seeds",
-        "retrieval_note": "Search seeds locate possible source concepts. They are not automatically approved synonyms; the source concept, FSN and semantic role must satisfy a rule. No token-overlap or qualifier-dropping approval is allowed."
+        "retrieval_note": "Search seeds locate possible source concepts. They are not automatically approved synonyms; the source concept, FSN and semantic role must satisfy a rule. No token-overlap or qualifier-dropping approval is allowed.",
+        "semantic_role_note": "The explicit rules govern SNOMED candidates: finding is eligible for exact class-level mapping, while morphologic abnormality is eligible only for related context. The legacy allowed_target_types field remains the finding fallback profile; it is not an exhaustive list of contextual roles. A shared term does not prove a source relationship between the two concepts."
       }
     },
     {
@@ -2403,22 +2430,22 @@
     "approved_targets": 14,
     "rejected_targets": 1,
     "snomed_concept_policies": 14,
-    "snomed_concept_rules": 18,
+    "snomed_concept_rules": 19,
     "policy_version": "concept-bound-mapping-v2"
   },
   "policy_version": "concept-bound-mapping-v2",
-  "evidence_version": "2026-11-13.3",
+  "evidence_version": "2026-11-13.4",
   "minimum_concept_policy_engine": "phase3-sector1-terminology-v1.4.6",
-  "supersedes_artifact_sha256": "2ad9f2228e9486d04971dc08f29c68284258f777d6090014f9633cf7d4027c98",
+  "supersedes_artifact_sha256": "e82a1a05d70a41384a70bdb204f164d772054e01ad5231ef7eec166477292728",
   "compatibility": {
     "legacy_profile_fields_preserved": false,
     "legacy_target_decisions_preserved": false,
     "new_semantic_policy_field": "snomed_concept_policy",
     "legacy_engine_behavior": "This ulcer revision requires the existing v1.4.6 concept-policy engine; legacy field-level checks are not a substitute for the two scoped rules.",
     "revised_class_labels": [
-      "pylorus"
+      "erythema"
     ],
-    "revision_scope": "Declare the existing pylorus source-description retrieval and accepted-FSN anchoring behavior as data. All clinical rules, aliases, evidence references and target decisions remain unchanged. Other profiles default to accepted synonym retrieval and synonym anchors."
+    "revision_scope": "Add an explicit related-only erythema morphology rule alongside the existing exact observed-finding rule. Clarify the finding rationale and shared morphology guidance paraphrase. Preserve other class profiles, target decisions, search aliases, source-description gates and source-synonym policy."
   },
   "synonym_policy": {
     "policy_version": "source-concept-synonyms-v1",
@@ -2481,5 +2508,19 @@
     "new_medical_evidence_added": false,
     "clinical_mapping_rules_changed": false,
     "human_reviewed": false
+  },
+  "semantic_policy_update": {
+    "update_id": "erythema-contextual-morphology-v1",
+    "class_labels": [
+      "erythema"
+    ],
+    "added_rule_ids": [
+      "erythema_morphology_context"
+    ],
+    "source_guidance_review_date": "2026-11-13",
+    "source_relationship_asserted": false,
+    "decision_is_inference": true,
+    "human_reviewed": false,
+    "requires_runtime_source_validation": true
   }
 }
