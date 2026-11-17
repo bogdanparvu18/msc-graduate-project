@@ -9,14 +9,22 @@ jobs:
   source:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: 100ec0d42a5b85c153f39d170a260ea882e21a52
+      - name: Fetch exact source files without large dataset checkout
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from urllib.request import urlopen
+          ref = '100ec0d42a5b85c153f39d170a260ea882e21a52'
+          files = ['notebooks/phase3/phase3_01_terminology_mapping.ipynb', 'outputs/phase3/sector1/terminology/phase3_01_rag_evidence.json', 'outputs/phase3/sector1/terminology/rag_evidence_manifest.json', 'outputs/phase3/sector1/terminology/ulcer_policy_regression.json']
+          for name in files:
+              p = Path(name); p.parent.mkdir(parents=True, exist_ok=True)
+              with urlopen('https://raw.githubusercontent.com/bogdanparvu18/msc-graduate-project/' + ref + '/' + name) as r:
+                  p.write_bytes(r.read())
+          PY
       - uses: actions/upload-artifact@v4
         with:
           name: cest-integration-latest-main
           path: |
             notebooks/phase3/phase3_01_terminology_mapping.ipynb
             outputs/phase3/sector1/terminology/*.json
-            tests/**
           retention-days: 1
