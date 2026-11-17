@@ -1,0 +1,14 @@
+{
+  "artifact": {
+    "bytes": 218005,
+    "path": "outputs/phase3/sector1/terminology/cest_2005_package.json",
+    "sha256": "267a5aab79c62c81a8cb55a115a1bb7a6a76252562004747fb33f8aa357c8180"
+  },
+  "citation": "Capsule Endoscopy Structured Terminology (CEST), Endoscopy 2005; 37: 951-959 (February 16, 2002 © Given Imaging Ltd.). doi:10.1055/s-2005-870329",
+  "copyright_notice": "Copyright and Terms of Use\nCopyright © 2005 Given Imaging Ltd. (“Given Imaging”). All rights reserved.\nThis Capsule Endoscopy Structured Terminology (CEST) is a copyrighted work, protected by United States and worldwide copyright laws and treaties. Users of the CEST are hereby granted a free license to use, copy or distribute the CEST in connection with supporting a structured terminology for capsule endoscopy, subject to the following conditions:\n1. This copyright and terms of use notice must be displayed on each and every copy of the CEST, on all manuals and other materials used in connection with the CEST, including without limitation electronic media (i. e., disks, CD-ROMs, etc.), and in all text files loaded onto electronic media or the Internet. Such copyright and terms of use notice shall not be removed, obscured, modified or otherwise hidden. All references to the CEST, in whole or in part, shall properly cite the CEST as the source for such reference. Proper citation shall read “Capsule Endoscopy Structured Terminology (CEST), Endoscopy 2005; 37: 951-959 (February 16, 2002 © Given Imaging Ltd.)”.\n2. The CEST shall not be used, in whole or in part, to harm or degrade the reputation of Given Imaging or any participant in the Given Capsule Standard Working Group (the “GCSWG”).\n3. Neither Given Imaging nor any participant in the GCSWG shall be liable for any errors or omissions contained in the CEST, or for any use you or any third party may make of the CEST. Given Imaging reserves the right to make changes to the CEST without notice. The information contained in the CEST is provided on an “as is” basis without any warranties, express or implied, including but not limited to the results or effects obtained through use of information, or that it is fit for any use intended or can be used without infringing the copyright or other proprietary rights of any third party. All express and implied warranties, including those relating to title, non-infringement, merchantability or fitness for a particular purpose, are hereby expressly disclaimed and excluded with respect to any information provided hereunder.",
+  "original_document_bytes": 209520,
+  "original_document_sha256": "8e4157bea0c1cfa299458df7881a7fddd0713f18e2994c502f74621c454b029a",
+  "package_content_sha256": "31c3e068850563fd2e561c85e97cca8f8336f782e90a05a78b8b948f279e3c4c",
+  "schema_version": "mmvqa-cest-github-manifest-v1",
+  "source_fingerprint": "c4f3c4562e4e999bb35b176471a2cbbb33f35d872cbeb55adc060b6e26650874"
+}

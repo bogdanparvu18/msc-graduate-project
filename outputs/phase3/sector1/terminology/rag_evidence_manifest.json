@@ -1,18 +1,18 @@
 {
-  "schema_version": "mmvqa-rag-github-manifest-v1",
   "artifact": {
+    "bytes": 156552,
     "path": "outputs/phase3/sector1/terminology/phase3_01_rag_evidence.json",
-    "bytes": 133999,
-    "sha256": "707ae6de6eb294564132b82a4189b99ee273501b4f54e8936f7159580de15b85",
-    "schema_version": "mmvqa-rag-evidence-v1"
+    "schema_version": "mmvqa-rag-evidence-v1",
+    "sha256": "b5d26aa1592726770e4d54e0399d7832754bcf2215ff6c71eab8c3de251671f3"
   },
-  "bundle_review_date": "2026-11-13",
-  "bundle_content_sha256": "ca11d96be14888a0c631f0344237d91c9f3cb7e61a0d4bd1cb377064fa032298",
-  "phase2_source_commit_at_review": "35ffcb93020f84fde4bab7896c1a75e6ea322f7e",
-  "verification_policy": "Fetch this manifest and its artifact from main; compare the downloaded artifact bytes to artifact.sha256 before parsing or using them.",
+  "bundle_content_sha256": "c0e821337fac98bcbde12fe5d1fd1ceacf37cff87e670de35bc2f7858e9abc0a",
+  "bundle_review_date": "2026-11-16",
   "digest_scope": {
     "artifact.sha256": "Exact UTF-8 file bytes, including whitespace and final newline.",
     "bundle_content_sha256": "Canonical parsed JSON: ensure_ascii=False, sort_keys=True, separators=(comma,colon), allow_nan=False."
   },
-  "mapping_policy_version": "concept-bound-mapping-v2"
+  "mapping_policy_version": "concept-bound-mapping-v2",
+  "phase2_source_commit_at_review": "35ffcb93020f84fde4bab7896c1a75e6ea322f7e",
+  "schema_version": "mmvqa-rag-github-manifest-v1",
+  "verification_policy": "Fetch this manifest and its artifact from main; compare the downloaded artifact bytes to artifact.sha256 before parsing or using them."
 }

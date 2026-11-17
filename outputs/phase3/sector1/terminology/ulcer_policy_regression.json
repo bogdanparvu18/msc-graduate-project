@@ -1,34 +1,34 @@
 {
-  "schema_version": "mmvqa-snomed-policy-regression-v1",
-  "purpose": "Offline regression expectations for a specific policy snapshot; never a runtime medical policy or a requirement that these concepts occur in every RF2 release.",
-  "policy_reference": {
-    "path": "outputs/phase3/sector1/terminology/phase3_01_rag_evidence.json",
-    "policy_version": "concept-bound-mapping-v2",
-    "bundle_content_sha256": "ca11d96be14888a0c631f0344237d91c9f3cb7e61a0d4bd1cb377064fa032298"
-  },
   "cases": [
     {
       "case_id": "ulcer_policy_regression",
       "class_label": "ulcer",
-      "terminology": "SNOMED_CT",
-      "input_label": "Ulcer",
       "expected_mapping_roles": [
         {
-          "semantic_tag": "disorder",
           "relation": "exact",
-          "rule_id": "ulcer_observed_clinical_finding"
+          "rule_id": "ulcer_observed_clinical_finding",
+          "semantic_tag": "disorder"
         },
         {
-          "semantic_tag": "morphologic abnormality",
           "relation": "related",
-          "rule_id": "ulcer_morphology_context"
+          "rule_id": "ulcer_morphology_context",
+          "semantic_tag": "morphologic abnormality"
         }
       ],
+      "input_label": "Ulcer",
       "input_requirements": [
         "Use synthetic active concepts and accepted descriptions with the input label and each semantic tag.",
         "Use matching source fingerprints and evidence-backed class profiles.",
         "Evaluate with build_rag_mapping_reviews and compare accepted audit relation and concept_policy_rule_id."
-      ]
+      ],
+      "terminology": "SNOMED_CT"
     }
-  ]
+  ],
+  "policy_reference": {
+    "bundle_content_sha256": "c0e821337fac98bcbde12fe5d1fd1ceacf37cff87e670de35bc2f7858e9abc0a",
+    "path": "outputs/phase3/sector1/terminology/phase3_01_rag_evidence.json",
+    "policy_version": "concept-bound-mapping-v2"
+  },
+  "purpose": "Offline regression expectations for a specific policy snapshot; never a runtime medical policy or a requirement that these concepts occur in every RF2 release.",
+  "schema_version": "mmvqa-snomed-policy-regression-v1"
 }
