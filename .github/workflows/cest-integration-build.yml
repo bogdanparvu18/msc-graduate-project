@@ -1,0 +1,20 @@
+name: CEST integration workspace
+on:
+  push:
+    branches: [feat/cest-2005-source-integration]
+    paths: [.github/workflows/cest-integration-build.yml]
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cest-integration-baseline
+          path: |
+            notebooks/phase3/phase3_01_terminology_mapping.ipynb
+            outputs/phase3/sector1/terminology/*.json
+            tests/**
+          retention-days: 1
