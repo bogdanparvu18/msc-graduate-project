@@ -10,9 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: 100ec0d42a5b85c153f39d170a260ea882e21a52
       - uses: actions/upload-artifact@v4
         with:
-          name: cest-integration-baseline
+          name: cest-integration-latest-main
           path: |
             notebooks/phase3/phase3_01_terminology_mapping.ipynb
             outputs/phase3/sector1/terminology/*.json
