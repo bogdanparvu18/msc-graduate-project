@@ -1,0 +1,44 @@
+name: CEST regression
+on:
+  push:
+    branches: [feat/cest-declarative-integration]
+    paths:
+      - '.github/workflows/cest-regression.yml'
+      - 'scripts/phase3/cest*'
+      - 'tests/test_cest*'
+  pull_request:
+    paths:
+      - 'notebooks/phase3/phase3_01_terminology_mapping.ipynb'
+      - 'outputs/phase3/sector1/terminology/cest*'
+      - 'tests/test_cest*'
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            notebooks/phase3/phase3_01_terminology_mapping.ipynb
+            outputs/phase3/sector1/terminology
+            scripts/phase3
+            tests
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test dependencies
+        run: python -m pip install pandas pyarrow xlrd pytest
+      - name: Run CEST tests when present
+        run: |
+          if test -f tests/test_cest_integration.py; then
+            python -m pytest tests/test_cest_integration.py -q
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cest-reviewed-source
+          path: |
+            notebooks/phase3/phase3_01_terminology_mapping.ipynb
+            outputs/phase3/sector1/terminology/*.json
+          retention-days: 2
