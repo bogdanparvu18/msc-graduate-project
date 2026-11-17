@@ -40,9 +40,10 @@ def engine():
             TERMINOLOGY_CONFIG={'mapping_review_path':None})
     wanted={'canonical_json','canonical_sha256','parse_attribute_constraints','clean_json_value',
             '_rag_github_path','_rag_github_sha','_rag_github_json','_rag_github_local_path',
-            '_rag_github_temporary','load_github_verified_artifact','file_digest','verify_file'}
+            '_rag_github_temporary','validate_github_manifest','load_github_verified_artifact','file_digest','verify_file'}
     nodes=[n for n in ast.parse(code(3)).body if isinstance(n,ast.FunctionDef) and n.name in wanted]
     exec_source(ast.unparse(ast.Module(body=nodes,type_ignores=[])),ns)
+    ns['GITHUB_MANIFEST_LIMITS'] = {'manifest_bytes':1024*1024,'artifact_bytes':32*1024*1024}
     exec_source(code(11).split('GI_GITHUB_CONFIG =')[0],ns)
     # SNOMED policy validation is used, but no actual RF2 or network is loaded.
     nodes=[n for n in ast.parse(code(13)).body if isinstance(n,ast.FunctionDef) and n.name=='snomed_description_policy']
@@ -285,3 +286,22 @@ def test_source_tables_parquet_roundtrip(assets,tmp_path):
     for name in ['terms','attributes','source_contexts','source_notes','unbound_source_values']:
         table=assets['bundle'][name];p=tmp_path/(name+'.parquet');table.to_parquet(p,index=False)
         assert pd.read_parquet(p).shape==table.shape
+
+
+def test_cest_reuses_shared_manifest_validator(engine,monkeypatch):
+    original=engine["validate_github_manifest"]; calls=[]
+    def traced(data,specification):
+        calls.append(specification["label"])
+        return original(data,specification)
+    monkeypatch.setitem(engine,"validate_github_manifest",traced)
+    engine["_cest_github_manifest"]((OUT/"cest_2005_manifest.json").read_bytes())
+    assert calls==["CEST"]
+
+
+@pytest.mark.parametrize("change",["schema","oversized"])
+def test_cest_shared_manifest_guards(engine,change):
+    manifest=json.loads((OUT/"cest_2005_manifest.json").read_text())
+    if change=="schema":manifest["artifact"]["schema_version"]="wrong"
+    data=json.dumps(manifest).encode()
+    if change=="oversized":data=b" "*(1024*1024+1)+data
+    with pytest.raises(ValueError):engine["_cest_github_manifest"](data)

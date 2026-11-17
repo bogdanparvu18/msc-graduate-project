@@ -2,6 +2,7 @@
   "artifact": {
     "bytes": 218005,
     "path": "outputs/phase3/sector1/terminology/cest_2005_package.json",
+    "schema_version": "mmvqa-cest-transcription-v1",
     "sha256": "267a5aab79c62c81a8cb55a115a1bb7a6a76252562004747fb33f8aa357c8180"
   },
   "citation": "Capsule Endoscopy Structured Terminology (CEST), Endoscopy 2005; 37: 951-959 (February 16, 2002 © Given Imaging Ltd.). doi:10.1055/s-2005-870329",

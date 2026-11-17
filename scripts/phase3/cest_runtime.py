@@ -81,19 +81,16 @@ def validate_cest_transcription(payload):
     return payload
 
 
+CEST_GITHUB_MANIFEST_SPECIFICATION = {"label":"CEST", "manifest_schema":"mmvqa-cest-github-manifest-v1", "artifact_schema":"mmvqa-cest-transcription-v1", "artifact_label":"CEST transcription", "content_hash_field":"package_content_sha256"}
+
+
 def _cest_github_manifest(data):
-    manifest = _rag_github_json(data)
-    if not isinstance(manifest,dict) or manifest.get('schema_version') != 'mmvqa-cest-github-manifest-v1':
-        raise ValueError('Unsupported CEST manifest')
-    artifact = manifest.get('artifact')
-    if not isinstance(artifact,dict):
-        raise ValueError('CEST manifest artifact missing')
-    _rag_github_path(artifact.get('path'))
-    _rag_github_sha(artifact.get('sha256'),'artifact.sha256')
-    if type(artifact.get('bytes')) is not int or not 0 < artifact['bytes'] <= 8 * 1024 * 1024:
-        raise ValueError('CEST artifact size is invalid')
-    for key in ('package_content_sha256','original_document_sha256','source_fingerprint'):
-        _rag_github_sha(manifest.get(key),key)
+    manifest = validate_github_manifest(data, CEST_GITHUB_MANIFEST_SPECIFICATION)
+    artifact = manifest["artifact"]
+    if artifact["bytes"] > 8 * 1024 * 1024:
+        raise ValueError("CEST artifact size exceeds 8 MiB")
+    for key in ("original_document_sha256", "source_fingerprint"):
+        _rag_github_sha(manifest.get(key), key)
     expected = hashlib.sha256(b'mmvqa-cest-source-snapshot-v1\0' +
         bytes.fromhex(manifest['original_document_sha256']) + bytes.fromhex(artifact['sha256'])).hexdigest()
     if expected != manifest['source_fingerprint']:

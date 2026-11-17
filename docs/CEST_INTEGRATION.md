@@ -1,6 +1,6 @@
 # CEST 2005 on the PR26 declarative engine
 
-Base: `7a3215d963e035e5e157d82a14e8226e47a78d8f` (PR26 merged).
+Base: `07d6a44ae03ff3573230ff574ae16286b263bc99` (PR26 and PR27 merged). CEST also reuses the shared manifest validator from PR27.
 
 ## Use
 

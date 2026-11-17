@@ -11,7 +11,7 @@ import json
 
 ROOT = Path(__file__).resolve().parents[2]
 NOTEBOOK = 'notebooks/phase3/phase3_01_terminology_mapping.ipynb'
-BASE_BLOB = '5144fb8be5f4e40eda495e69f18c665aa78aa173'
+BASE_BLOB = '0fdba69fc91f77be3720a55fe9b0e5392f936534'
 
 ACQUISITION = '''CEST_DOCUMENT_DRIVE_PATH = acquire_ontology_input(
     "CEST_DOCUMENT", TERMINOLOGY_CONFIG["cest_document_path"],

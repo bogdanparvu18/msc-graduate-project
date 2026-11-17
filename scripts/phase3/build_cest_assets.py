@@ -182,7 +182,7 @@ def build(root=ROOT):
     package,ids=build_package(); path=out/'cest_2005_package.json';write(path,package)
     digest=sha(path.read_bytes())
     fingerprint=sha(b'mmvqa-cest-source-snapshot-v1\0'+bytes.fromhex(PDF_SHA)+bytes.fromhex(digest))
-    manifest={'schema_version':'mmvqa-cest-github-manifest-v1','artifact':{
+    manifest={'schema_version':'mmvqa-cest-github-manifest-v1','artifact':{'schema_version':'mmvqa-cest-transcription-v1',
         'path':'outputs/phase3/sector1/terminology/cest_2005_package.json','bytes':path.stat().st_size,'sha256':digest},
         'package_content_sha256':sha(encoded(package)),'original_document_sha256':PDF_SHA,
         'original_document_bytes':209520,'source_fingerprint':fingerprint,'copyright_notice':NOTICE,'citation':CITATION}
