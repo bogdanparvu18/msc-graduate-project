@@ -111,8 +111,8 @@
   },
   {
     "relative_path": "coverage_contract.json",
-    "bytes": 2895811,
-    "sha256": "f5fdb2ea28a2bc88709414774694d4f3677664dbbad1a9b510a50deabba84c63"
+    "bytes": 2976002,
+    "sha256": "6cd5547fd20c679ebf9e7ae5480010cf2fe6083c650fcdf486c4dea674daf6dc"
   },
   {
     "relative_path": "coverage_contract.parquet",
