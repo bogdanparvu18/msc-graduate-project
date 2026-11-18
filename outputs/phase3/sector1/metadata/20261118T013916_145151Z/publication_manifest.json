@@ -1,6 +1,6 @@
 {
   "drive_artifacts_manifest_path": "outputs/phase3/sector1/metadata/20261118T013916_145151Z/configs/drive_artifacts_manifest.json",
-  "drive_artifacts_manifest_sha256": "9c0ad1c07513b26d369f27815f9970b8fa1a6079dcf37d951c0201325cc4bf6a",
+  "drive_artifacts_manifest_sha256": "980c3354eacba8b54abc833515a8b3da004edf903447c40eae56152e833ee60f",
   "files": [
     {
       "bytes": 2161,
@@ -69,10 +69,10 @@
       "sha256": "d77016cd344dcff954115745ca435533ea1ba55b1b9b5e121780edf99638eefe"
     },
     {
-      "bytes": 443161,
+      "bytes": 452732,
       "relative_path": "class_crosswalk.json",
       "repository_path": "outputs/phase3/sector1/metadata/20261118T013916_145151Z/results/class_crosswalk.json",
-      "sha256": "b65485dc527a1abb309d69a31d1389296518e33cb61e31028dae7cb4628f6fa6"
+      "sha256": "3bb8ce10ffefc78892199e2f8b6e633d6581bd737cf459d69c5204ffa8e8eb71"
     },
     {
       "bytes": 2337,
@@ -108,7 +108,7 @@
       "bytes": 19377,
       "relative_path": "files_manifest.json",
       "repository_path": "outputs/phase3/sector1/metadata/20261118T013916_145151Z/results/files_manifest.json",
-      "sha256": "f27dd7537b3604edc96d602e355f946e9d9444e4c8b762a32e7ecafa1f5f587c"
+      "sha256": "465cc4b0db6e979b5257eb0790784051cae6606b4b2b51505f5503b24f0ab5cd"
     },
     {
       "bytes": 2162,
@@ -483,13 +483,13 @@
       "sha256": "f34a41997e3f6437f63d81777cfe10336b5c20b873657647eac1e3296a9b4362"
     },
     {
-      "bytes": 14735,
+      "bytes": 14844,
       "relative_path": "drive_artifacts_manifest.json",
       "repository_path": "outputs/phase3/sector1/metadata/20261118T013916_145151Z/configs/drive_artifacts_manifest.json",
-      "sha256": "9c0ad1c07513b26d369f27815f9970b8fa1a6079dcf37d951c0201325cc4bf6a"
+      "sha256": "980c3354eacba8b54abc833515a8b3da004edf903447c40eae56152e833ee60f"
     }
   ],
-  "files_manifest_sha256": "f27dd7537b3604edc96d602e355f946e9d9444e4c8b762a32e7ecafa1f5f587c",
+  "files_manifest_sha256": "465cc4b0db6e979b5257eb0790784051cae6606b4b2b51505f5503b24f0ab5cd",
   "layout_root": "outputs/phase3/sector1/metadata/20261118T013916_145151Z",
   "layout_version": "phase3-sector1-phase2-layout-v1",
   "max_file_bytes": 52428800,
@@ -750,5 +750,19 @@
       "relative_path": "terminology_terms.parquet",
       "sha256": "eae907cf084ad29f7a8ef70872c261fa72c40b1817606c909921dae94c6c3930"
     }
-  ]
+  ],
+  "source_export": {
+    "data_commit": "5a2a57da0b42dbcb7a33a848d4f1c1aafadab58c",
+    "files_manifest_sha256": "f27dd7537b3604edc96d602e355f946e9d9444e4c8b762a32e7ecafa1f5f587c",
+    "drive_artifacts_manifest_sha256": "9c0ad1c07513b26d369f27815f9970b8fa1a6079dcf37d951c0201325cc4bf6a",
+    "publication_manifest_sha256": "ecab7b9364d7c3b4b08673734e4f627134e8b74ee3501cc21641f9f315b7460b",
+    "reserialized_artifacts": [
+      {
+        "relative_path": "class_crosswalk.json",
+        "bytes": 443161,
+        "sha256": "b65485dc527a1abb309d69a31d1389296518e33cb61e31028dae7cb4628f6fa6",
+        "change": "json_indentation_only"
+      }
+    ]
+  }
 }

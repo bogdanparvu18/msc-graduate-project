@@ -274,7 +274,7 @@
       "verification_status": "vm_and_drive_sha256_verified"
     }
   ],
-  "files_manifest_sha256": "f27dd7537b3604edc96d602e355f946e9d9444e4c8b762a32e7ecafa1f5f587c",
+  "files_manifest_sha256": "465cc4b0db6e979b5257eb0790784051cae6606b4b2b51505f5503b24f0ab5cd",
   "integrity_status": "vm_and_drive_bytes_sha256_verified",
   "run_id": "20261118T013916_145151Z",
   "schema_version": "mmvqa-sector1-drive-artifacts-v1",
@@ -282,5 +282,6 @@
     "relative_root": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology",
     "resolution": "Path(STORAGE_ROOT) / storage_relative_path",
     "root_variable": "STORAGE_ROOT"
-  }
+  },
+  "source_export_files_manifest_sha256": "f27dd7537b3604edc96d602e355f946e9d9444e4c8b762a32e7ecafa1f5f587c"
 }
