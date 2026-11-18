@@ -1,0 +1,35 @@
+{
+  "schema_version": "mmvqa-rag-github-source-v1",
+  "repository": "bogdanparvu18/msc-graduate-project",
+  "repository_ref": "main",
+  "manifest_path": "outputs/phase3/sector1/terminology/rag_evidence_manifest.json",
+  "manifest_url": "https://raw.githubusercontent.com/bogdanparvu18/msc-graduate-project/main/outputs/phase3/sector1/terminology/rag_evidence_manifest.json",
+  "manifest_sha256": "a184bcc95b2409783727cf11801ff8b184bd3315d189759e1cee77bd391436f2",
+  "manifest_bytes": 983,
+  "manifest_local_path": "/content/mmvqa_phase3_sector1/rag_github_cache/bogdanparvu18__msc-graduate-project/0d6e4079e36703eb/manifests/a184bcc95b2409783727cf11801ff8b184bd3315d189759e1cee77bd391436f2.json",
+  "artifact_path": "outputs/phase3/sector1/terminology/phase3_01_rag_evidence.json",
+  "artifact_url": "https://raw.githubusercontent.com/bogdanparvu18/msc-graduate-project/main/outputs/phase3/sector1/terminology/phase3_01_rag_evidence.json",
+  "artifact_bytes": 156552,
+  "source_sha256": "b5d26aa1592726770e4d54e0399d7832754bcf2215ff6c71eab8c3de251671f3",
+  "vm_sha256": "b5d26aa1592726770e4d54e0399d7832754bcf2215ff6c71eab8c3de251671f3",
+  "bundle_content_sha256": "c0e821337fac98bcbde12fe5d1fd1ceacf37cff87e670de35bc2f7858e9abc0a",
+  "bundle_review_date": "2026-11-16",
+  "phase2_source_commit_at_review": "35ffcb93020f84fde4bab7896c1a75e6ea322f7e",
+  "local_path": "/content/mmvqa_phase3_sector1/rag_github_cache/bogdanparvu18__msc-graduate-project/0d6e4079e36703eb/artifacts/b5d26aa1592726770e4d54e0399d7832754bcf2215ff6c71eab8c3de251671f3/phase3_01_rag_evidence.json",
+  "cache_status": "downloaded_and_verified",
+  "attempts_used": 1,
+  "manifest_downloads": 2,
+  "artifact_downloads": 1,
+  "attempt_log": [
+    {
+      "attempt": 1,
+      "manifest_sha256": "a184bcc95b2409783727cf11801ff8b184bd3315d189759e1cee77bd391436f2",
+      "confirmed_manifest_sha256": "a184bcc95b2409783727cf11801ff8b184bd3315d189759e1cee77bd391436f2",
+      "artifact_sha256": "b5d26aa1592726770e4d54e0399d7832754bcf2215ff6c71eab8c3de251671f3",
+      "status": "verified"
+    }
+  ],
+  "verification_status": "verified",
+  "reference_stability_check": "manifest_identical_before_and_after_artifact_verification",
+  "integrity_scope": "GitHub manifest reference and matching file bytes/content; not clinical validation or a pinned main commit"
+}

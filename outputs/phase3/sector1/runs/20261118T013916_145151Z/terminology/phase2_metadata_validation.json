@@ -1,0 +1,41 @@
+{
+  "status": "complete_metadata_verified",
+  "table_counts": {
+    "source_evidence_manifest": 66127,
+    "visual_manifest": 184328,
+    "visual_source_manifest": 478701,
+    "benchmark_ground_truth_manifest": 47239,
+    "shared_source_groups": 237,
+    "skipped_products": 80475,
+    "benchmark_input_manifest": 216808
+  },
+  "source_files": 66127,
+  "visual_artifacts": 184328,
+  "visual_artifacts_referenced_in_recipes": 184328,
+  "visual_artifacts_without_recipe": [],
+  "ordered_input_slots": 309381,
+  "subjects": 47239,
+  "recipes": 216808,
+  "variants": {
+    "combined": 24164,
+    "comparison": 3357,
+    "crop": 4127,
+    "full": 47239,
+    "fullcrop": 4127,
+    "fullcrop_panel": 4127,
+    "overlay": 4127,
+    "progression": 33861,
+    "qc": 47239,
+    "temporal_collage": 22220,
+    "temporal_multi": 22220
+  },
+  "subjects_with_all_demo_variants": 2183,
+  "unexplained_subjects_without_recipes": 0,
+  "recipes_without_subjects": 0,
+  "recipes_without_manifest_rows": 0,
+  "unresolved_identity_contradictions": 0,
+  "all_recipe_metadata_verified": true,
+  "all_pixels_reverified_now": false,
+  "pixel_authority": "Completed S8 snapshot; no image pixels are reverified in the terminology stage.",
+  "training_ready": false
+}

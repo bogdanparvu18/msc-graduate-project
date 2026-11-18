@@ -1,0 +1,110 @@
+{
+  "schema_version": "mmvqa-sector2-binding-contract-v1",
+  "module": "sector2_binding_validator.py",
+  "loader": "load_sector1_binding_contract",
+  "required_arguments": [
+    "directory",
+    "corpus",
+    "expected_manifest_sha256"
+  ],
+  "corpus_interface": {
+    "schema_version": "mmvqa-sector1-corpus-interface-v1",
+    "members": {
+      "_validate_recipe": {
+        "kind": "callable",
+        "required": true
+      },
+      "_recipe_hashes": {
+        "kind": "dict",
+        "required": true
+      },
+      "visual_by_artifact": {
+        "kind": "dict",
+        "required": true
+      },
+      "links_by_artifact": {
+        "kind": "dict",
+        "required": true
+      },
+      "sources_by_path": {
+        "kind": "dict",
+        "required": true
+      },
+      "truths_by_annotation": {
+        "kind": "dict",
+        "required": true
+      },
+      "truths_by_subject": {
+        "kind": "dict",
+        "required": true
+      },
+      "source_config": {
+        "kind": "dict",
+        "required": true
+      },
+      "source_snapshot": {
+        "kind": "dict",
+        "required": true
+      },
+      "validation_report": {
+        "kind": "dict",
+        "required": true
+      },
+      "truths_by_frame": {
+        "kind": "dict",
+        "required": false
+      }
+    },
+    "recipe_validator_contract": "Validate a recipe or raise ValueError; used before comparing its verified S8 hash.",
+    "scope": "Structural dependency validation only; source integrity and observation support remain separate checks."
+  },
+  "export_smoke_test": {
+    "schema_version": "mmvqa-sector2-export-smoke-v1",
+    "status": "passed",
+    "fixture_kind": "synthetic",
+    "cases": [
+      {
+        "case_id": "supported_annotation",
+        "status": "passed",
+        "expected_eligible": true,
+        "reason_codes": []
+      },
+      {
+        "case_id": "unsupported_annotation",
+        "status": "passed",
+        "expected_eligible": false,
+        "reason_codes": [
+          "annotation_not_supported_for_class_in_displayed_context:smoke:missing"
+        ]
+      }
+    ],
+    "checks": [
+      "generated_class_constructor",
+      "evaluate",
+      "require_eligible"
+    ],
+    "clinical_validation_performed": false,
+    "production_corpus_validation_performed": false,
+    "source_data_modified": false
+  },
+  "usage": "contract = load_sector1_binding_contract(directory, corpus, expected_manifest_sha256=trusted_run_manifest_sha256); verdict = contract.require_eligible(recipe, binding_id=binding_id, task=task, evidence_state=evidence_state, annotation_ids=annotation_ids, reference_unit_id=reference_unit_id, direction=direction)",
+  "required_artifacts": [
+    "contract_terminology_bindings.json",
+    "class_crosswalk.json",
+    "coverage_contract.json",
+    "phase2_annotation_provenance.json",
+    "phase2_classes.json",
+    "phase2_source_snapshot.json"
+  ],
+  "required_checks": [
+    "mapping_approved_and_source_identity_matches",
+    "original_task_variant_evidence_policy_applicable",
+    "requested_evidence_state_and_observation_role_verified"
+  ],
+  "approval_alone_authorizes_generation": false,
+  "schema_bindings_are_observation_bindings": false,
+  "qa_generation_performed": false,
+  "source_authority": "Same integrity-checked Phase 2 S8 Corpus as phase2_source_snapshot.json; actual recipe and annotation identities are rechecked.",
+  "integrity": "Verify files_manifest.json against a trusted run manifest SHA-256 and the module bytes against its entry before importing code. Loader verifies required data files again.",
+  "scope": "Metadata-backed observation binding for the existing contract; no new annotations, clinical revalidation, MRCM validation or image decoding."
+}

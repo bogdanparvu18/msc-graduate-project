@@ -1,0 +1,338 @@
+{
+  "base_contract_sha256": "ddc4c8b6848c13f8b5f3f0939845a91f37995f2fe4d11d6919854be691035535",
+  "base_contract_unchanged": true,
+  "base_contract": {
+    "TASK_SPECIFICATION": [
+      {
+        "task": "finding_identification",
+        "rule_id": "finding_identification_v1",
+        "requirement": "REQ_FINDING",
+        "reference": "Verified labels attached to the displayed source or indicated region; allow a grounded label set.",
+        "required": true,
+        "implementation": "generator"
+      },
+      {
+        "task": "finding_category",
+        "rule_id": "finding_category_v1",
+        "requirement": "REQ_CATEGORY",
+        "reference": "Unambiguous source-backed clinical_group for each applicable finding; no inferred taxonomy.",
+        "required": true,
+        "implementation": "generator"
+      },
+      {
+        "task": "evidence_frame_localization",
+        "rule_id": "evidence_frame_v1",
+        "requirement": "REQ_EVIDENCE",
+        "reference": "An explicit positive annotation linked to a displayed frame/panel; geometry is optional.",
+        "required": true,
+        "implementation": "generator"
+      },
+      {
+        "task": "optional_spatial_localization",
+        "rule_id": "spatial_localization_v1",
+        "requirement": "REQ_SPATIAL",
+        "reference": "Valid same-class geometric reference in the coordinates of the evaluated image.",
+        "required": true,
+        "implementation": "generator"
+      },
+      {
+        "task": "verified_reference_comparison",
+        "rule_id": "comparison_reference_v1",
+        "requirement": "REQ_COMPARISON",
+        "reference": "Explicit verified normal reference, distinct source and visible role-to-panel mapping.",
+        "required": true,
+        "implementation": "generator"
+      },
+      {
+        "task": "observed_anchor_order",
+        "rule_id": "temporal_observed_order_v1",
+        "requirement": "REQ_TEMPORAL",
+        "reference": "At least two displayed positive anchors of the queried finding in one video; observed order only.",
+        "required": true,
+        "implementation": "generator"
+      },
+      {
+        "task": "temporal_relative_evidence_localization",
+        "rule_id": "temporal_relative_evidence_v1",
+        "requirement": "REQ_TEMPORAL",
+        "reference": "Every supported finding × distinct displayed reference frame × before/after; accept a nonempty set of positively annotated same-video frames in the requested direction. Reference frames may be unlabelled; unknown target frames are not negative.",
+        "required": true,
+        "implementation": "generator",
+        "cardinality": "all_finding_reference_direction_units"
+      },
+      {
+        "task": "clinical_visual_quality",
+        "rule_id": "clinical_quality_v1",
+        "requirement": "REQ_QUALITY",
+        "reference": "Independently reviewed clinical visibility target; S8 technical QC is insufficient.",
+        "required": false,
+        "implementation": "review_placeholder"
+      },
+      {
+        "task": "guarded_clinical_sufficiency",
+        "rule_id": "guarded_sufficiency_v1",
+        "requirement": "REQ_GUARDED",
+        "reference": "Independently reviewed sufficiency, ambiguity or abstention target.",
+        "required": false,
+        "implementation": "review_placeholder"
+      }
+    ],
+    "EVIDENCE_STATES": [
+      "label_without_box",
+      "label_with_box",
+      "multiple_labels",
+      "missing_category",
+      "unlabelled_neighbor",
+      "explicit_normal_reference",
+      "multiple_verified_anchors",
+      "annotation_assisted_input",
+      "unmapped_or_conflicting_reference"
+    ],
+    "EVIDENCE_STATE_MEANINGS": {
+      "label_without_box": "A visible annotated source has a verified finding and category but no box. Other views remain eligible.",
+      "label_with_box": "A visible annotated source has a verified finding, category and valid source-coordinate box.",
+      "multiple_labels": "More than one verified finding is attached to the visible source; use supported sets or unambiguous referents.",
+      "missing_category": "Finding evidence exists but its clinical_group is absent or cannot be mapped unambiguously.",
+      "unlabelled_neighbor": "The focused context frame has no positive annotation; absence of annotation is not a negative target.",
+      "explicit_normal_reference": "The recipe has an explicitly annotated normal comparison reference distinct from the target.",
+      "multiple_verified_anchors": "At least two displayed same-finding positive anchors have verified frame identities in one video.",
+      "annotation_assisted_input": "The displayed input contains an annotation-derived crop or overlay; assistance must be declared.",
+      "unmapped_or_conflicting_reference": "A required label, geometry, role or provenance reference is unresolved or contradictory."
+    },
+    "VARIANT_SPECIFICATION": {
+      "full": {
+        "family": "single_source",
+        "assisted_possible": false,
+        "requires_box": false
+      },
+      "crop": {
+        "family": "single_region",
+        "assisted_possible": true,
+        "requires_box": true
+      },
+      "fullcrop": {
+        "family": "same_source_views",
+        "assisted_possible": true,
+        "requires_box": true
+      },
+      "fullcrop_panel": {
+        "family": "same_source_views",
+        "assisted_possible": true,
+        "requires_box": true
+      },
+      "overlay": {
+        "family": "single_source",
+        "assisted_possible": true,
+        "requires_box": true
+      },
+      "temporal_multi": {
+        "family": "temporal",
+        "assisted_possible": false,
+        "requires_box": false
+      },
+      "temporal_collage": {
+        "family": "temporal",
+        "assisted_possible": false,
+        "requires_box": false
+      },
+      "progression": {
+        "family": "temporal",
+        "assisted_possible": false,
+        "requires_box": false
+      },
+      "qc": {
+        "family": "quality",
+        "assisted_possible": false,
+        "requires_box": false
+      },
+      "comparison": {
+        "family": "comparison",
+        "assisted_possible": false,
+        "requires_box": false
+      },
+      "combined": {
+        "family": "combined",
+        "assisted_possible": true,
+        "requires_box": false
+      }
+    },
+    "TASK_EVIDENCE_POLICY": {
+      "finding_identification": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "N",
+        "A",
+        "A",
+        "A",
+        "R"
+      ],
+      "finding_category": [
+        "A",
+        "A",
+        "A",
+        "R",
+        "N",
+        "A",
+        "A",
+        "A",
+        "R"
+      ],
+      "evidence_frame_localization": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "N",
+        "A",
+        "A",
+        "A",
+        "R"
+      ],
+      "optional_spatial_localization": [
+        "N",
+        "A",
+        "A",
+        "A",
+        "N",
+        "A",
+        "A",
+        "A",
+        "R"
+      ],
+      "verified_reference_comparison": [
+        "N",
+        "N",
+        "N",
+        "N",
+        "N",
+        "A",
+        "N",
+        "N",
+        "R"
+      ],
+      "observed_anchor_order": [
+        "N",
+        "N",
+        "N",
+        "N",
+        "N",
+        "N",
+        "A",
+        "N",
+        "R"
+      ],
+      "temporal_relative_evidence_localization": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "R"
+      ],
+      "clinical_visual_quality": [
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R"
+      ],
+      "guarded_clinical_sufficiency": [
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R"
+      ]
+    },
+    "S8_HINT_SPECIFICATION": {
+      "finding_identification": [
+        [
+          "REQ_FINDING",
+          "REQ_CATEGORY"
+        ],
+        "source_supported_identification"
+      ],
+      "visual_quality_assessment": [
+        [
+          "REQ_QUALITY"
+        ],
+        "clinical_reference_missing"
+      ],
+      "indicated_region_characterization": [
+        [
+          "REQ_FINDING",
+          "REQ_CATEGORY",
+          "REQ_SPATIAL"
+        ],
+        "region_scope_checks_required"
+      ],
+      "global_local_comparison": [
+        [
+          "REQ_FINDING",
+          "REQ_EVIDENCE"
+        ],
+        "finding_views_supported; diagnostic_comparison_requires_review"
+      ],
+      "indicated_region_interpretation": [
+        [
+          "REQ_FINDING",
+          "REQ_CATEGORY"
+        ],
+        "annotation_assistance_retained"
+      ],
+      "neighbor_frame_comparison": [
+        [
+          "REQ_TEMPORAL",
+          "REQ_EVIDENCE"
+        ],
+        "observed_positive_anchors_and_exhaustive_relative_evidence_units"
+      ],
+      "observed_verified_anchor_comparison": [
+        [
+          "REQ_TEMPORAL",
+          "REQ_EVIDENCE"
+        ],
+        "observed_order_and_relative_positive_evidence_only; disease_progression_not_supported"
+      ],
+      "verified_reference_image_comparison": [
+        [
+          "REQ_COMPARISON"
+        ],
+        "explicit_reference_selection_only"
+      ],
+      "multi_view_evidence_interpretation": [
+        [
+          "REQ_FINDING",
+          "REQ_CATEGORY",
+          "REQ_EVIDENCE"
+        ],
+        "source_supported_tasks_only; integrative_clinical_reasoning_requires_review"
+      ]
+    }
+  },
+  "binding_count": 4675,
+  "class_count": 14,
+  "bindings_sha256": "20dc90181d1d5f5caef41dd26501a8134f555fad81cacadb9a324e69309a5f97",
+  "qa_generated": 0,
+  "clinical_observations_created": 0,
+  "mrcm_validation_executed": false,
+  "terminology_source_status": {
+    "MST": "imported",
+    "CEST": "imported",
+    "SNOMED_CT": "imported",
+    "SBCE_VASCULAR_DELPHI_2019": "imported"
+  }
+}

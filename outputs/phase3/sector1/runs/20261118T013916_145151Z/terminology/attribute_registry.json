@@ -1,0 +1,91 @@
+{
+  "schema_version": "mmvqa-attribute-registry-v1",
+  "name_comparison": "casefold_preserve_source_spelling",
+  "unit_conversion_performed": false,
+  "unknown_attribute_policy": "retain_native_identity_and_provenance",
+  "required_provenance": [
+    "annotation_id",
+    "verification_status",
+    "evidence_ref"
+  ],
+  "attributes": [
+    {
+      "attribute_id": "lesion_size",
+      "capability_name": "size_mm",
+      "value_type": "number",
+      "canonical_unit": "mm",
+      "minimum": 0,
+      "observation_bindings": [
+        {
+          "source_attribute": "size_mm",
+          "unit": "mm"
+        },
+        {
+          "source_attribute": "Size",
+          "unit": "mm",
+          "numeric_only": true,
+          "preserve_unmatched_unit": true
+        }
+      ],
+      "terminology_bindings": [
+        {
+          "terminology": "MST",
+          "source_attribute": "Size",
+          "value_kind": "measurement_placeholder",
+          "unit": "mm",
+          "requires_explicit_unit": true
+        }
+      ],
+      "applicability": "Only the imported measurement definition attached to the mapped MST term; categorical Size is separate.",
+      "usage_scope": "Recorded numeric size only; source qualifiers such as (max) do not establish an observation's measurement method."
+    },
+    {
+      "attribute_id": "shape",
+      "capability_name": "shape",
+      "value_type": "scalar",
+      "observation_bindings": [
+        {
+          "source_attribute": "shape"
+        }
+      ],
+      "terminology_bindings": [
+        {
+          "terminology": "MST",
+          "source_attribute": "Shape"
+        }
+      ]
+    },
+    {
+      "attribute_id": "severity",
+      "capability_name": "severity",
+      "value_type": "scalar",
+      "observation_bindings": [
+        {
+          "source_attribute": "severity"
+        }
+      ],
+      "terminology_bindings": [
+        {
+          "terminology": "MST",
+          "source_attribute": "Severity"
+        }
+      ]
+    },
+    {
+      "attribute_id": "grade",
+      "capability_name": "grade",
+      "value_type": "scalar",
+      "observation_bindings": [
+        {
+          "source_attribute": "grade"
+        }
+      ],
+      "terminology_bindings": [
+        {
+          "terminology": "MST",
+          "source_attribute": "Grade"
+        }
+      ]
+    }
+  ]
+}

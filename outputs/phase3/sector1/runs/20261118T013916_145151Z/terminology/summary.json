@@ -1,0 +1,139 @@
+{
+  "stage": "terminology_mapping",
+  "code_version": "phase3-sector1-terminology-v1.4.6",
+  "notebook_base_commit": "35ffcb93020f84fde4bab7896c1a75e6ea322f7e",
+  "phase2_source_commit": "18cd001f6ba7951e32b1bb82197ece9920e4e8ec",
+  "phase2_class_count": 14,
+  "phase2_annotation_count": 47239,
+  "source_status": {
+    "MST": "imported",
+    "CEST": "imported",
+    "SNOMED_CT": "imported",
+    "SBCE_VASCULAR_DELPHI_2019": "imported"
+  },
+  "required_sources_imported": true,
+  "source_artifacts_verified": 4,
+  "source_integrity_policy": "Drive_SHA256_reference_then_verified_VM_copy",
+  "source_acquisition_counts": {
+    "existing_storage": 4
+  },
+  "ontology_manifest_path": "/content/drive/MyDrive/MMVQA_Clinical/inputs/terminology/ontology_manifest.json",
+  "snomed_language_refset_ids": [
+    "19491000087109",
+    "20581000087109",
+    "229851000087100",
+    "229861000087102",
+    "900000000000508004",
+    "900000000000509007"
+  ],
+  "snomed_metadata_ids": {
+    "SNOMED_FSN": "900000000000003001",
+    "SNOMED_SYNONYM": "900000000000013009",
+    "SNOMED_PREFERRED": "900000000000548007",
+    "SNOMED_ACCEPTABLE": "900000000000549004",
+    "SNOMED_US_ENGLISH": "900000000000509007",
+    "SNOMED_GB_ENGLISH": "900000000000508004",
+    "SNOMED_INFERRED": "900000000000011006",
+    "SNOMED_IS_A": "116680003"
+  },
+  "snomed_metadata_discovery_policy_version": "snomed-rf2-metadata-discovery-v1",
+  "gi_source_ref": "main",
+  "gi_source_sha256": "3774bd3f09b5bfb53b9143d3b2acb0c215a10c69eaf99b0a8edad52688f38753",
+  "gi_source_integrity": "VM_SHA256_matches_GitHub_manifest",
+  "snomed_source_description_validation_status": "localized_ambiguities_retained",
+  "snomed_description_issue_count": 93,
+  "snomed_ambiguous_concept_count": 85,
+  "terminology_term_count": 662,
+  "attribute_schema_rows": 528,
+  "mapping_status_counts": [
+    {
+      "terminology": "CEST",
+      "mapping_status": "approved",
+      "rows": 16
+    },
+    {
+      "terminology": "CEST",
+      "mapping_status": "unmapped",
+      "rows": 2
+    },
+    {
+      "terminology": "MST",
+      "mapping_status": "approved",
+      "rows": 13
+    },
+    {
+      "terminology": "MST",
+      "mapping_status": "rejected",
+      "rows": 1
+    },
+    {
+      "terminology": "MST",
+      "mapping_status": "unmapped",
+      "rows": 2
+    },
+    {
+      "terminology": "SBCE_VASCULAR_DELPHI_2019",
+      "mapping_status": "approved",
+      "rows": 1
+    },
+    {
+      "terminology": "SNOMED_CT",
+      "mapping_status": "approved",
+      "rows": 18
+    },
+    {
+      "terminology": "SNOMED_CT",
+      "mapping_status": "unmapped",
+      "rows": 2
+    }
+  ],
+  "approved_class_synonym_rows": 91,
+  "distinct_class_term_language_entries": 30,
+  "distinct_synonym_surface_forms": 30,
+  "synonym_policy": "active_source_accepted_descriptions_of_approved_exact_concepts",
+  "rag_mapping_policy_version": "concept-bound-mapping-v2",
+  "automatic_mapping_review": {
+    "schema_version": "mmvqa-rag-review-summary-v1",
+    "review_date": "2026-11-16",
+    "bundle_sha256": "c0e821337fac98bcbde12fe5d1fd1ceacf37cff87e670de35bc2f7858e9abc0a",
+    "candidate_count": 55,
+    "review_count": 49,
+    "verdict_counts": {
+      "accepted": 48,
+      "rejected": 1,
+      "unresolved": 0,
+      "source_required": 0,
+      "unmapped": 6
+    },
+    "review_method": "AI_assisted_RAG",
+    "human_reviewed": false,
+    "acceptance_scope": "Project terminology mapping only; not human clinical validation or image-level truth."
+  },
+  "rag_source_repository": "bogdanparvu18/msc-graduate-project",
+  "rag_source_ref": "main",
+  "rag_source_integrity": "VM_SHA256_matches_GitHub_manifest",
+  "manual_review_required": false,
+  "explicit_review_override_applied": false,
+  "unresolved_or_missing_mapping_rows": 6,
+  "mst_parse_issue_count": 12,
+  "mst_label_alignment_counts": {
+    "exact_source_label": 51,
+    "unresolved_source_label": 3,
+    "normalized_source_label": 1,
+    "slash_alternative_source_label": 2,
+    "abbreviated_source_label": 1
+  },
+  "mst_labels_missing_words_count": 2,
+  "mst_labels_unresolved_count": 1,
+  "coverage_contract_rows": 891,
+  "coverage_observed_status": "not_evaluated",
+  "contract_binding_rows": 4675,
+  "semantic_composition_declarations": 203,
+  "semantic_compositions_executed": false,
+  "qa_generated": 0,
+  "llm_called": false,
+  "mrcm_validation_performed": false,
+  "clinical_observations_created": 0,
+  "ready_for_generation": false,
+  "stage_status": "sources_imported_automatic_mapping_review_complete"
+}

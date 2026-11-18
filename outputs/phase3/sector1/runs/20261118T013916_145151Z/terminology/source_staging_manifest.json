@@ -1,0 +1,106 @@
+{
+  "MST": {
+    "source_key": "MST",
+    "source_path": "/content/drive/MyDrive/MMVQA_Clinical/inputs/terminology/mst30_tables.xls",
+    "local_path": "/content/mmvqa_phase3_sector1/terminology_cache/MST/f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564/mst30_tables.xls",
+    "reference_manifest_path": "/content/drive/MyDrive/MMVQA_Clinical/inputs/terminology/_source_registry/MST/f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564.json",
+    "reference": {
+      "kind": "file",
+      "identity_algorithm": "sha256",
+      "sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
+      "size_bytes": 207360,
+      "files": [
+        {
+          "relative_path": ".",
+          "size_bytes": 207360,
+          "sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564"
+        }
+      ]
+    },
+    "source_sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
+    "vm_sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
+    "identity_algorithm": "sha256",
+    "verification_status": "verified",
+    "copy_attempts_used": 1,
+    "copy_retries": 0,
+    "cache_status": "copied_and_verified"
+  },
+  "CEST_DOCUMENT": {
+    "source_key": "CEST_DOCUMENT",
+    "source_path": "/content/drive/MyDrive/MMVQA_Clinical/inputs/terminology/CEST.pdf",
+    "local_path": "/content/mmvqa_phase3_sector1/terminology_cache/CEST_DOCUMENT/8e4157bea0c1cfa299458df7881a7fddd0713f18e2994c502f74621c454b029a/CEST.pdf",
+    "reference_manifest_path": "/content/drive/MyDrive/MMVQA_Clinical/inputs/terminology/_source_registry/CEST_DOCUMENT/8e4157bea0c1cfa299458df7881a7fddd0713f18e2994c502f74621c454b029a.json",
+    "reference": {
+      "kind": "file",
+      "identity_algorithm": "sha256",
+      "sha256": "8e4157bea0c1cfa299458df7881a7fddd0713f18e2994c502f74621c454b029a",
+      "size_bytes": 209520,
+      "files": [
+        {
+          "relative_path": ".",
+          "size_bytes": 209520,
+          "sha256": "8e4157bea0c1cfa299458df7881a7fddd0713f18e2994c502f74621c454b029a"
+        }
+      ]
+    },
+    "source_sha256": "8e4157bea0c1cfa299458df7881a7fddd0713f18e2994c502f74621c454b029a",
+    "vm_sha256": "8e4157bea0c1cfa299458df7881a7fddd0713f18e2994c502f74621c454b029a",
+    "identity_algorithm": "sha256",
+    "verification_status": "verified",
+    "copy_attempts_used": 1,
+    "copy_retries": 0,
+    "cache_status": "copied_and_verified"
+  },
+  "CEST_PACKAGE": {
+    "source_key": "CEST_PACKAGE",
+    "source_path": "/content/drive/MyDrive/MMVQA_Clinical/inputs/terminology/_source_registry/CEST_PACKAGE/267a5aab79c62c81a8cb55a115a1bb7a6a76252562004747fb33f8aa357c8180/cest_2005_package.json",
+    "local_path": "/content/mmvqa_phase3_sector1/terminology_cache/CEST_PACKAGE/267a5aab79c62c81a8cb55a115a1bb7a6a76252562004747fb33f8aa357c8180/cest_2005_package.json",
+    "reference_manifest_path": "/content/drive/MyDrive/MMVQA_Clinical/inputs/terminology/_source_registry/CEST_PACKAGE/267a5aab79c62c81a8cb55a115a1bb7a6a76252562004747fb33f8aa357c8180.json",
+    "reference": {
+      "kind": "file",
+      "identity_algorithm": "sha256",
+      "sha256": "267a5aab79c62c81a8cb55a115a1bb7a6a76252562004747fb33f8aa357c8180",
+      "size_bytes": 218005,
+      "files": [
+        {
+          "relative_path": ".",
+          "size_bytes": 218005,
+          "sha256": "267a5aab79c62c81a8cb55a115a1bb7a6a76252562004747fb33f8aa357c8180"
+        }
+      ]
+    },
+    "source_sha256": "267a5aab79c62c81a8cb55a115a1bb7a6a76252562004747fb33f8aa357c8180",
+    "vm_sha256": "267a5aab79c62c81a8cb55a115a1bb7a6a76252562004747fb33f8aa357c8180",
+    "identity_algorithm": "sha256",
+    "verification_status": "verified",
+    "copy_attempts_used": 1,
+    "copy_retries": 0,
+    "cache_status": "copied_and_verified"
+  },
+  "SNOMED_CT": {
+    "source_key": "SNOMED_CT",
+    "source_path": "/content/drive/MyDrive/MMVQA_Clinical/inputs/terminology/SNOMED_CT_CA_RF2_Release_20260831.zip",
+    "local_path": "/content/mmvqa_phase3_sector1/terminology_cache/SNOMED_CT/3c897d349ed1b63cd17358625f5242f5aa89113198efd05c4539c80523bb0e81/SNOMED_CT_CA_RF2_Release_20260831.zip",
+    "reference_manifest_path": "/content/drive/MyDrive/MMVQA_Clinical/inputs/terminology/_source_registry/SNOMED_CT/3c897d349ed1b63cd17358625f5242f5aa89113198efd05c4539c80523bb0e81.json",
+    "reference": {
+      "kind": "file",
+      "identity_algorithm": "sha256",
+      "sha256": "3c897d349ed1b63cd17358625f5242f5aa89113198efd05c4539c80523bb0e81",
+      "size_bytes": 813225837,
+      "files": [
+        {
+          "relative_path": ".",
+          "size_bytes": 813225837,
+          "sha256": "3c897d349ed1b63cd17358625f5242f5aa89113198efd05c4539c80523bb0e81"
+        }
+      ]
+    },
+    "source_sha256": "3c897d349ed1b63cd17358625f5242f5aa89113198efd05c4539c80523bb0e81",
+    "vm_sha256": "3c897d349ed1b63cd17358625f5242f5aa89113198efd05c4539c80523bb0e81",
+    "identity_algorithm": "sha256",
+    "verification_status": "verified",
+    "copy_attempts_used": 1,
+    "copy_retries": 0,
+    "cache_status": "copied_and_verified"
+  }
+}

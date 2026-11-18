@@ -1,0 +1,22 @@
+{
+  "schema_version": "mmvqa-cest-transcription-v1",
+  "metadata": {
+    "version": "2005",
+    "citation": "Korman et al. Endoscopy 2005;37:951-959. doi:10.1055/s-2005-870329",
+    "source_url": "https://doi.org/10.1055/s-2005-870329",
+    "source_file": "",
+    "source_sha256": "",
+    "copyright_notice": "",
+    "transcription_reviewed_by": "",
+    "transcription_reviewed_at": "",
+    "source_bytes": null,
+    "page_count": 9,
+    "human_reviewed": false
+  },
+  "terms": [],
+  "synonyms": [],
+  "attributes": [],
+  "source_contexts": [],
+  "source_notes": [],
+  "unbound_source_values": []
+}

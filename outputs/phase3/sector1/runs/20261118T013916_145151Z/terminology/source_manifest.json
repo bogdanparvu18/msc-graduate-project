@@ -1,0 +1,424 @@
+{
+  "MST": {
+    "terminology": "MST",
+    "version": "3.0",
+    "source_url": "https://www.worldendo.org/assets-craft/pdf/resources/mst30_tables.xls",
+    "reference_document_url": "https://www.worldendo.org/assets-craft/pdf/resources/mst-3-0.pdf",
+    "sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
+    "byte_size": 207360,
+    "status": "imported",
+    "scope": "luminal_findings_anatomy_diagnoses",
+    "all_sheets_preserved_as_raw_cells": [
+      "Anatomy",
+      "EUSanatomy",
+      "proc_organ",
+      "Luminal_findings",
+      "Luminal_findings_organ",
+      "ERCP findings",
+      "ERCP_findings_organ",
+      "EUS findings",
+      "EUS findings_attribute lists",
+      "EUS findings_organ",
+      "Reasons",
+      "Diagnoses",
+      "Procedures",
+      "Adv events",
+      "Adv event severity"
+    ],
+    "synonym_policy": "no_synonym_relations_asserted_by_workbook_parser",
+    "parse_issue_count": 12,
+    "copyright_notice": "Copyright 2008 World Endoscopy Organization (formerly known as OMED). All rights reserved.\nPermission is hereby granted, without written agreement and without license or royalty fees, to use, copy, or distribute the Minimal Standard Terminology (MST) for any purpose, so long as this copyright notice appears on any copies of the MST and that the following conditions are met.\nThe notice of WEO (formerly known as OMED) copyright (above) should be displayed on every copy of the MST, on all manuals and other materials used in connection with the MST, including electronic media (disks, CD ROMs, etc.) and should be apparent in text files loaded on these disks or onto the Internet.\nThe content of the defined core MST fields must not be changed. Users may add list items and sub-classification of items as needed, as long as the diversion from the core MST structure is documented and traceable.\nWEO (formerly known as OMED) and the members of the Committee for Standardization and Terminology do not accept liability for any omissions or errors in the MST and all EXPRESS AND IMPLIED WARRANTIES, INCLUDING THOSE RELATING TO MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, ARE DISCLAIMED.",
+    "parser_version": "mst-source-tables-v2",
+    "label_alignment_policy_version": "mst-source-label-alignment-v2",
+    "label_alignment_scope": "same_section_findings_only; lexical_source_link_not_clinical_synonym_approval",
+    "missing_word_vocabulary_scope": "all_raw_workbook_cells_excluding_query_applicability_sheet; whole_words_and_explicit_dotted_prefixes_only",
+    "source_labels_total": 58,
+    "source_labels_linked": 55,
+    "source_labels_with_missing_words": 2,
+    "source_labels_other_unresolved": 1,
+    "source_label_match_counts": {
+      "abbreviated_source_label": 1,
+      "exact_source_label": 51,
+      "normalized_source_label": 1,
+      "slash_alternative_source_label": 2,
+      "unresolved_source_label": 3
+    },
+    "source_artifact": {
+      "source_key": "MST",
+      "source_path": "/content/drive/MyDrive/MMVQA_Clinical/inputs/terminology/mst30_tables.xls",
+      "local_path": "/content/mmvqa_phase3_sector1/terminology_cache/MST/f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564/mst30_tables.xls",
+      "reference_manifest_path": "/content/drive/MyDrive/MMVQA_Clinical/inputs/terminology/_source_registry/MST/f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564.json",
+      "reference": {
+        "kind": "file",
+        "identity_algorithm": "sha256",
+        "sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
+        "size_bytes": 207360,
+        "files": [
+          {
+            "relative_path": ".",
+            "size_bytes": 207360,
+            "sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564"
+          }
+        ]
+      },
+      "source_sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
+      "vm_sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564",
+      "identity_algorithm": "sha256",
+      "verification_status": "verified",
+      "copy_attempts_used": 1,
+      "copy_retries": 0,
+      "cache_status": "copied_and_verified"
+    }
+  },
+  "CEST": {
+    "citation": "Capsule Endoscopy Structured Terminology (CEST), Endoscopy 2005; 37: 951-959 (February 16, 2002 © Given Imaging Ltd.). doi:10.1055/s-2005-870329",
+    "clinical_validation_performed": false,
+    "copyright_notice": "Copyright and Terms of Use\nCopyright © 2005 Given Imaging Ltd. (“Given Imaging”). All rights reserved.\nThis Capsule Endoscopy Structured Terminology (CEST) is a copyrighted work, protected by United States and worldwide copyright laws and treaties. Users of the CEST are hereby granted a free license to use, copy or distribute the CEST in connection with supporting a structured terminology for capsule endoscopy, subject to the following conditions:\n1. This copyright and terms of use notice must be displayed on each and every copy of the CEST, on all manuals and other materials used in connection with the CEST, including without limitation electronic media (i. e., disks, CD-ROMs, etc.), and in all text files loaded onto electronic media or the Internet. Such copyright and terms of use notice shall not be removed, obscured, modified or otherwise hidden. All references to the CEST, in whole or in part, shall properly cite the CEST as the source for such reference. Proper citation shall read “Capsule Endoscopy Structured Terminology (CEST), Endoscopy 2005; 37: 951-959 (February 16, 2002 © Given Imaging Ltd.)”.\n2. The CEST shall not be used, in whole or in part, to harm or degrade the reputation of Given Imaging or any participant in the Given Capsule Standard Working Group (the “GCSWG”).\n3. Neither Given Imaging nor any participant in the GCSWG shall be liable for any errors or omissions contained in the CEST, or for any use you or any third party may make of the CEST. Given Imaging reserves the right to make changes to the CEST without notice. The information contained in the CEST is provided on an “as is” basis without any warranties, express or implied, including but not limited to the results or effects obtained through use of information, or that it is fit for any use intended or can be used without infringing the copyright or other proprietary rights of any third party. All express and implied warranties, including those relating to title, non-infringement, merchantability or fitness for a particular purpose, are hereby expressly disclaimed and excluded with respect to any information provided hereunder.",
+    "human_reviewed": false,
+    "identifier_scope": "project_local_source_locators_not_official_CEST_codes",
+    "normalization": "PDF line-wrap hyphens/spacing normalized; footnote markers separated; no clinical synonyms inferred",
+    "page_count": 9,
+    "source_bytes": 209520,
+    "source_file": "CEST.pdf",
+    "source_sha256": "c4f3c4562e4e999bb35b176471a2cbbb33f35d872cbeb55adc060b6e26650874",
+    "source_url": "https://doi.org/10.1055/s-2005-870329",
+    "table_coverage": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "transcription_reviewed_at": "2026-11-16",
+    "transcription_reviewed_by": "AI-assisted source-image transcription review",
+    "transcription_scope": "Tables 1-11; source table terms, explicit attributes and values; prose retained as scoped notes, not an exhaustive article transcription",
+    "version": "2005",
+    "terminology": "CEST",
+    "status": "imported_reviewed_transcription",
+    "source_fingerprint": "c4f3c4562e4e999bb35b176471a2cbbb33f35d872cbeb55adc060b6e26650874",
+    "source_fingerprint_scheme": "sha256(domain_prefix+original_document_digest+package_digest)",
+    "original_document_sha256": "8e4157bea0c1cfa299458df7881a7fddd0713f18e2994c502f74621c454b029a",
+    "declared_original_document_sha256": "8e4157bea0c1cfa299458df7881a7fddd0713f18e2994c502f74621c454b029a",
+    "declared_original_hash_verified": true,
+    "package_sha256": "267a5aab79c62c81a8cb55a115a1bb7a6a76252562004747fb33f8aa357c8180",
+    "parser_version": "cest-source-context-transcription-v2",
+    "document_status": "verified",
+    "transcription_status": "verified_AI_review_not_human",
+    "github_provenance": {
+      "schema_version": "mmvqa-cest-github-source-v1",
+      "repository": "bogdanparvu18/msc-graduate-project",
+      "repository_ref": "main",
+      "manifest_path": "outputs/phase3/sector1/terminology/cest_2005_manifest.json",
+      "manifest_url": "https://raw.githubusercontent.com/bogdanparvu18/msc-graduate-project/main/outputs/phase3/sector1/terminology/cest_2005_manifest.json",
+      "manifest_sha256": "03972cb7b68427a8bb879a3447eeb82b93ee826339d843476b929a0cd6e964fc",
+      "manifest_bytes": 2982,
+      "manifest_local_path": "/content/mmvqa_phase3_sector1/cest_github_cache/bogdanparvu18__msc-graduate-project/0d6e4079e36703eb/cest/manifests/03972cb7b68427a8bb879a3447eeb82b93ee826339d843476b929a0cd6e964fc.json",
+      "artifact_path": "outputs/phase3/sector1/terminology/cest_2005_package.json",
+      "artifact_url": "https://raw.githubusercontent.com/bogdanparvu18/msc-graduate-project/main/outputs/phase3/sector1/terminology/cest_2005_package.json",
+      "artifact_bytes": 218005,
+      "source_sha256": "267a5aab79c62c81a8cb55a115a1bb7a6a76252562004747fb33f8aa357c8180",
+      "vm_sha256": "267a5aab79c62c81a8cb55a115a1bb7a6a76252562004747fb33f8aa357c8180",
+      "package_content_sha256": "31c3e068850563fd2e561c85e97cca8f8336f782e90a05a78b8b948f279e3c4c",
+      "original_document_sha256": "8e4157bea0c1cfa299458df7881a7fddd0713f18e2994c502f74621c454b029a",
+      "source_fingerprint": "c4f3c4562e4e999bb35b176471a2cbbb33f35d872cbeb55adc060b6e26650874",
+      "local_path": "/content/mmvqa_phase3_sector1/cest_github_cache/bogdanparvu18__msc-graduate-project/0d6e4079e36703eb/cest/artifacts/267a5aab79c62c81a8cb55a115a1bb7a6a76252562004747fb33f8aa357c8180/cest_2005_package.json",
+      "cache_status": "downloaded_and_verified",
+      "attempts_used": 1,
+      "manifest_downloads": 2,
+      "artifact_downloads": 1,
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "manifest_sha256": "03972cb7b68427a8bb879a3447eeb82b93ee826339d843476b929a0cd6e964fc",
+          "confirmed_manifest_sha256": "03972cb7b68427a8bb879a3447eeb82b93ee826339d843476b929a0cd6e964fc",
+          "artifact_sha256": "267a5aab79c62c81a8cb55a115a1bb7a6a76252562004747fb33f8aa357c8180",
+          "status": "verified"
+        }
+      ],
+      "verification_status": "verified",
+      "reference_stability_check": "manifest_identical_before_and_after_artifact_verification",
+      "integrity_scope": "GitHub manifest reference and matching file bytes/content; not clinical validation or a pinned main commit"
+    },
+    "source_artifacts": {
+      "CEST_PACKAGE": {
+        "source_key": "CEST_PACKAGE",
+        "source_path": "/content/drive/MyDrive/MMVQA_Clinical/inputs/terminology/_source_registry/CEST_PACKAGE/267a5aab79c62c81a8cb55a115a1bb7a6a76252562004747fb33f8aa357c8180/cest_2005_package.json",
+        "local_path": "/content/mmvqa_phase3_sector1/terminology_cache/CEST_PACKAGE/267a5aab79c62c81a8cb55a115a1bb7a6a76252562004747fb33f8aa357c8180/cest_2005_package.json",
+        "reference_manifest_path": "/content/drive/MyDrive/MMVQA_Clinical/inputs/terminology/_source_registry/CEST_PACKAGE/267a5aab79c62c81a8cb55a115a1bb7a6a76252562004747fb33f8aa357c8180.json",
+        "reference": {
+          "kind": "file",
+          "identity_algorithm": "sha256",
+          "sha256": "267a5aab79c62c81a8cb55a115a1bb7a6a76252562004747fb33f8aa357c8180",
+          "size_bytes": 218005,
+          "files": [
+            {
+              "relative_path": ".",
+              "size_bytes": 218005,
+              "sha256": "267a5aab79c62c81a8cb55a115a1bb7a6a76252562004747fb33f8aa357c8180"
+            }
+          ]
+        },
+        "source_sha256": "267a5aab79c62c81a8cb55a115a1bb7a6a76252562004747fb33f8aa357c8180",
+        "vm_sha256": "267a5aab79c62c81a8cb55a115a1bb7a6a76252562004747fb33f8aa357c8180",
+        "identity_algorithm": "sha256",
+        "verification_status": "verified",
+        "copy_attempts_used": 1,
+        "copy_retries": 0,
+        "cache_status": "copied_and_verified"
+      },
+      "CEST_DOCUMENT": {
+        "source_key": "CEST_DOCUMENT",
+        "source_path": "/content/drive/MyDrive/MMVQA_Clinical/inputs/terminology/CEST.pdf",
+        "local_path": "/content/mmvqa_phase3_sector1/terminology_cache/CEST_DOCUMENT/8e4157bea0c1cfa299458df7881a7fddd0713f18e2994c502f74621c454b029a/CEST.pdf",
+        "reference_manifest_path": "/content/drive/MyDrive/MMVQA_Clinical/inputs/terminology/_source_registry/CEST_DOCUMENT/8e4157bea0c1cfa299458df7881a7fddd0713f18e2994c502f74621c454b029a.json",
+        "reference": {
+          "kind": "file",
+          "identity_algorithm": "sha256",
+          "sha256": "8e4157bea0c1cfa299458df7881a7fddd0713f18e2994c502f74621c454b029a",
+          "size_bytes": 209520,
+          "files": [
+            {
+              "relative_path": ".",
+              "size_bytes": 209520,
+              "sha256": "8e4157bea0c1cfa299458df7881a7fddd0713f18e2994c502f74621c454b029a"
+            }
+          ]
+        },
+        "source_sha256": "8e4157bea0c1cfa299458df7881a7fddd0713f18e2994c502f74621c454b029a",
+        "vm_sha256": "8e4157bea0c1cfa299458df7881a7fddd0713f18e2994c502f74621c454b029a",
+        "identity_algorithm": "sha256",
+        "verification_status": "verified",
+        "copy_attempts_used": 1,
+        "copy_retries": 0,
+        "cache_status": "copied_and_verified"
+      }
+    }
+  },
+  "SNOMED_CT": {
+    "terminology": "SNOMED_CT",
+    "release_date": "20260831",
+    "edition_label": "",
+    "source_name": "SNOMED_CT_CA_RF2_Release_20260831.zip",
+    "component_files": {
+      "concepts": {
+        "path": "SnomedCT_Canadian_EditionRelease_PRODUCTION_20260831T120000Z/Snapshot/Terminology/sct2_Concept_Snapshot_CanadianEdition_20260831.txt",
+        "sha256": "22d1ba177d37bf65115c526e4b4da6fd9f10a6c1e53691f05f1e162f86e92140",
+        "snapshot_rows": 594644,
+        "active_rows": 441770
+      },
+      "descriptions": {
+        "path": "SnomedCT_Canadian_EditionRelease_PRODUCTION_20260831T120000Z/Snapshot/Terminology/sct2_Description_Snapshot_CanadianEdition_20260831.txt",
+        "sha256": "ac994252ec8643fc3419ba0d254f5821da85549f02484403602879955f91d4e0",
+        "snapshot_rows": 2349616,
+        "active_rows": 1992085
+      },
+      "relationships": {
+        "path": "SnomedCT_Canadian_EditionRelease_PRODUCTION_20260831T120000Z/Snapshot/Terminology/sct2_Relationship_Snapshot_CanadianEdition_20260831.txt",
+        "sha256": "9e470a8b43fd76fef90c38094f3393c344b8673ed04b2ea43e23a99622d42861",
+        "snapshot_rows": 4050190,
+        "active_rows": 1788683
+      },
+      "language_refset": {
+        "path": "SnomedCT_Canadian_EditionRelease_PRODUCTION_20260831T120000Z/Snapshot/Refset/Language/der2_cRefset_LanguageSnapshot_CanadianEdition_20260831.txt",
+        "sha256": "b051614ea33ba72a56b03db37cdaa8ddff70898880485109236c97c29573c683",
+        "snapshot_rows": 5645961,
+        "active_rows": 4816897
+      }
+    },
+    "metadata_ids": {
+      "SNOMED_FSN": "900000000000003001",
+      "SNOMED_SYNONYM": "900000000000013009",
+      "SNOMED_PREFERRED": "900000000000548007",
+      "SNOMED_ACCEPTABLE": "900000000000549004",
+      "SNOMED_US_ENGLISH": "900000000000509007",
+      "SNOMED_GB_ENGLISH": "900000000000508004",
+      "SNOMED_INFERRED": "900000000000011006",
+      "SNOMED_IS_A": "116680003"
+    },
+    "metadata_discovery_policy": "unique_active_English_full_metadata_label_then_FSN_self_validation_and_field_usage_audit",
+    "metadata_discovery_policy_version": "snomed-rf2-metadata-discovery-v1",
+    "metadata_source_components": {
+      "concepts": {
+        "path": "SnomedCT_Canadian_EditionRelease_PRODUCTION_20260831T120000Z/Snapshot/Terminology/sct2_Concept_Snapshot_CanadianEdition_20260831.txt",
+        "sha256": "22d1ba177d37bf65115c526e4b4da6fd9f10a6c1e53691f05f1e162f86e92140",
+        "snapshot_rows": 594644,
+        "active_rows": 441770
+      },
+      "descriptions": {
+        "path": "SnomedCT_Canadian_EditionRelease_PRODUCTION_20260831T120000Z/Snapshot/Terminology/sct2_Description_Snapshot_CanadianEdition_20260831.txt",
+        "sha256": "ac994252ec8643fc3419ba0d254f5821da85549f02484403602879955f91d4e0",
+        "snapshot_rows": 2349616,
+        "active_rows": 1992085
+      },
+      "relationships": {
+        "path": "SnomedCT_Canadian_EditionRelease_PRODUCTION_20260831T120000Z/Snapshot/Terminology/sct2_Relationship_Snapshot_CanadianEdition_20260831.txt",
+        "sha256": "9e470a8b43fd76fef90c38094f3393c344b8673ed04b2ea43e23a99622d42861",
+        "snapshot_rows": 4050190,
+        "active_rows": 1788683
+      },
+      "language_refset": {
+        "path": "SnomedCT_Canadian_EditionRelease_PRODUCTION_20260831T120000Z/Snapshot/Refset/Language/der2_cRefset_LanguageSnapshot_CanadianEdition_20260831.txt",
+        "sha256": "b051614ea33ba72a56b03db37cdaa8ddff70898880485109236c97c29573c683",
+        "snapshot_rows": 5645961,
+        "active_rows": 4816897
+      }
+    },
+    "rf2_edition_tag": "CanadianEdition",
+    "language_code": "en",
+    "language_refset_ids": [
+      "19491000087109",
+      "20581000087109",
+      "229851000087100",
+      "229861000087102",
+      "900000000000508004",
+      "900000000000509007"
+    ],
+    "available_language_refset_ids": [
+      "19491000087109",
+      "20581000087109",
+      "229851000087100",
+      "229861000087102",
+      "900000000000508004",
+      "900000000000509007"
+    ],
+    "source_active_language_refset_ids": [
+      "19491000087109",
+      "20581000087109",
+      "229851000087100",
+      "229861000087102",
+      "900000000000508004",
+      "900000000000509007"
+    ],
+    "language_refset_discovery_scope": "active_members_linked_to_active_selected_language_descriptions",
+    "selected_language_refset_ids": [
+      "19491000087109",
+      "20581000087109",
+      "229851000087100",
+      "229861000087102",
+      "900000000000508004",
+      "900000000000509007"
+    ],
+    "language_refset_selection": "all_active_ids_discovered_from_rf2",
+    "language_refset_discovery_source": {
+      "path": "SnomedCT_Canadian_EditionRelease_PRODUCTION_20260831T120000Z/Snapshot/Refset/Language/der2_cRefset_LanguageSnapshot_CanadianEdition_20260831.txt",
+      "sha256": "b051614ea33ba72a56b03db37cdaa8ddff70898880485109236c97c29573c683",
+      "snapshot_rows": 5645961,
+      "active_rows": 4816897
+    },
+    "language_refset_ids_identify_release": false,
+    "accepted_term_counts_by_refset": {
+      "19491000087109": 1118769,
+      "20581000087109": 10020,
+      "229851000087100": 383,
+      "229861000087102": 213,
+      "900000000000508004": 997111,
+      "900000000000509007": 1116818
+    },
+    "preferred_term_display_policy": "first_available_in_sorted_refset_id_order",
+    "dialect_preferred_terms_preserved": true,
+    "description_resolution_policy": "unique_within_refset_then_declared_refset_order_v1",
+    "description_resolution_policy_version": "snomed-description-resolution-v1",
+    "description_candidate_detail_scope": "ambiguous_concepts_or_multiple_active_fsns; raw_descriptions_and_terms_remain_authoritative",
+    "source_description_validation_status": "localized_ambiguities_retained",
+    "description_issue_count": 93,
+    "ambiguous_concept_count": 85,
+    "mapping_eligible_concept_count": 441685,
+    "description_issue_counts_by_reason": {
+      "ambiguous_fsn": 77,
+      "ambiguous_preferred_descriptions": 16
+    },
+    "ambiguous_concepts_excluded_from_automatic_mapping": true,
+    "description_issue_source_components": {
+      "concepts": {
+        "path": "SnomedCT_Canadian_EditionRelease_PRODUCTION_20260831T120000Z/Snapshot/Terminology/sct2_Concept_Snapshot_CanadianEdition_20260831.txt",
+        "sha256": "22d1ba177d37bf65115c526e4b4da6fd9f10a6c1e53691f05f1e162f86e92140",
+        "snapshot_rows": 594644,
+        "active_rows": 441770
+      },
+      "descriptions": {
+        "path": "SnomedCT_Canadian_EditionRelease_PRODUCTION_20260831T120000Z/Snapshot/Terminology/sct2_Description_Snapshot_CanadianEdition_20260831.txt",
+        "sha256": "ac994252ec8643fc3419ba0d254f5821da85549f02484403602879955f91d4e0",
+        "snapshot_rows": 2349616,
+        "active_rows": 1992085
+      },
+      "language_refset": {
+        "path": "SnomedCT_Canadian_EditionRelease_PRODUCTION_20260831T120000Z/Snapshot/Refset/Language/der2_cRefset_LanguageSnapshot_CanadianEdition_20260831.txt",
+        "sha256": "b051614ea33ba72a56b03db37cdaa8ddff70898880485109236c97c29573c683",
+        "snapshot_rows": 5645961,
+        "active_rows": 4816897
+      }
+    },
+    "concept_module_ids": [
+      "20621000087109",
+      "900000000000012004",
+      "900000000000207008"
+    ],
+    "active_concepts": 441770,
+    "active_descriptions": 1158513,
+    "accepted_terms": 3243314,
+    "active_relationships": 1788683,
+    "active_inferred_relationships": 1745734,
+    "active_non_inferred_relationships": 42949,
+    "relationship_counts_by_characteristic_type": {
+      "900000000000011006": 1745734,
+      "900000000000227009": 42949
+    },
+    "relationship_reasoning_policy": "active_inferred_only",
+    "non_inferred_relationships_preserved": true,
+    "source_terms_are_not_dataset_mapping_approval": true,
+    "mrcm_validation_performed": false,
+    "owl_classification_performed": false,
+    "source_fingerprint": "123a8b54fb3bb27e46e2a16d8b23af3538b4e3290f9823f01e3494565bc3e4d9",
+    "source_artifact": {
+      "source_key": "SNOMED_CT",
+      "source_path": "/content/drive/MyDrive/MMVQA_Clinical/inputs/terminology/SNOMED_CT_CA_RF2_Release_20260831.zip",
+      "local_path": "/content/mmvqa_phase3_sector1/terminology_cache/SNOMED_CT/3c897d349ed1b63cd17358625f5242f5aa89113198efd05c4539c80523bb0e81/SNOMED_CT_CA_RF2_Release_20260831.zip",
+      "reference_manifest_path": "/content/drive/MyDrive/MMVQA_Clinical/inputs/terminology/_source_registry/SNOMED_CT/3c897d349ed1b63cd17358625f5242f5aa89113198efd05c4539c80523bb0e81.json",
+      "reference": {
+        "kind": "file",
+        "identity_algorithm": "sha256",
+        "sha256": "3c897d349ed1b63cd17358625f5242f5aa89113198efd05c4539c80523bb0e81",
+        "size_bytes": 813225837,
+        "files": [
+          {
+            "relative_path": ".",
+            "size_bytes": 813225837,
+            "sha256": "3c897d349ed1b63cd17358625f5242f5aa89113198efd05c4539c80523bb0e81"
+          }
+        ]
+      },
+      "source_sha256": "3c897d349ed1b63cd17358625f5242f5aa89113198efd05c4539c80523bb0e81",
+      "vm_sha256": "3c897d349ed1b63cd17358625f5242f5aa89113198efd05c4539c80523bb0e81",
+      "identity_algorithm": "sha256",
+      "verification_status": "verified",
+      "copy_attempts_used": 1,
+      "copy_retries": 0,
+      "cache_status": "copied_and_verified"
+    }
+  },
+  "SBCE_VASCULAR_DELPHI_2019": {
+    "status": "imported_selected_nomenclature",
+    "terminology": "SBCE_VASCULAR_DELPHI_2019",
+    "version": "2019",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6395173/",
+    "package_sha256": "217b9e173ada9786ae855e84a050b7dc2109034c35ccb3f60c4d6dea452aa652",
+    "scope": "Selected nomenclature facts from a later capsule vascular consensus; not the original CEST 2005 vocabulary or its full contents.",
+    "not_original_cest": true,
+    "not_synonyms": [
+      [
+        "SBCE2019:angiectasia",
+        "SBCE2019:erythematous_patch"
+      ],
+      [
+        "SBCE2019:erythematous_patch",
+        "SBCE2019:red_spot"
+      ]
+    ]
+  }
+}

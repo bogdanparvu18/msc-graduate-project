@@ -1,0 +1,313 @@
+{
+  "base_policy_sha256": "e3eef98be60207b1d134690b84ed197dd937ea226ca8149dcd2d5ec52db36deb",
+  "base_policy_unchanged": true,
+  "composition_count": 203,
+  "evidence_capability_count": 158,
+  "compositions_sha256": "bc3369301b406e1341c7cc943c6f5e917a09d89b06e39cc93f1b508f9fbfc49d",
+  "execution_status": "not_executed",
+  "qa_generated": 0,
+  "clinical_observations_created": 0,
+  "mrcm_validation_executed": false,
+  "tasks_without_composition_operators": {
+    "verified_reference_comparison": "No terminology composition operators are declared for this task; its original comparison contract remains available.",
+    "clinical_visual_quality": "No composition operators are declared; an independently reviewed clinical visibility reference is required.",
+    "guarded_clinical_sufficiency": "No composition operators are declared; an independently reviewed sufficiency or abstention reference is required."
+  },
+  "snomed_relationships_imported": 225,
+  "snomed_manifest": {
+    "terminology": "SNOMED_CT",
+    "release_date": "20260831",
+    "edition_label": "",
+    "source_name": "SNOMED_CT_CA_RF2_Release_20260831.zip",
+    "component_files": {
+      "concepts": {
+        "path": "SnomedCT_Canadian_EditionRelease_PRODUCTION_20260831T120000Z/Snapshot/Terminology/sct2_Concept_Snapshot_CanadianEdition_20260831.txt",
+        "sha256": "22d1ba177d37bf65115c526e4b4da6fd9f10a6c1e53691f05f1e162f86e92140",
+        "snapshot_rows": 594644,
+        "active_rows": 441770
+      },
+      "descriptions": {
+        "path": "SnomedCT_Canadian_EditionRelease_PRODUCTION_20260831T120000Z/Snapshot/Terminology/sct2_Description_Snapshot_CanadianEdition_20260831.txt",
+        "sha256": "ac994252ec8643fc3419ba0d254f5821da85549f02484403602879955f91d4e0",
+        "snapshot_rows": 2349616,
+        "active_rows": 1992085
+      },
+      "relationships": {
+        "path": "SnomedCT_Canadian_EditionRelease_PRODUCTION_20260831T120000Z/Snapshot/Terminology/sct2_Relationship_Snapshot_CanadianEdition_20260831.txt",
+        "sha256": "9e470a8b43fd76fef90c38094f3393c344b8673ed04b2ea43e23a99622d42861",
+        "snapshot_rows": 4050190,
+        "active_rows": 1788683
+      },
+      "language_refset": {
+        "path": "SnomedCT_Canadian_EditionRelease_PRODUCTION_20260831T120000Z/Snapshot/Refset/Language/der2_cRefset_LanguageSnapshot_CanadianEdition_20260831.txt",
+        "sha256": "b051614ea33ba72a56b03db37cdaa8ddff70898880485109236c97c29573c683",
+        "snapshot_rows": 5645961,
+        "active_rows": 4816897
+      }
+    },
+    "metadata_ids": {
+      "SNOMED_FSN": "900000000000003001",
+      "SNOMED_SYNONYM": "900000000000013009",
+      "SNOMED_PREFERRED": "900000000000548007",
+      "SNOMED_ACCEPTABLE": "900000000000549004",
+      "SNOMED_US_ENGLISH": "900000000000509007",
+      "SNOMED_GB_ENGLISH": "900000000000508004",
+      "SNOMED_INFERRED": "900000000000011006",
+      "SNOMED_IS_A": "116680003"
+    },
+    "metadata_discovery_policy": "unique_active_English_full_metadata_label_then_FSN_self_validation_and_field_usage_audit",
+    "metadata_discovery_policy_version": "snomed-rf2-metadata-discovery-v1",
+    "metadata_source_components": {
+      "concepts": {
+        "path": "SnomedCT_Canadian_EditionRelease_PRODUCTION_20260831T120000Z/Snapshot/Terminology/sct2_Concept_Snapshot_CanadianEdition_20260831.txt",
+        "sha256": "22d1ba177d37bf65115c526e4b4da6fd9f10a6c1e53691f05f1e162f86e92140",
+        "snapshot_rows": 594644,
+        "active_rows": 441770
+      },
+      "descriptions": {
+        "path": "SnomedCT_Canadian_EditionRelease_PRODUCTION_20260831T120000Z/Snapshot/Terminology/sct2_Description_Snapshot_CanadianEdition_20260831.txt",
+        "sha256": "ac994252ec8643fc3419ba0d254f5821da85549f02484403602879955f91d4e0",
+        "snapshot_rows": 2349616,
+        "active_rows": 1992085
+      },
+      "relationships": {
+        "path": "SnomedCT_Canadian_EditionRelease_PRODUCTION_20260831T120000Z/Snapshot/Terminology/sct2_Relationship_Snapshot_CanadianEdition_20260831.txt",
+        "sha256": "9e470a8b43fd76fef90c38094f3393c344b8673ed04b2ea43e23a99622d42861",
+        "snapshot_rows": 4050190,
+        "active_rows": 1788683
+      },
+      "language_refset": {
+        "path": "SnomedCT_Canadian_EditionRelease_PRODUCTION_20260831T120000Z/Snapshot/Refset/Language/der2_cRefset_LanguageSnapshot_CanadianEdition_20260831.txt",
+        "sha256": "b051614ea33ba72a56b03db37cdaa8ddff70898880485109236c97c29573c683",
+        "snapshot_rows": 5645961,
+        "active_rows": 4816897
+      }
+    },
+    "rf2_edition_tag": "CanadianEdition",
+    "language_code": "en",
+    "language_refset_ids": [
+      "19491000087109",
+      "20581000087109",
+      "229851000087100",
+      "229861000087102",
+      "900000000000508004",
+      "900000000000509007"
+    ],
+    "available_language_refset_ids": [
+      "19491000087109",
+      "20581000087109",
+      "229851000087100",
+      "229861000087102",
+      "900000000000508004",
+      "900000000000509007"
+    ],
+    "source_active_language_refset_ids": [
+      "19491000087109",
+      "20581000087109",
+      "229851000087100",
+      "229861000087102",
+      "900000000000508004",
+      "900000000000509007"
+    ],
+    "language_refset_discovery_scope": "active_members_linked_to_active_selected_language_descriptions",
+    "selected_language_refset_ids": [
+      "19491000087109",
+      "20581000087109",
+      "229851000087100",
+      "229861000087102",
+      "900000000000508004",
+      "900000000000509007"
+    ],
+    "language_refset_selection": "all_active_ids_discovered_from_rf2",
+    "language_refset_discovery_source": {
+      "path": "SnomedCT_Canadian_EditionRelease_PRODUCTION_20260831T120000Z/Snapshot/Refset/Language/der2_cRefset_LanguageSnapshot_CanadianEdition_20260831.txt",
+      "sha256": "b051614ea33ba72a56b03db37cdaa8ddff70898880485109236c97c29573c683",
+      "snapshot_rows": 5645961,
+      "active_rows": 4816897
+    },
+    "language_refset_ids_identify_release": false,
+    "accepted_term_counts_by_refset": {
+      "19491000087109": 1118769,
+      "20581000087109": 10020,
+      "229851000087100": 383,
+      "229861000087102": 213,
+      "900000000000508004": 997111,
+      "900000000000509007": 1116818
+    },
+    "preferred_term_display_policy": "first_available_in_sorted_refset_id_order",
+    "dialect_preferred_terms_preserved": true,
+    "description_resolution_policy": "unique_within_refset_then_declared_refset_order_v1",
+    "description_resolution_policy_version": "snomed-description-resolution-v1",
+    "description_candidate_detail_scope": "ambiguous_concepts_or_multiple_active_fsns; raw_descriptions_and_terms_remain_authoritative",
+    "source_description_validation_status": "localized_ambiguities_retained",
+    "description_issue_count": 93,
+    "ambiguous_concept_count": 85,
+    "mapping_eligible_concept_count": 441685,
+    "description_issue_counts_by_reason": {
+      "ambiguous_fsn": 77,
+      "ambiguous_preferred_descriptions": 16
+    },
+    "ambiguous_concepts_excluded_from_automatic_mapping": true,
+    "description_issue_source_components": {
+      "concepts": {
+        "path": "SnomedCT_Canadian_EditionRelease_PRODUCTION_20260831T120000Z/Snapshot/Terminology/sct2_Concept_Snapshot_CanadianEdition_20260831.txt",
+        "sha256": "22d1ba177d37bf65115c526e4b4da6fd9f10a6c1e53691f05f1e162f86e92140",
+        "snapshot_rows": 594644,
+        "active_rows": 441770
+      },
+      "descriptions": {
+        "path": "SnomedCT_Canadian_EditionRelease_PRODUCTION_20260831T120000Z/Snapshot/Terminology/sct2_Description_Snapshot_CanadianEdition_20260831.txt",
+        "sha256": "ac994252ec8643fc3419ba0d254f5821da85549f02484403602879955f91d4e0",
+        "snapshot_rows": 2349616,
+        "active_rows": 1992085
+      },
+      "language_refset": {
+        "path": "SnomedCT_Canadian_EditionRelease_PRODUCTION_20260831T120000Z/Snapshot/Refset/Language/der2_cRefset_LanguageSnapshot_CanadianEdition_20260831.txt",
+        "sha256": "b051614ea33ba72a56b03db37cdaa8ddff70898880485109236c97c29573c683",
+        "snapshot_rows": 5645961,
+        "active_rows": 4816897
+      }
+    },
+    "concept_module_ids": [
+      "20621000087109",
+      "900000000000012004",
+      "900000000000207008"
+    ],
+    "active_concepts": 441770,
+    "active_descriptions": 1158513,
+    "accepted_terms": 3243314,
+    "active_relationships": 1788683,
+    "active_inferred_relationships": 1745734,
+    "active_non_inferred_relationships": 42949,
+    "relationship_counts_by_characteristic_type": {
+      "900000000000011006": 1745734,
+      "900000000000227009": 42949
+    },
+    "relationship_reasoning_policy": "active_inferred_only",
+    "non_inferred_relationships_preserved": true,
+    "source_terms_are_not_dataset_mapping_approval": true,
+    "mrcm_validation_performed": false,
+    "owl_classification_performed": false,
+    "source_fingerprint": "123a8b54fb3bb27e46e2a16d8b23af3538b4e3290f9823f01e3494565bc3e4d9",
+    "source_artifact": {
+      "source_key": "SNOMED_CT",
+      "source_path": "/content/drive/MyDrive/MMVQA_Clinical/inputs/terminology/SNOMED_CT_CA_RF2_Release_20260831.zip",
+      "local_path": "/content/mmvqa_phase3_sector1/terminology_cache/SNOMED_CT/3c897d349ed1b63cd17358625f5242f5aa89113198efd05c4539c80523bb0e81/SNOMED_CT_CA_RF2_Release_20260831.zip",
+      "reference_manifest_path": "/content/drive/MyDrive/MMVQA_Clinical/inputs/terminology/_source_registry/SNOMED_CT/3c897d349ed1b63cd17358625f5242f5aa89113198efd05c4539c80523bb0e81.json",
+      "reference": {
+        "kind": "file",
+        "identity_algorithm": "sha256",
+        "sha256": "3c897d349ed1b63cd17358625f5242f5aa89113198efd05c4539c80523bb0e81",
+        "size_bytes": 813225837,
+        "files": [
+          {
+            "relative_path": ".",
+            "size_bytes": 813225837,
+            "sha256": "3c897d349ed1b63cd17358625f5242f5aa89113198efd05c4539c80523bb0e81"
+          }
+        ]
+      },
+      "source_sha256": "3c897d349ed1b63cd17358625f5242f5aa89113198efd05c4539c80523bb0e81",
+      "vm_sha256": "3c897d349ed1b63cd17358625f5242f5aa89113198efd05c4539c80523bb0e81",
+      "identity_algorithm": "sha256",
+      "verification_status": "verified",
+      "copy_attempts_used": 1,
+      "copy_retries": 0,
+      "cache_status": "copied_and_verified"
+    }
+  },
+  "available_source_fields": [
+    "annotation_assisted",
+    "annotation_id",
+    "annotation_ids_json",
+    "annotation_status",
+    "answer",
+    "artifact_id",
+    "assignment_constraint",
+    "available_subject_variants_json",
+    "available_verified_frame_indices_json",
+    "available_verified_frames",
+    "available_verified_source_paths_json",
+    "bbox_xyxy",
+    "bbox_xyxy_json",
+    "bytes",
+    "clinical_group",
+    "comparison_reference_image_relpath",
+    "comparison_reference_verified_labels_json",
+    "complete",
+    "example_id",
+    "final_split",
+    "finding_segment_id",
+    "finding_segment_ids_json",
+    "frame_index",
+    "ground_truth_ref",
+    "ground_truth_scope",
+    "height",
+    "image_count",
+    "image_path",
+    "image_relpath",
+    "image_size_bytes",
+    "image_usable_for_modelling",
+    "is_target",
+    "jpeg_quality",
+    "kind",
+    "labelled_row_indices_json",
+    "materialized",
+    "md5",
+    "metadata_json",
+    "ordered_inputs_json",
+    "panel_index",
+    "params_json",
+    "physical_frame_id",
+    "physical_frame_ids_json",
+    "pixels_available",
+    "prepare_eligible",
+    "qa_validation_status",
+    "qc_json",
+    "question",
+    "question_status",
+    "reason",
+    "recipe_signature",
+    "referenced_by_segment_ids_json",
+    "relative_path",
+    "render_signature",
+    "required_verified_frames",
+    "role",
+    "s7_state_sha256",
+    "same_cohort_eligible",
+    "same_cohort_missing_variants_json",
+    "same_cohort_scope",
+    "same_cohort_subject_id",
+    "same_cohort_variants_json",
+    "selection_scope",
+    "sha256",
+    "shared_source_group_id",
+    "skip_reason",
+    "source_height",
+    "source_image_relpaths_json",
+    "source_index",
+    "source_label",
+    "source_qc_json",
+    "source_refs_json",
+    "source_sha256",
+    "source_sha256_values_json",
+    "source_width",
+    "split_assignment_status",
+    "status",
+    "storage",
+    "subject_id",
+    "supported_task_families_json",
+    "temporal_row_indices_json",
+    "time_offset_seconds",
+    "training_ready",
+    "unlabelled_is_normal",
+    "upstream_image_path",
+    "upstream_splits_json",
+    "variant",
+    "verification_scope",
+    "verified_labels_json",
+    "verified_source_labels_json",
+    "video_key",
+    "width"
+  ]
+}

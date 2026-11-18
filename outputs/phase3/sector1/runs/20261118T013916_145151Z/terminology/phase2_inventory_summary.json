@@ -1,0 +1,20 @@
+{
+  "class_count": 14,
+  "annotation_count": 47239,
+  "frame_count": 47229,
+  "source_commit": "18cd001f6ba7951e32b1bb82197ece9920e4e8ec",
+  "source_processing_signature": null,
+  "source_catalog_sha256": "2ccf17c63d568c2d4ba36e390fe90c9418fea5ca1a95b818715ec1920134ea4d",
+  "category_conflict_count": 0,
+  "issue_count": 0,
+  "normalization": "lowercase_and_collapsed_whitespace_only",
+  "clinical_reannotation_performed": false,
+  "qa_generated": 0,
+  "observation_contract_version": "mmvqa-observation-contract-v2",
+  "verified_attribute_records": 0,
+  "verified_observation_attributes": 0,
+  "observation_attribute_audit_count": 0,
+  "attribute_input_status_counts": {
+    "not_provided": 47239
+  }
+}

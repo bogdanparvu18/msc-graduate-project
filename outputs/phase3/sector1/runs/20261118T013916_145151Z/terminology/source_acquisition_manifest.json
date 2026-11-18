@@ -1,0 +1,46 @@
+{
+  "MST": {
+    "path": "/content/drive/MyDrive/MMVQA_Clinical/inputs/terminology/mst30_tables.xls",
+    "status": "available",
+    "acquisition": "existing_storage",
+    "downloaded": false,
+    "source_origin": null,
+    "size_bytes": 207360,
+    "sha256": null,
+    "external_ids": {},
+    "integrity_status": "pending_source_staging_verification"
+  },
+  "CEST_DOCUMENT": {
+    "path": "/content/drive/MyDrive/MMVQA_Clinical/inputs/terminology/CEST.pdf",
+    "status": "available",
+    "acquisition": "existing_storage",
+    "downloaded": false,
+    "source_origin": null,
+    "size_bytes": 209520,
+    "sha256": null,
+    "external_ids": {},
+    "integrity_status": "pending_source_staging_verification"
+  },
+  "CEST_PACKAGE": {
+    "path": "/content/drive/MyDrive/MMVQA_Clinical/inputs/terminology/_source_registry/CEST_PACKAGE/267a5aab79c62c81a8cb55a115a1bb7a6a76252562004747fb33f8aa357c8180/cest_2005_package.json",
+    "status": "available",
+    "acquisition": "existing_storage",
+    "downloaded": false,
+    "source_origin": null,
+    "size_bytes": 218005,
+    "sha256": null,
+    "external_ids": {},
+    "integrity_status": "pending_source_staging_verification"
+  },
+  "SNOMED_CT": {
+    "path": "/content/drive/MyDrive/MMVQA_Clinical/inputs/terminology/SNOMED_CT_CA_RF2_Release_20260831.zip",
+    "status": "available",
+    "acquisition": "existing_storage",
+    "downloaded": false,
+    "source_origin": null,
+    "size_bytes": 813225837,
+    "sha256": null,
+    "external_ids": {},
+    "integrity_status": "pending_source_staging_verification"
+  }
+}

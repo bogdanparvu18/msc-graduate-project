@@ -1,0 +1,84 @@
+{
+  "source": {
+    "code_version": "phase3-sector1-terminology-v1.4.6",
+    "notebook_base_commit": "35ffcb93020f84fde4bab7896c1a75e6ea322f7e",
+    "repository": "bogdanparvu18/msc-graduate-project",
+    "ref": null,
+    "work_root": "/content/mmvqa_phase3_sector1",
+    "storage_root": "/content/drive/MyDrive/MMVQA_Clinical",
+    "mount_google_drive": true,
+    "read_colab_secret": true,
+    "demo_variants": [
+      "full",
+      "crop",
+      "fullcrop",
+      "overlay",
+      "temporal_multi",
+      "temporal_collage"
+    ],
+    "save_reports_to_drive": true,
+    "metadata_batch_size": 8192,
+    "progress": true,
+    "expected_class_count": 14
+  },
+  "terminology": {
+    "input_root": null,
+    "mst_source_path": null,
+    "cest_package_path": null,
+    "cest_document_path": null,
+    "cest_document_patterns": [
+      "CEST.pdf"
+    ],
+    "snomed_rf2_path": null,
+    "snomed_release_date": null,
+    "snomed_edition": "",
+    "snomed_language_code": "en",
+    "snomed_language_refset_ids": null,
+    "snomed_component_paths": {},
+    "mapping_review_path": null,
+    "vm_copy_attempts": 3,
+    "downloads": {
+      "MST": {
+        "kind": "xls",
+        "url_origin": "https://www.worldendo.org"
+      },
+      "CEST_PACKAGE": {
+        "url_secret_name": null,
+        "header_secret_names": {},
+        "kind": "json",
+        "url_origin": null
+      },
+      "CEST_DOCUMENT": {
+        "url_secret_name": null,
+        "header_secret_names": {},
+        "kind": "document",
+        "url_origin": null
+      },
+      "SNOMED_CT": {
+        "url_secret_name": null,
+        "header_secret_names": {},
+        "kind": "zip",
+        "url_origin": null
+      }
+    },
+    "save_to_drive": true
+  },
+  "rag_github": {
+    "repository": "bogdanparvu18/msc-graduate-project",
+    "ref": "main",
+    "manifest_path": "outputs/phase3/sector1/terminology/rag_evidence_manifest.json",
+    "download_attempts": 3
+  },
+  "gi_github": {
+    "repository": "bogdanparvu18/msc-graduate-project",
+    "ref": "main",
+    "manifest_path": "outputs/phase3/sector1/gi_supplement_manifest.json",
+    "download_attempts": 3
+  },
+  "cest_github": {
+    "repository": "bogdanparvu18/msc-graduate-project",
+    "ref": "main",
+    "manifest_path": "outputs/phase3/sector1/terminology/cest_2005_manifest.json",
+    "download_attempts": 3
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "mmvqa-rag-review-summary-v1",
+  "review_date": "2026-11-16",
+  "bundle_sha256": "c0e821337fac98bcbde12fe5d1fd1ceacf37cff87e670de35bc2f7858e9abc0a",
+  "candidate_count": 55,
+  "review_count": 49,
+  "verdict_counts": {
+    "accepted": 48,
+    "rejected": 1,
+    "unresolved": 0,
+    "source_required": 0,
+    "unmapped": 6
+  },
+  "review_method": "AI_assisted_RAG",
+  "human_reviewed": false,
+  "acceptance_scope": "Project terminology mapping only; not human clinical validation or image-level truth."
+}

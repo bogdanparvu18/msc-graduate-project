@@ -1,0 +1,226 @@
+[
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "Patients and methods > Small bowel preparation scale; HTML lines 287-291",
+    "paraphrase": "KODA separately measures visible mucosa and image obstruction from debris, bubbles, and bile. Shadows affect visibility without necessarily constituting obstruction. These are image-quality domains, not disease diagnoses.",
+    "passage_id": "passage:ALAGEELI_KODA_2020",
+    "source_id": "ALAGEELI_KODA_2020"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "Foreign body retrieval, PDF page 25 (zero-based page 24), lines 1949–1954",
+    "paraphrase": "Retained small-bowel foreign bodies commonly include endoscopy capsules and devices. Capsule retention means persistence in the digestive tract for at least two weeks.",
+    "passage_id": "passage:ESGE_SBCE_2022",
+    "source_id": "ESGE_SBCE_2022"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "Categories of findings > Anatomy and Luminal findings; Methods annotation verification; HTML lines 339-342 and 382-394; Categories of findings; Luminal findings, paragraphs 1–5; Categories of findings > Luminal findings, paragraphs 2–4 (PMC lines 391–394)",
+    "paraphrase": "The source defines three anatomical landmarks, normal clean mucosa, and reduced mucosal view. Normal clean mucosa combines a clean visible surface with no pathological finding. Reduced view concerns obscuration by intestinal content. Its simplified categories were organized using MST 3.0. The dataset organizes its classes using MST 3.0; erythema is redness, erosions/ulcers are excavated findings, and polyps protrude. Fresh blood: red liquid. Hematin: dark mucosal streaks. Foreign body: tablet residue/capsules. Angiectasia: superficial dilated vessels. Lymphangiectasia: dilated mucosal lymphatics.",
+    "passage_id": "passage:KVASIR_2021",
+    "source_id": "KVASIR_2021"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "Results, PDF page 16 (zero-based page 15), lines 805–809; Discussion, PDF page 17, lines 905–909",
+    "paraphrase": "Experts assigned lymphangiectasia low relevance in the illustrated bleeding/Crohn scenarios. The authors state it may represent a normal variant in most cases.",
+    "passage_id": "passage:LEENHARDT_RELEVANCE_2021",
+    "source_id": "LEENHARDT_RELEVANCE_2021"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "Scope note and MeSH Unique ID; HTML lines 52-54 and 91",
+    "paraphrase": "This anatomical descriptor identifies the valve guarding the opening where the ileum enters the large intestine.",
+    "passage_id": "passage:MESH_ILEOCECAL",
+    "source_id": "MESH_ILEOCECAL"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "Abstract; HTML lines 30-33",
+    "paraphrase": "The authors distinguish the ductal dilation called the hepatopancreatic ampulla from the structure termed the major duodenal papilla. They recommend separate anatomical names for these entities.",
+    "passage_id": "passage:MIRILAS_2005",
+    "source_id": "MIRILAS_2005"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "Luminal_findings!R46C2, R90C2, R134C2, R148C2; Diagnoses!R103C2; Luminal_findings!R33C1:R36C4; Luminal_findings!R67C1:C4; Diagnoses!R77C2; Diagnoses!R92C2",
+    "paraphrase": "Verified target labels and their worksheet roles; rows are local source locators, not global ontology concept identifiers. Target vocabulary contains the named findings, separate Blood Type values, and diagnostic entries. These source cells establish terms and categories, not patient truth.",
+    "passage_id": "passage:MST3_OFFICIAL_TABLES",
+    "source_id": "MST3_OFFICIAL_TABLES"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "Abstract > Methodology and Results; HTML lines 225-231",
+    "paraphrase": "A study of 100 capsule examinations treats the pyloric ring, major duodenal papilla, and ileocecal valve as identifiable anatomical landmarks.",
+    "passage_id": "passage:NAKAMURA_2009",
+    "source_id": "NAKAMURA_2009"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "pylorus definition; HTML line 17",
+    "paraphrase": "The pylorus connects the stomach with the duodenum and regulates passage of stomach contents into the small intestine.",
+    "passage_id": "passage:NCI_PYLORUS",
+    "source_id": "NCI_PYLORUS"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "Introduction: Definition of the disease; Complementary examinations > EGD with duodenal biopsies; Capsule endoscopy (PMC lines 154–156, 243–258)",
+    "paraphrase": "The protocol distinguishes lymphatic dilations from primary disease after excluding secondary causes. Biopsies contribute confirmation; capsule imaging can identify lesions and assess extent.",
+    "passage_id": "passage:PNDS_LYMPHANGIECTASIA_2025",
+    "source_id": "PNDS_LYMPHANGIECTASIA_2025"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "Table 2, Angiectasia/angiodysplasia; Discussion paragraphs on nomenclature and limitations (PMC lines 308–319, 385–389)",
+    "paraphrase": "The panel jointly names angiectasia/angiodysplasia for a flat red mucosal lesion with clustered dilated capillaries. It distinguishes phlebectasia and red spots. Consensus describes morphology, not bleeding relevance.",
+    "passage_id": "passage:SBCE_VASCULAR_DELPHI_2019",
+    "source_id": "SBCE_VASCULAR_DELPHI_2019"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "Patients and methods > Description of the device and procedure; Study design and patients (PMC lines 112–138)",
+    "paraphrase": "Endoscopists recorded blood or hematin separately from clinical context. The non-imaging sensor could detect blood-related absorption but could not distinguish fresh blood from hematin.",
+    "passage_id": "passage:SCHMIDT_HEMOPILL_2019",
+    "source_id": "SCHMIDT_HEMOPILL_2019"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "Table 2.1, journal p.987, Erythema row; section 5.1, Statement 5A",
+    "paraphrase": "Erythema denotes abnormal mucosal redness. Endoscopic features alone do not uniquely establish Crohn disease or ulcerative colitis.",
+    "passage_id": "passage:annese_ecco_2013",
+    "source_id": "annese_ecco_2013"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "Section 4, Removal and retrieval of polyps for histology; PDF page 8 (zero-based page 7)",
+    "paraphrase": "Polyp histology requires separate assessment; the guideline distinguishes histopathology from expert optical diagnosis.",
+    "passage_id": "passage:ferlitsch_esge_2024",
+    "source_id": "ferlitsch_esge_2024"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "Table S2, supplemental PDF p.6 (zero-based page 5), Erythema/Erosion/Ulcer/Polyp rows",
+    "paraphrase": "Its capsule examples describe erythema as red patches, erosion as limited epithelial loss, ulcer as depressed loss, and polyp as protrusion.",
+    "passage_id": "passage:jiang_capsule_supplement_2024",
+    "source_id": "jiang_capsule_supplement_2024"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "Table 2, journal p.103; Discussion, pp.105–106",
+    "paraphrase": "Consensus distinguishes aphthoid erosion from superficial/deep ulceration; tissue loss and redness are descriptive findings. Etiology and depth can remain uncertain.",
+    "passage_id": "passage:leenhardt_inflammatory_2020",
+    "source_id": "leenhardt_inflammatory_2020"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "Definition and Notes, lines 6-11",
+    "paraphrase": "A concept can have several acceptable ways of being named in a language context. A synonym string can also be shared by different concepts, so term identity alone cannot establish concept identity.",
+    "passage_id": "passage:SNOMED_SYNONYM_GUIDANCE_2026",
+    "source_id": "SNOMED_SYNONYM_GUIDANCE_2026"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "Purpose and Language Reference Rules and Guidance, lines 3-8 and 19-28",
+    "paraphrase": "Language reference sets specify description acceptability within a language or dialect. An active reference-set member identifies a description as preferred or acceptable; absence of active membership does not establish acceptability in that context.",
+    "passage_id": "passage:SNOMED_LANGUAGE_REFSET_GUIDANCE_2026",
+    "source_id": "SNOMED_LANGUAGE_REFSET_GUIDANCE_2026"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "The Structure-Entire-Part model, lines 3-18",
+    "paraphrase": "Anatomical structure, entire entity, and part are distinct modeling categories. A general structure concept supports references to an entity or its parts; removing these words indiscriminately can change meaning. Anatomical class mappings must preserve the intended scope.",
+    "passage_id": "passage:SNOMED_ANATOMICAL_MODEL_2026",
+    "source_id": "SNOMED_ANATOMICAL_MODEL_2026"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "Search result disambiguation, lines 3-5",
+    "paraphrase": "The same displayed term can identify different concepts. Fully specified names and the relevant ancestor hierarchy provide information needed to distinguish their meanings.",
+    "passage_id": "passage:SNOMED_IDENTICAL_TERMS_GUIDANCE_2026",
+    "source_id": "SNOMED_IDENTICAL_TERMS_GUIDANCE_2026"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "Scope Note and tree placement, lines 24-25 and 67-74",
+    "paraphrase": "The descriptor concerns dilation of lymphatic vessels and has an intestinal subtype. This supports retrieval of lymphangiectasis vocabulary, but does not establish a specific disease cause in an image.",
+    "passage_id": "passage:NLM_LYMPHANGIECTASIS_2026",
+    "source_id": "NLM_LYMPHANGIECTASIS_2026"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "Scope Note and Entry Terms, lines 25-29",
+    "paraphrase": "The intestinal descriptor lists both lymphangiectasis and lymphangiectasia wording. Its clinical scope includes more than a visible mucosal appearance, so a diagnostic association must not silently replace an image-level observation.",
+    "passage_id": "passage:NLM_INTESTINAL_LYMPHANGIECTASIS_2026",
+    "source_id": "NLM_INTESTINAL_LYMPHANGIECTASIS_2026"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "Sections 8.1.2 and 8.1.2.1, printed pages 43-44; PDF pages 42-43 zero-based",
+    "paraphrase": "The guide distinguishes concept 56208002, which represents ulcer morphology, from concept 429040005, which represents the ulcer disorder recorded in a clinical encounter. Its clinical-finding reference-set example selects the latter. These examples establish different semantic purposes despite a shared display term; the imported edition still requires runtime verification.",
+    "passage_id": "passage:SNOMED_AU_ULCER_SEMANTIC_DISTINCTION_2020",
+    "source_id": "SNOMED_AU_ULCER_SEMANTIC_DISTINCTION_2020"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "Morphologic Abnormalities vs. Findings, opening guidance and attribute modeling explanation",
+    "paraphrase": "SNOMED distinguishes structural morphologic abnormalities from clinical findings and advises against substituting a morphology concept for a finding. Morphology concepts can supply values of defining attributes of findings and procedures. This general guidance does not establish a specific relationship between individual concepts in an imported release.",
+    "passage_id": "passage:SNOMED_MORPHOLOGY_FINDING_GUIDANCE_2026",
+    "source_id": "SNOMED_MORPHOLOGY_FINDING_GUIDANCE_2026"
+  },
+  {
+    "decision_is_inference": true,
+    "evidence_kind": "source_cells_and_explicit_project_interpretation",
+    "human_reviewed": false,
+    "location": "Luminal_findings!R148C2 and Diagnoses!R103C2; Diagnoses!R1C1 and R76C1 establish the endoscopic/enteroscopy context",
+    "paraphrase": "The workbook places Ulcer in both the luminal finding table and the enteroscopy portion of Endoscopic Diagnoses. These source rows have distinct table roles. The project retains the luminal entry as the exact finding mapping and the endoscopic diagnosis entry as related context, without deriving a cause or an additional patient diagnosis.",
+    "passage_id": "passage:MST3_ULCER_ROLES",
+    "source_id": "MST3_OFFICIAL_TABLES",
+    "source_sha256": "f4cf8e2fb50b74d9910295974b96f34c5bcb2813a8eb55796fb9e4ced5b98564"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "Definition of polyp, main definition paragraph",
+    "paraphrase": "A polyp is a growth projecting from a mucosal surface. This generic definition does not specify a histological subtype.",
+    "passage_id": "passage:NCI_POLYP_DEFINITION_2026",
+    "source_id": "NCI_POLYP_DEFINITION_2026"
+  },
+  {
+    "evidence_kind": "paraphrase",
+    "human_reviewed": false,
+    "location": "Opening definitions and Findings and Disorders section",
+    "paraphrase": "The Clinical finding hierarchy includes Disorder as a subhierarchy. Disorder concepts represent necessarily abnormal clinical states; clinical findings can represent normal or abnormal observations, judgments or assessments. Selecting a concept still requires an appropriate clinical context.",
+    "passage_id": "passage:SNOMED_CLINICAL_FINDING_DISORDER_GUIDANCE_2026",
+    "source_id": "SNOMED_CLINICAL_FINDING_DISORDER_GUIDANCE_2026"
+  },
+  {
+    "location": "Tables 3, 5, 6, 10 and 11, pp.954-959",
+    "paraphrase": "CEST separates anatomical sites, examination characteristics, observed small-bowel findings and diagnostic impressions. Table 6 describes Blood with Type Red/Clot/Hematin, Erythematous mucosa, Foreign Body, Polyp(s), Erosion and Ulcer. Tables 10-11 contain separate diagnosis-role entries. Table 3 includes Pylorus, Papilla and Ileocecal valve. Source categories and attributes do not establish observations in dataset images.",
+    "passage_id": "passage:CEST_2005_TABLES",
+    "source_id": "CEST_2005_ORIGINAL"
+  }
+]

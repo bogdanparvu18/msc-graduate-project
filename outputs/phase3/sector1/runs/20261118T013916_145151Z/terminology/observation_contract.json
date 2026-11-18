@@ -1,0 +1,40 @@
+{
+  "schema_version": "mmvqa-observation-contract-v2",
+  "attribute_registry_version": "mmvqa-attribute-registry-v1",
+  "attribute_registry_sha256": "9cd6cd16bbf35a4f4b58b695497e1cb176e8b0447d0cd0bd6a1754c5f2712335",
+  "required_identity_fields": [
+    "subject_id",
+    "annotation_id",
+    "ground_truth_ref",
+    "image_relpath",
+    "video_key"
+  ],
+  "attribute_containers": [
+    "verified_attributes",
+    "verified_attributes_json"
+  ],
+  "attribute_required_fields": [
+    "annotation_id",
+    "attribute",
+    "value",
+    "verification_status",
+    "evidence_ref"
+  ],
+  "attribute_optional_fields": [
+    "unit"
+  ],
+  "accepted_verification_status": "verified",
+  "measurement_rules": {
+    "size_mm": {
+      "unit": "mm",
+      "minimum": 0
+    }
+  },
+  "conflict_policy": "exclude_all_values_for_conflicting_observation_attribute",
+  "unknown_field_policy": "audit_and_exclude_attribute_record",
+  "evidence_ref_resolution": "not_performed_here",
+  "clinical_revalidation_performed": false,
+  "attribute_name_aliases_applied": true,
+  "attribute_name_comparison": "registry_identity_and_native_casefold_conflicts_preserve_source_spelling",
+  "unit_conversion_performed": false
+}

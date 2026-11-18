@@ -1,0 +1,286 @@
+{
+  "files": [
+    {
+      "bytes": 31335,
+      "relative_path": "approved_class_synonyms.parquet",
+      "sha256": "3f40caaf11bdea81ad49eb8a256c99fc6ac7156b9353c021507f18ddf051901d",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/approved_class_synonyms.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 4606,
+      "relative_path": "cest_proposal_audit.parquet",
+      "sha256": "e9b4bd2b8c05cf078797d9fa85cec37686b3502e3fc54841c4b461e8a5b8a89c",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/cest_proposal_audit.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 26314,
+      "relative_path": "cest_source_contexts.parquet",
+      "sha256": "742f33b5744eafb1e79a1271ebb209d77fe47234899adc9c8cafcd60fff04724",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/cest_source_contexts.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 13390,
+      "relative_path": "cest_source_notes.parquet",
+      "sha256": "012fadaeeb9c7a5062c80b1b31dd7ef806f6fac9dd296c256078b8c89a11bb52",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/cest_source_notes.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 14311,
+      "relative_path": "cest_unbound_source_values.parquet",
+      "sha256": "193850faed9ff3dab723fe5c99fab2f6ccc2037d48efe0d543aaad391d349d48",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/cest_unbound_source_values.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 69467,
+      "relative_path": "class_crosswalk.parquet",
+      "sha256": "60a701764cc0dbf900a88fccc479e462fbd6e012a65d80dfaae3dfde13a52bcc",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/class_crosswalk.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 379404,
+      "relative_path": "contract_terminology_bindings.parquet",
+      "sha256": "34d60775fcb70807df29aa462efaae100c9e1718c07a68e1ed583ba95c4ab367",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/contract_terminology_bindings.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 169260,
+      "relative_path": "coverage_contract.parquet",
+      "sha256": "6c8ab85afe4c77466bc306f449fb6b5398f3c1ecdb9272f614242a367e6e37d0",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/coverage_contract.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 19400,
+      "relative_path": "distinct_class_vocabulary.parquet",
+      "sha256": "a12945d03c4e17739380a182ff5dcc15383f54d8661b14e6c242c3cce78d17b7",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/distinct_class_vocabulary.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 10189,
+      "relative_path": "mst_applicability.parquet",
+      "sha256": "04c2c067219050855c18cbf5f60e2248efd574e98d88c5f09749adbc870bedcf",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/mst_applicability.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 3707,
+      "relative_path": "mst_attribute_issues.parquet",
+      "sha256": "b6ee1ac7193de3397df9415dad2bea5f2a9a3b0a0a2e71e90f983e367ca5776f",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/mst_attribute_issues.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 11495,
+      "relative_path": "mst_label_alignment.parquet",
+      "sha256": "358929c0222ca028f0f1eb1a80bbc55a3c57a5b0bc89128e301afa2206ba2dfa",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/mst_label_alignment.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 7844,
+      "relative_path": "mst_labels_missing_words.parquet",
+      "sha256": "24c0644419c355681a9324454f500a4d4dbd48afc02340c4f179004a20aeae07",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/mst_labels_missing_words.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 7855,
+      "relative_path": "mst_labels_unresolved.parquet",
+      "sha256": "47055aee039bde80a18eeac5c3b7105dc0f368c849d5a4ab25e67e823ec1acd3",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/mst_labels_unresolved.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 3829,
+      "relative_path": "mst_parse_issues.parquet",
+      "sha256": "ef922009b709b98a2464ce26abf491103156e4c689df07bbd55f147becd6dee6",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/mst_parse_issues.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 6929,
+      "relative_path": "mst_proposal_audit.parquet",
+      "sha256": "5158491e49f287c5dac67da2f2eeba34e553fca97bc6d0309e714e0794e9847b",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/mst_proposal_audit.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 21997,
+      "relative_path": "mst_source_cells.parquet",
+      "sha256": "7914b79a4a7f024770e4b4a12e9aee5388e44d292ac4f79d2b2a21b7786e60d9",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/mst_source_cells.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 7846165,
+      "relative_path": "phase2_annotation_provenance.parquet",
+      "sha256": "71afac599c8974936b0073d2b2ac003211ff35068621d5e4aba65a24104f44db",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/phase2_annotation_provenance.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 10439,
+      "relative_path": "phase2_classes.parquet",
+      "sha256": "a1b373b0a38a796a3c38f1efbae03ef751a24338d4bc62ad74f7325244c65bdb",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/phase2_classes.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 22478,
+      "relative_path": "phase2_evidence_capabilities.parquet",
+      "sha256": "18a7329d81a6c4221e8a2d7d17fa3deca0cfd6282479b6b669828918efccf7c8",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/phase2_evidence_capabilities.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 1044,
+      "relative_path": "phase2_inventory_issues.parquet",
+      "sha256": "df1c7ac4034cca3ef4ba850a615636b4812cf392d91157b749ce15a65e818b68",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/phase2_inventory_issues.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 4555,
+      "relative_path": "phase2_observation_attribute_audit.parquet",
+      "sha256": "fd53a267a107b77d2caa91a1e304648ff0cc92432ab32155fcb1cb473411a630",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/phase2_observation_attribute_audit.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 11457,
+      "relative_path": "phase2_observation_attributes.parquet",
+      "sha256": "6d82882efadfcf10410a3c8f12010ba39476aabe611ee4cb550e83e4d167dfb3",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/phase2_observation_attributes.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 53110,
+      "relative_path": "rag_mapping_audit.parquet",
+      "sha256": "bf5eedd12b6208af18a4c9c7c8f1c0ac537f58b6e00d6dbd4e181aebfb0c424f",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/rag_mapping_audit.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 30058,
+      "relative_path": "rag_synonym_audit.parquet",
+      "sha256": "64835730020c10a63be671a1e0db1eb6714fddff673bb645da45140d60fff214",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/rag_synonym_audit.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 61946,
+      "relative_path": "semantic_compositions.parquet",
+      "sha256": "22f646d8c7c17a1ed2c1f895f4404480862b4bd69fe23cc7cb1dc57ccf49fbe6",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/semantic_compositions.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 27337,
+      "relative_path": "snomed_candidates.parquet",
+      "sha256": "453ab5c15563463e892648d581813dcc6afb4e09cba83bfcdd36ec3a46f9cc58",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/snomed_candidates.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 9339,
+      "relative_path": "snomed_description_issues.parquet",
+      "sha256": "d14537764dba154d6e98e471ff45ebbb8b9358e17344c06632567399af276042",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/snomed_description_issues.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 18378,
+      "relative_path": "snomed_metadata_audit.parquet",
+      "sha256": "900db1eadfd4e88ac77a7468d74abcbdfffbd2ed9bc13796aa3838fb51eab491",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/snomed_metadata_audit.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 15993,
+      "relative_path": "snomed_retrieval_audit.parquet",
+      "sha256": "f437d62049dc97a1a9a44a1b67e09973888f3b625095daff51f67de9432a447d",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/snomed_retrieval_audit.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 22336,
+      "relative_path": "snomed_subset_concepts.parquet",
+      "sha256": "598149c795ad4ce18815a5d7f747b546027c4fae549b767b6b2ad1e713a3c3f1",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/snomed_subset_concepts.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 3412,
+      "relative_path": "snomed_subset_is_a_closure.parquet",
+      "sha256": "d69752dbc1c32948b4f7fd8189f2315db20b6ae4f1b7d183944aabca4fb9d6d8",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/snomed_subset_is_a_closure.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 7014,
+      "relative_path": "snomed_subset_relationship_scope.parquet",
+      "sha256": "b32040d54759305e32aee31800413a214471a1ff5ba733eff75550dc0366cfd2",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/snomed_subset_relationship_scope.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 11737,
+      "relative_path": "snomed_subset_relationships.parquet",
+      "sha256": "257142373de2a4acb74885a3c86ca4586455c5be1f5b1716f41da77aa2322572",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/snomed_subset_relationships.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 6415,
+      "relative_path": "snomed_subset_seed_attribute_relationships.parquet",
+      "sha256": "1a9924f7ee69d84490db65dfd93e2e412ccd8caa934731153a66db26c79600fb",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/snomed_subset_seed_attribute_relationships.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 92772,
+      "relative_path": "snomed_subset_terms.parquet",
+      "sha256": "f882786bce2b43ea6288de07a2cad5e9ec1120623b978ae8501d1a17f37e6079",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/snomed_subset_terms.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 37636,
+      "relative_path": "source_attested_synonyms.parquet",
+      "sha256": "4f0e4212c5bbfdde231ad975089c83c123d4e129032535de2a49ffdbfdf50a4a",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/source_attested_synonyms.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 25778,
+      "relative_path": "terminology_attributes.parquet",
+      "sha256": "145dd5c281b27ac5d790253e9077756795ecce649a62bfef83b8b25431f8c483",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/terminology_attributes.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    },
+    {
+      "bytes": 46325,
+      "relative_path": "terminology_terms.parquet",
+      "sha256": "eae907cf084ad29f7a8ef70872c261fa72c40b1817606c909921dae94c6c3930",
+      "storage_relative_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/terminology_terms.parquet",
+      "verification_status": "vm_and_drive_sha256_verified"
+    }
+  ],
+  "files_manifest_sha256": "f27dd7537b3604edc96d602e355f946e9d9444e4c8b762a32e7ecafa1f5f587c",
+  "integrity_status": "vm_and_drive_bytes_sha256_verified",
+  "run_id": "20261118T013916_145151Z",
+  "schema_version": "mmvqa-sector1-drive-artifacts-v1",
+  "storage_locator": {
+    "relative_root": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology",
+    "resolution": "Path(STORAGE_ROOT) / storage_relative_path",
+    "root_variable": "STORAGE_ROOT"
+  }
+}

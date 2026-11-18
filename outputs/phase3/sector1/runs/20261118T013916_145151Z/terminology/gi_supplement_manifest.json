@@ -1,0 +1,14 @@
+{
+  "schema_version": "mmvqa-gi-github-manifest-v1",
+  "artifact": {
+    "path": "outputs/phase3/sector1/gi_supplement_package.json",
+    "bytes": 2937,
+    "sha256": "3774bd3f09b5bfb53b9143d3b2acb0c215a10c69eaf99b0a8edad52688f38753",
+    "schema_version": "mmvqa-gi-supplement-v1"
+  },
+  "package_content_sha256": "217b9e173ada9786ae855e84a050b7dc2109034c35ccb3f60c4d6dea452aa652",
+  "verification_policy": "Fetch manifest and artifact from main; verify exact VM bytes against artifact.sha256 and recheck the manifest before use.",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6395173/",
+  "source_locator": "Table 2 and Results: Angiectasia/angiodysplasia; Red spot/dot",
+  "scope": "Selected nomenclature facts from a later capsule vascular consensus; not the original CEST 2005 vocabulary or its full contents."
+}

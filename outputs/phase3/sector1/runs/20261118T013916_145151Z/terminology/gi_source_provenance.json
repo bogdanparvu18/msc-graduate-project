@@ -1,0 +1,33 @@
+{
+  "schema_version": "mmvqa-gi-github-source-v1",
+  "repository": "bogdanparvu18/msc-graduate-project",
+  "repository_ref": "main",
+  "manifest_path": "outputs/phase3/sector1/gi_supplement_manifest.json",
+  "manifest_url": "https://raw.githubusercontent.com/bogdanparvu18/msc-graduate-project/main/outputs/phase3/sector1/gi_supplement_manifest.json",
+  "manifest_sha256": "6b917173d39e24850986f635d3785e4acaebd51bcfe55b53ad07fc276582ffb5",
+  "manifest_bytes": 831,
+  "manifest_local_path": "/content/mmvqa_phase3_sector1/gi_github_cache/bogdanparvu18__msc-graduate-project/0d6e4079e36703eb/gi/manifests/6b917173d39e24850986f635d3785e4acaebd51bcfe55b53ad07fc276582ffb5.json",
+  "artifact_path": "outputs/phase3/sector1/gi_supplement_package.json",
+  "artifact_url": "https://raw.githubusercontent.com/bogdanparvu18/msc-graduate-project/main/outputs/phase3/sector1/gi_supplement_package.json",
+  "artifact_bytes": 2937,
+  "source_sha256": "3774bd3f09b5bfb53b9143d3b2acb0c215a10c69eaf99b0a8edad52688f38753",
+  "vm_sha256": "3774bd3f09b5bfb53b9143d3b2acb0c215a10c69eaf99b0a8edad52688f38753",
+  "package_content_sha256": "217b9e173ada9786ae855e84a050b7dc2109034c35ccb3f60c4d6dea452aa652",
+  "local_path": "/content/mmvqa_phase3_sector1/gi_github_cache/bogdanparvu18__msc-graduate-project/0d6e4079e36703eb/gi/artifacts/3774bd3f09b5bfb53b9143d3b2acb0c215a10c69eaf99b0a8edad52688f38753/gi_supplement_package.json",
+  "cache_status": "downloaded_and_verified",
+  "attempts_used": 1,
+  "manifest_downloads": 2,
+  "artifact_downloads": 1,
+  "attempt_log": [
+    {
+      "attempt": 1,
+      "manifest_sha256": "6b917173d39e24850986f635d3785e4acaebd51bcfe55b53ad07fc276582ffb5",
+      "confirmed_manifest_sha256": "6b917173d39e24850986f635d3785e4acaebd51bcfe55b53ad07fc276582ffb5",
+      "artifact_sha256": "3774bd3f09b5bfb53b9143d3b2acb0c215a10c69eaf99b0a8edad52688f38753",
+      "status": "verified"
+    }
+  ],
+  "verification_status": "verified",
+  "reference_stability_check": "manifest_identical_before_and_after_artifact_verification",
+  "integrity_scope": "GitHub manifest reference and matching file bytes/content; not clinical validation or a pinned main commit"
+}
