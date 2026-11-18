@@ -1,0 +1,16 @@
+{
+  "data_commit": "d176a9a6eb6a642d6780317bca1cf589d551a169",
+  "drive_artifacts_manifest_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/drive_artifacts_manifest.json",
+  "drive_artifacts_manifest_sha256": "9c0ad1c07513b26d369f27815f9970b8fa1a6079dcf37d951c0201325cc4bf6a",
+  "files_manifest_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/files_manifest.json",
+  "files_manifest_sha256": "f27dd7537b3604edc96d602e355f946e9d9444e4c8b762a32e7ecafa1f5f587c",
+  "integrity_status": "remote_bytes_sha256_verified",
+  "publication_manifest_path": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology/publication_manifest.json",
+  "publication_manifest_sha256": "97b73f1b7b03e68d8eb8c1329393384f3bf42ab6d56e8d2f00a98bdf96f2c050",
+  "qa_generation_authorized": false,
+  "repository": "bogdanparvu18/msc-graduate-project",
+  "required_sector2_artifacts_published": true,
+  "root": "outputs/phase3/sector1/runs/20261118T013916_145151Z/terminology",
+  "run_id": "20261118T013916_145151Z",
+  "schema_version": "mmvqa-sector1-latest-v1"
+}
