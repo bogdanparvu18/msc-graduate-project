@@ -214,69 +214,26 @@ Kvasir-Capsule does not provide complete clinical visibility, cleanliness or evi
 
 ### Phase 3 — Construct and validate the medical QA benchmark
 
-In this phase, the medical visual artifacts prepared in Phase 2, Sector 8 are transformed into a structured medical multimodal visual question-answering benchmark. Phase 3 constructs and validates a controlled, reproducible QA benchmark using the available dataset annotations, visual artifacts, label maps and LLM-assisted language generation. It establishes task-specific question and answer validity, sample eligibility and final split assignment while preserving the source-sharing constraints recorded by S8.
+Phase 3 uses the ordered visual inputs and annotation evidence prepared in Phase 2, Sector 8 to construct a medical QA benchmark. Sector 1 has published the terminology mappings and the rules for using them. Sector 2 will apply those rules to individual recipes to generate and validate question–answer pairs.
 
-The purpose of this phase is to convert Kvasir-Capsule from a labelled capsule-endoscopy dataset into a benchmark where each sample contains a visual artifact, a clinical-style question, a ground-truth answer, evidence references, task type, source label, normalized clinical category, and validation status.
+#### Implemented Sector 1: clinical terminology mapping and evidence contract
 
+Sector 1 traced **47,239 annotations across 14 Kvasir-Capsule classes** to their Phase 2 sources. Its crosswalk contains **55 mapping records** across MST 3.0, CEST 2005, SNOMED CT Canadian Edition and the 2019 capsule vascular nomenclature supplement. The project policy approved 48 mappings, rejected one and recorded six as unmapped. For example, a crop labelled *ampulla of Vater* has an exact SNOMED CT mapping to *Structure of ampulla of Vater*. The CEST term *Papilla* and MST term *Major papilla* are approved as related terms. Only wording in the approved interchangeable vocabulary can substitute for the class label in an answer. [Class crosswalk](outputs/phase3/sector1/metadata/20261118T013916_145151Z/results/class_crosswalk.json#L2-L91) · [Approved vocabulary](outputs/phase3/sector1/metadata/20261118T013916_145151Z/results/approved_class_synonyms.json)
+
+The **coverage matrix** records 891 expected decisions across **9 tasks × 11 input variants × 9 evidence states**. Of these, 158 are applicable, 455 are inapplicable and 278 require review. Each row identifies the rule and its reason. For example, finding identification is applicable to a crop with a labelled bounding box. Generating a question for that crop still requires an annotation that supports the answer in the displayed region. The Sector 1 terminology run generated zero QA pairs. [Coverage matrix](outputs/phase3/sector1/metadata/20261118T013916_145151Z/results/coverage_contract.json) · [Sector 1 executive report](outputs/phase3/sector1/README.md)
+
+#### Planned Sector 2: deterministic QA generation from verified evidence
+
+1. **Load one verified release.** Resolve the Sector 1 publication through `latest.json`, verify the run manifest and validator module by SHA-256 before import, and load the matching S8 corpus. [Publication pointer](outputs/phase3/sector1/latest.json) · [Validator interface](outputs/phase3/sector1/metadata/20261118T013916_145151Z/results/sector2_binding_contract.json)
+2. **Check the actual inputs.** Select applicable matrix rows and call `require_eligible(...)` with the recipe, binding, task, evidence state and supporting annotation IDs. A comparison must identify both displayed operands. Inapplicable cases are skipped and cases requiring review are held for review.
+3. **Derive the answer and render the question.** Compute the answer from the verified observations using the task rule. An LLM can propose alternative question templates for review. Deterministic generation uses a fixed, versioned set of accepted templates and a stable selection rule. For the eligible crop above, one template could yield *Which anatomical landmark is shown in the indicated region?* with the canonical answer *Ampulla of Vater*.
+4. **Validate and split.** Record which observations support the answer, which operation produced it and which ordered images the model receives. Check repeatability by comparing the generated records across runs with the same inputs, rules and templates. Keep each S8 shared-source group and its variants together when assigning the final train, validation and test splits.
 
 #### Benchmark sample structure
 
-- a visual input, such as a single image, crop, bounding-box overlay, frame strip, video clip, quality-control panel, or multi-panel artifact
-- a natural-language clinical-style question
-- a ground-truth answer
-- a question type
-- source label from Kvasir-Capsule
-- normalized broad clinical category
-- evidence references
-- bounding-box information, where available
-- temporal context, where available
-- quality-control tag, where available
-- validation status
+Each planned record links the question and canonical answer to the S8 recipe, ordered visual artifact IDs, task, template version, evidence state, source class, supporting annotations and validation result. Records retain the normalized clinical category and whether the input used an annotation to indicate the region. Spatial tasks also retain the region reference. Temporal and comparison tasks retain the relevant frames, their order and their roles. The model receives the question and its specified visual inputs. The reference answer and annotation evidence are retained for evaluation.
 
-Kvasir-Capsule dataset provides the visual and annotation-based ground truth.
-
-The benchmark should rely on:
-
-- source video
-- target frame
-- original medical label
-- bounding-box annotation
-- frame number
-- labelled or unlabelled status
-- anatomical or luminal finding class
-- artifact type prepared in Phase 2, Sector 8
-- normalized clinical category created in Phase 2
-
-The LLM does not create new medical truth. It only helps transform existing structured information into natural-language question-answer pairs.
-
-The label map defines:
-
-- original Kvasir-Capsule label
-- normalized broad clinical category
-- normal / abnormal / anatomical / poor-visibility status
-- supported question types
-- safe answer templates
-- allowed evidence references
-- whether localization questions are allowed
-- whether temporal-context questions are allowed
-- whether abstention questions are appropriate
-
-The final dataset includes:
-
-- artifact paths
-- visual input type
-- natural-language questions
-- ground-truth answers
-- source labels
-- normalized broad clinical categories
-- evidence references
-- bounding-box availability
-- temporal-context availability
-- quality tags
-- question types
-- difficulty levels
-- validation status
-- train / validation / test split assignment
+An earlier deterministic generation experiment recorded **1,352,626 candidate QA presentations**. The published Sector 1 terminology run provides the contract for validating future generation. Validation against the published contract, clinical review where required and final grouped split assignment remain pending for the Sector 2 benchmark. [Earlier candidate-generation notebook](notebooks/phase3/phase3_01_deterministic_qa_generation.ipynb)
 
 ---
 
