@@ -391,8 +391,8 @@
   },
   {
     "relative_path": "semantic_compositions.json",
-    "bytes": 845581,
-    "sha256": "91b478ce13b1cca1002c98187c2d50646d5193c61097017b0fa42c0e2f792236"
+    "bytes": 880904,
+    "sha256": "ba676c64be5252e8e53a126c8b89679dee0eb48d68230cf6a8fc7157a266b10e"
   },
   {
     "relative_path": "semantic_compositions.parquet",
