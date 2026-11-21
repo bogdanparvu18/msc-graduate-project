@@ -274,7 +274,7 @@
       "verification_status": "vm_and_drive_sha256_verified"
     }
   ],
-  "files_manifest_sha256": "4b37f3fa1103c0c68e9406efdd07ab7d06cc1f20f4033e8068f9e5111d0a3bd0",
+  "files_manifest_sha256": "a110cbad06cde4d230941db022b09c64082a6d8e63ae62a48b8355b165df3e89",
   "integrity_status": "vm_and_drive_bytes_sha256_verified",
   "run_id": "20261118T013916_145151Z",
   "schema_version": "mmvqa-sector1-drive-artifacts-v1",

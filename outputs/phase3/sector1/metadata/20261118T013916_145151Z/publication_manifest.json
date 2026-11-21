@@ -1,6 +1,6 @@
 {
   "drive_artifacts_manifest_path": "outputs/phase3/sector1/metadata/20261118T013916_145151Z/configs/drive_artifacts_manifest.json",
-  "drive_artifacts_manifest_sha256": "d47a3c0f5c14b9b9fd5b20f77e76ffd00a71a2798f151c9ab6c8c67ccbc177e3",
+  "drive_artifacts_manifest_sha256": "9ddc1f1ddb42adf91eaea31a9cdcc87ed74f59684b37a7e467447f6aa4e76a5a",
   "files": [
     {
       "bytes": 2161,
@@ -87,10 +87,10 @@
       "sha256": "eb7f61d3a2ba7a54766296f7e8a175ef1a6a9de3fbfb7c903d18a5c52915fc98"
     },
     {
-      "bytes": 14230302,
+      "bytes": 14959603,
       "relative_path": "contract_terminology_bindings.json",
       "repository_path": "outputs/phase3/sector1/metadata/20261118T013916_145151Z/results/contract_terminology_bindings.json",
-      "sha256": "f8610c524c8f1d9520db4fd9acc7a09344ff1281f50c4c0fcb3e497169d09023"
+      "sha256": "bdd1907fd13b4cde73da6b2a24a0125c371e4baba8171723af797383d4daabb2"
     },
     {
       "bytes": 2976002,
@@ -108,7 +108,7 @@
       "bytes": 19377,
       "relative_path": "files_manifest.json",
       "repository_path": "outputs/phase3/sector1/metadata/20261118T013916_145151Z/results/files_manifest.json",
-      "sha256": "4b37f3fa1103c0c68e9406efdd07ab7d06cc1f20f4033e8068f9e5111d0a3bd0"
+      "sha256": "a110cbad06cde4d230941db022b09c64082a6d8e63ae62a48b8355b165df3e89"
     },
     {
       "bytes": 2162,
@@ -486,10 +486,10 @@
       "bytes": 14844,
       "relative_path": "drive_artifacts_manifest.json",
       "repository_path": "outputs/phase3/sector1/metadata/20261118T013916_145151Z/configs/drive_artifacts_manifest.json",
-      "sha256": "d47a3c0f5c14b9b9fd5b20f77e76ffd00a71a2798f151c9ab6c8c67ccbc177e3"
+      "sha256": "9ddc1f1ddb42adf91eaea31a9cdcc87ed74f59684b37a7e467447f6aa4e76a5a"
     }
   ],
-  "files_manifest_sha256": "4b37f3fa1103c0c68e9406efdd07ab7d06cc1f20f4033e8068f9e5111d0a3bd0",
+  "files_manifest_sha256": "a110cbad06cde4d230941db022b09c64082a6d8e63ae62a48b8355b165df3e89",
   "layout_root": "outputs/phase3/sector1/metadata/20261118T013916_145151Z",
   "layout_version": "phase3-sector1-phase2-layout-v1",
   "max_file_bytes": 52428800,
@@ -773,6 +773,12 @@
         "relative_path": "semantic_compositions.json",
         "bytes": 845581,
         "sha256": "91b478ce13b1cca1002c98187c2d50646d5193c61097017b0fa42c0e2f792236",
+        "change": "json_indentation_only"
+      },
+      {
+        "relative_path": "contract_terminology_bindings.json",
+        "bytes": 14230302,
+        "sha256": "f8610c524c8f1d9520db4fd9acc7a09344ff1281f50c4c0fcb3e497169d09023",
         "change": "json_indentation_only"
       }
     ]

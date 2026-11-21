@@ -101,8 +101,8 @@
   },
   {
     "relative_path": "contract_terminology_bindings.json",
-    "bytes": 14230302,
-    "sha256": "f8610c524c8f1d9520db4fd9acc7a09344ff1281f50c4c0fcb3e497169d09023"
+    "bytes": 14959603,
+    "sha256": "bdd1907fd13b4cde73da6b2a24a0125c371e4baba8171723af797383d4daabb2"
   },
   {
     "relative_path": "contract_terminology_bindings.parquet",
