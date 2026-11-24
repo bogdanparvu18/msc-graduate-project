@@ -267,7 +267,7 @@
     "purpose": "Offline post-generation wording reference cases with independently authored expectations.",
     "excluded_from_generation_request": true,
     "evidence_status": "synthetic_test_context_not_source_approval",
-    "context_resolution": "Resolve each context_id in contexts and its profile_id in the paired semantics. For the four base contexts use the active profile as declared. For a context that explicitly names a kind_approval_overlay_id, the offline harness makes an isolated fixture-only copy of that profile and verifies its mock source material and scoped review record before evaluating the public conditions. The overlay applies only to that fixture copy. An unresolved or false public condition withholds the phrase. Derive the role projections independently and compare them with the expected public_context for the context. expected_public_kind names the base category. The test does not write to an admitted registry or change an active profile. Only licensed role surfaces and the public presentation may enter the interpretation. Exclude fixtures, mock approvals, private evidence and gold decisions from every generator request.",
+    "context_resolution": "Resolve each context_id in contexts and its profile_id in the paired semantics. For contexts without a kind_approval_overlay_id, use the active profile as declared. For a context that explicitly names a kind_approval_overlay_id, the offline harness makes an isolated fixture-only copy of that profile and verifies its mock source material and scoped review record before evaluating the public conditions. The overlay applies only to that fixture copy. An unresolved or false public condition withholds the phrase. Derive the role projections independently and compare them with the expected public_context for the context. expected_public_kind names the base category. The test does not write to an admitted registry or change an active profile. Only licensed role surfaces and the public presentation may enter the interpretation. Exclude fixtures, mock approvals, private evidence and gold decisions from every generator request.",
     "check_registry": {
       "root": "semantics_document",
       "path": [
@@ -1046,7 +1046,7 @@
       "duplicate": "Record an accepted validation with a duplicate sampling outcome. Consume one attempt and leave the accepted count unchanged.",
       "review": "Consume one attempt and continue.",
       "rejected": "Consume one attempt and continue.",
-      "block_export": "Stop immediately. Close this batch without releasing any previously accepted candidates. Retain all actual attempt outcomes in the trace."
+      "fatal_abort": "Stop immediately. Close this batch without releasing any previously accepted candidates. Retain all actual attempt outcomes in the trace."
     },
     "stop_conditions": {
       "target_reached": "Stop as soon as accepted_count equals requested_count.",

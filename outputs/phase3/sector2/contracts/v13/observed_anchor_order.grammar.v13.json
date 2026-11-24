@@ -490,7 +490,7 @@
       "duplicate": "Record an accepted validation with a duplicate sampling outcome. Consume one attempt and leave the accepted count unchanged.",
       "review": "Consume one attempt and continue.",
       "rejected": "Consume one attempt and continue.",
-      "block_export": "Stop immediately. Close this batch without releasing any previously accepted candidates. Retain all actual attempt outcomes in the trace."
+      "fatal_abort": "Stop immediately. Close this batch without releasing any previously accepted candidates. Retain all actual attempt outcomes in the trace."
     },
     "stop_conditions": {
       "target_reached": "Stop as soon as accepted_count equals requested_count.",
