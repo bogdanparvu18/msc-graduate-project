@@ -1,0 +1,415 @@
+{
+  "schema_version": "mmvqa-task-semantics-v13",
+  "task_id": "finding_category",
+  "grammar_file": "finding_category.grammar.v13.json",
+  "definition_status": "proposed_for_review",
+  "grammar_pairing": {
+    "required_semantics_root": "this_document",
+    "required_grammar_schema_version": "mmvqa-task-grammar-v13",
+    "require_matching_task_id": true,
+    "require_reciprocal_file_references": true,
+    "on_mismatched_peer": "block_execution",
+    "compatibility": "Resolve grammar_file and the peer grammar's semantics_file to this exact pair within the same immutable build. Verify the declared schema versions, matching task_id and all public field bindings before instance processing. A task-local substitution of another semantic document does not satisfy this pairing."
+  },
+  "required_capabilities": [
+    "sector1_evidence_binding",
+    "terminology_reference_validation",
+    "semantic_question_validation",
+    "answer_disclosure_detection",
+    "compiled_profile_registry_enforcement",
+    "bounded_distinct_question_generation",
+    "public_query_finding_resolution"
+  ],
+  "capability_resolution": {
+    "scope": "every_profile",
+    "common_engine_baseline": "mandatory_and_inherited",
+    "task_requirements": "additional_to_common_baseline",
+    "resolve_before": "instance_processing",
+    "require": "all",
+    "on_missing_required_capability": "block_execution",
+    "on_unavailable_common_baseline": "block_execution"
+  },
+  "source_binding": {
+    "source_id": "phase3_sector1",
+    "rule_id": "finding_category_v1",
+    "required_artifacts": {
+      "coverage_contract": "Select the applicable evidence-state and variant for this task.",
+      "task_contract": "Resolve and enforce the original task, recipe and evidence-state rules.",
+      "class_crosswalk": "Verify class/concept mappings applicable to instance observations.",
+      "terminology_terms": "Verify terminology references against the admitted source release.",
+      "distinct_class_vocabulary": "Resolve source-attested English spellings for the queried finding.",
+      "approved_class_synonyms": "Verify exact lexical and contextual approval for an additional finding spelling used as a public operand.",
+      "phase2_classes": "Corroborate the original class identity, dataset_categories and dataset_category_status in the verified class inventory against the instance's original category-bearing observations."
+    },
+    "resolution": "All resource names are logical keys in the same immutable build-level Sector 1 source binding. required_artifacts values describe purpose; they are not paths or artifact payloads. Resolve an artifact_key through this verified binding and require that key to be declared in required_artifacts. The common loader verifies the release and records its identity and the resolved artifact digests in the compiled registry.",
+    "authorization": {
+      "authority": "verified_upstream_release",
+      "generation_requires": "explicit_generation_permission",
+      "export_requires": "explicit_corpus_export_permission",
+      "on_denied_missing_or_unverified": "block_corresponding_action",
+      "task_local_override": "forbidden"
+    }
+  },
+  "applicability": {
+    "coverage_source": {
+      "source_binding_ref": "#/source_binding",
+      "artifact_key": "coverage_contract"
+    },
+    "selection": {
+      "task": "finding_category",
+      "original_policy_code": "A",
+      "expected_status": "applicable"
+    },
+    "selection_semantics": "Apply all three exact field equalities to each row of the verified coverage array. Preserve the selected rows as source evidence. A row is identified by (task, variant, evidence_state). Each selected row must belong to source_binding.rule_id.",
+    "on_duplicate_row_identity_or_rule_mismatch": "block_admission",
+    "on_no_matching_rows": "no_applicable_cells",
+    "compiled_report": {
+      "field": "cell_count",
+      "value": "number_of_selected_rows"
+    },
+    "additional_instance_validation_required": true,
+    "matrix_coverage_does_not_establish_observation_eligibility": true,
+    "runtime_failure_preserves_original_matrix_status": true
+  },
+  "task_semantics": {
+    "intent": "Ask for the single original dataset clinical group of one named, positively supported finding in a specific displayed scope.",
+    "original_sector1_reference": "Unambiguous source-backed clinical_group for each applicable finding; no inferred taxonomy.",
+    "clinical_slots": [
+      "observed_finding"
+    ],
+    "internal_to_public_operation": {
+      "lookup_dataset_category": "classify_named_finding"
+    },
+    "scope": "The selected presentation and its verified evidence define the question. Preserve the selected original matrix cell and the public visual referents."
+  },
+  "profiles": [
+    {
+      "profile_id": "finding_category.classify_named_finding.v1",
+      "public_operation": "classify_named_finding",
+      "plan_constants": {
+        "operation": "lookup_dataset_category",
+        "answer_type": "category",
+        "response_cardinality": 1,
+        "polarity": "positive"
+      },
+      "parameters_schema": {
+        "type": "object",
+        "properties": {
+          "query_dataset_class_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scope_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "query_dataset_class_id",
+          "scope_id"
+        ],
+        "additionalProperties": false
+      },
+      "public_roles": [
+        "FINDING_TERM",
+        "SCOPE"
+      ],
+      "scope_instruction": "The named operand and its verified positive annotation must resolve to the same displayed scope used to retrieve the source group.",
+      "extra_requirements": [
+        "The local positive observation and all verified S8 source truth rows for the named normalized source label support one consistent original clinical_group. Any missing group anywhere for this label blocks the instance.",
+        "The public class surface uniquely identifies the selected class in the public presentation and passes the independent category disclosure check."
+      ],
+      "terminology_representation": {
+        "type": "existing_concept_references",
+        "allow_postcoordination": false
+      },
+      "public_operand_bindings": {
+        "FINDING_TERM": {
+          "root": "selected_instance_parameters",
+          "path": [
+            "query_dataset_class_id"
+          ]
+        },
+        "SCOPE": {
+          "root": "selected_instance_parameters",
+          "path": [
+            "scope_id"
+          ]
+        }
+      }
+    }
+  ],
+  "answer_contract": {
+    "answer_owner": "trusted_code",
+    "answer_generated_by_llm": false,
+    "derivation": "Bind the query class to a positive original annotation in the presented scope. For its normalized source label, take the set of normalized nonempty clinical_group values over all source truth rows in the verified S8 corpus used to build the rule environment, independently of the current recipe. Require exactly one group and exclude any label in category_missing_labels. Confirm the raw supporting instance rows agree with that group and freeze the exact source-backed evaluator value before wording.",
+    "accepted_values": "One original group identifier. Use a human-readable rendering only if it is deterministically reversible under the pinned source label policy.",
+    "grading": "Resolve the response to one original group and compare it with the frozen group identifier. Equivalent formatting such as underscores versus spaces is admitted only under the declared group rendering policy. A broader medical category, the name of the finding, a list, or a denied category does not answer the requested classification.",
+    "on_unresolved": "Withhold a missing, conflicting or unsupported source category. Record review where the selected matrix or instance policy requires it. A terminology category, semantic tag, hierarchy, unlabelled neighbour or predicted model label cannot repair the source evidence.",
+    "freeze_before_generation": [
+      "selected task and operation parameters",
+      "answer and eligible reference alternatives",
+      "instance evidence and model-visible presentation used for the answer"
+    ],
+    "bind_accepted_candidate": "Only the question validated for this frozen source, request and instance may be paired with this reference under the common export policy."
+  },
+  "scope_and_evidence_requirements": {
+    "task_requirements_ref": "#/check_registry",
+    "derivation_input": "Use the actual model-visible presentation and the source observations that support each operand and each accepted answer. Missing annotation alone establishes no clinical absence."
+  },
+  "identity_parameters": {
+    "distinguishing_values": [
+      "task_id",
+      "profile_id",
+      "operation",
+      "presentation_recipe",
+      "stable_physical_presentation",
+      "stable_displayed_scope",
+      "query_dataset_class_id",
+      "original_clinical_group",
+      "physical_positive_observations"
+    ],
+    "overlapping_evidence_states": "Preserve provenance for every supporting matched cell; overlapping states alone do not create a new semantic instance. Retain distinct public operands and physical evidence in the semantic key.",
+    "wording_variation_policy_ref": "finding_category.grammar.v13.json#/variation_policy"
+  },
+  "question_constraints": {
+    "required_meaning": "Ask for the single original dataset clinical group of one named, positively supported finding in a specific displayed scope.",
+    "recoverable_from_question": [
+      "operation",
+      "requested_dataset_category",
+      "query_finding_referent",
+      "displayed_scope_referent",
+      "response_cardinality",
+      "polarity",
+      "additional_requests_or_attributes"
+    ],
+    "preserved_by_trusted_runtime": [
+      "query_dataset_class_id",
+      "original_clinical_group",
+      "accepted_category_renderings",
+      "category_consistency_evidence",
+      "eligible_observation_ids",
+      "class_mapping_provenance"
+    ],
+    "disclosure_policy_ref": "#/answer_disclosure",
+    "full_text_coverage_required": true,
+    "ambiguity": "If at least one admissible reading is available and every admissible reading conflicts with the frozen plan, reject the wording. Mixed readings, unresolved scope or role, and unexplained text prevent automatic acceptance and require review when no other required check establishes a definite violation. A definite violation established by another check is not cancelled by an unresolved reading. Apply the response policy of the selected task."
+  },
+  "terminology_policy": {
+    "allowed_terminologies": [
+      "MST",
+      "CEST",
+      "SNOMED_CT"
+    ],
+    "language": "en",
+    "task_policy": "Sector 1 exact, role-licensed finding surfaces may identify the public query operand. The original dataset's clinical_group remains authoritative for the private answer. A preferred terminology name or ontology hierarchy does not authorize a group, synonym or class-to-group inference.",
+    "approval_authority": "existing_sector1_approvals",
+    "public_role_sources": {
+      "FINDING_TERM": {
+        "type": "query_finding",
+        "eligibility": "One public English finding name grounded in this instance and authorized for the query-finding role. Use one eligible original class surface or exact approved interchangeable expression for that class."
+      },
+      "SCOPE": {
+        "type": "displayed_reference",
+        "eligibility": "A neutral public reference to the actual displayed image, panel, crop or visibly marked region that supports this class."
+      }
+    },
+    "compiled_registry": {
+      "source": "trusted_compiled_registry_report",
+      "scope": "selected_profile_in_active_immutable_build",
+      "required_bindings": [
+        "build_id",
+        "profile_id",
+        "source_binding_id",
+        "grammar_sha256",
+        "semantics_sha256",
+        "terminology_representation"
+      ],
+      "profile_admission": "Require profiles[profile_id].admitted == true in the matching build report.",
+      "allowlist_field": "profiles[profile_id].allowed_snomed_concept_ids",
+      "membership": "Every runtime SNOMED CT concept in an observation, reference or approved public operand must belong to the compiled allowlist of the selected profile. A listed concept still requires the correct source, role, class binding and instance evidence.",
+      "representation": "Use the terminology representation declared by the selected profile. Apply source-specific validation to other terminologies.",
+      "allow_runtime_extension": false,
+      "on_missing_stale_or_mismatched_registry": "block_execution",
+      "on_unlisted_concept": "block_instance_before_generation",
+      "on_new_concept_or_representation": "rebuild_and_readmit_registry_before_use",
+      "rebuild_rule": "A changed vocabulary, peer definition, source release or representation requires a new verified build and profile admission before use. Never append an unknown concept to a previously admitted allowlist or reuse an old admission result for the modified build.",
+      "visibility": "Keep the report, allowlists and admission metadata private."
+    },
+    "query_finding_policy": {
+      "required_capability": "public_query_finding_resolution",
+      "allowed": "Use the eligible original dataset label licensed by this task as its query operand, or an exact interchangeable English spelling admitted for this class, public role and instance. Require evidence of the class and resolve contextual forms using public information. An unresolved public meaning prevents dispatch.",
+      "source_approval": "The common resolver verifies the existing source terminology and full lexical provenance. A private answer alias alone does not grant public query-role use. The additional role check includes context, unambiguous reference and the task disclosure screen.",
+      "new_concepts": "forbidden"
+    }
+  },
+  "visibility": {
+    "public": "Only the selected public operation, response cardinality, polarity and eligible role surfaces are variable generator inputs. Use the verified presentation accessible to the eventual respondent for visual disambiguation.",
+    "private": [
+      "query_dataset_class_id",
+      "original_clinical_group",
+      "accepted_category_renderings",
+      "category_consistency_evidence",
+      "eligible_observation_ids",
+      "class_mapping_provenance"
+    ],
+    "screen": "Screen the full assembled public request before dispatch and the complete wording after generation. Apply the selected task’s disclosure policy separately from the ordinary meaning of its public operands.",
+    "on_unresolved_possible_disclosure": "review"
+  },
+  "check_registry": {
+    "finding_category.query_class_evidenced": {
+      "criteria_by_stage": {
+        "before_generation": "Verify the selected original annotation and physical frame, the positive class-specific binding and the visible relation to the supplied scope. A label without a bounding box can support the whole displayed frame under an eligible matrix cell. Crops and marked regions require verified geometry in the actual presentation."
+      },
+      "failure_code": "query_class_evidenced_unverified"
+    },
+    "finding_category.query_operand_unambiguous": {
+      "criteria_by_stage": {
+        "before_generation": "Resolve the public term and selected scope to exactly one supported dataset class. Several other findings may share the scope. Several occurrences of the same class may support the same unit when their group is consistent."
+      },
+      "failure_code": "query_operand_unambiguous_unverified"
+    },
+    "finding_category.original_group_consistent": {
+      "criteria_by_stage": {
+        "before_generation": "Use the complete verified S8 truth inventory, grouping all rows by the query's normalized original source label. The class must have exactly one normalized nonempty category in category_map and must be absent from category_missing_labels. A single missing category or conflicting value in another frame, subject or recipe for that label prevents acceptance even when the visible annotation has an apparently valid category. Cross-check the raw in-scope observation rows. Never select by majority, a local subset, another class or an ontology."
+      },
+      "failure_code": "original_group_consistent_unverified"
+    },
+    "finding_category.public_target_safe": {
+      "criteria_by_stage": {
+        "before_generation": "Evaluate the exact selected query surface and the complete visible and textual presentation for direct category disclosures. A semantically valid class operand that exposes the group cannot be used for this instance."
+      },
+      "failure_code": "public_target_safe_unverified"
+    },
+    "finding_category.question_json_shape": {
+      "criteria_by_stage": {
+        "after_generation": "Require exactly the question field in the original JSON object, reject duplicate keys and validate the exact decoded text against the paired grammar output schema and text hygiene policy."
+      },
+      "failure_code": "invalid_model_response"
+    },
+    "finding_category.question_semantic_form": {
+      "criteria_by_stage": {
+        "after_generation": "The complete text expresses exactly one requested act for the selected operation, including all trailing and coordinated clauses."
+      },
+      "failure_code": "operation_changed"
+    },
+    "finding_category.public_roles_grounded": {
+      "criteria_by_stage": {
+        "before_generation": "Resolve every required public role in the selected instance. Validate lexical provenance, authorization for the selected role, projection and text hygiene before dispatch.",
+        "after_generation": "Evaluate every clinical phrase and operand in the entire original wording against the licensed role surfaces and their selected referents."
+      },
+      "failure_code": "public_operand_not_grounded"
+    },
+    "finding_category.public_referents_unambiguous": {
+      "criteria_by_stage": {
+        "before_generation": "Uniquely resolve each public operand to its intended referent or declared collection using the actual presentation.",
+        "after_generation": "Resolve each referring expression against the presentation. Hold genuinely ambiguous references for review and reject a definite change of referent."
+      },
+      "failure_code": "referent_unresolved_or_changed"
+    },
+    "finding_category.paraphrase_equivalence": {
+      "criteria_by_stage": {
+        "after_generation": "Compare every reading with the public projection of the frozen plan using the recovery rules. A definite conflict across all readings rejects. Unresolved meaning, added assertions or ambiguous readings cannot silently pass."
+      },
+      "failure_code": "plan_not_preserved"
+    },
+    "finding_category.question_language_quality": {
+      "criteria_by_stage": {
+        "after_generation": "Require independent full-text English quality under the common policy. Novel syntax is allowed. Reject confirmed errors and refer unresolved wording for review."
+      },
+      "failure_code": "language_quality_not_passed"
+    },
+    "finding_category.answer_not_disclosed": {
+      "criteria_by_stage": {
+        "before_generation": "Screen the exact public projection before dispatch and the whole candidate after generation against the frozen group and its accepted renderings. Evaluate overlap in context. If an authorized alternate query surface avoids actual disclosure and still resolves uniquely, it can be used. Withhold a candidate with confirmed disclosure and send an unresolved possible disclosure to review.",
+        "after_generation": "Do not reveal, suggest, list, negate, or embed the private category or an accepted rendering in the question, candidate options, labels, captions or scope wording. A compound finding expression must be screened even if the class itself is a permitted operand. Screen the exact public projection before dispatch and the whole candidate after generation against the frozen group and its accepted renderings. Evaluate overlap in context. If an authorized alternate query surface avoids actual disclosure and still resolves uniquely, it can be used. Withhold a candidate with confirmed disclosure and send an unresolved possible disclosure to review."
+      },
+      "failure_code": "answer_disclosure"
+    },
+    "finding_category.generation_preflight": {
+      "criteria_by_stage": {
+        "before_generation": "Require an admitted profile, matched applicable cell, passing instance checks, a frozen answer and upstream permission. Verify the exact public projection and its screening before any generation call."
+      },
+      "failure_code": "preflight_not_passed"
+    }
+  },
+  "required_checks": {
+    "registry_ref": "#/check_registry",
+    "common": [
+      "finding_category.query_class_evidenced",
+      "finding_category.query_operand_unambiguous",
+      "finding_category.original_group_consistent",
+      "finding_category.public_target_safe",
+      "finding_category.question_json_shape",
+      "finding_category.question_semantic_form",
+      "finding_category.public_roles_grounded",
+      "finding_category.public_referents_unambiguous",
+      "finding_category.paraphrase_equivalence",
+      "finding_category.question_language_quality",
+      "finding_category.answer_not_disclosed",
+      "finding_category.generation_preflight"
+    ],
+    "additional_by_profile": {
+      "finding_category.classify_named_finding.v1": []
+    },
+    "selection": "Execute the common task checks and the selected profile requirements at their declared stages, together with the inherited common-engine baseline.",
+    "acceptance": "Automatic acceptance requires all selected, applicable checks to pass at their declared stages, including the inherited common-engine baseline. A definite candidate violation rejects the wording. If no definite violation has been established but a required decision is unresolved or was not completed, the candidate cannot be accepted and requires review under the common fail-closed reporting policy. Fatal build or execution errors remain errors and block the corresponding action; they are not semantic review verdicts."
+  },
+  "semantic_comparisons": {
+    "stage": "after_generation",
+    "interpretation_unit": "one_complete_interpretation_per_candidate",
+    "interpretation_inputs": [
+      "exact_candidate_question",
+      "public_presentation",
+      "licensed_public_role_surfaces"
+    ],
+    "full_text_coverage_required": true,
+    "shared_interpretation_consumers": [
+      "finding_category.question_semantic_form",
+      "finding_category.public_roles_grounded",
+      "finding_category.public_referents_unambiguous",
+      "finding_category.paraphrase_equivalence"
+    ],
+    "consumer_registry_ref": "#/check_registry",
+    "comparison_input": "observable projection of the frozen plan and displayed context",
+    "results": "Each selected consumer returns its own decision and reason codes, tied to the same interpretation. One consumer’s result cannot be copied to its siblings. If a required comparison could not execute, retain that distinction under the common reporting policy.",
+    "parse_invocations_per_analyzed_candidate": 1,
+    "result_granularity": "one_result_per_check_id"
+  },
+  "text_hygiene_policy": {
+    "applies_to": [
+      "public_FINDING_TERM_surfaces",
+      "public_SCOPE_surfaces",
+      "decoded_question"
+    ],
+    "require_nonblank": true,
+    "require_single_line": true,
+    "forbid_surrounding_whitespace": true,
+    "whitespace_definition": "Unicode White_Space property.",
+    "forbidden_unicode_categories": [
+      "Cc"
+    ],
+    "forbidden_code_points": [
+      "U+2028",
+      "U+2029"
+    ],
+    "validate_original_decoded_string": true,
+    "automatic_repair": false,
+    "validation_order": "Check the exact decoded string before projection, deduplication or text normalization. An escaped control or line separator in JSON is checked as its decoded character. Ordinary Unicode letters and punctuation are permitted.",
+    "public_input_violation": "block_generation_for_invalid_projection",
+    "candidate_question_violation": "rejected",
+    "schema_projection": "Check every active public role surface and the decoded question with the matching grammar string schema before normalization. Preserve the exact original text."
+  },
+  "operand_binding_roots": {
+    "selected_instance_parameters": "Frozen parameters validated by the selected profile parameters_schema. Identifiers remain in trusted code.",
+    "selected_profile_constants": "The plan_constants object of the selected semantic profile."
+  },
+  "enumeration": {
+    "unit": "For each admitted recipe and actual scope, consider each distinct positive named class with an unambiguous original group. Multiple labels give separate class-specific units; source spellings for the same class do not create new semantic units."
+  },
+  "answer_disclosure": {
+    "permitted_operands": "The source-backed finding name is a required public operand. The neutral scope and a generic column description such as clinical group are public.",
+    "forbidden": "Do not reveal, suggest, list, negate, or embed the private category or an accepted rendering in the question, candidate options, labels, captions or scope wording. A compound finding expression must be screened even if the class itself is a permitted operand.",
+    "checks": "Screen the exact public projection before dispatch and the whole candidate after generation against the frozen group and its accepted renderings. Evaluate overlap in context. If an authorized alternate query surface avoids actual disclosure and still resolves uniquely, it can be used. Withhold a candidate with confirmed disclosure and send an unresolved possible disclosure to review."
+  }
+}

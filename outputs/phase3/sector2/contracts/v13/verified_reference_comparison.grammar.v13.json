@@ -1,0 +1,467 @@
+{
+  "schema_version": "mmvqa-task-grammar-v13",
+  "status": "proposed_for_review",
+  "task_id": "verified_reference_comparison",
+  "semantics_file": "verified_reference_comparison.semantics.v13.json",
+  "language": "en",
+  "generation_mode": "open_paraphrase",
+  "binding_roots": {
+    "grammar_document": {
+      "source": "this_document"
+    },
+    "semantics_document": {
+      "source": "sibling_document",
+      "relative_filename": {
+        "root": "grammar_document",
+        "path": [
+          "semantics_file"
+        ]
+      }
+    },
+    "public_plan": {
+      "source": "frozen_instance_public_plan",
+      "fields": {
+        "profile_id": "The selected semantic profile in this immutable pair."
+      }
+    },
+    "public_context": {
+      "source": "screened_instance_presentation",
+      "fields": {
+        "role_surfaces": "Screened map keyed by an active role name for this particular frozen instance. Values are ordered arrays of nonempty, individually licensed equivalent surface forms for the one intended operand, candidate collection or display."
+      }
+    },
+    "semantic_profile": {
+      "collection": {
+        "root": "semantics_document",
+        "path": [
+          "profiles"
+        ]
+      },
+      "select": {
+        "member_key": "profile_id",
+        "equals": {
+          "root": "public_plan",
+          "path": [
+            "profile_id"
+          ]
+        },
+        "required_matches": 1
+      }
+    }
+  },
+  "slot_bindings": {
+    "COMPARISON_SCOPE": {
+      "source": {
+        "root": "public_context",
+        "path": [
+          "role_surfaces",
+          "COMPARISON_SCOPE"
+        ]
+      },
+      "project": "ordered_distinct_strings",
+      "operand_binding": {
+        "root": "semantic_profile",
+        "path": [
+          "public_operand_bindings",
+          "COMPARISON_SCOPE"
+        ]
+      },
+      "admission_policy": {
+        "root": "semantics_document",
+        "path": [
+          "terminology_policy",
+          "public_role_sources",
+          "COMPARISON_SCOPE"
+        ]
+      },
+      "admission": "Require every public surface for this role to denote only its selected bound operand. A collection role may name the collection as a whole. A list of surfaces offers equivalent descriptions of the same operand, never competing operands or values.",
+      "text_hygiene_policy": {
+        "root": "semantics_document",
+        "path": [
+          "text_hygiene_policy"
+        ]
+      },
+      "surface_form": "A neutral reference to the complete comparison whose candidate units have visible, unique identifiers. It must not select or imply a winning panel."
+    },
+    "REFERENCE_CRITERION": {
+      "source": {
+        "root": "public_context",
+        "path": [
+          "role_surfaces",
+          "REFERENCE_CRITERION"
+        ]
+      },
+      "project": "ordered_distinct_strings",
+      "operand_binding": {
+        "root": "semantic_profile",
+        "path": [
+          "public_operand_bindings",
+          "REFERENCE_CRITERION"
+        ]
+      },
+      "admission_policy": {
+        "root": "semantics_document",
+        "path": [
+          "terminology_policy",
+          "public_role_sources",
+          "REFERENCE_CRITERION"
+        ]
+      },
+      "admission": "Require every public surface for this role to denote only its selected bound operand. A collection role may name the collection as a whole. A list of surfaces offers equivalent descriptions of the same operand, never competing operands or values.",
+      "text_hygiene_policy": {
+        "root": "semantics_document",
+        "path": [
+          "text_hygiene_policy"
+        ]
+      },
+      "surface_form": "The publicly licensed clinical role of the explicitly verified normal reference, tied to the selected source comparison and its verified reference labels. The panel assignment is private."
+    }
+  },
+  "public_request": {
+    "field_bindings": {
+      "operation": {
+        "root": "semantic_profile",
+        "path": [
+          "public_operation"
+        ]
+      },
+      "response_cardinality": {
+        "root": "semantic_profile",
+        "path": [
+          "plan_constants",
+          "response_cardinality"
+        ]
+      },
+      "polarity": {
+        "root": "semantic_profile",
+        "path": [
+          "plan_constants",
+          "polarity"
+        ]
+      },
+      "comparison_scope_surfaces": {
+        "resolved_slot": {
+          "root": "grammar_document",
+          "path": [
+            "slot_bindings",
+            "COMPARISON_SCOPE"
+          ]
+        }
+      },
+      "reference_criterion_surfaces": {
+        "resolved_slot": {
+          "root": "grammar_document",
+          "path": [
+            "slot_bindings",
+            "REFERENCE_CRITERION"
+          ]
+        }
+      }
+    },
+    "data_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "operation": {
+          "const": "select_reference_panel"
+        },
+        "response_cardinality": {
+          "const": 1
+        },
+        "polarity": {
+          "const": "positive"
+        },
+        "comparison_scope_surfaces": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?![\\s\\S]*[\\u0000-\\u001F\\u007F-\\u009F\\u2028\\u2029])[^\\u0009-\\u000D\\u0020\\u0085\\u00A0\\u1680\\u2000-\\u200A\\u2028\\u2029\\u202F\\u205F\\u3000](?:[\\s\\S]*[^\\u0009-\\u000D\\u0020\\u0085\\u00A0\\u1680\\u2000-\\u200A\\u2028\\u2029\\u202F\\u205F\\u3000])?$"
+          }
+        },
+        "reference_criterion_surfaces": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?![\\s\\S]*[\\u0000-\\u001F\\u007F-\\u009F\\u2028\\u2029])[^\\u0009-\\u000D\\u0020\\u0085\\u00A0\\u1680\\u2000-\\u200A\\u2028\\u2029\\u202F\\u205F\\u3000](?:[\\s\\S]*[^\\u0009-\\u000D\\u0020\\u0085\\u00A0\\u1680\\u2000-\\u200A\\u2028\\u2029\\u202F\\u205F\\u3000])?$"
+          }
+        }
+      },
+      "required": [
+        "operation",
+        "response_cardinality",
+        "polarity",
+        "comparison_scope_surfaces",
+        "reference_criterion_surfaces"
+      ],
+      "additionalProperties": false
+    },
+    "instructions": {
+      "root": "grammar_document",
+      "path": [
+        "wording",
+        "prompt"
+      ]
+    },
+    "output_schema": {
+      "root": "grammar_document",
+      "path": [
+        "output_contract",
+        "base_json_schema"
+      ]
+    },
+    "projection": "Assemble exactly the fields of the active profile from the verified public context. Each surface array is the exact nonempty projection of its licensed role. Keep the private answer designation, reference sets, provenance and test fixtures outside the generator request. A neutral candidate label may appear as a permitted public operand even when it is also the correct choice. Never mark it as the answer or disclose which alternatives are supported.",
+    "disclosure_screen": {
+      "root": "semantics_document",
+      "path": [
+        "answer_disclosure"
+      ]
+    },
+    "text_hygiene_policy": {
+      "root": "semantics_document",
+      "path": [
+        "text_hygiene_policy"
+      ]
+    }
+  },
+  "wording": {
+    "intent": "Select one displayed visual unit that renders the comparison recipe’s explicitly verified normal reference.",
+    "required_roles_by_profile": {
+      "verified_reference_comparison.select_normal_reference_unit.v1": [
+        "COMPARISON_SCOPE",
+        "REFERENCE_CRITERION"
+      ]
+    },
+    "realization": [
+      "Request one neutral visual unit ID. Avoid assertions assigning a role to a named or positioned panel.",
+      "The comparison supplies a verified reference. Avoid claims that the target is diseased, reference and target differ in severity, or one image was captured earlier.",
+      "Ask only for selection of a reference unit. Explanations, identifying a finding in the target, diagnosis, ranking or listing every normal frame are separate tasks."
+    ],
+    "prompt": "Write one natural English question or request asking a clinician to identify one displayed panel meeting the supplied verified normal-reference criterion in the supplied comparison. Use the licensed public operands. Return only a JSON object with the key question."
+  },
+  "output_contract": {
+    "question_generated_by_llm": true,
+    "answer_generated_by_llm": false,
+    "base_json_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "required": [
+        "question"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "question": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?![\\s\\S]*[\\u0000-\\u001F\\u007F-\\u009F\\u2028\\u2029])[^\\u0009-\\u000D\\u0020\\u0085\\u00A0\\u1680\\u2000-\\u200A\\u2028\\u2029\\u202F\\u205F\\u3000](?:[\\s\\S]*[^\\u0009-\\u000D\\u0020\\u0085\\u00A0\\u1680\\u2000-\\u200A\\u2028\\u2029\\u202F\\u205F\\u3000])?$"
+        }
+      }
+    },
+    "unit": "One freely worded English question per candidate. Apply the variation policy when multiple eligible wordings are requested.",
+    "text_hygiene_policy": {
+      "root": "semantics_document",
+      "path": [
+        "text_hygiene_policy"
+      ]
+    }
+  },
+  "language_fixtures": {
+    "purpose": "Offline task regression on complete wording under the declared synthetic presentation and private truth. Gold labels do not establish runtime performance.",
+    "excluded_from_generation_request": true,
+    "evidence_status": "synthetic_test_context_not_source_approval",
+    "check_registry": {
+      "root": "semantics_document",
+      "path": [
+        "check_registry"
+      ]
+    },
+    "contexts": {
+      "context_1": {
+        "profile_id": "verified_reference_comparison.select_normal_reference_unit.v1",
+        "public_context": {
+          "role_surfaces": {
+            "COMPARISON_SCOPE": [
+              "this comparison"
+            ],
+            "REFERENCE_CRITERION": [
+              "verified normal reference mucosa"
+            ]
+          }
+        },
+        "public_presentation": {
+          "displayed_comparisons": [
+            {
+              "public_group_label": "comparison 1",
+              "panel_labels": [
+                "panel A",
+                "panel B"
+              ]
+            }
+          ],
+          "focused_comparison": null,
+          "pointing_gesture": false,
+          "role_annotations_visible": false
+        },
+        "private_fixture_assumptions": "Synthetic isolated case: two neutrally labelled panels A and B are visible as one comparison. Private evidence maps A to the target and B to a different, explicitly annotated normal-reference frame from the same video. Their supported label sets do not share a reference label. The public view contains no caption identifying either role."
+      },
+      "context_2": {
+        "profile_id": "verified_reference_comparison.select_normal_reference_unit.v1",
+        "public_context": {
+          "role_surfaces": {
+            "COMPARISON_SCOPE": [
+              "this comparison"
+            ],
+            "REFERENCE_CRITERION": [
+              "verified normal reference mucosa"
+            ]
+          }
+        },
+        "public_presentation": {
+          "displayed_comparisons": [
+            {
+              "public_group_label": "comparison 1",
+              "panel_labels": [
+                "panel A",
+                "panel B"
+              ]
+            },
+            {
+              "public_group_label": "comparison 2",
+              "panel_labels": [
+                "panel C",
+                "panel D"
+              ]
+            }
+          ],
+          "focused_comparison": null,
+          "pointing_gesture": false,
+          "role_annotations_visible": false
+        },
+        "private_fixture_assumptions": "Synthetic: two independently eligible comparisons are displayed side by side, each with two neutrally named units. Both are equally salient; there is no pointing gesture, group label or focus selecting one. Hold before generation if this is already apparent in preflight."
+      }
+    },
+    "cases": [
+      {
+        "id": "wording_01",
+        "context_id": "context_1",
+        "text": "Which panel in this comparison shows the verified normal reference mucosa?",
+        "gold": {
+          "final_verdict": "accepted"
+        },
+        "reason": "Asks for one reference panel without identifying it in the question."
+      },
+      {
+        "id": "wording_02",
+        "context_id": "context_1",
+        "text": "In this comparison, name one panel that shows the verified normal reference mucosa.",
+        "gold": {
+          "final_verdict": "accepted"
+        },
+        "reason": "Selects a single valid visual unit and makes no uniqueness claim."
+      },
+      {
+        "id": "wording_03",
+        "context_id": "context_1",
+        "text": "Is panel B the one showing the verified normal reference mucosa in this comparison?",
+        "gold": {
+          "final_verdict": "rejected"
+        },
+        "reason": "Discloses the positive reference unit and changes selection to a yes/no check."
+      },
+      {
+        "id": "wording_04",
+        "context_id": "context_1",
+        "text": "Panel A is the target. Which panel in this comparison shows the verified normal reference mucosa?",
+        "gold": {
+          "final_verdict": "rejected"
+        },
+        "reason": "With two displayed choices, disclosing the other unit’s role determines the answer by exclusion."
+      },
+      {
+        "id": "wording_05",
+        "context_id": "context_1",
+        "text": "What abnormality in the target is absent from the verified normal reference mucosa in this comparison?",
+        "gold": {
+          "final_verdict": "rejected"
+        },
+        "reason": "Requests a finding and unsupported absence instead of a reference unit."
+      },
+      {
+        "id": "wording_06",
+        "context_id": "context_2",
+        "text": "Which panel shows the verified normal reference mucosa in this comparison?",
+        "gold": {
+          "final_verdict": "review"
+        },
+        "reason": "The deictic comparison reference could resolve to either pair; a unique intended comparison cannot be recovered."
+      }
+    ]
+  },
+  "variation_policy": {
+    "required_capability": "bounded_distinct_question_generation",
+    "scope": "one request for one frozen semantic instance",
+    "request_limits": {
+      "requested_count": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "attempt_budget": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "supplied_by": "caller",
+      "allow_budget_below_requested_count": true
+    },
+    "before_sampling": "Require successful preflight for the exact frozen instance and its screened public request. The configured budget bounds generator calls for that one request.",
+    "per_attempt": "Request one freely worded candidate using the same frozen public request and validate the original response. Keep the deduplication state, prior candidates, fixture data and private evidence outside the generator request.",
+    "eligibility": "Count a candidate only when the complete selected checks authorize its wording and its validated text is bound to the same instance. Only accepted candidates enter the deduplication set.",
+    "distinct_key": {
+      "fields": [
+        "semantic_instance_id",
+        "normalized_question"
+      ],
+      "normalized_question": [
+        "unicode_nfc",
+        "unicode_casefold",
+        "unicode_nfc",
+        "collapse_unicode_whitespace_runs_to_one_ascii_space_and_strip"
+      ],
+      "punctuation": "preserved",
+      "use": "Detect equivalent spellings within this sampling request. Preserve the first validated original text for each key. Persistent corpus deduplication and export use their own common-engine checks."
+    },
+    "dispositions": {
+      "accepted": "Record the unique original and count it toward the requested number.",
+      "duplicate": "Record an accepted validation with a duplicate sampling outcome. Consume one attempt and leave the accepted count unchanged.",
+      "review": "Consume one attempt and continue.",
+      "rejected": "Consume one attempt and continue.",
+      "block_export": "Stop immediately. Close this batch without releasing any previously accepted candidates. Retain all actual attempt outcomes in the trace."
+    },
+    "stop_conditions": {
+      "target_reached": "Stop as soon as accepted_count equals requested_count.",
+      "attempt_budget_exhausted": "Stop at the finite budget when accepted_count is still below requested_count.",
+      "blocked": "Preflight or another mandatory dependency failed. A preflight block makes zero calls."
+    },
+    "report": {
+      "fields": [
+        "semantic_instance_id",
+        "requested_count",
+        "attempt_budget",
+        "attempts_used",
+        "accepted_count",
+        "shortfall",
+        "stop_reason",
+        "counts_by_outcome",
+        "accepted",
+        "attempts"
+      ],
+      "shortfall": "requested_count minus accepted_count",
+      "accepted": "Return validated candidates with the original question, candidate_question_sha256 and audit_id. Compute the question digest from the exact original UTF-8 bytes.",
+      "limits": "Separate the wording-selection result from any subsequent authorization to export."
+    }
+  }
+}

@@ -1,0 +1,559 @@
+{
+  "schema_version": "mmvqa-task-semantics-v13",
+  "task_id": "finding_identification",
+  "grammar_file": "finding_identification.grammar.v13.json",
+  "definition_status": "proposed_for_review",
+  "grammar_pairing": {
+    "required_semantics_root": "this_document",
+    "required_grammar_schema_version": "mmvqa-task-grammar-v13",
+    "require_matching_task_id": true,
+    "require_reciprocal_file_references": true,
+    "on_mismatched_peer": "block_execution",
+    "compatibility": "Resolve grammar_file and the peer grammar's semantics_file to this exact pair within the same immutable build. Verify the declared schema versions, matching task_id and all public field bindings before instance processing. A task-local substitution of another semantic document does not satisfy this pairing."
+  },
+  "required_capabilities": [
+    "sector1_evidence_binding",
+    "terminology_reference_validation",
+    "semantic_question_validation",
+    "answer_disclosure_detection",
+    "compiled_profile_registry_enforcement",
+    "sector1_approval_resolution",
+    "bounded_distinct_question_generation"
+  ],
+  "capability_resolution": {
+    "scope": "every_profile",
+    "common_engine_baseline": "mandatory_and_inherited",
+    "task_requirements": "additional_to_common_baseline",
+    "resolve_before": "instance_processing",
+    "require": "all",
+    "on_missing_required_capability": "block_execution",
+    "on_unavailable_common_baseline": "block_execution"
+  },
+  "source_binding": {
+    "source_id": "phase3_sector1",
+    "rule_id": "finding_identification_v1",
+    "required_artifacts": {
+      "coverage_contract": "Select eligible matrix rows for the task.",
+      "task_contract": "Resolve the source rule and its original profile-independent evidence requirements.",
+      "class_crosswalk": "Identify approved class-to-concept mappings and their restrictions.",
+      "approved_class_synonyms": "Use existing class-specific approvals for interchangeable answer surfaces.",
+      "distinct_class_vocabulary": "Resolve source labels and potential answer spellings for the supported classes.",
+      "terminology_terms": "Verify the source terminology, concept references and lexical provenance for the relevant role."
+    },
+    "resolution": "All resource names are logical keys in the same immutable build-level Sector 1 source binding. required_artifacts values describe purpose; they are not paths or artifact payloads. Resolve an artifact_key through this verified binding and require that key to be declared in required_artifacts. The common loader verifies the release and records its identity and the resolved artifact digests in the compiled registry.",
+    "authorization": {
+      "authority": "verified_upstream_release",
+      "generation_requires": "explicit_generation_permission",
+      "export_requires": "explicit_corpus_export_permission",
+      "on_denied_missing_or_unverified": "block_corresponding_action",
+      "task_local_override": "forbidden"
+    }
+  },
+  "applicability": {
+    "coverage_source": {
+      "source_binding_ref": "#/source_binding",
+      "artifact_key": "coverage_contract"
+    },
+    "selection": {
+      "task": "finding_identification",
+      "original_policy_code": "A",
+      "expected_status": "applicable"
+    },
+    "selection_semantics": "Apply all three exact field equalities to each row of the verified coverage array. Preserve the selected rows as source evidence. A row is identified by (task, variant, evidence_state). Each selected row must belong to source_binding.rule_id.",
+    "on_duplicate_row_identity_or_rule_mismatch": "block_admission",
+    "on_no_matching_rows": "no_applicable_cells",
+    "compiled_report": {
+      "field": "cell_count",
+      "value": "number_of_selected_rows"
+    },
+    "additional_instance_validation_required": true,
+    "matrix_coverage_does_not_establish_observation_eligibility": true,
+    "runtime_failure_preserves_original_matrix_status": true
+  },
+  "task_semantics": {
+    "operation": "Identify any one member of the selected profile’s eligible, positively evidenced class set in its displayed scope.",
+    "reference_scope": "Verified source labels attached to the displayed source or indicated region.",
+    "multiple_findings": "Retain every independently validated alternative; a generic one-finding question does not assert uniqueness.",
+    "landmark_scope": "A landmark candidate must satisfy the profile’s original dataset category filter before it can enter the reference set.",
+    "polarity": "positive",
+    "clinical_completeness_claim": false,
+    "clinical_slot": "observed_finding",
+    "public_operation": "identify",
+    "operation_projection": {
+      "internal_operation_to_public_operation": {
+        "select_one_supported_finding": "identify",
+        "select_one_supported_anatomical_landmark": "identify"
+      },
+      "comparison": "For the selected profile, map its plan_constants.operation to the expected public operation. Compare that value with the operation recovered independently from the question. Compare the recovered category separately with public_kind.kind_id. An unmapped operation prevents use of the profile."
+    }
+  },
+  "profiles": [
+    {
+      "profile_id": "finding_identification.any_one_finding.v1",
+      "description": "Ask for one supported finding in the declared scope, retaining all independently grounded findings as acceptable alternatives.",
+      "plan_constants": {
+        "operation": "select_one_supported_finding",
+        "answer_type": "finding",
+        "response_cardinality": 1,
+        "polarity": "positive",
+        "asserted_attributes": [],
+        "asserted_relations": [],
+        "temporal_constraints": []
+      },
+      "parameters_schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "scope_id": {
+            "type": "string",
+            "pattern": "^scope_[1-9][0-9]*$"
+          }
+        },
+        "required": [
+          "scope_id"
+        ]
+      },
+      "public_kind": {
+        "kind_id": "finding",
+        "base_surface": "finding",
+        "approved_equivalents": []
+      },
+      "terminology_representation": {
+        "type": "existing_concept_references",
+        "allow_postcoordination": false
+      }
+    },
+    {
+      "profile_id": "finding_identification.any_one_anatomical_landmark.v1",
+      "description": "Ask for one supported anatomical landmark in the displayed scope. Its original dataset category must be verified.",
+      "plan_constants": {
+        "operation": "select_one_supported_anatomical_landmark",
+        "answer_type": "finding",
+        "response_cardinality": 1,
+        "polarity": "positive",
+        "asserted_attributes": [],
+        "asserted_relations": [],
+        "temporal_constraints": []
+      },
+      "parameters_schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "scope_id": {
+            "type": "string",
+            "pattern": "^scope_[1-9][0-9]*$"
+          }
+        },
+        "required": [
+          "scope_id"
+        ]
+      },
+      "public_kind": {
+        "kind_id": "anatomical_landmark",
+        "base_surface": "anatomical landmark",
+        "approved_equivalents": []
+      },
+      "answer_category_filter": {
+        "source": "verified_original_dataset_category",
+        "equals": "anatomical_landmark"
+      },
+      "terminology_representation": {
+        "type": "existing_concept_references",
+        "allow_postcoordination": false
+      }
+    }
+  ],
+  "answer_contract": {
+    "response_cardinality": 1,
+    "accepted_answers_semantics": "Any one member of the nonempty set of verified positive finding alternatives is acceptable; the list is not an exhaustive clinical inventory.",
+    "derivation": "Collect the class identities supported by positive, class-specific instance evidence in the selected displayed scope. Apply the selected profile’s category filter, if present. Construct each private answer entry under the terminology and alias context policies.",
+    "canonical_answer_selection": "Deterministically select the first verified class using the common engine's build-bound stable dataset_class_id ordering, then use its pinned canonical source-label surface. Retain all other grounded alternatives and approved equivalent surfaces for evaluation. The compiled build must identify the ordering policy; missing or ambiguous ordering prevents canonical selection. Alias order and terminology iteration order cannot select the canonical class.",
+    "evaluation": "Compare the respondent’s answer with the frozen eligible class set under alias_context_policy.response_evaluation. An unmatched or unresolved response under non-exhaustive annotations requires review.",
+    "private_fields": [
+      "canonical_answer",
+      "accepted_answers",
+      "answer_concept_ids",
+      "answer_evidence",
+      "annotation_ids",
+      "mapping_ids",
+      "source_paths",
+      "source_hashes"
+    ],
+    "unknown_policy": "Unannotated or unsupported findings remain unknown; do not generate negative, normal-only, or exhaustive-absence claims.",
+    "answer_owner": "trusted_code",
+    "answer_generated_by_llm": false,
+    "freeze_before_generation": [
+      "canonical source-label answer",
+      "all eligible class alternatives",
+      "each class’s eligible interchangeable answer surfaces",
+      "evidence linking each eligible class to the selected displayed scope",
+      "separate disclosure screening set under alias_context_policy.question_disclosure"
+    ],
+    "alternative_eligibility": "Every included alternative must pass its own evidence and mapping checks. An invalid proposed alternative fails the instance check. Keep the source-label surface when a verified class has no additional approved spellings."
+  },
+  "scope_and_evidence_requirements": {
+    "public_scope": "A neutral reference must resolve uniquely among the units actually displayed. The scope in the complete question must still resolve to the scope used for the frozen reference. Multiple eligible answers in that scope are permitted.",
+    "matrix_cell_limit": "Verify each supporting visual artifact and its availability in the exact QA presentation to be exported and supplied to the answering model. Each accepted alternative must have its own valid, available, in-scope evidence in that presentation. Metadata support alone does not prove that the evidence is displayed. The question-only language generator receives the screened public text projection defined by the paired grammar."
+  },
+  "identity_parameters": {
+    "candidate_unit": "One task/profile, recipe and explicit visual scope with a nonempty supported answer set.",
+    "distinguishing_values": [
+      "task_id",
+      "profile_id",
+      "selected operation",
+      "presentation recipe",
+      "stable physical identity of the displayed scope",
+      "supported dataset class identities",
+      "physical identities of supporting evidence"
+    ],
+    "overlapping_evidence_states": "Overlapping evidence-state matches must not multiply one semantic question. Use the common engine's build-bound deterministic policy to select the representative applicable row, while retaining every applicable matched row and all supporting provenance. If multiple rows match and that selection policy is unavailable or ambiguous, hold the instance; do not choose a row by incidental iteration order.",
+    "response_alternatives": "Multiple accepted findings do not automatically multiply candidates or demand multiple response values.",
+    "same_instance_for": [
+      "different approved spellings of the same class",
+      "distinct valid English paraphrases on the same physical evidence"
+    ],
+    "scope_id_semantics": "parameters.scope_id selects a public scope within this presentation. Its display label alone cannot identify the same physical scope across runs.",
+    "wording_variation_policy_ref": "finding_identification.grammar.v13.json#/variation_policy"
+  },
+  "question_constraints": {
+    "required_meaning": "One naming or identification request compatible with the selected profile and frozen scope. A positive-plan match requires coverage of the complete text, including coordinated or trailing clauses.",
+    "recoverable_from_question": [
+      "operation",
+      "public_kind",
+      "scope_id",
+      "response_cardinality",
+      "polarity",
+      "asserted_attributes",
+      "asserted_relations",
+      "temporal_constraints"
+    ],
+    "public_context": "Resolve scope_id from the original referring expression and the supplied public presentation. Recover the public operation under task_semantics.operation_projection. Interpret the full wording before comparison.",
+    "preserved_by_trusted_runtime": [
+      "answer_type",
+      "admissible_answer_concepts",
+      "answer_evidence"
+    ],
+    "private_binding": "Keep the response type, eligible answer concepts and positive evidence frozen on the instance. The semantic parser receives only public inputs; it has no obligation to infer these private fields.",
+    "forbidden_inferences": [
+      "uniqueness of a finding",
+      "exhaustive list of all clinical findings",
+      "absence from missing annotation",
+      "normality from missing annotation",
+      "patient diagnosis",
+      "severity or attributes absent from observations",
+      "related or broader ontology term substituted as an exact answer"
+    ],
+    "forbidden_changes": [
+      "presence or absence judgement",
+      "counting or exhaustive enumeration",
+      "comparison or ranking",
+      "extra attributes or relations",
+      "additional clinical or localization request",
+      "temporal direction or scope changes"
+    ],
+    "disclosure_policy_ref": "#/alias_context_policy/question_disclosure",
+    "ambiguity": "If at least one admissible reading is available and every admissible reading conflicts with the frozen plan, reject the wording. Mixed readings, unresolved scope or category, and unexplained text prevent automatic acceptance and require review when no other required check establishes a definite violation. A definite violation established by another check is not cancelled by an unresolved reading. An unambiguous scope can contain several eligible findings."
+  },
+  "terminology_policy": {
+    "allowed_terminologies": [
+      "MST",
+      "CEST",
+      "SNOMED_CT"
+    ],
+    "language": "en",
+    "answer_equivalence_relation": "exact",
+    "retain_eligible_source_label": true,
+    "require_instance_binding": true,
+    "public_answer_terms_allowed": false,
+    "screen_all_accepted_answer_aliases": true,
+    "approval_authority": "existing_sector1_approvals",
+    "public_roles": {
+      "KIND": "The active profile supplies base_surface and its eligible, reviewed, source-attested approved_equivalents under kind_equivalence. These phrases express the same public category kind_id under the verified public conditions. The generator chooses one supplied phrase; additional phrases do not change the answer domain or response cardinality.",
+      "SCOPE": "Neutral references to a displayed image, panel, crop or visibly marked region. Anatomical site, finding names and diagnostic captions cannot serve as scope names."
+    },
+    "additional_public_clinical_roles": [],
+    "other_medical_terms": "KIND may use the profile base surface or an eligible category equivalent under kind_equivalence. Any other medical expression requires its own declared public role and the applicable Sector 1 approval for the exact English surface, concept and role. These identification profiles declare no additional public clinical role.",
+    "answer_surface_limit": "An additional English answer spelling requires exact interchangeability approved for the eligible class. Broader or related terms and terminology preferred names alone cannot establish equivalence.",
+    "kind_equivalence": {
+      "criterion": "Replacing the public category must preserve which entities a respondent is entitled to name under this profile and its public conditions. An equal set of currently annotated labels in one image is insufficient.",
+      "base_surface": "The profile base_surface is authorized by the semantic profile itself. An empty approved_equivalents list exposes only that surface for KIND.",
+      "admission": "Every extra surface must have a reviewed record in the active profile’s public_kind.approved_equivalents, linked to a matching source record in the verified terminology source identified by source_registry. Activate it only when its public applicability conditions hold and the profile-level equivalence is established.",
+      "equivalent_record_fields": [
+        "surface",
+        "terminology",
+        "term_id",
+        "source_sha256",
+        "source_field",
+        "source_value",
+        "public_conditions",
+        "equivalence_rationale",
+        "review_id"
+      ],
+      "provenance": "For each record verify the allowed terminology, term_id, source_sha256, source_field and its actual source_value. Source fields preferred_term, term_type and section may suggest candidates. Any human-readable rendering must be explicitly recorded and reviewed. A shared ancestor, section or tag alone does not establish interchangeability.",
+      "rejected_examples": [
+        {
+          "profile": "finding_identification.any_one_finding.v1",
+          "candidate": "mucosal abnormality",
+          "reason": "Restricts findings to abnormalities of the mucosa."
+        },
+        {
+          "profile": "finding_identification.any_one_anatomical_landmark.v1",
+          "candidate": "body structure",
+          "reason": "Permits structures outside the anatomical landmark category."
+        }
+      ],
+      "source_registry": {
+        "source_binding_ref": "#/source_binding",
+        "artifact_key": "terminology_terms"
+      },
+      "approval_scope": "An additional phrase must have an existing reviewed category-equivalence record for the active profile and the KIND role in public_kind.approved_equivalents. Reuse its Sector 1 lexical attestation. Source attestation and profile-level category equivalence are distinct requirements. A class-answer synonym approval does not approve a phrase for the KIND role.",
+      "public_conditions": "Resolve every declared public condition from the public presentation and public task constraints. Hidden answer identity or the accidental set of currently annotated findings cannot establish category equivalence. Include an equivalent only when its public conditions are verified true for this instance.",
+      "on_false_or_unresolved_public_conditions": "withhold_equivalent_from_public_projection",
+      "on_invalid_declared_approval_or_provenance": "block_profile_admission",
+      "projection": "Build kind_surfaces_by_profile for the selected profile from base_surface first, then every eligible approved_equivalents.surface in declared record order. Apply text hygiene before projecting and remove only identical repeated strings, retaining all approval provenance privately. Impose no maximum number of eligible equivalents. The compiled list must exactly match this derived list. An empty approved_equivalents list yields the base surface alone.",
+      "text_hygiene_policy_ref": "#/text_hygiene_policy",
+      "disclosure_policy_ref": "#/alias_context_policy/question_disclosure"
+    },
+    "sector1_approval_binding": {
+      "resolver_capability": "sector1_approval_resolution",
+      "private_role": "answer_equivalent",
+      "source_binding_ref": "#/source_binding",
+      "eligibility": "Use only an English surface attested for the same eligible class and concept by an approved exact mapping and an accepted, lexically supported Sector 1 synonym approval in the verified release. The common resolver supplies class-specific results with their context requirements and provenance.",
+      "context_policy_ref": "#/alias_context_policy",
+      "concept_boundary_ref": "#/terminology_policy/compiled_registry",
+      "private_answer_reference": "Use the resolver’s eligible class-specific surfaces after their instance conditions have passed. Preserve every qualifying provenance chain, including the original approval method and human-review status.",
+      "private_disclosure_screen": "Include the resolver’s wider class-specific screening vocabulary, including plausible contextual aliases withheld from automatic evaluation. A screening match has the consequences specified by alias_context_policy.question_disclosure.",
+      "source_label_retention": "Retain the original source-label surface for every class whose original evidence and mapping gates pass, including classes with zero eligible additional aliases. Lack of an additional spelling never waives class evidence or mapping requirements.",
+      "public_kind_policy_ref": "#/terminology_policy/kind_equivalence",
+      "role_boundary": "Class-specific answer approvals are private. A public KIND equivalent requires separate authorization for its own profile and role.",
+      "unresolved_or_conflicting_approval": "review_without_using_the_unverified_binding",
+      "missing_required_artifact": "block_admission"
+    },
+    "compiled_registry": {
+      "source": "trusted_compiled_registry_report",
+      "scope": "selected_profile_in_active_immutable_build",
+      "required_bindings": [
+        "build_id",
+        "profile_id",
+        "source_binding_id",
+        "grammar_sha256",
+        "semantics_sha256",
+        "terminology_representation"
+      ],
+      "profile_admission": "Require profiles[profile_id].admitted == true in the matching build report.",
+      "allowlist_field": "profiles[profile_id].allowed_snomed_concept_ids",
+      "membership": "Every runtime SNOMED CT concept reference used by the instance, including answer concepts, observation/mapping bindings and any SNOMED-backed public KIND equivalent, must belong to the selected profile's compiled allowlist. Membership is necessary and does not waive the existing class-specific mapping, exact-equivalence, lexical, context, evidence or role checks.",
+      "representation": "Require the selected profile's declared terminology_representation. These identification profiles use existing concept references and forbid postcoordination. Other terminology systems keep their own source-specific approved bindings; do not treat their term IDs as SNOMED concept IDs.",
+      "allow_runtime_extension": false,
+      "on_missing_stale_or_mismatched_registry": "block_execution",
+      "on_unlisted_concept": "block_instance_before_generation",
+      "on_new_concept_or_representation": "rebuild_and_readmit_registry_before_use",
+      "rebuild_rule": "A changed vocabulary, peer definition, source release or representation requires a new verified build and profile admission before use. Never append an unknown concept to a previously admitted allowlist or reuse an old admission result for the modified build.",
+      "visibility": "Keep the report, allowlists and admission metadata private."
+    }
+  },
+  "alias_context_policy": {
+    "context_trigger": "Use contextual treatment if the vocabulary entry or the synonym approval sets requires_concept_context, or the approval declares context or required attributes.",
+    "private_answer_reference": {
+      "require": "verified_mapping_context",
+      "evidence": "For a contextual alias, verify the class/concept mapping and its declared context and required attributes using private, in-scope evidence. The question need not state any of them.",
+      "on_unverified_context": "withhold_alias_from_acceptable_answers",
+      "eligible_source_label": "Retain the independently eligible original class label even when none of its additional aliases is eligible."
+    },
+    "response_evaluation": {
+      "require": "unambiguous_concept_resolution",
+      "permitted_context": "Resolve the affirmative identification from the response and the public question and presented view. Compare the resolved class with the frozen private reference and its approved surfaces. The intended private answer alone cannot disambiguate a response.",
+      "on_ambiguous_or_unverifiable": "review",
+      "negation": "A negated or merely suggested label does not establish a positive identification."
+    },
+    "question_disclosure": {
+      "screen": "all_potential_answer_aliases",
+      "class_scope": "every eligible answer class in the frozen set",
+      "include": [
+        "canonical source labels",
+        "all accepted answer spellings",
+        "other source-attested potential aliases for those classes, including contextual aliases withheld from automatic answer evaluation",
+        "identifying paraphrases and indirect clues"
+      ],
+      "surfaces": "Screen the whole public request with all rendered scope phrases before generation, then screen the complete candidate question. Include suggested answers and negated mentions. Keep the screening vocabulary private.",
+      "outcomes": {
+        "confirmed_answer_identification": "rejected",
+        "unresolved_possible_disclosure": "review",
+        "demonstrably_unrelated_use": "continue_other_checks"
+      },
+      "screening_membership_confers_answer_eligibility": false
+    }
+  },
+  "visibility": {
+    "public": "Only the operation and public constraints, the eligible public category surfaces compiled from the selected profile, and neutral scope surfaces resolved against the actual presentation may enter the question request, as specified in the peer grammar. Category approval records and terminology provenance remain private.",
+    "private": "Keep the reference answer, alternative classes and aliases, any answer-identifying captions, annotations, evidence links, source paths, hashes and mapping metadata out of the public request.",
+    "disclosure_policy_ref": "#/alias_context_policy/question_disclosure"
+  },
+  "check_registry": {
+    "finding_identification.scope_resolves": {
+      "criteria_by_stage": {
+        "before_generation": "The scope ID resolves to the displayed image, panel, crop or visible mark used to derive the reference."
+      },
+      "failure_code": "finding_scope_not_bound"
+    },
+    "finding_identification.positive_observation_bindings": {
+      "criteria_by_stage": {
+        "before_generation": "Each retained class and each supporting positive annotation has a verified Sector 1 task, evidence and mapping binding for this instance. Apply the class-specific output of the common resolver under terminology_policy.sector1_approval_binding and the SNOMED boundary under terminology_policy.compiled_registry. A class-specific verdict cannot authorize another class."
+      },
+      "failure_code": "finding_observation_binding_failed"
+    },
+    "finding_identification.every_alternative_grounded": {
+      "criteria_by_stage": {
+        "before_generation": "Each retained alternative has a verified evidence reference visible in the supplied view. Hold the instance when a proposed alternative lacks that support."
+      },
+      "failure_code": "finding_alternative_without_exported_evidence"
+    },
+    "finding_identification.crop_containment": {
+      "criteria_by_stage": {
+        "before_generation": "For a crop-supported alternative, the crop contains its valid source annotation box. Full-image support alone imposes no box requirement."
+      },
+      "failure_code": "finding_crop_support_invalid"
+    },
+    "finding_identification.single_response_alternatives": {
+      "criteria_by_stage": {
+        "before_generation": "The frozen answer set is nonempty and one supported member suffices as the response."
+      },
+      "failure_code": "finding_response_cardinality_mismatch"
+    },
+    "finding_identification.landmark_category": {
+      "criteria_by_stage": {
+        "before_generation": "Each retained alternative satisfies the selected profile’s original dataset category filter using verified source evidence."
+      },
+      "failure_code": "landmark_category_not_verified"
+    },
+    "finding_identification.answer_not_disclosed": {
+      "criteria_by_stage": {
+        "before_generation": "Screen the complete public request and rendered visual references against the disclosure set for every eligible class under the alias context policy.",
+        "after_generation": "Screen the exact question in full under the same disclosure policy, including suggested or negated answers and identifying clues. Confirmed disclosure rejects the wording. Unresolved disclosure requires review."
+      },
+      "failure_code": "finding_answer_disclosed_in_question"
+    },
+    "finding_identification.assistance_declared": {
+      "criteria_by_stage": {
+        "before_generation": "Record annotation assistance for crops, overlays and marked regions. Any purported mark is actually visible and unambiguously identifies the intended region."
+      },
+      "failure_code": "finding_assistance_or_marked_region_mismatch"
+    },
+    "finding_identification.ontology_lexicon_grounded": {
+      "criteria_by_stage": {
+        "before_generation": "Require public KIND to equal the complete derived set of the profile base surface and its eligible reviewed equivalents under terminology_policy.kind_equivalence. Verify source attestation, profile-level equivalence and public applicability of every extra phrase, and enforce the compiled registry boundary for its SNOMED references. Every proposed scope phrase must be neutral visual language approved for this display. Validate every KIND and SCOPE string under text_hygiene_policy before projection and deduplication.",
+        "after_generation": "Evaluate clinical expressions and their roles across the complete original question, using the shared interpretation and the licensed public surfaces. The category expression must be one of the eligible KIND phrases projected for this instance and must preserve the selected profile's kind_id under the verified public conditions. Sentence-initial capitalization and articles are handled as declared by the grammar. A private answer approval cannot license a public expression. Unresolved clinical wording requires review."
+      },
+      "failure_code": "ungrounded_clinical_paraphrase_term"
+    },
+    "finding_identification.public_scope_unambiguous": {
+      "criteria_by_stage": {
+        "before_generation": "Each offered scope phrase resolves uniquely to the intended displayed scope in the supplied presentation.",
+        "after_generation": "Resolve the visual expression in the shared interpretation against all displayed referents. It must denote the same single scope as the frozen plan. A definite mismatch rejects the wording and unresolved reference requires review."
+      },
+      "failure_code": "ambiguous_or_changed_public_scope"
+    },
+    "finding_identification.question_json_shape": {
+      "criteria_by_stage": {
+        "after_generation": "The complete model response is a JSON object with unique keys and exactly the question field required by the paired grammar. Validate the exact decoded question against the output schema and text_hygiene_policy: nonblank, one line, no surrounding whitespace and no control characters. Reject a violation without silently repairing the original string."
+      },
+      "failure_code": "invalid_model_response"
+    },
+    "finding_identification.question_semantic_form": {
+      "criteria_by_stage": {
+        "after_generation": "The full utterance requests exactly one identification or naming act. Evaluate all clauses and coordinated requests, including imperatives and conversational questions."
+      },
+      "failure_code": "incompatible_identification_act"
+    },
+    "finding_identification.question_language_quality": {
+      "criteria_by_stage": {
+        "after_generation": "The original wording satisfies the common independent English quality policy for grammatical and intelligible text, including eligible novel syntax. The number, purpose and compatibility of requested acts are assessed by the semantic checks; grammatically correct text can still violate those checks."
+      },
+      "failure_code": "language_quality_not_passed"
+    },
+    "finding_identification.paraphrase_equivalence": {
+      "criteria_by_stage": {
+        "after_generation": "Compare every admissible reading of the complete question to the observable projection of the selected frozen plan. Require equivalence for every recoverable invariant and absence of added demands, assertions or presuppositions. A conflict on every reading of a nonempty set of resolved readings rejects the wording. Unresolved or mixed readings and unaccounted-for text cannot pass."
+      },
+      "failure_code": "question_changes_semantic_plan"
+    },
+    "finding_identification.generation_preflight": {
+      "criteria_by_stage": {
+        "before_generation": "Before dispatch, require an eligible selected cell, applicable verified instance evidence, a frozen reference and an authorized, screened request under the same build. Require the selected profile's matching admitted compiled registry, enforce its vocabulary/representation boundary, resolve the exact Sector 1 approvals, and verify the public role projection and text hygiene. All other required before-generation checks for this profile must be satisfied. Missing or unverified required bindings block dispatch."
+      },
+      "failure_code": "open_generation_preflight_not_passed"
+    }
+  },
+  "required_checks": {
+    "registry_ref": "#/check_registry",
+    "common": [
+      "finding_identification.scope_resolves",
+      "finding_identification.positive_observation_bindings",
+      "finding_identification.every_alternative_grounded",
+      "finding_identification.crop_containment",
+      "finding_identification.single_response_alternatives",
+      "finding_identification.answer_not_disclosed",
+      "finding_identification.assistance_declared",
+      "finding_identification.ontology_lexicon_grounded",
+      "finding_identification.public_scope_unambiguous",
+      "finding_identification.question_json_shape",
+      "finding_identification.question_semantic_form",
+      "finding_identification.question_language_quality",
+      "finding_identification.paraphrase_equivalence",
+      "finding_identification.generation_preflight"
+    ],
+    "additional_by_profile": {
+      "finding_identification.any_one_finding.v1": [],
+      "finding_identification.any_one_anatomical_landmark.v1": [
+        "finding_identification.landmark_category"
+      ]
+    },
+    "selection": "Execute the union of common and additional_by_profile for the selected profile at each declared stage. Listing a check in the registry creates no obligation to run it for other profiles.",
+    "acceptance": "Automatic acceptance requires all selected, applicable checks to pass at their declared stages, including the inherited common-engine baseline. A definite candidate violation rejects the wording. If no definite violation has been established but a required decision is unresolved or was not completed, the candidate cannot be accepted and requires review under the common fail-closed reporting policy. Fatal build or execution errors remain errors and block the corresponding action; they are not semantic review verdicts."
+  },
+  "semantic_comparisons": {
+    "stage": "after_generation",
+    "interpretation_unit": "one_complete_interpretation_per_candidate",
+    "interpretation_inputs": [
+      "exact_candidate_question",
+      "public_presentation",
+      "licensed_public_role_surfaces"
+    ],
+    "full_text_coverage_required": true,
+    "shared_interpretation_consumers": [
+      "finding_identification.question_semantic_form",
+      "finding_identification.ontology_lexicon_grounded",
+      "finding_identification.public_scope_unambiguous",
+      "finding_identification.paraphrase_equivalence"
+    ],
+    "consumer_registry_ref": "#/check_registry",
+    "comparison_input": "observable projection of the frozen plan and displayed context",
+    "results": "Each selected consumer returns its own decision and reason codes, tied to the same interpretation. One consumer’s result cannot be copied to its siblings. If a required comparison could not execute, retain that distinction under the common reporting policy.",
+    "parse_invocations_per_analyzed_candidate": 1,
+    "result_granularity": "one_result_per_check_id"
+  },
+  "text_hygiene_policy": {
+    "applies_to": [
+      "public_KIND_surfaces",
+      "public_SCOPE_surfaces",
+      "decoded_question"
+    ],
+    "require_nonblank": true,
+    "require_single_line": true,
+    "forbid_surrounding_whitespace": true,
+    "whitespace_definition": "Unicode White_Space property.",
+    "forbidden_unicode_categories": [
+      "Cc"
+    ],
+    "forbidden_code_points": [
+      "U+2028",
+      "U+2029"
+    ],
+    "validate_original_decoded_string": true,
+    "automatic_repair": false,
+    "validation_order": "Check the exact decoded string before projection, deduplication or text normalization. An escaped control or line separator in JSON is checked as its decoded character. Ordinary Unicode letters and punctuation are permitted.",
+    "public_input_violation": "block_generation_for_invalid_projection",
+    "candidate_question_violation": "rejected",
+    "schema_projection": "The paired grammar carries equivalent self-contained string schemas for kind_surfaces, scope_surfaces and question. Validate their agreement with this policy when admitting the build. Do not trim, remove controls or silently repair the original text into an approved spelling."
+  }
+}

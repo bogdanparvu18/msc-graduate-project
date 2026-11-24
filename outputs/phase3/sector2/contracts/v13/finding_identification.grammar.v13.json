@@ -1,0 +1,1074 @@
+{
+  "schema_version": "mmvqa-task-grammar-v13",
+  "status": "proposed_for_review",
+  "task_id": "finding_identification",
+  "semantics_file": "finding_identification.semantics.v13.json",
+  "language": "en",
+  "generation_mode": "open_paraphrase",
+  "binding_roots": {
+    "grammar_document": {
+      "source": "this_document"
+    },
+    "semantics_document": {
+      "source": "sibling_document",
+      "relative_filename": {
+        "root": "grammar_document",
+        "path": [
+          "semantics_file"
+        ]
+      }
+    },
+    "public_plan": {
+      "source": "frozen_instance_public_plan",
+      "fields": {
+        "profile_id": "ID of the active semantic profile.",
+        "parameters": {
+          "scope_id": "Selected displayed scope ID."
+        }
+      }
+    },
+    "public_context": {
+      "source": "screened_instance_presentation",
+      "fields": {
+        "scope_surfaces_by_id": "Index from displayed scope IDs to their eligible neutral English visual references.",
+        "kind_surfaces_by_profile": "Trusted derived index from profile_id to base_surface plus all eligible approved category equivalents, compiled under semantics_document.terminology_policy.kind_equivalence. This index is a projection of verified records, not an independent approval source."
+      }
+    },
+    "semantic_profile": {
+      "collection": {
+        "root": "semantics_document",
+        "path": [
+          "profiles"
+        ]
+      },
+      "select": {
+        "member_key": "profile_id",
+        "equals": {
+          "root": "public_plan",
+          "path": [
+            "profile_id"
+          ]
+        },
+        "required_matches": 1
+      }
+    }
+  },
+  "slot_bindings": {
+    "KIND": {
+      "index": {
+        "root": "public_context",
+        "path": [
+          "kind_surfaces_by_profile"
+        ]
+      },
+      "key": {
+        "root": "public_plan",
+        "path": [
+          "profile_id"
+        ]
+      },
+      "project": "ordered_distinct_strings",
+      "profile_kind_source": {
+        "root": "semantic_profile",
+        "path": [
+          "public_kind"
+        ]
+      },
+      "admission_policy": {
+        "root": "semantics_document",
+        "path": [
+          "terminology_policy",
+          "kind_equivalence"
+        ]
+      },
+      "text_hygiene_policy": {
+        "root": "semantics_document",
+        "path": [
+          "text_hygiene_policy"
+        ]
+      },
+      "surface_form": "Each phrase is a singular English count noun phrase without an article. Expose base_surface and every eligible approved equivalent for this instance. Retain the exact approved spelling. Select one phrase when wording the question; surrounding articles and ordinary syntax are realized separately.",
+      "admission": "Require the indexed value to equal the full ordered list derived under admission_policy. Verify each extra phrase's source attestation, review, profile-level equivalence, public applicability and disclosure safety before generation. A private answer alias alone cannot authorize a category phrase."
+    },
+    "SCOPE": {
+      "index": {
+        "root": "public_context",
+        "path": [
+          "scope_surfaces_by_id"
+        ]
+      },
+      "key": {
+        "root": "public_plan",
+        "path": [
+          "parameters",
+          "scope_id"
+        ]
+      },
+      "project": "ordered_distinct_strings",
+      "surface_form": "Each permitted visual reference must separately identify the selected displayed scope unambiguously, use neutral visual language and correspond to the actual image, crop, panel or visible mark. Require at least one reference. An empty list, an unsupported phrase or an ambiguous referent makes this projection ineligible for generation.",
+      "text_hygiene_policy": {
+        "root": "semantics_document",
+        "path": [
+          "text_hygiene_policy"
+        ]
+      }
+    }
+  },
+  "public_request": {
+    "field_bindings": {
+      "operation": {
+        "root": "semantics_document",
+        "path": [
+          "task_semantics",
+          "public_operation"
+        ]
+      },
+      "response_cardinality": {
+        "root": "semantic_profile",
+        "path": [
+          "plan_constants",
+          "response_cardinality"
+        ]
+      },
+      "polarity": {
+        "root": "semantic_profile",
+        "path": [
+          "plan_constants",
+          "polarity"
+        ]
+      },
+      "kind_surfaces": {
+        "resolved_slot": {
+          "root": "grammar_document",
+          "path": [
+            "slot_bindings",
+            "KIND"
+          ]
+        }
+      },
+      "scope_surfaces": {
+        "resolved_slot": {
+          "root": "grammar_document",
+          "path": [
+            "slot_bindings",
+            "SCOPE"
+          ]
+        }
+      }
+    },
+    "data_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "operation": {
+          "const": "identify"
+        },
+        "response_cardinality": {
+          "const": 1
+        },
+        "polarity": {
+          "const": "positive"
+        },
+        "kind_surfaces": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?![\\s\\S]*[\\u0000-\\u001F\\u007F-\\u009F\\u2028\\u2029])[^\\u0009-\\u000D\\u0020\\u0085\\u00A0\\u1680\\u2000-\\u200A\\u2028\\u2029\\u202F\\u205F\\u3000](?:[\\s\\S]*[^\\u0009-\\u000D\\u0020\\u0085\\u00A0\\u1680\\u2000-\\u200A\\u2028\\u2029\\u202F\\u205F\\u3000])?$"
+          }
+        },
+        "scope_surfaces": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?![\\s\\S]*[\\u0000-\\u001F\\u007F-\\u009F\\u2028\\u2029])[^\\u0009-\\u000D\\u0020\\u0085\\u00A0\\u1680\\u2000-\\u200A\\u2028\\u2029\\u202F\\u205F\\u3000](?:[\\s\\S]*[^\\u0009-\\u000D\\u0020\\u0085\\u00A0\\u1680\\u2000-\\u200A\\u2028\\u2029\\u202F\\u205F\\u3000])?$"
+          }
+        }
+      },
+      "required": [
+        "operation",
+        "response_cardinality",
+        "polarity",
+        "kind_surfaces",
+        "scope_surfaces"
+      ],
+      "additionalProperties": false
+    },
+    "instructions": {
+      "root": "grammar_document",
+      "path": [
+        "wording",
+        "prompt"
+      ]
+    },
+    "output_schema": {
+      "root": "grammar_document",
+      "path": [
+        "output_contract",
+        "base_json_schema"
+      ]
+    },
+    "projection": "Send the prompt, the five bound public data fields and the output schema. Use the exact verified role projections for the selected instance and validate text_hygiene_policy before dispatch. Keep internal scope and profile IDs, the plan, reference answers and their aliases, category approval records, compiled concept lists, source provenance, finding-bearing captions, evidence, previous model responses and offline cases outside this projection.",
+    "disclosure_screen": "The assembled request, including each surface and its rendered context, must satisfy the identification disclosure rule for every eligible answer before it is shown to the generator.",
+    "text_hygiene_policy": {
+      "root": "semantics_document",
+      "path": [
+        "text_hygiene_policy"
+      ]
+    }
+  },
+  "wording": {
+    "intent": "Elicit a single response naming any one visible member of the public category in the designated scope.",
+    "required_roles": [
+      "KIND",
+      "SCOPE"
+    ],
+    "realization": {
+      "KIND": "Choose one phrase from the supplied eligible KIND list: the profile base surface or an approved, applicable, source-attested category equivalent. Preserve its authorized category meaning. Sentence-initial capitalization is allowed. Place any required English article outside the phrase and choose it for the following sound.",
+      "SCOPE": "Use a public SCOPE phrase whose referent is the selected displayed scope. Free placement is allowed. A deictic expression must resolve to that scope in the actual presentation.",
+      "syntax": "Use a content question, a conversational request for a name, or an imperative naming request. Clause order, ordinary observation and naming verbs, voice, function words and politeness may vary. The entire text must express one positive naming request.",
+      "cardinality": "The wording must allow any one eligible response even when several findings are supported. Asking for the most prominent finding, all findings, or the only finding changes the task.",
+      "clinical_language": "KIND is the identification question's only clinical role. Use one supplied eligible category expression and an eligible neutral visual reference. Preserve the frozen intent throughout the text. Unlicensed medical wording, answer suggestions, added attributes, relations, comparisons, diagnoses, temporal claims and extra requests change the permitted question."
+    },
+    "prompt": "Write one natural English question or request asking a clinician to name any one visible member of the supplied category in the supplied view. Choose one of the supplied equivalent category expressions and one of the supplied visual references. Choose your own sentence structure, clause order and ordinary English wording. Preserve the positive naming intent and allow a single answer even if several qualify. Use only the chosen supplied category expression as clinical vocabulary. Avoid implying uniqueness, ranking, comparison, diagnosis, additional attributes or relations, temporal change, or a second request. Return only a JSON object with the key question. Its decoded question value must be nonblank, on one line, without leading or trailing whitespace and without control characters."
+  },
+  "output_contract": {
+    "question_generated_by_llm": true,
+    "answer_generated_by_llm": false,
+    "base_json_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "required": [
+        "question"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "question": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?![\\s\\S]*[\\u0000-\\u001F\\u007F-\\u009F\\u2028\\u2029])[^\\u0009-\\u000D\\u0020\\u0085\\u00A0\\u1680\\u2000-\\u200A\\u2028\\u2029\\u202F\\u205F\\u3000](?:[\\s\\S]*[^\\u0009-\\u000D\\u0020\\u0085\\u00A0\\u1680\\u2000-\\u200A\\u2028\\u2029\\u202F\\u205F\\u3000])?$"
+        }
+      }
+    },
+    "unit": "One freely worded question or naming request per candidate. Multiple distinct candidates may realize the same frozen intent.",
+    "text_hygiene_policy": {
+      "root": "semantics_document",
+      "path": [
+        "text_hygiene_policy"
+      ]
+    }
+  },
+  "language_fixtures": {
+    "purpose": "Offline post-generation wording reference cases with independently authored expectations.",
+    "excluded_from_generation_request": true,
+    "evidence_status": "synthetic_test_context_not_source_approval",
+    "context_resolution": "Resolve each context_id in contexts and its profile_id in the paired semantics. For the four base contexts use the active profile as declared. For a context that explicitly names a kind_approval_overlay_id, the offline harness makes an isolated fixture-only copy of that profile and verifies its mock source material and scoped review record before evaluating the public conditions. The overlay applies only to that fixture copy. An unresolved or false public condition withholds the phrase. Derive the role projections independently and compare them with the expected public_context for the context. expected_public_kind names the base category. The test does not write to an admitted registry or change an active profile. Only licensed role surfaces and the public presentation may enter the interpretation. Exclude fixtures, mock approvals, private evidence and gold decisions from every generator request.",
+    "check_registry": {
+      "root": "semantics_document",
+      "path": [
+        "check_registry"
+      ]
+    },
+    "gold_policy": {
+      "independent_expectations": true,
+      "semantic_equivalence_values": [
+        "equivalent",
+        "conflict",
+        "unresolved"
+      ],
+      "language_quality_values": [
+        "pass",
+        "fail"
+      ],
+      "answer_disclosure_values": [
+        "absent",
+        "confirmed",
+        "unresolved"
+      ],
+      "final_verdict_values": [
+        "accepted",
+        "rejected",
+        "review"
+      ],
+      "semantic_dimension": "Record whether the complete utterance has the permitted identification meaning, independently of its surface grammar quality. A definite unlicensed answer suggestion is part of the semantic conflict.",
+      "language_dimension": "Assess grammar and intelligibility independently of semantic permission. The number and purpose of requested acts belong to semantic checks. An incorrect article can fail language quality even when the intended identification meaning is recoverable.",
+      "verdict_consistency": "A definite semantic conflict, failed language quality or confirmed disclosure requires rejected. With no definite violation, unresolved meaning or disclosure requires review. Accepted requires equivalent meaning, passing language quality, absent disclosure and all selected applicable after-generation checks to pass.",
+      "pass_condition": "The actual final verdict must equal gold.final_verdict and each required_check_outcomes assertion must match the corresponding result from the semantic check registry. A primary_condition identifies test focus; it does not establish precedence over other proven violations.",
+      "abstention": "Review on a case whose gold verdict is accepted or rejected is an abstention and an automatic-coverage failure, not a passed fixture. Review is the correct decision when gold.final_verdict is review.",
+      "incorrect_acceptance": "Accepted on a case whose gold verdict is rejected or review is an incorrect acceptance and a failed fixture.",
+      "unjustified_rejection": "Rejected on a case whose gold verdict is review fails the expected uncertainty handling.",
+      "check_diagnostics": "required_check_outcomes uses full check IDs from the paired semantic registry. Detailed engine reason codes are not hard-coded here. A missing required check result fails the fixture; a rejection by another check cannot substitute for the required outcome. In these assertions, pass denotes a successful individual check.",
+      "limits": "The cases check isolated wording and projection behavior on synthetic evidence. The overlay exercises a mock attestation and review. Source admission, real image evidence, production validator accuracy and export permission each require their own verification."
+    },
+    "contexts": {
+      "landmark_single_panel": {
+        "profile_id": "finding_identification.any_one_anatomical_landmark.v1",
+        "parameters": {
+          "scope_id": "scope_1"
+        },
+        "public_presentation": {
+          "displayed_scopes": [
+            {
+              "scope_id": "scope_1",
+              "display_label": "panel B"
+            }
+          ],
+          "deictic_context": "Only panel B is displayed; an authorized phrase this panel denotes scope_1.",
+          "next_panel_reference": "No next-panel relation is supplied."
+        },
+        "public_context": {
+          "scope_surfaces_by_id": {
+            "scope_1": [
+              "panel B"
+            ]
+          },
+          "kind_surfaces_by_profile": {
+            "finding_identification.any_one_anatomical_landmark.v1": [
+              "anatomical landmark"
+            ]
+          }
+        },
+        "expected_public_kind": "anatomical landmark",
+        "private_test_reference": {
+          "canonical_class_id": "fixture_landmark_001",
+          "eligible_alternatives": [
+            {
+              "class_id": "fixture_landmark_001",
+              "source_label": "ampulla of Vater",
+              "accepted_additional_surfaces": [],
+              "disclosure_surfaces": [
+                "ampulla of Vater"
+              ]
+            }
+          ],
+          "evidence_assumption": "For these isolated wording tests, each listed alternative is assumed positively supported in scope_1. This assumption is not Sector 1 approval, verified image evidence, generation authorization or export authorization."
+        }
+      },
+      "landmark_deictic_panel": {
+        "profile_id": "finding_identification.any_one_anatomical_landmark.v1",
+        "parameters": {
+          "scope_id": "scope_1"
+        },
+        "public_presentation": {
+          "displayed_scopes": [
+            {
+              "scope_id": "scope_1",
+              "display_label": "panel B"
+            }
+          ],
+          "deictic_context": "Only panel B is displayed; an authorized phrase this panel denotes scope_1.",
+          "next_panel_reference": "No next-panel relation is supplied."
+        },
+        "public_context": {
+          "scope_surfaces_by_id": {
+            "scope_1": [
+              "panel B",
+              "this panel"
+            ]
+          },
+          "kind_surfaces_by_profile": {
+            "finding_identification.any_one_anatomical_landmark.v1": [
+              "anatomical landmark"
+            ]
+          }
+        },
+        "expected_public_kind": "anatomical landmark",
+        "private_test_reference": {
+          "canonical_class_id": "fixture_landmark_001",
+          "eligible_alternatives": [
+            {
+              "class_id": "fixture_landmark_001",
+              "source_label": "ampulla of Vater",
+              "accepted_additional_surfaces": [],
+              "disclosure_surfaces": [
+                "ampulla of Vater"
+              ]
+            }
+          ],
+          "evidence_assumption": "For these isolated wording tests, each listed alternative is assumed positively supported in scope_1. This assumption is not Sector 1 approval, verified image evidence, generation authorization or export authorization."
+        }
+      },
+      "general_two_alternatives": {
+        "profile_id": "finding_identification.any_one_finding.v1",
+        "parameters": {
+          "scope_id": "scope_1"
+        },
+        "public_presentation": {
+          "displayed_scopes": [
+            {
+              "scope_id": "scope_1",
+              "display_label": "panel B"
+            }
+          ],
+          "deictic_context": "Only panel B is displayed; an authorized phrase this panel denotes scope_1.",
+          "next_panel_reference": "No next-panel relation is supplied."
+        },
+        "public_context": {
+          "scope_surfaces_by_id": {
+            "scope_1": [
+              "panel B"
+            ]
+          },
+          "kind_surfaces_by_profile": {
+            "finding_identification.any_one_finding.v1": [
+              "finding"
+            ]
+          }
+        },
+        "expected_public_kind": "finding",
+        "private_test_reference": {
+          "canonical_class_id": "fixture_finding_001",
+          "eligible_alternatives": [
+            {
+              "class_id": "fixture_finding_001",
+              "source_label": "ulcer",
+              "accepted_additional_surfaces": [],
+              "disclosure_surfaces": [
+                "ulcer"
+              ]
+            },
+            {
+              "class_id": "fixture_finding_002",
+              "source_label": "red spot",
+              "accepted_additional_surfaces": [],
+              "disclosure_surfaces": [
+                "red spot"
+              ]
+            }
+          ],
+          "evidence_assumption": "For these isolated wording tests, each listed alternative is assumed positively supported in scope_1. This assumption is not Sector 1 approval, verified image evidence, generation authorization or export authorization."
+        }
+      },
+      "landmark_two_panels": {
+        "profile_id": "finding_identification.any_one_anatomical_landmark.v1",
+        "parameters": {
+          "scope_id": "scope_1"
+        },
+        "public_presentation": {
+          "displayed_scopes": [
+            {
+              "scope_id": "scope_1",
+              "display_label": "panel B"
+            },
+            {
+              "scope_id": "scope_2",
+              "display_label": "panel C"
+            }
+          ],
+          "deictic_context": "Panels B and C are displayed; no pointing gesture or implicit next-panel order is supplied.",
+          "next_panel_reference": "No next-panel relation is supplied."
+        },
+        "public_context": {
+          "scope_surfaces_by_id": {
+            "scope_1": [
+              "panel B"
+            ]
+          },
+          "kind_surfaces_by_profile": {
+            "finding_identification.any_one_anatomical_landmark.v1": [
+              "anatomical landmark"
+            ]
+          }
+        },
+        "expected_public_kind": "anatomical landmark",
+        "private_test_reference": {
+          "canonical_class_id": "fixture_landmark_001",
+          "eligible_alternatives": [
+            {
+              "class_id": "fixture_landmark_001",
+              "source_label": "ampulla of Vater",
+              "accepted_additional_surfaces": [],
+              "disclosure_surfaces": [
+                "ampulla of Vater"
+              ]
+            }
+          ],
+          "evidence_assumption": "For these isolated wording tests, each listed alternative is assumed positively supported in scope_1. This assumption is not Sector 1 approval, verified image evidence, generation authorization or export authorization."
+        }
+      },
+      "finding_with_modality_label": {
+        "profile_id": "finding_identification.any_one_finding.v1",
+        "parameters": {
+          "scope_id": "scope_1"
+        },
+        "public_presentation": {
+          "displayed_scopes": [
+            {
+              "scope_id": "scope_1",
+              "display_label": "panel B"
+            }
+          ],
+          "deictic_context": "Only panel B is displayed; an authorized phrase this panel denotes scope_1.",
+          "next_panel_reference": "No next-panel relation is supplied.",
+          "modality_label": "endoscopic image"
+        },
+        "public_context": {
+          "scope_surfaces_by_id": {
+            "scope_1": [
+              "panel B"
+            ]
+          },
+          "kind_surfaces_by_profile": {
+            "finding_identification.any_one_finding.v1": [
+              "finding",
+              "endoscopic finding"
+            ]
+          }
+        },
+        "expected_public_kind": "finding",
+        "private_test_reference": {
+          "canonical_class_id": "fixture_finding_001",
+          "eligible_alternatives": [
+            {
+              "class_id": "fixture_finding_001",
+              "source_label": "ulcer",
+              "accepted_additional_surfaces": [],
+              "disclosure_surfaces": [
+                "ulcer"
+              ]
+            },
+            {
+              "class_id": "fixture_finding_002",
+              "source_label": "red spot",
+              "accepted_additional_surfaces": [],
+              "disclosure_surfaces": [
+                "red spot"
+              ]
+            }
+          ],
+          "evidence_assumption": "For these isolated wording tests, each listed alternative is assumed positively supported in scope_1. This assumption is not Sector 1 approval, verified image evidence, generation authorization or export authorization."
+        },
+        "kind_approval_overlay_id": "synthetic_endoscopic_finding"
+      },
+      "finding_with_generic_label": {
+        "profile_id": "finding_identification.any_one_finding.v1",
+        "parameters": {
+          "scope_id": "scope_1"
+        },
+        "public_presentation": {
+          "displayed_scopes": [
+            {
+              "scope_id": "scope_1",
+              "display_label": "panel B"
+            }
+          ],
+          "deictic_context": "Only panel B is displayed; an authorized phrase this panel denotes scope_1.",
+          "next_panel_reference": "No next-panel relation is supplied.",
+          "modality_label": "image"
+        },
+        "public_context": {
+          "scope_surfaces_by_id": {
+            "scope_1": [
+              "panel B"
+            ]
+          },
+          "kind_surfaces_by_profile": {
+            "finding_identification.any_one_finding.v1": [
+              "finding"
+            ]
+          }
+        },
+        "expected_public_kind": "finding",
+        "private_test_reference": {
+          "canonical_class_id": "fixture_finding_001",
+          "eligible_alternatives": [
+            {
+              "class_id": "fixture_finding_001",
+              "source_label": "ulcer",
+              "accepted_additional_surfaces": [],
+              "disclosure_surfaces": [
+                "ulcer"
+              ]
+            },
+            {
+              "class_id": "fixture_finding_002",
+              "source_label": "red spot",
+              "accepted_additional_surfaces": [],
+              "disclosure_surfaces": [
+                "red spot"
+              ]
+            }
+          ],
+          "evidence_assumption": "For these isolated wording tests, each listed alternative is assumed positively supported in scope_1. This assumption is not Sector 1 approval, verified image evidence, generation authorization or export authorization."
+        },
+        "kind_approval_overlay_id": "synthetic_endoscopic_finding"
+      }
+    },
+    "cases": [
+      {
+        "id": "identify_in_panel",
+        "context_id": "landmark_single_panel",
+        "primary_condition": "operation",
+        "text": "Looking at panel B, what anatomical landmark can you identify?",
+        "gold": {
+          "semantic_equivalence": "equivalent",
+          "language_quality": "pass",
+          "answer_disclosure": "absent",
+          "final_verdict": "accepted"
+        }
+      },
+      {
+        "id": "rank_by_prominence",
+        "context_id": "landmark_single_panel",
+        "primary_condition": "operation",
+        "text": "Which anatomical landmark is most obvious in panel B?",
+        "gold": {
+          "semantic_equivalence": "conflict",
+          "language_quality": "pass",
+          "answer_disclosure": "absent",
+          "final_verdict": "rejected"
+        },
+        "explanation": "Adds a ranking.",
+        "required_check_outcomes": [
+          {
+            "check_id": "finding_identification.paraphrase_equivalence",
+            "verdict": "rejected"
+          }
+        ]
+      },
+      {
+        "id": "check_presence",
+        "context_id": "landmark_single_panel",
+        "primary_condition": "operation",
+        "text": "Does panel B show an anatomical landmark?",
+        "gold": {
+          "semantic_equivalence": "conflict",
+          "language_quality": "pass",
+          "answer_disclosure": "absent",
+          "final_verdict": "rejected"
+        },
+        "explanation": "Requests a yes/no presence judgement.",
+        "required_check_outcomes": [
+          {
+            "check_id": "finding_identification.question_semantic_form",
+            "verdict": "rejected"
+          }
+        ]
+      },
+      {
+        "id": "request_one_name",
+        "context_id": "landmark_single_panel",
+        "primary_condition": "response_cardinality",
+        "text": "Could you give me the name of one anatomical landmark you see in panel B?",
+        "gold": {
+          "semantic_equivalence": "equivalent",
+          "language_quality": "pass",
+          "answer_disclosure": "absent",
+          "final_verdict": "accepted"
+        }
+      },
+      {
+        "id": "request_every_name",
+        "context_id": "landmark_single_panel",
+        "primary_condition": "response_cardinality",
+        "text": "Name every anatomical landmark visible in panel B.",
+        "gold": {
+          "semantic_equivalence": "conflict",
+          "language_quality": "pass",
+          "answer_disclosure": "absent",
+          "final_verdict": "rejected"
+        },
+        "explanation": "Requests an exhaustive response.",
+        "required_check_outcomes": [
+          {
+            "check_id": "finding_identification.paraphrase_equivalence",
+            "verdict": "rejected"
+          }
+        ]
+      },
+      {
+        "id": "visible_landmark",
+        "context_id": "landmark_single_panel",
+        "primary_condition": "polarity",
+        "text": "Name an anatomical landmark visible in panel B.",
+        "gold": {
+          "semantic_equivalence": "equivalent",
+          "language_quality": "pass",
+          "answer_disclosure": "absent",
+          "final_verdict": "accepted"
+        }
+      },
+      {
+        "id": "absent_landmark",
+        "context_id": "landmark_single_panel",
+        "primary_condition": "polarity",
+        "text": "Name an anatomical landmark not visible in panel B.",
+        "gold": {
+          "semantic_equivalence": "conflict",
+          "language_quality": "pass",
+          "answer_disclosure": "absent",
+          "final_verdict": "rejected"
+        },
+        "required_check_outcomes": [
+          {
+            "check_id": "finding_identification.paraphrase_equivalence",
+            "verdict": "rejected"
+          }
+        ]
+      },
+      {
+        "id": "selected_panel",
+        "context_id": "landmark_single_panel",
+        "primary_condition": "scope",
+        "text": "Name one anatomical landmark in panel B.",
+        "gold": {
+          "semantic_equivalence": "equivalent",
+          "language_quality": "pass",
+          "answer_disclosure": "absent",
+          "final_verdict": "accepted"
+        }
+      },
+      {
+        "id": "next_panel",
+        "context_id": "landmark_single_panel",
+        "primary_condition": "scope",
+        "text": "Name one anatomical landmark in the next panel.",
+        "gold": {
+          "semantic_equivalence": "unresolved",
+          "language_quality": "pass",
+          "answer_disclosure": "absent",
+          "final_verdict": "review"
+        },
+        "explanation": "The reference the next panel does not resolve unambiguously to the selected displayed scope. The context does not establish a different target; unresolved reference requires review.",
+        "required_check_outcomes": [
+          {
+            "check_id": "finding_identification.public_scope_unambiguous",
+            "verdict": "review"
+          }
+        ]
+      },
+      {
+        "id": "withhold_private_name",
+        "context_id": "landmark_single_panel",
+        "primary_condition": "answer_disclosure",
+        "text": "Could you identify one anatomical landmark in panel B?",
+        "gold": {
+          "semantic_equivalence": "equivalent",
+          "language_quality": "pass",
+          "answer_disclosure": "absent",
+          "final_verdict": "accepted"
+        }
+      },
+      {
+        "id": "include_private_name",
+        "context_id": "landmark_single_panel",
+        "primary_condition": "answer_disclosure",
+        "text": "Is the anatomical landmark in panel B the ampulla of Vater?",
+        "gold": {
+          "semantic_equivalence": "conflict",
+          "language_quality": "pass",
+          "answer_disclosure": "confirmed",
+          "final_verdict": "rejected"
+        },
+        "explanation": "Discloses the private answer and changes the operation.",
+        "required_check_outcomes": [
+          {
+            "check_id": "finding_identification.answer_not_disclosed",
+            "verdict": "rejected"
+          }
+        ]
+      },
+      {
+        "id": "single_naming_request",
+        "context_id": "landmark_single_panel",
+        "primary_condition": "additional_requirements",
+        "text": "Please identify one anatomical landmark in panel B.",
+        "gold": {
+          "semantic_equivalence": "equivalent",
+          "language_quality": "pass",
+          "answer_disclosure": "absent",
+          "final_verdict": "accepted"
+        }
+      },
+      {
+        "id": "second_treatment_request",
+        "context_id": "landmark_single_panel",
+        "primary_condition": "additional_requirements",
+        "text": "Name one anatomical landmark in panel B. Recommend a treatment.",
+        "gold": {
+          "semantic_equivalence": "conflict",
+          "language_quality": "pass",
+          "answer_disclosure": "absent",
+          "final_verdict": "rejected"
+        },
+        "explanation": "The second sentence requests a clinical recommendation outside the identification plan.",
+        "required_check_outcomes": [
+          {
+            "check_id": "finding_identification.question_semantic_form",
+            "verdict": "rejected"
+          }
+        ]
+      },
+      {
+        "id": "second_location_request",
+        "context_id": "landmark_single_panel",
+        "primary_condition": "additional_requirements",
+        "text": "Name one anatomical landmark in panel B and give its location.",
+        "gold": {
+          "semantic_equivalence": "conflict",
+          "language_quality": "pass",
+          "answer_disclosure": "absent",
+          "final_verdict": "rejected"
+        },
+        "explanation": "An additional location request changes the operation even inside a single sentence.",
+        "required_check_outcomes": [
+          {
+            "check_id": "finding_identification.question_semantic_form",
+            "verdict": "rejected"
+          }
+        ]
+      },
+      {
+        "id": "general_finding_request",
+        "context_id": "general_two_alternatives",
+        "primary_condition": "operation",
+        "text": "Name one finding visible in panel B.",
+        "gold": {
+          "semantic_equivalence": "equivalent",
+          "language_quality": "pass",
+          "answer_disclosure": "absent",
+          "final_verdict": "accepted"
+        },
+        "explanation": "The general profile permits any one supported finding; two eligible alternatives do not require two response values."
+      },
+      {
+        "id": "nonprimary_answer_disclosed",
+        "context_id": "general_two_alternatives",
+        "primary_condition": "answer_disclosure",
+        "text": "Name one finding visible in panel B, such as a red spot.",
+        "gold": {
+          "semantic_equivalence": "conflict",
+          "language_quality": "pass",
+          "answer_disclosure": "confirmed",
+          "final_verdict": "rejected"
+        },
+        "explanation": "The suggested red spot reveals the noncanonical supported alternative. This also introduces unlicensed clinical wording. The disclosure check must identify the leak independently of a rejection by another check.",
+        "required_check_outcomes": [
+          {
+            "check_id": "finding_identification.answer_not_disclosed",
+            "verdict": "rejected"
+          }
+        ]
+      },
+      {
+        "id": "category_broadened",
+        "context_id": "landmark_single_panel",
+        "primary_condition": "public_kind",
+        "text": "Name one finding in panel B.",
+        "gold": {
+          "semantic_equivalence": "conflict",
+          "language_quality": "pass",
+          "answer_disclosure": "absent",
+          "final_verdict": "rejected"
+        },
+        "explanation": "The selected profile requires anatomical landmark. Substituting finding broadens the requested category even if one particular answer could satisfy both.",
+        "required_check_outcomes": [
+          {
+            "check_id": "finding_identification.paraphrase_equivalence",
+            "verdict": "rejected"
+          }
+        ]
+      },
+      {
+        "id": "wrong_indefinite_article",
+        "context_id": "landmark_single_panel",
+        "primary_condition": "language_quality",
+        "text": "Name a anatomical landmark in panel B.",
+        "gold": {
+          "semantic_equivalence": "equivalent",
+          "language_quality": "fail",
+          "answer_disclosure": "absent",
+          "final_verdict": "rejected"
+        },
+        "explanation": "The intended identification meaning is recoverable, but the indefinite article is grammatically incorrect. This is a language-quality failure, not a change of the intended clinical meaning.",
+        "required_check_outcomes": [
+          {
+            "check_id": "finding_identification.question_language_quality",
+            "verdict": "rejected"
+          }
+        ]
+      },
+      {
+        "id": "authorized_deictic_reference",
+        "context_id": "landmark_deictic_panel",
+        "primary_condition": "scope",
+        "text": "Name one anatomical landmark in this panel.",
+        "gold": {
+          "semantic_equivalence": "equivalent",
+          "language_quality": "pass",
+          "answer_disclosure": "absent",
+          "final_verdict": "accepted"
+        },
+        "explanation": "The phrase this panel is explicitly offered and resolves uniquely to the only displayed panel B. It denotes the same scope_1 as the frozen reference."
+      },
+      {
+        "id": "different_displayed_panel",
+        "context_id": "landmark_two_panels",
+        "primary_condition": "scope",
+        "text": "Name one anatomical landmark in panel C.",
+        "gold": {
+          "semantic_equivalence": "conflict",
+          "language_quality": "pass",
+          "answer_disclosure": "absent",
+          "final_verdict": "rejected"
+        },
+        "explanation": "Both B and C are displayed. The selected scope is B, but the question explicitly selects C; this is a definite scope mismatch.",
+        "required_check_outcomes": [
+          {
+            "check_id": "finding_identification.public_scope_unambiguous",
+            "verdict": "rejected"
+          }
+        ]
+      },
+      {
+        "id": "eligible_endoscopic_finding_equivalent",
+        "context_id": "finding_with_modality_label",
+        "primary_condition": "public_kind_equivalence",
+        "kind_surface_under_test": "endoscopic finding",
+        "text": "Name one endoscopic finding in panel B.",
+        "gold": {
+          "semantic_equivalence": "equivalent",
+          "language_quality": "pass",
+          "answer_disclosure": "absent",
+          "final_verdict": "accepted"
+        },
+        "required_check_outcomes": [
+          {
+            "check_id": "finding_identification.ontology_lexicon_grounded",
+            "verdict": "pass"
+          }
+        ],
+        "explanation": "The publicly displayed modality label satisfies the reviewed condition. The extra phrase has the same answer domain as finding in this presentation."
+      },
+      {
+        "id": "inapplicable_endoscopic_finding_equivalent",
+        "context_id": "finding_with_generic_label",
+        "primary_condition": "public_kind_equivalence",
+        "kind_surface_under_test": "endoscopic finding",
+        "text": "Name one endoscopic finding in panel B.",
+        "gold": {
+          "semantic_equivalence": "conflict",
+          "language_quality": "pass",
+          "answer_disclosure": "absent",
+          "final_verdict": "rejected"
+        },
+        "required_check_outcomes": [
+          {
+            "check_id": "finding_identification.ontology_lexicon_grounded",
+            "verdict": "rejected"
+          }
+        ],
+        "explanation": "The visible modality label is generic. The mock approval condition is false, so the active public category list contains only finding. The generated clinical qualifier has no licensed role in this presentation."
+      }
+    ],
+    "kind_approval_overlays": {
+      "synthetic_endoscopic_finding": {
+        "fixture_only": true,
+        "profile_id": "finding_identification.any_one_finding.v1",
+        "role": "KIND",
+        "source_material": "{\"preferred_term\":\"endoscopic finding\",\"term_id\":\"fixture-only:mst-kind-1\",\"terminology\":\"MST\"}",
+        "source_record": {
+          "terminology": "MST",
+          "term_id": "fixture-only:mst-kind-1",
+          "preferred_term": "endoscopic finding",
+          "source_sha256": "a8472b0140b3f39525c44cbb5c14946995c8c00a313c0dbf8ad65a5a12d9ddfe"
+        },
+        "review_record": {
+          "review_id": "fixture-only:review:endoscopic-finding:1",
+          "profile_id": "finding_identification.any_one_finding.v1",
+          "role": "KIND",
+          "surface": "endoscopic finding",
+          "approval": "approved",
+          "approved_equivalent_sha256": "0c74473c9fde47f2fca3ef0e2134a5da18c4cf15f54aaeb98f478de9512c2d65"
+        },
+        "approved_equivalent": {
+          "surface": "endoscopic finding",
+          "terminology": "MST",
+          "term_id": "fixture-only:mst-kind-1",
+          "source_sha256": "a8472b0140b3f39525c44cbb5c14946995c8c00a313c0dbf8ad65a5a12d9ddfe",
+          "source_field": "preferred_term",
+          "source_value": "endoscopic finding",
+          "public_conditions": [
+            {
+              "root": "public_presentation",
+              "path": [
+                "modality_label"
+              ],
+              "equals": "endoscopic image"
+            }
+          ],
+          "equivalence_rationale": "In this mock profile, when the selected panel is publicly identified as an endoscopic image, every finding the respondent may name is an endoscopic finding in that view. The equivalence follows from the declared view type and naming task, independently of which answers happen to be annotated.",
+          "review_id": "fixture-only:review:endoscopic-finding:1"
+        },
+        "scope": "Synthetic source row and simulated review for an offline test. The MST identifier and review ID are fixture values. This record grants no production terminology, generation or export authority."
+      }
+    }
+  },
+  "variation_policy": {
+    "required_capability": "bounded_distinct_question_generation",
+    "scope": "one request for one frozen semantic instance",
+    "request_limits": {
+      "requested_count": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "attempt_budget": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "supplied_by": "caller",
+      "allow_budget_below_requested_count": true
+    },
+    "before_sampling": "Require successful preflight for the exact frozen instance and its screened public request. The configured budget bounds generator calls for that one request.",
+    "per_attempt": "Request one freely worded candidate using the same frozen public request and validate the original response. Keep the deduplication state, prior candidates, fixture data and private evidence outside the generator request.",
+    "eligibility": "Count a candidate only when the complete selected checks authorize its wording and its validated text is bound to the same instance. Only accepted candidates enter the deduplication set.",
+    "distinct_key": {
+      "fields": [
+        "semantic_instance_id",
+        "normalized_question"
+      ],
+      "normalized_question": [
+        "unicode_nfc",
+        "unicode_casefold",
+        "unicode_nfc",
+        "collapse_unicode_whitespace_runs_to_one_ascii_space_and_strip"
+      ],
+      "punctuation": "preserved",
+      "use": "Detect equivalent spellings within this sampling request. Preserve the first validated original text for each key. Persistent corpus deduplication and export use their own common-engine checks."
+    },
+    "dispositions": {
+      "accepted": "Record the unique original and count it toward the requested number.",
+      "duplicate": "Record an accepted validation with a duplicate sampling outcome. Consume one attempt and leave the accepted count unchanged.",
+      "review": "Consume one attempt and continue.",
+      "rejected": "Consume one attempt and continue.",
+      "block_export": "Stop immediately. Close this batch without releasing any previously accepted candidates. Retain all actual attempt outcomes in the trace."
+    },
+    "stop_conditions": {
+      "target_reached": "Stop as soon as accepted_count equals requested_count.",
+      "attempt_budget_exhausted": "Stop at the finite budget when accepted_count is still below requested_count.",
+      "blocked": "Preflight or another mandatory dependency failed. A preflight block makes zero calls."
+    },
+    "report": {
+      "fields": [
+        "semantic_instance_id",
+        "requested_count",
+        "attempt_budget",
+        "attempts_used",
+        "accepted_count",
+        "shortfall",
+        "stop_reason",
+        "counts_by_outcome",
+        "accepted",
+        "attempts"
+      ],
+      "shortfall": "requested_count minus accepted_count",
+      "accepted": "Return validated candidates with the original question, candidate_question_sha256 and audit_id. Compute the question digest from the exact original UTF-8 bytes.",
+      "limits": "Separate the wording-selection result from any subsequent authorization to export."
+    }
+  }
+}

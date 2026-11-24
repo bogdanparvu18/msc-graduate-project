@@ -1,0 +1,502 @@
+{
+  "schema_version": "mmvqa-task-semantics-v13",
+  "task_id": "temporal_relative_evidence_localization",
+  "grammar_file": "temporal_relative_evidence_localization.grammar.v13.json",
+  "definition_status": "proposed_for_review",
+  "grammar_pairing": {
+    "required_semantics_root": "this_document",
+    "required_grammar_schema_version": "mmvqa-task-grammar-v13",
+    "require_matching_task_id": true,
+    "require_reciprocal_file_references": true,
+    "on_mismatched_peer": "block_execution",
+    "compatibility": "Resolve grammar_file and the peer grammar's semantics_file to this exact pair within the same immutable build. Verify the declared schema versions, matching task_id and all public field bindings before instance processing. A task-local substitution of another semantic document does not satisfy this pairing."
+  },
+  "required_capabilities": [
+    "sector1_evidence_binding",
+    "terminology_reference_validation",
+    "semantic_question_validation",
+    "answer_disclosure_detection",
+    "compiled_profile_registry_enforcement",
+    "bounded_distinct_question_generation",
+    "public_query_finding_resolution"
+  ],
+  "capability_resolution": {
+    "scope": "every_profile",
+    "common_engine_baseline": "mandatory_and_inherited",
+    "task_requirements": "additional_to_common_baseline",
+    "resolve_before": "instance_processing",
+    "require": "all",
+    "on_missing_required_capability": "block_execution",
+    "on_unavailable_common_baseline": "block_execution"
+  },
+  "source_binding": {
+    "source_id": "phase3_sector1",
+    "rule_id": "temporal_relative_evidence_v1",
+    "required_artifacts": {
+      "coverage_contract": "Select the applicable evidence-state and variant for this task.",
+      "task_contract": "Resolve and enforce the original task, recipe and evidence-state rules.",
+      "class_crosswalk": "Verify class/concept mappings applicable to instance observations.",
+      "terminology_terms": "Verify terminology references against the admitted source release.",
+      "distinct_class_vocabulary": "Resolve source-attested English spellings for the queried finding.",
+      "approved_class_synonyms": "Verify exact lexical and contextual approval for an additional finding spelling used as a public operand."
+    },
+    "resolution": "All resource names are logical keys in the same immutable build-level Sector 1 source binding. required_artifacts values describe purpose; they are not paths or artifact payloads. Resolve an artifact_key through this verified binding and require that key to be declared in required_artifacts. The common loader verifies the release and records its identity and the resolved artifact digests in the compiled registry.",
+    "authorization": {
+      "authority": "verified_upstream_release",
+      "generation_requires": "explicit_generation_permission",
+      "export_requires": "explicit_corpus_export_permission",
+      "on_denied_missing_or_unverified": "block_corresponding_action",
+      "task_local_override": "forbidden"
+    }
+  },
+  "applicability": {
+    "coverage_source": {
+      "source_binding_ref": "#/source_binding",
+      "artifact_key": "coverage_contract"
+    },
+    "selection": {
+      "task": "temporal_relative_evidence_localization",
+      "original_policy_code": "A",
+      "expected_status": "applicable"
+    },
+    "selection_semantics": "Apply all three exact field equalities to each row of the verified coverage array. Preserve the selected rows as source evidence. A row is identified by (task, variant, evidence_state). Each selected row must belong to source_binding.rule_id.",
+    "on_duplicate_row_identity_or_rule_mismatch": "block_admission",
+    "on_no_matching_rows": "no_applicable_cells",
+    "compiled_report": {
+      "field": "cell_count",
+      "value": "number_of_selected_rows"
+    },
+    "additional_instance_validation_required": true,
+    "matrix_coverage_does_not_establish_observation_eligibility": true,
+    "runtime_failure_preserves_original_matrix_status": true
+  },
+  "task_semantics": {
+    "intent": "Ask for one displayed frame or panel with positive evidence of the queried finding on the requested temporal side of an identified reference frame.",
+    "original_sector1_reference": "Every supported finding × distinct displayed reference frame × before/after; accept a nonempty set of positively annotated same-video frames in the requested direction. Reference frames may be unlabelled; unknown target frames are not negative.",
+    "clinical_slots": [
+      "positive_target_finding"
+    ],
+    "internal_to_public_operation": {
+      "select_one_positive_displayed_unit_relative_to_reference": "localize_relative_evidence"
+    },
+    "scope": "The selected presentation and its verified evidence define the question. Preserve the selected original matrix cell and the public visual referents."
+  },
+  "profiles": [
+    {
+      "profile_id": "temporal_relative_evidence_localization.one_positive_displayed_unit_relative_to_reference.v1",
+      "public_operation": "localize_relative_evidence",
+      "plan_constants": {
+        "operation": "select_one_positive_displayed_unit_relative_to_reference",
+        "answer_type": "relative_evidence_unit",
+        "response_cardinality": 1,
+        "polarity": "positive"
+      },
+      "parameters_schema": {
+        "type": "object",
+        "properties": {
+          "finding_class_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reference_unit_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "before",
+              "after"
+            ]
+          },
+          "scope_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "finding_class_id",
+          "reference_unit_id",
+          "direction",
+          "scope_id"
+        ],
+        "additionalProperties": false
+      },
+      "public_roles": [
+        "FINDING",
+        "REFERENCE",
+        "DIRECTION",
+        "SCOPE"
+      ],
+      "scope_instruction": "Bind the supplied sequence, the exact reference frame in it and one direction in acquisition time. An independently supported target may be any other displayed frame on that side of the reference in the same video.",
+      "extra_requirements": [
+        "The reference is a temporal position and may have no finding annotation. It supplies no target evidence by itself.",
+        "The direction describes strict before/after. Do not require adjacency, the first/last manifestation, the nearest frame, a time interval or a change in disease.",
+        "Keep the direction-valued operation unchanged across paraphrases; render one direction per frozen unit."
+      ],
+      "terminology_representation": {
+        "type": "existing_concept_references",
+        "allow_postcoordination": false
+      },
+      "public_operand_bindings": {
+        "FINDING": {
+          "root": "selected_instance_parameters",
+          "path": [
+            "finding_class_id"
+          ]
+        },
+        "REFERENCE": {
+          "root": "selected_instance_parameters",
+          "path": [
+            "reference_unit_id"
+          ]
+        },
+        "DIRECTION": {
+          "root": "selected_instance_parameters",
+          "path": [
+            "direction"
+          ]
+        },
+        "SCOPE": {
+          "root": "selected_instance_parameters",
+          "path": [
+            "scope_id"
+          ]
+        }
+      }
+    }
+  ],
+  "answer_contract": {
+    "answer_owner": "trusted_code",
+    "answer_generated_by_llm": false,
+    "derivation": "Within the displayed scope, collect all visual units with a verified positive annotation for the exact queried class. Keep a unit if its physical video_key equals that of the reference and its frame_index is strictly smaller for before or strictly larger for after. Exclude the reference physical frame in every rendering. Freeze all qualifying displayed unit IDs and their individual evidence. If a canonical ID is required, choose the first in stable lexical unit-ID order.",
+    "accepted_values": "Any one explicitly supported displayed unit ID in the frozen nonempty set is correct, including each independently eligible rendering of a target physical frame. A public panel name is acceptable only when it maps unambiguously to that ID. Separate alternative renderings or multiple annotated frames do not increase response cardinality.",
+    "grading": "Resolve exactly one visual unit. A member of the frozen set passes. An identified wrong video, same physical reference frame, opposite temporal side, or a request-incompatible multiple-unit response fails. A correct-side unit missing positive support remains unverified under non-exhaustive annotations.",
+    "on_unresolved": "Hold an ambiguous panel response or an unsupported correct-side unit for review. Record review_required for contradictory source links or unresolved chronology. A verified empty target set is not_applicable with a reason and emits no QA pair.",
+    "freeze_before_generation": [
+      "selected task and operation parameters",
+      "answer and eligible reference alternatives",
+      "instance evidence and model-visible presentation used for the answer"
+    ],
+    "bind_accepted_candidate": "Only the question validated for this frozen source, request and instance may be paired with this reference under the common export policy."
+  },
+  "scope_and_evidence_requirements": {
+    "task_requirements_ref": "#/check_registry",
+    "derivation_input": "Use the actual model-visible presentation and the source observations that support each operand and each accepted answer. Missing annotation alone establishes no clinical absence."
+  },
+  "identity_parameters": {
+    "distinguishing_values": [
+      "task_id",
+      "profile_id",
+      "operation",
+      "presentation_recipe",
+      "stable_physical_presentation",
+      "physical_display_scope",
+      "queried_finding_class_id",
+      "reference_video_key",
+      "reference_frame_index",
+      "direction",
+      "positive_target_physical_evidence"
+    ],
+    "overlapping_evidence_states": "Preserve provenance for every supporting matched cell; overlapping states alone do not create a new semantic instance. Retain distinct public operands and physical evidence in the semantic key.",
+    "wording_variation_policy_ref": "temporal_relative_evidence_localization.grammar.v13.json#/variation_policy"
+  },
+  "question_constraints": {
+    "required_meaning": "Ask for one displayed frame or panel with positive evidence of the queried finding on the requested temporal side of an identified reference frame.",
+    "recoverable_from_question": [
+      "public_operation",
+      "query_finding",
+      "reference_referent",
+      "temporal_direction",
+      "displayed_scope",
+      "response_cardinality",
+      "positive_evidence_intent",
+      "absence_of_additional_demands"
+    ],
+    "preserved_by_trusted_runtime": [
+      "finding_class_id",
+      "reference_physical_key",
+      "candidate_physical_frames",
+      "accepted_target_unit_ids",
+      "reference_and_target_frame_indices",
+      "canonical_answer_id",
+      "target_annotations",
+      "per_alternative_evidence",
+      "terminology_and_evidence_bindings"
+    ],
+    "disclosure_policy_ref": "#/answer_disclosure",
+    "full_text_coverage_required": true,
+    "ambiguity": "If at least one admissible reading is available and every admissible reading conflicts with the frozen plan, reject the wording. Mixed readings, unresolved scope or role, and unexplained text prevent automatic acceptance and require review when no other required check establishes a definite violation. A definite violation established by another check is not cancelled by an unresolved reading. Apply the response policy of the selected task."
+  },
+  "terminology_policy": {
+    "allowed_terminologies": [
+      "MST",
+      "CEST",
+      "SNOMED_CT"
+    ],
+    "language": "en",
+    "task_policy": "A finding phrase is a public query operand. Resolve the approved English surface to the selected class under the role, mapping and context policy for MST, CEST or SNOMED CT. Use the independently licensed public reference and direction phrases. Candidate answer unit IDs are private evaluator data.",
+    "approval_authority": "existing_sector1_approvals",
+    "public_role_sources": {
+      "FINDING": {
+        "type": "query_finding",
+        "eligibility": "English surface for the selected, instance-supported finding class licensed in the public positive_target_finding query role."
+      },
+      "REFERENCE": {
+        "type": "displayed_reference",
+        "eligibility": "Neutral visible identifier or unambiguous public phrase for the selected displayed reference frame/panel."
+      },
+      "DIRECTION": {
+        "type": "public_task_operand",
+        "eligibility": "Approved ordinary English temporal relation preserving the plan value before or after in acquisition time."
+      },
+      "SCOPE": {
+        "type": "displayed_reference",
+        "eligibility": "Neutral public phrase identifying the supplied sequence and accessible display units."
+      }
+    },
+    "compiled_registry": {
+      "source": "trusted_compiled_registry_report",
+      "scope": "selected_profile_in_active_immutable_build",
+      "required_bindings": [
+        "build_id",
+        "profile_id",
+        "source_binding_id",
+        "grammar_sha256",
+        "semantics_sha256",
+        "terminology_representation"
+      ],
+      "profile_admission": "Require profiles[profile_id].admitted == true in the matching build report.",
+      "allowlist_field": "profiles[profile_id].allowed_snomed_concept_ids",
+      "membership": "Every runtime SNOMED CT concept in an observation, reference or approved public operand must belong to the compiled allowlist of the selected profile. A listed concept still requires the correct source, role, class binding and instance evidence.",
+      "representation": "Use the terminology representation declared by the selected profile. Apply source-specific validation to other terminologies.",
+      "allow_runtime_extension": false,
+      "on_missing_stale_or_mismatched_registry": "block_execution",
+      "on_unlisted_concept": "block_instance_before_generation",
+      "on_new_concept_or_representation": "rebuild_and_readmit_registry_before_use",
+      "rebuild_rule": "A changed vocabulary, peer definition, source release or representation requires a new verified build and profile admission before use. Never append an unknown concept to a previously admitted allowlist or reuse an old admission result for the modified build.",
+      "visibility": "Keep the report, allowlists and admission metadata private."
+    },
+    "query_finding_policy": {
+      "required_capability": "public_query_finding_resolution",
+      "allowed": "Use the eligible original dataset label licensed by this task as its query operand, or an exact interchangeable English spelling admitted for this class, public role and instance. Require evidence of the class and resolve contextual forms using public information. An unresolved public meaning prevents dispatch.",
+      "source_approval": "The common resolver verifies the existing source terminology and full lexical provenance. A private answer alias alone does not grant public query-role use. The additional role check includes context, unambiguous reference and the task disclosure screen.",
+      "new_concepts": "forbidden"
+    }
+  },
+  "visibility": {
+    "public": "Only the selected public operation, response cardinality, polarity and eligible role surfaces are variable generator inputs. Use the verified presentation accessible to the eventual respondent for visual disambiguation.",
+    "private": [
+      "finding_class_id",
+      "reference_physical_key",
+      "candidate_physical_frames",
+      "accepted_target_unit_ids",
+      "reference_and_target_frame_indices",
+      "canonical_answer_id",
+      "target_annotations",
+      "per_alternative_evidence",
+      "terminology_and_evidence_bindings"
+    ],
+    "screen": "Screen the full assembled public request before dispatch and the complete wording after generation. Apply the selected task’s disclosure policy separately from the ordinary meaning of its public operands.",
+    "on_unresolved_possible_disclosure": "review"
+  },
+  "check_registry": {
+    "temporal_relative_evidence_localization.relative_recipe_and_unit_display": {
+      "criteria_by_stage": {
+        "before_generation": "Use a recipe admitted by the applicable coverage row and the S1 temporal completeness specification. Verify the supplied video-backed inputs or collage panels, panel boundaries, identifiers, evidence region actually visible in the rendered pixels, and any annotation assistance. A QC/comparison layout or the word progression alone does not establish temporal eligibility."
+      },
+      "failure_code": "relative_recipe_and_unit_display_unverified"
+    },
+    "temporal_relative_evidence_localization.reference_binding": {
+      "criteria_by_stage": {
+        "before_generation": "Bind the chosen reference_unit_id to a visible, individually addressable frame with a verified source video_key and frame_index. Repeated crops, overlays or panels of the same physical reference are one reference position. The reference requires neither a positive finding annotation, a category nor a bounding box."
+      },
+      "failure_code": "reference_binding_unverified"
+    },
+    "temporal_relative_evidence_localization.public_order_accessible": {
+      "criteria_by_stage": {
+        "before_generation": "The respondent can resolve frame identity and relative sequence order from the actual presentation and its neutral supplied context. Do not infer acquisition order from left-to-right layout or from an ordering of quality scores."
+      },
+      "failure_code": "public_order_accessible_unverified"
+    },
+    "temporal_relative_evidence_localization.per_target_finding_binding": {
+      "criteria_by_stage": {
+        "before_generation": "For each accepted unit, verify the actual unit/source/annotation links, original positive class label and the applicable S1 positive_target_finding binding for this instance. Retain evidence for every accepted unit, including each separately supported rendering. A box and a clinical category are optional for this rule."
+      },
+      "failure_code": "per_target_finding_binding_unverified"
+    },
+    "temporal_relative_evidence_localization.strict_same_video_direction": {
+      "criteria_by_stage": {
+        "before_generation": "Establish reference and target positions from verified source frame identities in the same video. Compare frame_index using strict inequality in the selected direction. Equal positions, even with different display IDs, cannot qualify. Unresolved ordering or contradictory mappings require review."
+      },
+      "failure_code": "strict_same_video_direction_unverified"
+    },
+    "temporal_relative_evidence_localization.all_alternatives_and_empty_units": {
+      "criteria_by_stage": {
+        "before_generation": "Independently rebuild the known positive target set from displayed units for each finding/reference/direction. A verified nonempty set is necessary for generation. Emit an explicit empty-unit disposition under the upstream policy if the set is empty, without interpreting lack of annotation as absence."
+      },
+      "failure_code": "all_alternatives_and_empty_units_unverified"
+    },
+    "temporal_relative_evidence_localization.question_json_shape": {
+      "criteria_by_stage": {
+        "after_generation": "Require exactly the question field in the original JSON object, reject duplicate keys and validate the exact decoded text against the paired grammar output schema and text hygiene policy."
+      },
+      "failure_code": "invalid_model_response"
+    },
+    "temporal_relative_evidence_localization.question_semantic_form": {
+      "criteria_by_stage": {
+        "after_generation": "The complete text expresses exactly one requested act for the selected operation, including all trailing and coordinated clauses."
+      },
+      "failure_code": "operation_changed"
+    },
+    "temporal_relative_evidence_localization.public_roles_grounded": {
+      "criteria_by_stage": {
+        "before_generation": "Resolve every required public role in the selected instance. Validate lexical provenance, authorization for the selected role, projection and text hygiene before dispatch.",
+        "after_generation": "Evaluate every clinical phrase and operand in the entire original wording against the licensed role surfaces and their selected referents."
+      },
+      "failure_code": "public_operand_not_grounded"
+    },
+    "temporal_relative_evidence_localization.public_referents_unambiguous": {
+      "criteria_by_stage": {
+        "before_generation": "Uniquely resolve each public operand to its intended referent or declared collection using the actual presentation.",
+        "after_generation": "Resolve each referring expression against the presentation. Hold genuinely ambiguous references for review and reject a definite change of referent."
+      },
+      "failure_code": "referent_unresolved_or_changed"
+    },
+    "temporal_relative_evidence_localization.paraphrase_equivalence": {
+      "criteria_by_stage": {
+        "after_generation": "Compare every reading with the public projection of the frozen plan using the recovery rules. A definite conflict across all readings rejects. Unresolved meaning, added assertions or ambiguous readings cannot silently pass."
+      },
+      "failure_code": "plan_not_preserved"
+    },
+    "temporal_relative_evidence_localization.question_language_quality": {
+      "criteria_by_stage": {
+        "after_generation": "Require independent full-text English quality under the common policy. Novel syntax is allowed. Reject confirmed errors and refer unresolved wording for review."
+      },
+      "failure_code": "language_quality_not_passed"
+    },
+    "temporal_relative_evidence_localization.answer_not_disclosed": {
+      "criteria_by_stage": {
+        "before_generation": "Allow the reference mention only in its reference role. Screen every eligible target and equivalent visible ID, including noncanonical alternatives, across the full request, scope renderings and candidate question. An unresolved disclosure requires review.",
+        "after_generation": "Do not identify or suggest any target unit, target ID or alias, source frame index or timestamp identifying a target, private annotation/filename, or a positive finding-to-target mapping. Do not state the count, exact distance, or unique position of known targets. Allow the reference mention only in its reference role. Screen every eligible target and equivalent visible ID, including noncanonical alternatives, across the full request, scope renderings and candidate question. An unresolved disclosure requires review."
+      },
+      "failure_code": "answer_disclosure"
+    },
+    "temporal_relative_evidence_localization.generation_preflight": {
+      "criteria_by_stage": {
+        "before_generation": "Require an admitted profile, matched applicable cell, passing instance checks, a frozen answer and upstream permission. Verify the exact public projection and its screening before any generation call."
+      },
+      "failure_code": "preflight_not_passed"
+    }
+  },
+  "required_checks": {
+    "registry_ref": "#/check_registry",
+    "common": [
+      "temporal_relative_evidence_localization.relative_recipe_and_unit_display",
+      "temporal_relative_evidence_localization.reference_binding",
+      "temporal_relative_evidence_localization.public_order_accessible",
+      "temporal_relative_evidence_localization.per_target_finding_binding",
+      "temporal_relative_evidence_localization.strict_same_video_direction",
+      "temporal_relative_evidence_localization.all_alternatives_and_empty_units",
+      "temporal_relative_evidence_localization.question_json_shape",
+      "temporal_relative_evidence_localization.question_semantic_form",
+      "temporal_relative_evidence_localization.public_roles_grounded",
+      "temporal_relative_evidence_localization.public_referents_unambiguous",
+      "temporal_relative_evidence_localization.paraphrase_equivalence",
+      "temporal_relative_evidence_localization.question_language_quality",
+      "temporal_relative_evidence_localization.answer_not_disclosed",
+      "temporal_relative_evidence_localization.generation_preflight"
+    ],
+    "additional_by_profile": {
+      "temporal_relative_evidence_localization.one_positive_displayed_unit_relative_to_reference.v1": []
+    },
+    "selection": "Execute the common task checks and the selected profile requirements at their declared stages, together with the inherited common-engine baseline.",
+    "acceptance": "Automatic acceptance requires all selected, applicable checks to pass at their declared stages, including the inherited common-engine baseline. A definite candidate violation rejects the wording. If no definite violation has been established but a required decision is unresolved or was not completed, the candidate cannot be accepted and requires review under the common fail-closed reporting policy. Fatal build or execution errors remain errors and block the corresponding action; they are not semantic review verdicts."
+  },
+  "semantic_comparisons": {
+    "stage": "after_generation",
+    "interpretation_unit": "one_complete_interpretation_per_candidate",
+    "interpretation_inputs": [
+      "exact_candidate_question",
+      "public_presentation",
+      "licensed_public_role_surfaces"
+    ],
+    "full_text_coverage_required": true,
+    "shared_interpretation_consumers": [
+      "temporal_relative_evidence_localization.question_semantic_form",
+      "temporal_relative_evidence_localization.public_roles_grounded",
+      "temporal_relative_evidence_localization.public_referents_unambiguous",
+      "temporal_relative_evidence_localization.paraphrase_equivalence"
+    ],
+    "consumer_registry_ref": "#/check_registry",
+    "comparison_input": "observable projection of the frozen plan and displayed context",
+    "results": "Each selected consumer returns its own decision and reason codes, tied to the same interpretation. One consumer’s result cannot be copied to its siblings. If a required comparison could not execute, retain that distinction under the common reporting policy.",
+    "parse_invocations_per_analyzed_candidate": 1,
+    "result_granularity": "one_result_per_check_id"
+  },
+  "text_hygiene_policy": {
+    "applies_to": [
+      "public_FINDING_surfaces",
+      "public_REFERENCE_surfaces",
+      "public_DIRECTION_surfaces",
+      "public_SCOPE_surfaces",
+      "decoded_question"
+    ],
+    "require_nonblank": true,
+    "require_single_line": true,
+    "forbid_surrounding_whitespace": true,
+    "whitespace_definition": "Unicode White_Space property.",
+    "forbidden_unicode_categories": [
+      "Cc"
+    ],
+    "forbidden_code_points": [
+      "U+2028",
+      "U+2029"
+    ],
+    "validate_original_decoded_string": true,
+    "automatic_repair": false,
+    "validation_order": "Check the exact decoded string before projection, deduplication or text normalization. An escaped control or line separator in JSON is checked as its decoded character. Ordinary Unicode letters and punctuation are permitted.",
+    "public_input_violation": "block_generation_for_invalid_projection",
+    "candidate_question_violation": "rejected",
+    "schema_projection": "Check every active public role surface and the decoded question with the matching grammar string schema before normalization. Preserve the exact original text."
+  },
+  "operand_binding_roots": {
+    "selected_instance_parameters": "Frozen parameters validated by the selected profile parameters_schema. Identifiers remain in trusted code.",
+    "selected_profile_constants": "The plan_constants object of the selected semantic profile."
+  },
+  "enumeration": {
+    "authority": "TEMPORAL_RELATIVE_COMPLETENESS_SPECIFICATION in the verified Sector 1 task contract",
+    "unit_axes": [
+      "each_supported_finding",
+      "each_distinct_displayed_physical_reference_frame",
+      "before_or_after"
+    ],
+    "expected_units_formula": "2 * distinct_supported_findings * distinct_displayed_reference_frames",
+    "directions": [
+      "before",
+      "after"
+    ],
+    "uncapped_units": true,
+    "physical_reference_key": [
+      "video_key",
+      "frame_index"
+    ],
+    "reference_view_policy": "Use one reproducible displayed representative per physical reference. When multiple exist, preserve the verified source's stable choice (source digest, operation preference full then crop then overlay then others, unit ID).",
+    "positive_target_policy": "Collect every qualifying supported target rendering, keeping the evidence-to-unit correspondence. Unknown or unlabelled frames may be references; they supply no automatic positive or negative target.",
+    "unit_outcomes": {
+      "verified_nonempty_targets": "eligible subject to remaining checks and source permissions",
+      "verified_empty_targets": "not_applicable with an explicit reason",
+      "unresolved_order_provenance_or_conflict": "review_required"
+    },
+    "completeness_audit": "Independently recompute expected unit keys and known-positive target sets before reviewing emitted decisions. Detect missing, extra, duplicate and wrongly classified units. Preserve distinct reference/direction predicates and use semantic families to identify evidence reused across recipes. A finite wording-attempt budget applies per eligible unit and never truncates this enumeration."
+  },
+  "answer_disclosure": {
+    "permitted_operands": "Permit the licensed queried finding, the selected public reference ID, the requested temporal direction and a neutral sequence scope. A reference ID is a required operand and is always a different physical frame from every eligible target.",
+    "forbidden": "Do not identify or suggest any target unit, target ID or alias, source frame index or timestamp identifying a target, private annotation/filename, or a positive finding-to-target mapping. Do not state the count, exact distance, or unique position of known targets.",
+    "checks": "Allow the reference mention only in its reference role. Screen every eligible target and equivalent visible ID, including noncanonical alternatives, across the full request, scope renderings and candidate question. An unresolved disclosure requires review."
+  },
+  "task_notes": [
+    "The S1 completeness formula describes candidate semantic units. Each applicable unit asks for one displayed visual unit ID and retains the complete known-positive alternative set.",
+    "Private frame identifiers support evidence verification. The generator receives neutral public referents and a direction; the depicted public chronology can still be visible to the respondent."
+  ]
+}

@@ -1,0 +1,438 @@
+{
+  "schema_version": "mmvqa-task-semantics-v13",
+  "task_id": "observed_anchor_order",
+  "grammar_file": "observed_anchor_order.grammar.v13.json",
+  "definition_status": "proposed_for_review",
+  "grammar_pairing": {
+    "required_semantics_root": "this_document",
+    "required_grammar_schema_version": "mmvqa-task-grammar-v13",
+    "require_matching_task_id": true,
+    "require_reciprocal_file_references": true,
+    "on_mismatched_peer": "block_execution",
+    "compatibility": "Resolve grammar_file and the peer grammar's semantics_file to this exact pair within the same immutable build. Verify the declared schema versions, matching task_id and all public field bindings before instance processing. A task-local substitution of another semantic document does not satisfy this pairing."
+  },
+  "required_capabilities": [
+    "sector1_evidence_binding",
+    "terminology_reference_validation",
+    "semantic_question_validation",
+    "answer_disclosure_detection",
+    "compiled_profile_registry_enforcement",
+    "bounded_distinct_question_generation",
+    "public_query_finding_resolution"
+  ],
+  "capability_resolution": {
+    "scope": "every_profile",
+    "common_engine_baseline": "mandatory_and_inherited",
+    "task_requirements": "additional_to_common_baseline",
+    "resolve_before": "instance_processing",
+    "require": "all",
+    "on_missing_required_capability": "block_execution",
+    "on_unavailable_common_baseline": "block_execution"
+  },
+  "source_binding": {
+    "source_id": "phase3_sector1",
+    "rule_id": "temporal_observed_order_v1",
+    "required_artifacts": {
+      "coverage_contract": "Select the applicable evidence-state and variant for this task.",
+      "task_contract": "Resolve and enforce the original task, recipe and evidence-state rules.",
+      "class_crosswalk": "Verify class/concept mappings applicable to instance observations.",
+      "terminology_terms": "Verify terminology references against the admitted source release.",
+      "distinct_class_vocabulary": "Resolve source-attested English spellings for the queried finding.",
+      "approved_class_synonyms": "Verify exact lexical and contextual approval for an additional finding spelling used as a public operand."
+    },
+    "resolution": "All resource names are logical keys in the same immutable build-level Sector 1 source binding. required_artifacts values describe purpose; they are not paths or artifact payloads. Resolve an artifact_key through this verified binding and require that key to be declared in required_artifacts. The common loader verifies the release and records its identity and the resolved artifact digests in the compiled registry.",
+    "authorization": {
+      "authority": "verified_upstream_release",
+      "generation_requires": "explicit_generation_permission",
+      "export_requires": "explicit_corpus_export_permission",
+      "on_denied_missing_or_unverified": "block_corresponding_action",
+      "task_local_override": "forbidden"
+    }
+  },
+  "applicability": {
+    "coverage_source": {
+      "source_binding_ref": "#/source_binding",
+      "artifact_key": "coverage_contract"
+    },
+    "selection": {
+      "task": "observed_anchor_order",
+      "original_policy_code": "A",
+      "expected_status": "applicable"
+    },
+    "selection_semantics": "Apply all three exact field equalities to each row of the verified coverage array. Preserve the selected rows as source evidence. A row is identified by (task, variant, evidence_state). Each selected row must belong to source_binding.rule_id.",
+    "on_duplicate_row_identity_or_rule_mismatch": "block_admission",
+    "on_no_matching_rows": "no_applicable_cells",
+    "compiled_report": {
+      "field": "cell_count",
+      "value": "number_of_selected_rows"
+    },
+    "additional_instance_validation_required": true,
+    "matrix_coverage_does_not_establish_observation_eligibility": true,
+    "runtime_failure_preserves_original_matrix_status": true
+  },
+  "task_semantics": {
+    "intent": "Select the earlier of two named displayed observations of the same finding in one video.",
+    "original_sector1_reference": "At least two displayed positive anchors of the queried finding in one video; observed order only.",
+    "clinical_slots": [
+      "same_finding_positive_anchors"
+    ],
+    "internal_to_public_operation": {
+      "select_earlier_observed_anchor": "select_earlier_observed_frame"
+    },
+    "scope": "The selected presentation and its verified evidence define the question. Preserve the selected original matrix cell and the public visual referents."
+  },
+  "profiles": [
+    {
+      "profile_id": "observed_anchor_order.select_earlier_anchor.v1",
+      "public_operation": "select_earlier_observed_frame",
+      "plan_constants": {
+        "operation": "select_earlier_observed_anchor",
+        "answer_type": "temporal_unit",
+        "response_cardinality": 1,
+        "polarity": "positive"
+      },
+      "parameters_schema": {
+        "type": "object",
+        "properties": {
+          "finding_class_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "option_a_unit_id": {
+            "type": "string",
+            "pattern": "^image_[1-9][0-9]*(/panel_[1-9][0-9]*)?$"
+          },
+          "option_b_unit_id": {
+            "type": "string",
+            "pattern": "^image_[1-9][0-9]*(/panel_[1-9][0-9]*)?$"
+          }
+        },
+        "required": [
+          "finding_class_id",
+          "option_a_unit_id",
+          "option_b_unit_id"
+        ],
+        "additionalProperties": false
+      },
+      "public_roles": [
+        "FINDING",
+        "OPTION_A",
+        "OPTION_B"
+      ],
+      "scope_instruction": "Compare just the two named units in their frozen neutral option order. Each must resolve once to a different physical source frame in the same video. The ordinal comparison is about acquisition of those frames, without a conclusion about disease onset.",
+      "extra_requirements": [
+        "Both compared frames have independent, visible positive support for the same queried class.",
+        "The answering model receives the two units and their correctly bound observed chronology."
+      ],
+      "terminology_representation": {
+        "type": "existing_concept_references",
+        "allow_postcoordination": false
+      },
+      "public_operand_bindings": {
+        "FINDING": {
+          "root": "selected_instance_parameters",
+          "path": [
+            "finding_class_id"
+          ]
+        },
+        "OPTION_A": {
+          "root": "selected_instance_parameters",
+          "path": [
+            "option_a_unit_id"
+          ]
+        },
+        "OPTION_B": {
+          "root": "selected_instance_parameters",
+          "path": [
+            "option_b_unit_id"
+          ]
+        }
+      }
+    }
+  ],
+  "answer_contract": {
+    "answer_owner": "trusted_code",
+    "answer_generated_by_llm": false,
+    "derivation": "Compare the two verified integer source frame indices of the same video. Return the unit ID linked to the smaller index. Use the actual unit-to-source bindings regardless of layout, option order, lexical sorting of IDs or annotation insertion order.",
+    "accepted_values": "Exactly the displayed temporal unit with the smaller verified source index.",
+    "grading": "Resolve one response to a displayed unit ID using the presentation's unambiguous unit names. Accept an exact match with the frozen earlier unit. A different named unit is incorrect. An ambiguous, multiple or unresolvable response cannot earn an automatic positive score.",
+    "on_unresolved": "Hold an unresolved source, label, geometry, ordering, or public unit binding for review. A tied index or two views of the same physical frame supplies no eligible comparison. An instance that fails evidence binding produces no question or reference answer.",
+    "freeze_before_generation": [
+      "selected task and operation parameters",
+      "answer and eligible reference alternatives",
+      "instance evidence and model-visible presentation used for the answer"
+    ],
+    "bind_accepted_candidate": "Only the question validated for this frozen source, request and instance may be paired with this reference under the common export policy."
+  },
+  "scope_and_evidence_requirements": {
+    "task_requirements_ref": "#/check_registry",
+    "derivation_input": "Use the actual model-visible presentation and the source observations that support each operand and each accepted answer. Missing annotation alone establishes no clinical absence."
+  },
+  "identity_parameters": {
+    "distinguishing_values": [
+      "task_id",
+      "profile_id",
+      "operation",
+      "presentation_recipe",
+      "stable_physical_presentation",
+      "task and profile",
+      "operation and positive queried class",
+      "source recipe and physical display scope",
+      "same video and unordered pair of distinct physical anchors with their original frame indices",
+      "positive source evidence for each option"
+    ],
+    "overlapping_evidence_states": "Preserve provenance for every supporting matched cell; overlapping states alone do not create a new semantic instance. Retain distinct public operands and physical evidence in the semantic key.",
+    "wording_variation_policy_ref": "observed_anchor_order.grammar.v13.json#/variation_policy"
+  },
+  "question_constraints": {
+    "required_meaning": "Select the earlier of two named displayed observations of the same finding in one video.",
+    "recoverable_from_question": [
+      "one earlier-of-two observed-order choice",
+      "public finding",
+      "two distinct displayed choices",
+      "positive association of both choices with that finding",
+      "same-video acquisition direction (earlier)",
+      "one response and no additional requests"
+    ],
+    "preserved_by_trusted_runtime": [
+      "class, video and physical source identifiers",
+      "both verified original frame indices and evidence bindings for the evaluator",
+      "chosen winner, reference answer and any accepted response aliases",
+      "original frozen option-to-source linkage"
+    ],
+    "disclosure_policy_ref": "#/answer_disclosure",
+    "full_text_coverage_required": true,
+    "ambiguity": "If at least one admissible reading is available and every admissible reading conflicts with the frozen plan, reject the wording. Mixed readings, unresolved scope or role, and unexplained text prevent automatic acceptance and require review when no other required check establishes a definite violation. A definite violation established by another check is not cancelled by an unresolved reading. Apply the response policy of the selected task."
+  },
+  "terminology_policy": {
+    "allowed_terminologies": [
+      "MST",
+      "CEST",
+      "SNOMED_CT"
+    ],
+    "language": "en",
+    "task_policy": "FINDING is a public query operand. Resolve the source label or a role-licensed English exact equivalent from the source-approved MST, CEST or SNOMED CT bindings for that observed class. The named finding must identify one intended concept in the presented context. Both option phrases are neutral display references; chronology uses ordinary observational language.",
+    "approval_authority": "existing_sector1_approvals",
+    "public_role_sources": {
+      "FINDING": {
+        "type": "query_finding",
+        "eligibility": "An unambiguous approved public name of the finding supported in both displayed observations."
+      },
+      "OPTION_A": {
+        "type": "displayed_reference",
+        "eligibility": "Neutral public reference to the first option in the frozen comparison presentation."
+      },
+      "OPTION_B": {
+        "type": "displayed_reference",
+        "eligibility": "Neutral public reference to the other option in the frozen comparison presentation."
+      }
+    },
+    "compiled_registry": {
+      "source": "trusted_compiled_registry_report",
+      "scope": "selected_profile_in_active_immutable_build",
+      "required_bindings": [
+        "build_id",
+        "profile_id",
+        "source_binding_id",
+        "grammar_sha256",
+        "semantics_sha256",
+        "terminology_representation"
+      ],
+      "profile_admission": "Require profiles[profile_id].admitted == true in the matching build report.",
+      "allowlist_field": "profiles[profile_id].allowed_snomed_concept_ids",
+      "membership": "Every runtime SNOMED CT concept in an observation, reference or approved public operand must belong to the compiled allowlist of the selected profile. A listed concept still requires the correct source, role, class binding and instance evidence.",
+      "representation": "Use the terminology representation declared by the selected profile. Apply source-specific validation to other terminologies.",
+      "allow_runtime_extension": false,
+      "on_missing_stale_or_mismatched_registry": "block_execution",
+      "on_unlisted_concept": "block_instance_before_generation",
+      "on_new_concept_or_representation": "rebuild_and_readmit_registry_before_use",
+      "rebuild_rule": "A changed vocabulary, peer definition, source release or representation requires a new verified build and profile admission before use. Never append an unknown concept to a previously admitted allowlist or reuse an old admission result for the modified build.",
+      "visibility": "Keep the report, allowlists and admission metadata private."
+    },
+    "query_finding_policy": {
+      "required_capability": "public_query_finding_resolution",
+      "allowed": "Use the eligible original dataset label licensed by this task as its query operand, or an exact interchangeable English spelling admitted for this class, public role and instance. Require evidence of the class and resolve contextual forms using public information. An unresolved public meaning prevents dispatch.",
+      "source_approval": "The common resolver verifies the existing source terminology and full lexical provenance. A private answer alias alone does not grant public query-role use. The additional role check includes context, unambiguous reference and the task disclosure screen.",
+      "new_concepts": "forbidden"
+    }
+  },
+  "visibility": {
+    "public": "Only the selected public operation, response cardinality, polarity and eligible role surfaces are variable generator inputs. Use the verified presentation accessible to the eventual respondent for visual disambiguation.",
+    "private": [
+      "class, video and physical source identifiers",
+      "both verified original frame indices and evidence bindings for the evaluator",
+      "chosen winner, reference answer and any accepted response aliases",
+      "original frozen option-to-source linkage"
+    ],
+    "screen": "Screen the full assembled public request before dispatch and the complete wording after generation. Apply the selected task’s disclosure policy separately from the ordinary meaning of its public operands.",
+    "on_unresolved_possible_disclosure": "review"
+  },
+  "check_registry": {
+    "observed_anchor_order.two_observed_anchors": {
+      "criteria_by_stage": {
+        "before_generation": "Bind both named options to separate verified positive observations of the same resolved dataset class in the actual displayed content. Keep both source annotation references, including the later comparison witness."
+      },
+      "failure_code": "two_observed_anchors_unverified"
+    },
+    "observed_anchor_order.strict_same_video_order": {
+      "criteria_by_stage": {
+        "before_generation": "Use a verified source video identity and an integer original frame index for each option. Require the same video, distinct physical frame keys, and a strict inequality. Different views, crops or panels of one physical frame do not establish two anchors."
+      },
+      "failure_code": "strict_same_video_order_unverified"
+    },
+    "observed_anchor_order.display_support": {
+      "criteria_by_stage": {
+        "before_generation": "Resolve each option uniquely in the answering model's actual views. A source-level finding must be visibly supported in that rendering; verify any required geometry if only part of the frame is shown."
+      },
+      "failure_code": "display_support_unverified"
+    },
+    "observed_anchor_order.recoverable_order": {
+      "criteria_by_stage": {
+        "before_generation": "The answering model's public presentation must convey the source chronology for both units through verified unit-to-index metadata or an explicitly bound chronological sequence. Pixels or an unexplained sequence of panel names alone do not establish acquisition order."
+      },
+      "failure_code": "recoverable_order_unverified"
+    },
+    "observed_anchor_order.symmetric_choices": {
+      "criteria_by_stage": {
+        "before_generation": "Freeze the source recipe's counterbalanced option order independently of wording. Both unit surfaces must be neutral; withhold winner markers and the evaluator's outcome from the generator request."
+      },
+      "failure_code": "symmetric_choices_unverified"
+    },
+    "observed_anchor_order.question_json_shape": {
+      "criteria_by_stage": {
+        "after_generation": "Require exactly the question field in the original JSON object, reject duplicate keys and validate the exact decoded text against the paired grammar output schema and text hygiene policy."
+      },
+      "failure_code": "invalid_model_response"
+    },
+    "observed_anchor_order.question_semantic_form": {
+      "criteria_by_stage": {
+        "after_generation": "The complete text expresses exactly one requested act for the selected operation, including all trailing and coordinated clauses."
+      },
+      "failure_code": "operation_changed"
+    },
+    "observed_anchor_order.public_roles_grounded": {
+      "criteria_by_stage": {
+        "before_generation": "Resolve every required public role in the selected instance. Validate lexical provenance, authorization for the selected role, projection and text hygiene before dispatch.",
+        "after_generation": "Evaluate every clinical phrase and operand in the entire original wording against the licensed role surfaces and their selected referents."
+      },
+      "failure_code": "public_operand_not_grounded"
+    },
+    "observed_anchor_order.public_referents_unambiguous": {
+      "criteria_by_stage": {
+        "before_generation": "Uniquely resolve each public operand to its intended referent or declared collection using the actual presentation.",
+        "after_generation": "Resolve each referring expression against the presentation. Hold genuinely ambiguous references for review and reject a definite change of referent."
+      },
+      "failure_code": "referent_unresolved_or_changed"
+    },
+    "observed_anchor_order.paraphrase_equivalence": {
+      "criteria_by_stage": {
+        "after_generation": "Compare every reading with the public projection of the frozen plan using the recovery rules. A definite conflict across all readings rejects. Unresolved meaning, added assertions or ambiguous readings cannot silently pass."
+      },
+      "failure_code": "plan_not_preserved"
+    },
+    "observed_anchor_order.question_language_quality": {
+      "criteria_by_stage": {
+        "after_generation": "Require independent full-text English quality under the common policy. Novel syntax is allowed. Reject confirmed errors and refer unresolved wording for review."
+      },
+      "failure_code": "language_quality_not_passed"
+    },
+    "observed_anchor_order.answer_not_disclosed": {
+      "criteria_by_stage": {
+        "before_generation": "Screen the entire public generator request and the candidate for answer-directed cues. Permit mentions of both neutral choices symmetrically; reject an asserted or implied ordering between them. The answerer separately needs the authentic public acquisition order bound to both images. Never copy that data into an answer-bearing description for the generator.",
+        "after_generation": "Marking a particular option as earlier/later, leaking the answer or its ordering by a hint, exposing the private evaluator or numeric source order in the generated wording, or suggesting one option as the answer. Numeric IDs that are the supplied opaque unit names may still appear. Screen the entire public generator request and the candidate for answer-directed cues. Permit mentions of both neutral choices symmetrically; reject an asserted or implied ordering between them. The answerer separately needs the authentic public acquisition order bound to both images. Never copy that data into an answer-bearing description for the generator."
+      },
+      "failure_code": "answer_disclosure"
+    },
+    "observed_anchor_order.generation_preflight": {
+      "criteria_by_stage": {
+        "before_generation": "Require an admitted profile, matched applicable cell, passing instance checks, a frozen answer and upstream permission. Verify the exact public projection and its screening before any generation call."
+      },
+      "failure_code": "preflight_not_passed"
+    }
+  },
+  "required_checks": {
+    "registry_ref": "#/check_registry",
+    "common": [
+      "observed_anchor_order.two_observed_anchors",
+      "observed_anchor_order.strict_same_video_order",
+      "observed_anchor_order.display_support",
+      "observed_anchor_order.recoverable_order",
+      "observed_anchor_order.symmetric_choices",
+      "observed_anchor_order.question_json_shape",
+      "observed_anchor_order.question_semantic_form",
+      "observed_anchor_order.public_roles_grounded",
+      "observed_anchor_order.public_referents_unambiguous",
+      "observed_anchor_order.paraphrase_equivalence",
+      "observed_anchor_order.question_language_quality",
+      "observed_anchor_order.answer_not_disclosed",
+      "observed_anchor_order.generation_preflight"
+    ],
+    "additional_by_profile": {
+      "observed_anchor_order.select_earlier_anchor.v1": []
+    },
+    "selection": "Execute the common task checks and the selected profile requirements at their declared stages, together with the inherited common-engine baseline.",
+    "acceptance": "Automatic acceptance requires all selected, applicable checks to pass at their declared stages, including the inherited common-engine baseline. A definite candidate violation rejects the wording. If no definite violation has been established but a required decision is unresolved or was not completed, the candidate cannot be accepted and requires review under the common fail-closed reporting policy. Fatal build or execution errors remain errors and block the corresponding action; they are not semantic review verdicts."
+  },
+  "semantic_comparisons": {
+    "stage": "after_generation",
+    "interpretation_unit": "one_complete_interpretation_per_candidate",
+    "interpretation_inputs": [
+      "exact_candidate_question",
+      "public_presentation",
+      "licensed_public_role_surfaces"
+    ],
+    "full_text_coverage_required": true,
+    "shared_interpretation_consumers": [
+      "observed_anchor_order.question_semantic_form",
+      "observed_anchor_order.public_roles_grounded",
+      "observed_anchor_order.public_referents_unambiguous",
+      "observed_anchor_order.paraphrase_equivalence"
+    ],
+    "consumer_registry_ref": "#/check_registry",
+    "comparison_input": "observable projection of the frozen plan and displayed context",
+    "results": "Each selected consumer returns its own decision and reason codes, tied to the same interpretation. One consumer’s result cannot be copied to its siblings. If a required comparison could not execute, retain that distinction under the common reporting policy.",
+    "parse_invocations_per_analyzed_candidate": 1,
+    "result_granularity": "one_result_per_check_id"
+  },
+  "text_hygiene_policy": {
+    "applies_to": [
+      "public_FINDING_surfaces",
+      "public_OPTION_A_surfaces",
+      "public_OPTION_B_surfaces",
+      "decoded_question"
+    ],
+    "require_nonblank": true,
+    "require_single_line": true,
+    "forbid_surrounding_whitespace": true,
+    "whitespace_definition": "Unicode White_Space property.",
+    "forbidden_unicode_categories": [
+      "Cc"
+    ],
+    "forbidden_code_points": [
+      "U+2028",
+      "U+2029"
+    ],
+    "validate_original_decoded_string": true,
+    "automatic_repair": false,
+    "validation_order": "Check the exact decoded string before projection, deduplication or text normalization. An escaped control or line separator in JSON is checked as its decoded character. Ordinary Unicode letters and punctuation are permitted.",
+    "public_input_violation": "block_generation_for_invalid_projection",
+    "candidate_question_violation": "rejected",
+    "schema_projection": "Check every active public role surface and the decoded question with the matching grammar string schema before normalization. Preserve the exact original text."
+  },
+  "operand_binding_roots": {
+    "selected_instance_parameters": "Frozen parameters validated by the selected profile parameters_schema. Identifiers remain in trusted code.",
+    "selected_profile_constants": "The plan_constants object of the selected semantic profile."
+  },
+  "enumeration": {
+    "candidate_unit": "The source policy yields one deterministic observed-order pair for the queried finding in an eligible recipe, provided a pair exists.",
+    "finding_selection": "Prefer the subject source label when present among the supported labels, otherwise take the first supported normalized label in the source's stable order.",
+    "pair_selection": "For that finding, sort the supported units by (video identity, original frame index, unit ID), keep one unit per physical frame key and choose the first distinct pair with the same video identity and a strict order. Derive one private comparison, retaining both anchor observations.",
+    "option_order": "Use the deterministic, counterbalanced public option ordering of the source recipe; freeze it across paraphrases. Do not enumerate reversed candidate lists as additional observations.",
+    "scope": "Relative localization over every possible reference and direction belongs to the separate temporal-relative task."
+  },
+  "answer_disclosure": {
+    "permitted_operands": "Name the licensed finding and both neutral option surfaces exactly once each in the frozen neutral order; either option can be the private answer. Earlier is the requested comparison.",
+    "forbidden": "Marking a particular option as earlier/later, leaking the answer or its ordering by a hint, exposing the private evaluator or numeric source order in the generated wording, or suggesting one option as the answer. Numeric IDs that are the supplied opaque unit names may still appear.",
+    "checks": "Screen the entire public generator request and the candidate for answer-directed cues. Permit mentions of both neutral choices symmetrically; reject an asserted or implied ordering between them. The answerer separately needs the authentic public acquisition order bound to both images. Never copy that data into an answer-bearing description for the generator."
+  }
+}

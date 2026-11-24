@@ -1,0 +1,480 @@
+{
+  "schema_version": "mmvqa-task-grammar-v13",
+  "status": "proposed_for_review",
+  "task_id": "optional_spatial_localization",
+  "semantics_file": "optional_spatial_localization.semantics.v13.json",
+  "language": "en",
+  "generation_mode": "open_paraphrase",
+  "binding_roots": {
+    "grammar_document": {
+      "source": "this_document"
+    },
+    "semantics_document": {
+      "source": "sibling_document",
+      "relative_filename": {
+        "root": "grammar_document",
+        "path": [
+          "semantics_file"
+        ]
+      }
+    },
+    "public_plan": {
+      "source": "frozen_instance_public_plan",
+      "fields": {
+        "profile_id": "The selected semantic profile in this immutable pair."
+      }
+    },
+    "public_context": {
+      "source": "screened_instance_presentation",
+      "fields": {
+        "role_surfaces": "Screened map keyed by an active role name for this particular frozen instance. Values are ordered arrays of nonempty, individually licensed equivalent surface forms for the one intended operand, candidate collection or display."
+      }
+    },
+    "semantic_profile": {
+      "collection": {
+        "root": "semantics_document",
+        "path": [
+          "profiles"
+        ]
+      },
+      "select": {
+        "member_key": "profile_id",
+        "equals": {
+          "root": "public_plan",
+          "path": [
+            "profile_id"
+          ]
+        },
+        "required_matches": 1
+      }
+    }
+  },
+  "slot_bindings": {
+    "FINDING_TERM": {
+      "source": {
+        "root": "public_context",
+        "path": [
+          "role_surfaces",
+          "FINDING_TERM"
+        ]
+      },
+      "project": "ordered_distinct_strings",
+      "operand_binding": {
+        "root": "semantic_profile",
+        "path": [
+          "public_operand_bindings",
+          "FINDING_TERM"
+        ]
+      },
+      "admission_policy": {
+        "root": "semantics_document",
+        "path": [
+          "terminology_policy",
+          "public_role_sources",
+          "FINDING_TERM"
+        ]
+      },
+      "admission": "Require every public surface for this role to denote only its selected bound operand. A collection role may name the collection as a whole. A list of surfaces offers equivalent descriptions of the same operand, never competing operands or values.",
+      "text_hygiene_policy": {
+        "root": "semantics_document",
+        "path": [
+          "text_hygiene_policy"
+        ]
+      },
+      "surface_form": "A public, unambiguous English surface approved for the named positive finding class in the localization query."
+    },
+    "SCOPE": {
+      "source": {
+        "root": "public_context",
+        "path": [
+          "role_surfaces",
+          "SCOPE"
+        ]
+      },
+      "project": "ordered_distinct_strings",
+      "operand_binding": {
+        "root": "semantic_profile",
+        "path": [
+          "public_operand_bindings",
+          "SCOPE"
+        ]
+      },
+      "admission_policy": {
+        "root": "semantics_document",
+        "path": [
+          "terminology_policy",
+          "public_role_sources",
+          "SCOPE"
+        ]
+      },
+      "admission": "Require every public surface for this role to denote only its selected bound operand. A collection role may name the collection as a whole. A list of surfaces offers equivalent descriptions of the same operand, never competing operands or values.",
+      "text_hygiene_policy": {
+        "root": "semantics_document",
+        "path": [
+          "text_hygiene_policy"
+        ]
+      },
+      "surface_form": "A neutral public reference resolving to exactly the single original full image in its native coordinate system."
+    },
+    "BOX_FORMAT": {
+      "source": {
+        "root": "public_context",
+        "path": [
+          "role_surfaces",
+          "BOX_FORMAT"
+        ]
+      },
+      "project": "ordered_distinct_strings",
+      "operand_binding": {
+        "root": "semantic_profile",
+        "path": [
+          "public_operand_bindings",
+          "BOX_FORMAT"
+        ]
+      },
+      "admission_policy": {
+        "root": "semantics_document",
+        "path": [
+          "terminology_policy",
+          "public_role_sources",
+          "BOX_FORMAT"
+        ]
+      },
+      "admission": "Require every public surface for this role to denote only its selected bound operand. A collection role may name the collection as a whole. A list of surfaces offers equivalent descriptions of the same operand, never competing operands or values.",
+      "text_hygiene_policy": {
+        "root": "semantics_document",
+        "path": [
+          "text_hygiene_policy"
+        ]
+      },
+      "surface_form": "An instance-independent public instruction requesting one axis-aligned original-image pixel bounding box in xyxy order. Symbols x1, y1, x2 and y2 denote coordinate variables."
+    }
+  },
+  "public_request": {
+    "field_bindings": {
+      "operation": {
+        "root": "semantic_profile",
+        "path": [
+          "public_operation"
+        ]
+      },
+      "response_cardinality": {
+        "root": "semantic_profile",
+        "path": [
+          "plan_constants",
+          "response_cardinality"
+        ]
+      },
+      "polarity": {
+        "root": "semantic_profile",
+        "path": [
+          "plan_constants",
+          "polarity"
+        ]
+      },
+      "finding_term_surfaces": {
+        "resolved_slot": {
+          "root": "grammar_document",
+          "path": [
+            "slot_bindings",
+            "FINDING_TERM"
+          ]
+        }
+      },
+      "scope_surfaces": {
+        "resolved_slot": {
+          "root": "grammar_document",
+          "path": [
+            "slot_bindings",
+            "SCOPE"
+          ]
+        }
+      },
+      "box_format_surfaces": {
+        "resolved_slot": {
+          "root": "grammar_document",
+          "path": [
+            "slot_bindings",
+            "BOX_FORMAT"
+          ]
+        }
+      }
+    },
+    "data_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "operation": {
+          "const": "localize"
+        },
+        "response_cardinality": {
+          "const": 1
+        },
+        "polarity": {
+          "const": "positive"
+        },
+        "finding_term_surfaces": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?![\\s\\S]*[\\u0000-\\u001F\\u007F-\\u009F\\u2028\\u2029])[^\\u0009-\\u000D\\u0020\\u0085\\u00A0\\u1680\\u2000-\\u200A\\u2028\\u2029\\u202F\\u205F\\u3000](?:[\\s\\S]*[^\\u0009-\\u000D\\u0020\\u0085\\u00A0\\u1680\\u2000-\\u200A\\u2028\\u2029\\u202F\\u205F\\u3000])?$"
+          }
+        },
+        "scope_surfaces": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?![\\s\\S]*[\\u0000-\\u001F\\u007F-\\u009F\\u2028\\u2029])[^\\u0009-\\u000D\\u0020\\u0085\\u00A0\\u1680\\u2000-\\u200A\\u2028\\u2029\\u202F\\u205F\\u3000](?:[\\s\\S]*[^\\u0009-\\u000D\\u0020\\u0085\\u00A0\\u1680\\u2000-\\u200A\\u2028\\u2029\\u202F\\u205F\\u3000])?$"
+          }
+        },
+        "box_format_surfaces": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?![\\s\\S]*[\\u0000-\\u001F\\u007F-\\u009F\\u2028\\u2029])[^\\u0009-\\u000D\\u0020\\u0085\\u00A0\\u1680\\u2000-\\u200A\\u2028\\u2029\\u202F\\u205F\\u3000](?:[\\s\\S]*[^\\u0009-\\u000D\\u0020\\u0085\\u00A0\\u1680\\u2000-\\u200A\\u2028\\u2029\\u202F\\u205F\\u3000])?$"
+          }
+        }
+      },
+      "required": [
+        "operation",
+        "response_cardinality",
+        "polarity",
+        "finding_term_surfaces",
+        "scope_surfaces",
+        "box_format_surfaces"
+      ],
+      "additionalProperties": false
+    },
+    "instructions": {
+      "root": "grammar_document",
+      "path": [
+        "wording",
+        "prompt"
+      ]
+    },
+    "output_schema": {
+      "root": "grammar_document",
+      "path": [
+        "output_contract",
+        "base_json_schema"
+      ]
+    },
+    "projection": "Assemble exactly the fields of the active profile from the verified public context. Each surface array is the exact nonempty projection of its licensed role. Keep the private answer designation, reference sets, provenance and test fixtures outside the generator request. A neutral candidate label may appear as a permitted public operand even when it is also the correct choice. Never mark it as the answer or disclose which alternatives are supported.",
+    "disclosure_screen": {
+      "root": "semantics_document",
+      "path": [
+        "answer_disclosure"
+      ]
+    },
+    "text_hygiene_policy": {
+      "root": "semantics_document",
+      "path": [
+        "text_hygiene_policy"
+      ]
+    }
+  },
+  "wording": {
+    "intent": "Ask the respondent to locate any one instance of a named, positively supported finding with a single bounding box in original displayed image pixels.",
+    "required_roles_by_profile": {
+      "optional_spatial_localization.locate_one_bbox.v1": [
+        "FINDING_TERM",
+        "SCOPE",
+        "BOX_FORMAT"
+      ]
+    },
+    "realization": [
+      "Permit free clause order and conversational or imperative requests. Preserve one localization act and the native pixel coordinate system.",
+      "Multiple reference boxes may exist. Requests for all instances, the largest instance, a mask, a center point, normalized coordinates, a quadrant label, or a frame identifier change the answer.",
+      "Use only public roles and omit diagnostic elaboration, answer coordinates and spatial clues."
+    ],
+    "prompt": "Write one natural English localization question or request. Use the supplied finding and neutral full-image reference. Ask for one bounding box for any one instance using the supplied xyxy original-pixel format. Vary the wording freely. Return only a JSON object with the key question."
+  },
+  "output_contract": {
+    "question_generated_by_llm": true,
+    "answer_generated_by_llm": false,
+    "base_json_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "required": [
+        "question"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "question": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?![\\s\\S]*[\\u0000-\\u001F\\u007F-\\u009F\\u2028\\u2029])[^\\u0009-\\u000D\\u0020\\u0085\\u00A0\\u1680\\u2000-\\u200A\\u2028\\u2029\\u202F\\u205F\\u3000](?:[\\s\\S]*[^\\u0009-\\u000D\\u0020\\u0085\\u00A0\\u1680\\u2000-\\u200A\\u2028\\u2029\\u202F\\u205F\\u3000])?$"
+        }
+      }
+    },
+    "unit": "One freely worded English question per candidate. Apply the variation policy when multiple eligible wordings are requested.",
+    "text_hygiene_policy": {
+      "root": "semantics_document",
+      "path": [
+        "text_hygiene_policy"
+      ]
+    }
+  },
+  "language_fixtures": {
+    "purpose": "Offline task regression on complete wording under the declared synthetic presentation and private truth. Gold labels do not establish runtime performance.",
+    "excluded_from_generation_request": true,
+    "evidence_status": "synthetic_test_context_not_source_approval",
+    "check_registry": {
+      "root": "semantics_document",
+      "path": [
+        "check_registry"
+      ]
+    },
+    "contexts": {
+      "context_1": {
+        "profile_id": "optional_spatial_localization.locate_one_bbox.v1",
+        "public_context": {
+          "role_surfaces": {
+            "FINDING_TERM": [
+              "polyp"
+            ],
+            "SCOPE": [
+              "image_1"
+            ],
+            "BOX_FORMAT": [
+              "[x1, y1, x2, y2] in original image pixels"
+            ]
+          }
+        },
+        "public_presentation": {
+          "displayed_units": [
+            {
+              "unit_id": "image_1",
+              "visible_label": "image_1",
+              "view": "original full frame",
+              "native_width_px": 512,
+              "native_height_px": 512
+            }
+          ],
+          "response_convention": {
+            "units": "native image pixels",
+            "corner_order": [
+              "x1",
+              "y1",
+              "x2",
+              "y2"
+            ],
+            "origin": "top left",
+            "x_direction": "right",
+            "y_direction": "down"
+          }
+        },
+        "private_fixture_assumptions": "Offline synthetic example. The only displayed image is the original unassisted 512 by 512 frame labelled image_1. The fixture licenses polyp as the query class. Its two positively annotated reference boxes are [102, 110, 172, 194] and [284, 208, 335, 261]. An annotation of another class is present. All boxes and source annotations are private."
+      }
+    },
+    "cases": [
+      {
+        "id": "wording_01",
+        "context_id": "context_1",
+        "text": "In image_1, could you give [x1, y1, x2, y2] in original image pixels for a bounding box around one polyp?",
+        "gold": {
+          "final_verdict": "accepted"
+        },
+        "reason": "Either grounded polyp can satisfy the single-box request; the symbolic format reveals no target location."
+      },
+      {
+        "id": "wording_02",
+        "context_id": "context_1",
+        "text": "Which [x1, y1, x2, y2] box in original image pixels encloses the polyp starting at (102, 110) in image_1?",
+        "gold": {
+          "final_verdict": "rejected"
+        },
+        "reason": "The question supplies one reference corner and restricts the responder to one private annotation."
+      },
+      {
+        "id": "wording_03",
+        "context_id": "context_1",
+        "text": "In image_1, give a bounding box for every polyp as [x1, y1, x2, y2] in original image pixels.",
+        "gold": {
+          "final_verdict": "rejected"
+        },
+        "reason": "Requests exhaustive localization and multiple responses."
+      },
+      {
+        "id": "wording_04",
+        "context_id": "context_1",
+        "text": "What are the normalized [x1, y1, x2, y2] coordinates for one polyp in image_1?",
+        "gold": {
+          "final_verdict": "rejected"
+        },
+        "reason": "Switches the response coordinate system from original pixels to normalized values."
+      }
+    ]
+  },
+  "variation_policy": {
+    "required_capability": "bounded_distinct_question_generation",
+    "scope": "one request for one frozen semantic instance",
+    "request_limits": {
+      "requested_count": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "attempt_budget": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "supplied_by": "caller",
+      "allow_budget_below_requested_count": true
+    },
+    "before_sampling": "Require successful preflight for the exact frozen instance and its screened public request. The configured budget bounds generator calls for that one request.",
+    "per_attempt": "Request one freely worded candidate using the same frozen public request and validate the original response. Keep the deduplication state, prior candidates, fixture data and private evidence outside the generator request.",
+    "eligibility": "Count a candidate only when the complete selected checks authorize its wording and its validated text is bound to the same instance. Only accepted candidates enter the deduplication set.",
+    "distinct_key": {
+      "fields": [
+        "semantic_instance_id",
+        "normalized_question"
+      ],
+      "normalized_question": [
+        "unicode_nfc",
+        "unicode_casefold",
+        "unicode_nfc",
+        "collapse_unicode_whitespace_runs_to_one_ascii_space_and_strip"
+      ],
+      "punctuation": "preserved",
+      "use": "Detect equivalent spellings within this sampling request. Preserve the first validated original text for each key. Persistent corpus deduplication and export use their own common-engine checks."
+    },
+    "dispositions": {
+      "accepted": "Record the unique original and count it toward the requested number.",
+      "duplicate": "Record an accepted validation with a duplicate sampling outcome. Consume one attempt and leave the accepted count unchanged.",
+      "review": "Consume one attempt and continue.",
+      "rejected": "Consume one attempt and continue.",
+      "block_export": "Stop immediately. Close this batch without releasing any previously accepted candidates. Retain all actual attempt outcomes in the trace."
+    },
+    "stop_conditions": {
+      "target_reached": "Stop as soon as accepted_count equals requested_count.",
+      "attempt_budget_exhausted": "Stop at the finite budget when accepted_count is still below requested_count.",
+      "blocked": "Preflight or another mandatory dependency failed. A preflight block makes zero calls."
+    },
+    "report": {
+      "fields": [
+        "semantic_instance_id",
+        "requested_count",
+        "attempt_budget",
+        "attempts_used",
+        "accepted_count",
+        "shortfall",
+        "stop_reason",
+        "counts_by_outcome",
+        "accepted",
+        "attempts"
+      ],
+      "shortfall": "requested_count minus accepted_count",
+      "accepted": "Return validated candidates with the original question, candidate_question_sha256 and audit_id. Compute the question digest from the exact original UTF-8 bytes.",
+      "limits": "Separate the wording-selection result from any subsequent authorization to export."
+    }
+  }
+}
