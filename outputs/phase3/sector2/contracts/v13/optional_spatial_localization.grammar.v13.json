@@ -296,7 +296,7 @@
       "Multiple reference boxes may exist. Requests for all instances, the largest instance, a mask, a center point, normalized coordinates, a quadrant label, or a frame identifier change the answer.",
       "Use only public roles and omit diagnostic elaboration, answer coordinates and spatial clues."
     ],
-    "prompt": "Write one natural English localization question or request. Use the supplied finding and neutral full-image reference. Ask for one bounding box for any one instance using the supplied xyxy original-pixel format. Vary the wording freely. Return only a JSON object with the key question."
+    "prompt": "Write one natural English localization question or request. Use the supplied finding and neutral full-image reference. Ask for one bounding box for any one instance using the supplied xyxy original-pixel format. Vary the wording freely. Return only a JSON object with the key question. Choose one exact spelling from the supplied finding surfaces. Their order does not indicate preference. Use the spelling that fits the question naturally."
   },
   "output_contract": {
     "question_generated_by_llm": true,

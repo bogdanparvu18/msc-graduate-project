@@ -242,7 +242,7 @@
       "Use an open naming request. Do not ask for presence, the finding identity, a count, classification of all findings, diagnosis, severity, causation, or a yes/no confirmation of a suggested category.",
       "Keep the target category and candidate categories out of the question and hints. Use generic category wording tied to the dataset grouping."
     ],
-    "prompt": "Write one natural English question asking a clinician to give the dataset clinical group for the supplied named finding in the supplied displayed view. Use an authorized finding surface and a neutral scope reference. Vary ordinary English wording. Return only a JSON object with the key question."
+    "prompt": "Write one natural English question asking a clinician to give the dataset clinical group for the supplied named finding in the supplied displayed view. Use an authorized finding surface and a neutral scope reference. Vary ordinary English wording. Return only a JSON object with the key question. Choose one exact spelling from the supplied finding surfaces. Their order does not indicate preference. Use the spelling that fits the question naturally."
   },
   "output_contract": {
     "question_generated_by_llm": true,

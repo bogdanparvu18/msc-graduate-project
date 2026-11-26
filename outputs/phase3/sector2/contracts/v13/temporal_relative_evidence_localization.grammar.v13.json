@@ -350,7 +350,7 @@
       "Keep the direction attached to the reference in acquisition time. Preserve the operation of identifying a visual unit.",
       "Exclude yes/no presence judgements, negative findings, severity, progression, onset, disappearance, treatment, exact intervals, rankings and requests to list all frames."
     ],
-    "prompt": "Write one natural English question or naming request asking for one displayed frame or panel with visual evidence of the supplied finding in the specified temporal direction relative to the supplied reference in the displayed sequence. Use the licensed finding, reference, direction and scope phrases. Allow any one supported frame on that side. Preserve the finding, exact referent and temporal direction throughout the complete request. Return only a JSON object with the key question."
+    "prompt": "Write one natural English question or naming request asking for one displayed frame or panel with visual evidence of the supplied finding in the specified temporal direction relative to the supplied reference in the displayed sequence. Use the licensed finding, reference, direction and scope phrases. Allow any one supported frame on that side. Preserve the finding, exact referent and temporal direction throughout the complete request. Return only a JSON object with the key question. Choose one exact spelling from the supplied finding surfaces. Their order does not indicate preference. Use the spelling that fits the question naturally."
   },
   "output_contract": {
     "question_generated_by_llm": true,

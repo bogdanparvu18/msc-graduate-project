@@ -242,7 +242,7 @@
       "Use the licensed finding and presentation phrases with natural English articles; vary sentence structure freely.",
       "Preserve a positive request for the supporting display unit. Do not ask for all matches, a unique match, the first, last or best frame, a location inside a frame, a diagnosis, or an absence judgement."
     ],
-    "prompt": "Write one natural English question or request asking a clinician to identify any one displayed frame or panel that shows the supplied finding. Use the supplied finding phrase and the neutral expression for the displayed set. Keep all individual unit identifiers out of the question. Return only a JSON object with the key question."
+    "prompt": "Write one natural English question or request asking a clinician to identify any one displayed frame or panel that shows the supplied finding. Use the supplied finding phrase and the neutral expression for the displayed set. Keep all individual unit identifiers out of the question. Return only a JSON object with the key question. Choose one exact spelling from the supplied finding surfaces. Their order does not indicate preference. Use the spelling that fits the question naturally."
   },
   "output_contract": {
     "question_generated_by_llm": true,

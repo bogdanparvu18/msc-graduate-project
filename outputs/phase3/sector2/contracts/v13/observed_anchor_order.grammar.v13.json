@@ -297,7 +297,7 @@
       "Changing the direction to later, asking for all anchors, locating additional evidence relative to a reference, or asking for the first appearance in the entire video changes the operation.",
       "Do not infer onset, persistence, change in the lesion, duration, causation, normality or disease progression."
     ],
-    "prompt": "Write one natural English question asking which of two displayed frames showing the supplied finding occurs earlier in the same video. Name the supplied finding and both neutral choices, preserving their supplied option order. Use your own sentence structure. Return only a JSON object with one key, question."
+    "prompt": "Write one natural English question asking which of two displayed frames showing the supplied finding occurs earlier in the same video. Name the supplied finding and both neutral choices, preserving their supplied option order. Use your own sentence structure. Return only a JSON object with one key, question. Choose one exact spelling from the supplied finding surfaces. Their order does not indicate preference. Use the spelling that fits the question naturally."
   },
   "output_contract": {
     "question_generated_by_llm": true,
